@@ -1,3 +1,4 @@
+import Navbar from '@/components/app/Navbar'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Public_Sans } from 'next/font/google'
@@ -16,7 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={publicSans.className}>{children}</body>
+      <body className={publicSans.className}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   )
 }
