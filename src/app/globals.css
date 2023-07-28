@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.scrollbar,
+body {
+  scrollbar-width: auto;
+  scrollbar-color: #000000 #ffffff;
+}
+
+/* Other browsers */
+.scrollbar::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 16px;
+}
+
+.scrollbar::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+.scrollbar::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background-color: #000000;
+}
