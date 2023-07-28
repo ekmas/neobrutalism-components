@@ -3,7 +3,7 @@ import { AiFillGithub } from 'react-icons/ai'
 
 function Navbar() {
   return (
-    <nav className="mx-auto flex h-20 items-center border-b-4 border-black px-5 ">
+    <nav className="fixed left-0 top-0 z-10 mx-auto flex h-20 w-full items-center border-b-4 border-black bg-white px-5 ">
       <div className="mx-auto flex w-[1300px] max-w-full items-center justify-between">
         <Link className="text-3xl font-bold" href={'/'}>
           NBRTLSM

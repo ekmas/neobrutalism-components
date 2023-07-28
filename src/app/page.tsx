@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <main className="flex min-h-[calc(100svh-80px)] flex-col items-center justify-center bg-[#c9dcd8] px-5 py-20 font-bold">
+    <main className="flex min-h-[100svh] flex-col items-center justify-center bg-[#c9dcd8] px-5 py-20 font-bold">
       <h1 className="text-5xl">Neobrutalism components</h1>
 
       <p className="my-6 text-xl">
