@@ -20,6 +20,8 @@ export default function RootLayout({
       <body className={publicSans.className}>
         <Navbar />
         {children}
+        <div id="drawer"></div>
+        <div id="modal"></div>
       </body>
     </html>
   )
