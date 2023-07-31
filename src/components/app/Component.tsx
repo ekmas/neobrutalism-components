@@ -15,8 +15,8 @@ export default function Component({
   exampleComponent,
 }: Props) {
   return (
-    <div id={name} className="pt-[100px]">
-      <h2 className="mb-5 text-2xl font-bold">{name}</h2>
+    <div id={name} className="pt-[100px] m600:pt-[50px] m400:text-sm">
+      <h2 className="mb-5 text-2xl font-bold m400:text-xl">{name}</h2>
 
       <ComponentWrapper>{exampleComponent}</ComponentWrapper>
 

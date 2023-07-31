@@ -3,7 +3,7 @@ import React from 'react'
 export default function Installation() {
   return (
     <>
-      <h2 className="mt-5 text-2xl font-bold">Installation</h2>
+      <h2 className="mt-5 text-2xl font-bold m400:text-xl">Installation</h2>
 
       <div className="mt-8 font-bold leading-relaxed">
         These React components use

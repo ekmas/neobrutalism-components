@@ -25,9 +25,9 @@ export default async function DocsMain() {
   const componentCodes = await Promise.all(promises)
 
   return (
-    <div className="docs ml-[250px] w-[full-250px] bg-[#c9dcd8] px-5 pt-[80px]">
-      <div className="mx-auto w-[700px] py-16">
-        <h2 className="text-3xl font-bold">Docs</h2>
+    <div className="docs ml-[250px] w-[full-250px] bg-[#c9dcd8] px-5 pt-[80px] m800:ml-[180px] m800:w-[full-180px] m600:m-0 m600:w-full m500:pt-16">
+      <div className="mx-auto w-[700px] py-16 m1000:w-[500px] m750:w-[350px] m400:w-full m400:py-10">
+        <h2 className="text-3xl font-bold m400:text-2xl">Docs</h2>
 
         <Installation />
 

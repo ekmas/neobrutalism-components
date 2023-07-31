@@ -6,7 +6,7 @@ export default function TabsExample() {
   const tabsArray = ['Tab 1', 'Tab 2', 'Tab 3']
 
   return (
-    <div className="w-[374px] rounded-md">
+    <div className="w-[374px] rounded-md m750:w-[274px] m400:w-[214px]">
       {tabsArray.map((tab, index) => {
         let borderRadius = ''
 
@@ -23,7 +23,7 @@ export default function TabsExample() {
             style={{
               backgroundColor: activeTab === tab ? '#bc95d4' : '#b482d3',
             }}
-            className={`border-2 border-black bg-red-500 px-10 py-3 ${borderRadius} cursor-pointer font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-colors`}
+            className={`border-2 border-black bg-red-500 px-10 py-3 m750:w-[91px] m750:px-5 m400:w-[70px] m400:px-2 ${borderRadius} cursor-pointer font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-colors`}
           >
             {tab}
           </button>

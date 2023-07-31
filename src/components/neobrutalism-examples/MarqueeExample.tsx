@@ -6,7 +6,7 @@ export default function MarqueeExample() {
       <div className="animate-marquee whitespace-nowrap py-12">
         {items.map((item) => {
           return (
-            <span key={item} className="mx-4 text-4xl">
+            <span key={item} className="mx-4 text-4xl m750:text-2xl">
               {item}
             </span>
           )
@@ -16,7 +16,7 @@ export default function MarqueeExample() {
       <div className="absolute top-0 animate-marquee2 whitespace-nowrap py-12">
         {items.map((item) => {
           return (
-            <span key={item} className="mx-4 text-4xl">
+            <span key={item} className="mx-4 text-4xl m750:text-2xl">
               {item}
             </span>
           )
