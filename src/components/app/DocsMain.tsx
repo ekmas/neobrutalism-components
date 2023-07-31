@@ -14,6 +14,10 @@ export default async function DocsMain() {
   const promises = components.map(async (component) => {
     const filePath = `./src/components/neobrutalism/${component.name}.tsx`
     const code = await readFilePath(filePath)
+    if (code.startsWith("'use client'\r\n")) {
+      return code.slice(14)
+    }
+    // if component has use client in it we will remove it because these are react components, not nextjs components :)
     return code
   })
 
@@ -21,7 +25,7 @@ export default async function DocsMain() {
 
   return (
     <div className="docs ml-[250px] w-[full-250px] bg-[#c9dcd8] px-5 pt-[80px]">
-      <div className="mx-auto w-[600px] py-16">
+      <div className="mx-auto w-[700px] py-16">
         {components.map((component, index) => {
           return (
             <Component
