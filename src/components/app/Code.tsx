@@ -5,7 +5,7 @@ const Code = async ({ code }: { code: string }) => {
 
   return (
     <div
-      className="w-max-[600px] scrollbar h-[300px] overflow-x-auto bg-[#151515] p-5 text-sm"
+      className="code w-max-[700px] scrollbar mt-5 h-[300px] overflow-x-auto rounded-md border-2 border-black bg-[#151515] p-5 text-sm shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
       dangerouslySetInnerHTML={{ __html: component }}
     />
   )
