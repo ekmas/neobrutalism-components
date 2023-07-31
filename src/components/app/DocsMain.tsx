@@ -3,6 +3,7 @@ import fs from 'fs'
 import path from 'path'
 import { promisify } from 'util'
 import Component from './Component'
+import Installation from './Installation'
 
 async function readFilePath(filePath: string) {
   const readFile = promisify(fs.readFile)
@@ -26,6 +27,10 @@ export default async function DocsMain() {
   return (
     <div className="docs ml-[250px] w-[full-250px] bg-[#c9dcd8] px-5 pt-[80px]">
       <div className="mx-auto w-[700px] py-16">
+        <h2 className="text-3xl font-bold">Docs</h2>
+
+        <Installation />
+
         {components.map((component, index) => {
           return (
             <Component
