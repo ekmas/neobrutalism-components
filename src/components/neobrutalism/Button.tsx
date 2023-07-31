@@ -1,5 +1,4 @@
 'use client'
-
 type Props = {
   children: React.ReactNode
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void
