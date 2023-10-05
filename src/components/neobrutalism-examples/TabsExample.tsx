@@ -7,28 +7,38 @@ export default function TabsExample() {
 
   return (
     <div className="w-[374px] rounded-md m750:w-[274px] m400:w-[214px]">
-      {tabsArray.map((tab, index) => {
-        let borderRadius = ''
+      <div
+        style={{
+          gridTemplateColumns: Array(tabsArray.length)
+            .fill('x')
+            .map((tab: any) => '1fr')
+            .join(' '),
+        }}
+        className="grid w-full"
+      >
+        {tabsArray.map((tab, index) => {
+          let borderRadius = ''
 
-        if (index === 0) {
-          borderRadius = 'rounded-ss-md'
-        } else if (index === tabsArray.length - 1) {
-          borderRadius = 'rounded-se-md'
-        }
+          if (index === 0) {
+            borderRadius = 'rounded-ss-md'
+          } else if (index === tabsArray.length - 1) {
+            borderRadius = 'rounded-se-md'
+          }
 
-        return (
-          <button
-            key={index}
-            onClick={() => setActiveTab(tab)}
-            style={{
-              backgroundColor: activeTab === tab ? '#bc95d4' : '#b482d3',
-            }}
-            className={`border-2 border-black bg-red-500 px-10 py-3 m750:w-[91px] m750:px-5 m400:w-[70px] m400:px-2 ${borderRadius} cursor-pointer font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-colors`}
-          >
-            {tab}
-          </button>
-        )
-      })}
+          return (
+            <button
+              key={index}
+              onClick={() => setActiveTab(tab)}
+              style={{
+                backgroundColor: activeTab === tab ? '#bc95d4' : '#b482d3',
+              }}
+              className={`border-2 border-black px-6 py-3 text-center m750:px-5 m400:px-2 ${borderRadius} cursor-pointer font-bold transition-colors`}
+            >
+              {tab}
+            </button>
+          )
+        })}
+      </div>
       <div className="max-w-full border-2 border-black bg-white p-5 font-bold">
         {activeTab === 'Tab 1' && (
           <div>

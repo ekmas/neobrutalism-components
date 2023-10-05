@@ -28,12 +28,14 @@ export default function Drawer({ active, setActive, children }: Props) {
 
   return ReactDom.createPortal(
     <div
+      role="dialog"
+      aria-modal="true"
       style={{
         opacity: isVisible ? '1' : '0',
         visibility: isVisible ? 'visible' : 'hidden',
       }}
       onClick={closeDrawer}
-      className="fixed left-0 top-0 z-50 flex h-[100svh] w-screen items-start justify-start bg-gray-500/50 transition-all duration-300"
+      className="fixed left-0 top-0 z-50 flex h-[100dvh] w-screen items-start justify-start bg-gray-500/50 transition-all duration-300"
     >
       <div
         onClick={(e) => e.stopPropagation()}

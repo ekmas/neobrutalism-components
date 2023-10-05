@@ -15,8 +15,8 @@ export default async function DocsMain() {
   const promises = components.map(async (component) => {
     const filePath = `./src/components/neobrutalism/${component.name}.tsx`
     const code = await readFilePath(filePath)
-    if (code.startsWith("'use client'\r\n")) {
-      return code.slice(14)
+    if (code.includes("'use client'")) {
+      return code.slice(13)
     }
     // if component has use client in it we will remove it because these are react components, not nextjs components :)
     return code

@@ -6,6 +6,7 @@ export default function InputExample() {
       name="text"
       id="text"
       placeholder="Placeholder"
+      aria-label={'Placeholder'}
     />
   )
 }

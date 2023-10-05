@@ -12,6 +12,8 @@ export default function Dropdown({
   return (
     <div className="relative">
       <button
+        aria-haspopup="listbox"
+        aria-expanded={isActiveDropdown}
         onClick={() => {
           setIsActiveDropdown(!isActiveDropdown)
         }}
@@ -28,6 +30,7 @@ export default function Dropdown({
         </div>
       </button>
       <div
+        role="listbox"
         style={{
           top: isActiveDropdown ? '80px' : '50px',
           opacity: isActiveDropdown ? '1' : '0',
