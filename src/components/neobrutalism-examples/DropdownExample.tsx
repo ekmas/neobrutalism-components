@@ -6,16 +6,16 @@ export default function DropdownExample() {
   const [isActiveDropdown, setIsActiveDropdown] = useState(false)
   const items = [
     {
-      name: 'Item 1',
-      link: '#',
+      name: 'Youtube',
+      link: 'https://www.youtube.com',
     },
     {
-      name: 'Item 2',
-      link: '#',
+      name: 'Facebook',
+      link: 'https://www.facebook.com',
     },
     {
-      name: 'Item 3',
-      link: '#',
+      name: 'Google',
+      link: 'https://www.google.com',
     },
   ]
 

@@ -14,11 +14,13 @@ export default function SelectExample() {
   }
 
   return (
-    <div className="relative">
+    <div className="relative" role="combobox" aria-expanded={isActiveSelect}>
       <button
         onClick={() => {
           setIsActiveSelect(!isActiveSelect)
         }}
+        aria-haspopup="listbox"
+        aria-labelledby="select-label"
         className="flex w-[200px] cursor-pointer items-center rounded-md border-2 border-black bg-[#bc95d4] px-10 py-3 font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
       >
         <div className="mx-auto flex items-center">
@@ -35,6 +37,8 @@ export default function SelectExample() {
           opacity: isActiveSelect ? '1' : '0',
           visibility: isActiveSelect ? 'visible' : 'hidden',
         }}
+        role="listbox"
+        aria-labelledby="select-label"
         className="absolute left-0 top-[70px] w-[200px] rounded-md border-2 border-black font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all"
       >
         {items.map((item, index) => {
@@ -52,6 +56,7 @@ export default function SelectExample() {
               onClick={() => {
                 handleItemClick(item)
               }}
+              aria-selected={selectedItem === item}
               className={`bg-[#bc95d4] ${borderRadius} block w-full border-b-2 border-black px-5 py-3 hover:bg-[#b482d3]`}
             >
               {item}
