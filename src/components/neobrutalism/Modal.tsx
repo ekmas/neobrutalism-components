@@ -28,7 +28,11 @@ export default function Modal({ active, setActive, children }: Props) {
   if (!active) return null
 
   return ReactDom.createPortal(
-    <div className="fixed left-0 top-0 flex h-screen w-screen items-center justify-center">
+    <div
+      role="dialog"
+      aria-modal="true"
+      className="fixed left-0 top-0 flex h-screen w-screen items-center justify-center"
+    >
       <div
         style={{
           opacity: isVisible ? '1' : '0',

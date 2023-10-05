@@ -6,7 +6,15 @@ type Props = {
 
 export default function Tabs({ tabsArray, activeTab, setActiveTab }: Props) {
   return (
-    <div className="w-max rounded-md">
+    <div
+      style={{
+        gridTemplateColumns: Array(tabsArray.length)
+          .fill('x')
+          .map((tab: any) => '1fr')
+          .join(' '),
+      }}
+      className="grid w-[500px] rounded-md"
+    >
       {tabsArray.map((tab, index) => {
         let borderRadius = ''
 
@@ -23,7 +31,7 @@ export default function Tabs({ tabsArray, activeTab, setActiveTab }: Props) {
             style={{
               backgroundColor: activeTab === tab ? '#bc95d4' : '#b482d3',
             }}
-            className={`border-2 border-black bg-red-500 px-10 py-3 ${borderRadius} cursor-pointer font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-colors`}
+            className={`border-2 border-black px-6 py-3 text-center ${borderRadius} cursor-pointer font-bold transition-colors`}
           >
             {tab}
           </button>
