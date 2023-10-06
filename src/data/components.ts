@@ -12,6 +12,7 @@ import Input from '@/components/neobrutalism/Input'
 import Marquee from '@/components/neobrutalism/Marquee'
 import Modal from '@/components/neobrutalism/Modal'
 import Newsletter from '@/components/neobrutalism/Newsletter'
+import RadioGroup from '@/components/neobrutalism/RadioGroup'
 import Select from '@/components/neobrutalism/Select'
 import Tabs from '@/components/neobrutalism/Tabs'
 import Textarea from '@/components/neobrutalism/Textarea'
@@ -31,6 +32,7 @@ import InputExample from '@/components/neobrutalism-examples/InputExample'
 import MarqueeExample from '@/components/neobrutalism-examples/MarqueeExample'
 import ModalExample from '@/components/neobrutalism-examples/ModalExample'
 import NewsletterExample from '@/components/neobrutalism-examples/NewsletterExample'
+import RadioGroupExample from '@/components/neobrutalism-examples/RadioGroupExample'
 import SelectExample from '@/components/neobrutalism-examples/SelectExample'
 import TabsExample from '@/components/neobrutalism-examples/TabsExample'
 import TextareaExample from '@/components/neobrutalism-examples/TextareaExample'
@@ -112,6 +114,11 @@ const components: ComponentObj[] = [
     name: 'Newsletter',
     component: Newsletter,
     exampleComponent: NewsletterExample,
+  },
+  {
+    name: 'RadioGroup',
+    component: RadioGroup,
+    exampleComponent: RadioGroupExample,
   },
   {
     name: 'Select',
