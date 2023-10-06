@@ -4,6 +4,7 @@ import Avatar from '@/components/neobrutalism/Avatar'
 import Badge from '@/components/neobrutalism/Badge'
 import Button from '@/components/neobrutalism/Button'
 import Card from '@/components/neobrutalism/Card'
+import Checkbox from '@/components/neobrutalism/Checkbox'
 import Drawer from '@/components/neobrutalism/Drawer'
 import Dropdown from '@/components/neobrutalism/Dropdown'
 import ImageCard from '@/components/neobrutalism/ImageCard'
@@ -15,12 +16,14 @@ import Select from '@/components/neobrutalism/Select'
 import Tabs from '@/components/neobrutalism/Tabs'
 import Textarea from '@/components/neobrutalism/Textarea'
 import Tooltip from '@/components/neobrutalism/Tooltip'
+
 import AccordionExample from '@/components/neobrutalism-examples/AccordionExample'
 import AlertExample from '@/components/neobrutalism-examples/AlertExample'
 import AvatarExample from '@/components/neobrutalism-examples/AvatarExample'
 import BadgeExample from '@/components/neobrutalism-examples/BadgeExample'
 import ButtonExample from '@/components/neobrutalism-examples/ButtonExample'
 import CardExample from '@/components/neobrutalism-examples/CardExample'
+import CheckboxExample from '@/components/neobrutalism-examples/CheckboxExample'
 import DrawerExample from '@/components/neobrutalism-examples/DrawerExample'
 import DropdownExample from '@/components/neobrutalism-examples/DropdownExample'
 import ImageCardExample from '@/components/neobrutalism-examples/ImageCardExample'
@@ -69,6 +72,11 @@ const components: ComponentObj[] = [
     name: 'Card',
     component: Card,
     exampleComponent: CardExample,
+  },
+  {
+    name: 'Checkbox',
+    component: Checkbox,
+    exampleComponent: CheckboxExample,
   },
   {
     name: 'Drawer',
