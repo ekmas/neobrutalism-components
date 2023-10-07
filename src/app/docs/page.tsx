@@ -3,7 +3,7 @@ import Sidebar from '@/components/app/Sidebar'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Documentation - Neobrtualism Components',
+  title: 'Documentation - Neobrutalism Components',
   description: 'Documentation for neobrutalism components.',
 }
 
