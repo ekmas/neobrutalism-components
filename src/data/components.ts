@@ -42,6 +42,8 @@ type ComponentObj = {
   name: string
   component: any
   exampleComponent?: any
+  prevComponent?: string
+  nextComponent?: string
 }
 
 const components: ComponentObj[] = [
@@ -49,96 +51,133 @@ const components: ComponentObj[] = [
     name: 'Accordion',
     component: Accordion,
     exampleComponent: AccordionExample,
+    nextComponent: 'Alert',
   },
   {
     name: 'Alert',
     component: Alert,
     exampleComponent: AlertExample,
+    prevComponent: 'Accordion',
+    nextComponent: 'Avatar',
   },
   {
     name: 'Avatar',
     component: Avatar,
     exampleComponent: AvatarExample,
+    prevComponent: 'Alert',
+    nextComponent: 'Badge',
   },
   {
     name: 'Badge',
     component: Badge,
     exampleComponent: BadgeExample,
+    prevComponent: 'Avatar',
+    nextComponent: 'Button',
   },
   {
     name: 'Button',
     component: Button,
     exampleComponent: ButtonExample,
+    prevComponent: 'Badge',
+    nextComponent: 'Card',
   },
   {
     name: 'Card',
     component: Card,
     exampleComponent: CardExample,
+    prevComponent: 'Button',
+    nextComponent: 'Checkbox',
   },
   {
     name: 'Checkbox',
     component: Checkbox,
     exampleComponent: CheckboxExample,
+    prevComponent: 'Card',
+    nextComponent: 'Drawer',
   },
   {
     name: 'Drawer',
     component: Drawer,
     exampleComponent: DrawerExample,
+    prevComponent: 'Checkbox',
+    nextComponent: 'Dropdown',
   },
   {
     name: 'Dropdown',
     component: Dropdown,
     exampleComponent: DropdownExample,
+    prevComponent: 'Drawer',
+    nextComponent: 'ImageCard',
   },
   {
     name: 'ImageCard',
     component: ImageCard,
     exampleComponent: ImageCardExample,
+    prevComponent: 'Dropdown',
+    nextComponent: 'Input',
   },
   {
     name: 'Input',
     component: Input,
     exampleComponent: InputExample,
+    prevComponent: 'ImageCard',
+    nextComponent: 'Marquee',
   },
   {
     name: 'Marquee',
     component: Marquee,
     exampleComponent: MarqueeExample,
+    prevComponent: 'Input',
+    nextComponent: 'Modal',
   },
   {
     name: 'Modal',
     component: Modal,
     exampleComponent: ModalExample,
+    prevComponent: 'Marquee',
+    nextComponent: 'Newsletter',
   },
   {
     name: 'Newsletter',
     component: Newsletter,
     exampleComponent: NewsletterExample,
+    prevComponent: 'Modal',
+    nextComponent: 'RadioGroup',
   },
   {
     name: 'RadioGroup',
     component: RadioGroup,
     exampleComponent: RadioGroupExample,
+    prevComponent: 'Newsletter',
+    nextComponent: 'Select',
   },
   {
     name: 'Select',
     component: Select,
     exampleComponent: SelectExample,
+    prevComponent: 'RadioGroup',
+    nextComponent: 'Tabs',
   },
   {
     name: 'Tabs',
     component: Tabs,
     exampleComponent: TabsExample,
+    prevComponent: 'Select',
+    nextComponent: 'Textarea',
   },
   {
     name: 'Textarea',
     component: Textarea,
     exampleComponent: TextareaExample,
+    prevComponent: 'Tabs',
+    nextComponent: 'Tooltip',
   },
   {
     name: 'Tooltip',
     component: Tooltip,
     exampleComponent: TooltipExample,
+    prevComponent: 'Textarea',
   },
 ]
+
 export default components
