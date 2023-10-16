@@ -24,6 +24,16 @@ const getCode = async (filePath: string) => {
   return code
 }
 
+export async function generateStaticParams() {
+  const componentSlugs = components.map((component) => ({
+    name: component.name,
+  }))
+
+  return componentSlugs
+}
+
+export const dynamicParams = false
+
 export default async function Installation({
   params,
 }: {
