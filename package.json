@@ -16,7 +16,7 @@
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
     "fs": "^0.0.1-security",
-    "next": "13.4.12",
+    "next": "^13.5.4",
     "path": "^0.12.7",
     "postcss": "8.4.27",
     "react": "18.2.0",
