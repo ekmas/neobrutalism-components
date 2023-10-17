@@ -42,14 +42,6 @@ export default function SelectExample() {
         className="absolute left-0 top-[70px] w-[200px] rounded-md border-2 border-black font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all"
       >
         {items.map((item, index) => {
-          let borderRadius = ''
-
-          if (index === 0) {
-            borderRadius = 'rounded-t-[5px]'
-          } else if (index === items.length - 1) {
-            borderRadius = 'rounded-b-[5px]'
-          }
-
           return (
             <button
               key={index}
@@ -57,7 +49,7 @@ export default function SelectExample() {
                 handleItemClick(item)
               }}
               aria-selected={selectedItem === item}
-              className={`bg-[#bc95d4] ${borderRadius} block w-full border-b-2 border-black px-5 py-3 hover:bg-[#b482d3]`}
+              className="block w-full border-b-2 border-black bg-[#bc95d4] px-5 py-3 first:rounded-t-[5px] last:rounded-b-[5px] hover:bg-[#a36ec4]"
             >
               {item}
             </button>
