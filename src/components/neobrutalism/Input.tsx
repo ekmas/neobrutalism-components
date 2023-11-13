@@ -17,6 +17,7 @@ export default function Input({ value, setValue, placeholder }: Props) {
         setValue(e.target.value)
       }}
       aria-label={placeholder}
+      placeholder={placeholder}
     />
   )
 }
