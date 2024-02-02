@@ -1,9 +1,9 @@
 import Navbar from '@/components/app/Navbar'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Public_Sans } from 'next/font/google'
+import { DM_Sans } from 'next/font/google'
 
-const publicSans = Public_Sans({ subsets: ['latin'] })
+const dmSans = DM_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Neobrutalism components',
@@ -34,7 +34,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={publicSans.className}>
+      <body className={dmSans.className}>
         <Navbar />
         {children}
         <div id="drawer"></div>
