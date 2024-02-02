@@ -4,11 +4,11 @@ import MobileDrawer from './MobileDrawer'
 
 function Navbar() {
   return (
-    <nav className="fixed left-0 top-0 z-10 mx-auto flex h-20 w-full items-center border-b-4 border-black bg-white px-5 m500:h-16 ">
+    <nav className="fixed left-0 top-0 z-10 mx-auto flex h-[88px] w-full items-center border-b-4 border-black bg-white px-5 m500:h-16 ">
       <div className="mx-auto flex w-[1300px] max-w-full items-center justify-between">
         <MobileDrawer />
 
-        <Link className="text-3xl font-bold m500:text-xl" href={'/'}>
+        <Link className="text-4xl font-bold m500:text-xl" href={'/'}>
           NBRTLSM
         </Link>
 
