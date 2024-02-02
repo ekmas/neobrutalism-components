@@ -26,7 +26,7 @@ export default function Newsletter() {
         }}
       />
       <button
-        className="rounded-e-[5px] border-l-2 border-black bg-[#bc95d4] p-[10px] px-5"
+        className="rounded-e-[5px] border-l-2 border-black bg-[#C4A1FF] p-[10px] px-5"
         type="submit"
         aria-label="Submit Newsletter"
       >

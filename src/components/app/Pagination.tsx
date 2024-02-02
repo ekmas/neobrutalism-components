@@ -30,7 +30,7 @@ export default function Pagination({ prev, next }: Props) {
     <div className={`${justifyContent} mt-8 flex w-full items-center`}>
       {prev?.name && (
         <button
-          className="flex cursor-pointer items-center rounded-md border-2 border-black bg-[#bc95d4] px-5 py-2 text-sm font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none m400:px-3.5 m400:text-xs"
+          className="flex cursor-pointer items-center rounded-md border-2 border-black bg-main px-5 py-2 text-sm font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none m400:px-3.5 m400:text-xs"
           onClick={() => {
             router.push(prev.path)
           }}
@@ -42,7 +42,7 @@ export default function Pagination({ prev, next }: Props) {
 
       {next?.name && (
         <button
-          className="flex cursor-pointer items-center rounded-md border-2 border-black bg-[#bc95d4] px-5 py-2 text-sm font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none m400:px-3.5 m400:text-xs"
+          className="flex cursor-pointer items-center rounded-md border-2 border-black bg-main px-5 py-2 text-sm font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none m400:px-3.5 m400:text-xs"
           onClick={() => {
             router.push(next.path)
           }}

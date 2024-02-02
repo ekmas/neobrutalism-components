@@ -24,7 +24,7 @@ export default function Accordion({ question, answer }: Props) {
         role="button"
         aria-expanded={showContent}
         style={{ borderBottom: showContent ? 'solid 2px' : '0px' }}
-        className="flex w-full items-center justify-between rounded-[5px] border-black bg-[#bc95d4] p-5 font-bold"
+        className="flex w-full items-center justify-between rounded-[5px] border-black bg-[#C4A1FF] p-5 font-bold"
         onClick={() => {
           setShowContent(!showContent)
         }}

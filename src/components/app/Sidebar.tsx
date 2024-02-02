@@ -9,13 +9,13 @@ export default function Sidebar() {
       </div>
       <Link
         href={`/docs`}
-        className="sidebaritem block border-b-4 border-r-4 border-black p-4 pl-7 text-lg font-semibold text-black/90 hover:bg-[#bc95d4] m800:p-4 m800:pl-6 m800:text-base"
+        className="sidebaritem block border-b-4 border-r-4 border-black p-4 pl-7 text-lg font-semibold text-black/90 hover:bg-main m800:p-4 m800:pl-6 m800:text-base"
       >
         Introduction
       </Link>
       <Link
         href={`/docs/installation`}
-        className="sidebaritem block border-b-4 border-r-4 border-black p-4 pl-7 text-lg font-semibold text-black/90 hover:bg-[#bc95d4] m800:p-4 m800:pl-6 m800:text-base"
+        className="sidebaritem block border-b-4 border-r-4 border-black p-4 pl-7 text-lg font-semibold text-black/90 hover:bg-main m800:p-4 m800:pl-6 m800:text-base"
       >
         Installation
       </Link>
@@ -27,7 +27,7 @@ export default function Sidebar() {
           <Link
             href={`/docs/components/${item.name}`}
             key={index}
-            className="sidebaritem block border-b-4 border-r-4 border-black p-4 pl-7 text-lg font-semibold text-black/90 hover:bg-[#bc95d4] m800:p-4 m800:pl-6 m800:text-base"
+            className="sidebaritem block border-b-4 border-r-4 border-black p-4 pl-7 text-lg font-semibold text-black/90 hover:bg-main m800:p-4 m800:pl-6 m800:text-base"
           >
             {item.name}
           </Link>

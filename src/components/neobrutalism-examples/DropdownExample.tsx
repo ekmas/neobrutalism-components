@@ -25,7 +25,7 @@ export default function DropdownExample() {
         onClick={() => {
           setIsActiveDropdown(!isActiveDropdown)
         }}
-        className="flex w-[200px] cursor-pointer items-center rounded-md border-2 border-black bg-[#bc95d4] px-7 py-3 font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
+        className="flex w-[200px] cursor-pointer items-center rounded-md border-2 border-black bg-[#C4A1FF] px-7 py-3 font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
       >
         <div className="mx-auto flex items-center">
           Dropdown
@@ -50,7 +50,7 @@ export default function DropdownExample() {
             <a
               key={index}
               href={item.link}
-              className="block w-full border-b-2 border-black bg-[#bc95d4] px-7 py-3 first:rounded-t-[5px] last:rounded-b-[5px] hover:bg-[#a36ec4]"
+              className="block w-full border-b-2 border-black bg-[#C4A1FF] px-7 py-3 first:rounded-t-[5px] last:rounded-b-[5px] hover:bg-[#a36ec4]"
             >
               {item.name}
             </a>
