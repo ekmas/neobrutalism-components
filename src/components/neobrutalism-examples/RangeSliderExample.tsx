@@ -32,7 +32,6 @@ export default function RangeSliderExample() {
             max={100}
             value={rangeValue}
             onChange={(e) => setRangeValue(+e.target.value)}
-            defaultValue={50}
             className="rangeSlider h-2 w-full cursor-pointer appearance-none rounded-lg border-2 border-black bg-white"
           />
         </div>
