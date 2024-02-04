@@ -45,6 +45,14 @@ export default function MobileDrawer() {
           >
             Installation
           </button>
+          <button
+            onClick={() => {
+              handleLinkClick(`/docs/resources`)
+            }}
+            className="sidebaritem block w-full border-b-4 border-r-4 border-black p-4 pl-7 text-left text-lg font-semibold text-black/90 hover:bg-main m800:p-4 m800:pl-6 m800:text-base"
+          >
+            Resources
+          </button>
           <div className="sidebaritem block border-b-4 border-r-4 border-black p-4 text-xl font-bold m800:p-4 m800:text-base">
             Components
           </div>

@@ -49,8 +49,8 @@ export default function Installation() {
           path: '/docs',
         }}
         next={{
-          name: 'Accordion',
-          path: '/docs/components/Accordion',
+          name: 'Resources',
+          path: '/docs/resources',
         }}
       />
     </>
