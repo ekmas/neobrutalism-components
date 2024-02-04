@@ -12,6 +12,7 @@ import Marquee from '@/components/neobrutalism/Marquee'
 import Modal from '@/components/neobrutalism/Modal'
 import Newsletter from '@/components/neobrutalism/Newsletter'
 import RadioGroup from '@/components/neobrutalism/RadioGroup'
+import RangeSlider from '@/components/neobrutalism/RangeSlider'
 import Select from '@/components/neobrutalism/Select'
 import Tabs from '@/components/neobrutalism/Tabs'
 import Textarea from '@/components/neobrutalism/Textarea'
@@ -31,6 +32,7 @@ import MarqueeExample from '@/components/neobrutalism-examples/MarqueeExample'
 import ModalExample from '@/components/neobrutalism-examples/ModalExample'
 import NewsletterExample from '@/components/neobrutalism-examples/NewsletterExample'
 import RadioGroupExample from '@/components/neobrutalism-examples/RadioGroupExample'
+import RangeSliderExample from '@/components/neobrutalism-examples/RangeSliderExample'
 import SelectExample from '@/components/neobrutalism-examples/SelectExample'
 import TabsExample from '@/components/neobrutalism-examples/TabsExample'
 import TextareaExample from '@/components/neobrutalism-examples/TextareaExample'
@@ -140,13 +142,20 @@ const components: ComponentObj[] = [
     component: RadioGroup,
     exampleComponent: RadioGroupExample,
     prevComponent: 'Newsletter',
+    nextComponent: 'RangeSlider',
+  },
+  {
+    name: 'RangeSlider',
+    component: RangeSlider,
+    exampleComponent: RangeSliderExample,
+    prevComponent: 'RadioGroup',
     nextComponent: 'Select',
   },
   {
     name: 'Select',
     component: Select,
     exampleComponent: SelectExample,
-    prevComponent: 'RadioGroup',
+    prevComponent: 'RangeSlider',
     nextComponent: 'Tabs',
   },
   {
