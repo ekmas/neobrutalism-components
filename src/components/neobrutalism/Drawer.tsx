@@ -42,7 +42,7 @@ export default function Drawer({ active, setActive, children }: Props) {
         style={{
           transform: `translateX(${isVisible ? '0' : '-300px'})`,
         }}
-        className="z-10 h-full w-[300px] border-2 border-black bg-[#bc95d4] font-bold transition-transform duration-300"
+        className="z-10 h-full w-[300px] border-2 border-black bg-[#C4A1FF] font-bold transition-transform duration-300"
       >
         {children}
       </div>
