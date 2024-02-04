@@ -12,7 +12,7 @@ export default function Select({ items }: { items: string[] }) {
   }
 
   return (
-    <div className="relative" role="combobox" aria-expanded={isActiveSelect}>
+    <div className="relative" aria-expanded={isActiveSelect}>
       <button
         onClick={() => {
           setIsActiveSelect(!isActiveSelect)
@@ -46,7 +46,6 @@ export default function Select({ items }: { items: string[] }) {
               onClick={() => {
                 handleItemClick(item)
               }}
-              aria-selected={selectedItem === item}
               className="block w-full border-b-2 border-black bg-[#C4A1FF] px-5 py-3 first:rounded-t-[5px] last:rounded-b-[5px] hover:bg-[#a36ec4]"
             >
               {item}
