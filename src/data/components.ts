@@ -3,7 +3,6 @@ import Alert from '@/components/neobrutalism/Alert'
 import Avatar from '@/components/neobrutalism/Avatar'
 import Badge from '@/components/neobrutalism/Badge'
 import Button from '@/components/neobrutalism/Button'
-import Card from '@/components/neobrutalism/Card'
 import Checkbox from '@/components/neobrutalism/Checkbox'
 import Drawer from '@/components/neobrutalism/Drawer'
 import Dropdown from '@/components/neobrutalism/Dropdown'
@@ -23,7 +22,6 @@ import AlertExample from '@/components/neobrutalism-examples/AlertExample'
 import AvatarExample from '@/components/neobrutalism-examples/AvatarExample'
 import BadgeExample from '@/components/neobrutalism-examples/BadgeExample'
 import ButtonExample from '@/components/neobrutalism-examples/ButtonExample'
-import CardExample from '@/components/neobrutalism-examples/CardExample'
 import CheckboxExample from '@/components/neobrutalism-examples/CheckboxExample'
 import DrawerExample from '@/components/neobrutalism-examples/DrawerExample'
 import DropdownExample from '@/components/neobrutalism-examples/DropdownExample'
@@ -79,20 +77,13 @@ const components: ComponentObj[] = [
     component: Button,
     exampleComponent: ButtonExample,
     prevComponent: 'Badge',
-    nextComponent: 'Card',
-  },
-  {
-    name: 'Card',
-    component: Card,
-    exampleComponent: CardExample,
-    prevComponent: 'Button',
     nextComponent: 'Checkbox',
   },
   {
     name: 'Checkbox',
     component: Checkbox,
     exampleComponent: CheckboxExample,
-    prevComponent: 'Card',
+    prevComponent: 'Button',
     nextComponent: 'Drawer',
   },
   {
