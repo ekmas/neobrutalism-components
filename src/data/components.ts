@@ -16,6 +16,7 @@ import RangeSlider from '@/components/neobrutalism/RangeSlider'
 import Select from '@/components/neobrutalism/Select'
 import Tabs from '@/components/neobrutalism/Tabs'
 import Textarea from '@/components/neobrutalism/Textarea'
+import ToggleSwitch from '@/components/neobrutalism/ToggleSwitch'
 import Tooltip from '@/components/neobrutalism/Tooltip'
 
 import AccordionExample from '@/components/neobrutalism-examples/AccordionExample'
@@ -36,6 +37,7 @@ import RangeSliderExample from '@/components/neobrutalism-examples/RangeSliderEx
 import SelectExample from '@/components/neobrutalism-examples/SelectExample'
 import TabsExample from '@/components/neobrutalism-examples/TabsExample'
 import TextareaExample from '@/components/neobrutalism-examples/TextareaExample'
+import ToggleSwitchExample from '@/components/neobrutalism-examples/ToggleSwitchExample'
 import TooltipExample from '@/components/neobrutalism-examples/TooltIpExample'
 
 type ComponentObj = {
@@ -170,13 +172,20 @@ const components: ComponentObj[] = [
     component: Textarea,
     exampleComponent: TextareaExample,
     prevComponent: 'Tabs',
+    nextComponent: 'ToggleSwitch',
+  },
+  {
+    name: 'ToggleSwitch',
+    component: ToggleSwitch,
+    exampleComponent: ToggleSwitchExample,
+    prevComponent: 'Textarea',
     nextComponent: 'Tooltip',
   },
   {
     name: 'Tooltip',
     component: Tooltip,
     exampleComponent: TooltipExample,
-    prevComponent: 'Textarea',
+    prevComponent: 'ToggleSwitch',
   },
 ]
 
