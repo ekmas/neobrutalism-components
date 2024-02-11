@@ -6,33 +6,44 @@ html {
   scroll-behavior: smooth;
 }
 
-.scrollbar,
-body {
-  scrollbar-width: auto;
-  scrollbar-color: #000000 #ffffff;
+body, .scrollbar {
+  --sb-track-color: #ffffff;
+  --sb-thumb-color: #000000;
+  --sb-size: 16px;
 }
 
-/* Other browsers */
-.scrollbar::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  width: 16px;
+body::-webkit-scrollbar, .scrollbar::-webkit-scrollbar {
+  width: var(--sb-size)
 }
 
-.scrollbar::-webkit-scrollbar-track,
-body::-webkit-scrollbar-track {
-  background: #ffffff;
+body::-webkit-scrollbar-track, .scrollbar::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
 }
 
-.scrollbar::-webkit-scrollbar-thumb,
-body::-webkit-scrollbar-thumb {
-  background-color: #000000;
+body::-webkit-scrollbar-thumb, .scrollbar::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);  
 }
 
-.code {
-  scrollbar-width: 10px !important;
+@supports not selector(::-webkit-scrollbar) {
+  body, .scrollbar {
+    scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
 }
 
 .code::-webkit-scrollbar {
-  width: 10px !important;
-  height: 10px !important;
+  width: 10px;
+  height: 10px;
+}
+
+.code::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.code::-webkit-scrollbar-thumb {
+  background: #808080;  
+}
+
+.code::-webkit-scrollbar-corner{
+  background: transparent;
 }
