@@ -32,6 +32,7 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.11",
     "eslint-config-prettier": "^8.8.0",
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.4.1"
