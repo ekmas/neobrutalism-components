@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@next/mdx": "^14.1.4",
+    "@types/mdx": "^2.0.12",
     "@types/node": "20.4.5",
     "@types/react": "18.2.17",
     "@types/react-dom": "18.2.7",
@@ -28,6 +32,7 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.11",
     "eslint-config-prettier": "^8.8.0",
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.4.1"
