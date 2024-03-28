@@ -6,28 +6,33 @@ html {
   scroll-behavior: smooth;
 }
 
-body, .scrollbar {
+body,
+.scrollbar {
   --sb-track-color: #ffffff;
   --sb-thumb-color: #000000;
   --sb-size: 16px;
 }
 
-body::-webkit-scrollbar, .scrollbar::-webkit-scrollbar {
-  width: var(--sb-size)
+body::-webkit-scrollbar,
+.scrollbar::-webkit-scrollbar {
+  width: var(--sb-size);
 }
 
-body::-webkit-scrollbar-track, .scrollbar::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track,
+.scrollbar::-webkit-scrollbar-track {
   background: var(--sb-track-color);
 }
 
-body::-webkit-scrollbar-thumb, .scrollbar::-webkit-scrollbar-thumb {
-  background: var(--sb-thumb-color);  
+body::-webkit-scrollbar-thumb,
+.scrollbar::-webkit-scrollbar-thumb,
+.code::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
 }
 
 @supports not selector(::-webkit-scrollbar) {
-  body, .scrollbar {
-    scrollbar-color: var(--sb-thumb-color)
-                     var(--sb-track-color);
+  body,
+  .scrollbar {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
   }
 }
 
@@ -40,10 +45,6 @@ body::-webkit-scrollbar-thumb, .scrollbar::-webkit-scrollbar-thumb {
   background: transparent;
 }
 
-.code::-webkit-scrollbar-thumb {
-  background: #808080;  
-}
-
-.code::-webkit-scrollbar-corner{
+.code::-webkit-scrollbar-corner {
   background: transparent;
 }
