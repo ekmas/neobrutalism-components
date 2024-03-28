@@ -21,7 +21,7 @@ export default function SelectExample() {
         }}
         aria-haspopup="listbox"
         aria-labelledby="select-label"
-        className="flex w-[200px] cursor-pointer items-center rounded-md border-2 border-black bg-[#C4A1FF] px-10 py-3 font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
+        className="flex w-[200px] cursor-pointer items-center rounded-md border-2 border-black bg-main px-10 py-3 font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
       >
         <div className="mx-auto flex items-center">
           {selectedItem === null ? 'Select' : selectedItem}
@@ -48,7 +48,7 @@ export default function SelectExample() {
               onClick={() => {
                 handleItemClick(item)
               }}
-              className="block w-full border-b-2 border-black bg-[#C4A1FF] px-5 py-3 first:rounded-t-[5px] last:rounded-b-[5px] hover:bg-[#a36ec4]"
+              className="block w-full border-b-2 border-black bg-main px-5 py-3 first:rounded-t-[5px] last:rounded-b-[5px] hover:bg-mainAccent"
             >
               {item}
             </button>

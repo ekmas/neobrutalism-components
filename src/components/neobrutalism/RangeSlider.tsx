@@ -9,8 +9,8 @@ const styling = `
     height: 25px;
     border: 3px solid black;
     border-radius: 50%;
-    background: #C4A1FF;
     cursor: pointer;
+    background: #fff;
   }
 `
 

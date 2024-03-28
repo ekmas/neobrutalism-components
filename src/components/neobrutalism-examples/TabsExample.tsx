@@ -17,14 +17,13 @@ export default function TabsExample() {
         className="grid w-full"
       >
         {tabsArray.map((tab, index) => {
+          const bg = activeTab === tab ? 'bg-mainAccent' : 'bg-main'
+
           return (
             <button
               key={index}
               onClick={() => setActiveTab(tab)}
-              style={{
-                backgroundColor: activeTab === tab ? '#a36ec4' : '#C4A1FF',
-              }}
-              className="cursor-pointer border-2 border-black px-6 py-3 text-center font-bold transition-colors first:rounded-ss-md last:rounded-se-md m750:px-5 m400:px-2"
+              className={`${bg} cursor-pointer border-2 border-black px-6 py-3 text-center font-bold transition-colors first:rounded-ss-md last:rounded-se-md m750:px-5 m400:px-2`}
             >
               {tab}
             </button>
