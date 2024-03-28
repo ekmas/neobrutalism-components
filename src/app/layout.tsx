@@ -2,6 +2,7 @@ import Navbar from '@/components/app/Navbar'
 import './globals.css'
 import type { Metadata } from 'next'
 import { DM_Sans } from 'next/font/google'
+import SetColorPalette from '@/components/app/SetColorPalette'
 
 const dmSans = DM_Sans({ subsets: ['latin'] })
 
@@ -39,6 +40,7 @@ export default function RootLayout({
         {children}
         <div id="drawer"></div>
         <div id="modal"></div>
+        <SetColorPalette />
       </body>
     </html>
   )
