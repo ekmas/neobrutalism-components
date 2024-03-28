@@ -1,7 +1,13 @@
 'use client'
 import React, { useState } from 'react'
 
-export default function CopyCode({ code }: { code: string }) {
+export default function CopyCode({
+  code,
+  copyBtnText,
+}: {
+  code: string
+  copyBtnText: string
+}) {
   const [isClicked, setIsClicked] = useState(false)
 
   const handleClick = () => {
@@ -25,7 +31,7 @@ export default function CopyCode({ code }: { code: string }) {
       className="mt-5 w-full cursor-pointer rounded-md border-2 border-black bg-main py-3 text-center font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
       onClick={handleClick}
     >
-      {isClicked ? 'Copied to clipboard' : 'Copy this component'}
+      {isClicked ? 'Copied to clipboard' : copyBtnText}
     </button>
   )
 }
