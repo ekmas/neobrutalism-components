@@ -16,12 +16,12 @@ export default function Colors() {
   const defaultColorPalette = {
     bg: '#daf5f0',
     main: '#c4a1ff',
-    mainAccent: '#a36ec4',
+    mainAccent: '#9e66ff',
   }
 
   const [activeColorPallete, setActiveColorPalette] =
     useState<ColorPallette>(defaultColorPalette)
-  const [saveColorsPreference, setSaveColorsPrefernce] = useState<
+  const [saveColorsPreference, setSaveColorsPreference] = useState<
     boolean | null
   >(null)
 
@@ -41,7 +41,7 @@ export default function Colors() {
     const colorObj = JSON.parse(localStorage.getItem('color') as string)
 
     if (colorObj) {
-      setSaveColorsPrefernce(true)
+      setSaveColorsPreference(true)
       setActiveColorPalette(colorObj)
     }
   }, [])
@@ -101,7 +101,7 @@ export default function Colors() {
       <div className="mb-6 flex items-center justify-between">
         <button
           onClick={() => {
-            setSaveColorsPrefernce(
+            setSaveColorsPreference(
               saveColorsPreference === null || saveColorsPreference === false
                 ? true
                 : false,
@@ -123,7 +123,7 @@ export default function Colors() {
           aria-label="Reset colors"
           onClick={() => {
             updateColorPalette(defaultColorPalette)
-            setSaveColorsPrefernce(false)
+            setSaveColorsPreference(false)
           }}
           className="flex cursor-pointer items-center rounded-md border-2 border-black bg-main px-5 py-2 text-sm font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none m400:px-3.5 m400:text-xs"
         >
