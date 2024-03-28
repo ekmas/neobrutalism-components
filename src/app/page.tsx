@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import arrow from '../../public/svgs/arrow.svg'
 import marqueestar from '../../public/svgs/marqueestar.svg'
-import herostar1 from '../../public/svgs/herostar1.svg'
 import herostar2 from '../../public/svgs/herostar2.svg'
 import herogrid from '../../public/svgs/herogrid.svg'
 import Marquee from 'react-fast-marquee'
@@ -29,11 +28,19 @@ export default function Home() {
             alt="arrow"
           />
         </Link>
-        <img
+        <svg
           className="absolute left-[20%] top-[25%] w-[80px] m1500:left-[15%] m1500:top-[20%] m1500:w-[50px] m1100:hidden"
-          src={herostar1.src}
-          alt="hero star 1"
-        />
+          viewBox="0 0 100 100"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M46.9395 14.107L50 4.80124L53.0605 14.107C58.1702 29.6438 70.3562 41.8298 85.893 46.9395L95.1988 50L85.893 53.0605C70.3562 58.1702 58.1702 70.3562 53.0605 85.893L50 95.1988L46.9395 85.893C41.8298 70.3562 29.6438 58.1702 14.107 53.0605L4.80124 50L14.107 46.9395C29.6438 41.8298 41.8298 29.6438 46.9395 14.107Z"
+            className="fill-main"
+            stroke="black"
+            stroke-width="3"
+          />
+        </svg>
+
         <img
           className="absolute bottom-[25%] right-[20%] w-[80px] m1500:bottom-[20%] m1500:right-[15%] m1500:w-[50px] m1100:hidden"
           src={herostar2.src}
