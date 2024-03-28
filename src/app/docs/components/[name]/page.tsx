@@ -50,12 +50,20 @@ export default async function Installation({
   const filePath = `./src/components/neobrutalism/${params.name}.tsx`
 
   const code = await getCode(filePath)
+  let tailwindConfig = null
+
+  if (params.name === 'Marquee') {
+    tailwindConfig = await getCode(
+      './src/components/neobrutalism/Marquee.tailwind.txt',
+    )
+  }
 
   return (
     <>
       <Component
         name={params.name}
         component={code}
+        tailwindConfig={tailwindConfig}
         exampleComponent={<currentComponent.exampleComponent />}
       />
 

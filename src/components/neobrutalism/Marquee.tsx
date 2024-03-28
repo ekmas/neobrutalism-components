@@ -21,28 +21,7 @@ export default function Marquee({ items }: { items: string[] }) {
         })}
       </div>
 
-      {/* must have both of there in order to work */}
+      {/* must have both of these in order to work */}
     </div>
-
-    // add this to tailwind.config.js
-
-    // theme: {
-    //   extend: {
-    //     animation: {
-    //       marquee: "marquee 5s linear infinite",
-    //       marquee2: "marquee2 5s linear infinite",
-    //     },
-    //     keyframes: {
-    //       marquee: {
-    //         "0%": { transform: "translateX(0%)" },
-    //         "100%": { transform: "translateX(-100%)" },
-    //       },
-    //       marquee2: {
-    //         "0%": { transform: "translateX(100%)" },
-    //         "100%": { transform: "translateX(0%)" },
-    //       },
-    //     },
-    //   },
-    // },
   )
 }

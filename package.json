@@ -20,6 +20,7 @@
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
     "fs": "^0.0.1-security",
+    "highlight.js": "^11.9.0",
     "next": "^13.5.4",
     "path": "^0.12.7",
     "postcss": "8.4.27",
@@ -27,7 +28,6 @@
     "react-dom": "18.2.0",
     "react-fast-marquee": "^1.6.3",
     "react-icons": "^4.10.1",
-    "shiki": "^0.14.3",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6"
   },
