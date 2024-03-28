@@ -5,7 +5,7 @@ import 'highlight.js/styles/ascetic.css'
 hljs.registerLanguage('moonscript', moonscript)
 // there's no tsx, and typescript doesn't highlight markup so this is the workaround
 
-const Code = async ({
+const Code = ({
   code,
   name,
   limitedHeight = true,
