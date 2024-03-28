@@ -8,8 +8,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bg: '#DAF5F0',
-        main: '#C4A1FF',
+        bg: 'var(--bg)',
+        main: 'var(--main)',
+        mainAccent: 'var(--main-accent)',
       },
       animation: {
         marquee: 'marquee 5s linear infinite',
