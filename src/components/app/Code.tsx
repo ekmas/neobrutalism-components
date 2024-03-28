@@ -1,7 +1,5 @@
-import { highlight } from '@/lib/shiki'
-
 const Code = async ({ code }: { code: string }) => {
-  const component = await highlight(code)
+  const component = code
 
   return (
     <div
