@@ -37,7 +37,14 @@ export default function Component({
             }
             name={'index.html'}
           />
-          <CopyCode copyBtnText="Copy this tag" code={component} />
+          <CopyCode
+            copyBtnText="Copy this tag"
+            code={
+              name === 'Drawer'
+                ? '<div id="drawer"></div>'
+                : '<div id="modal"></div>'
+            }
+          />
         </div>
       )}
 
@@ -48,7 +55,7 @@ export default function Component({
             code={tailwindConfig}
             name={'tailwind.config.js'}
           />
-          <CopyCode copyBtnText="Copy this config" code={component} />
+          <CopyCode copyBtnText="Copy this config" code={tailwindConfig} />
         </div>
       )}
     </div>
