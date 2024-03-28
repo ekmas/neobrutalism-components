@@ -53,9 +53,5 @@ export default function Modal({ active, setActive, children }: Props) {
       </div>
     </div>,
     document.getElementById('modal') as HTMLElement,
-
-    // don't forget to add
-    // <div id="modal"></div>
-    // to index.html
   )
 }

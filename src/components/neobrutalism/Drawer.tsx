@@ -48,9 +48,5 @@ export default function Drawer({ active, setActive, children }: Props) {
       </div>
     </div>,
     document.getElementById('drawer') as HTMLElement,
-
-    // don't forget to add
-    // <div id="drawer"></div>
-    // to index.html
   )
 }
