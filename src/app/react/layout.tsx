@@ -1,5 +1,5 @@
-import Sidebar, { SidebarLink, SidebarHeader } from '@/components/app/Sidebar'
-import { MAIN_SIDEBAR } from '@/data/sidebar-links'
+import Sidebar, { SidebarHeader, SidebarLink } from '@/components/app/Sidebar'
+import { REACT_SIDEBAR } from '@/data/sidebar-links'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export default function DocsLayout({
   return (
     <>
       <Sidebar>
-        {MAIN_SIDEBAR.map((item, id) => {
+        {REACT_SIDEBAR.map((item, id) => {
           return typeof item === 'string' ? (
             <SidebarHeader text={item} key={id} />
           ) : (
