@@ -1,12 +1,26 @@
 'use client'
 import { useState } from 'react'
 import { FaBars } from 'react-icons/fa'
-import Drawer from '../neobrutalism/Drawer'
-import components from '@/data/components'
+import Drawer from '../react/components/Drawer'
 import { useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
+import {
+  MAIN_SIDEBAR,
+  REACT_SIDEBAR,
+  SHADCN_SIDEBAR,
+} from '@/data/sidebar-links'
 
 export default function MobileDrawer() {
   const router = useRouter()
+  const pathname = usePathname()
+
+  const ACTIVE_SIDEBAR = pathname.includes('/docs')
+    ? MAIN_SIDEBAR
+    : pathname.includes('/react')
+    ? REACT_SIDEBAR
+    : pathname.includes('/shadcn')
+    ? SHADCN_SIDEBAR
+    : MAIN_SIDEBAR
 
   const [isDrawerActive, setIsDrawerActive] = useState(false)
 
@@ -26,54 +40,23 @@ export default function MobileDrawer() {
 
       <Drawer active={isDrawerActive} setActive={setIsDrawerActive}>
         <div className="scrollbar h-full w-full overflow-y-scroll bg-white">
-          <div className="sidebaritem block border-b-4 border-r-4 border-black p-4 text-xl font-bold m800:p-4 m800:text-base">
-            Getting started
-          </div>
-          <button
-            onClick={() => {
-              handleLinkClick('/docs')
-            }}
-            className="sidebaritem block w-full border-b-4 border-r-4 border-black p-4 pl-7 text-left text-lg font-semibold text-black/90 hover:bg-main m800:p-4 m800:pl-6 m800:text-base"
-          >
-            Introduction
-          </button>
-          <button
-            onClick={() => {
-              handleLinkClick(`/docs/installation`)
-            }}
-            className="sidebaritem block w-full border-b-4 border-r-4 border-black p-4 pl-7 text-left text-lg font-semibold text-black/90 hover:bg-main m800:p-4 m800:pl-6 m800:text-base"
-          >
-            Installation
-          </button>
-          <button
-            onClick={() => {
-              handleLinkClick(`/docs/colors`)
-            }}
-            className="sidebaritem block w-full border-b-4 border-r-4 border-black p-4 pl-7 text-left text-lg font-semibold text-black/90 hover:bg-main m800:p-4 m800:pl-6 m800:text-base"
-          >
-            Colors
-          </button>
-          <button
-            onClick={() => {
-              handleLinkClick(`/docs/resources`)
-            }}
-            className="sidebaritem block w-full border-b-4 border-r-4 border-black p-4 pl-7 text-left text-lg font-semibold text-black/90 hover:bg-main m800:p-4 m800:pl-6 m800:text-base"
-          >
-            Resources
-          </button>
-          <div className="sidebaritem block border-b-4 border-r-4 border-black p-4 text-xl font-bold m800:p-4 m800:text-base">
-            Components
-          </div>
-          {components.map((item, index) => {
-            return (
+          {ACTIVE_SIDEBAR.map((item, id) => {
+            return typeof item === 'string' ? (
+              <div
+                key={id}
+                className="sidebaritem block border-b-4 border-r-4 border-black p-4 text-xl font-bold m800:p-4 m800:text-base"
+              >
+                {item}
+              </div>
+            ) : (
               <button
+                key={id}
                 onClick={() => {
-                  handleLinkClick(`/docs/components/${item.name}`)
+                  handleLinkClick(item.href)
                 }}
-                key={index}
                 className="sidebaritem block w-full border-b-4 border-r-4 border-black p-4 pl-7 text-left text-lg font-semibold text-black/90 hover:bg-main m800:p-4 m800:pl-6 m800:text-base"
               >
-                {item.name}
+                {item.text}
               </button>
             )
           })}
