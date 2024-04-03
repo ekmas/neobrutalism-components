@@ -1,4 +1,4 @@
-import components from '@/data/components'
+import components from '@/data/components/react'
 import fs from 'fs'
 import path from 'path'
 import { promisify } from 'util'
@@ -47,14 +47,14 @@ export default async function Installation({
     redirect('/docs')
   }
 
-  const filePath = `./src/components/neobrutalism/${params.name}.tsx`
+  const filePath = `./src/components/react/components/${params.name}.tsx`
 
   const code = await getCode(filePath)
   let tailwindConfig = null
 
   if (params.name === 'Marquee') {
     tailwindConfig = await getCode(
-      './src/components/neobrutalism/Marquee.tailwind.txt',
+      './src/components/react/components/Marquee.tailwind.txt',
     )
   }
 
