@@ -1,44 +1,44 @@
-import Accordion from '@/components/neobrutalism/Accordion'
-import Alert from '@/components/neobrutalism/Alert'
-import Avatar from '@/components/neobrutalism/Avatar'
-import Badge from '@/components/neobrutalism/Badge'
-import Button from '@/components/neobrutalism/Button'
-import Checkbox from '@/components/neobrutalism/Checkbox'
-import Drawer from '@/components/neobrutalism/Drawer'
-import Dropdown from '@/components/neobrutalism/Dropdown'
-import ImageCard from '@/components/neobrutalism/ImageCard'
-import Input from '@/components/neobrutalism/Input'
-import Marquee from '@/components/neobrutalism/Marquee'
-import Modal from '@/components/neobrutalism/Modal'
-import Newsletter from '@/components/neobrutalism/Newsletter'
-import RadioGroup from '@/components/neobrutalism/RadioGroup'
-import RangeSlider from '@/components/neobrutalism/RangeSlider'
-import Select from '@/components/neobrutalism/Select'
-import Tabs from '@/components/neobrutalism/Tabs'
-import Textarea from '@/components/neobrutalism/Textarea'
-import ToggleSwitch from '@/components/neobrutalism/ToggleSwitch'
-import Tooltip from '@/components/neobrutalism/Tooltip'
+import Accordion from '@/components/react/components/Accordion'
+import Alert from '@/components/react/components/Alert'
+import Avatar from '@/components/react/components/Avatar'
+import Badge from '@/components/react/components/Badge'
+import Button from '@/components/react/components/Button'
+import Checkbox from '@/components/react/components/Checkbox'
+import Drawer from '@/components/react/components/Drawer'
+import Dropdown from '@/components/react/components/Dropdown'
+import ImageCard from '@/components/react/components/ImageCard'
+import Input from '@/components/react/components/Input'
+import Marquee from '@/components/react/components/Marquee'
+import Modal from '@/components/react/components/Modal'
+import Newsletter from '@/components/react/components/Newsletter'
+import RadioGroup from '@/components/react/components/RadioGroup'
+import RangeSlider from '@/components/react/components/RangeSlider'
+import Select from '@/components/react/components/Select'
+import Tabs from '@/components/react/components/Tabs'
+import Textarea from '@/components/react/components/Textarea'
+import ToggleSwitch from '@/components/react/components/ToggleSwitch'
+import Tooltip from '@/components/react/components/Tooltip'
 
-import AccordionExample from '@/components/neobrutalism-examples/AccordionExample'
-import AlertExample from '@/components/neobrutalism-examples/AlertExample'
-import AvatarExample from '@/components/neobrutalism-examples/AvatarExample'
-import BadgeExample from '@/components/neobrutalism-examples/BadgeExample'
-import ButtonExample from '@/components/neobrutalism-examples/ButtonExample'
-import CheckboxExample from '@/components/neobrutalism-examples/CheckboxExample'
-import DrawerExample from '@/components/neobrutalism-examples/DrawerExample'
-import DropdownExample from '@/components/neobrutalism-examples/DropdownExample'
-import ImageCardExample from '@/components/neobrutalism-examples/ImageCardExample'
-import InputExample from '@/components/neobrutalism-examples/InputExample'
-import MarqueeExample from '@/components/neobrutalism-examples/MarqueeExample'
-import ModalExample from '@/components/neobrutalism-examples/ModalExample'
-import NewsletterExample from '@/components/neobrutalism-examples/NewsletterExample'
-import RadioGroupExample from '@/components/neobrutalism-examples/RadioGroupExample'
-import RangeSliderExample from '@/components/neobrutalism-examples/RangeSliderExample'
-import SelectExample from '@/components/neobrutalism-examples/SelectExample'
-import TabsExample from '@/components/neobrutalism-examples/TabsExample'
-import TextareaExample from '@/components/neobrutalism-examples/TextareaExample'
-import ToggleSwitchExample from '@/components/neobrutalism-examples/ToggleSwitchExample'
-import TooltipExample from '@/components/neobrutalism-examples/TooltIpExample'
+import AccordionExample from '@/components/react/examples/AccordionExample'
+import AlertExample from '@/components/react/examples/AlertExample'
+import AvatarExample from '@/components/react/examples/AvatarExample'
+import BadgeExample from '@/components/react/examples/BadgeExample'
+import ButtonExample from '@/components/react/examples/ButtonExample'
+import CheckboxExample from '@/components/react/examples/CheckboxExample'
+import DrawerExample from '@/components/react/examples/DrawerExample'
+import DropdownExample from '@/components/react/examples/DropdownExample'
+import ImageCardExample from '@/components/react/examples/ImageCardExample'
+import InputExample from '@/components/react/examples/InputExample'
+import MarqueeExample from '@/components/react/examples/MarqueeExample'
+import ModalExample from '@/components/react/examples/ModalExample'
+import NewsletterExample from '@/components/react/examples/NewsletterExample'
+import RadioGroupExample from '@/components/react/examples/RadioGroupExample'
+import RangeSliderExample from '@/components/react/examples/RangeSliderExample'
+import SelectExample from '@/components/react/examples/SelectExample'
+import TabsExample from '@/components/react/examples/TabsExample'
+import TextareaExample from '@/components/react/examples/TextareaExample'
+import ToggleSwitchExample from '@/components/react/examples/ToggleSwitchExample'
+import TooltipExample from '@/components/react/examples/TooltIpExample'
 
 type ComponentObj = {
   name: string
@@ -48,7 +48,7 @@ type ComponentObj = {
   nextComponent?: string
 }
 
-const components: ComponentObj[] = [
+const REACT_COMPONENTS: ComponentObj[] = [
   {
     name: 'Accordion',
     component: Accordion,
@@ -189,4 +189,4 @@ const components: ComponentObj[] = [
   },
 ]
 
-export default components
+export default REACT_COMPONENTS
