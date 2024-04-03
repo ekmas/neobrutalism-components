@@ -1,4 +1,4 @@
-import RadioGroup from '../neobrutalism/RadioGroup'
+import RadioGroup from '../components/RadioGroup'
 
 export default function RadioGroupExample() {
   return (

@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import Modal from '../neobrutalism/Modal'
+import Modal from '../components/Modal'
 
 export default function ModalExample() {
   const [isModalActive, setIsModalActive] = useState(false)

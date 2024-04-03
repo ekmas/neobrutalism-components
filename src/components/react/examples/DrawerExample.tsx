@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import Drawer from '../neobrutalism/Drawer'
+import Drawer from '../components/Drawer'
 
 export default function DrawerExample() {
   const [isDrawerActive, setIsDrawerActive] = useState(false)

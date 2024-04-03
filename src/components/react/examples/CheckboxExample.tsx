@@ -1,4 +1,4 @@
-import Checkbox from '../neobrutalism/Checkbox'
+import Checkbox from '../components/Checkbox'
 
 export default function CheckboxExample() {
   return (
