@@ -6,6 +6,7 @@ import CopyCode from './CopyCode'
 type Props = {
   name: string
   component: string
+  codeSnippetName: string
   exampleComponent: JSX.Element
   tailwindConfig: string | null
 }
@@ -13,17 +14,18 @@ type Props = {
 export default function Component({
   name,
   component,
+  codeSnippetName,
   exampleComponent,
   tailwindConfig,
 }: Props) {
-  const indexHtml = name === 'Drawer' || name === 'Modal'
+  const indexHtml = codeSnippetName === 'Drawer' || codeSnippetName === 'Modal'
 
   return (
     <div id={name} className="m400:text-sm">
       <h2 className="mb-5 text-2xl font-bold m400:text-xl">{name}</h2>
 
       <ComponentWrapper>{exampleComponent}</ComponentWrapper>
-      <Code code={component} name={name + '.tsx'} />
+      <Code code={component} name={codeSnippetName + '.tsx'} />
       <CopyCode copyBtnText="Copy this component" code={component} />
 
       {indexHtml && (
@@ -31,7 +33,7 @@ export default function Component({
           <Code
             limitedHeight={false}
             code={
-              name === 'Drawer'
+              codeSnippetName === 'Drawer'
                 ? '<div id="drawer"></div>'
                 : '<div id="modal"></div>'
             }
@@ -40,7 +42,7 @@ export default function Component({
           <CopyCode
             copyBtnText="Copy this tag"
             code={
-              name === 'Drawer'
+              codeSnippetName === 'Drawer'
                 ? '<div id="drawer"></div>'
                 : '<div id="modal"></div>'
             }

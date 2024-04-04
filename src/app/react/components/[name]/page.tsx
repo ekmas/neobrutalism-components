@@ -5,6 +5,7 @@ import { promisify } from 'util'
 import Component from '@/components/app/Component'
 import { redirect } from 'next/navigation'
 import Pagination from '@/components/app/Pagination'
+import { addSpaces } from '@/lib/utils'
 
 const readFilePath = async (filePath: string) => {
   const readFile = promisify(fs.readFile)
@@ -44,7 +45,7 @@ export default async function Installation({
   )
 
   if (!currentComponent) {
-    redirect('/docs')
+    redirect('/react/installation')
   }
 
   const filePath = `./src/components/react/components/${params.name}.tsx`
@@ -61,8 +62,9 @@ export default async function Installation({
   return (
     <>
       <Component
-        name={params.name}
+        name={currentComponent.name}
         component={code}
+        codeSnippetName={currentComponent.name}
         tailwindConfig={tailwindConfig}
         exampleComponent={<currentComponent.exampleComponent />}
       />
@@ -71,16 +73,16 @@ export default async function Installation({
         prev={
           currentComponent.prevComponent
             ? {
-                name: `${currentComponent.prevComponent}`,
-                path: `/docs/components/${currentComponent.prevComponent}`,
+                name: `${addSpaces(currentComponent.prevComponent)}`,
+                path: `/react/components/${currentComponent.prevComponent}`,
               }
             : undefined
         }
         next={
           currentComponent.nextComponent
             ? {
-                name: `${currentComponent.nextComponent}`,
-                path: `/docs/components/${currentComponent.nextComponent}`,
+                name: `${addSpaces(currentComponent.nextComponent)}`,
+                path: `/react/components/${currentComponent.nextComponent}`,
               }
             : undefined
         }
