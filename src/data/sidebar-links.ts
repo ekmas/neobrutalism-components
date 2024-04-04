@@ -1,7 +1,14 @@
+import { addSpaces } from '@/lib/utils'
+
 import REACT_COMPONENTS from './components/react'
+import SHADCN_COMPONENTS from './components/shadcn'
 
 const REACT_LINKS = REACT_COMPONENTS.map((component) => {
-  return { href: `/react/components/${component.name}`, text: component.name }
+  return { href: `/react/components/${component.name}`, text: addSpaces(component.name) }
+})
+
+const SHADCN_LINKS = SHADCN_COMPONENTS.map((component) => {
+  return { href: `/shadcn/components/${component.url}`, text: component.name }
 })
 
 const MAIN_SIDEBAR = [
@@ -45,6 +52,8 @@ const SHADCN_SIDEBAR = [
     href: '/shadcn/installation',
     text: 'Installation',
   },
+  'Components',
+  ...SHADCN_LINKS,
 ]
 
 export { MAIN_SIDEBAR, REACT_SIDEBAR, SHADCN_SIDEBAR }
