@@ -12,10 +12,6 @@ module.exports = {
         main: 'var(--main)',
         mainAccent: 'var(--main-accent)',
       },
-      animation: {
-        marquee: 'marquee 5s linear infinite',
-        marquee2: 'marquee2 5s linear infinite',
-      },
       keyframes: {
         marquee: {
           '0%': { transform: 'translateX(0%)' },
@@ -25,6 +21,28 @@ module.exports = {
           '0%': { transform: 'translateX(100%)' },
           '100%': { transform: 'translateX(0%)' },
         },
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "caret-blink": {
+          "0%,70%,100%": { opacity: "1" },
+          "20%,50%": { opacity: "0" },
+        },
+      },
+      animation: {
+        marquee: 'marquee 5s linear infinite',
+        marquee2: 'marquee2 5s linear infinite',
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+        "caret-blink": "caret-blink 1.25s ease-out infinite",
+      },
+      borderRadius: {
+        base: "10px",
       },
       screens: {
         m1500: { raw: '(max-width: 1500px)' },
@@ -46,5 +64,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [require('@tailwindcss/typography'), require('tailwindcss-animate')],
 }
