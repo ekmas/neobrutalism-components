@@ -54,7 +54,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 export default function NavigationMenuDemo() {
   return (
-    <NavigationMenu className="m750:max-w-[300px]">
+    <NavigationMenu className="z-[5] m750:max-w-[300px]">
       <NavigationMenuList className="m750:max-w-[300px]">
         <NavigationMenuItem>
           <NavigationMenuTrigger className="m750:max-w-[80px] m750:text-xs">
