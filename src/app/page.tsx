@@ -14,11 +14,11 @@ export default function Home() {
         </h1>
 
         <p className="mb-[50px] mt-[30px] text-2xl m800:text-lg m400:text-base">
-          A collection of type-safe components written in React and Tailwind
+          A collection of neobrutalism-styled Tailwind components.
         </p>
 
         <Link
-          className="flex items-center rounded-md border-2 border-black bg-main px-10 py-3 text-[22px] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none m800:px-8 m800:py-2.5 m800:text-lg m400:px-6 m400:py-2 m400:text-base"
+          className="flex items-center rounded-base border-2 border-black bg-main px-10 py-3 text-[22px] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none m800:px-8 m800:py-2.5 m800:text-lg m400:px-6 m400:py-2 m400:text-base"
           href={'/docs'}
         >
           Read the docs
@@ -37,7 +37,7 @@ export default function Home() {
             d="M46.9395 14.107L50 4.80124L53.0605 14.107C58.1702 29.6438 70.3562 41.8298 85.893 46.9395L95.1988 50L85.893 53.0605C70.3562 58.1702 58.1702 70.3562 53.0605 85.893L50 95.1988L46.9395 85.893C41.8298 70.3562 29.6438 58.1702 14.107 53.0605L4.80124 50L14.107 46.9395C29.6438 41.8298 41.8298 29.6438 46.9395 14.107Z"
             className="fill-main"
             stroke="black"
-            stroke-width="3"
+            strokeWidth="3"
           />
         </svg>
 
@@ -54,9 +54,9 @@ export default function Home() {
         >
           {Array(15)
             .fill('xd')
-            .map((item: any) => {
+            .map((id) => {
               return (
-                <>
+                <div className="flex items-center" key={id}>
                   <span className="text-bold mx-10 text-4xl m750:text-2xl m500:text-xl">
                     Neobrutalism components
                   </span>
@@ -65,7 +65,7 @@ export default function Home() {
                     src={marqueestar.src}
                     alt="marquee star"
                   />
-                </>
+                </div>
               )
             })}
         </Marquee>
@@ -105,8 +105,7 @@ export default function Home() {
             </h2>
 
             <p className="text-2xl m1300:text-xl m800:text-lg m500:text-base">
-              As you don&apos;t have to install anything, you can easily
-              customize these components to suit your needs.
+              You can easily customize these components to suit your needs.
             </p>
           </section>
         </div>
@@ -116,9 +115,9 @@ export default function Home() {
         >
           {Array(15)
             .fill('xd')
-            .map((item: any) => {
+            .map((id) => {
               return (
-                <>
+                <div className="flex items-center" key={id}>
                   <span className="text-bold mx-10 text-4xl m750:text-2xl m500:text-xl">
                     Neobrutalism components
                   </span>
@@ -127,7 +126,7 @@ export default function Home() {
                     src={marqueestar.src}
                     alt="marquee star"
                   />
-                </>
+                </div>
               )
             })}
         </Marquee>
@@ -140,7 +139,7 @@ export default function Home() {
           </h2>
 
           <Link
-            className="mt-[50px] flex items-center rounded-md border-2 border-black bg-white px-10 py-3 text-[22px] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none m800:px-8 m800:py-2.5 m800:text-lg m400:px-6 m400:py-2 m400:text-base"
+            className="mt-[50px] flex items-center rounded-base border-2 border-black bg-white px-10 py-3 text-[22px] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none m800:px-8 m800:py-2.5 m800:text-lg m400:px-6 m400:py-2 m400:text-base"
             href={'/docs'}
           >
             Read the docs
