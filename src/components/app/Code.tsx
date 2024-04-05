@@ -17,15 +17,15 @@ const Code = ({
   const component = hljs.highlight(code, { language: 'moonscript' }).value
 
   return (
-    <div className="mt-5 rounded-md border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-      <div className="rounded-t-md border-b-2 border-black bg-white p-1 px-3">
+    <div className="mt-5 rounded-base border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+      <div className="rounded-t-base border-b-2 border-black bg-white p-1 px-3">
         {name}
       </div>
       <pre>
         <code>
           <div
             style={{ height: limitedHeight ? '300px' : 'unset' }}
-            className="code w-max-[700px] scrollbar overflow-x-auto bg-white p-5 text-sm  m1000:w-[500px] m750:h-[180px] m750:w-[350px] m400:w-full m400:text-xs"
+            className="code w-max-[700px] scrollbar overflow-x-auto rounded-base bg-white p-5 text-sm  m1000:w-[500px] m750:h-[180px] m750:w-[350px] m400:w-full m400:text-xs"
             dangerouslySetInnerHTML={{ __html: component }}
           />
         </code>

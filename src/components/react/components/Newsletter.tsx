@@ -11,11 +11,11 @@ export default function Newsletter() {
   return (
     <form
       onSubmit={signUpForNewsletter}
-      className="flex w-min items-center rounded-md border-2 border-black font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+      className="flex w-min items-center rounded-base border-2 border-black font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
       role="form"
     >
       <input
-        className="w-[30ch] rounded-md p-[10px] outline-none"
+        className="w-[30ch] rounded-base p-[10px] outline-none"
         type="text"
         name="email"
         id="email"

@@ -13,7 +13,7 @@ export default function Tabs({ tabsArray, activeTab, setActiveTab }: Props) {
           .map((tab: any) => '1fr')
           .join(' '),
       }}
-      className="grid w-[500px] rounded-md"
+      className="grid w-[500px] rounded-base"
     >
       {tabsArray.map((tab, index) => {
         const bg = activeTab === tab ? 'bg-mainAccent' : 'bg-main'
@@ -22,7 +22,7 @@ export default function Tabs({ tabsArray, activeTab, setActiveTab }: Props) {
           <button
             key={index}
             onClick={() => setActiveTab(tab)}
-            className={`cursor-pointer border-2 border-black px-6 py-3 text-center font-bold transition-colors first:rounded-ss-md last:rounded-se-md ${bg}`}
+            className={`cursor-pointer border-2 border-black px-6 py-3 text-center font-bold transition-colors first:rounded-ss-base last:rounded-se-base ${bg}`}
           >
             {tab}
           </button>
