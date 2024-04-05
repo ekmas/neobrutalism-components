@@ -2,6 +2,7 @@ import React from 'react'
 import Code from './Code'
 import ComponentWrapper from './ComponentWrapper'
 import CopyCode from './CopyCode'
+import { SquareArrowOutUpRight } from 'lucide-react'
 
 type Props = {
   name: string
@@ -9,6 +10,7 @@ type Props = {
   codeSnippetName: string
   exampleComponent: JSX.Element
   tailwindConfig: string | null
+  docsLink?: string
 }
 
 export default function Component({
@@ -17,12 +19,24 @@ export default function Component({
   codeSnippetName,
   exampleComponent,
   tailwindConfig,
+  docsLink,
 }: Props) {
   const indexHtml = codeSnippetName === 'Drawer' || codeSnippetName === 'Modal'
 
   return (
-    <div id={name} className="m400:text-sm">
+    <div id={name} className="not-prose m400:text-sm">
       <h2 className="mb-5 text-2xl font-bold m400:text-xl">{name}</h2>
+
+      {docsLink && (
+        <a
+          className="mb-5 flex w-max items-center gap-3 rounded-base border-2 border-black bg-main px-2 py-0.5 text-[13px]"
+          target="_blank"
+          href={docsLink}
+        >
+          shadcn docs
+          <SquareArrowOutUpRight size={16} />
+        </a>
+      )}
 
       <ComponentWrapper>{exampleComponent}</ComponentWrapper>
       <Code code={component} name={codeSnippetName + '.tsx'} />

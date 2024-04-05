@@ -56,10 +56,13 @@ export default async function Installation({
     <>
       <Component
         name={currentComponent.name}
-        codeSnippetName={transformToSlug(currentComponent.url)}
+        codeSnippetName={
+          'components/ui/' + transformToSlug(currentComponent.url)
+        }
         component={code}
         tailwindConfig={null}
         exampleComponent={<currentComponent.exampleComponent />}
+        docsLink={`https://ui.shadcn.com/docs/components/${currentComponent.url}`}
       />
 
       <Pagination
