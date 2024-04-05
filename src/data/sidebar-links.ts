@@ -4,7 +4,10 @@ import REACT_COMPONENTS from './components/react'
 import SHADCN_COMPONENTS from './components/shadcn'
 
 const REACT_LINKS = REACT_COMPONENTS.map((component) => {
-  return { href: `/react/components/${component.name}`, text: addSpaces(component.name) }
+  return {
+    href: `/react/components/${component.name}`,
+    text: addSpaces(component.name),
+  }
 })
 
 const SHADCN_LINKS = SHADCN_COMPONENTS.map((component) => {
@@ -18,8 +21,8 @@ const MAIN_SIDEBAR = [
     text: 'Introduction',
   },
   {
-    href: '/docs/colors',
-    text: 'Colors',
+    href: '/docs/styling',
+    text: 'Styling',
   },
   {
     href: '/docs/resources',
