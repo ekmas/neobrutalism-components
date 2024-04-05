@@ -6,7 +6,7 @@
 
 ## Introduction
 
-Neobrutalism components is a collection of type-safe components written in React and Tailwind.
+Neobrutalism components are a collection of Tailwind components for React and Shadcn UI.
 
 ## Documentation
 
