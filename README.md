@@ -10,18 +10,22 @@ Neobrutalism components are a collection of Tailwind components for React and Sh
 
 ## Documentation
 
-Click [here](https://neobrutalism-components.vercel.app/docs) to get started.
+Visit [docs](https://neobrutalism-components.vercel.app/docs) to get started.
 
 ## About 
 
-I created this collection of components for people who want to learn more about neobrutalism style.
+I created this collection of components for people who want to learn more about neobrutalism style and to help them get started with creating neobrutalism layouts.
 
 Inspired by [ui-snippets](https://ui.ibelick.com/)
 
-## Future of this project
+## Todo
 
-I think that's pretty much it for now. I doubt I will continue working on this project unless I get some new ideas. <br />
-If you have any ideas about what I should add or fix, don't hesitate to open an issue, and we can talk about it. Thanks.
+- [x]  Add React components
+- [x]  Add custom themes
+- [x]  Add Shadcn UI components
+- [ ]  Add more themes/improve theme customization(e.g. custom box shadow)
+- [ ]  Add examples
+- [ ]  Add components for more react ui libs (headless ui, react aria)
 
 ## License
 
