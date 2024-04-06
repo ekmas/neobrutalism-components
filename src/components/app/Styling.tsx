@@ -176,6 +176,7 @@ borderRadius: {
           aria-label="Reset colors"
           onClick={() => {
             updateColorPalette(defaultColorPalette)
+            updateBorderRadius([5])
             setSaveStylingPreference(false)
           }}
           className="flex cursor-pointer items-center rounded-base border-2 border-black bg-main px-5 py-2 text-sm font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none m400:px-3.5 m400:text-xs"
