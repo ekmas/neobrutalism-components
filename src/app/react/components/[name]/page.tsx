@@ -21,7 +21,7 @@ const getCode = async (filePath: string) => {
   const code = await readFilePath(filePath)
 
   if (code.includes("'use client'")) {
-    return code.slice(13)
+    return code.slice(14)
   }
 
   // if component has use client in it we will remove it because these are react components, not nextjs components
