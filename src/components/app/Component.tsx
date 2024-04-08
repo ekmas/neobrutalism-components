@@ -1,8 +1,8 @@
-import React from 'react'
-import Code from './Code'
-import ComponentWrapper from './ComponentWrapper'
-import CopyCode from './CopyCode'
 import { SquareArrowOutUpRight } from 'lucide-react'
+
+import Code from '@/components/app/Code'
+import ComponentWrapper from '@/components/app/ComponentWrapper'
+import CopyCode from '@/components/app/CopyCode'
 
 type Props = {
   name: string

@@ -1,8 +1,10 @@
-import Link from 'next/link'
-import { FaXTwitter } from 'react-icons/fa6'
 import { AiFillGithub } from 'react-icons/ai'
-import MobileDrawer from './MobileDrawer'
-import NavDropdown from './NavDropdown'
+import { FaXTwitter } from 'react-icons/fa6'
+
+import Link from 'next/link'
+
+import MobileDrawer from '@/components/app/MobileDrawer'
+import NavDropdown from '@/components/app/NavDropdown'
 
 function Navbar() {
   return (

@@ -1,9 +1,11 @@
-import Link from 'next/link'
-import arrow from '../../public/svgs/arrow.svg'
-import marqueestar from '../../public/svgs/marqueestar.svg'
-import herostar2 from '../../public/svgs/herostar2.svg'
-import herogrid from '../../public/svgs/herogrid.svg'
 import Marquee from 'react-fast-marquee'
+
+import Link from 'next/link'
+
+import arrow from '../../public/svgs/arrow.svg'
+import herogrid from '../../public/svgs/herogrid.svg'
+import herostar2 from '../../public/svgs/herostar2.svg'
+import marqueestar from '../../public/svgs/marqueestar.svg'
 
 export default function Home() {
   return (

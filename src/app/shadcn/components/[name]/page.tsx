@@ -1,10 +1,14 @@
-import components from '@/data/components/shadcn'
 import fs from 'fs'
 import path from 'path'
 import { promisify } from 'util'
-import Component from '@/components/app/Component'
+
 import { redirect } from 'next/navigation'
+
+import components from '@/data/components/shadcn'
+
+import Component from '@/components/app/Component'
 import Pagination from '@/components/app/Pagination'
+
 import { transformToName, transformToSlug } from '@/lib/utils'
 
 const readFilePath = async (filePath: string) => {
@@ -16,8 +20,8 @@ const readFilePath = async (filePath: string) => {
 const getCode = async (filePath: string) => {
   const code = await readFilePath(filePath)
 
-  if (code.includes("'use client'" || '"use client"')) {
-    return code.slice(13)
+  if (code.includes("'use client'")) {
+    return code.slice(14)
   }
 
   // if component has use client in it we will remove it because these are react components, not nextjs components

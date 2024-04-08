@@ -1,14 +1,12 @@
 'use client'
 
 import clsx from 'clsx'
-import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
-import { useRouter } from 'next/navigation'
+
+import { useState } from 'react'
 import Link from 'next/link'
 
 export default function NavDropdown() {
-  const router = useRouter()
-
   const [isOpen, setIsOpen] = useState(false)
 
   return (
