@@ -5,11 +5,8 @@ import { ChevronDown } from 'lucide-react'
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 
 export default function NavDropdown() {
-  const router = useRouter()
-
   const [isOpen, setIsOpen] = useState(false)
 
   return (
