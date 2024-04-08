@@ -2,6 +2,8 @@
 
 import { useState } from 'react'
 
+import { Button } from '@/components//ui/button'
+
 export default function CopyCode({
   code,
   copyBtnText,
@@ -28,11 +30,11 @@ export default function CopyCode({
   }
 
   return (
-    <button
-      className="mt-5 w-full cursor-pointer rounded-base border-2 border-black bg-main py-3 text-center font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none m400:py-2 m400:text-sm"
+    <Button
+      className="w-full py-3 mt-5 m400:py-2 text-base h-[unset] m400:text-sm"
       onClick={handleClick}
     >
       {isClicked ? 'Copied to clipboard' : copyBtnText}
-    </button>
+    </Button>
   )
 }

@@ -4,6 +4,8 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 
 import { useRouter } from 'next/navigation'
 
+import { Button } from '@/components/ui/button'
+
 type Props = {
   prev?: {
     name: string
@@ -31,27 +33,27 @@ export default function Pagination({ prev, next }: Props) {
   return (
     <div className={`${justifyContent} mt-12 flex w-full items-center`}>
       {prev?.name && (
-        <button
-          className="flex cursor-pointer items-center rounded-base border-2 border-black bg-main px-5 py-2 text-sm font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none m400:px-3.5 m400:text-xs"
+        <Button
+          className="px-5 py-2 h-[unset] m400:px-3.5 m400:text-xs"
           onClick={() => {
             router.push(prev.path)
           }}
         >
           <FaArrowLeft className="mr-2" />
           {prev.name}
-        </button>
+        </Button>
       )}
 
       {next?.name && (
-        <button
-          className="flex cursor-pointer items-center rounded-base border-2 border-black bg-main px-5 py-2 text-sm font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none m400:px-3.5 m400:text-xs"
+        <Button
+          className="px-5 py-2 h-[unset] m400:px-3.5 m400:text-xs"
           onClick={() => {
             router.push(next.path)
           }}
         >
           {next.name}
           <FaArrowRight className="ml-2" />
-        </button>
+        </Button>
       )}
     </div>
   )
