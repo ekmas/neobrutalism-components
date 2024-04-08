@@ -15,6 +15,7 @@ module.exports = {
     '',
     '^@/data/(.*)$',
     '',
+    '^@/layouts/(.*)$',
     '^@/components/(.*)$',
     '',
     '^@/app/(.*)$',
