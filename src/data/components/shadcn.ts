@@ -1,6 +1,6 @@
 import AccordionDemo from '@/components/shadcn/examples/accordion'
-import AlertDialogDemo from '@/components/shadcn/examples/alert-dialog'
 import AlertDemo from '@/components/shadcn/examples/alert'
+import AlertDialogDemo from '@/components/shadcn/examples/alert-dialog'
 import AvatarDemo from '@/components/shadcn/examples/avatar'
 import BadgeDemo from '@/components/shadcn/examples/badge'
 import BreadcrumbDemo from '@/components/shadcn/examples/breadcrumb'
@@ -13,15 +13,15 @@ import CollapsibleDemo from '@/components/shadcn/examples/collapsible'
 import ComboboxDemo from '@/components/shadcn/examples/combobox'
 import CommandDemo from '@/components/shadcn/examples/command'
 import ContextMenuDemo from '@/components/shadcn/examples/context-menu'
-import DatePickerDemo from '@/components/shadcn/examples/date-picker'
 import DataTableDemo from '@/components/shadcn/examples/data-table'
+import DatePickerDemo from '@/components/shadcn/examples/date-picker'
 import DialogDemo from '@/components/shadcn/examples/dialog'
 import DrawerDemo from '@/components/shadcn/examples/drawer'
 import DropdownMenuDemo from '@/components/shadcn/examples/dropdown-menu'
 import FormDemo from '@/components/shadcn/examples/form'
 import HoverCardDemo from '@/components/shadcn/examples/hover-card'
-import InputOTPDemo from '@/components/shadcn/examples/input-otp'
 import InputDemo from '@/components/shadcn/examples/input'
+import InputOTPDemo from '@/components/shadcn/examples/input-otp'
 import LabelDemo from '@/components/shadcn/examples/label'
 import MenubarDemo from '@/components/shadcn/examples/menubar'
 import NavigationMenuDemo from '@/components/shadcn/examples/navigation-menu'
@@ -350,6 +350,6 @@ const SHADCN_COMPONENTS: Component[] = [
     exampleComponent: TooltipDemo,
     prevComponent: 'toast',
   },
-];
+]
 
 export default SHADCN_COMPONENTS

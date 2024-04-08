@@ -1,10 +1,11 @@
+import React from 'react'
+
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot,
 } from '@/components/ui/input-otp'
-import React from 'react'
 
 export default function InputOTPDemo() {
   return (

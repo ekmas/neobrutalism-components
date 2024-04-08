@@ -1,6 +1,8 @@
-import Sidebar, { SidebarLink, SidebarHeader } from '@/components/app/Sidebar'
-import { MAIN_SIDEBAR } from '@/data/sidebar-links'
 import { Metadata } from 'next'
+
+import { MAIN_SIDEBAR } from '@/data/sidebar-links'
+
+import Sidebar, { SidebarHeader, SidebarLink } from '@/components/app/Sidebar'
 
 export const metadata: Metadata = {
   title: 'Documentation - Neobrutalism Components',

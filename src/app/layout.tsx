@@ -1,7 +1,10 @@
 import Navbar from '@/components/app/Navbar'
+
 import './globals.css'
+
 import type { Metadata } from 'next'
 import { DM_Sans } from 'next/font/google'
+
 import SetStylingPref from '@/components/app/SetStylingPref'
 import { Toaster } from '@/components/ui/toaster'
 
@@ -27,6 +30,7 @@ export const metadata: Metadata = {
     url: 'https://neobrutalism-components.vercel.app/',
     title: 'Neobrutalism components',
   },
+  metadataBase: new URL('https://neobrutalism-components.vercel.app/'),
 }
 
 export default function RootLayout({

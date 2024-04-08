@@ -1,7 +1,9 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+
 import ReactDom from 'react-dom'
 import { MdClose } from 'react-icons/md'
+
+import React, { useEffect, useState } from 'react'
 
 type Props = {
   active: boolean

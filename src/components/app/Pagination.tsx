@@ -1,6 +1,8 @@
 'use client'
-import { useRouter } from 'next/navigation'
+
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
+
+import { useRouter } from 'next/navigation'
 
 type Props = {
   prev?: {

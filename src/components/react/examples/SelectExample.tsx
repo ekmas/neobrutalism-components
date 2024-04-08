@@ -1,6 +1,8 @@
 'use client'
-import { useState } from 'react'
+
 import { FaChevronDown } from 'react-icons/fa'
+
+import { useState } from 'react'
 
 export default function SelectExample() {
   const items = ['Item 1', 'Item 2', 'Item 3']

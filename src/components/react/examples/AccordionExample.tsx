@@ -1,6 +1,8 @@
 'use client'
-import { useEffect, useRef, useState } from 'react'
+
 import { FiPlus } from 'react-icons/fi'
+
+import { useEffect, useRef, useState } from 'react'
 
 export default function AccordionExample() {
   const [showContent, setShowContent] = useState(false)

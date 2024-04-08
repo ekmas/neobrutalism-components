@@ -1,11 +1,14 @@
 'use client'
 
+import { MdCheck } from 'react-icons/md'
+
+import { useEffect, useState } from 'react'
+
 import colors from '@/data/colors'
+
 import Code from '@/components/app/Code'
 import CopyCode from '@/components/app/CopyCode'
-import { useState, useEffect } from 'react'
-import { MdCheck } from 'react-icons/md'
-import { Slider } from '../ui/slider'
+import { Slider } from '@/components/ui/slider'
 
 type ColorPallette = {
   bg: string

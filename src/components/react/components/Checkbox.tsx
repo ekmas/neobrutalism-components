@@ -1,6 +1,8 @@
 'use client'
-import { useState } from 'react'
+
 import { MdCheck } from 'react-icons/md'
+
+import { useState } from 'react'
 
 export default function Checkbox({ item }: { item: string }) {
   const [isChecked, setIsChecked] = useState(false)

@@ -1,10 +1,14 @@
-import components from '@/data/components/react'
 import fs from 'fs'
 import path from 'path'
 import { promisify } from 'util'
-import Component from '@/components/app/Component'
+
 import { redirect } from 'next/navigation'
+
+import components from '@/data/components/react'
+
+import Component from '@/components/app/Component'
 import Pagination from '@/components/app/Pagination'
+
 import { addSpaces } from '@/lib/utils'
 
 const readFilePath = async (filePath: string) => {

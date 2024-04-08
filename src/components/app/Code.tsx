@@ -1,5 +1,6 @@
 import hljs from 'highlight.js/lib/core'
 import moonscript from 'highlight.js/lib/languages/moonscript'
+
 import 'highlight.js/styles/ascetic.css'
 
 hljs.registerLanguage('moonscript', moonscript)
