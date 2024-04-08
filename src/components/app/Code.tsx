@@ -23,7 +23,7 @@ const Code = ({
         {name}
       </div>
       <pre>
-        <code>
+        <code className="not-prose">
           <div
             style={{ height: limitedHeight ? '300px' : 'unset' }}
             className="code w-max-[700px] scrollbar overflow-x-auto rounded-base bg-white p-5 text-sm  m1000:w-[500px] m750:h-[180px] m750:w-[350px] m400:w-full m400:text-xs"
