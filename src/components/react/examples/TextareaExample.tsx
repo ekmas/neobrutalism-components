@@ -1,7 +1,7 @@
 export default function TextareaExample() {
   return (
     <textarea
-      className="h-[150px] w-[400px] resize-none rounded-base border-2 border-black p-[10px] font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] outline-none transition-all focus:translate-x-[3px] focus:translate-y-[3px] focus:shadow-none"
+      className="h-[150px] w-[400px] resize-none rounded-base border-2 border-black p-[10px] font-bold ring-offset-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-slate-950 focus-visible:ring-offset-2 outline-none transition-all"
       name="textarea"
       id="textarea"
       placeholder={'Placeholder'}

@@ -40,14 +40,14 @@ export default function Modal({ active, setActive, children }: Props) {
           opacity: isVisible ? '1' : '0',
           visibility: isVisible ? 'visible' : 'hidden',
         }}
-        className="relative flex w-[350px] flex-col items-center justify-center rounded-base border-2 border-black bg-main p-10 pt-12 font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300"
+        className="relative flex w-[350px] flex-col items-center justify-center rounded-base border-2 border-black bg-main p-10 pt-12 font-bold shadow-base transition-all duration-300"
       >
         <button onClick={closeModal}>
           <MdClose className="absolute right-3 top-3 h-6 w-6" />
         </button>
         {children}
         <button
-          className="mt-5 cursor-pointer rounded-base border-2 border-black bg-white px-4 py-1.5 font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
+          className="mt-5 cursor-pointer rounded-base border-2 border-black bg-white px-4 py-1.5 font-bold shadow-base transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none"
           onClick={closeModal}
         >
           Ok

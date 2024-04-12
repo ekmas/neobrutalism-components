@@ -11,7 +11,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'bg-main border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none',
+          'bg-main border-2 border-black shadow-base hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none',
         noShadow: 'bg-main border-2 border-black',
         link: 'underline-offset-4 hover:underline',
         neutral: 'bg-white border-2 border-black',

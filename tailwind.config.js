@@ -13,6 +13,13 @@ module.exports = {
         main: 'var(--main)',
         mainAccent: 'var(--main-accent)',
       },
+      translate: {
+        boxShadowX: 'var(--horizontal-box-shadow)',
+        boxShadowY: 'var(--vertical-box-shadow)',
+      },
+      boxShadow: {
+        base: 'var(--horizontal-box-shadow) var(--vertical-box-shadow) 0px 0px rgba(0,0,0,1)',
+      },
       keyframes: {
         marquee: {
           '0%': { transform: 'translateX(0%)' },

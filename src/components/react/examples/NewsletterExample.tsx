@@ -12,7 +12,7 @@ export default function NewsletterExample() {
   return (
     <form
       onSubmit={signUpForNewsletter}
-      className="flex w-min items-center rounded-base border-2 border-black font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+      className="flex w-min items-center rounded-base border-2 border-black font-bold shadow-base"
       role="form"
     >
       <input

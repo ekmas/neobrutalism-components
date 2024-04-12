@@ -8,7 +8,7 @@ export default function ResizableDemo() {
   return (
     <ResizablePanelGroup
       direction="horizontal"
-      className="rounded-base max-w-md border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+      className="rounded-base max-w-md border-2 border-black shadow-base"
     >
       <ResizablePanel defaultSize={50}>
         <div className="flex h-[200px] items-center justify-center bg-main p-6">
