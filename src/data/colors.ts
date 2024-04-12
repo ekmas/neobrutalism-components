@@ -29,8 +29,23 @@ const colors = [
     main: '#FFDC58',
     mainAccent: '#ffc800',
   },
+  {
+    bg: '#fcd7d7',
+    main: '#ff6b6b',
+    mainAccent: '#ff3333',
+  },
+  {
+    bg: '#e3dff2',
+    main: '#bd52eb',
+    mainAccent: '#a81be4',
+  },
+  {
+    bg: '#E0E7F1',
+    main: '#A3E636',
+    mainAccent: '#88cc19',
+  },
 ]
 
-// color paltetes used in components/app/Colors.tsx
+// color palettes used in app/docs/styling/Colors.tsx
 
 export default colors
