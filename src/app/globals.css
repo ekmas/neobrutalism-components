@@ -7,6 +7,8 @@
   --main: #c4a1ff;
   --main-accent: #a36ec4;
   --border-radius: 5px;
+  --horizontal-box-shadow: 4px;
+  --vertical-box-shadow: 4px;
 }
 
 html {
