@@ -18,7 +18,7 @@ const Code = ({
   const component = hljs.highlight(code, { language: 'moonscript' }).value
 
   return (
-    <div className="mt-5 rounded-base border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+    <div className="mt-5 rounded-base border-2 border-black shadow-base">
       <div className="rounded-t-base border-b-2 border-black bg-white p-1 px-3">
         {name}
       </div>

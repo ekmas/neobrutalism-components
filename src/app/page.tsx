@@ -20,7 +20,7 @@ export default function Home() {
         </p>
 
         <Link
-          className="flex items-center rounded-base border-2 border-black bg-main px-10 py-3 text-[22px] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none m800:px-8 m800:py-2.5 m800:text-lg m400:px-6 m400:py-2 m400:text-base"
+          className="flex items-center rounded-base border-2 border-black bg-main px-10 py-3 text-[22px] shadow-base transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none m800:px-8 m800:py-2.5 m800:text-lg m400:px-6 m400:py-2 m400:text-base"
           href={'/docs'}
         >
           Read the docs
@@ -141,7 +141,7 @@ export default function Home() {
           </h2>
 
           <Link
-            className="mt-[50px] flex items-center rounded-base border-2 border-black bg-white px-10 py-3 text-[22px] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none m800:px-8 m800:py-2.5 m800:text-lg m400:px-6 m400:py-2 m400:text-base"
+            className="mt-[50px] flex items-center rounded-base border-2 border-black bg-white px-10 py-3 text-[22px] shadow-base transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none m800:px-8 m800:py-2.5 m800:text-lg m400:px-6 m400:py-2 m400:text-base"
             href={'/docs'}
           >
             Read the docs

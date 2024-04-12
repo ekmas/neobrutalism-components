@@ -21,7 +21,7 @@ export default function Select({ items }: { items: string[] }) {
         }}
         aria-haspopup="listbox"
         aria-labelledby="select-label"
-        className="flex w-[200px] cursor-pointer items-center rounded-base border-2 border-black bg-main px-10 py-3 font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
+        className="flex w-[200px] cursor-pointer items-center rounded-base border-2 border-black bg-main px-10 py-3 font-bold shadow-base transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none"
       >
         <div className="mx-auto flex items-center">
           {selectedItem === null ? 'Select' : selectedItem}
@@ -39,7 +39,7 @@ export default function Select({ items }: { items: string[] }) {
         }}
         role="listbox"
         aria-labelledby="select-label"
-        className="absolute left-0 top-[70px] w-[200px] rounded-base border-2 border-black font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all"
+        className="absolute left-0 top-[70px] w-[200px] rounded-base border-2 border-black font-bold shadow-base transition-all"
       >
         {items.map((item, index) => {
           return (

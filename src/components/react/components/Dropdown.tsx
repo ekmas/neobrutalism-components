@@ -19,7 +19,7 @@ export default function Dropdown({
         onClick={() => {
           setIsActiveDropdown(!isActiveDropdown)
         }}
-        className="flex w-[200px] cursor-pointer items-center rounded-base border-2 border-black bg-main px-7 py-3 font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
+        className="flex w-[200px] cursor-pointer items-center rounded-base border-2 border-black bg-main px-7 py-3 font-bold shadow-base transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none"
       >
         <div className="mx-auto flex items-center">
           Dropdown
@@ -38,7 +38,7 @@ export default function Dropdown({
           opacity: isActiveDropdown ? '1' : '0',
           visibility: isActiveDropdown ? 'visible' : 'hidden',
         }}
-        className="absolute left-0 top-[70px] w-[200px] rounded-base border-2 border-black text-center font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all"
+        className="absolute left-0 top-[70px] w-[200px] rounded-base border-2 border-black text-center font-bold shadow-base transition-all"
       >
         {items.map((item, index) => {
           return (

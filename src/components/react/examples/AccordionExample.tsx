@@ -16,7 +16,7 @@ export default function AccordionExample() {
   }, [showContent])
 
   return (
-    <div className="w-[500px] rounded-base border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+    <div className="w-[500px] rounded-base border-2 border-black shadow-base">
       <button
         role="button"
         aria-expanded={showContent}
