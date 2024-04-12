@@ -120,7 +120,7 @@ boxShadow: {
   base: '${boxShadowLength[0] + 'px'} ${
     boxShadowLength[1] + 'px'
   } 0px 0px rgba(0,0,0,1)',
-}
+},
 translate: {
   boxShadowX: '${boxShadowLength[0] + 'px'}',
   boxShadowY: '${boxShadowLength[1] + 'px'}',
