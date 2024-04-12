@@ -23,7 +23,7 @@ Inspired by [ui-snippets](https://ui.ibelick.com/)
 - [x]  Add React components
 - [x]  Add custom themes
 - [x]  Add Shadcn UI components
-- [ ]  Add more themes/improve theme customization(e.g. custom box shadow)
+- [x]  Add more themes/improve theme customization(e.g. custom box shadow)
 - [ ]  Add examples
 - [ ]  Add components for more react ui libs (headless ui, react aria)
 
