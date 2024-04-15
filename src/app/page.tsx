@@ -98,7 +98,8 @@ export default function Home() {
             </h2>
 
             <p className="text-2xl m1300:text-xl m800:text-lg m500:text-base">
-              Just go to any component, click copy and you&apos;re good to go.
+              After you install necessary dependencies, just go to any
+              component, click copy and you&apos;re good to go.
             </p>
           </section>
           <section className="bg-bg p-14 py-16 font-bold m1300:p-10 m1300:py-12 m800:p-6 m800:py-8">
