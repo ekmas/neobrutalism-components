@@ -1,19 +1,29 @@
+import { ClassValue } from 'clsx'
+
+import { cn } from '@/lib/utils'
+
 type Props = {
+  className?: ClassValue
   tabsArray: string[]
   activeTab: string
   setActiveTab: React.Dispatch<React.SetStateAction<string>>
 }
 
-export default function Tabs({ tabsArray, activeTab, setActiveTab }: Props) {
+export default function Tabs({
+  className,
+  tabsArray,
+  activeTab,
+  setActiveTab,
+}: Props) {
   return (
     <div
       style={{
         gridTemplateColumns: Array(tabsArray.length)
           .fill('x')
-          .map((tab: any) => '1fr')
+          .map(() => '1fr')
           .join(' '),
       }}
-      className="grid w-[500px] rounded-base"
+      className={cn('grid w-full rounded-base m450:text-sm', className)}
     >
       {tabsArray.map((tab, index) => {
         const bg = activeTab === tab ? 'bg-mainAccent' : 'bg-main'
@@ -22,7 +32,7 @@ export default function Tabs({ tabsArray, activeTab, setActiveTab }: Props) {
           <button
             key={index}
             onClick={() => setActiveTab(tab)}
-            className={`cursor-pointer border-2 border-black px-6 py-3 text-center font-bold transition-colors first:rounded-ss-base last:rounded-se-base ${bg}`}
+            className={`cursor-pointer border-2 border-black py-2 text-center font-bold transition-colors first:rounded-ss-base last:rounded-se-base ${bg}`}
           >
             {tab}
           </button>

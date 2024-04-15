@@ -12,7 +12,6 @@ import {
 } from '@/data/sidebar-links'
 
 import Drawer from '@/components/react/components/Drawer'
-import { Button } from '@/components/ui/button'
 
 export default function MobileDrawer() {
   const router = useRouter()
@@ -36,16 +35,16 @@ export default function MobileDrawer() {
   return (
     <>
       <div className="hidden w-[108px] m700:block m500:w-[92px] m400:w-[unset]">
-        <Button
+        <button
           onClick={() => setIsDrawerActive(true)}
-          className="flex items-center justify-center bg-white h-[unset] p-2"
+          className="flex items-center justify-center rounded-base border-2 border-black p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
         >
           <FaBars className="h-6 w-6 m500:h-4 m500:w-4" />
-        </Button>
+        </button>
       </div>
 
       <Drawer active={isDrawerActive} setActive={setIsDrawerActive}>
-        <div className="scrollbar h-full w-full overflow-y-scroll bg-white">
+        <div className="scrollbar h-full w-full overflow-y-auto bg-white">
           {ACTIVE_SIDEBAR.map((item, id) => {
             return typeof item === 'string' ? (
               <div

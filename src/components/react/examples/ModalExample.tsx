@@ -2,21 +2,21 @@
 
 import { useState } from 'react'
 
-import Modal from '../components/Modal'
+import Button from '@/components/react/components/Button'
+import Modal from '@/components/react/components/Modal'
 
 export default function ModalExample() {
   const [isModalActive, setIsModalActive] = useState(false)
 
   return (
     <>
-      <button
+      <Button
         onClick={() => {
           setIsModalActive(true)
         }}
-        className="flex cursor-pointer items-center rounded-base border-2 border-black bg-main px-10 py-3 font-bold shadow-base transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none"
       >
         Open modal
-      </button>
+      </Button>
       <Modal active={isModalActive} setActive={setIsModalActive}>
         <p>This is modal</p>
       </Modal>

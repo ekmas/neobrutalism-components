@@ -66,7 +66,7 @@ export default async function Installation({
   return (
     <>
       <Component
-        name={currentComponent.name}
+        name={addSpaces(currentComponent.name)}
         component={code}
         codeSnippetName={currentComponent.name}
         tailwindConfig={tailwindConfig}
