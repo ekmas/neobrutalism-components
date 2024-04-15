@@ -12,7 +12,10 @@ export default function Dropdown({
   const [isActiveDropdown, setIsActiveDropdown] = useState(false)
 
   return (
-    <div className="relative">
+    <div
+      data-state={isActiveDropdown ? 'open' : 'closed'}
+      className="relative group"
+    >
       <button
         aria-haspopup="listbox"
         aria-expanded={isActiveDropdown}
@@ -24,21 +27,15 @@ export default function Dropdown({
         <div className="mx-auto flex items-center">
           Dropdown
           <FaChevronDown
-            style={{
-              transform: `rotate(${isActiveDropdown ? '180deg' : '0'})`,
-            }}
-            className={'ml-3 h-4 w-4 transition-transform ease-in-out'}
+            className={
+              'ml-3 h-4 w-4 transition-transform group-data-[state=open]:rotate-180 group-data-[state=closed]:rotate-0 ease-in-out'
+            }
           />
         </div>
       </button>
       <div
         role="listbox"
-        style={{
-          top: isActiveDropdown ? '80px' : '50px',
-          opacity: isActiveDropdown ? '1' : '0',
-          visibility: isActiveDropdown ? 'visible' : 'hidden',
-        }}
-        className="absolute left-0 top-[70px] w-[200px] rounded-base border-2 border-black text-center font-bold shadow-base transition-all"
+        className="absolute left-0 w-[200px] group-data-[state=open]:top-20 group-data-[state=open]:opacity-100 group-data-[state=closed]:invisible group-data-[state=closed]:top-[50px] group-data-[state=closed]:opacity-0 group-data-[state=open]:visible rounded-base border-2 border-black text-center font-bold shadow-base transition-all"
       >
         {items.map((item, index) => {
           return (

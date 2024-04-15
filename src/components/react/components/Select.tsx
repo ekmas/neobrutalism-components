@@ -14,7 +14,11 @@ export default function Select({ items }: { items: string[] }) {
   }
 
   return (
-    <div className="relative" aria-expanded={isActiveSelect}>
+    <div
+      data-state={isActiveSelect ? 'open' : 'closed'}
+      className="relative group"
+      aria-expanded={isActiveSelect}
+    >
       <button
         onClick={() => {
           setIsActiveSelect(!isActiveSelect)
@@ -26,20 +30,16 @@ export default function Select({ items }: { items: string[] }) {
         <div className="mx-auto flex items-center">
           {selectedItem === null ? 'Select' : selectedItem}
           <FaChevronDown
-            style={{ transform: `rotate(${isActiveSelect ? '180deg' : '0'})` }}
-            className={'ml-3 h-4 w-4 transition-transform ease-in-out'}
+            className={
+              'ml-3 h-4 w-4 transition-transform group-data-[state=open]:rotate-180 group-data-[state=closed]:rotate-0 ease-in-out'
+            }
           />
         </div>
       </button>
       <div
-        style={{
-          top: isActiveSelect ? '80px' : '50px',
-          opacity: isActiveSelect ? '1' : '0',
-          visibility: isActiveSelect ? 'visible' : 'hidden',
-        }}
         role="listbox"
         aria-labelledby="select-label"
-        className="absolute left-0 top-[70px] w-[200px] rounded-base border-2 border-black font-bold shadow-base transition-all"
+        className="absolute left-0 w-[200px] group-data-[state=open]:top-20 group-data-[state=open]:opacity-100 group-data-[state=closed]:invisible group-data-[state=closed]:top-[50px] group-data-[state=closed]:opacity-0 group-data-[state=open]:visible rounded-base border-2 border-black font-bold shadow-base transition-all"
       >
         {items.map((item, index) => {
           return (

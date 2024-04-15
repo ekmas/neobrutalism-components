@@ -33,14 +33,13 @@ export default function Modal({ active, setActive, children }: Props) {
     <div
       role="dialog"
       aria-modal="true"
-      className="fixed left-0 top-0 flex h-screen w-screen items-center justify-center"
+      data-visible={isVisible ? 'true' : 'false'}
+      onClick={closeModal}
+      className="fixed left-0 top-0 z-50 flex h-screen w-screen items-center justify-center data-[visible=true]:opacity-100 data-[visible=true]:visible data-[visible=false]:opacity-0 data-[visible=false]:invisible transition-all duration-300 bg-gray-500/50"
     >
       <div
-        style={{
-          opacity: isVisible ? '1' : '0',
-          visibility: isVisible ? 'visible' : 'hidden',
-        }}
-        className="relative flex w-[350px] flex-col items-center justify-center rounded-base border-2 border-black bg-main p-10 pt-12 font-bold shadow-base transition-all duration-300"
+        onClick={(e) => e.stopPropagation()}
+        className="relative flex w-[300px] group-data-[visible=true]:opacity-100 group-data-[visible=true]:visible group-data-[visible=false]:opacity-0 group-data-[visible=false]:invisible flex-col items-center justify-center rounded-base border-2 border-black bg-main p-10 pt-12 font-bold shadow-base transition-all duration-300"
       >
         <button onClick={closeModal}>
           <MdClose className="absolute right-3 top-3 h-6 w-6" />
