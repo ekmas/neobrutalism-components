@@ -1,10 +1,13 @@
+'use client'
+
+import { useState } from 'react'
+
+import Textarea from '@/components/react/components/Textarea'
+
 export default function TextareaExample() {
+  const [message, setMessage] = useState('')
+
   return (
-    <textarea
-      className="h-[150px] w-[400px] resize-none rounded-base border-2 border-black p-[10px] font-bold ring-offset-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-slate-950 focus-visible:ring-offset-2 outline-none transition-all"
-      name="textarea"
-      id="textarea"
-      placeholder={'Placeholder'}
-    ></textarea>
+    <Textarea value={message} setValue={setMessage} placeholder="Message" />
   )
 }
