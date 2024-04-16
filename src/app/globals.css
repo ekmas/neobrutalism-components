@@ -11,10 +11,6 @@
   --vertical-box-shadow: 4px;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body,
 .scrollbar {
   --sb-track-color: #ffffff;

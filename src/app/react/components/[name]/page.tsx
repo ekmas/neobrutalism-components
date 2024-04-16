@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { promisify } from 'util'
 
+import { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
 import components from '@/data/components/react'
@@ -38,6 +39,19 @@ export async function generateStaticParams() {
 }
 
 export const dynamicParams = false
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { name: string }
+}): Promise<Metadata> {
+  const component = addSpaces(params.name)
+
+  return {
+    title: component,
+    description: `Start using ${component} component in your next project.`,
+  }
+}
 
 export default async function Installation({
   params,

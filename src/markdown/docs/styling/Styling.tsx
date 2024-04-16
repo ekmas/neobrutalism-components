@@ -9,9 +9,9 @@ import colors from '@/data/colors'
 import Code from '@/components/app/Code'
 import CopyCode from '@/components/app/CopyCode'
 
-import BorderRadius from '@/app/docs/styling/BorderRadius'
-import BoxShadow from '@/app/docs/styling/BoxShadow'
-import Colors from '@/app/docs/styling/Colors'
+import BorderRadius from './BorderRadius'
+import BoxShadow from './BoxShadow'
+import Colors from './Colors'
 
 type ColorPallette = {
   bg: string
