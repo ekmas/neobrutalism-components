@@ -1,17 +1,21 @@
-import Navbar from '@/components/app/Navbar'
-
 import './globals.css'
 
 import type { Metadata } from 'next'
 import { DM_Sans } from 'next/font/google'
 
+import Navbar from '@/components/app/Navbar'
+import ScrollToTop from '@/components/app/ScrollToTop'
 import SetStylingPref from '@/components/app/SetStylingPref'
 import { Toaster } from '@/components/ui/toaster'
 
 const dmSans = DM_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Neobrutalism components',
+  title: {
+    default:
+      'Neobrutalism components - Start making neobrutalism layouts today',
+    template: `%s - Neobrutalism components`,
+  },
   description: 'A collection of neobrutalism-styled Tailwind components.',
   keywords: [
     'neobrutalism',
@@ -31,6 +35,13 @@ export const metadata: Metadata = {
     title: 'Neobrutalism components',
   },
   metadataBase: new URL('https://neobrutalism-components.vercel.app/'),
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Neobrutalism components - Start making neobrutalism layouts',
+    description: 'A collection of neobrutalism-styled Tailwind components.',
+    images: ['https://neobrutalism-components.vercel.app/preview.png'],
+    creator: '@samuelbreznjak',
+  },
 }
 
 export default function RootLayout({
@@ -47,6 +58,7 @@ export default function RootLayout({
         <div id="modal"></div>
         <Toaster />
         <SetStylingPref />
+        <ScrollToTop />
       </body>
     </html>
   )
