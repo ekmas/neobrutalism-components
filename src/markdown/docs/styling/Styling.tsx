@@ -149,8 +149,8 @@ translate: {
   boxShadowY: '${boxShadowLength[1] + 'px'}',
 },
 fontWeight: {
-  base: '${fontWeight[0]}',
-  heading: '${fontWeight[1]}',
+  base: '${fontWeight[1]}',
+  heading: '${fontWeight[0]}',
 },`
 
   return (
