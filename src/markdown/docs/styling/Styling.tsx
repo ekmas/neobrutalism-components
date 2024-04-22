@@ -8,6 +8,11 @@ import colors from '@/data/colors'
 
 import Code from '@/components/app/Code'
 import CopyCode from '@/components/app/CopyCode'
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from '@/components/ui/hover-card'
 
 import BorderRadius from './BorderRadius'
 import BoxShadow from './BoxShadow'
@@ -170,25 +175,39 @@ fontWeight: {
         saveStylingPreference={saveStylingPreference}
       />
       <div className="mb-6 flex items-center justify-between">
-        <button
-          onClick={() => {
-            setSaveStylingPreference(
-              saveStylingPreference === null || saveStylingPreference === false
-                ? true
-                : false,
-            )
-          }}
-          className="flex items-center font-bold"
-          role="checkbox"
-          aria-checked={
-            saveStylingPreference === null ? false : saveStylingPreference
-          }
-        >
-          <div className="mr-2.5 grid h-5 w-5 place-items-center bg-white outline outline-2 outline-black">
-            {saveStylingPreference && <MdCheck className="h-[18px] w-[18px]" />}
-          </div>
-          <p className="m400:text-sm">Save styling pref.</p>
-        </button>
+        <div className="flex items-center">
+          <button
+            onClick={() => {
+              setSaveStylingPreference(
+                saveStylingPreference === null ||
+                  saveStylingPreference === false
+                  ? true
+                  : false,
+              )
+            }}
+            className="flex items-center font-bold"
+            role="checkbox"
+            aria-checked={
+              saveStylingPreference === null ? false : saveStylingPreference
+            }
+          >
+            <div className="mr-2.5 grid h-5 w-5 place-items-center bg-white outline outline-2 outline-black">
+              {saveStylingPreference && (
+                <MdCheck className="h-[18px] w-[18px]" />
+              )}
+            </div>
+            <p className="m400:text-sm">Save styling pref.</p>
+          </button>
+          <HoverCard>
+            <HoverCardTrigger className="ml-3 bg-main px-1.5 border border-black rounded-base">
+              <button>?</button>
+            </HoverCardTrigger>
+            <HoverCardContent className="m400:text-sm">
+              Check this if you want to save current styling to local storage so
+              you will have it next time you visit this site.
+            </HoverCardContent>
+          </HoverCard>
+        </div>
         <button
           role="button"
           aria-label="Reset colors"
