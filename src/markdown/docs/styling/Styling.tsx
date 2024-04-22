@@ -12,6 +12,7 @@ import CopyCode from '@/components/app/CopyCode'
 import BorderRadius from './BorderRadius'
 import BoxShadow from './BoxShadow'
 import Colors from './Colors'
+import FontWeight from './FontWeight'
 
 type ColorPallette = {
   bg: string
@@ -26,6 +27,7 @@ export default function Styling() {
     useState<ColorPallette>(defaultColorPalette)
   const [borderRadius, setBorderRadius] = useState([5])
   const [boxShadowLength, setBoxShadowLength] = useState([4, 4])
+  const [fontWeight, setFontWeight] = useState([700, 500])
   const [saveStylingPreference, setSaveStylingPreference] = useState<
     boolean | null
   >(null)
@@ -34,6 +36,7 @@ export default function Styling() {
     const colorObj = JSON.parse(localStorage.getItem('color') as string)
     const borderRadius = localStorage.getItem('borderRadius') as string
     const boxShadow = localStorage.getItem('boxShadow')?.split(',')
+    const fontWeight = localStorage.getItem('fontWeight')?.split(',')
 
     if (colorObj || borderRadius || boxShadow) {
       setSaveStylingPreference(true)
@@ -50,6 +53,10 @@ export default function Styling() {
     if (boxShadow) {
       setBoxShadowLength([+boxShadow[0], +boxShadow[1]])
     }
+
+    if (fontWeight) {
+      setFontWeight([+fontWeight[0], +fontWeight[1]])
+    }
   }, [])
 
   useEffect(() => {
@@ -60,7 +67,8 @@ export default function Styling() {
         JSON.stringify(activeColorPallete) ===
           JSON.stringify(defaultColorPalette) &&
         borderRadius[0] === 5 &&
-        JSON.stringify(boxShadowLength) === JSON.stringify([4, 4])
+        JSON.stringify(boxShadowLength) === JSON.stringify([4, 4]) &&
+        JSON.stringify(fontWeight) === JSON.stringify([700, 500])
       ) {
         localStorage.clear()
       } else {
@@ -79,6 +87,13 @@ export default function Styling() {
           localStorage.setItem(
             'boxShadow',
             `${boxShadowLength[0]},${boxShadowLength[1]}`,
+          )
+        }
+
+        if (JSON.stringify(fontWeight) !== JSON.stringify([700, 500])) {
+          localStorage.setItem(
+            'fontWeight',
+            `${fontWeight[0]},${fontWeight[1]}`,
           )
         }
       }
@@ -100,10 +115,13 @@ export default function Styling() {
     r.style.setProperty('--border-radius', '5px')
     r.style.setProperty('--horizontal-box-shadow', '4px')
     r.style.setProperty('--vertical-box-shadow', '4px')
+    r.style.setProperty('--heading-font-weight', '700')
+    r.style.setProperty('--base-font-weight', '500')
 
     setActiveColorPalette(defaultColorPalette)
     setBorderRadius([5])
     setBoxShadowLength([4, 4])
+    setFontWeight([700, 500])
 
     setSaveStylingPreference(false)
   }
@@ -124,7 +142,11 @@ boxShadow: {
 translate: {
   boxShadowX: '${boxShadowLength[0] + 'px'}',
   boxShadowY: '${boxShadowLength[1] + 'px'}',
-}`
+},
+fontWeight: {
+  base: '${fontWeight[0]}',
+  heading: '${fontWeight[1]}',
+},`
 
   return (
     <>
@@ -140,6 +162,11 @@ translate: {
       <BoxShadow
         boxShadowLength={boxShadowLength}
         setBoxShadowLength={setBoxShadowLength}
+        saveStylingPreference={saveStylingPreference}
+      />
+      <FontWeight
+        fontWeight={fontWeight}
+        setFontWeight={setFontWeight}
         saveStylingPreference={saveStylingPreference}
       />
       <div className="mb-6 flex items-center justify-between">
@@ -168,7 +195,7 @@ translate: {
           onClick={() => {
             resetStyling()
           }}
-          className="flex cursor-pointer items-center rounded-base border-2 border-black bg-main px-5 py-2 text-sm font-bold shadow-base transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none m400:px-3.5 m400:text-xs"
+          className="flex cursor-pointer items-center rounded-base border-2 border-black bg-main px-5 py-2 text-sm font-base shadow-base transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none m400:px-3.5 m400:text-xs"
         >
           Reset
         </button>
