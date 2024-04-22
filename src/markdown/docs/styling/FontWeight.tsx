@@ -41,7 +41,7 @@ export default function FontWeight({
 
       <div className="grid grid-cols-2 gap-5 m750:my-4 m400:grid-cols-1 m400:gap-3">
         <div>
-          <h4>Heading</h4>
+          <h4>Headings</h4>
 
           <Slider
             className="my-4"
@@ -55,7 +55,7 @@ export default function FontWeight({
           <p className="mb-2 text-center">{fontWeight[0]}</p>
         </div>
         <div>
-          <h4>Base (everything else)</h4>
+          <h4>Everything else</h4>
 
           <Slider
             className="my-4"
