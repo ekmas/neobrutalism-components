@@ -22,7 +22,7 @@ export default function Dropdown({
         onClick={() => {
           setIsActiveDropdown(!isActiveDropdown)
         }}
-        className="flex w-[200px] cursor-pointer items-center rounded-base border-2 border-black bg-main px-7 py-3 font-bold shadow-base transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none"
+        className="flex w-[200px] cursor-pointer items-center rounded-base border-2 border-black bg-main px-7 py-3 font-base shadow-base transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none"
       >
         <div className="mx-auto flex items-center">
           Dropdown
@@ -35,7 +35,7 @@ export default function Dropdown({
       </button>
       <div
         role="listbox"
-        className="absolute left-0 w-[200px] group-data-[state=open]:top-20 group-data-[state=open]:opacity-100 group-data-[state=closed]:invisible group-data-[state=closed]:top-[50px] group-data-[state=closed]:opacity-0 group-data-[state=open]:visible rounded-base border-2 border-black text-center font-bold shadow-base transition-all"
+        className="absolute left-0 w-[200px] group-data-[state=open]:top-20 group-data-[state=open]:opacity-100 group-data-[state=closed]:invisible group-data-[state=closed]:top-[50px] group-data-[state=closed]:opacity-0 group-data-[state=open]:visible rounded-base border-2 border-black text-center font-base shadow-base transition-all"
       >
         {items.map((item, index) => {
           return (

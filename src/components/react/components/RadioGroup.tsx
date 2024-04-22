@@ -6,7 +6,7 @@ export default function RadioGroup({ items }: { items: string[] }) {
   const [activeItem, setActiveItem] = useState<string | null>(null)
 
   return (
-    <div className="font-bold">
+    <div className="font-base">
       {items.map((item) => {
         const isChecked = activeItem === item
 

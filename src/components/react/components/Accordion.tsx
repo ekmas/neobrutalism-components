@@ -33,7 +33,7 @@ export default function Accordion({ question, answer, className }: Props) {
         role="button"
         aria-expanded={showContent}
         className={cn(
-          'flex w-full items-center transition-[border-radius] justify-between border-b-0 group-data-[state=closed]:rounded-base group-data-[state=open]:rounded-t-base group-data-[state=open]:border-b-2 border-b-black bg-main p-4 md:p-5 font-bold',
+          'flex w-full items-center transition-[border-radius] justify-between border-b-0 group-data-[state=closed]:rounded-base group-data-[state=open]:rounded-t-base group-data-[state=open]:border-b-2 border-b-black bg-main p-4 md:p-5 font-heading',
           className,
         )}
         onClick={() => {
@@ -46,7 +46,7 @@ export default function Accordion({ question, answer, className }: Props) {
       <div
         ref={contentRef}
         style={{ height: showContent ? `${contentHeight}` : '0' }}
-        className="overflow-hidden rounded-b-base bg-white font-bold transition-[height] ease-in-out"
+        className="overflow-hidden rounded-b-base bg-white font-base transition-[height] ease-in-out"
       >
         <p className="p-4 md:p-5 text-sm md:text-base leading-relaxed md:leading-relaxed">
           {answer}
