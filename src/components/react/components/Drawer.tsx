@@ -38,7 +38,7 @@ export default function Drawer({ active, setActive, children }: Props) {
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="z-10 h-full w-[250px] group-data-[visible=true]:translate-x-0 group-data-[visible=false]:translate-x-[-250px] border-2 border-black bg-main font-bold transition-transform duration-300"
+        className="z-10 h-full w-[250px] group-data-[visible=true]:translate-x-0 group-data-[visible=false]:translate-x-[-250px] border-2 border-black bg-main font-base transition-transform duration-300"
       >
         {children}
       </div>

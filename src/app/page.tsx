@@ -11,16 +11,16 @@ export default function Home() {
   return (
     <div>
       <main className="relative flex min-h-[100svh] flex-col items-center justify-center bg-bg px-5 py-[150px] text-center font-bold">
-        <h1 className="text-5xl m1000:text-4xl m800:text-3xl m500:text-2xl m400:text-xl">
+        <h1 className="text-5xl font-heading m1000:text-4xl m800:text-3xl m500:text-2xl m400:text-xl">
           Neobrutalism components
         </h1>
 
-        <p className="mb-[50px] mt-[30px] text-2xl m800:text-lg m400:text-base">
+        <p className="mb-[50px] mt-[30px] font-base text-2xl m800:text-lg m400:text-base">
           A collection of neobrutalism-styled Tailwind components.
         </p>
 
         <Link
-          className="flex items-center rounded-base border-2 border-black bg-main px-10 py-3 text-[22px] shadow-base transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none m800:px-8 m800:py-2.5 m800:text-lg m400:px-6 m400:py-2 m400:text-base"
+          className="flex items-center rounded-base border-2 font-base border-black bg-main px-10 py-3 text-[22px] shadow-base transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none m800:px-8 m800:py-2.5 m800:text-lg m400:px-6 m400:py-2 m400:text-base"
           href={'/docs'}
         >
           Read the docs
@@ -51,15 +51,15 @@ export default function Home() {
       </main>
       <div>
         <Marquee
-          className="border-t-4 border-black bg-white py-5 font-bold"
+          className="border-t-4 border-black bg-white py-5 font-base"
           direction="left"
         >
           {Array(15)
             .fill('xd')
-            .map((id) => {
+            .map((x, id) => {
               return (
                 <div className="flex items-center" key={id}>
-                  <span className="text-bold mx-10 text-4xl m750:text-2xl m500:text-xl">
+                  <span className="mx-10 text-4xl m750:text-2xl m500:text-xl">
                     Neobrutalism components
                   </span>
                   <img
@@ -72,56 +72,56 @@ export default function Home() {
             })}
         </Marquee>
         <div className="grid grid-cols-2 border-b-4 border-t-4 border-black m700:grid-cols-1">
-          <section className="border-b-4 border-r-4 border-black bg-bg p-14 py-16 font-bold m1300:p-10 m1300:py-12 m800:p-6 m800:py-8 m700:border-r-0 m700:bg-main">
-            <h2 className="mb-6 text-4xl m1300:text-3xl m700:text-2xl m500:text-xl">
+          <section className="border-b-4 border-r-4 border-black bg-bg p-14 py-16 m1300:p-10 m1300:py-12 m800:p-6 m800:py-8 m700:border-r-0 m700:bg-main">
+            <h2 className="mb-6 font-heading text-4xl m1300:text-3xl m700:text-2xl m500:text-xl">
               Made with Tailwind
             </h2>
 
-            <p className="text-2xl m1300:text-xl m800:text-lg m500:text-base">
+            <p className="text-2xl font-base m1300:text-xl m800:text-lg m500:text-base">
               These components efficiently utilize Tailwind and its versatile
               utility classes, enabling swift and straightforward styling.
             </p>
           </section>
-          <section className="border-b-4 border-black bg-main p-14 py-16 font-bold m1300:p-10 m1300:py-12 m800:p-6 m800:py-8 m700:bg-bg">
-            <h2 className="mb-6 text-4xl m1300:text-3xl m700:text-2xl m500:text-xl">
+          <section className="border-b-4 border-black bg-main p-14 py-16 m1300:p-10 m1300:py-12 m800:p-6 m800:py-8 m700:bg-bg">
+            <h2 className="mb-6 font-heading text-4xl m1300:text-3xl m700:text-2xl m500:text-xl">
               Open source
             </h2>
 
-            <p className="text-2xl m1300:text-xl m800:text-lg m500:text-base">
+            <p className="text-2xl font-base m1300:text-xl m800:text-lg m500:text-base">
               This project is open source with an MIT License, fostering
               collaboration and allowing widespread adoption and modification.
             </p>
           </section>
-          <section className="border-r-4 border-black bg-main p-14 py-16 font-bold m1300:p-10 m1300:py-12 m800:p-6 m800:py-8 m700:border-b-4 m700:border-r-0">
-            <h2 className="mb-6 text-4xl m1300:text-3xl m700:text-2xl m500:text-xl">
+          <section className="border-r-4 border-black bg-main p-14 py-16 m1300:p-10 m1300:py-12 m800:p-6 m800:py-8 m700:border-b-4 m700:border-r-0">
+            <h2 className="mb-6 font-heading text-4xl m1300:text-3xl m700:text-2xl m500:text-xl">
               Easy to use
             </h2>
 
-            <p className="text-2xl m1300:text-xl m800:text-lg m500:text-base">
+            <p className="text-2xl font-base m1300:text-xl m800:text-lg m500:text-base">
               After you install necessary dependencies, just go to any
               component, click copy and you&apos;re good to go.
             </p>
           </section>
-          <section className="bg-bg p-14 py-16 font-bold m1300:p-10 m1300:py-12 m800:p-6 m800:py-8">
-            <h2 className="mb-6 text-4xl m1300:text-3xl m700:text-2xl m500:text-xl">
+          <section className="bg-bg p-14 py-16 m1300:p-10 m1300:py-12 m800:p-6 m800:py-8">
+            <h2 className="mb-6 text-4xl font-heading m1300:text-3xl m700:text-2xl m500:text-xl">
               Customizable
             </h2>
 
-            <p className="text-2xl m1300:text-xl m800:text-lg m500:text-base">
+            <p className="text-2xl font-base m1300:text-xl m800:text-lg m500:text-base">
               You can easily customize these components to suit your needs.
             </p>
           </section>
         </div>
         <Marquee
-          className="border-b-4 border-black bg-white py-5 font-bold"
+          className="border-b-4 border-black bg-white py-5 font-base"
           direction="right"
         >
           {Array(15)
             .fill('xd')
-            .map((id) => {
+            .map((x, id) => {
               return (
                 <div className="flex items-center" key={id}>
-                  <span className="text-bold mx-10 text-4xl m750:text-2xl m500:text-xl">
+                  <span className="mx-10 text-4xl m750:text-2xl m500:text-xl">
                     Neobrutalism components
                   </span>
                   <img
@@ -134,15 +134,15 @@ export default function Home() {
             })}
         </Marquee>
         <section
-          className="flex flex-col items-center justify-center bg-main bg-cover bg-center bg-no-repeat px-5 py-[200px] font-bold m1000:py-[150px] m500:py-[120px]"
+          className="flex flex-col items-center justify-center bg-main bg-cover bg-center bg-no-repeat px-5 py-[200px] m1000:py-[150px] m500:py-[120px]"
           style={{ backgroundImage: `url(${herogrid.src})` }}
         >
-          <h2 className="text-center text-5xl m1000:text-3xl m500:text-2xl m400:text-xl">
+          <h2 className="text-center font-heading text-5xl m1000:text-3xl m500:text-2xl m400:text-xl">
             Start making neobrutalism layouts today.
           </h2>
 
           <Link
-            className="mt-[50px] flex items-center rounded-base border-2 border-black bg-white px-10 py-3 text-[22px] shadow-base transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none m800:px-8 m800:py-2.5 m800:text-lg m400:px-6 m400:py-2 m400:text-base"
+            className="mt-[50px] flex font-base items-center rounded-base border-2 border-black bg-white px-10 py-3 text-[22px] shadow-base transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none m800:px-8 m800:py-2.5 m800:text-lg m400:px-6 m400:py-2 m400:text-base"
             href={'/docs'}
           >
             Read the docs
@@ -154,12 +154,12 @@ export default function Home() {
           </Link>
         </section>
       </div>
-      <footer className="z-30 border-t-4 border-black bg-white px-5 py-5 text-center font-bold m500:text-sm">
+      <footer className="z-30 border-t-4 border-black bg-white px-5 py-5 text-center font-base m500:text-sm">
         Released under MIT License. The source code is available on{' '}
         <a
           target="_blank"
           href="https://github.com/ekmas/neobrutalism-components"
-          className="underline"
+          className="underline font-heading"
         >
           Github
         </a>

@@ -8,10 +8,16 @@ import colors from '@/data/colors'
 
 import Code from '@/components/app/Code'
 import CopyCode from '@/components/app/CopyCode'
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from '@/components/ui/hover-card'
 
 import BorderRadius from './BorderRadius'
 import BoxShadow from './BoxShadow'
 import Colors from './Colors'
+import FontWeight from './FontWeight'
 
 type ColorPallette = {
   bg: string
@@ -26,6 +32,7 @@ export default function Styling() {
     useState<ColorPallette>(defaultColorPalette)
   const [borderRadius, setBorderRadius] = useState([5])
   const [boxShadowLength, setBoxShadowLength] = useState([4, 4])
+  const [fontWeight, setFontWeight] = useState([700, 500])
   const [saveStylingPreference, setSaveStylingPreference] = useState<
     boolean | null
   >(null)
@@ -34,6 +41,7 @@ export default function Styling() {
     const colorObj = JSON.parse(localStorage.getItem('color') as string)
     const borderRadius = localStorage.getItem('borderRadius') as string
     const boxShadow = localStorage.getItem('boxShadow')?.split(',')
+    const fontWeight = localStorage.getItem('fontWeight')?.split(',')
 
     if (colorObj || borderRadius || boxShadow) {
       setSaveStylingPreference(true)
@@ -50,6 +58,10 @@ export default function Styling() {
     if (boxShadow) {
       setBoxShadowLength([+boxShadow[0], +boxShadow[1]])
     }
+
+    if (fontWeight) {
+      setFontWeight([+fontWeight[0], +fontWeight[1]])
+    }
   }, [])
 
   useEffect(() => {
@@ -60,7 +72,8 @@ export default function Styling() {
         JSON.stringify(activeColorPallete) ===
           JSON.stringify(defaultColorPalette) &&
         borderRadius[0] === 5 &&
-        JSON.stringify(boxShadowLength) === JSON.stringify([4, 4])
+        JSON.stringify(boxShadowLength) === JSON.stringify([4, 4]) &&
+        JSON.stringify(fontWeight) === JSON.stringify([700, 500])
       ) {
         localStorage.clear()
       } else {
@@ -79,6 +92,13 @@ export default function Styling() {
           localStorage.setItem(
             'boxShadow',
             `${boxShadowLength[0]},${boxShadowLength[1]}`,
+          )
+        }
+
+        if (JSON.stringify(fontWeight) !== JSON.stringify([700, 500])) {
+          localStorage.setItem(
+            'fontWeight',
+            `${fontWeight[0]},${fontWeight[1]}`,
           )
         }
       }
@@ -100,10 +120,13 @@ export default function Styling() {
     r.style.setProperty('--border-radius', '5px')
     r.style.setProperty('--horizontal-box-shadow', '4px')
     r.style.setProperty('--vertical-box-shadow', '4px')
+    r.style.setProperty('--heading-font-weight', '700')
+    r.style.setProperty('--base-font-weight', '500')
 
     setActiveColorPalette(defaultColorPalette)
     setBorderRadius([5])
     setBoxShadowLength([4, 4])
+    setFontWeight([700, 500])
 
     setSaveStylingPreference(false)
   }
@@ -124,7 +147,11 @@ boxShadow: {
 translate: {
   boxShadowX: '${boxShadowLength[0] + 'px'}',
   boxShadowY: '${boxShadowLength[1] + 'px'}',
-}`
+},
+fontWeight: {
+  base: '${fontWeight[0]}',
+  heading: '${fontWeight[1]}',
+},`
 
   return (
     <>
@@ -142,33 +169,52 @@ translate: {
         setBoxShadowLength={setBoxShadowLength}
         saveStylingPreference={saveStylingPreference}
       />
+      <FontWeight
+        fontWeight={fontWeight}
+        setFontWeight={setFontWeight}
+        saveStylingPreference={saveStylingPreference}
+      />
       <div className="mb-6 flex items-center justify-between">
-        <button
-          onClick={() => {
-            setSaveStylingPreference(
-              saveStylingPreference === null || saveStylingPreference === false
-                ? true
-                : false,
-            )
-          }}
-          className="flex items-center font-bold"
-          role="checkbox"
-          aria-checked={
-            saveStylingPreference === null ? false : saveStylingPreference
-          }
-        >
-          <div className="mr-2.5 grid h-5 w-5 place-items-center bg-white outline outline-2 outline-black">
-            {saveStylingPreference && <MdCheck className="h-[18px] w-[18px]" />}
-          </div>
-          <p className="m400:text-sm">Save styling pref.</p>
-        </button>
+        <div className="flex items-center">
+          <button
+            onClick={() => {
+              setSaveStylingPreference(
+                saveStylingPreference === null ||
+                  saveStylingPreference === false
+                  ? true
+                  : false,
+              )
+            }}
+            className="flex items-center font-bold"
+            role="checkbox"
+            aria-checked={
+              saveStylingPreference === null ? false : saveStylingPreference
+            }
+          >
+            <div className="mr-2.5 grid h-5 w-5 place-items-center bg-white outline outline-2 outline-black">
+              {saveStylingPreference && (
+                <MdCheck className="h-[18px] w-[18px]" />
+              )}
+            </div>
+            <p className="m400:text-sm">Save styling pref.</p>
+          </button>
+          <HoverCard>
+            <HoverCardTrigger className="ml-3 bg-main px-1.5 border border-black rounded-base">
+              <button>?</button>
+            </HoverCardTrigger>
+            <HoverCardContent className="m400:text-sm">
+              Check this if you want to save current styling to local storage so
+              you will have it next time you visit this site.
+            </HoverCardContent>
+          </HoverCard>
+        </div>
         <button
           role="button"
           aria-label="Reset colors"
           onClick={() => {
             resetStyling()
           }}
-          className="flex cursor-pointer items-center rounded-base border-2 border-black bg-main px-5 py-2 text-sm font-bold shadow-base transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none m400:px-3.5 m400:text-xs"
+          className="flex cursor-pointer items-center rounded-base border-2 border-black bg-main px-5 py-2 text-sm font-base shadow-base transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none m400:px-3.5 m400:text-xs"
         >
           Reset
         </button>

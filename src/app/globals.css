@@ -9,6 +9,8 @@
   --border-radius: 5px;
   --horizontal-box-shadow: 4px;
   --vertical-box-shadow: 4px;
+  --heading-font-weight: 700;
+  --base-font-weight: 500;
 }
 
 body,

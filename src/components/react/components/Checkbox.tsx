@@ -12,7 +12,7 @@ export default function Checkbox({ item }: { item: string }) {
       onClick={() => {
         setIsChecked(!isChecked)
       }}
-      className="my-2 flex items-center font-bold"
+      className="my-2 flex items-center font-base"
       role="checkbox"
       aria-checked={isChecked}
     >

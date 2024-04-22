@@ -18,7 +18,7 @@ export default function Textarea({
   return (
     <textarea
       className={cn(
-        'h-[150px] w-[400px] resize-none rounded-base border-2 border-black p-[10px] font-bold ring-offset-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-slate-950 focus-visible:ring-offset-2 outline-none transition-all',
+        'h-[150px] w-[400px] resize-none rounded-base border-2 border-black p-[10px] font-base ring-offset-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-slate-950 focus-visible:ring-offset-2 outline-none transition-all',
         className,
       )}
       name="textarea"

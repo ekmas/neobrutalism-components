@@ -17,7 +17,7 @@ const ToastViewport = React.forwardRef<
   <ToastPrimitives.Viewport
     ref={ref}
     className={cn(
-      'fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 font-bold sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]',
+      'fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 font-base sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]',
       className,
     )}
     {...props}
@@ -62,7 +62,7 @@ const ToastAction = React.forwardRef<
   <ToastPrimitives.Action
     ref={ref}
     className={cn(
-      'inline-flex h-8 shrink-0 items-center justify-center rounded-base border-2 border-black bg-white px-3 text-sm font-bold text-black ring-offset-white transition-colors disabled:pointer-events-none disabled:opacity-50',
+      'inline-flex h-8 shrink-0 items-center justify-center rounded-base border-2 border-black bg-white px-3 text-sm font-base text-black ring-offset-white transition-colors disabled:pointer-events-none disabled:opacity-50',
       className,
     )}
     {...props}
@@ -94,7 +94,7 @@ const ToastTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ToastPrimitives.Title
     ref={ref}
-    className={cn('text-sm font-bold', className)}
+    className={cn('text-sm font-heading', className)}
     {...props}
   />
 ))
@@ -106,7 +106,7 @@ const ToastDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ToastPrimitives.Description
     ref={ref}
-    className={cn('text-sm font-bold', className)}
+    className={cn('text-sm font-base', className)}
     {...props}
   />
 ))

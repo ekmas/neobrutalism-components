@@ -17,7 +17,7 @@ const Command = React.forwardRef<
   <CommandPrimitive
     ref={ref}
     className={cn(
-      'flex h-full w-full flex-col overflow-hidden rounded-base border-2 border-black bg-main font-bold text-black',
+      'flex h-full w-full flex-col overflow-hidden rounded-base border-2 border-black bg-main font-base text-black',
       className,
     )}
     {...props}
@@ -94,7 +94,7 @@ const CommandGroup = React.forwardRef<
   <CommandPrimitive.Group
     ref={ref}
     className={cn(
-      'overflow-hidden rounded-base p-2 text-black/80 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-bold [&_[cmdk-group-heading]]:text-black/80',
+      'overflow-hidden rounded-base p-2 text-black/80 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-sm [&_[cmdk-group-heading]]:font-heading [&_[cmdk-group-heading]]:text-black/80',
       className,
     )}
     {...props}

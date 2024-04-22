@@ -63,7 +63,7 @@ export function ComboboxDemo() {
           <ChevronsUpDown color="black" className="ml-2 h-4 w-4 shrink-0" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] !border-0 p-0 font-bold">
+      <PopoverContent className="w-[200px] !border-0 p-0 font-base">
         <Command>
           <CommandList>
             <CommandInput placeholder="Search framework..." />

@@ -134,7 +134,7 @@ export const columns: ColumnDef<Payment>[] = [
         currency: 'USD',
       }).format(amount)
 
-      return <div className="text-right font-bold">{formatted}</div>
+      return <div className="text-right font-base">{formatted}</div>
     },
   },
   {
@@ -197,7 +197,7 @@ export default function DataTableDemo() {
   })
 
   return (
-    <div className="w-full font-bold">
+    <div className="w-full font-base">
       <div className="flex items-center py-4">
         <Input
           placeholder="Filter emails..."
@@ -236,7 +236,7 @@ export default function DataTableDemo() {
       </div>
       <div className="rounded-md border">
         <Table>
-          <TableHeader>
+          <TableHeader className="font-heading">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {

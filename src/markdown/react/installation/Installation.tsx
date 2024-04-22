@@ -37,7 +37,7 @@ export function cn(...inputs: ClassValue[]) {
           tabsArray={packageManagers}
         />
 
-        <pre className="p-4 px-6 bg-white code scrollbar overflow-x-auto rounded-b-base border-black border-2">
+        <pre className="p-4 px-6 bg-white code scrollbar overflow-x-auto font-bold rounded-b-base border-black border-2">
           <code className="not-prose text-sm">{code[activeTab]}</code>
         </pre>
       </div>

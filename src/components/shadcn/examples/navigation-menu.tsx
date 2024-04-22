@@ -70,10 +70,10 @@ export default function NavigationMenuDemo() {
                     className="from-muted/50 to-muted flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b p-6 no-underline outline-none focus:shadow-md"
                     href="https://ui.shadcn.com"
                   >
-                    <div className="mb-2 mt-4 text-lg font-medium">
+                    <div className="mb-2 mt-4 text-lg font-heading">
                       shadcn/ui
                     </div>
-                    <p className="text-muted-foreground text-sm leading-tight">
+                    <p className="text-muted-foreground text-sm font-base leading-tight">
                       Beautifully designed components that you can copy and
                       paste into your apps. Accessible. Customizable. Open
                       Source.
@@ -146,8 +146,8 @@ const ListItem = React.forwardRef<
           )}
           {...props}
         >
-          <div className="text-base font-bold leading-none">{title}</div>
-          <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
+          <div className="text-base font-heading leading-none">{title}</div>
+          <p className="text-muted-foreground font-base line-clamp-2 text-sm leading-snug">
             {children}
           </p>
         </a>

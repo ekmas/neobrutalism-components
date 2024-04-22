@@ -24,7 +24,7 @@ export default function DatePickerDemo() {
         <Button
           variant="noShadow"
           className={cn(
-            'w-[280px] justify-start text-left font-bold',
+            'w-[280px] justify-start text-left font-base',
             !date && 'text-muted-foreground',
           )}
         >

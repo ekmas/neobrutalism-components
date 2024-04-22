@@ -21,6 +21,10 @@ module.exports = {
       boxShadow: {
         base: 'var(--horizontal-box-shadow) var(--vertical-box-shadow) 0px 0px rgba(0,0,0,1)',
       },
+      fontWeight: {
+        base: 'var(--base-font-weight)',
+        heading: 'var(--heading-font-weight)',
+      },
       keyframes: {
         marquee: {
           '0%': { transform: 'translateX(0%)' },
