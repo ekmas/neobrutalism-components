@@ -17,7 +17,7 @@ export default function Sidebar({
         return typeof item === 'string' ? (
           <div
             key={id}
-            className="sidebaritem block border-b-4 border-r-4 border-black p-4 text-xl font-bold m800:p-4 m800:text-base"
+            className="sidebaritem block border-b-4 border-r-4 border-black p-4 text-xl font-heading m800:p-4 m800:text-base"
           >
             {item}
           </div>
@@ -25,7 +25,7 @@ export default function Sidebar({
           <Link
             key={id}
             href={`${item.href}`}
-            className="sidebaritem block border-b-4 border-r-4 border-black p-4 pl-7 text-lg font-semibold text-black/90 hover:bg-main m800:p-4 m800:pl-6 m800:text-base"
+            className="sidebaritem block border-b-4 border-r-4 border-black p-4 pl-7 text-lg font-base text-black/90 hover:bg-main m800:p-4 m800:pl-6 m800:text-base"
           >
             {item.text}
           </Link>

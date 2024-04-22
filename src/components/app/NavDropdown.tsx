@@ -16,7 +16,7 @@ export default function NavDropdown() {
         onClick={() => {
           setIsOpen(!isOpen)
         }}
-        className="flex items-center gap-2 text-xl font-bold"
+        className="flex items-center gap-2 text-xl font-base"
       >
         Components
         <ChevronDown
@@ -30,7 +30,7 @@ export default function NavDropdown() {
       <div
         className={clsx(
           isOpen ? 'visible top-12 opacity-100' : 'invisible top-10 opacity-0',
-          'absolute flex w-[150px] flex-col gap-3 rounded-base border-2 border-black bg-white p-4 text-lg font-bold transition-all',
+          'absolute flex w-[150px] flex-col gap-3 rounded-base border-2 border-black bg-white p-4 text-lg font-base transition-all',
         )}
       >
         <Link

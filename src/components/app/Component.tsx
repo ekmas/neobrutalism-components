@@ -25,7 +25,7 @@ export default function Component({
 
   return (
     <div id={name} className="not-prose m400:text-sm">
-      <h2 className="mb-5 text-2xl font-bold m400:text-xl">{name}</h2>
+      <h2 className="mb-5 text-2xl font-heading m400:text-xl">{name}</h2>
 
       {docsLink && (
         <a

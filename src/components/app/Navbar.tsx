@@ -13,13 +13,13 @@ function Navbar() {
         <MobileDrawer />
 
         <div className="flex items-center gap-10 m400:flex-1 m400:pl-5">
-          <Link className="text-4xl font-bold m500:text-xl" href={'/'}>
+          <Link className="text-4xl font-heading m500:text-xl" href={'/'}>
             NBRTLSM
           </Link>
         </div>
 
         <div className="flex items-center gap-10 m700:hidden">
-          <Link className="text-xl font-bold" href="/docs">
+          <Link className="text-xl font-base" href="/docs">
             Docs
           </Link>
 
