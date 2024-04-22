@@ -42,26 +42,28 @@ export default function BoxShadow({
       <h3 className="mb-4 text-xl font-bold m400:text-lg">Box shadow</h3>
       <div className="grid grid-cols-2 gap-5 m750:my-4 m400:grid-cols-1 m400:gap-3">
         <div>
-          <h4>Horizontal length</h4>
+          <h4>Horizontal offset</h4>
 
           <Slider
             className="my-4"
             onValueChange={updateX}
             value={[boxShadowLength[0]]}
-            max={8}
+            min={-6}
+            max={6}
             step={1}
           />
 
           <p className="mb-2 text-center">{boxShadowLength[0]}px</p>
         </div>
         <div>
-          <h4>Vertical length</h4>
+          <h4>Vertical offset</h4>
 
           <Slider
             className="my-4"
             onValueChange={updateY}
             value={[boxShadowLength[1]]}
-            max={8}
+            min={-6}
+            max={6}
             step={1}
           />
 
