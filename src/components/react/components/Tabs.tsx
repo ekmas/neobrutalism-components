@@ -23,7 +23,7 @@ export default function Tabs({
           .map(() => '1fr')
           .join(' '),
       }}
-      className={cn('grid w-full rounded-base m450:text-sm', className)}
+      className={cn('grid w-full rounded-base text-sm sm:text-base', className)}
     >
       {tabsArray.map((tab, index) => {
         const bg = activeTab === tab ? 'bg-mainAccent' : 'bg-main'

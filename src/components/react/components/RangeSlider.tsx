@@ -1,6 +1,9 @@
-'use client'
-
-import { useState } from 'react'
+type Props = {
+  rangeValue: number
+  setRangeValue: React.Dispatch<React.SetStateAction<number>>
+  min: number
+  max: number
+}
 
 const styling = `
   input.rangeSlider::-webkit-slider-thumb {
@@ -15,9 +18,12 @@ const styling = `
   }
 `
 
-export default function RangeSlider() {
-  const [rangeValue, setRangeValue] = useState(50)
-
+export default function RangeSlider({
+  rangeValue,
+  setRangeValue,
+  min,
+  max,
+}: Props) {
   return (
     <>
       <style>{styling}</style>
@@ -28,8 +34,8 @@ export default function RangeSlider() {
         <input
           id="range-slider"
           type="range"
-          min={0}
-          max={100}
+          min={min}
+          max={max}
           value={rangeValue}
           onChange={(e) => setRangeValue(+e.target.value)}
           className="rangeSlider h-2 w-full cursor-pointer appearance-none rounded-lg border-2 border-black bg-white"
