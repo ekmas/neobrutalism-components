@@ -1,4 +1,5 @@
-import './globals.css'
+import '@/styling/globals.css'
+import '@/styling/expressive-code.css'
 
 import type { Metadata } from 'next'
 import { DM_Sans } from 'next/font/google'
