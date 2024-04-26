@@ -7,7 +7,6 @@ import { useEffect, useLayoutEffect, useState } from 'react'
 import colors from '@/data/colors'
 
 import Code from '@/components/app/Code'
-import CopyCode from '@/components/app/CopyCode'
 import {
   HoverCard,
   HoverCardContent,
@@ -224,7 +223,6 @@ fontWeight: {
         config.
       </p>
       <Code code={twConfig} name="tailwind.config.js" limitedHeight={false} />
-      <CopyCode code={twConfig} copyBtnText="Copy this config" />
     </>
   )
 }

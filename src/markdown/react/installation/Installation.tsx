@@ -3,7 +3,6 @@
 import { useState } from 'react'
 
 import Code from '@/components/app/Code'
-import CopyCode from '@/components/app/CopyCode'
 import Tabs from '@/components/react/components/Tabs'
 
 export default function Installation() {
@@ -37,12 +36,8 @@ export function cn(...inputs: ClassValue[]) {
           tabsArray={packageManagers}
         />
 
-        <pre className="p-4 px-6 bg-white code scrollbar overflow-x-auto font-bold rounded-b-base border-black border-2">
-          <code className="not-prose text-sm">{code[activeTab]}</code>
-        </pre>
+        <Code className="mt-0" code={code[activeTab]} limitedHeight={false} />
       </div>
-
-      <CopyCode code={code[activeTab]} copyBtnText="Copy this command" />
 
       <div className="mt-14">
         <p>
@@ -52,8 +47,6 @@ export function cn(...inputs: ClassValue[]) {
         </p>
 
         <Code name="lib/utils.ts" code={cn} limitedHeight={false} />
-
-        <CopyCode code={cn} copyBtnText="Copy this function" />
       </div>
     </div>
   )
