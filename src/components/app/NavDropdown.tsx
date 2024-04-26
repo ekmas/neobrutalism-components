@@ -38,7 +38,7 @@ export default function NavDropdown() {
         <Link
           href={'/react/installation'}
           onClick={() => setIsOpen(false)}
-          className="text-left flex items-center px-4 py-3 border-b-2 border-b-black hover:bg-main"
+          className="text-left flex items-center rounded-t-base px-4 py-3 border-b-2 border-b-black hover:bg-main"
         >
           React
           <img
@@ -50,7 +50,7 @@ export default function NavDropdown() {
         <Link
           href={'/shadcn/installation'}
           onClick={() => setIsOpen(false)}
-          className="text-left flex items-center px-4 py-3 hover:bg-main"
+          className="text-left flex items-center rounded-b-base px-4 py-3 hover:bg-main"
         >
           Shadcn
           <img
