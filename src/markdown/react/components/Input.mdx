@@ -1,0 +1,24 @@
+```coffeescript file=<rootDir>/src/components/react/components/Input.tsx title="components/Input.tsx"
+```
+
+<br />
+
+## Usage
+
+```coffeescript
+import { useState } from 'react'
+
+import Input from '@/components/Input'
+```
+
+<br />
+
+```ts
+const [username, setUsername] = useState('')
+```
+
+<br />
+
+```coffeescript
+<Input value={username} setValue={setUsername} placeholder="Username" />
+```

@@ -1,0 +1,65 @@
+```coffeescript file=<rootDir>/src/components/react/components/Drawer.tsx title="components/Drawer.tsx"
+```
+
+<br />
+
+## Before using
+
+You'll have to add `<div id="drawer"></div>` to your layout or `index.html`.
+
+<br />
+
+```html
+<div id="drawer"></div>
+```
+
+<br />
+
+## Usage
+
+```coffeescript
+import { useState } from 'react'
+
+import Button from '@/components/Button'
+import Drawer from '@/components/Drawer'
+```
+
+<br />
+
+```ts
+const [isDrawerActive, setIsDrawerActive] = useState(false)
+```
+
+<br />
+
+```coffeescript
+<>
+  <Button
+    onClick={() => {
+      setIsDrawerActive(true)
+    }}
+  >
+    Open Drawer
+  </Button>
+  <Drawer active={isDrawerActive} setActive={setIsDrawerActive}>
+    <a
+      className="block w-full border-b-2 border-black bg-main px-5 py-4 hover:bg-mainAccent"
+      href="#"
+    >
+      Item 1
+    </a>
+    <a
+      className="block w-full border-b-2 border-black bg-main px-5 py-4 hover:bg-mainAccent"
+      href="#"
+    >
+      Item 2
+    </a>
+    <a
+      className="block w-full border-b-2 border-black bg-main px-5 py-4 hover:bg-mainAccent"
+      href="#"
+    >
+      Item 3
+    </a>
+  </Drawer>
+</>
+```

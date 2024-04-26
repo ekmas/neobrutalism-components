@@ -1,0 +1,24 @@
+```coffeescript file=<rootDir>/src/components/react/components/Textarea.tsx title="components/Textarea.tsx"
+```
+
+<br />
+
+## Usage
+
+```coffeescript
+import { useState } from 'react'
+
+import Textarea from '@/components/Textarea'
+```
+
+<br />
+
+```ts
+const [message, setMessage] = useState('')
+```
+
+<br />
+
+```coffeescript
+<Textarea value={message} setValue={setMessage} placeholder="Message" />
+```
