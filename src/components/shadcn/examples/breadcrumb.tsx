@@ -16,7 +16,7 @@ export default function BreadcrumbDemo() {
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink href="/shadcn/components/Breadcrumb">
+          <BreadcrumbLink href="/shadcn/components/breadcrumb">
             Components
           </BreadcrumbLink>
         </BreadcrumbItem>
