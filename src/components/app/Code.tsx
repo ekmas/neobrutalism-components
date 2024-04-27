@@ -44,7 +44,7 @@ const Code = ({
             />
           </code>
         </pre>
-        <CopyCode code={component} />
+        <CopyCode code={code} />
       </div>
     </div>
   )
