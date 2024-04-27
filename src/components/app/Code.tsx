@@ -28,7 +28,7 @@ const Code = ({
       className={cn('mt-5 group border-2 border-black shadow-base', className)}
     >
       {name && (
-        <div className="font-heading border-b-2 h-9 border-black bg-white p-1 px-3">
+        <div className="font-heading border-b-2 h-9 m400:text-sm m400:flex m400:py-0 m400:items-center border-black bg-white p-1 px-3">
           {name}
         </div>
       )}

@@ -81,4 +81,8 @@
     width: 30px !important;
     height: 30px !important;
   }
+
+  .expressive-code .frame.has-title:not(.is-terminal) .title {
+    font-size: 14px !important;
+  }
 }
