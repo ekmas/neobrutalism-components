@@ -3,6 +3,8 @@ import { MetadataRoute } from 'next'
 import REACT_COMPONENTS from '@/data/components/react'
 import SHADCN_COMPONENTS from '@/data/components/shadcn'
 
+import { transformToSlug } from '@/lib/utils'
+
 const root = 'https://neobrutalism-components.vercel.app'
 
 const DOCS_PAGES = [
@@ -31,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     })),
     ...SHADCN_COMPONENTS.map((page) => ({
-      url: root + '/shadcn/components/' + page.url,
+      url: root + '/shadcn/components/' + transformToSlug(page.name),
       lastModified: new Date(),
       priority: 0.6,
     })),

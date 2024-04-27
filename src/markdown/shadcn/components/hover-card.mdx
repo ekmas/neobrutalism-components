@@ -1,0 +1,28 @@
+```coffeescript file=<rootDir>/src/components/ui/hover-card.tsx title="components/ui/hover-card.tsx"
+```
+
+<br />
+
+## Usage
+
+```ts
+import { Button } from '@/components/ui/button'
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from '@/components/ui/hover-card'
+```
+
+<br />
+
+```tsx
+<HoverCard>
+  <HoverCardTrigger asChild>
+    <Button variant="noShadow">Hover</Button>
+  </HoverCardTrigger>
+  <HoverCardContent>
+    The React Framework – created and maintained by @vercel.
+  </HoverCardContent>
+</HoverCard>
+```

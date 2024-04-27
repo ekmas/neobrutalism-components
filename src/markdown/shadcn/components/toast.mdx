@@ -1,0 +1,35 @@
+```coffeescript file=<rootDir>/src/components/ui/toast.tsx title="components/ui/toast.tsx"
+```
+
+<br />
+
+## Usage
+
+```coffeescript
+import { Button } from '@/components/ui/button'
+import { ToastAction } from '@/components/ui/toast'
+import { useToast } from '@/components/ui/use-toast'
+```
+
+<br />
+
+```ts
+const { toast } = useToast()
+```
+
+<br />
+
+```coffeescript
+<Button
+  variant="noShadow"
+  onClick={() => {
+    toast({
+      title: "Scheduled: Catch up ",
+      description: "Friday, February 10, 2023 at 5:57 PM",
+      action: <ToastAction altText="Goto schedule to undo">Undo</ToastAction>,
+    });
+  }}
+>
+  Default
+</Button>
+```

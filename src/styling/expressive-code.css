@@ -1,0 +1,88 @@
+.expressive-code figure.frame,
+.expressive-code figure.frame pre[data-language] {
+  height: max-content;
+  max-height: 300px;
+}
+
+.expressive-code figure.has-title {
+  max-height: 336px !important;
+}
+
+.expressive-code .copy {
+  inset-block-start: 10px !important;
+  inset-inline-end: 12px !important;
+}
+
+.expressive-code .has-title .copy {
+  margin-top: 36px !important;
+}
+
+.expressive-code .copy button {
+  border-radius: 0px !important;
+  border: 2px solid black !important;
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.expressive-code .frame:hover .copy button:not(:hover),
+.expressive-code .frame:focus-within :focus-visible ~ .copy button:not(:hover),
+.expressive-code .frame .copy .feedback.show ~ button:not(:hover) {
+  opacity: 1 !important;
+}
+
+.expressive-code figure.frame pre::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  border: 0 !important;
+}
+
+.expressive-code figure.frame pre::-webkit-scrollbar-track {
+  background: transparent !important;
+  border: 0 !important;
+}
+
+.expressive-code figure.frame pre::-webkit-scrollbar-corner {
+  background: transparent !important;
+  border: 0 !important;
+}
+
+.expressive-code pre::-webkit-scrollbar-thumb {
+  border: 0 !important;
+  border-radius: 0px !important;
+}
+
+.expressive-code .copy .feedback {
+  --tooltip-arrow-size: 0px !important;
+  --tooltip-bg: var(--ec-frm-tooltipSuccessBg);
+  border: 2px solid black !important;
+  border-radius: 0px !important;
+}
+
+.expressive-code .frame.has-title:not(.is-terminal) .header {
+  height: 36px !important;
+}
+
+.expressive-code .frame.has-title:not(.is-terminal) .title {
+  width: 100%;
+  padding: 0.25rem 0.75rem !important;
+  font-size: 16px;
+  background-color: white !important;
+  color: black !important;
+  border-bottom: 2px solid black !important;
+}
+
+@media (max-width: 400px) {
+  .expressive-code pre > code {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+  }
+
+  .expressive-code .copy button {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .expressive-code .frame.has-title:not(.is-terminal) .title {
+    font-size: 14px !important;
+  }
+}

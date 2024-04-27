@@ -16,7 +16,7 @@ export default function Newsletter() {
       role="form"
     >
       <input
-        className="w-[30ch] rounded-base p-[10px] outline-none"
+        className="w-full max-w-[30ch] min-w-[14ch] md:min-w-[30ch] rounded-base p-[10px] outline-none"
         type="text"
         name="email"
         id="email"
@@ -27,7 +27,7 @@ export default function Newsletter() {
         }}
       />
       <button
-        className="rounded-e-[5px] border-l-2 border-black bg-main p-[10px] px-5"
+        className="rounded-e-base border-l-2 border-black bg-main p-[10px] sm:px-5 px-3"
         type="submit"
         aria-label="Submit Newsletter"
       >

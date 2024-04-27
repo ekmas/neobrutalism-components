@@ -1,0 +1,34 @@
+```coffeescript file=<rootDir>/src/components/react/components/RangeSlider.tsx title="components/RangeSlider.tsx"
+```
+
+<br />
+
+## Usage
+
+```coffeescript
+import { useState } from 'react'
+
+import RangeSlider from '@/components/RangeSlider'
+```
+
+<br />
+
+```ts
+const [rangeValue, setRangeValue] = useState(50)
+```
+
+<br />
+
+```coffeescript
+<div className="w-full">
+  <RangeSlider
+    max={100}
+    min={0}
+    rangeValue={rangeValue}
+    setRangeValue={setRangeValue}
+  />
+  <div className="mt-3 text-center">
+    <p className="font-bold">{rangeValue}</p>
+  </div>
+</div>
+```

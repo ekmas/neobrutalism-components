@@ -1,0 +1,48 @@
+```coffeescript file=<rootDir>/src/components/react/components/Modal.tsx title="components/Modal.tsx"
+```
+
+<br />
+
+## Before using
+
+You'll have to add `<div id="modal"></div>` to your layout or `index.html`.
+
+<br />
+
+```html
+<div id="modal"></div>
+```
+
+<br />
+
+## Usage
+
+```coffeescript
+import { useState } from 'react'
+
+import Button from '@/components/Button'
+import Modal from '@/components/Modal'
+```
+
+<br />
+
+```ts
+const [isModalActive, setIsModalActive] = useState(false)
+```
+
+<br />
+
+```coffeescript
+<>
+  <Button
+    onClick={() => {
+      setIsModalActive(true)
+    }}
+  >
+    Open modal
+  </Button>
+  <Modal active={isModalActive} setActive={setIsModalActive}>
+    <p>This is modal</p>
+  </Modal>
+</>
+```

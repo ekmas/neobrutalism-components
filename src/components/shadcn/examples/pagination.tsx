@@ -23,7 +23,7 @@ export default function PaginationDemo() {
             2
           </PaginationLink>
         </PaginationItem>
-        <div className="flex items-center m750:hidden">
+        <div className="items-center md:flex hidden">
           <PaginationItem>
             <PaginationLink href="#">3</PaginationLink>
           </PaginationItem>

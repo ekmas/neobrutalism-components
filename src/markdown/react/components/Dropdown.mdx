@@ -1,0 +1,35 @@
+```coffeescript file=<rootDir>/src/components/react/components/Dropdown.tsx title="components/Dropdown.tsx"
+```
+
+<br />
+
+## Usage
+
+```coffeescript
+import Dropdown from '@/components/Dropdown'
+```
+
+<br />
+
+```ts
+const items = [
+  {
+    name: 'Youtube',
+    link: 'https://www.youtube.com',
+  },
+  {
+    name: 'Facebook',
+    link: 'https://www.facebook.com',
+  },
+  {
+    name: 'Google',
+    link: 'https://www.google.com',
+  },
+]
+```
+
+<br />
+
+```coffeescript
+<Dropdown text={'Links'} items={items} />
+```

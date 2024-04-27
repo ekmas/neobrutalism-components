@@ -1,0 +1,24 @@
+```coffeescript file=<rootDir>/src/components/react/components/ToggleSwitch.tsx title="components/ToggleSwitch.tsx"
+```
+
+<br />
+
+## Usage
+
+```coffeescript
+import { useState } from 'react'
+
+import ToggleSwitch from '@/components/ToggleSwitch'
+```
+
+<br />
+
+```ts
+const [isToggled, setIsToggled] = useState(false)
+```
+
+<br />
+
+```coffeescript
+<ToggleSwitch isToggled={isToggled} setIsToggled={setIsToggled} />
+```

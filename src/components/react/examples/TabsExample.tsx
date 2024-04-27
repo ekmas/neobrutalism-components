@@ -9,7 +9,7 @@ export default function TabsExample() {
   const tabsArray = ['Tab 1', 'Tab 2', 'Tab 3']
 
   return (
-    <div className="w-[374px] rounded-base m750:w-[274px] m400:w-[214px]">
+    <div className="max-w-[350px] rounded-base w-full">
       <Tabs
         activeTab={activeTab}
         setActiveTab={setActiveTab}

@@ -1,0 +1,28 @@
+```coffeescript file=<rootDir>/src/components/ui/accordion.tsx title="components/ui/accordion.tsx"
+```
+
+<br />
+
+## Usage
+
+```coffeescript
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion'
+```
+
+<br />
+
+```tsx
+<Accordion className="w-full lg:w-[unset]" type="single" collapsible>
+  <AccordionItem className="lg:w-[500px] max-w-full" value="item-1">
+    <AccordionTrigger>Is it accessible?</AccordionTrigger>
+    <AccordionContent>
+      Yes. It adheres to the WAI-ARIA design pattern.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
+```

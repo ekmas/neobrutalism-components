@@ -23,9 +23,12 @@ export default function Select({ items }: { items: string[] }) {
         onClick={() => {
           setIsActiveSelect(!isActiveSelect)
         }}
+        onBlur={() => {
+          setIsActiveSelect(false)
+        }}
         aria-haspopup="listbox"
         aria-labelledby="select-label"
-        className="flex w-[200px] cursor-pointer items-center rounded-base border-2 border-black bg-main px-10 py-3 font-base shadow-base transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none"
+        className="flex min-w-[160px] w-max cursor-pointer items-center rounded-base border-2 border-black bg-main px-10 py-3 font-base shadow-base transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none"
       >
         <div className="mx-auto flex items-center">
           {selectedItem === null ? 'Select' : selectedItem}
@@ -39,7 +42,7 @@ export default function Select({ items }: { items: string[] }) {
       <div
         role="listbox"
         aria-labelledby="select-label"
-        className="absolute left-0 w-[200px] group-data-[state=open]:top-20 group-data-[state=open]:opacity-100 group-data-[state=closed]:invisible group-data-[state=closed]:top-[50px] group-data-[state=closed]:opacity-0 group-data-[state=open]:visible rounded-base border-2 border-black font-base shadow-base transition-all"
+        className="absolute left-0 min-w-[160px] w-max group-data-[state=open]:top-20 group-data-[state=open]:opacity-100 group-data-[state=closed]:invisible group-data-[state=closed]:top-[50px] group-data-[state=closed]:opacity-0 group-data-[state=open]:visible rounded-base border-2 border-black font-base shadow-base transition-all"
       >
         {items.map((item, index) => {
           return (

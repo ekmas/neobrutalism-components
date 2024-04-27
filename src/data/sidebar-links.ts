@@ -1,4 +1,4 @@
-import { addSpaces } from '@/lib/utils'
+import { addSpaces, transformToSlug } from '@/lib/utils'
 
 import REACT_COMPONENTS from './components/react'
 import SHADCN_COMPONENTS from './components/shadcn'
@@ -11,7 +11,10 @@ const REACT_LINKS = REACT_COMPONENTS.map((component) => {
 })
 
 const SHADCN_LINKS = SHADCN_COMPONENTS.map((component) => {
-  return { href: `/shadcn/components/${component.url}`, text: component.name }
+  return {
+    href: `/shadcn/components/${transformToSlug(component.name)}`,
+    text: component.name,
+  }
 })
 
 const MAIN_SIDEBAR = [

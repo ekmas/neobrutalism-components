@@ -1,28 +1,14 @@
 import { SquareArrowOutUpRight } from 'lucide-react'
 
-import Code from '@/components/app/Code'
 import ComponentWrapper from '@/components/app/ComponentWrapper'
-import CopyCode from '@/components/app/CopyCode'
 
 type Props = {
   name: string
-  component: string
-  codeSnippetName: string
   exampleComponent: JSX.Element
-  tailwindConfig: string | null
   docsLink?: string
 }
 
-export default function Component({
-  name,
-  component,
-  codeSnippetName,
-  exampleComponent,
-  tailwindConfig,
-  docsLink,
-}: Props) {
-  const indexHtml = codeSnippetName === 'Drawer' || codeSnippetName === 'Modal'
-
+export default function Component({ name, exampleComponent, docsLink }: Props) {
   return (
     <div id={name} className="not-prose m400:text-sm">
       <h2 className="mb-5 text-2xl font-heading m400:text-xl">{name}</h2>
@@ -39,41 +25,6 @@ export default function Component({
       )}
 
       <ComponentWrapper>{exampleComponent}</ComponentWrapper>
-      <Code code={component} name={codeSnippetName + '.tsx'} />
-      <CopyCode copyBtnText="Copy this component" code={component} />
-
-      {indexHtml && (
-        <div>
-          <Code
-            limitedHeight={false}
-            code={
-              codeSnippetName === 'Drawer'
-                ? '<div id="drawer"></div>'
-                : '<div id="modal"></div>'
-            }
-            name={'index.html'}
-          />
-          <CopyCode
-            copyBtnText="Copy this tag"
-            code={
-              codeSnippetName === 'Drawer'
-                ? '<div id="drawer"></div>'
-                : '<div id="modal"></div>'
-            }
-          />
-        </div>
-      )}
-
-      {tailwindConfig && (
-        <div>
-          <Code
-            limitedHeight={false}
-            code={tailwindConfig}
-            name={'tailwind.config.js'}
-          />
-          <CopyCode copyBtnText="Copy this config" code={tailwindConfig} />
-        </div>
-      )}
     </div>
   )
 }

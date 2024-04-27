@@ -63,6 +63,7 @@
     "react-hook-form": "^7.51.2",
     "react-icons": "^5.0.1",
     "react-resizable-panels": "^2.0.16",
+    "rehype-expressive-code": "^0.35.2",
     "tailwind-merge": "^2.2.2",
     "tailwindcss": "3.3.3",
     "tailwindcss-animate": "^1.0.7",
@@ -75,6 +76,7 @@
     "@tailwindcss/typography": "^0.5.11",
     "eslint-config-prettier": "^8.8.0",
     "prettier": "^3.0.0",
-    "prettier-plugin-tailwindcss": "^0.4.1"
+    "prettier-plugin-tailwindcss": "^0.4.1",
+    "remark-code-import": "^1.2.0"
   }
 }

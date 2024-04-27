@@ -16,5 +16,5 @@ export default function DropdownExample() {
     },
   ]
 
-  return <Dropdown items={items} />
+  return <Dropdown text={'Links'} items={items} />
 }

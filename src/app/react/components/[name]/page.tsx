@@ -1,7 +1,3 @@
-import fs from 'fs'
-import path from 'path'
-import { promisify } from 'util'
-
 import { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
@@ -11,24 +7,6 @@ import Component from '@/components/app/Component'
 import Pagination from '@/components/app/Pagination'
 
 import { addSpaces } from '@/lib/utils'
-
-const readFilePath = async (filePath: string) => {
-  const readFile = promisify(fs.readFile)
-  const fileContent = await readFile(path.join(process.cwd(), filePath), 'utf8')
-  return fileContent
-}
-
-const getCode = async (filePath: string) => {
-  const code = await readFilePath(filePath)
-
-  if (code.includes("'use client'")) {
-    return code.slice(14)
-  }
-
-  // if component has use client in it we will remove it because these are react components, not nextjs components
-
-  return code
-}
 
 export async function generateStaticParams() {
   const componentSlugs = components.map((component) => ({
@@ -66,26 +44,16 @@ export default async function Installation({
     redirect('/react/installation')
   }
 
-  const filePath = `./src/components/react/components/${params.name}.tsx`
-
-  const code = await getCode(filePath)
-  let tailwindConfig = null
-
-  if (params.name === 'Marquee') {
-    tailwindConfig = await getCode(
-      './src/components/react/components/Marquee.tailwind.txt',
-    )
-  }
-
   return (
     <>
       <Component
         name={addSpaces(currentComponent.name)}
-        component={code}
-        codeSnippetName={currentComponent.name}
-        tailwindConfig={tailwindConfig}
         exampleComponent={<currentComponent.exampleComponent />}
       />
+
+      {/* <div className="prose-code:mx-[unset] prose-code:font-[400] prose-pre:text-sm prose-code:border-none prose-code:bg-transparent prose-code:px-[unset]"> */}
+      <currentComponent.markdown />
+      {/* </div> */}
 
       <Pagination
         prev={

@@ -1,0 +1,24 @@
+```coffeescript file=<rootDir>/src/components/ui/calendar.tsx title="components/ui/calendar.tsx"
+```
+
+<br />
+
+## Usage
+
+```coffeescript
+import { useState } from 'react'
+
+import { Calendar } from '@/components/ui/calendar'
+```
+
+<br />
+
+```ts
+const [date, setDate] = useState<Date | undefined>(new Date())
+```
+
+<br />
+
+```tsx
+<Calendar mode="single" selected={date} onSelect={setDate} />
+```

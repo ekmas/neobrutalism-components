@@ -1,0 +1,57 @@
+```coffeescript file=<rootDir>/src/components/react/components/Marquee.tsx title="components/Marquee.tsx"
+```
+
+<br />
+
+## Before using
+
+You'll have to add this to your tailwind config:
+
+<br />
+
+```coffeescript title="tailwind.config.js"
+theme: {
+  extend: {
+    animation: {
+      marquee: "marquee 5s linear infinite",
+      marquee2: "marquee2 5s linear infinite",
+    },
+    keyframes: {
+      marquee: {
+        "0%": { transform: "translateX(0%)" },
+        "100%": { transform: "translateX(-100%)" },
+      },
+      marquee2: {
+        "0%": { transform: "translateX(100%)" },
+        "100%": { transform: "translateX(0%)" },
+      },
+    },
+  },
+},
+```
+
+<br />
+
+Make sure there is enough content in items so it loops perfectly.
+
+Visit <a target="_blank" href="https://jackwhiting.co.uk/posts/creating-a-marquee-with-tailwind/">this article</a> to learn more.
+
+<br />
+
+## Usage
+
+```coffeescript
+import Marquee from '@/components/Marquee'
+```
+
+<br />
+
+```ts
+const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5']
+```
+
+<br />
+
+```coffeescript
+<Marquee items={items} />
+```
