@@ -1,6 +1,8 @@
 import '@/styling/globals.css'
 import '@/styling/expressive-code.css'
 
+import ECInit from '@/markdown/expressive-code-init.mdx'
+
 import type { Metadata } from 'next'
 import { DM_Sans } from 'next/font/google'
 
@@ -60,6 +62,13 @@ export default function RootLayout({
         <Toaster />
         <SetStylingPref />
         <ScrollToTop />
+        <div className="hidden">
+          <ECInit />
+        </div>
+        {/* 
+          Imported markdown to root layout, so copy button on code blocks can work on route change.
+          For more info visit: https://github.com/expressive-code/expressive-code/issues/203
+        */}
       </body>
     </html>
   )
