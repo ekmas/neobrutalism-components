@@ -130,26 +130,30 @@ export default function Styling() {
     setSaveStylingPreference(false)
   }
 
-  const twConfig = `colors: {
-  bg: '${activeColorPallete.bg}',
-  main: '${activeColorPallete.main}',
-  mainAccent: '${activeColorPallete.mainAccent}', // not needed for shadcn
-},
-borderRadius: {
-  base: '${borderRadius}px'
-},
-boxShadow: {
-  base: '${boxShadowLength[0] + 'px'} ${
-    boxShadowLength[1] + 'px'
-  } 0px 0px rgba(0,0,0,1)',
-},
-translate: {
-  boxShadowX: '${boxShadowLength[0] + 'px'}',
-  boxShadowY: '${boxShadowLength[1] + 'px'}',
-},
-fontWeight: {
-  base: '${fontWeight[1]}',
-  heading: '${fontWeight[0]}',
+  const twConfig = `theme: {
+  extend: {
+    colors: {
+      bg: '${activeColorPallete.bg}',
+      main: '${activeColorPallete.main}',
+      mainAccent: '${activeColorPallete.mainAccent}', // not needed for shadcn
+    },
+    borderRadius: {
+      base: '${borderRadius}px'
+    },
+    boxShadow: {
+      base: '${boxShadowLength[0] + 'px'} ${
+        boxShadowLength[1] + 'px'
+      } 0px 0px rgba(0,0,0,1)',
+    },
+    translate: {
+      boxShadowX: '${boxShadowLength[0] + 'px'}',
+      boxShadowY: '${boxShadowLength[1] + 'px'}',
+    },
+    fontWeight: {
+      base: '${fontWeight[1]}',
+      heading: '${fontWeight[0]}',
+    }
+  }
 },`
 
   return (
