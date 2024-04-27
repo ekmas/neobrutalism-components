@@ -1,7 +1,3 @@
-import fs from 'fs'
-import path from 'path'
-import { promisify } from 'util'
-
 import { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
@@ -12,27 +8,9 @@ import Pagination from '@/components/app/Pagination'
 
 import { transformToName, transformToSlug } from '@/lib/utils'
 
-const readFilePath = async (filePath: string) => {
-  const readFile = promisify(fs.readFile)
-  const fileContent = await readFile(path.join(process.cwd(), filePath), 'utf8')
-  return fileContent
-}
-
-const getCode = async (filePath: string) => {
-  const code = await readFilePath(filePath)
-
-  if (code.includes("'use client'")) {
-    return code.slice(14)
-  }
-
-  // if component has use client in it we will remove it because these are react components, not nextjs components
-
-  return code
-}
-
 export async function generateStaticParams() {
   const componentSlugs = components.map((component) => ({
-    name: component.url,
+    name: transformToSlug(component.name),
   }))
 
   return componentSlugs
@@ -59,24 +37,26 @@ export default async function Installation({
   params: { name: string }
 }) {
   const currentComponent = components.find(
-    (component) => component.url === params.name,
+    (component) => transformToSlug(component.name) === params.name,
   )
 
   if (!currentComponent) {
     redirect('/shadcn/installation')
   }
 
-  const filePath = `./src/components/ui/${currentComponent.url}.tsx`
-
-  const code = await getCode(filePath)
-
   return (
     <>
       <Component
         name={currentComponent.name}
         exampleComponent={<currentComponent.exampleComponent />}
-        docsLink={`https://ui.shadcn.com/docs/components/${currentComponent.url}`}
+        docsLink={`https://ui.shadcn.com/docs/components/${transformToSlug(
+          currentComponent.name,
+        )}`}
       />
+
+      {/* <div className="prose-code:mx-[unset] prose-code:font-[400] prose-pre:text-sm prose-code:border-none prose-code:bg-transparent prose-code:px-[unset]"> */}
+      <currentComponent.markdown />
+      {/* </div> */}
 
       <Pagination
         prev={

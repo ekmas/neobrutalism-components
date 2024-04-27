@@ -1,3 +1,47 @@
+import AccordionMarkdown from '@/markdown/shadcn/components/accordion.mdx'
+import AlertDialogMarkdown from '@/markdown/shadcn/components/alert-dialog.mdx'
+import AlertMarkdown from '@/markdown/shadcn/components/alert.mdx'
+import AvatarMarkdown from '@/markdown/shadcn/components/avatar.mdx'
+import BadgeMarkdown from '@/markdown/shadcn/components/badge.mdx'
+import BreadcrumbMarkdown from '@/markdown/shadcn/components/breadcrumb.mdx'
+import ButtonMarkdown from '@/markdown/shadcn/components/button.mdx'
+import CalendarMarkdown from '@/markdown/shadcn/components/calendar.mdx'
+import CardMarkdown from '@/markdown/shadcn/components/card.mdx'
+import CarouselMarkdown from '@/markdown/shadcn/components/carousel.mdx'
+import CheckboxMarkdown from '@/markdown/shadcn/components/checkbox.mdx'
+import CollapsibleMarkdown from '@/markdown/shadcn/components/collapsible.mdx'
+import ComboboxMarkdown from '@/markdown/shadcn/components/combobox.mdx'
+import CommandMarkdown from '@/markdown/shadcn/components/command.mdx'
+import ContextMenuMarkdown from '@/markdown/shadcn/components/context-menu.mdx'
+import DataTableMarkdown from '@/markdown/shadcn/components/data-table.mdx'
+import DatePickerMarkdown from '@/markdown/shadcn/components/date-picker.mdx'
+import DialogMarkdown from '@/markdown/shadcn/components/dialog.mdx'
+import DrawerMarkdown from '@/markdown/shadcn/components/drawer.mdx'
+import DropdownMenuMarkdown from '@/markdown/shadcn/components/dropdown-menu.mdx'
+import FormMarkdown from '@/markdown/shadcn/components/form.mdx'
+import HoverCardMarkdown from '@/markdown/shadcn/components/hover-card.mdx'
+import InputOTPMarkdown from '@/markdown/shadcn/components/input-otp.mdx'
+import InputMarkdown from '@/markdown/shadcn/components/input.mdx'
+import LabelMarkdown from '@/markdown/shadcn/components/label.mdx'
+import MenubarMarkdown from '@/markdown/shadcn/components/menubar.mdx'
+import NavigationMenuMarkdown from '@/markdown/shadcn/components/navigation-menu.mdx'
+import PaginationMarkdown from '@/markdown/shadcn/components/pagination.mdx'
+import PopoverMarkdown from '@/markdown/shadcn/components/popover.mdx'
+import ProgressMarkdown from '@/markdown/shadcn/components/progress.mdx'
+import RadioGroupMarkdown from '@/markdown/shadcn/components/radio-group.mdx'
+import ResizableMarkdown from '@/markdown/shadcn/components/resizable.mdx'
+import ScrollAreaMarkdown from '@/markdown/shadcn/components/scroll-area.mdx'
+import SelectMarkdown from '@/markdown/shadcn/components/select.mdx'
+import SheetMarkdown from '@/markdown/shadcn/components/sheet.mdx'
+import SkeletonMarkdown from '@/markdown/shadcn/components/skeleton.mdx'
+import SliderMarkdown from '@/markdown/shadcn/components/slider.mdx'
+import SwitchMarkdown from '@/markdown/shadcn/components/switch.mdx'
+import TableMarkdown from '@/markdown/shadcn/components/table.mdx'
+import TabsMarkdown from '@/markdown/shadcn/components/tabs.mdx'
+import TextareaMarkdown from '@/markdown/shadcn/components/textarea.mdx'
+import ToastMarkdown from '@/markdown/shadcn/components/toast.mdx'
+import TooltipMarkdown from '@/markdown/shadcn/components/tooltip.mdx'
+
 import AccordionDemo from '@/components/shadcn/examples/accordion'
 import AlertDemo from '@/components/shadcn/examples/alert'
 import AlertDialogDemo from '@/components/shadcn/examples/alert-dialog'
@@ -44,8 +88,8 @@ import TooltipDemo from '@/components/shadcn/examples/tooltip'
 
 type Component = {
   name: string
-  url: string
-  exampleComponent: any
+  markdown: React.ComponentType
+  exampleComponent: React.ComponentType
   prevComponent?: string
   nextComponent?: string
 }
@@ -53,300 +97,300 @@ type Component = {
 const SHADCN_COMPONENTS: Component[] = [
   {
     name: 'Accordion',
-    url: 'accordion',
+    markdown: AccordionMarkdown,
     exampleComponent: AccordionDemo,
     nextComponent: 'alert-dialog',
   },
   {
     name: 'Alert Dialog',
-    url: 'alert-dialog',
+    markdown: AlertDialogMarkdown,
     exampleComponent: AlertDialogDemo,
     prevComponent: 'accordion',
     nextComponent: 'alert',
   },
   {
     name: 'Alert',
-    url: 'alert',
+    markdown: AlertMarkdown,
     exampleComponent: AlertDemo,
     prevComponent: 'alert-dialog',
     nextComponent: 'avatar',
   },
   {
     name: 'Avatar',
-    url: 'avatar',
+    markdown: AvatarMarkdown,
     exampleComponent: AvatarDemo,
     prevComponent: 'alert',
     nextComponent: 'badge',
   },
   {
     name: 'Badge',
-    url: 'badge',
+    markdown: BadgeMarkdown,
     exampleComponent: BadgeDemo,
     prevComponent: 'avatar',
     nextComponent: 'breadcrumb',
   },
   {
     name: 'Breadcrumb',
-    url: 'breadcrumb',
+    markdown: BreadcrumbMarkdown,
     exampleComponent: BreadcrumbDemo,
     prevComponent: 'badge',
     nextComponent: 'button',
   },
   {
     name: 'Button',
-    url: 'button',
+    markdown: ButtonMarkdown,
     exampleComponent: ButtonDemo,
     prevComponent: 'breadcrumb',
     nextComponent: 'calendar',
   },
   {
     name: 'Calendar',
-    url: 'calendar',
+    markdown: CalendarMarkdown,
     exampleComponent: CalendarDemo,
     prevComponent: 'button',
     nextComponent: 'card',
   },
   {
     name: 'Card',
-    url: 'card',
+    markdown: CardMarkdown,
     exampleComponent: CardDemo,
     prevComponent: 'calendar',
     nextComponent: 'carousel',
   },
   {
     name: 'Carousel',
-    url: 'carousel',
+    markdown: CarouselMarkdown,
     exampleComponent: CarouselDemo,
     prevComponent: 'card',
     nextComponent: 'checkbox',
   },
   {
     name: 'Checkbox',
-    url: 'checkbox',
+    markdown: CheckboxMarkdown,
     exampleComponent: CheckboxDemo,
     prevComponent: 'carousel',
     nextComponent: 'collapsible',
   },
   {
     name: 'Collapsible',
-    url: 'collapsible',
+    markdown: CollapsibleMarkdown,
     exampleComponent: CollapsibleDemo,
     prevComponent: 'checkbox',
     nextComponent: 'combobox',
   },
   {
     name: 'Combobox',
-    url: 'combobox',
+    markdown: ComboboxMarkdown,
     exampleComponent: ComboboxDemo,
     prevComponent: 'collapsible',
     nextComponent: 'command',
   },
   {
     name: 'Command',
-    url: 'command',
+    markdown: CommandMarkdown,
     exampleComponent: CommandDemo,
     prevComponent: 'combobox',
     nextComponent: 'context-menu',
   },
   {
     name: 'Context Menu',
-    url: 'context-menu',
+    markdown: ContextMenuMarkdown,
     exampleComponent: ContextMenuDemo,
     prevComponent: 'command',
     nextComponent: 'date-picker',
   },
   {
     name: 'Date Picker',
-    url: 'date-picker',
+    markdown: DatePickerMarkdown,
     exampleComponent: DatePickerDemo,
     prevComponent: 'context-menu',
     nextComponent: 'data-table',
   },
   {
     name: 'Data Table',
-    url: 'data-table',
+    markdown: DataTableMarkdown,
     exampleComponent: DataTableDemo,
     prevComponent: 'date-picker',
     nextComponent: 'dialog',
   },
   {
     name: 'Dialog',
-    url: 'dialog',
+    markdown: DialogMarkdown,
     exampleComponent: DialogDemo,
     prevComponent: 'data-table',
     nextComponent: 'drawer',
   },
   {
     name: 'Drawer',
-    url: 'drawer',
+    markdown: DrawerMarkdown,
     exampleComponent: DrawerDemo,
     prevComponent: 'dialog',
     nextComponent: 'dropdown-menu',
   },
   {
     name: 'Dropdown Menu',
-    url: 'dropdown-menu',
+    markdown: DropdownMenuMarkdown,
     exampleComponent: DropdownMenuDemo,
     prevComponent: 'drawer',
     nextComponent: 'form',
   },
   {
     name: 'Form',
-    url: 'form',
+    markdown: FormMarkdown,
     exampleComponent: FormDemo,
     prevComponent: 'dropdown-menu',
     nextComponent: 'hover-card',
   },
   {
     name: 'Hover Card',
-    url: 'hover-card',
+    markdown: HoverCardMarkdown,
     exampleComponent: HoverCardDemo,
     prevComponent: 'form',
     nextComponent: 'input-otp',
   },
   {
-    name: 'Input OTP',
-    url: 'input-otp',
+    name: 'Input Otp',
+    markdown: InputOTPMarkdown,
     exampleComponent: InputOTPDemo,
     prevComponent: 'hover-card',
     nextComponent: 'input',
   },
   {
     name: 'Input',
-    url: 'input',
+    markdown: InputMarkdown,
     exampleComponent: InputDemo,
     prevComponent: 'input-otp',
     nextComponent: 'label',
   },
   {
     name: 'Label',
-    url: 'label',
+    markdown: LabelMarkdown,
     exampleComponent: LabelDemo,
     prevComponent: 'input',
     nextComponent: 'menubar',
   },
   {
     name: 'Menubar',
-    url: 'menubar',
+    markdown: MenubarMarkdown,
     exampleComponent: MenubarDemo,
     prevComponent: 'label',
     nextComponent: 'navigation-menu',
   },
   {
     name: 'Navigation Menu',
-    url: 'navigation-menu',
+    markdown: NavigationMenuMarkdown,
     exampleComponent: NavigationMenuDemo,
     prevComponent: 'menubar',
     nextComponent: 'pagination',
   },
   {
     name: 'Pagination',
-    url: 'pagination',
+    markdown: PaginationMarkdown,
     exampleComponent: PaginationDemo,
     prevComponent: 'navigation-menu',
     nextComponent: 'popover',
   },
   {
     name: 'Popover',
-    url: 'popover',
+    markdown: PopoverMarkdown,
     exampleComponent: PopoverDemo,
     prevComponent: 'pagination',
     nextComponent: 'progress',
   },
   {
     name: 'Progress',
-    url: 'progress',
+    markdown: ProgressMarkdown,
     exampleComponent: ProgressDemo,
     prevComponent: 'popover',
     nextComponent: 'radio-group',
   },
   {
     name: 'Radio Group',
-    url: 'radio-group',
+    markdown: RadioGroupMarkdown,
     exampleComponent: RadioGroupDemo,
     prevComponent: 'progress',
     nextComponent: 'resizable',
   },
   {
     name: 'Resizable',
-    url: 'resizable',
+    markdown: ResizableMarkdown,
     exampleComponent: ResizableDemo,
     prevComponent: 'radio-group',
     nextComponent: 'scroll-area',
   },
   {
     name: 'Scroll Area',
-    url: 'scroll-area',
+    markdown: ScrollAreaMarkdown,
     exampleComponent: ScrollAreaDemo,
     prevComponent: 'resizable',
     nextComponent: 'select',
   },
   {
     name: 'Select',
-    url: 'select',
+    markdown: SelectMarkdown,
     exampleComponent: SelectDemo,
     prevComponent: 'scroll-area',
     nextComponent: 'sheet',
   },
   {
     name: 'Sheet',
-    url: 'sheet',
+    markdown: SheetMarkdown,
     exampleComponent: SheetDemo,
     prevComponent: 'select',
     nextComponent: 'skeleton',
   },
   {
     name: 'Skeleton',
-    url: 'skeleton',
+    markdown: SkeletonMarkdown,
     exampleComponent: SkeletonDemo,
     prevComponent: 'sheet',
     nextComponent: 'slider',
   },
   {
     name: 'Slider',
-    url: 'slider',
+    markdown: SliderMarkdown,
     exampleComponent: SliderDemo,
     prevComponent: 'skeleton',
     nextComponent: 'switch',
   },
   {
     name: 'Switch',
-    url: 'switch',
+    markdown: SwitchMarkdown,
     exampleComponent: SwitchDemo,
     prevComponent: 'slider',
     nextComponent: 'table',
   },
   {
     name: 'Table',
-    url: 'table',
+    markdown: TableMarkdown,
     exampleComponent: TableDemo,
     prevComponent: 'switch',
     nextComponent: 'tabs',
   },
   {
     name: 'Tabs',
-    url: 'tabs',
+    markdown: TabsMarkdown,
     exampleComponent: TabsDemo,
     prevComponent: 'table',
     nextComponent: 'textarea',
   },
   {
     name: 'Textarea',
-    url: 'textarea',
+    markdown: TextareaMarkdown,
     exampleComponent: TextareaDemo,
     prevComponent: 'tabs',
     nextComponent: 'toast',
   },
   {
     name: 'Toast',
-    url: 'toast',
+    markdown: ToastMarkdown,
     exampleComponent: ToastDemo,
     prevComponent: 'textarea',
     nextComponent: 'tooltip',
   },
   {
     name: 'Tooltip',
-    url: 'tooltip',
+    markdown: TooltipMarkdown,
     exampleComponent: TooltipDemo,
     prevComponent: 'toast',
   },
