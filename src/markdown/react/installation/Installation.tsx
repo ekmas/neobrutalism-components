@@ -8,7 +8,7 @@ import Tabs from '@/components/react/components/Tabs'
 export default function Installation() {
   const packageManagers = ['npm', 'yarn', 'pnpm', 'bun']
 
-  const packages = 'clsx tailwind-merge react-icons'
+  const packages = 'clsx tailwind-merge lucide-react'
 
   const code: {
     [key in (typeof packageManagers)[number]]: string

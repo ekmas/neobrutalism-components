@@ -1,7 +1,7 @@
 'use client'
 
+import { X } from 'lucide-react'
 import ReactDom from 'react-dom'
-import { MdClose } from 'react-icons/md'
 
 import React, { useEffect, useState } from 'react'
 
@@ -42,7 +42,7 @@ export default function Modal({ active, setActive, children }: Props) {
         className="relative flex w-[300px] group-data-[visible=true]:opacity-100 group-data-[visible=true]:visible group-data-[visible=false]:opacity-0 group-data-[visible=false]:invisible flex-col items-center justify-center rounded-base border-2 border-black bg-main p-10 pt-12 font-base shadow-base transition-all duration-300"
       >
         <button onClick={closeModal}>
-          <MdClose className="absolute right-3 top-3 h-6 w-6" />
+          <X className="absolute right-3 top-3 h-6 w-6" />
         </button>
         {children}
         <button
