@@ -16,16 +16,9 @@ Visit [docs](https://neobrutalism-components.vercel.app/docs) to get started.
 
 I created this collection of components for people who want to learn more about neobrutalism style and to help them get started with creating neobrutalism layouts.
 
-Inspired by [ui-snippets](https://ui.ibelick.com/)
+## Contributing
 
-## Todo
-
-- [x]  Add React components
-- [x]  Add custom themes
-- [x]  Add Shadcn UI components
-- [x]  Add more themes/improve theme customization(e.g. custom box shadow)
-- [ ]  Add examples
-- [ ]  Add components for more react ui libs (headless ui, react aria)
+Please read the [contributing guide](/CONTRIBUTING.md).
 
 ## License
 
