@@ -1,6 +1,6 @@
 'use client'
 
-import { FaChevronDown } from 'react-icons/fa'
+import { ChevronDown } from 'lucide-react'
 
 import { useState } from 'react'
 
@@ -31,9 +31,9 @@ export default function Dropdown({
       >
         <div className="mx-auto flex items-center">
           {text}
-          <FaChevronDown
+          <ChevronDown
             className={
-              'ml-3 h-4 w-4 transition-transform group-data-[state=open]:rotate-180 group-data-[state=closed]:rotate-0 ease-in-out'
+              'ml-2 h-5 w-5 transition-transform group-data-[state=open]:rotate-180 group-data-[state=closed]:rotate-0 ease-in-out'
             }
           />
         </div>

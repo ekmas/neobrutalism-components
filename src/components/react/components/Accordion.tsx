@@ -1,7 +1,7 @@
 'use client'
 
 import { ClassValue } from 'clsx'
-import { FiPlus } from 'react-icons/fi'
+import { ChevronDown } from 'lucide-react'
 
 import { useEffect, useRef, useState } from 'react'
 
@@ -41,7 +41,7 @@ export default function Accordion({ question, answer, className }: Props) {
         }}
       >
         {question}
-        <FiPlus className="sm:ml-4 ml-3 sm:min-h-[24px] sm:min-w-[24px] group-data-[state=open]:rotate-45 group-data-[state=closed]:0 min-h-[18px] min-w-[18px] transition-transform ease-in-out" />
+        <ChevronDown className="sm:ml-4 ml-3 sm:min-h-[24px] sm:min-w-[24px] group-data-[state=open]:rotate-180 group-data-[state=closed]:0 min-h-[18px] min-w-[18px] transition-transform ease-in-out" />
       </button>
       <div
         ref={contentRef}
