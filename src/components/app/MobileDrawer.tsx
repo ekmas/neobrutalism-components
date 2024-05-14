@@ -34,7 +34,7 @@ export default function MobileDrawer() {
 
   return (
     <>
-      <div className="hidden w-[108px] m700:block m500:w-[92px] m400:w-[unset]">
+      <div className="hidden w-[160px] m900:block m800:w-[108px] m500:w-[92px] m400:w-[unset]">
         <button
           onClick={() => setIsDrawerActive(true)}
           className="flex items-center justify-center rounded-base border-2 border-black p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
@@ -65,6 +65,14 @@ export default function MobileDrawer() {
               </button>
             )
           })}
+          <button
+            onClick={() => {
+              handleLinkClick('/templates')
+            }}
+            className="sidebaritem block w-full border-b-4 border-r-4 border-black p-4 pl-7 text-left text-lg font-base text-black/90 hover:bg-main m800:p-4 m800:pl-6 m800:text-base"
+          >
+            Templates
+          </button>
         </div>
       </Drawer>
     </>

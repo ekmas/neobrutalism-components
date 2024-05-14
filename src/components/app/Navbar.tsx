@@ -18,12 +18,16 @@ function Navbar() {
           </Link>
         </div>
 
-        <div className="flex items-center gap-10 m700:hidden">
+        <div className="flex items-center gap-10 m900:hidden">
           <Link className="text-xl font-base" href="/docs">
             Docs
           </Link>
 
           <NavDropdown />
+
+          <Link className="text-xl font-base" href="/templates">
+            Templates
+          </Link>
         </div>
 
         <div className="flex w-[160px] items-center justify-end gap-5 m800:w-[unset] m400:gap-3">
