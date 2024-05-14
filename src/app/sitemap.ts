@@ -13,6 +13,7 @@ const DOCS_PAGES = [
   '/docs/resources',
   '/react/installation',
   '/shadcn/installation',
+  '/templates',
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
