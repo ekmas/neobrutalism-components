@@ -20,6 +20,7 @@ src
     │   └── shadcn.ts
     ├── colors.ts
     ├── sidebar-links.ts
+    ├── templates.ts
     ├── theme.jsonc
 ├── lib/utils.ts
 ├── layouts
@@ -80,4 +81,27 @@ I think I won't be adding any more components since I think i've covered most of
 
 The main focus now is on adding as many neobrutalism templates.
 
-I will add some templates soon and show you how you can do it too. Follow me on [twitter](x.com/samuelbreznjak) to stay tuned.
+### Creating templates
+
+If you'd like to add your neobrutalism templates to this project, here is how you can do it.
+
+#### Requirements
+
+- Template must be made for React, or React compatible frameworks (Next.js, Astro, Gatsby, etc.)
+- Template must be written in Tailwind CSS
+- Template must be original (you can create templates for existing use cases, but make sure they are original)
+
+#### Get started 
+
+Message me on [twitter](x.com/samuelbreznjak) or send me an email @ samuelbreznjak35@gmail.com, and I'll send you an invite for [neobrutalism-templates](https://github.com/neobrutalism-templates) organization. All templates are inside this organization.
+
+#### Choose a starter template 
+
+Choose a starter template for your template. 
+There is currently only starter template for [nextjs](https://github.com/neobrutalism-templates/nextjs-starter-template) atm. Hopefully, I'll add more of them for other frameworks in the future. If you're not making a template for nextjs, start from scratch.
+
+#### Creating the template
+
+As I said earlier make sure it looks good. Check the articles section in the [resources](https://neobrutalism-components.vercel.app/docs/resources) page or dribble/behance for inspiration. 
+
+After you're done add a brief guide to readme on how to use the template. Contact me after you're done, and hopefully I'll add your template to this project (with credits and so on).
