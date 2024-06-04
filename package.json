@@ -2,6 +2,10 @@
   "name": "neobrutalism-components",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
