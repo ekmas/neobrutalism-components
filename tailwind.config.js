@@ -75,6 +75,9 @@ module.exports = {
         m400: { raw: '(max-width: 400px)' },
         m350: { raw: '(max-width: 350px)' },
       },
+      width: {
+        container: '1300px',
+      },
     },
   },
   plugins: [require('@tailwindcss/typography'), require('tailwindcss-animate')],

@@ -1,5 +1,10 @@
 const colors = [
   {
+    bg: '#dfe5f2',
+    main: '#88aaee',
+    mainAccent: '#4d80e6',
+  },
+  {
     bg: '#daf5f0',
     main: '#c4a1ff',
     mainAccent: '#9e66ff',
@@ -18,11 +23,6 @@ const colors = [
     bg: '#fcfcca',
     main: '#87CEEB',
     mainAccent: '#51b8e1',
-  },
-  {
-    bg: '#dfe5f2',
-    main: '#88aaee',
-    mainAccent: '#4d80e6',
   },
   {
     bg: '#FEF2E8',

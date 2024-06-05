@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --bg: #daf5f0;
-  --main: #c4a1ff;
-  --main-accent: #a36ec4;
+  --bg: #dfe5f2;
+  --main: #88aaee;
+  --main-accent: #4d80e6;
   --border-radius: 5px;
   --horizontal-box-shadow: 4px;
   --vertical-box-shadow: 4px;
