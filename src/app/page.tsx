@@ -2,8 +2,16 @@ import Marquee from 'react-fast-marquee'
 
 import Link from 'next/link'
 
+import reviews from '@/data/reviews'
+
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion'
+
 import arrow from '../../public/svgs/arrow.svg'
-import herogrid from '../../public/svgs/herogrid.svg'
 import herostar2 from '../../public/svgs/herostar2.svg'
 import marqueestar from '../../public/svgs/marqueestar.svg'
 
@@ -51,7 +59,7 @@ export default function Home() {
       </main>
       <div>
         <Marquee
-          className="border-t-4 border-black bg-white py-5 font-base"
+          className="border-t-4 border-black bg-white py-5 m500:py-4 font-base"
           direction="left"
         >
           {Array(15)
@@ -59,11 +67,11 @@ export default function Home() {
             .map((x, id) => {
               return (
                 <div className="flex items-center" key={id}>
-                  <span className="mx-10 text-4xl m750:text-2xl m500:text-xl">
+                  <span className="mx-10 text-4xl m800:text-2xl m500:text-xl">
                     Neobrutalism components
                   </span>
                   <img
-                    className="w-[45px] m500:w-[35px]"
+                    className="w-[45px] m800:w-[35px]"
                     src={marqueestar.src}
                     alt="marquee star"
                   />
@@ -73,7 +81,7 @@ export default function Home() {
         </Marquee>
         <div className="grid grid-cols-2 border-b-4 border-t-4 border-black m700:grid-cols-1">
           <section className="border-b-4 border-r-4 border-black bg-bg p-14 py-16 m1300:p-10 m1300:py-12 m800:p-6 m800:py-8 m700:border-r-0 m700:bg-main">
-            <h2 className="mb-6 font-heading text-4xl m1300:text-3xl m700:text-2xl m500:text-xl">
+            <h2 className="mb-6 font-heading text-4xl m1300:text-3xl m800:text-2xl m500:text-xl">
               Made with Tailwind
             </h2>
 
@@ -83,7 +91,7 @@ export default function Home() {
             </p>
           </section>
           <section className="border-b-4 border-black bg-main p-14 py-16 m1300:p-10 m1300:py-12 m800:p-6 m800:py-8 m700:bg-bg">
-            <h2 className="mb-6 font-heading text-4xl m1300:text-3xl m700:text-2xl m500:text-xl">
+            <h2 className="mb-6 font-heading text-4xl m1300:text-3xl m800:text-2xl m500:text-xl">
               Open source
             </h2>
 
@@ -93,7 +101,7 @@ export default function Home() {
             </p>
           </section>
           <section className="border-r-4 border-black bg-main p-14 py-16 m1300:p-10 m1300:py-12 m800:p-6 m800:py-8 m700:border-b-4 m700:border-r-0">
-            <h2 className="mb-6 font-heading text-4xl m1300:text-3xl m700:text-2xl m500:text-xl">
+            <h2 className="mb-6 font-heading text-4xl m1300:text-3xl m800:text-2xl m500:text-xl">
               Easy to use
             </h2>
 
@@ -103,7 +111,7 @@ export default function Home() {
             </p>
           </section>
           <section className="bg-bg p-14 py-16 m1300:p-10 m1300:py-12 m800:p-6 m800:py-8">
-            <h2 className="mb-6 text-4xl font-heading m1300:text-3xl m700:text-2xl m500:text-xl">
+            <h2 className="mb-6 text-4xl font-heading m1300:text-3xl m800:text-2xl m500:text-xl">
               Customizable
             </h2>
 
@@ -112,8 +120,109 @@ export default function Home() {
             </p>
           </section>
         </div>
+        <section className="inset-0 flex w-full flex-col items-center justify-center bg-white bg-[linear-gradient(to_right,#80808033_1px,transparent_1px),linear-gradient(to_bottom,#80808033_1px,transparent_1px)] bg-[size:70px_70px] font-base">
+          <div className="mx-auto w-container max-w-full px-5 py-20 m500:py-14 lg:py-[100px]">
+            <h2 className="mb-10 text-center text-4xl font-heading m1300:text-3xl m700:text-2xl m500:text-xl lg:mb-20">
+              Loved by the community
+            </h2>
+            <div className="m1000:grid-cols-1 m1000:gap-0 grid grid-cols-3 gap-4 lg:gap-8">
+              {[
+                [reviews[0], reviews[1]],
+                [reviews[2], reviews[3], reviews[4]],
+                [reviews[5], reviews[6]],
+              ].map((card, index) => (
+                <div className="group flex flex-col justify-center" key={index}>
+                  {card.map(({ jobTitle, pfp, fullName, review }, index) => (
+                    <div
+                      className="m1000:min-h-20 m1000:w-2/3 m1000:mx-auto m500:w-full mb-4 min-h-48 w-full rounded-base border-2 border-black bg-bg p-5 shadow-base lg:mb-8"
+                      key={index}
+                    >
+                      <div className="flex items-center gap-5">
+                        <img
+                          className="h-12 w-12 rounded-base border-2 border-black"
+                          src={pfp}
+                          alt="pfp"
+                        />
+
+                        <div>
+                          <h4 className="text-lg font-heading">{fullName}</h4>
+                          <p className="text-sm font-base">{jobTitle}</p>
+                        </div>
+                      </div>
+                      <div className="mt-5 break-words">{review}</div>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+        <section className="border-t-4 border-t-black border-b-4 border-b-black bg-bg py-20 m500:py-14 font-base lg:py-[100px]">
+          <h2 className="mb-10 px-5 text-center text-4xl font-heading m1300:text-3xl m700:text-2xl m500:text-xl lg:mb-20">
+            Frequently asked questions
+          </h2>
+
+          <div className="mx-auto grid w-[700px] max-w-full px-5">
+            <Accordion
+              className="text-base sm:text-lg"
+              type="single"
+              collapsible
+            >
+              <AccordionItem className="mb-2" value="item-1">
+                <AccordionTrigger>Is dark mode available?</AccordionTrigger>
+                <AccordionContent className="text-sm sm:text-base">
+                  Currently no, but maybe I&apos;ll add it in the future.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem className="mb-2" value="item-2">
+                <AccordionTrigger>
+                  Are these components accessible?
+                </AccordionTrigger>
+                <AccordionContent className="text-sm sm:text-base">
+                  It depends. React components are somewhat accessible, but if
+                  accessibility is one of your main concerns I suggest you to
+                  use shadcn components because under the hood they use radix-ui
+                  which is fully accessible.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem className="mb-2" value="item-3">
+                <AccordionTrigger>
+                  Why copy/paste and not packaged as a dependency?
+                </AccordionTrigger>
+                <AccordionContent className="text-sm sm:text-base">
+                  I like shadcn&apos;s philosophy about component libraries,
+                  I&apos;ll quote what he said about this:
+                  <br />
+                  <q className="mt-5 block">
+                    The idea behind this is to give you ownership and control
+                    over the code, allowing you to decide how the components are
+                    built and styled. Start with some sensible defaults, then
+                    customize the components to your needs. One of the drawback
+                    of packaging the components in an npm package is that the
+                    style is coupled with the implementation. The design of your
+                    components should be separate from their implementation.
+                  </q>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-4">
+                <AccordionTrigger>How to contribute?</AccordionTrigger>
+                <AccordionContent className="text-sm sm:text-base">
+                  Visit{' '}
+                  <a
+                    target="_blank"
+                    className="underline font-heading"
+                    href="https://github.com/ekmas/neobrutalism-components/blob/main/CONTRIBUTING.md"
+                  >
+                    contributing.md
+                  </a>{' '}
+                  to get started.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </section>
         <Marquee
-          className="border-b-4 border-black bg-white py-5 font-base"
+          className="border-b-4 border-black bg-white py-5 m500:py-4 font-base"
           direction="right"
         >
           {Array(15)
@@ -121,11 +230,11 @@ export default function Home() {
             .map((x, id) => {
               return (
                 <div className="flex items-center" key={id}>
-                  <span className="mx-10 text-4xl m750:text-2xl m500:text-xl">
+                  <span className="mx-10 text-4xl m800:text-2xl m500:text-xl">
                     Neobrutalism components
                   </span>
                   <img
-                    className="w-[45px] m500:w-[35px]"
+                    className="w-[45px] m800:w-[35px]"
                     src={marqueestar.src}
                     alt="marquee star"
                   />
@@ -133,10 +242,7 @@ export default function Home() {
               )
             })}
         </Marquee>
-        <section
-          className="flex flex-col items-center justify-center bg-main bg-cover bg-center bg-no-repeat px-5 py-[200px] m1000:py-[150px] m500:py-[120px]"
-          style={{ backgroundImage: `url(${herogrid.src})` }}
-        >
+        <section className="inset-0 w-full flex flex-col items-center justify-center bg-main bg-[linear-gradient(to_right,#00000033_1px,transparent_1px),linear-gradient(to_bottom,#00000033_1px,transparent_1px)] bg-[size:70px_70px] px-5 py-[200px] m1000:py-[150px] m500:py-[120px]">
           <h2 className="text-center font-heading text-5xl m1000:text-3xl m500:text-2xl m400:text-xl">
             Start making neobrutalism layouts today.
           </h2>
