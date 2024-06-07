@@ -15,6 +15,8 @@ const buttonVariants = cva(
         noShadow: 'bg-main border-2 border-black',
         link: 'underline-offset-4 hover:underline',
         neutral: 'bg-white border-2 border-black',
+        reverse:
+          'bg-main border-2 border-black hover:translate-x-reverseBoxShadowX hover:translate-y-reverseBoxShadowY hover:shadow-base',
       },
       size: {
         default: 'h-10 px-4 py-2',
