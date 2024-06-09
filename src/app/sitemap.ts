@@ -5,7 +5,7 @@ import SHADCN_COMPONENTS from '@/data/components/shadcn'
 
 import { transformToSlug } from '@/lib/utils'
 
-const root = 'https://neobrutalism-components.vercel.app'
+const root = 'https://www.neobrutalism.dev'
 
 const DOCS_PAGES = [
   '/docs',
