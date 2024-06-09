@@ -10,7 +10,7 @@ Neobrutalism components are a collection of Tailwind components for React and Sh
 
 ## Documentation
 
-Visit [docs](https://neobrutalism-components.vercel.app/docs) to get started.
+Visit [docs](https://www.neobrutalism.dev/docs) to get started.
 
 ## About 
 

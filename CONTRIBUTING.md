@@ -102,6 +102,6 @@ There is currently only starter template for [nextjs](https://github.com/neobrut
 
 #### Creating the template
 
-As I said earlier make sure it looks good. Check the articles section in the [resources](https://neobrutalism-components.vercel.app/docs/resources) page or dribble/behance for inspiration. 
+As I said earlier make sure it looks good. Check the articles section in the [resources](https://www.neobrutalism.dev/docs/resources) page or dribble/behance for inspiration. 
 
 After you're done add a brief guide to readme on how to use the template. Contact me after you're done, and hopefully I'll add your template to this project (with credits and so on).
