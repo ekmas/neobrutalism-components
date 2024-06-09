@@ -33,16 +33,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     description: 'A collection of neobrutalism-styled Tailwind components.',
-    images: ['https://neobrutalism-components.vercel.app/preview.png'],
-    url: 'https://neobrutalism-components.vercel.app/',
+    images: ['https://www.neobrutalism.dev/preview.png'],
+    url: 'https://www.neobrutalism.dev/',
     title: 'Neobrutalism components',
   },
-  metadataBase: new URL('https://neobrutalism-components.vercel.app/'),
+  metadataBase: new URL('https://www.neobrutalism.dev/'),
   twitter: {
     card: 'summary_large_image',
     title: 'Neobrutalism components - Start making neobrutalism layouts',
     description: 'A collection of neobrutalism-styled Tailwind components.',
-    images: ['https://neobrutalism-components.vercel.app/preview.png'],
+    images: ['https://www.neobrutalism.dev/preview.png'],
     creator: '@samuelbreznjak',
   },
 }
