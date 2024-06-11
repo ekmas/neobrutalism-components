@@ -148,6 +148,8 @@ export default function Styling() {
     translate: {
       boxShadowX: '${boxShadowLength[0] + 'px'}',
       boxShadowY: '${boxShadowLength[1] + 'px'}',
+      reverseBoxShadowX: '${-boxShadowLength[0] + 'px'}',
+      reverseBoxShadowY: '${-boxShadowLength[1] + 'px'}',
     },
     fontWeight: {
       base: '${fontWeight[1]}',
