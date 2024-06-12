@@ -17,6 +17,8 @@ module.exports = {
       translate: {
         boxShadowX: 'var(--horizontal-box-shadow)',
         boxShadowY: 'var(--vertical-box-shadow)',
+        reverseBoxShadowX: 'calc(var(--horizontal-box-shadow) * -1)',
+        reverseBoxShadowY: 'calc(var(--vertical-box-shadow) * -1)',
       },
       boxShadow: {
         base: 'var(--horizontal-box-shadow) var(--vertical-box-shadow) 0px 0px rgba(0,0,0,1)',
