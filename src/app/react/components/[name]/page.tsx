@@ -6,11 +6,11 @@ import components from '@/data/components/react'
 import Component from '@/components/app/Component'
 import Pagination from '@/components/app/Pagination'
 
-import { addSpaces } from '@/lib/utils'
+import { transformToName, transformToSlug } from '@/lib/utils'
 
 export async function generateStaticParams() {
   const componentSlugs = components.map((component) => ({
-    name: component.name,
+    name: transformToSlug(component.name),
   }))
 
   return componentSlugs
@@ -23,11 +23,11 @@ export async function generateMetadata({
 }: {
   params: { name: string }
 }): Promise<Metadata> {
-  const component = addSpaces(params.name)
+  const component = transformToName(params.name)
 
   return {
-    title: component,
-    description: `Start using ${component} component in your next project.`,
+    title: `React ${component}`,
+    description: `Start using ${component} React component in your next project.`,
   }
 }
 
@@ -37,7 +37,7 @@ export default async function Installation({
   params: { name: string }
 }) {
   const currentComponent = components.find(
-    (component) => component.name === params.name,
+    (component) => transformToSlug(component.name) === params.name,
   )
 
   if (!currentComponent) {
@@ -47,19 +47,17 @@ export default async function Installation({
   return (
     <>
       <Component
-        name={addSpaces(currentComponent.name)}
+        name={currentComponent.name}
         exampleComponent={<currentComponent.exampleComponent />}
       />
 
-      {/* <div className="prose-code:mx-[unset] prose-code:font-[400] prose-pre:text-sm prose-code:border-none prose-code:bg-transparent prose-code:px-[unset]"> */}
       <currentComponent.markdown />
-      {/* </div> */}
 
       <Pagination
         prev={
           currentComponent.prevComponent
             ? {
-                name: `${addSpaces(currentComponent.prevComponent)}`,
+                name: `${transformToName(currentComponent.prevComponent)}`,
                 path: `/react/components/${currentComponent.prevComponent}`,
               }
             : undefined
@@ -67,7 +65,7 @@ export default async function Installation({
         next={
           currentComponent.nextComponent
             ? {
-                name: `${addSpaces(currentComponent.nextComponent)}`,
+                name: `${transformToName(currentComponent.nextComponent)}`,
                 path: `/react/components/${currentComponent.nextComponent}`,
               }
             : undefined
