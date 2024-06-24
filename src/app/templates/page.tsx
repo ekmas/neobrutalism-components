@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="min-h-[100dvh] bg-white px-5 pt-[88px] m500:pt-16">
-      <div className="pt-16 pb-16 m400:pb-10 text-center">
+    <div className="min-h-[100dvh] bg-white dark:bg-darkBg px-5 pt-[88px] m500:pt-16">
+      <div className="pt-16 pb-16 text-text dark:text-darkText m400:pb-10 text-center">
         <h1 className="text-4xl font-heading m800:text-3xl m500:text-2xl m400:text-xl">
           Templates
         </h1>
@@ -31,10 +31,10 @@ export default function Page() {
           {TEMPLATES.map((template) => {
             return (
               <div
-                className="p-[15px] bg-white rounded-base shadow-base border-2 border-black"
+                className="p-[15px] bg-white dark:bg-darkBg rounded-base shadow-light dark:shadow-dark border-2 border-border dark:border-darkBorder"
                 key={template.title}
               >
-                <div className="border-2 border-black rounded-base aspect-[2/1]">
+                <div className="border-2 border-border dark:border-darkBorder rounded-base aspect-[2/1]">
                   <img
                     className="rounded-base"
                     src={`${template.previewImg.src}`}
@@ -49,7 +49,7 @@ export default function Page() {
                 <div className="grid grid-cols-2 m800:text-sm gap-5 mt-8">
                   <a
                     style={{ backgroundColor: `${template.color}` }}
-                    className="border-2 py-1.5 font-base shadow-base hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all border-black rounded-base"
+                    className="text-text border-2 py-1.5 font-base shadow-light dark:shadow-dark hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:hover:shadow-none transition-all border-border dark:border-darkBorder rounded-base"
                     target="_blank"
                     href={template.liveUrl}
                   >
@@ -57,7 +57,7 @@ export default function Page() {
                   </a>
                   <a
                     style={{ backgroundColor: `${template.color}` }}
-                    className="border-2 py-1.5 font-base shadow-base hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all border-black rounded-base"
+                    className="text-text border-2 py-1.5 font-base shadow-light dark:shadow-dark hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:hover:shadow-none transition-all border-border dark:border-darkBorder rounded-base"
                     target="_blank"
                     href={template.repoUrl}
                   >
