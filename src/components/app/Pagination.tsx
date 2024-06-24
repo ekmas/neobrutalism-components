@@ -1,6 +1,6 @@
 'use client'
 
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
 
 import { useRouter } from 'next/navigation'
 
@@ -39,7 +39,7 @@ export default function Pagination({ prev, next }: Props) {
             router.push(prev.path)
           }}
         >
-          <FaArrowLeft className="mr-2" />
+          <ArrowLeft className="mr-2 w-4 h-4" />
           {prev.name}
         </Button>
       )}
@@ -52,7 +52,7 @@ export default function Pagination({ prev, next }: Props) {
           }}
         >
           {next.name}
-          <FaArrowRight className="ml-2" />
+          <ArrowRight className="ml-2 w-4 h-4" />
         </Button>
       )}
     </div>

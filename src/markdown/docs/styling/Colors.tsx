@@ -4,17 +4,18 @@ import { SetStateAction } from 'react'
 
 import colors from '@/data/colors'
 
-type ColorPallette = {
-  bg: string
+export type ColorPallette = {
   main: string
   mainAccent: string
+  bg: string
+  border: string
+  darkBg: string
+  darkBorder: string
 }
 
 export default function Colors({
-  saveStylingPreference,
   setActiveColorPalette,
 }: {
-  saveStylingPreference: boolean | null
   setActiveColorPalette: React.Dispatch<SetStateAction<ColorPallette>>
 }) {
   const updateColorPalette = (color: ColorPallette) => {
@@ -23,12 +24,13 @@ export default function Colors({
     r.style.setProperty('--bg', color.bg)
     r.style.setProperty('--main', color.main)
     r.style.setProperty('--main-accent', color.mainAccent)
+    r.style.setProperty('--border', color.border)
+    r.style.setProperty('--dark-bg', color.darkBg)
+    r.style.setProperty('--dark-border', color.darkBorder)
 
     setActiveColorPalette(color)
 
-    if (saveStylingPreference) {
-      localStorage.setItem('color', JSON.stringify(color))
-    }
+    localStorage.setItem('color', JSON.stringify(color))
   }
 
   return (
@@ -53,14 +55,23 @@ export default function Colors({
                 onClick={() => {
                   updateColorPalette(color)
                 }}
-                className="flex rounded-base border-2 border-black shadow-base transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none"
+                className="flex rounded-base border-2 border-border dark:border-darkBorder shadow-light dark:shadow-dark transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:hover:shadow-none"
               >
                 <div
-                  className="h-12 w-12 rounded-l-base border-r-2 border-black m1100:h-8 m1100:w-8"
+                  className="dark:hidden h-12 w-12 rounded-l-base border-r-2 border-border dark:border-darkBorder m1100:h-8 m1100:w-8"
                   style={{ backgroundColor: color.bg }}
                 ></div>
                 <div
-                  className="h-12 w-12 rounded-r-base m1100:h-8 m1100:w-8"
+                  className="dark:hidden h-12 w-12 rounded-r-base m1100:h-8 m1100:w-8"
+                  style={{ backgroundColor: color.main }}
+                ></div>
+
+                <div
+                  className="hidden dark:block h-12 w-12 rounded-l-base border-r-2 border-border dark:border-darkBorder m1100:h-8 m1100:w-8"
+                  style={{ backgroundColor: color.darkBg }}
+                ></div>
+                <div
+                  className="hidden dark:block h-12 w-12 rounded-r-base m1100:h-8 m1100:w-8"
                   style={{ backgroundColor: color.main }}
                 ></div>
               </button>

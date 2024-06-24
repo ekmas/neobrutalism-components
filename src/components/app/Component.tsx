@@ -15,7 +15,7 @@ export default function Component({ name, exampleComponent, docsLink }: Props) {
 
       {docsLink && (
         <a
-          className="mb-5 flex w-max items-center gap-3 rounded-base border-2 border-black bg-main px-2 py-0.5 text-[13px]"
+          className="mb-5 flex w-max items-center gap-3 rounded-base border-2 border-border dark:border-darkBorder text-text bg-main px-2 py-0.5 text-[13px]"
           target="_blank"
           href={docsLink}
         >

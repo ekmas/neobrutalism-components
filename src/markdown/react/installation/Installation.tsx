@@ -29,7 +29,7 @@ export function cn(...inputs: ClassValue[]) {
 
   return (
     <div className="my-10">
-      <div className="shadow-base rounded-base">
+      <div className="shadow-light dark:shadow-dark rounded-base">
         <Tabs
           activeTab={activeTab}
           setActiveTab={setActiveTab}

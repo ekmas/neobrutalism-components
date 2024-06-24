@@ -22,12 +22,12 @@ function Calendar({
       showOutsideDays={showOutsideDays}
       className={cn(
         className,
-        '!rounded-base border-2 border-black bg-main p-3 font-bold shadow-base',
+        '!rounded-base border-2 border-border dark:border-darkBorder bg-main p-3 font-bold shadow-light dark:shadow-dark',
       )}
       classNames={{
         months: 'flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0',
         month: 'space-y-4',
-        caption: 'flex justify-center pt-1 relative items-center',
+        caption: 'flex justify-center text-text pt-1 relative items-center',
         caption_label: 'text-sm',
         nav: 'space-x-1 flex items-center',
         nav_button: cn(
@@ -38,7 +38,7 @@ function Calendar({
         nav_button_next: 'absolute right-1',
         table: 'w-full border-collapse space-y-1',
         head_row: 'flex',
-        head_cell: 'text-black rounded-base w-9 font-base text-[0.8rem]',
+        head_cell: 'text-text rounded-base w-9 font-base text-[0.8rem]',
         row: 'flex w-full mt-2',
         cell: 'h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-base rounded-base [&:has([aria-selected].day-outside)]:bg-white [&:has([aria-selected])]:bg-white first:[&:has([aria-selected])]:rounded-l-base last:[&:has([aria-selected])]:rounded-r-base focus-within:relative focus-within:z-20',
         day: cn(
@@ -47,7 +47,7 @@ function Calendar({
         ),
         day_range_end: 'day-range-end',
         day_selected: '!bg-black text-white rounded-base',
-        day_today: 'bg-white text-black',
+        day_today: 'bg-white text-text',
         day_outside: 'day-outside text-black opacity-50 aria-selected:bg-none',
         day_disabled: 'text-black opacity-50 rounded-base',
         day_range_middle: 'aria-selected:bg-white aria-selected:text-black',

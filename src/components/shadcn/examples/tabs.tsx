@@ -37,7 +37,12 @@ export default function TabsDemo() {
             </div>
           </CardContent>
           <CardFooter>
-            <Button className="w-full bg-white">Save changes</Button>
+            <Button
+              variant="noShadow"
+              className="w-full bg-white text-text dark:bg-darkBg dark:text-darkText"
+            >
+              Save changes
+            </Button>
           </CardFooter>
         </Card>
       </TabsContent>
@@ -60,7 +65,12 @@ export default function TabsDemo() {
             </div>
           </CardContent>
           <CardFooter>
-            <Button className="w-full bg-white">Save password</Button>
+            <Button
+              variant="noShadow"
+              className="w-full bg-white text-text dark:bg-darkBg dark:text-darkText"
+            >
+              Save password
+            </Button>
           </CardFooter>
         </Card>
       </TabsContent>

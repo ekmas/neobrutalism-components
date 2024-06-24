@@ -16,6 +16,11 @@ const styling = `
     cursor: pointer;
     background: #fff;
   }
+
+  .dark input.rangeSlider::-webkit-slider-thumb {
+    border: 3px solid white;
+    background: black;
+  }
 `
 
 export default function RangeSlider({
@@ -38,7 +43,7 @@ export default function RangeSlider({
           max={max}
           value={rangeValue}
           onChange={(e) => setRangeValue(+e.target.value)}
-          className="rangeSlider h-2 w-full cursor-pointer appearance-none rounded-lg border-2 border-black bg-white"
+          className="rangeSlider h-2 w-full cursor-pointer appearance-none rounded-lg border-2 border-border dark:border-darkBorder bg-white dark:bg-darkBg"
         />
       </div>
     </>

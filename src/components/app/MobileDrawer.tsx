@@ -1,6 +1,6 @@
 'use client'
 
-import { FaBars } from 'react-icons/fa'
+import { Menu } from 'lucide-react'
 
 import { useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
@@ -34,22 +34,22 @@ export default function MobileDrawer() {
 
   return (
     <>
-      <div className="hidden w-[160px] m900:block m800:w-[108px] m500:w-[92px] m400:w-[unset]">
+      <div className="hidden w-[172px] m900:block m800:w-[44px] m400:w-9">
         <button
           onClick={() => setIsDrawerActive(true)}
-          className="flex items-center justify-center rounded-base border-2 border-black p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
+          className="flex items-center justify-center rounded-base border-2 border-border dark:border-darkBorder p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
         >
-          <FaBars className="h-6 w-6 m500:h-4 m500:w-4" />
+          <Menu className="h-6 w-6 m500:h-4 m500:w-4" />
         </button>
       </div>
 
       <Drawer active={isDrawerActive} setActive={setIsDrawerActive}>
-        <div className="scrollbar h-full w-full overflow-y-auto bg-white">
+        <div className="scrollbar h-full w-full overflow-y-auto bg-white dark:bg-darkBg">
           {ACTIVE_SIDEBAR.map((item, id) => {
             return typeof item === 'string' ? (
               <div
                 key={id}
-                className="sidebaritem block border-b-4 border-r-4 border-black p-4 text-xl font-heading m800:p-4 m800:text-base"
+                className="sidebaritem block border-b-4 border-r-4 border-border dark:border-darkBorder p-4 text-xl font-heading m800:p-4 m800:text-base"
               >
                 {item}
               </div>
@@ -59,7 +59,7 @@ export default function MobileDrawer() {
                 onClick={() => {
                   handleLinkClick(item.href)
                 }}
-                className="sidebaritem block w-full border-b-4 border-r-4 border-black p-4 pl-7 text-left text-lg font-base text-black/90 hover:bg-main m800:p-4 m800:pl-6 m800:text-base"
+                className="sidebaritem block w-full border-b-4 border-r-4 border-border dark:border-darkBorder p-4 pl-7 text-left text-lg font-base text-black/90 dark:text-darkText/90 hover:bg-main dark:hover:text-text m800:p-4 m800:pl-6 m800:text-base"
               >
                 {item.text}
               </button>
@@ -69,7 +69,7 @@ export default function MobileDrawer() {
             onClick={() => {
               handleLinkClick('/templates')
             }}
-            className="sidebaritem block w-full border-b-4 border-r-4 border-black p-4 pl-7 text-left text-lg font-base text-black/90 hover:bg-main m800:p-4 m800:pl-6 m800:text-base"
+            className="sidebaritem block w-full border-b-4 border-r-4 border-border dark:border-darkBorder p-4 pl-7 text-left text-lg font-base text-black/90 dark:text-darkText/90 hover:bg-main dark:hover:text-text m800:p-4 m800:pl-6 m800:text-base"
           >
             Templates
           </button>

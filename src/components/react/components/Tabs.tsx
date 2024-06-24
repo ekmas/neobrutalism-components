@@ -32,7 +32,7 @@ export default function Tabs({
           <button
             key={index}
             onClick={() => setActiveTab(tab)}
-            className={`cursor-pointer border-2 border-black py-2 text-center font-bold transition-colors first:rounded-ss-base last:rounded-se-base ${bg}`}
+            className={`cursor-pointer text-text border-2 border-border dark:border-darkBorder py-2 text-center font-bold transition-colors first:rounded-ss-base last:rounded-se-base ${bg}`}
           >
             {tab}
           </button>

@@ -7,11 +7,9 @@ import { Slider } from '../../../components/ui/slider'
 export default function BoxShadow({
   boxShadowLength,
   setBoxShadowLength,
-  saveStylingPreference,
 }: {
   boxShadowLength: number[]
   setBoxShadowLength: React.Dispatch<SetStateAction<number[]>>
-  saveStylingPreference: boolean | null
 }) {
   const updateX = (number: [number]) => {
     const r = window.document.querySelector(':root') as HTMLElement
@@ -20,9 +18,7 @@ export default function BoxShadow({
 
     setBoxShadowLength([number[0], boxShadowLength[1]])
 
-    if (saveStylingPreference) {
-      localStorage.setItem('boxShadow', `${number[0]},${boxShadowLength[1]}`)
-    }
+    localStorage.setItem('boxShadow', `${number[0]},${boxShadowLength[1]}`)
   }
 
   const updateY = (number: [number]) => {
@@ -32,9 +28,7 @@ export default function BoxShadow({
 
     setBoxShadowLength([boxShadowLength[0], number[0]])
 
-    if (saveStylingPreference) {
-      localStorage.setItem('boxShadow', `${boxShadowLength[0]},${number[0]}`)
-    }
+    localStorage.setItem('boxShadow', `${boxShadowLength[0]},${number[0]}`)
   }
 
   return (

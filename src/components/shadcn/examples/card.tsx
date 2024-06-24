@@ -34,7 +34,7 @@ export default function CardDemo() {
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="framework">Framework</Label>
               <Select>
-                <SelectTrigger className="bg-white" id="framework">
+                <SelectTrigger id="framework">
                   <SelectValue placeholder="Select" />
                 </SelectTrigger>
                 <SelectContent position="popper">
@@ -50,7 +50,7 @@ export default function CardDemo() {
       </CardContent>
       <CardFooter className="flex justify-between">
         <Button>Cancel</Button>
-        <Button className="bg-white">Deploy</Button>
+        <Button variant="neutral">Deploy</Button>
       </CardFooter>
     </Card>
   )

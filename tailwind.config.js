@@ -10,9 +10,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bg: 'var(--bg)',
         main: 'var(--main)',
         mainAccent: 'var(--main-accent)',
+        overlay: 'rgba(0,0,0,0.8)',
+
+        // light mode
+        bg: 'var(--bg)',
+        text: 'black',
+        border: 'var(--border)',
+
+        // dark mode
+        darkBg: 'var(--dark-bg)',
+        darkText: '#eeefe9',
+        darkBorder: 'var(--dark-border)',
       },
       translate: {
         boxShadowX: 'var(--horizontal-box-shadow)',
@@ -21,11 +31,18 @@ module.exports = {
         reverseBoxShadowY: 'calc(var(--vertical-box-shadow) * -1)',
       },
       boxShadow: {
-        base: 'var(--horizontal-box-shadow) var(--vertical-box-shadow) 0px 0px rgba(0,0,0,1)',
+        light:
+          'var(--horizontal-box-shadow) var(--vertical-box-shadow) 0px 0px var(--border)',
+        dark: 'var(--horizontal-box-shadow) var(--vertical-box-shadow) 0px 0px var(--dark-border)',
+        nav: '4px 4px 0px 0px var(--border)',
+        navDark: '4px 4px 0px 0px var(--dark-border)',
       },
       fontWeight: {
         base: 'var(--base-font-weight)',
         heading: 'var(--heading-font-weight)',
+      },
+      borderRadius: {
+        base: 'var(--border-radius)',
       },
       keyframes: {
         marquee: {
@@ -56,9 +73,6 @@ module.exports = {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'caret-blink': 'caret-blink 1.25s ease-out infinite',
       },
-      borderRadius: {
-        base: 'var(--border-radius)',
-      },
       screens: {
         m1500: { raw: '(max-width: 1500px)' },
         m1300: { raw: '(max-width: 1300px)' },
@@ -83,4 +97,5 @@ module.exports = {
     },
   },
   plugins: [require('@tailwindcss/typography'), require('tailwindcss-animate')],
+  darkMode: 'class',
 }

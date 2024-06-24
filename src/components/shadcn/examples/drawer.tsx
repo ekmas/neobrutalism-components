@@ -25,7 +25,12 @@ export default function DrawerDemo() {
           <DrawerFooter className="grid grid-cols-2">
             <Button variant="noShadow">Submit</Button>
             <DrawerClose asChild>
-              <Button variant="neutral">Cancel</Button>
+              <Button
+                className="bg-white text-text dark:bg-darkBg dark:text-darkText"
+                variant="noShadow"
+              >
+                Cancel
+              </Button>
             </DrawerClose>
           </DrawerFooter>
         </div>

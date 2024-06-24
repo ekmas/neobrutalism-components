@@ -5,11 +5,9 @@ import { Slider } from '@/components/ui/slider'
 export default function FontWeight({
   fontWeight,
   setFontWeight,
-  saveStylingPreference,
 }: {
   fontWeight: number[]
   setFontWeight: React.Dispatch<SetStateAction<number[]>>
-  saveStylingPreference: boolean | null
 }) {
   const updateHeadingFontWeight = (number: [number]) => {
     const r = window.document.querySelector(':root') as HTMLElement
@@ -18,9 +16,7 @@ export default function FontWeight({
 
     setFontWeight([number[0], fontWeight[1]])
 
-    if (saveStylingPreference) {
-      localStorage.setItem('fontWeight', `${number[0]},${fontWeight[1]}`)
-    }
+    localStorage.setItem('fontWeight', `${number[0]},${fontWeight[1]}`)
   }
 
   const updateBaseFontWeight = (number: [number]) => {
@@ -30,9 +26,7 @@ export default function FontWeight({
 
     setFontWeight([fontWeight[0], number[0]])
 
-    if (saveStylingPreference) {
-      localStorage.setItem('fontWeight', `${fontWeight[0]},${number[0]}`)
-    }
+    localStorage.setItem('fontWeight', `${fontWeight[0]},${number[0]}`)
   }
 
   return (
