@@ -27,7 +27,7 @@ export async function generateMetadata({
 
   return {
     title: `React ${component}`,
-    description: `Start using ${component} React component in your next project.`,
+    description: `Start using React ${component} component in your next project.`,
   }
 }
 

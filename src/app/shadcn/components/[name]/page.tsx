@@ -27,7 +27,7 @@ export async function generateMetadata({
 
   return {
     title: `Shadcn ${component}`,
-    description: `Start using ${component} Shadcn UI component in your next project.`,
+    description: `Start using Shadcn UI ${component} component in your next project.`,
   }
 }
 
