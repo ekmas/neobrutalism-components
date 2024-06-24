@@ -15,7 +15,7 @@ export default function TabsExample() {
         setActiveTab={setActiveTab}
         tabsArray={tabsArray}
       />
-      <div className="max-w-full rounded-b-base border-2 border-black bg-white p-5 font-base">
+      <div className="max-w-full rounded-b-base border-2 border-border dark:border-darkBorder bg-white dark:bg-darkBg p-5 font-base">
         {activeTab === 'Tab 1' && (
           <div>
             <h3>Tab 1</h3>
