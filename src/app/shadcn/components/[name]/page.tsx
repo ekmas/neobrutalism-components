@@ -26,8 +26,8 @@ export async function generateMetadata({
   const component = transformToName(params.name)
 
   return {
-    title: component,
-    description: `Start using ${component} component in your next project.`,
+    title: `Shadcn ${component}`,
+    description: `Start using ${component} Shadcn UI component in your next project.`,
   }
 }
 
@@ -54,9 +54,7 @@ export default async function Installation({
         )}`}
       />
 
-      {/* <div className="prose-code:mx-[unset] prose-code:font-[400] prose-pre:text-sm prose-code:border-none prose-code:bg-transparent prose-code:px-[unset]"> */}
       <currentComponent.markdown />
-      {/* </div> */}
 
       <Pagination
         prev={

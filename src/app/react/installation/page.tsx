@@ -3,7 +3,7 @@ import Installation from '@/markdown/react/installation/page.mdx'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'React installation',
+  title: 'React Installation',
   description: 'Learn how to install react neobrutalism components.',
 }
 

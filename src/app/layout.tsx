@@ -20,7 +20,8 @@ export const metadata: Metadata = {
       'Neobrutalism components - Start making neobrutalism layouts today',
     template: `%s - Neobrutalism components`,
   },
-  description: 'A collection of neobrutalism-styled Tailwind components.',
+  description:
+    'A collection of neobrutalism-styled Tailwind components for React and Shadcn UI.',
   keywords: [
     'neobrutalism',
     'neobrutalism components',
@@ -33,7 +34,8 @@ export const metadata: Metadata = {
   authors: [{ name: 'Samuel Breznjak', url: 'https://github.com/ekmas' }],
   openGraph: {
     type: 'website',
-    description: 'A collection of neobrutalism-styled Tailwind components.',
+    description:
+      'A collection of neobrutalism-styled Tailwind components for React and Shadcn UI.',
     images: ['https://www.neobrutalism.dev/preview.png'],
     url: 'https://www.neobrutalism.dev/',
     title: 'Neobrutalism components',
@@ -42,7 +44,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Neobrutalism components - Start making neobrutalism layouts',
-    description: 'A collection of neobrutalism-styled Tailwind components.',
+    description:
+      'A collection of neobrutalism-styled Tailwind components for React and Shadcn UI.',
     images: ['https://www.neobrutalism.dev/preview.png'],
     creator: '@samuelbreznjak',
   },
