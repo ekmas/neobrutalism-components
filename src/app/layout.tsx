@@ -9,6 +9,7 @@ import { DM_Sans } from 'next/font/google'
 import Navbar from '@/components/app/Navbar'
 import ScrollToTop from '@/components/app/ScrollToTop'
 import SetStylingPref from '@/components/app/SetStylingPref'
+import { ThemeProvider } from '@/components/app/ThemeProvider'
 import { Toaster } from '@/components/ui/toaster'
 
 const dmSans = DM_Sans({ subsets: ['latin'] })
@@ -55,20 +56,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={dmSans.className}>
-        <Navbar />
-        {children}
-        <div id="drawer"></div>
-        <div id="modal"></div>
-        <Toaster />
-        <SetStylingPref />
-        <ScrollToTop />
-        <div className="hidden">
-          <ECInit />
-        </div>
-        {/* 
-          Imported markdown to root layout, so copy button on code blocks can work on route change.
-          For more info visit: https://github.com/expressive-code/expressive-code/issues/203
-        */}
+        <ThemeProvider attribute="class" disableTransitionOnChange>
+          <Navbar />
+          {children}
+          <div id="drawer"></div>
+          <div id="modal"></div>
+          <Toaster />
+          <SetStylingPref />
+          <ScrollToTop />
+          <div className="hidden">
+            <ECInit />
+          </div>
+          {/* 
+            Imported markdown to root layout, so copy button on code blocks can work on route change.
+            For more info visit: https://github.com/expressive-code/expressive-code/issues/203
+          */}
+        </ThemeProvider>
       </body>
     </html>
   )
