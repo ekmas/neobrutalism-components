@@ -27,13 +27,13 @@ export default function Accordion({ question, answer, className }: Props) {
   return (
     <div
       data-state={showContent ? 'open' : 'closed'}
-      className="w-[500px] group rounded-base border-2 border-black shadow-base"
+      className="w-[500px] group rounded-base border-2 border-border dark:border-darkBorder shadow-light dark:shadow-dark"
     >
       <button
         role="button"
         aria-expanded={showContent}
         className={cn(
-          'flex w-full items-center transition-[border-radius] justify-between border-b-0 group-data-[state=closed]:rounded-base group-data-[state=open]:rounded-t-base group-data-[state=open]:border-b-2 border-b-black bg-main p-4 md:p-5 font-heading',
+          'flex w-full items-center text-text transition-[border-radius] justify-between border-b-0 group-data-[state=closed]:rounded-base group-data-[state=open]:rounded-t-base group-data-[state=open]:border-b-2 border-b-border dark:border-b-darkBorder bg-main p-4 md:p-5 font-heading',
           className,
         )}
         onClick={() => {
@@ -46,7 +46,7 @@ export default function Accordion({ question, answer, className }: Props) {
       <div
         ref={contentRef}
         style={{ height: showContent ? `${contentHeight}` : '0' }}
-        className="overflow-hidden rounded-b-base bg-white font-base transition-[height] ease-in-out"
+        className="overflow-hidden rounded-b-base bg-white dark:bg-darkBg font-base transition-[height] ease-in-out"
       >
         <p className="p-4 md:p-5 text-sm md:text-base leading-relaxed md:leading-relaxed">
           {answer}

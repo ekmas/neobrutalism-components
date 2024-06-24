@@ -12,11 +12,11 @@ export default function Newsletter() {
   return (
     <form
       onSubmit={signUpForNewsletter}
-      className="flex w-min items-center rounded-base border-2 border-black font-base shadow-base"
+      className="flex w-min items-center rounded-base border-2 border-border dark:border-darkBorder font-base shadow-light dark:shadow-dark"
       role="form"
     >
       <input
-        className="w-full max-w-[30ch] min-w-[14ch] md:min-w-[30ch] rounded-base p-[10px] outline-none"
+        className="w-full bg-white dark:bg-darkBg max-w-[30ch] min-w-[14ch] md:min-w-[30ch] rounded-base p-[10px] outline-none"
         type="text"
         name="email"
         id="email"
@@ -27,7 +27,7 @@ export default function Newsletter() {
         }}
       />
       <button
-        className="rounded-e-base border-l-2 border-black bg-main p-[10px] sm:px-5 px-3"
+        className="rounded-e-base border-l-2 text-text border-border dark:border-darkBorder bg-main p-[10px] sm:px-5 px-3"
         type="submit"
         aria-label="Submit Newsletter"
       >

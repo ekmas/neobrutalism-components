@@ -16,10 +16,10 @@ export default function Checkbox({ item }: { item: string }) {
       role="checkbox"
       aria-checked={isChecked}
     >
-      <div className="mr-2.5 grid h-5 w-5 place-items-center bg-white outline outline-2 outline-black">
+      <div className="mr-2.5 grid h-5 w-5 place-items-center bg-white dark:bg-darkBg outline outline-2 outline-border dark:outline-darkBorder">
         {isChecked && <Check className="h-4 w-4" />}
       </div>
-      <p>{item}</p>
+      <p className="text-black">{item}</p>
     </button>
   )
 }
