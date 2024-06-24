@@ -5,11 +5,9 @@ import { SetStateAction } from 'react'
 import { Slider } from '../../../components/ui/slider'
 
 export default function BorderRadius({
-  saveStylingPreference,
   setBorderRadius,
   borderRadius,
 }: {
-  saveStylingPreference: boolean | null
   setBorderRadius: React.Dispatch<SetStateAction<number[]>>
   borderRadius: number[]
 }) {
@@ -19,9 +17,7 @@ export default function BorderRadius({
 
     setBorderRadius(number)
 
-    if (saveStylingPreference) {
-      localStorage.setItem('borderRadius', String(number))
-    }
+    localStorage.setItem('borderRadius', String(number))
   }
 
   return (
