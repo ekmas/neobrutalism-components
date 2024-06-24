@@ -3,7 +3,7 @@ import Installation from '@/markdown/shadcn/installation/page.mdx'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Shadcn installation',
+  title: 'Shadcn Installation',
   description: 'Learn how to install shadcn neobrutalism components.',
 }
 

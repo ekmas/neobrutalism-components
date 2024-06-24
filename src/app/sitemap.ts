@@ -29,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     })),
     ...REACT_COMPONENTS.map((page) => ({
-      url: root + '/react/components/' + page.name,
+      url: root + '/react/components/' + transformToSlug(page.name),
       lastModified: new Date(),
       priority: 0.6,
     })),

@@ -1,12 +1,12 @@
-import { addSpaces, transformToSlug } from '@/lib/utils'
+import { transformToSlug } from '@/lib/utils'
 
 import REACT_COMPONENTS from './components/react'
 import SHADCN_COMPONENTS from './components/shadcn'
 
 const REACT_LINKS = REACT_COMPONENTS.map((component) => {
   return {
-    href: `/react/components/${component.name}`,
-    text: addSpaces(component.name),
+    href: `/react/components/${transformToSlug(component.name)}`,
+    text: component.name,
   }
 })
 
