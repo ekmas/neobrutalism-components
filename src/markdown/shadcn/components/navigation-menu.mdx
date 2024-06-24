@@ -85,7 +85,7 @@ export default function NavigationMenuDemo() {
                     <div className="mb-2 mt-4 text-lg font-heading">
                       shadcn/ui
                     </div>
-                    <p className="text-muted-foreground text-sm font-base leading-tight">
+                    <p className="text-sm font-base leading-tight">
                       Beautifully designed components that you can copy and
                       paste into your apps. Accessible. Customizable. Open
                       Source.
@@ -153,7 +153,7 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            'hover:bg-accent block select-none space-y-1 rounded-base border-2 border-transparent p-3 leading-none no-underline outline-none transition-colors hover:border-black',
+            'hover:bg-accent block text-text select-none space-y-1 rounded-base border-2 border-transparent p-3 leading-none no-underline outline-none transition-colors hover:border-border dark:hover:border-darkBorder',
             className,
           )}
           {...props}
