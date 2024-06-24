@@ -15,6 +15,9 @@ export default function SetStylingPref() {
       r.style.setProperty('--bg', colorObj.bg)
       r.style.setProperty('--main', colorObj.main)
       r.style.setProperty('--main-accent', colorObj.mainAccent)
+      r.style.setProperty('--border', colorObj.border)
+      r.style.setProperty('--dark-bg', colorObj.darkBg)
+      r.style.setProperty('--dark-border', colorObj.darkBorder)
     }
 
     if (borderRadius) {
