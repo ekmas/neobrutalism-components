@@ -17,7 +17,6 @@ import SelectMarkdown from '@/markdown/react/components/Select.mdx'
 import TabsMarkdown from '@/markdown/react/components/Tabs.mdx'
 import TextareaMarkdown from '@/markdown/react/components/Textarea.mdx'
 import ToggleSwitchMarkdown from '@/markdown/react/components/ToggleSwitch.mdx'
-import TooltipMarkdown from '@/markdown/react/components/Tooltip.mdx'
 
 import AccordionExample from '@/components/react/examples/AccordionExample'
 import AlertExample from '@/components/react/examples/AlertExample'
@@ -38,7 +37,6 @@ import SelectExample from '@/components/react/examples/SelectExample'
 import TabsExample from '@/components/react/examples/TabsExample'
 import TextareaExample from '@/components/react/examples/TextareaExample'
 import ToggleSwitchExample from '@/components/react/examples/ToggleSwitchExample'
-import TooltipExample from '@/components/react/examples/TooltIpExample'
 
 type Component = {
   name: string
@@ -179,13 +177,6 @@ const REACT_COMPONENTS: Component[] = [
     markdown: ToggleSwitchMarkdown,
     exampleComponent: ToggleSwitchExample,
     prevComponent: 'Textarea',
-    nextComponent: 'Tooltip',
-  },
-  {
-    name: 'Tooltip',
-    markdown: TooltipMarkdown,
-    exampleComponent: TooltipExample,
-    prevComponent: 'ToggleSwitch',
   },
 ]
 
