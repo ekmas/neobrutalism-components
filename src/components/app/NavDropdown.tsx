@@ -29,13 +29,13 @@ export default function NavDropdown() {
       <div
         className={clsx(
           isOpen ? 'visible top-12 opacity-100' : 'invisible top-10 opacity-0',
-          'absolute flex w-[150px] flex-col rounded-base border-2 border-border dark:border-darkBorder bg-white dark:bg-darkBg text-lg font-base transition-all',
+          'absolute flex w-[150px] flex-col rounded-base overflow-x-hidden border-2 border-border dark:border-darkBorder bg-white dark:bg-darkBg text-lg font-base transition-all',
         )}
       >
         <Link
           href={'/react/installation'}
           onClick={() => setIsOpen(false)}
-          className="text-left flex items-center rounded-t-base px-4 py-3 border-b-2 border-border dark:border-darkBorder hover:bg-main hover:text-text"
+          className="text-left flex items-center px-4 py-3 border-b-2 border-border dark:border-darkBorder hover:bg-main hover:text-text"
         >
           React
           <ArrowUpRight className="ml-[15px] w-6 h-6 m500:w-4 m500:h-4" />
@@ -43,7 +43,7 @@ export default function NavDropdown() {
         <Link
           href={'/shadcn/installation'}
           onClick={() => setIsOpen(false)}
-          className="text-left flex items-center rounded-b-base px-4 py-3 hover:bg-main hover:text-text"
+          className="text-left flex items-center px-4 py-3 hover:bg-main hover:text-text"
         >
           Shadcn
           <ArrowUpRight className="ml-[15px] w-6 h-6 m500:w-4 m500:h-4" />

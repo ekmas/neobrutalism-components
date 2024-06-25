@@ -55,23 +55,23 @@ export default function Colors({
                 onClick={() => {
                   updateColorPalette(color)
                 }}
-                className="flex rounded-base border-2 border-border dark:border-darkBorder shadow-light dark:shadow-dark transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:hover:shadow-none"
+                className="flex rounded-base border-2 overflow-x-hidden border-border dark:border-darkBorder shadow-light dark:shadow-dark transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:hover:shadow-none"
               >
                 <div
-                  className="dark:hidden h-12 w-12 rounded-l-base border-r-2 border-border dark:border-darkBorder m1100:h-8 m1100:w-8"
+                  className="dark:hidden h-12 w-12 border-r-2 border-border dark:border-darkBorder m1100:h-8 m1100:w-8"
                   style={{ backgroundColor: color.bg }}
                 ></div>
                 <div
-                  className="dark:hidden h-12 w-12 rounded-r-base m1100:h-8 m1100:w-8"
+                  className="dark:hidden h-12 w-12 m1100:h-8 m1100:w-8"
                   style={{ backgroundColor: color.main }}
                 ></div>
 
                 <div
-                  className="hidden dark:block h-12 w-12 rounded-l-base border-r-2 border-border dark:border-darkBorder m1100:h-8 m1100:w-8"
+                  className="hidden dark:block h-12 w-12 border-r-2 border-border dark:border-darkBorder m1100:h-8 m1100:w-8"
                   style={{ backgroundColor: color.darkBg }}
                 ></div>
                 <div
-                  className="hidden dark:block h-12 w-12 rounded-r-base m1100:h-8 m1100:w-8"
+                  className="hidden dark:block h-12 w-12 m1100:h-8 m1100:w-8"
                   style={{ backgroundColor: color.main }}
                 ></div>
               </button>
