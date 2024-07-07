@@ -73,7 +73,7 @@ There's no commit/branch naming convention. Just make sure they briefly describe
 
 ## Have an idea about what I should add/remove/improve?
 
-Please either make an issue on github or contact me on [twitter](x.com/samuelbreznjak) and we can talk about it, thanks.
+Please either make an issue on github or contact me on [twitter](https://x.com/samuelbreznjak) and we can talk about it, thanks.
 
 ## Roadmap
 
@@ -97,8 +97,10 @@ Message me on [twitter](x.com/samuelbreznjak) or send me an email @ samuelbreznj
 
 #### Choose a starter template 
 
-Choose a starter template for your template. 
-There is currently only starter template for [nextjs](https://github.com/neobrutalism-templates/nextjs-starter-template) atm. Hopefully, I'll add more of them for other frameworks in the future. If you're not making a template for nextjs, start from scratch.
+Choose one of these starter templates for your template:
+- [nextjs](https://github.com/neobrutalism-templates/nextjs-starter-template)
+- [react](https://github.com/neobrutalism-templates/react-starter-template)
+- [astro](https://github.com/neobrutalism-templates/astro-starter-template)
 
 #### Creating the template
 
