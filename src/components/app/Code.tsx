@@ -1,15 +1,15 @@
 import { ClassValue } from 'clsx'
 import hljs from 'highlight.js/lib/core'
 
-import 'highlight.js/styles/ascetic.css'
+import 'highlight.js/styles/base16/grayscale-dark.css'
 
-import moonscript from 'highlight.js/lib/languages/moonscript'
+import typescript from 'highlight.js/lib/languages/typescript'
 
 import { cn } from '@/lib/utils'
 
 import CopyCode from './CopyCode'
 
-hljs.registerLanguage('moonscript', moonscript)
+hljs.registerLanguage('typescript', typescript)
 
 const Code = ({
   code,
@@ -22,7 +22,7 @@ const Code = ({
   limitedHeight?: boolean
   className?: ClassValue
 }) => {
-  const component = hljs.highlight(code, { language: 'moonscript' }).value
+  const component = hljs.highlight(code, { language: 'typescript' }).value
   return (
     <div
       className={cn(
@@ -31,7 +31,7 @@ const Code = ({
       )}
     >
       {name && (
-        <div className="font-heading border-b-2 h-9 m400:text-sm m400:flex m400:py-0 m400:items-center text-text border-border dark:border-darkBorder bg-white p-1 px-3">
+        <div className="font-heading border-b-2 h-9 m400:text-sm m400:flex m400:py-0 m400:items-center bg-[#101010] text-white border-border dark:border-darkBorder p-1 px-3">
           {name}
         </div>
       )}
@@ -41,7 +41,7 @@ const Code = ({
             <div
               style={{ height: limitedHeight ? '300px' : 'unset' }}
               className={
-                'code w-max-[700px] code overflow-x-auto font-bold bg-white text-text p-4 px-5 leading-[1.65] text-sm m1000:w-full m750:h-[180px] m400:text-xs'
+                'code w-max-[700px] code overflow-x-auto font-bold bg-[#101010] text-white p-4 px-5 leading-[1.65] text-sm m1000:w-full m750:h-[180px] m400:text-xs'
               }
               dangerouslySetInnerHTML={{ __html: component }}
             />

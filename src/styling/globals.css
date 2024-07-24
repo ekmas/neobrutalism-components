@@ -32,16 +32,21 @@ body::-webkit-scrollbar,
 }
 
 body::-webkit-scrollbar-track,
-.scrollbar::-webkit-scrollbar-track,
-.code::-webkit-scrollbar-track {
+.scrollbar::-webkit-scrollbar-track {
   background: var(--sb-track-color);
 }
 
 body::-webkit-scrollbar-thumb,
-.scrollbar::-webkit-scrollbar-thumb,
-.code::-webkit-scrollbar-thumb,
-figure[data-rehype-pretty-code-figure] pre::-webkit-scrollbar-thumb {
+.scrollbar::-webkit-scrollbar-thumb {
   background: var(--sb-thumb-color);
+}
+
+.code::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.code::-webkit-scrollbar-thumb {
+  background: white;
 }
 
 @supports not selector(::-webkit-scrollbar) {
@@ -49,20 +54,4 @@ figure[data-rehype-pretty-code-figure] pre::-webkit-scrollbar-thumb {
   .scrollbar {
     scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
   }
-}
-
-figure[data-rehype-pretty-code-figure] pre::-webkit-scrollbar,
-.code::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-figure[data-rehype-pretty-code-figure] pre::-webkit-scrollbar-track,
-.code::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-figure[data-rehype-pretty-code-figure] pre::-webkit-scrollbar-corner,
-.code::-webkit-scrollbar-corner {
-  background: transparent;
 }
