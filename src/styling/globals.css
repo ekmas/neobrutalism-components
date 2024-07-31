@@ -4,6 +4,7 @@
 
 :root {
   --main: #88aaee;
+  --main50: #88aaeeb3;
   --main-accent: #4d80e6;
 
   --bg: #dfe5f2;
@@ -24,6 +25,12 @@ body,
   --sb-track-color: #ffffff;
   --sb-thumb-color: #000000;
   --sb-size: 16px;
+}
+
+html.dark body,
+html.dark .scrollbar {
+  --sb-track-color: #1b1b1b;
+  --sb-thumb-color: #ffffff;
 }
 
 body::-webkit-scrollbar,

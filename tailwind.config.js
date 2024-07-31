@@ -11,6 +11,7 @@ module.exports = {
     extend: {
       colors: {
         main: 'var(--main)',
+        main50: 'var(--main50)',
         mainAccent: 'var(--main-accent)',
         overlay: 'rgba(0,0,0,0.8)',
 
@@ -23,6 +24,8 @@ module.exports = {
         darkBg: 'var(--dark-bg)',
         darkText: '#eeefe9',
         darkBorder: 'var(--dark-border)',
+        darkNavBg: '#1b1b1b',
+        darkNavBorder: '#000',
       },
       translate: {
         boxShadowX: 'var(--horizontal-box-shadow)',
