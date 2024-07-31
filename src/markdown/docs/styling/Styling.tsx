@@ -49,6 +49,7 @@ export default function Styling() {
 
     r.style.setProperty('--bg', defaultColorPalette.bg)
     r.style.setProperty('--main', defaultColorPalette.main)
+    r.style.setProperty('--main50', defaultColorPalette.main + 'b3')
     r.style.setProperty('--main-accent', defaultColorPalette.mainAccent)
     r.style.setProperty('--border', defaultColorPalette.border)
     r.style.setProperty('--dark-bg', defaultColorPalette.darkBg)

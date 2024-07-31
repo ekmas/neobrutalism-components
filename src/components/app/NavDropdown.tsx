@@ -29,7 +29,7 @@ export default function NavDropdown() {
       <div
         className={clsx(
           isOpen ? 'visible top-12 opacity-100' : 'invisible top-10 opacity-0',
-          'absolute flex w-[150px] flex-col rounded-base overflow-x-hidden border-2 border-border dark:border-darkBorder bg-white dark:bg-darkBg text-lg font-base transition-all',
+          'absolute flex w-[150px] flex-col rounded-base overflow-x-hidden border-2 border-border dark:border-darkBorder bg-white dark:bg-darkNavBg text-lg font-base transition-all',
         )}
       >
         <Link

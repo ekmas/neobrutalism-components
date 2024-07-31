@@ -12,7 +12,11 @@ import SetStylingPref from '@/components/app/SetStylingPref'
 import { ThemeProvider } from '@/components/app/ThemeProvider'
 import { Toaster } from '@/components/ui/toaster'
 
-const dmSans = DM_Sans({ subsets: ['latin'] })
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  adjustFontFallback: false,
+})
 
 export const metadata: Metadata = {
   title: {

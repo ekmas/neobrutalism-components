@@ -62,4 +62,64 @@ const SHADCN_SIDEBAR = [
   ...SHADCN_LINKS,
 ]
 
-export { MAIN_SIDEBAR, REACT_SIDEBAR, SHADCN_SIDEBAR }
+const MOBILE_REACT_SIDEBAR = [
+  'Getting started',
+  {
+    href: '/docs',
+    text: 'Introduction',
+  },
+  {
+    href: '/docs/styling',
+    text: 'Styling',
+  },
+  {
+    href: '/docs/resources',
+    text: 'Resources',
+  },
+  {
+    href: '/shadcn/installation',
+    text: 'Shadcn components',
+  },
+  'React',
+  {
+    href: '/react/installation',
+    text: 'Installation',
+  },
+  'React components',
+  ...REACT_LINKS,
+]
+
+const MOBILE_SHADCN_SIDEBAR = [
+  'Getting started',
+  {
+    href: '/docs',
+    text: 'Introduction',
+  },
+  {
+    href: '/docs/styling',
+    text: 'Styling',
+  },
+  {
+    href: '/docs/resources',
+    text: 'Resources',
+  },
+  {
+    href: '/react/installation',
+    text: 'React components',
+  },
+  'Shadcn',
+  {
+    href: '/shadcn/installation',
+    text: 'Installation',
+  },
+  'Shadcn components',
+  ...SHADCN_LINKS,
+]
+
+export {
+  MAIN_SIDEBAR,
+  REACT_SIDEBAR,
+  SHADCN_SIDEBAR,
+  MOBILE_REACT_SIDEBAR,
+  MOBILE_SHADCN_SIDEBAR,
+}

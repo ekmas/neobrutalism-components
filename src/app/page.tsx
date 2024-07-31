@@ -176,7 +176,7 @@ export default function Home() {
               collapsible
             >
               <AccordionItem className="mb-2" value="item-2">
-                <AccordionTrigger>
+                <AccordionTrigger className="text-left">
                   Are these components accessible?
                 </AccordionTrigger>
                 <AccordionContent className="text-sm sm:text-base">
@@ -187,7 +187,7 @@ export default function Home() {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem className="mb-2" value="item-3">
-                <AccordionTrigger>
+                <AccordionTrigger className="text-left">
                   Why copy/paste and not packaged as a dependency?
                 </AccordionTrigger>
                 <AccordionContent className="text-sm sm:text-base">
@@ -206,7 +206,9 @@ export default function Home() {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-4">
-                <AccordionTrigger>How to contribute?</AccordionTrigger>
+                <AccordionTrigger className="text-left">
+                  How to contribute?
+                </AccordionTrigger>
                 <AccordionContent className="text-sm sm:text-base">
                   Visit{' '}
                   <a
@@ -253,7 +255,7 @@ export default function Home() {
           </Link>
         </section>
       </div>
-      <footer className="z-30 border-t-4 border-border dark:border-darkBorder bg-white dark:bg-darkBg px-5 py-5 text-center font-base m500:text-sm">
+      <footer className="z-30 border-t-4 border-border dark:border-darkBorder bg-white dark:bg-darkNavBg px-5 py-5 text-center font-base m500:text-sm">
         Released under MIT License. The source code is available on{' '}
         <a
           target="_blank"

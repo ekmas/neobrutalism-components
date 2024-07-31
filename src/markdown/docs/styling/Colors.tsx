@@ -23,6 +23,7 @@ export default function Colors({
 
     r.style.setProperty('--bg', color.bg)
     r.style.setProperty('--main', color.main)
+    r.style.setProperty('--main50', color.main + 'b3')
     r.style.setProperty('--main-accent', color.mainAccent)
     r.style.setProperty('--border', color.border)
     r.style.setProperty('--dark-bg', color.darkBg)
@@ -58,20 +59,20 @@ export default function Colors({
                 className="flex rounded-base border-2 overflow-x-hidden border-border dark:border-darkBorder shadow-light dark:shadow-dark transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:hover:shadow-none"
               >
                 <div
-                  className="dark:hidden h-12 w-12 border-r-2 border-border dark:border-darkBorder m1100:h-8 m1100:w-8"
+                  className="dark:hidden h-12 w-12 border-r-2 border-border dark:border-darkBorder m750:h-8 m750:w-8"
                   style={{ backgroundColor: color.bg }}
                 ></div>
                 <div
-                  className="dark:hidden h-12 w-12 m1100:h-8 m1100:w-8"
+                  className="dark:hidden h-12 w-12 m750:h-8 m750:w-8"
                   style={{ backgroundColor: color.main }}
                 ></div>
 
                 <div
-                  className="hidden dark:block h-12 w-12 border-r-2 border-border dark:border-darkBorder m1100:h-8 m1100:w-8"
+                  className="hidden dark:block h-12 w-12 border-r-2 border-border dark:border-darkBorder m750:h-8 m750:w-8"
                   style={{ backgroundColor: color.darkBg }}
                 ></div>
                 <div
-                  className="hidden dark:block h-12 w-12 m1100:h-8 m1100:w-8"
+                  className="hidden dark:block h-12 w-12 m750:h-8 m750:w-8"
                   style={{ backgroundColor: color.main }}
                 ></div>
               </button>
