@@ -7,11 +7,13 @@ import { usePathname, useRouter } from 'next/navigation'
 
 import {
   MAIN_SIDEBAR,
-  REACT_SIDEBAR,
-  SHADCN_SIDEBAR,
+  MOBILE_REACT_SIDEBAR,
+  MOBILE_SHADCN_SIDEBAR,
 } from '@/data/sidebar-links'
 
 import Drawer from '@/components/react/components/Drawer'
+
+import { cn } from '@/lib/utils'
 
 export default function MobileDrawer() {
   const router = useRouter()
@@ -20,9 +22,9 @@ export default function MobileDrawer() {
   const ACTIVE_SIDEBAR = pathname.includes('/docs')
     ? MAIN_SIDEBAR
     : pathname.includes('/react')
-    ? REACT_SIDEBAR
+    ? MOBILE_REACT_SIDEBAR
     : pathname.includes('/shadcn')
-    ? SHADCN_SIDEBAR
+    ? MOBILE_SHADCN_SIDEBAR
     : MAIN_SIDEBAR
 
   const [isDrawerActive, setIsDrawerActive] = useState(false)
@@ -44,7 +46,7 @@ export default function MobileDrawer() {
       </div>
 
       <Drawer active={isDrawerActive} setActive={setIsDrawerActive}>
-        <div className="scrollbar h-full w-full overflow-y-auto bg-white dark:bg-darkBg">
+        <div className="scrollbar h-full w-full overflow-y-auto bg-white dark:bg-darkNavBg">
           {ACTIVE_SIDEBAR.map((item, id) => {
             return typeof item === 'string' ? (
               <div
@@ -59,20 +61,28 @@ export default function MobileDrawer() {
                 onClick={() => {
                   handleLinkClick(item.href)
                 }}
-                className="sidebaritem block w-full border-b-4 border-r-4 border-border dark:border-darkBorder p-4 pl-7 text-left text-lg font-base text-black/90 dark:text-darkText/90 hover:bg-main dark:hover:text-text m800:p-4 m800:pl-6 m800:text-base"
+                className={cn(
+                  'sidebaritem block w-full border-b-4 border-r-4 border-border dark:border-darkBorder p-4 pl-7 text-left text-lg font-base text-black/90 dark:text-darkText/90 hover:bg-main50 dark:hover:text-text m800:p-4 m800:pl-6 m800:text-base',
+                  item.href === pathname &&
+                    'bg-main dark:text-text hover:bg-main',
+                )}
               >
                 {item.text}
               </button>
             )
           })}
-          <button
+          {/* <button
             onClick={() => {
               handleLinkClick('/templates')
             }}
-            className="sidebaritem block w-full border-b-4 border-r-4 border-border dark:border-darkBorder p-4 pl-7 text-left text-lg font-base text-black/90 dark:text-darkText/90 hover:bg-main dark:hover:text-text m800:p-4 m800:pl-6 m800:text-base"
+            className={cn(
+              'sidebaritem block w-full border-b-4 border-r-4 border-border dark:border-darkBorder p-4 pl-7 text-left text-lg font-base text-black/90 dark:text-darkText/90 hover:bg-main50 dark:hover:text-text m800:p-4 m800:pl-6 m800:text-base',
+              pathname === '/templates' &&
+                'bg-main dark:text-text hover:bg-main',
+            )}
           >
             Templates
-          </button>
+          </button> */}
         </div>
       </Drawer>
     </>
