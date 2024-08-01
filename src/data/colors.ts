@@ -73,6 +73,6 @@ const colors = [
   },
 ]
 
-// color palettes used in app/docs/styling/Colors.tsx
+// color palettes used in markdown/docs/styling/Colors.tsx
 
 export default colors
