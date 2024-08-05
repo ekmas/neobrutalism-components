@@ -46,7 +46,7 @@ export default function MobileDrawer() {
       </div>
 
       <Drawer active={isDrawerActive} setActive={setIsDrawerActive}>
-        <div className="scrollbar h-full w-full overflow-y-auto bg-white dark:bg-darkNavBg">
+        <div className="scrollbar h-full w-full overflow-y-auto bg-white dark:bg-secondaryBlack">
           {ACTIVE_SIDEBAR.map((item, id) => {
             return typeof item === 'string' ? (
               <div

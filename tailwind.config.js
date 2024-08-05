@@ -24,8 +24,9 @@ module.exports = {
         darkBg: 'var(--dark-bg)',
         darkText: '#eeefe9',
         darkBorder: 'var(--dark-border)',
-        darkNavBg: '#1b1b1b',
         darkNavBorder: '#000',
+        
+        secondaryBlack: '#1b1b1b',
       },
       translate: {
         boxShadowX: 'var(--horizontal-box-shadow)',

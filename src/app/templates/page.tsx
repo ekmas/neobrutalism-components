@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="min-h-[100dvh] bg-white dark:bg-darkNavBg px-5 pt-[88px] m500:pt-16">
+    <div className="min-h-[100dvh] bg-white dark:bg-darkBg px-5 pt-[88px] m500:pt-16">
       <div className="pt-16 pb-16 text-text dark:text-darkText m400:pb-10 text-center">
         <h1 className="text-4xl font-heading m800:text-3xl m500:text-2xl m400:text-xl">
           Templates
@@ -31,7 +31,7 @@ export default function Page() {
           {TEMPLATES.map((template) => {
             return (
               <div
-                className="p-[15px] bg-white dark:bg-darkNavBg rounded-base shadow-light dark:shadow-dark border-2 border-border dark:border-darkBorder"
+                className="p-[15px] bg-white dark:bg-secondaryBlack rounded-base shadow-light dark:shadow-dark border-2 border-border dark:border-darkBorder"
                 key={template.title}
               >
                 <div className="border-2 border-border dark:border-darkBorder rounded-base aspect-[2/1]">

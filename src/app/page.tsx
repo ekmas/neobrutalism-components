@@ -70,7 +70,7 @@ export default function Home() {
       </main>
       <div>
         <Marquee
-          className="border-t-4 border-border dark:border-darkBorder bg-white dark:bg-darkBg py-5 m500:py-4 font-base"
+          className="border-t-4 border-border dark:border-darkBorder bg-white dark:bg-secondaryBlack py-5 m500:py-4 font-base"
           direction="left"
         >
           {Array(15)
@@ -225,7 +225,7 @@ export default function Home() {
           </div>
         </section>
         <Marquee
-          className="border-b-4 border-border dark:border-darkBorder bg-white dark:bg-darkBg py-5 m500:py-4 font-base"
+          className="border-b-4 border-border dark:border-darkBorder bg-white dark:bg-secondaryBlack py-5 m500:py-4 font-base"
           direction="right"
         >
           {Array(15)
@@ -247,7 +247,7 @@ export default function Home() {
           </h2>
 
           <Link
-            className="mt-[50px] flex font-base items-center rounded-base border-2 border-black bg-white dark:bg-darkBg px-10 py-3 text-[22px] shadow-light transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none m800:px-8 m800:py-2.5 m800:text-lg m500:px-6 m500:py-2 m500:text-base"
+            className="mt-[50px] flex font-base items-center rounded-base border-2 border-black bg-white dark:bg-secondaryBlack px-10 py-3 text-[22px] shadow-light transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none m800:px-8 m800:py-2.5 m800:text-lg m500:px-6 m500:py-2 m500:text-base"
             href={'/docs'}
           >
             Read the docs
@@ -255,7 +255,7 @@ export default function Home() {
           </Link>
         </section>
       </div>
-      <footer className="z-30 border-t-4 border-border dark:border-darkBorder bg-white dark:bg-darkNavBg px-5 py-5 text-center font-base m500:text-sm">
+      <footer className="z-30 border-t-4 border-border dark:border-darkBorder bg-white dark:bg-secondaryBlack px-5 py-5 text-center font-base m500:text-sm">
         Released under MIT License. The source code is available on{' '}
         <a
           target="_blank"
