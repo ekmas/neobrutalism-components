@@ -40,14 +40,14 @@ export default function Dropdown({
       </button>
       <div
         role="listbox"
-        className="absolute left-0 w-[160px] group-data-[state=open]:top-20 group-data-[state=open]:opacity-100 group-data-[state=closed]:invisible group-data-[state=closed]:top-[50px] group-data-[state=closed]:opacity-0 group-data-[state=open]:visible rounded-base border-2 border-border dark:border-darkBorder text-center font-base shadow-light dark:shadow-dark transition-all"
+        className="absolute left-0 w-[160px] overflow-x-hidden group-data-[state=open]:top-20 group-data-[state=open]:opacity-100 group-data-[state=closed]:invisible group-data-[state=closed]:top-[50px] group-data-[state=closed]:opacity-0 group-data-[state=open]:visible rounded-base border-2 border-border dark:border-darkBorder text-center font-base shadow-light dark:shadow-dark transition-all"
       >
         {items.map((item, index) => {
           return (
             <a
               key={index}
               href={item.link}
-              className="block w-full border-b-2 border-border dark:border-darkBorder bg-main px-7 py-3 no-underline first:rounded-t-base last:rounded-b-base hover:bg-mainAccent"
+              className="block w-full border-b-2 border-border dark:border-darkBorder bg-main px-7 py-3 no-underline hover:bg-mainAccent"
             >
               {item.name}
             </a>

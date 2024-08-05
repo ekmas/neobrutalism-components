@@ -42,7 +42,7 @@ export default function Select({ items }: { items: string[] }) {
       <div
         role="listbox"
         aria-labelledby="select-label"
-        className="absolute left-0 min-w-[160px] w-max group-data-[state=open]:top-20 group-data-[state=open]:opacity-100 group-data-[state=closed]:invisible group-data-[state=closed]:top-[50px] group-data-[state=closed]:opacity-0 group-data-[state=open]:visible rounded-base border-2 border-border dark:border-darkBorder font-base shadow-light dark:shadow-dark transition-all"
+        className="absolute left-0 min-w-[160px] overflow-x-hidden w-max group-data-[state=open]:top-20 group-data-[state=open]:opacity-100 group-data-[state=closed]:invisible group-data-[state=closed]:top-[50px] group-data-[state=closed]:opacity-0 group-data-[state=open]:visible rounded-base border-2 border-border dark:border-darkBorder font-base shadow-light dark:shadow-dark transition-all"
       >
         {items.map((item, index) => {
           return (
@@ -51,7 +51,7 @@ export default function Select({ items }: { items: string[] }) {
               onClick={() => {
                 handleItemClick(item)
               }}
-              className="block w-full border-b-2 border-border dark:border-darkBorder bg-main px-5 py-3 first:rounded-t-base last:rounded-b-base hover:bg-mainAccent"
+              className="block w-full border-b-2 border-border dark:border-darkBorder bg-main px-5 py-3 hover:bg-mainAccent"
             >
               {item}
             </button>
