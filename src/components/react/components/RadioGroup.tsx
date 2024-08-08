@@ -20,7 +20,7 @@ export default function RadioGroup({ items }: { items: string[] }) {
             aria-checked={isChecked}
             key={item}
           >
-            <div className="mr-2.5 h-5 w-5 rounded-full bg-white dark:bg-darkBg p-1 outline outline-2 outline-black">
+            <div className="mr-2.5 h-5 w-5 rounded-full bg-white dark:bg-secondaryBlack p-1 outline outline-2 outline-black">
               {isChecked && (
                 <div className="h-full w-full rounded-full bg-black dark:bg-white"></div>
               )}

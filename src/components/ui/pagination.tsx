@@ -55,7 +55,7 @@ const PaginationLink = ({
         size,
       }),
       className,
-      isActive && 'bg-black text-darkText dark:bg-black',
+      isActive && 'bg-white text-text dark:text-darkText dark:bg-black',
     )}
     {...props}
   />

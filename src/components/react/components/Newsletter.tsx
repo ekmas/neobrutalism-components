@@ -16,7 +16,7 @@ export default function Newsletter() {
       role="form"
     >
       <input
-        className="w-full bg-white dark:bg-darkBg max-w-[30ch] min-w-[14ch] md:min-w-[30ch] p-[10px] outline-none"
+        className="w-full bg-white dark:bg-secondaryBlack max-w-[30ch] min-w-[14ch] md:min-w-[30ch] p-[10px] outline-none"
         type="text"
         name="email"
         id="email"

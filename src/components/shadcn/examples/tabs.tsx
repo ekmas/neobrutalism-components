@@ -39,7 +39,7 @@ export default function TabsDemo() {
           <CardFooter>
             <Button
               variant="noShadow"
-              className="w-full bg-white text-text dark:bg-darkBg dark:text-darkText"
+              className="w-full bg-white text-text dark:bg-secondaryBlack dark:text-darkText"
             >
               Save changes
             </Button>
@@ -67,7 +67,7 @@ export default function TabsDemo() {
           <CardFooter>
             <Button
               variant="noShadow"
-              className="w-full bg-white text-text dark:bg-darkBg dark:text-darkText"
+              className="w-full bg-white text-text dark:bg-secondaryBlack dark:text-darkText"
             >
               Save password
             </Button>

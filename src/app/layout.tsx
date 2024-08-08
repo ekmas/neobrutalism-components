@@ -63,7 +63,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={dmSans.className}>
-        <ThemeProvider attribute="class" disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          disableTransitionOnChange
+        >
           <Navbar />
           {children}
           <div id="drawer"></div>

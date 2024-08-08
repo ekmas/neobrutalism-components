@@ -7,7 +7,6 @@ export default function ButtonDemo() {
       <Button variant="reverse">Reverse</Button>
       <Button variant="noShadow">No Shadow</Button>
       <Button variant="neutral">Neutral</Button>
-      <Button variant="link">Link</Button>
     </div>
   )
 }

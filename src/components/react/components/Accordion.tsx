@@ -46,7 +46,7 @@ export default function Accordion({ question, answer, className }: Props) {
       <div
         ref={contentRef}
         style={{ height: showContent ? `${contentHeight}` : '0' }}
-        className="overflow-hidden rounded-b-base bg-white dark:bg-darkBg font-base transition-[height] ease-in-out"
+        className="overflow-hidden rounded-b-base bg-white dark:bg-secondaryBlack font-base transition-[height] ease-in-out"
       >
         <p className="p-4 md:p-5 text-sm md:text-base leading-relaxed md:leading-relaxed">
           {answer}
