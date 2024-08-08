@@ -76,8 +76,7 @@ export default function Styling() {
       mainAccent: '${
         activeColorPallete.mainAccent
       }', // not needed for shadcn components
-      overlay: 'rgba(0,0,0,0.8)', 
-      // background color overlay for alert dialogs, modals, etc.
+      overlay: 'rgba(0,0,0,0.8)', // background color overlay for alert dialogs, modals, etc.
 
       // light mode
       bg: '${activeColorPallete.bg}',
@@ -88,6 +87,7 @@ export default function Styling() {
       darkBg: '${activeColorPallete.darkBg}',
       darkText: '#eeefe9',
       darkBorder: '${activeColorPallete.darkBorder}',
+      secondaryBlack: '#1b1b1b', // opposite of plain white, not used pitch black because borders and box-shadows are that color 
     },
     borderRadius: {
       base: '${borderRadius}px'
@@ -139,7 +139,7 @@ export default function Styling() {
         After you choose your preferred styling, copy this to <code>theme</code>{' '}
         section inside your tailwind config.
       </p>
-      <Code code={twConfig} name="tailwind.config.js" limitedHeight={false} />
+      <Code code={twConfig} name="tailwind.config.js" />
     </>
   )
 }
