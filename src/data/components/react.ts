@@ -12,7 +12,6 @@ import MarqueeMarkdown from '@/markdown/react/components/Marquee.mdx'
 import ModalMarkdown from '@/markdown/react/components/Modal.mdx'
 import NewsletterMarkdown from '@/markdown/react/components/Newsletter.mdx'
 import RadioGroupMarkdown from '@/markdown/react/components/RadioGroup.mdx'
-import RangeSliderMarkdown from '@/markdown/react/components/RangeSlider.mdx'
 import SelectMarkdown from '@/markdown/react/components/Select.mdx'
 import TabsMarkdown from '@/markdown/react/components/Tabs.mdx'
 import TextareaMarkdown from '@/markdown/react/components/Textarea.mdx'
@@ -32,7 +31,6 @@ import MarqueeExample from '@/components/react/examples/MarqueeExample'
 import ModalExample from '@/components/react/examples/ModalExample'
 import NewsletterExample from '@/components/react/examples/NewsletterExample'
 import RadioGroupExample from '@/components/react/examples/RadioGroupExample'
-import RangeSliderExample from '@/components/react/examples/RangeSliderExample'
 import SelectExample from '@/components/react/examples/SelectExample'
 import TabsExample from '@/components/react/examples/TabsExample'
 import TextareaExample from '@/components/react/examples/TextareaExample'
@@ -142,20 +140,13 @@ const REACT_COMPONENTS: Component[] = [
     markdown: RadioGroupMarkdown,
     exampleComponent: RadioGroupExample,
     prevComponent: 'newsletter',
-    nextComponent: 'range-slider',
-  },
-  {
-    name: 'Range Slider',
-    markdown: RangeSliderMarkdown,
-    exampleComponent: RangeSliderExample,
-    prevComponent: 'radio-group',
     nextComponent: 'select',
   },
   {
     name: 'Select',
     markdown: SelectMarkdown,
     exampleComponent: SelectExample,
-    prevComponent: 'range-slider',
+    prevComponent: 'radio-group',
     nextComponent: 'tabs',
   },
   {
