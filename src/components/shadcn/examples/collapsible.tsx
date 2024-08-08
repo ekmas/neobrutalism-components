@@ -26,7 +26,7 @@ export default function CollapsibleDemo() {
           <Button
             variant="noShadow"
             size="sm"
-            className="w-9 bg-white dark:bg-darkBg text-text dark:text-darkText p-0"
+            className="w-9 bg-white dark:bg-secondaryBlack text-text dark:text-darkText p-0"
           >
             <ChevronsUpDown className="h-4 w-4" />
             <span className="sr-only">Toggle</span>

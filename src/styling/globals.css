@@ -56,6 +56,17 @@ body::-webkit-scrollbar-thumb,
   background: white;
 }
 
+.code::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  border: 0 !important;
+}
+
+.code::-webkit-scrollbar-corner {
+  background: transparent !important;
+  border: 0 !important;
+}
+
 @supports not selector(::-webkit-scrollbar) {
   body,
   .scrollbar {

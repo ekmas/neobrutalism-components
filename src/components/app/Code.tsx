@@ -41,7 +41,7 @@ const Code = ({
             <div
               style={{ height: limitedHeight ? '300px' : 'unset' }}
               className={
-                'code w-max-[700px] code overflow-x-auto font-bold bg-[#101010] text-white p-4 px-5 leading-[1.65] text-sm m1000:w-full m750:h-[180px] m400:text-xs'
+                'w-max-[700px] code overflow-x-auto font-bold bg-[#101010] text-white p-4 px-5 leading-[1.65] text-sm m1000:w-full m750:h-[180px] m400:text-xs'
               }
               dangerouslySetInnerHTML={{ __html: component }}
             />
