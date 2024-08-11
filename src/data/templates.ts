@@ -1,4 +1,5 @@
 import bento from '../../public/template-previews/bento.png'
+import blog from '../../public/template-previews/blog.png'
 import portfolio from '../../public/template-previews/portfolio.png'
 import saas from '../../public/template-previews/saas.png'
 import windowedPortfolio from '../../public/template-previews/windowed-portfolio.png'
@@ -31,6 +32,13 @@ const TEMPLATES = [
     liveUrl: 'https://neobrutalism-portfolio.netlify.app/',
     repoUrl: 'https://github.com/neobrutalism-templates/portfolio',
     color: '#FD9745',
+  },
+  {
+    title: 'Blog',
+    previewImg: blog,
+    liveUrl: 'https://neobrutalism-blog.netlify.app/',
+    repoUrl: 'https://github.com/neobrutalism-templates/blog',
+    color: '#c4a1ff',
   },
 ]
 
