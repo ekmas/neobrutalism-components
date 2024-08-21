@@ -147,7 +147,7 @@ export default function Home() {
                       <div className="flex items-center gap-5">
                         <img
                           className="h-12 w-12 rounded-base border-2 border-border dark:border-darkBorder"
-                          src={pfp}
+                          src={`${pfp.src}`}
                           alt="pfp"
                         />
 
