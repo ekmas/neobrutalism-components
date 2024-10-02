@@ -1,0 +1,45 @@
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+code.hljs {
+  padding: 3px 5px;
+}
+.hljs {
+  color: #fff;
+  background: #101010;
+}
+.hljs-comment {
+  color: #fff4;
+}
+.hljs-string {
+  color: #fff8;
+}
+.hljs-keyword {
+  color: #fff8;
+}
+.hljs-number {
+  color: #fff8;
+}
+.hljs-function .hljs-title {
+  color: #fff;
+}
+.hljs-variable {
+  color: #fff;
+}
+.hljs-operator,
+.hljs-punctuation {
+  color: #fff8;
+}
+.hljs-literal {
+  color: #fff8;
+}
+.hljs-class .hljs-title {
+  color: #fff;
+}
+.hljs::selection,
+.hljs ::selection {
+  background-color: #8888;
+  color: #fff;
+}

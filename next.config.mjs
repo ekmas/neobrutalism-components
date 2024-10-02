@@ -31,6 +31,7 @@ const rehypeExpressiveCodeOptions = {
       inlineButtonBackgroundIdleOpacity: '1',
       inlineButtonBackgroundActiveOpacity: '1',
       inlineButtonBackgroundHoverOrFocusOpacity: '1',
+      editorBackground: '#101010',
     },
     codeFontWeight: '700',
     uiFontFamily: 'inherit',
