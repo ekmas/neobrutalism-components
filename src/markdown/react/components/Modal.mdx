@@ -1,4 +1,4 @@
-```coffeescript file=<rootDir>/src/components/react/components/Modal.tsx title="components/Modal.tsx"
+```tsx file=<rootDir>/src/components/react/components/Modal.tsx title="components/Modal.tsx"
 ```
 
 <br />
@@ -17,7 +17,7 @@ You'll have to add `<div id="modal"></div>` to your layout or `index.html`.
 
 ## Usage
 
-```coffeescript
+```ts
 import { useState } from 'react'
 
 import Button from '@/components/Button'
@@ -26,13 +26,13 @@ import Modal from '@/components/Modal'
 
 <br />
 
-```ts
+```tsx
 const [isModalActive, setIsModalActive] = useState(false)
 ```
 
 <br />
 
-```coffeescript
+```tsx
 <>
   <Button
     onClick={() => {

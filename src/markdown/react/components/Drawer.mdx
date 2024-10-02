@@ -1,4 +1,4 @@
-```coffeescript file=<rootDir>/src/components/react/components/Drawer.tsx title="components/Drawer.tsx"
+```tsx file=<rootDir>/src/components/react/components/Drawer.tsx title="components/Drawer.tsx"
 ```
 
 <br />
@@ -17,7 +17,7 @@ You'll have to add `<div id="drawer"></div>` to your layout or `index.html`.
 
 ## Usage
 
-```coffeescript
+```ts
 import { useState } from 'react'
 
 import Button from '@/components/Button'
@@ -26,13 +26,13 @@ import Drawer from '@/components/Drawer'
 
 <br />
 
-```ts
+```tsx
 const [isDrawerActive, setIsDrawerActive] = useState(false)
 ```
 
 <br />
 
-```coffeescript
+```tsx
 <>
   <Button
     onClick={() => {
