@@ -1,8 +1,7 @@
+import '@/styling/hljs.css'
+
 import { ClassValue } from 'clsx'
 import hljs from 'highlight.js/lib/core'
-
-import 'highlight.js/styles/base16/grayscale-dark.css'
-
 import typescript from 'highlight.js/lib/languages/typescript'
 
 import { cn } from '@/lib/utils'

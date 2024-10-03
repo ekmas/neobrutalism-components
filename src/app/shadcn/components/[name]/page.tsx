@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation'
 import components from '@/data/components/shadcn'
 
 import Component from '@/components/app/Component'
+import EditThisPage from '@/components/app/EditThisPage'
 import Pagination from '@/components/app/Pagination'
 
 import { transformToName, transformToSlug } from '@/lib/utils'
@@ -55,6 +56,12 @@ export default async function Installation({
       />
 
       <currentComponent.markdown />
+
+      <EditThisPage
+        markdownPath={`/shadcn/components/${transformToSlug(
+          currentComponent.name,
+        )}.mdx`}
+      />
 
       <Pagination
         prev={

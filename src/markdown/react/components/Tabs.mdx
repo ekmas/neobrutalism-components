@@ -1,11 +1,11 @@
-```coffeescript file=<rootDir>/src/components/react/components/Tabs.tsx title="components/Tabs.tsx"
+```tsx file=<rootDir>/src/components/react/components/Tabs.tsx title="components/Tabs.tsx"
 ```
 
 <br />
 
 ## Usage
 
-```coffeescript
+```ts
 import { useState } from 'react'
 
 import Tabs from '@/components/Tabs'
@@ -13,14 +13,14 @@ import Tabs from '@/components/Tabs'
 
 <br />
 
-```ts
+```tsx
 const [activeTab, setActiveTab] = useState('Tab 1')
 const tabsArray = ['Tab 1', 'Tab 2', 'Tab 3']
 ```
 
 <br />
 
-```coffeescript
+```tsx
 <div className="max-w-[350px] rounded-base w-full">
   <Tabs
     activeTab={activeTab}

@@ -1,11 +1,11 @@
-```coffeescript file=<rootDir>/src/components/ui/combobox.tsx title="components/ui/combobox.tsx"
+```tsx file=<rootDir>/src/components/ui/combobox.tsx title="components/ui/combobox.tsx"
 ```
 
 <br />
 
 ## Usage
 
-```coffeescript
+```ts
 import { CommandList } from 'cmdk'
 import { Check, ChevronsUpDown } from 'lucide-react'
 
@@ -57,14 +57,14 @@ const frameworks = [
 
 <br />
 
-```ts
+```tsx
 const [open, setOpen] = React.useState(false)
 const [value, setValue] = React.useState('')
 ```
 
 <br />
 
-```coffeescript
+```tsx
 <Popover open={open} onOpenChange={setOpen}>
   <PopoverTrigger asChild>
     <Button

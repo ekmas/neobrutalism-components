@@ -31,7 +31,7 @@ export default function Pagination({ prev, next }: Props) {
   }
 
   return (
-    <div className={`${justifyContent} mt-12 flex w-full items-center`}>
+    <div className={`${justifyContent} mt-8 flex w-full items-center`}>
       {prev?.name && (
         <Button
           className="px-5 py-2 h-[unset] m400:px-3.5 m400:text-xs"

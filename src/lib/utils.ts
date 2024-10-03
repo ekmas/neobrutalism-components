@@ -19,3 +19,10 @@ export function transformToName(input: string): string {
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ')
 }
+
+export function transformToPascalCase(input: string): string {
+  return input
+    .split(/\s+/)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join('')
+}
