@@ -4,9 +4,14 @@ import { redirect } from 'next/navigation'
 import components from '@/data/components/react'
 
 import Component from '@/components/app/Component'
+import EditThisPage from '@/components/app/EditThisPage'
 import Pagination from '@/components/app/Pagination'
 
-import { transformToName, transformToSlug } from '@/lib/utils'
+import {
+  transformToName,
+  transformToPascalCase,
+  transformToSlug,
+} from '@/lib/utils'
 
 export async function generateStaticParams() {
   const componentSlugs = components.map((component) => ({
@@ -52,6 +57,12 @@ export default async function Installation({
       />
 
       <currentComponent.markdown />
+
+      <EditThisPage
+        markdownPath={`/react/components/${transformToPascalCase(
+          currentComponent.name,
+        )}.mdx`}
+      />
 
       <Pagination
         prev={
