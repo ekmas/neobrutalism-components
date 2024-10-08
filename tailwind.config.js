@@ -22,11 +22,11 @@ module.exports = {
 
         // dark mode
         darkBg: 'var(--dark-bg)',
-        darkText: '#eeefe9',
+        darkText: '#e6e6e6',
         darkBorder: 'var(--dark-border)',
         darkNavBorder: '#000',
-        
-        secondaryBlack: '#1b1b1b',
+
+        secondaryBlack: '#212121',
       },
       translate: {
         boxShadowX: 'var(--horizontal-box-shadow)',
