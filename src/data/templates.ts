@@ -38,7 +38,7 @@ const TEMPLATES = [
     previewImg: blog,
     liveUrl: 'https://neobrutalism-blog.netlify.app/',
     repoUrl: 'https://github.com/neobrutalism-templates/blog',
-    color: '#c4a1ff',
+    color: '#FFDC58',
   },
 ]
 
