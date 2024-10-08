@@ -51,9 +51,7 @@ export default function Styling() {
     r.style.setProperty('--main', defaultColorPalette.main)
     r.style.setProperty('--main50', defaultColorPalette.main + 'b3')
     r.style.setProperty('--main-accent', defaultColorPalette.mainAccent)
-    r.style.setProperty('--border', defaultColorPalette.border)
     r.style.setProperty('--dark-bg', defaultColorPalette.darkBg)
-    r.style.setProperty('--dark-border', defaultColorPalette.darkBorder)
 
     r.style.setProperty('--border-radius', '5px')
     r.style.setProperty('--horizontal-box-shadow', '4px')
@@ -81,13 +79,13 @@ export default function Styling() {
       // light mode
       bg: '${activeColorPallete.bg}',
       text: '#000',
-      border: '${activeColorPallete.border}',
+      border: '#000',
 
       // dark mode
       darkBg: '${activeColorPallete.darkBg}',
       darkText: '#eeefe9',
-      darkBorder: '${activeColorPallete.darkBorder}',
-      secondaryBlack: '#1b1b1b', // opposite of plain white, not used pitch black because borders and box-shadows are that color 
+      darkBorder: '#000',
+      secondaryBlack: '#212121', // opposite of plain white, not used pitch black because borders and box-shadows are that color 
     },
     borderRadius: {
       base: '${borderRadius}px'
@@ -95,10 +93,10 @@ export default function Styling() {
     boxShadow: {
       light: '${boxShadowLength[0] + 'px'} ${
         boxShadowLength[1] + 'px'
-      } 0px 0px ${activeColorPallete.border}',
+      } 0px 0px #000',
       dark: '${boxShadowLength[0] + 'px'} ${
         boxShadowLength[1] + 'px'
-      } 0px 0px ${activeColorPallete.darkBorder}',
+      } 0px 0px #000',
     },
     translate: {
       boxShadowX: '${boxShadowLength[0] + 'px'}',

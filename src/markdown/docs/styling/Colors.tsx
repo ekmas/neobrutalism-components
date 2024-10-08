@@ -8,9 +8,7 @@ export type ColorPallette = {
   main: string
   mainAccent: string
   bg: string
-  border: string
   darkBg: string
-  darkBorder: string
 }
 
 export default function Colors({
@@ -25,9 +23,7 @@ export default function Colors({
     r.style.setProperty('--main', color.main)
     r.style.setProperty('--main50', color.main + 'b3')
     r.style.setProperty('--main-accent', color.mainAccent)
-    r.style.setProperty('--border', color.border)
     r.style.setProperty('--dark-bg', color.darkBg)
-    r.style.setProperty('--dark-border', color.darkBorder)
 
     setActiveColorPalette(color)
 
