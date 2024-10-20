@@ -67,9 +67,25 @@ body::-webkit-scrollbar-thumb,
   border: 0 !important;
 }
 
+.command-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.command-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.command-scrollbar::-webkit-scrollbar-thumb {
+  background: #000;
+}
+
 @supports not selector(::-webkit-scrollbar) {
   body,
   .scrollbar {
     scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+
+  .command-scrollbar {
+    scrollbar-color: #000 transparent;
   }
 }
