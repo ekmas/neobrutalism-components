@@ -1,14 +1,49 @@
-import Pagination from '@/components/app/Pagination'
-import EditThisPage from '@/components/app/EditThisPage'
-import Link from 'next/link'
-
-import Installation from './Installation'
-
 ## React Installation
 
 First of all install <a target="_blank" href="https://tailwindcss.com/docs/installation">tailwind</a> and these packages:
 
-<Installation />
+<Tabs className="my-8" defaultValue="npm">
+  <TabsList className="grid w-full grid-cols-4">
+    <TabsTrigger value="npm">npm</TabsTrigger>
+    <TabsTrigger value="yarn">yarn</TabsTrigger>
+    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
+    <TabsTrigger value="bun">bun</TabsTrigger>
+  </TabsList>
+  <TabsContent value="npm">
+    ```
+    npm i clsx tailwind-merge lucide-react
+    ```
+  </TabsContent>
+  <TabsContent value="yarn">
+    ```
+    yarn add clsx tailwind-merge lucide-react
+    ```
+  </TabsContent>
+  <TabsContent value="pnpm">
+    ```
+    pnpm i clsx tailwind-merge lucide-react
+    ```
+  </TabsContent>
+  <TabsContent value="bun">
+    ```
+    bun add clsx tailwind-merge lucide-react
+    ```
+  </TabsContent>
+</Tabs>
+
+After you're done create `lib/utils.ts` inside your project and paste `cn` helper function to it. 
+It makes easier to add tailwind classes conditionally.
+
+<div className="py-8">
+```ts title="lib/utils.ts"
+import { clsx, type ClassValue } from 'clsx'
+import { twMerge } from 'tailwind-merge'
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+```
+</div>
 
 Now choose any component you find useful, copy it to your project, and adjust it
 so it fulfills your needs.
