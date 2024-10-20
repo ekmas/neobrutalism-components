@@ -6,6 +6,7 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     './src/layouts/**/*.{js,ts,jsx,tsx,mdx}',
     './src/markdown/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/mdx-components.tsx',
   ],
   theme: {
     extend: {

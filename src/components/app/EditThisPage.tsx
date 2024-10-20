@@ -13,12 +13,12 @@ export default function EditThisPage({
 
   return (
     <Button
-      className="bg-white not-prose font-base dark:text-darkText gap-2 mt-12 dark:bg-secondaryBlack"
+      className="bg-white not-prose px-5 py-2 m400:px-3.5 h-[unset] m400:text-xs font-base dark:text-darkText gap-2 mt-12 dark:bg-secondaryBlack"
       variant="noShadow"
       asChild
     >
       <a target="_blank" href={repoDocsUrl}>
-        <SquarePenIcon className="w-5 h-5" />
+        <SquarePenIcon className="w-4 h-4" />
         Edit this page
       </a>
     </Button>

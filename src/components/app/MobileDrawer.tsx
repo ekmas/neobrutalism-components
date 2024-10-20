@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 
 import {
-  MAIN_SIDEBAR,
+  MOBILE_MAIN_SIDEBAR,
   MOBILE_REACT_SIDEBAR,
   MOBILE_SHADCN_SIDEBAR,
 } from '@/data/sidebar-links'
@@ -20,12 +20,12 @@ export default function MobileDrawer() {
   const pathname = usePathname()
 
   const ACTIVE_SIDEBAR = pathname.includes('/docs')
-    ? MAIN_SIDEBAR
+    ? MOBILE_MAIN_SIDEBAR
     : pathname.includes('/react')
     ? MOBILE_REACT_SIDEBAR
     : pathname.includes('/shadcn')
     ? MOBILE_SHADCN_SIDEBAR
-    : MAIN_SIDEBAR
+    : MOBILE_MAIN_SIDEBAR
 
   const [isDrawerActive, setIsDrawerActive] = useState(false)
 
@@ -36,7 +36,7 @@ export default function MobileDrawer() {
 
   return (
     <>
-      <div className="hidden w-[172px] m900:block m800:w-[44px] m400:w-9">
+      <div className="hidden w-[236px] m900:block m800:w-[108px] m400:w-9">
         <button
           onClick={() => setIsDrawerActive(true)}
           className="flex items-center justify-center rounded-base border-2 border-border dark:border-darkBorder p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"

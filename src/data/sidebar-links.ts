@@ -17,6 +17,25 @@ const SHADCN_LINKS = SHADCN_COMPONENTS.map((component) => {
   }
 })
 
+const GETTING_STARTED_LINKS = [
+  {
+    href: '/docs',
+    text: 'Introduction',
+  },
+  {
+    href: '/docs/styling',
+    text: 'Styling',
+  },
+  {
+    href: '/docs/resources',
+    text: 'Resources',
+  },
+  {
+    href: '/templates',
+    text: 'Templates',
+  },
+]
+
 const MAIN_SIDEBAR = [
   'Getting started',
   {
@@ -64,18 +83,7 @@ const SHADCN_SIDEBAR = [
 
 const MOBILE_REACT_SIDEBAR = [
   'Getting started',
-  {
-    href: '/docs',
-    text: 'Introduction',
-  },
-  {
-    href: '/docs/styling',
-    text: 'Styling',
-  },
-  {
-    href: '/docs/resources',
-    text: 'Resources',
-  },
+  ...GETTING_STARTED_LINKS,
   {
     href: '/shadcn/installation',
     text: 'Shadcn components',
@@ -91,18 +99,7 @@ const MOBILE_REACT_SIDEBAR = [
 
 const MOBILE_SHADCN_SIDEBAR = [
   'Getting started',
-  {
-    href: '/docs',
-    text: 'Introduction',
-  },
-  {
-    href: '/docs/styling',
-    text: 'Styling',
-  },
-  {
-    href: '/docs/resources',
-    text: 'Resources',
-  },
+  ...GETTING_STARTED_LINKS,
   {
     href: '/react/installation',
     text: 'React components',
@@ -116,10 +113,28 @@ const MOBILE_SHADCN_SIDEBAR = [
   ...SHADCN_LINKS,
 ]
 
+const MOBILE_MAIN_SIDEBAR = [
+  'Getting started',
+  ...GETTING_STARTED_LINKS,
+  'Components',
+  {
+    href: '/react/installation',
+    text: 'React',
+  },
+  {
+    href: '/shadcn/installation',
+    text: 'Shadcn',
+  },
+]
+
 export {
   MAIN_SIDEBAR,
   REACT_SIDEBAR,
   SHADCN_SIDEBAR,
   MOBILE_REACT_SIDEBAR,
   MOBILE_SHADCN_SIDEBAR,
+  MOBILE_MAIN_SIDEBAR,
+  REACT_LINKS,
+  SHADCN_LINKS,
+  GETTING_STARTED_LINKS,
 }

@@ -16,7 +16,7 @@ export default function NavDropdown() {
         onClick={() => {
           setIsOpen(!isOpen)
         }}
-        className="flex items-center gap-2 text-xl font-base"
+        className="flex items-center gap-2 text-xl m1000:text-lg font-base"
       >
         Components
         <ChevronDown
