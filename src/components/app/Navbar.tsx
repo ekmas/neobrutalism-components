@@ -5,7 +5,30 @@ import NavDropdown from '@/components/app/NavDropdown'
 import Search from '@/components/app/Search'
 import { ThemeSwitcher } from '@/components/app/ThemeSwitcher'
 
-function Navbar() {
+async function getRepoData() {
+  const res = await fetch(
+    'https://api.github.com/repos/ekmas/neobrutalism-components',
+    {
+      cache: 'force-cache',
+      headers: {
+        'X-GitHub-Api-Version': '2022-11-28',
+        Authorization: `Bearer ${process.env.GH_API_KEY}`,
+      },
+    },
+  )
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data')
+  }
+
+  return res.json()
+}
+
+async function Navbar() {
+  const repo = await getRepoData()
+
+  const starsCount = (repo.stargazers_count / 1000).toFixed(1) + 'k'
+
   return (
     <nav className="fixed left-0 top-0 z-20 mx-auto flex h-[88px] w-full items-center border-b-4 border-border dark:border-darkNavBorder bg-white dark:bg-secondaryBlack px-5 m500:h-16 ">
       <div className="mx-auto flex w-[1300px] dark:text-darkText text-text max-w-full items-center justify-between">
@@ -13,34 +36,46 @@ function Navbar() {
 
         <div className="flex items-center gap-10">
           <Link
-            className="text-4xl m900:w-[unset] font-heading m500:text-xl"
+            className="text-[33px] m900:w-[unset] font-heading m500:text-xl"
             href={'/'}
           >
             NBRTLSM
           </Link>
 
-          <div className="flex items-center gap-10 m1000:gap-8 m900:hidden">
-            <Link className="text-xl m1000:text-lg font-base" href="/docs">
+          <div className="flex items-center gap-10 m1100:gap-8 m900:hidden">
+            <Link className="text-xl m1100:text-base font-base" href="/docs">
               Docs
             </Link>
 
             <NavDropdown />
 
-            <Link className="text-xl m1000:text-lg font-base" href="/templates">
+            <Link
+              className="text-xl m1100:text-base font-base"
+              href="/templates"
+            >
               Templates
+            </Link>
+
+            <Link
+              className="text-xl m1100:text-base font-base"
+              href="/showcase"
+            >
+              Showcase
             </Link>
           </div>
         </div>
 
-        <div className="flex items-center gap-10 m1000:gap-5">
+        <div className="flex items-center gap-5 m1000:gap-5">
           <Search />
 
           <div className="flex items-center justify-end gap-5 m800:w-[unset] m400:gap-3">
             <a
               target="_blank"
               href="https://github.com/ekmas/neobrutalism-components"
-              className="m800:hidden flex items-center justify-center rounded-base border-2 border-border shadow-nav dark:shadow-navDark dark:border-darkBorder p-2 transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none dark:hover:shadow-none"
+              className="m800:hidden flex gap-2 items-center justify-center rounded-base border-2 border-border shadow-nav dark:shadow-navDark dark:border-darkBorder p-2 transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none dark:hover:shadow-none"
             >
+              <p className="font-semibold m1100:hidden">{starsCount}</p>
+
               <svg
                 className="h-6 w-6 m500:h-4 m500:w-4"
                 xmlns="http://www.w3.org/2000/svg"
