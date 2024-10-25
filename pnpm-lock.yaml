@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@devnomic/marquee':
+        specifier: ^1.0.2
+        version: 1.0.2
       '@hookform/resolvers':
         specifier: ^3.3.4
         version: 3.3.4(react-hook-form@7.51.2(react@18.2.0))
@@ -161,9 +164,6 @@ importers:
       react-dom:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
-      react-fast-marquee:
-        specifier: ^1.6.3
-        version: 1.6.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-hook-form:
         specifier: ^7.51.2
         version: 7.51.2(react@18.2.0)
@@ -319,6 +319,9 @@ packages:
   '@ctrl/tinycolor@4.1.0':
     resolution: {integrity: sha512-WyOx8cJQ+FQus4Mm4uPIZA64gbk3Wxh0so5Lcii0aJifqwoVOlfFtorjLE0Hen4OYyHZMXDWqMmaQemBhgxFRQ==}
     engines: {node: '>=14'}
+
+  '@devnomic/marquee@1.0.2':
+    resolution: {integrity: sha512-9eHNNeioGmHTEfx0Sl4MUbaL4aou1dAE4YVUkbBm22/udiYkW/h3Pdv+uAZMOjxnVwKfIQwatpSC4mk5uDwtVQ==}
 
   '@eslint-community/eslint-utils@4.4.0':
     resolution: {integrity: sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==}
@@ -2764,12 +2767,6 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  react-fast-marquee@1.6.3:
-    resolution: {integrity: sha512-oEISmNElv6lua/4i4uPYIteUKDxU0hAKKjH/tY2icje4GCns1rX6pIrkwVhjX0FMCIepUVqeyCchvqkiO/s2vw==}
-    peerDependencies:
-      react: '>= 16.8.0 || 18.0.0'
-      react-dom: '>= 16.8.0 || 18.0.0'
-
   react-hook-form@7.51.2:
     resolution: {integrity: sha512-y++lwaWjtzDt/XNnyGDQy6goHskFualmDlf+jzEZvjvz6KWDf7EboL7pUvRCzPTJd0EOPpdekYaQLEvvG6m6HA==}
     engines: {node: '>=12.22.0'}
@@ -3471,6 +3468,11 @@ snapshots:
       to-fast-properties: 2.0.0
 
   '@ctrl/tinycolor@4.1.0': {}
+
+  '@devnomic/marquee@1.0.2':
+    dependencies:
+      clsx: 2.1.0
+      tailwind-merge: 2.2.2
 
   '@eslint-community/eslint-utils@4.4.0(eslint@8.45.0)':
     dependencies:
@@ -6433,11 +6435,6 @@ snapshots:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
-
-  react-fast-marquee@1.6.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
-    dependencies:
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
 
   react-hook-form@7.51.2(react@18.2.0):
     dependencies:
