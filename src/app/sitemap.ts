@@ -14,6 +14,7 @@ const DOCS_PAGES = [
   '/react/installation',
   '/shadcn/installation',
   '/templates',
+  '/showcase',
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -26,17 +27,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...DOCS_PAGES.map((page) => ({
       url: root + page,
       lastModified: new Date(),
-      priority: 0.8,
+      priority: 1,
     })),
     ...REACT_COMPONENTS.map((page) => ({
       url: root + '/react/components/' + transformToSlug(page.name),
       lastModified: new Date(),
-      priority: 0.6,
+      priority: 0.8,
     })),
     ...SHADCN_COMPONENTS.map((page) => ({
       url: root + '/shadcn/components/' + transformToSlug(page.name),
       lastModified: new Date(),
-      priority: 0.6,
+      priority: 0.8,
     })),
   ]
 }

@@ -79,8 +79,12 @@ module.exports = {
         'caret-blink': 'caret-blink 1.25s ease-out infinite',
       },
       screens: {
+        m1600: { raw: '(max-width: 1600px)' },
         m1500: { raw: '(max-width: 1500px)' },
+        m1400: { raw: '(max-width: 1400px)' },
         m1300: { raw: '(max-width: 1300px)' },
+        m1250: { raw: '(max-width: 1250px)' },
+        m1200: { raw: '(max-width: 1200px)' },
         m1100: { raw: '(max-width: 1100px)' },
         m1000: { raw: '(max-width: 1000px)' },
         m900: { raw: '(max-width: 900px)' },
