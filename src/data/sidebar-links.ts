@@ -34,6 +34,10 @@ const GETTING_STARTED_LINKS = [
     href: '/templates',
     text: 'Templates',
   },
+  {
+    href: '/showcase',
+    text: 'Showcase',
+  },
 ]
 
 const MAIN_SIDEBAR = [
