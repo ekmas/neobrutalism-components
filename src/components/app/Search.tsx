@@ -74,20 +74,20 @@ export default function Search() {
     <>
       <Button
         onClick={() => setOpen(true)}
-        className="relative bg-white dark:text-white dark:bg-secondaryBlack shadow-nav dark:shadow-navDark hover:!translate-x-[4px] hover:!translate-y-[4px] hover:shadow-none dark:hover:shadow-none px-5 m1100:pr-14 m900:p-2 pr-20 m500:h-9 shrink-0 m500:w-9 m500:p-0 h-[44px] text-lg"
+        className="relative bg-white dark:text-white dark:bg-secondaryBlack shadow-nav dark:shadow-navDark hover:!translate-x-[4px] hover:!translate-y-[4px] hover:shadow-none dark:hover:shadow-none px-5 m1250:pr-14 m1100:p-2 pr-20 m500:h-9 shrink-0 m500:w-9 m500:p-0 h-[44px] text-lg"
       >
-        <span className="m1100:hidden">Search docs...</span>
-        <span className="hidden m1100:inline">
+        <span className="m1250:hidden">Search docs...</span>
+        <span className="hidden m1250:inline">
           <SearchIcon className="h-4 w-4 m900:w-6 m900:h-6 m500:h-4 m500:w-4 shrink-0" />
         </span>
 
-        <span className="absolute m900:hidden text-black border text-base px-1 py-0.5 border-black rounded-base bg-main h-[28px] right-2 top-1.5">
+        <span className="absolute m1100:hidden text-black border text-base px-1 py-0.5 border-black rounded-base bg-main h-[28px] right-2 top-1.5">
           ⌘K
         </span>
       </Button>
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="overflow-hidden border-0 p-0">
-          <Command>
+        <DialogContent className="overflow-hidden rounded-none border-0 p-0">
+          <Command className="rounded-none">
             <CommandInput placeholder="Search documentation..." />
             <CommandList className="command-scrollbar">
               <CommandEmpty>No results found.</CommandEmpty>
