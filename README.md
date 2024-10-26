@@ -1,8 +1,6 @@
-<p align="center">
-  <img src="public/logo.png" width="125px" alt="Logo">
-</p>
+# Neobrutalism components
 
-<h1 align="center">Neobrutalism components</h1>
+<img src="public/preview.png" alt="preview">
 
 ## Introduction
 
