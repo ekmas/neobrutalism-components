@@ -1,9 +1,11 @@
+import { CircleAlert } from 'lucide-react'
 import type { MDXComponents } from 'mdx/types'
 
 import Link from 'next/link'
 
 import EditThisPage from '@/components/app/EditThisPage'
 import Pagination from '@/components/app/Pagination'
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
 import { cn } from '@/lib/utils'
@@ -42,6 +44,22 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       ...props
     }: React.ComponentProps<typeof TabsContent>) => (
       <TabsContent className="mt-0" {...props} />
+    ),
+    Warning: ({
+      description,
+      className,
+      ...props
+    }: React.ComponentProps<typeof Alert> & { description: string }) => (
+      <Alert
+        className={cn('not-prose sm:[&>svg~*]:pl-9', className)}
+        {...props}
+      >
+        <CircleAlert className="sm:h-6 sm:w-6 w-4 h-4" />
+        <AlertTitle className="sm:text-lg sm:leading-6">Warning</AlertTitle>
+        <AlertDescription className="sm:text-base">
+          {description}
+        </AlertDescription>
+      </Alert>
     ),
     EditThisPage: ({ ...props }) => <EditThisPage {...props} />,
     Pagination: ({ ...props }) => <Pagination {...props} />,
