@@ -38,7 +38,7 @@ export default function FormDemo() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8 font-bold"
+        className="space-y-8 font-heading"
       >
         <FormField
           control={form.control}

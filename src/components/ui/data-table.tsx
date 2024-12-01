@@ -113,6 +113,7 @@ export const columns: ColumnDef<Payment>[] = [
       return (
         <Button
           variant="noShadow"
+          size="sm"
           onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
         >
           Email

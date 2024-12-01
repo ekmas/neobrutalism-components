@@ -11,6 +11,7 @@ const DOCS_PAGES = [
   '/docs',
   '/docs/styling',
   '/docs/resources',
+  '/docs/figma',
   '/react/installation',
   '/shadcn/installation',
   '/templates',
