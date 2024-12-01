@@ -31,6 +31,10 @@ const GETTING_STARTED_LINKS = [
     text: 'Resources',
   },
   {
+    href: '/docs/figma',
+    text: 'Figma',
+  },
+  {
     href: '/templates',
     text: 'Templates',
   },
@@ -53,6 +57,10 @@ const MAIN_SIDEBAR = [
   {
     href: '/docs/resources',
     text: 'Resources',
+  },
+  {
+    href: '/docs/figma',
+    text: 'Figma',
   },
   'Components',
   {
