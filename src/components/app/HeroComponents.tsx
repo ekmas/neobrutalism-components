@@ -141,7 +141,10 @@ const CardExample = () => (
           <div className="flex flex-col space-y-1.5">
             <Label htmlFor="framework">Framework</Label>
             <Select>
-              <SelectTrigger id="framework">
+              <SelectTrigger
+                className="bg-white text-black dark:bg-secondaryBlack dark:text-white"
+                id="framework"
+              >
                 <SelectValue placeholder="Select" />
               </SelectTrigger>
               <SelectContent position="popper">

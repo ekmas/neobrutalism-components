@@ -29,8 +29,8 @@ body,
 
 html.dark body,
 html.dark .scrollbar {
-  --sb-track-color: #1b1b1b;
-  --sb-thumb-color: #ffffff;
+  --sb-track-color: #212121;
+  --sb-thumb-color: #e6e6e6;
 }
 
 body::-webkit-scrollbar,

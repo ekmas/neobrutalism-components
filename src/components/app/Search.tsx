@@ -2,7 +2,7 @@
 
 import { Search as SearchIcon } from 'lucide-react'
 
-import { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 import {
@@ -19,6 +19,7 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
+  CommandSeparator,
 } from '@/components/ui/command'
 import { Dialog, DialogContent } from '@/components/ui/dialog'
 
@@ -91,36 +92,35 @@ export default function Search() {
             <CommandInput placeholder="Search documentation..." />
             <CommandList className="command-scrollbar">
               <CommandEmpty>No results found.</CommandEmpty>
-              {DOCS_LINKS.map(({ heading, links }) => {
+              {DOCS_LINKS.map(({ heading, links }, i) => {
                 const isReact = heading === 'React'
                 const isShadcn = heading === 'Shadcn'
 
                 return (
-                  <CommandGroup
-                    className="[&_[cmdk-group-heading]]:text-base"
-                    key={heading}
-                    heading={heading}
-                  >
-                    {links.map(({ text, href }) => {
-                      const formattedText = isShadcn
-                        ? `Shadcn ${text}`
-                        : isReact
-                        ? `React ${text}`
-                        : text
+                  <React.Fragment key={heading}>
+                    <CommandGroup heading={heading}>
+                      {links.map(({ text, href }) => {
+                        const formattedText = isShadcn
+                          ? `Shadcn ${text}`
+                          : isReact
+                          ? `React ${text}`
+                          : text
 
-                      return (
-                        <CommandItem
-                          value={formattedText}
-                          onSelect={() => {
-                            runCommand(() => router.push(href))
-                          }}
-                          key={href}
-                        >
-                          {formattedText}
-                        </CommandItem>
-                      )
-                    })}
-                  </CommandGroup>
+                        return (
+                          <CommandItem
+                            value={formattedText}
+                            onSelect={() => {
+                              runCommand(() => router.push(href))
+                            }}
+                            key={href}
+                          >
+                            {formattedText}
+                          </CommandItem>
+                        )
+                      })}
+                    </CommandGroup>
+                    {i < 2 && <CommandSeparator />}
+                  </React.Fragment>
                 )
               })}
             </CommandList>
