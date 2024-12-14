@@ -3,14 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=20",
-    "pnpm": ">=9"
+    "node": ">=20"
   },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format:write": "prettier . --write",
+    "format:check": "prettier . --check"
   },
   "dependencies": {
     "@devnomic/marquee": "^1.0.2",
@@ -82,5 +83,6 @@
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.4.1",
     "remark-code-import": "^1.2.0"
-  }
+  },
+  "packageManager": "pnpm@9.6.0"
 }
