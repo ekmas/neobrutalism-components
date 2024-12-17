@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Neobrutalism components are a collection of Tailwind components for React and Shadcn UI.
+Neobrutalism components are a collection of neobrutalism-styled components based on shadcn/ui. 
 
 ## Documentation
 

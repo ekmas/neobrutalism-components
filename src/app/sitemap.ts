@@ -1,7 +1,6 @@
 import { MetadataRoute } from 'next'
 
-import REACT_COMPONENTS from '@/data/components/react'
-import SHADCN_COMPONENTS from '@/data/components/shadcn'
+import COMPONENTS from '@/data/components'
 
 import { transformToSlug } from '@/lib/utils'
 
@@ -13,8 +12,7 @@ const DOCS_PAGES = [
   '/docs/resources',
   '/docs/figma',
   '/docs/changelog',
-  '/react/installation',
-  '/shadcn/installation',
+  '/docs/installation',
   '/templates',
   '/showcase',
 ]
@@ -31,13 +29,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       priority: 1,
     })),
-    ...REACT_COMPONENTS.map((page) => ({
-      url: root + '/react/components/' + transformToSlug(page.name),
-      lastModified: new Date(),
-      priority: 0.8,
-    })),
-    ...SHADCN_COMPONENTS.map((page) => ({
-      url: root + '/shadcn/components/' + transformToSlug(page.name),
+    ...COMPONENTS.map((page) => ({
+      url: root + '/components/' + transformToSlug(page.name),
       lastModified: new Date(),
       priority: 0.8,
     })),

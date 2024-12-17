@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: `%s - Neobrutalism components`,
   },
   description:
-    'A collection of neobrutalism-styled Tailwind components for React and Shadcn UI.',
+    'A collection of neobrutalism-styled components based on shadcn/ui.',
   keywords: [
     'neobrutalism',
     'neobrutalism components',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     description:
-      'A collection of neobrutalism-styled Tailwind components for React and Shadcn UI.',
+      'A collection of neobrutalism-styled components based on shadcn/ui.',
     images: ['https://www.neobrutalism.dev/preview.png'],
     url: 'https://www.neobrutalism.dev/',
     title: 'Neobrutalism components',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Neobrutalism components - Start making neobrutalism layouts',
     description:
-      'A collection of neobrutalism-styled Tailwind components for React and Shadcn UI.',
+      'A collection of neobrutalism-styled components based on shadcn/ui.',
     images: ['https://www.neobrutalism.dev/preview.png'],
     creator: '@samuelbreznjak',
   },

@@ -26,7 +26,7 @@ export default function Home() {
             </h1>
 
             <p className="mb-[60px] leading-snug m800:mb-10 m800:mt-8 m1100:w-3/4 m1000:w-full mt-[40px] m1400:text-2xl font-base text-3xl m800:text-lg m400:text-base">
-              A collection of neobrutalism-styled Tailwind components.
+              A collection of neobrutalism-styled components based on shadcn/ui.
             </p>
 
             <Link
@@ -93,17 +93,17 @@ export default function Home() {
           <section className="border-r-4 border-border dark:border-darkBorder bg-main dark:text-text p-14 py-16 m1300:p-10 m1300:py-12 m800:p-6 m800:py-8 m700:border-b-4 m700:border-r-0">
             <div className="flex items-center gap-6 mb-6">
               <div className="w-[70px] h-[70px] m1300:w-[55px] m1300:h-[55px] m800:h-10 m800:w-10 flex items-center justify-center">
-                <Check className="w-full h-full" strokeWidth={3} />
+                <ShadcnIcon />
               </div>
 
               <h2 className="font-heading text-4xl m1300:text-3xl m800:text-2xl m500:text-xl">
-                Easy to use
+                Based on Shadcn/ui
               </h2>
             </div>
 
             <p className="text-2xl font-base m1300:text-xl m800:text-lg m500:text-base">
-              After you install necessary dependencies, just go to any
-              component, click copy and you&apos;re good to go.
+              Most of the components are based on shadcn/ui, meaning
+              high-quality components with best practices.
             </p>
           </section>
           <section className="bg-bg dark:bg-darkBg p-14 py-16 m1300:p-10 m1300:py-12 m800:p-6 m800:py-8">
@@ -175,9 +175,8 @@ export default function Home() {
                   Are these components accessible?
                 </AccordionTrigger>
                 <AccordionContent className="text-sm sm:text-base">
-                  It depends. React components are somewhat accessible, but if
-                  accessibility is one of your main concerns I suggest you to
-                  use shadcn components because under the hood they use radix-ui
+                  Most of the components are based on shadcn/ui, which means
+                  they are accessible because under the hood they use radix-ui
                   which is fully accessible.
                 </AccordionContent>
               </AccordionItem>
@@ -275,12 +274,31 @@ const OpenSourceIcon = () => (
   </svg>
 )
 
-const EasyIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 839 635" fill="none">
-    <path
-      d="M753.075 21.7886L753.066 21.7796C737.326 6.07842 711.886 6.06551 696.164 21.7886L318.706 399.275L142.862 222.146L142.849 222.133L142.836 222.121C127.114 206.398 101.674 206.411 85.934 222.112L85.925 222.121L21.7874 286.263L21.7784 286.272C6.08246 302.009 6.06592 327.442 21.7765 343.165C21.7801 343.169 21.7838 343.173 21.7874 343.176L289.976 613.188L289.987 613.2L289.999 613.211C305.716 628.93 331.193 628.93 346.91 613.211L340.57 606.872L346.91 613.211L817.204 142.853C832.937 127.158 832.924 101.644 817.213 85.931L753.075 21.7886Z"
-      className="fill-black"
-    />
+const ShadcnIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+    <rect width="256" height="256" fill="none"></rect>
+    <line
+      x1="208"
+      y1="128"
+      x2="128"
+      y2="208"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="32"
+    ></line>
+    <line
+      x1="192"
+      y1="40"
+      x2="40"
+      y2="192"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="32"
+    ></line>
   </svg>
 )
 

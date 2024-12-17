@@ -5,11 +5,7 @@ import { Search as SearchIcon } from 'lucide-react'
 import React, { useCallback, useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 
-import {
-  GETTING_STARTED_LINKS,
-  REACT_LINKS,
-  SHADCN_LINKS,
-} from '@/data/sidebar-links'
+import { COMPONENTS_LINKS, GETTING_STARTED_LINKS } from '@/data/sidebar-links'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -30,24 +26,8 @@ export default function Search() {
       links: [...GETTING_STARTED_LINKS],
     },
     {
-      heading: 'Shadcn',
-      links: [
-        {
-          href: '/shadcn/installation',
-          text: 'Installation',
-        },
-        ...SHADCN_LINKS,
-      ],
-    },
-    {
-      heading: 'React',
-      links: [
-        {
-          href: '/react/installation',
-          text: 'Installation',
-        },
-        ...REACT_LINKS,
-      ],
+      heading: 'Components',
+      links: [...COMPONENTS_LINKS],
     },
   ]
 
@@ -75,10 +55,10 @@ export default function Search() {
     <>
       <Button
         onClick={() => setOpen(true)}
-        className="relative bg-white dark:text-white dark:bg-secondaryBlack shadow-nav dark:shadow-navDark hover:!translate-x-[4px] hover:!translate-y-[4px] hover:shadow-none dark:hover:shadow-none px-5 m1250:pr-14 m1100:p-2 pr-20 m500:h-9 shrink-0 m500:w-9 m500:p-0 h-[44px] text-lg"
+        className="relative bg-white dark:text-white dark:bg-secondaryBlack shadow-nav dark:shadow-navDark hover:!translate-x-[4px] hover:!translate-y-[4px] hover:shadow-none dark:hover:shadow-none px-5 m1250:pr-14 m1100:pr-5 m900:p-2 pr-20 m500:h-9 shrink-0 m500:w-9 m500:p-0 h-[44px] text-lg"
       >
-        <span className="m1250:hidden">Search docs...</span>
-        <span className="hidden m1250:inline">
+        <span className="m900:hidden">Search docs...</span>
+        <span className="hidden m900:inline">
           <SearchIcon className="h-4 w-4 m900:w-6 m900:h-6 m500:h-4 m500:w-4 shrink-0" />
         </span>
 
@@ -93,28 +73,19 @@ export default function Search() {
             <CommandList className="command-scrollbar">
               <CommandEmpty>No results found.</CommandEmpty>
               {DOCS_LINKS.map(({ heading, links }, i) => {
-                const isReact = heading === 'React'
-                const isShadcn = heading === 'Shadcn'
-
                 return (
                   <React.Fragment key={heading}>
                     <CommandGroup heading={heading}>
                       {links.map(({ text, href }) => {
-                        const formattedText = isShadcn
-                          ? `Shadcn ${text}`
-                          : isReact
-                          ? `React ${text}`
-                          : text
-
                         return (
                           <CommandItem
-                            value={formattedText}
+                            value={text}
                             onSelect={() => {
                               runCommand(() => router.push(href))
                             }}
                             key={href}
                           >
-                            {formattedText}
+                            {text}
                           </CommandItem>
                         )
                       })}

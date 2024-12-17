@@ -1,7 +1,6 @@
 import Link from 'next/link'
 
 import MobileDrawer from '@/components/app/MobileDrawer'
-import NavDropdown from '@/components/app/NavDropdown'
 import Search from '@/components/app/Search'
 import { ThemeSwitcher } from '@/components/app/ThemeSwitcher'
 
@@ -36,10 +35,10 @@ async function Navbar() {
 
         <div className="flex items-center gap-10">
           <Link
-            className="text-[33px] m900:w-[unset] font-heading m500:text-xl"
+            className="text-[30px] h-11 w-11 rounded-base flex bg-main text-text border-2 border-black m500:w-9 m500:h-9 m500:text-[22px] items-center justify-center font-heading"
             href={'/'}
           >
-            NBRTLSM
+            N
           </Link>
 
           <div className="flex items-center gap-10 m1100:gap-8 m900:hidden">
@@ -47,7 +46,12 @@ async function Navbar() {
               Docs
             </Link>
 
-            <NavDropdown />
+            <Link
+              className="text-xl m1100:text-base font-base"
+              href="/components/accordion"
+            >
+              Components
+            </Link>
 
             <Link
               className="text-xl m1100:text-base font-base"

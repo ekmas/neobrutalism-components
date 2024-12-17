@@ -22,7 +22,7 @@ export default function BorderRadius({
 
   return (
     <>
-      <h3 className="mb-5 text-xl font-bold m400:text-lg">Border radius</h3>
+      <h2>Border radius</h2>
       <Slider
         className="my-5"
         onValueChange={updateBorderRadius}

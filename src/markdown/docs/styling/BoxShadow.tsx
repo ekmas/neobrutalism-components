@@ -33,7 +33,7 @@ export default function BoxShadow({
 
   return (
     <>
-      <h3 className="mb-4 text-xl font-bold m400:text-lg">Box shadow</h3>
+      <h2>Box shadow</h2>
       <div className="grid grid-cols-2 gap-5 m750:my-4 m400:grid-cols-1 m400:gap-3">
         <div>
           <h4>Horizontal offset</h4>

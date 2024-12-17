@@ -1,0 +1,56 @@
+import Link from 'next/link'
+
+# Installation
+
+## 1. Install shadcn
+
+As explained in introduction, most of these components are based on <a target="_blank" href="https://ui.shadcn.com/">Shadcn UI</a>. 
+
+Visit <a href='https://ui.shadcn.com/docs/installation' target='_blank'>shadcn installation page</a> to see how to install shadcn.
+
+<br />
+
+## 2. Add styling
+
+Delete the existing styling from your project and add your <Link href='/docs/styling'>desired styling</Link> to your tailwind config.
+
+<br />
+
+## 3. Add components
+
+### Shadcn components
+
+In this docs below each component's name you'll have the shadcn docs link for that component.
+
+<br />
+
+e.g. You want to install shadcn button component. You'll navigate to <a target='_blank' href='/components/button'>button page</a>, click on the shadcn docs
+link and install the button component like it's shown in the docs.
+
+<br />
+
+After you're done you'll come back to neobrutalism button page, and copy button component to your project inside `components/ui/button.tsx`
+(this is the default component path) or your custom component path.
+
+<br />
+
+Keep in mind that neobrutalism components can have different variants than default shadcn components.
+
+<br />
+
+### Other components
+
+If the shadcn docs link is not present on the component's page, just copy the component and read the instructions if there are any.
+
+<EditThisPage markdownPath="/docs/installation/page.mdx" />
+
+<Pagination
+  prev={{
+    name: 'Introduction',
+    path: '/docs',
+  }}
+  next={{
+    name: 'Styling',
+    path: '/docs/styling',
+  }}
+/>

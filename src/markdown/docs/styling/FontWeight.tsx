@@ -31,7 +31,7 @@ export default function FontWeight({
 
   return (
     <>
-      <h3 className="mb-4 text-xl font-bold m400:text-lg">Font weight</h3>
+      <h2>Font weight</h2>
 
       <div className="grid grid-cols-2 gap-5 m750:my-4 m400:grid-cols-1 m400:gap-3">
         <div>
