@@ -62,7 +62,7 @@ export default async function Installation({
       <currentComponent.markdown />
 
       <EditThisPage
-        markdownPath={`/shadcn/components/${transformToSlug(
+        markdownPath={`/components/${transformToSlug(
           currentComponent.name,
         )}.mdx`}
       />
@@ -72,7 +72,7 @@ export default async function Installation({
           currentComponent.prevComponent
             ? {
                 name: `${transformToName(currentComponent.prevComponent)}`,
-                path: `/shadcn/components/${currentComponent.prevComponent}`,
+                path: `/components/${currentComponent.prevComponent}`,
               }
             : undefined
         }
@@ -80,7 +80,7 @@ export default async function Installation({
           currentComponent.nextComponent
             ? {
                 name: `${transformToName(currentComponent.nextComponent)}`,
-                path: `/shadcn/components/${currentComponent.nextComponent}`,
+                path: `/components/${currentComponent.nextComponent}`,
               }
             : undefined
         }
