@@ -1,90 +1,94 @@
-import AccordionMarkdown from '@/markdown/shadcn/components/accordion.mdx'
-import AlertDialogMarkdown from '@/markdown/shadcn/components/alert-dialog.mdx'
-import AlertMarkdown from '@/markdown/shadcn/components/alert.mdx'
-import AvatarMarkdown from '@/markdown/shadcn/components/avatar.mdx'
-import BadgeMarkdown from '@/markdown/shadcn/components/badge.mdx'
-import BreadcrumbMarkdown from '@/markdown/shadcn/components/breadcrumb.mdx'
-import ButtonMarkdown from '@/markdown/shadcn/components/button.mdx'
-import CalendarMarkdown from '@/markdown/shadcn/components/calendar.mdx'
-import CardMarkdown from '@/markdown/shadcn/components/card.mdx'
-import CarouselMarkdown from '@/markdown/shadcn/components/carousel.mdx'
-import CheckboxMarkdown from '@/markdown/shadcn/components/checkbox.mdx'
-import CollapsibleMarkdown from '@/markdown/shadcn/components/collapsible.mdx'
-import ComboboxMarkdown from '@/markdown/shadcn/components/combobox.mdx'
-import CommandMarkdown from '@/markdown/shadcn/components/command.mdx'
-import ContextMenuMarkdown from '@/markdown/shadcn/components/context-menu.mdx'
-import DataTableMarkdown from '@/markdown/shadcn/components/data-table.mdx'
-import DatePickerMarkdown from '@/markdown/shadcn/components/date-picker.mdx'
-import DialogMarkdown from '@/markdown/shadcn/components/dialog.mdx'
-import DrawerMarkdown from '@/markdown/shadcn/components/drawer.mdx'
-import DropdownMenuMarkdown from '@/markdown/shadcn/components/dropdown-menu.mdx'
-import FormMarkdown from '@/markdown/shadcn/components/form.mdx'
-import HoverCardMarkdown from '@/markdown/shadcn/components/hover-card.mdx'
-import InputOTPMarkdown from '@/markdown/shadcn/components/input-otp.mdx'
-import InputMarkdown from '@/markdown/shadcn/components/input.mdx'
-import LabelMarkdown from '@/markdown/shadcn/components/label.mdx'
-import MenubarMarkdown from '@/markdown/shadcn/components/menubar.mdx'
-import NavigationMenuMarkdown from '@/markdown/shadcn/components/navigation-menu.mdx'
-import PaginationMarkdown from '@/markdown/shadcn/components/pagination.mdx'
-import PopoverMarkdown from '@/markdown/shadcn/components/popover.mdx'
-import ProgressMarkdown from '@/markdown/shadcn/components/progress.mdx'
-import RadioGroupMarkdown from '@/markdown/shadcn/components/radio-group.mdx'
-import ResizableMarkdown from '@/markdown/shadcn/components/resizable.mdx'
-import ScrollAreaMarkdown from '@/markdown/shadcn/components/scroll-area.mdx'
-import SelectMarkdown from '@/markdown/shadcn/components/select.mdx'
-import SheetMarkdown from '@/markdown/shadcn/components/sheet.mdx'
-import SkeletonMarkdown from '@/markdown/shadcn/components/skeleton.mdx'
-import SliderMarkdown from '@/markdown/shadcn/components/slider.mdx'
-import SwitchMarkdown from '@/markdown/shadcn/components/switch.mdx'
-import TableMarkdown from '@/markdown/shadcn/components/table.mdx'
-import TabsMarkdown from '@/markdown/shadcn/components/tabs.mdx'
-import TextareaMarkdown from '@/markdown/shadcn/components/textarea.mdx'
-import ToastMarkdown from '@/markdown/shadcn/components/toast.mdx'
-import TooltipMarkdown from '@/markdown/shadcn/components/tooltip.mdx'
+import AccordionMarkdown from '@/markdown/components/accordion.mdx'
+import AlertDialogMarkdown from '@/markdown/components/alert-dialog.mdx'
+import AlertMarkdown from '@/markdown/components/alert.mdx'
+import AvatarMarkdown from '@/markdown/components/avatar.mdx'
+import BadgeMarkdown from '@/markdown/components/badge.mdx'
+import BreadcrumbMarkdown from '@/markdown/components/breadcrumb.mdx'
+import ButtonMarkdown from '@/markdown/components/button.mdx'
+import CalendarMarkdown from '@/markdown/components/calendar.mdx'
+import CardMarkdown from '@/markdown/components/card.mdx'
+import CarouselMarkdown from '@/markdown/components/carousel.mdx'
+import CheckboxMarkdown from '@/markdown/components/checkbox.mdx'
+import CollapsibleMarkdown from '@/markdown/components/collapsible.mdx'
+import ComboboxMarkdown from '@/markdown/components/combobox.mdx'
+import CommandMarkdown from '@/markdown/components/command.mdx'
+import ContextMenuMarkdown from '@/markdown/components/context-menu.mdx'
+import DataTableMarkdown from '@/markdown/components/data-table.mdx'
+import DatePickerMarkdown from '@/markdown/components/date-picker.mdx'
+import DialogMarkdown from '@/markdown/components/dialog.mdx'
+import DrawerMarkdown from '@/markdown/components/drawer.mdx'
+import DropdownMenuMarkdown from '@/markdown/components/dropdown-menu.mdx'
+import FormMarkdown from '@/markdown/components/form.mdx'
+import HoverCardMarkdown from '@/markdown/components/hover-card.mdx'
+import ImageCardMarkdown from '@/markdown/components/image-card.mdx'
+import InputOTPMarkdown from '@/markdown/components/input-otp.mdx'
+import InputMarkdown from '@/markdown/components/input.mdx'
+import LabelMarkdown from '@/markdown/components/label.mdx'
+import MarqueeMarkdown from '@/markdown/components/marquee.mdx'
+import MenubarMarkdown from '@/markdown/components/menubar.mdx'
+import NavigationMenuMarkdown from '@/markdown/components/navigation-menu.mdx'
+import PaginationMarkdown from '@/markdown/components/pagination.mdx'
+import PopoverMarkdown from '@/markdown/components/popover.mdx'
+import ProgressMarkdown from '@/markdown/components/progress.mdx'
+import RadioGroupMarkdown from '@/markdown/components/radio-group.mdx'
+import ResizableMarkdown from '@/markdown/components/resizable.mdx'
+import ScrollAreaMarkdown from '@/markdown/components/scroll-area.mdx'
+import SelectMarkdown from '@/markdown/components/select.mdx'
+import SheetMarkdown from '@/markdown/components/sheet.mdx'
+import SkeletonMarkdown from '@/markdown/components/skeleton.mdx'
+import SliderMarkdown from '@/markdown/components/slider.mdx'
+import SwitchMarkdown from '@/markdown/components/switch.mdx'
+import TableMarkdown from '@/markdown/components/table.mdx'
+import TabsMarkdown from '@/markdown/components/tabs.mdx'
+import TextareaMarkdown from '@/markdown/components/textarea.mdx'
+import ToastMarkdown from '@/markdown/components/toast.mdx'
+import TooltipMarkdown from '@/markdown/components/tooltip.mdx'
 
-import AccordionDemo from '@/components/shadcn/examples/accordion'
-import AlertDemo from '@/components/shadcn/examples/alert'
-import AlertDialogDemo from '@/components/shadcn/examples/alert-dialog'
-import AvatarDemo from '@/components/shadcn/examples/avatar'
-import BadgeDemo from '@/components/shadcn/examples/badge'
-import BreadcrumbDemo from '@/components/shadcn/examples/breadcrumb'
-import ButtonDemo from '@/components/shadcn/examples/button'
-import CalendarDemo from '@/components/shadcn/examples/calendar'
-import CardDemo from '@/components/shadcn/examples/card'
-import CarouselDemo from '@/components/shadcn/examples/carousel'
-import CheckboxDemo from '@/components/shadcn/examples/checkbox'
-import CollapsibleDemo from '@/components/shadcn/examples/collapsible'
-import ComboboxDemo from '@/components/shadcn/examples/combobox'
-import CommandDemo from '@/components/shadcn/examples/command'
-import ContextMenuDemo from '@/components/shadcn/examples/context-menu'
-import DataTableDemo from '@/components/shadcn/examples/data-table'
-import DatePickerDemo from '@/components/shadcn/examples/date-picker'
-import DialogDemo from '@/components/shadcn/examples/dialog'
-import DrawerDemo from '@/components/shadcn/examples/drawer'
-import DropdownMenuDemo from '@/components/shadcn/examples/dropdown-menu'
-import FormDemo from '@/components/shadcn/examples/form'
-import HoverCardDemo from '@/components/shadcn/examples/hover-card'
-import InputDemo from '@/components/shadcn/examples/input'
-import InputOTPDemo from '@/components/shadcn/examples/input-otp'
-import LabelDemo from '@/components/shadcn/examples/label'
-import MenubarDemo from '@/components/shadcn/examples/menubar'
-import NavigationMenuDemo from '@/components/shadcn/examples/navigation-menu'
-import PaginationDemo from '@/components/shadcn/examples/pagination'
-import PopoverDemo from '@/components/shadcn/examples/popover'
-import ProgressDemo from '@/components/shadcn/examples/progress'
-import RadioGroupDemo from '@/components/shadcn/examples/radio-group'
-import ResizableDemo from '@/components/shadcn/examples/resizable'
-import ScrollAreaDemo from '@/components/shadcn/examples/scroll-area'
-import SelectDemo from '@/components/shadcn/examples/select'
-import SheetDemo from '@/components/shadcn/examples/sheet'
-import SkeletonDemo from '@/components/shadcn/examples/skeleton'
-import SliderDemo from '@/components/shadcn/examples/slider'
-import SwitchDemo from '@/components/shadcn/examples/switch'
-import TableDemo from '@/components/shadcn/examples/table'
-import TabsDemo from '@/components/shadcn/examples/tabs'
-import TextareaDemo from '@/components/shadcn/examples/textarea'
-import ToastDemo from '@/components/shadcn/examples/toast'
-import TooltipDemo from '@/components/shadcn/examples/tooltip'
+import AccordionDemo from '@/components/examples/accordion'
+import AlertDemo from '@/components/examples/alert'
+import AlertDialogDemo from '@/components/examples/alert-dialog'
+import AvatarDemo from '@/components/examples/avatar'
+import BadgeDemo from '@/components/examples/badge'
+import BreadcrumbDemo from '@/components/examples/breadcrumb'
+import ButtonDemo from '@/components/examples/button'
+import CalendarDemo from '@/components/examples/calendar'
+import CardDemo from '@/components/examples/card'
+import CarouselDemo from '@/components/examples/carousel'
+import CheckboxDemo from '@/components/examples/checkbox'
+import CollapsibleDemo from '@/components/examples/collapsible'
+import ComboboxDemo from '@/components/examples/combobox'
+import CommandDemo from '@/components/examples/command'
+import ContextMenuDemo from '@/components/examples/context-menu'
+import DataTableDemo from '@/components/examples/data-table'
+import DatePickerDemo from '@/components/examples/date-picker'
+import DialogDemo from '@/components/examples/dialog'
+import DrawerDemo from '@/components/examples/drawer'
+import DropdownMenuDemo from '@/components/examples/dropdown-menu'
+import FormDemo from '@/components/examples/form'
+import HoverCardDemo from '@/components/examples/hover-card'
+import ImageCardDemo from '@/components/examples/image-card'
+import InputDemo from '@/components/examples/input'
+import InputOTPDemo from '@/components/examples/input-otp'
+import LabelDemo from '@/components/examples/label'
+import MarqueeDemo from '@/components/examples/marquee'
+import MenubarDemo from '@/components/examples/menubar'
+import NavigationMenuDemo from '@/components/examples/navigation-menu'
+import PaginationDemo from '@/components/examples/pagination'
+import PopoverDemo from '@/components/examples/popover'
+import ProgressDemo from '@/components/examples/progress'
+import RadioGroupDemo from '@/components/examples/radio-group'
+import ResizableDemo from '@/components/examples/resizable'
+import ScrollAreaDemo from '@/components/examples/scroll-area'
+import SelectDemo from '@/components/examples/select'
+import SheetDemo from '@/components/examples/sheet'
+import SkeletonDemo from '@/components/examples/skeleton'
+import SliderDemo from '@/components/examples/slider'
+import SwitchDemo from '@/components/examples/switch'
+import TableDemo from '@/components/examples/table'
+import TabsDemo from '@/components/examples/tabs'
+import TextareaDemo from '@/components/examples/textarea'
+import ToastDemo from '@/components/examples/toast'
+import TooltipDemo from '@/components/examples/tooltip'
 
 type Component = {
   name: string
@@ -92,9 +96,10 @@ type Component = {
   exampleComponent: React.ComponentType
   prevComponent?: string
   nextComponent?: string
+  notShadcn?: boolean
 }
 
-const SHADCN_COMPONENTS: Component[] = [
+const COMPONENTS: Component[] = [
   {
     name: 'Accordion',
     markdown: AccordionMarkdown,
@@ -246,13 +251,21 @@ const SHADCN_COMPONENTS: Component[] = [
     markdown: HoverCardMarkdown,
     exampleComponent: HoverCardDemo,
     prevComponent: 'form',
+    nextComponent: 'image-card',
+  },
+  {
+    name: 'Image Card',
+    markdown: ImageCardMarkdown,
+    exampleComponent: ImageCardDemo,
+    prevComponent: 'hover-card',
     nextComponent: 'input-otp',
+    notShadcn: true,
   },
   {
     name: 'Input Otp',
     markdown: InputOTPMarkdown,
     exampleComponent: InputOTPDemo,
-    prevComponent: 'hover-card',
+    prevComponent: 'image-card',
     nextComponent: 'input',
   },
   {
@@ -267,13 +280,21 @@ const SHADCN_COMPONENTS: Component[] = [
     markdown: LabelMarkdown,
     exampleComponent: LabelDemo,
     prevComponent: 'input',
+    nextComponent: 'marquee',
+  },
+  {
+    name: 'Marquee',
+    markdown: MarqueeMarkdown,
+    exampleComponent: MarqueeDemo,
+    prevComponent: 'label',
     nextComponent: 'menubar',
+    notShadcn: true,
   },
   {
     name: 'Menubar',
     markdown: MenubarMarkdown,
     exampleComponent: MenubarDemo,
-    prevComponent: 'label',
+    prevComponent: 'marquee',
     nextComponent: 'navigation-menu',
   },
   {
@@ -396,4 +417,4 @@ const SHADCN_COMPONENTS: Component[] = [
   },
 ]
 
-export default SHADCN_COMPONENTS
+export default COMPONENTS
