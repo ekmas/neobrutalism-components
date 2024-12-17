@@ -6,7 +6,6 @@ import colors from '@/data/colors'
 
 export type ColorPallette = {
   main: string
-  mainAccent: string
   bg: string
   darkBg: string
 }
@@ -22,7 +21,6 @@ export default function Colors({
     r.style.setProperty('--bg', color.bg)
     r.style.setProperty('--main', color.main)
     r.style.setProperty('--main50', color.main + 'b3')
-    r.style.setProperty('--main-accent', color.mainAccent)
     r.style.setProperty('--dark-bg', color.darkBg)
 
     setActiveColorPalette(color)
@@ -32,7 +30,7 @@ export default function Colors({
 
   return (
     <>
-      <h3 className="mb-5 text-xl font-bold m400:text-lg">Colors</h3>
+      <h2>Colors</h2>
       <p>
         Here are some color palettes you can try. You can click each color
         palette to see how it looks.

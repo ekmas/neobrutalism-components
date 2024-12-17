@@ -13,7 +13,6 @@ module.exports = {
       colors: {
         main: 'var(--main)',
         main50: 'var(--main50)',
-        mainAccent: 'var(--main-accent)',
         overlay: 'rgba(0,0,0,0.8)',
 
         // light mode

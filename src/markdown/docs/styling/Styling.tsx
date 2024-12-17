@@ -50,7 +50,6 @@ export default function Styling() {
     r.style.setProperty('--bg', defaultColorPalette.bg)
     r.style.setProperty('--main', defaultColorPalette.main)
     r.style.setProperty('--main50', defaultColorPalette.main + 'b3')
-    r.style.setProperty('--main-accent', defaultColorPalette.mainAccent)
     r.style.setProperty('--dark-bg', defaultColorPalette.darkBg)
 
     r.style.setProperty('--border-radius', '5px')
@@ -71,9 +70,6 @@ export default function Styling() {
   extend: {
     colors: {
       main: '${activeColorPallete.main}',
-      mainAccent: '${
-        activeColorPallete.mainAccent
-      }', // not needed for shadcn components
       overlay: 'rgba(0,0,0,0.8)', // background color overlay for alert dialogs, modals, etc.
 
       // light mode
