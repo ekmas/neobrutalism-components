@@ -1,5 +1,3 @@
-import { MAIN_SIDEBAR } from '@/data/sidebar-links'
-
 import DocsLayout from '@/layouts/Docs'
 import Sidebar from '@/components/app/Sidebar'
 
@@ -10,7 +8,7 @@ export default function MainDocsLayout({
 }) {
   return (
     <>
-      <Sidebar links={MAIN_SIDEBAR} />
+      <Sidebar />
       <DocsLayout>{children}</DocsLayout>
     </>
   )

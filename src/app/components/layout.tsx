@@ -1,16 +1,14 @@
-import { SHADCN_SIDEBAR } from '@/data/sidebar-links'
-
 import DocsLayout from '@/layouts/Docs'
 import Sidebar from '@/components/app/Sidebar'
 
-export default function ShadcnDocsLayout({
+export default function ComponentsDocsLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
     <>
-      <Sidebar links={SHADCN_SIDEBAR} />
+      <Sidebar />
       <DocsLayout>{children}</DocsLayout>
     </>
   )

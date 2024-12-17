@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
-import components from '@/data/components/shadcn'
+import components from '@/data/components'
 
 import Component from '@/components/app/Component'
 import EditThisPage from '@/components/app/EditThisPage'
@@ -27,8 +27,8 @@ export async function generateMetadata({
   const component = transformToName(params.name)
 
   return {
-    title: `Shadcn ${component}`,
-    description: `Start using Shadcn UI ${component} component in your next project.`,
+    title: `${component}`,
+    description: `Start using ${component} component in your next project.`,
   }
 }
 
@@ -42,17 +42,21 @@ export default async function Installation({
   )
 
   if (!currentComponent) {
-    redirect('/shadcn/installation')
+    redirect('/docs/installation')
   }
+
+  const docsLink = !currentComponent.notShadcn
+    ? `https://ui.shadcn.com/docs/components/${transformToSlug(
+        currentComponent.name,
+      )}`
+    : undefined
 
   return (
     <>
       <Component
         name={currentComponent.name}
         exampleComponent={<currentComponent.exampleComponent />}
-        docsLink={`https://ui.shadcn.com/docs/components/${transformToSlug(
-          currentComponent.name,
-        )}`}
+        docsLink={docsLink}
       />
 
       <currentComponent.markdown />
