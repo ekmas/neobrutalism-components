@@ -5,53 +5,41 @@ import { Menu } from 'lucide-react'
 import { useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 
-import {
-  MOBILE_MAIN_SIDEBAR,
-  MOBILE_REACT_SIDEBAR,
-  MOBILE_SHADCN_SIDEBAR,
-} from '@/data/sidebar-links'
+import { MOBILE_MAIN_SIDEBAR } from '@/data/sidebar-links'
 
-import Drawer from '@/components/react/components/Drawer'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 
 import { cn } from '@/lib/utils'
 
 export default function MobileDrawer() {
+  const [open, setOpen] = useState(false)
+
   const router = useRouter()
   const pathname = usePathname()
 
-  const ACTIVE_SIDEBAR = pathname.includes('/docs')
-    ? MOBILE_MAIN_SIDEBAR
-    : pathname.includes('/react')
-    ? MOBILE_REACT_SIDEBAR
-    : pathname.includes('/shadcn')
-    ? MOBILE_SHADCN_SIDEBAR
-    : MOBILE_MAIN_SIDEBAR
-
-  const [isDrawerActive, setIsDrawerActive] = useState(false)
-
   const handleLinkClick = (path: string) => {
-    setIsDrawerActive(false)
     router.push(path)
+    setOpen(false)
   }
 
   return (
-    <>
+    <Sheet open={open} onOpenChange={(open) => setOpen(open)}>
       <div className="hidden w-[236px] m900:block m800:w-[108px] m400:w-9">
-        <button
-          onClick={() => setIsDrawerActive(true)}
-          className="flex items-center justify-center rounded-base border-2 border-border dark:border-darkBorder p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
-        >
+        <SheetTrigger className="flex items-center justify-center rounded-base border-2 border-border dark:border-darkBorder p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none">
           <Menu className="h-6 w-6 m500:h-4 m500:w-4" />
-        </button>
+        </SheetTrigger>
       </div>
 
-      <Drawer active={isDrawerActive} setActive={setIsDrawerActive}>
-        <div className="scrollbar h-full w-full overflow-y-auto bg-white dark:bg-secondaryBlack">
-          {ACTIVE_SIDEBAR.map((item, id) => {
+      <SheetContent
+        className="p-0 pt-12 bg-white dark:bg-secondaryBlack w-[230px]"
+        side="left"
+      >
+        <div className="h-full w-full overflow-y-auto scrollbar bg-white dark:bg-secondaryBlack">
+          {MOBILE_MAIN_SIDEBAR.map((item, id) => {
             return typeof item === 'string' ? (
               <div
                 key={id}
-                className="sidebaritem block border-b-4 border-r-4 border-border dark:border-darkBorder p-4 text-xl font-heading m800:p-4 m800:text-base"
+                className="sidebaritem block border-b-4 first:border-t-4 border-r-4 border-border dark:border-darkBorder p-4 text-xl font-heading m800:p-4 m800:text-base"
               >
                 {item}
               </div>
@@ -106,7 +94,7 @@ export default function MobileDrawer() {
             </a>
           </div>
         </div>
-      </Drawer>
-    </>
+      </SheetContent>
+    </Sheet>
   )
 }
