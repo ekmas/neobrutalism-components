@@ -9,16 +9,14 @@ src
 ├── app
 └── components
     ├── app
-    ├── react
-    │   ├── components
-    │   └── examples
-    ├── shadcn/examples
+    ├── css-vars
+    ├── examples
     ├── ui
 └── data
-    ├── components
-    │   ├── react.ts
-    │   └── shadcn.ts
     ├── colors.ts
+    ├── components.ts
+    ├── reviews.ts
+    ├── showcase.ts
     ├── sidebar-links.ts
     ├── templates.ts
     ├── theme.jsonc
@@ -30,13 +28,10 @@ src
 
 - `app` - All pages are inside this directory.
 - `components/app` - Components for the website.
-- `components/react/components` - Neobrutalism react components that will be displayed on each react component page (in code blocks).
-- `components/react/examples` - Neobrutalism react components examples that will be displayed on each react component page (components above code blocks).
-- `components/ui` - Neobrutalism shadcn components that will be displayed on each shadcn component page (in code blocks).
-- `components/shadcn/examples` - Neobrutalism shadcn components examples that will be displayed on each shadcn component page (components above code blocks).
-- `data/components/react.ts` - Array of all react components and their markdown files.
-- `data/components/shadcn.ts` - Array of all shadcn components and their markdown files.
-- `data/colors.ts` - Array of all color palettes.
+- `components/ui` -  Components that will be displayed on each component page in code blocks (utility classes).
+- `components/css-vars` -  Components that will be displayed on each component page in code blocks (css variables).
+- `components/examples` - Components examples that will be displayed on each component page (components above code blocks).
+- `data/components.ts` - Array of all components and their markdown files.
 - `data/theme.jsonc` - Theme for code blocks.
 - `lib/utils.ts` - Utility functions.
 - `markdown` - All mdx files are here. They will be imported from `/app`.
