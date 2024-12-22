@@ -11,7 +11,8 @@
     "start": "next start",
     "lint": "next lint",
     "format:write": "prettier . --write",
-    "format:check": "prettier . --check"
+    "format:check": "prettier . --check",
+    "generate-cssvars-components": "tsx src/scripts/generate-cssvars-components.ts"
   },
   "dependencies": {
     "@devnomic/marquee": "^1.0.2",
@@ -82,7 +83,8 @@
     "eslint-config-prettier": "^8.8.0",
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.4.1",
-    "remark-code-import": "^1.2.0"
+    "remark-code-import": "^1.2.0",
+    "tsx": "^4.19.2"
   },
   "packageManager": "pnpm@9.6.0"
 }
