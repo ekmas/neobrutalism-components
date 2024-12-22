@@ -1,5 +1,17 @@
-```tsx file=<rootDir>/src/components/ui/date-picker.tsx title="components/ui/date-picker.tsx"
-```
+<Tabs defaultValue="css-vars" className="w-full">
+  <TabsList className="grid w-full grid-cols-2">
+    <TabsTrigger value="css-vars">CSS Variables</TabsTrigger>
+    <TabsTrigger value="util">Utility classes</TabsTrigger>
+  </TabsList>
+  <TabsContent value="css-vars">
+    ```tsx file=<rootDir>/src/components/css-vars/date-picker.tsx title="components/ui/date-picker.tsx"
+    ```
+  </TabsContent>
+  <TabsContent value="util">
+    ```tsx file=<rootDir>/src/components/ui/date-picker.tsx title="components/ui/date-picker.tsx"
+    ```
+  </TabsContent>
+</Tabs>
 
 <br />
 
@@ -30,31 +42,70 @@ const [date, setDate] = React.useState<Date>()
 
 <br />
 
-```tsx
-<Popover>
-  <PopoverTrigger asChild>
-    <Button
-      variant="noShadow"
-      className={cn(
-        'w-[280px] justify-start text-left font-base',
-        !date && 'text-muted-foreground',
-      )}
-    >
-      <CalendarIcon className="mr-2 h-4 w-4 text-text" />
-      {date ? (
-        format(date, 'PPP')
-      ) : (
-        <span className="text-text">Pick a date</span>
-      )}
-    </Button>
-  </PopoverTrigger>
-  <PopoverContent className="w-auto !border-0 p-0">
-    <Calendar
-      mode="single"
-      selected={date}
-      onSelect={setDate}
-      initialFocus
-    />
-  </PopoverContent>
-</Popover>
-```
+<Tabs defaultValue="css-vars" className="w-full">
+  <TabsList className="grid w-full grid-cols-2">
+    <TabsTrigger value="css-vars">CSS Variables</TabsTrigger>
+    <TabsTrigger value="util">Utility classes</TabsTrigger>
+  </TabsList>
+  <TabsContent value="css-vars">
+    ```tsx
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button
+          variant="noShadow"
+          className={cn(
+            'w-[280px] justify-start text-left font-base',
+            !date && 'text-muted-foreground',
+          )}
+        >
+          <CalendarIcon className="mr-2 h-4 w-4 text-mtext" />
+          {date ? (
+            format(date, 'PPP')
+          ) : (
+            <span className="text-mtext">Pick a date</span>
+          )}
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-auto !border-0 p-0">
+        <Calendar
+          mode="single"
+          selected={date}
+          onSelect={setDate}
+          initialFocus
+        />
+      </PopoverContent>
+    </Popover>
+    ```
+  </TabsContent>
+  <TabsContent value="util">
+    ```tsx
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button
+          variant="noShadow"
+          className={cn(
+            'w-[280px] justify-start text-left font-base',
+            !date && 'text-muted-foreground',
+          )}
+        >
+          <CalendarIcon className="mr-2 h-4 w-4 text-text" />
+          {date ? (
+            format(date, 'PPP')
+          ) : (
+            <span className="text-text">Pick a date</span>
+          )}
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-auto !border-0 p-0">
+        <Calendar
+          mode="single"
+          selected={date}
+          onSelect={setDate}
+          initialFocus
+        />
+      </PopoverContent>
+    </Popover>
+    ```
+  </TabsContent>
+</Tabs>
+
