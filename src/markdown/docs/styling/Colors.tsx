@@ -30,7 +30,7 @@ export default function Colors({
 
   return (
     <>
-      <h2>Colors</h2>
+      <h3>Colors</h3>
       <p>
         Here are some color palettes you can try. You can click each color
         palette to see how it looks.

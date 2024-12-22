@@ -34,7 +34,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <TabsTrigger
         className={cn(
           className,
-          'h-full border-0 border-r-2 z-10 m400:text-xs border-r-border rounded-none sm:text-base bg-main data-[state=active]:bg-mainAccent text-text last:border-r-0',
+          'h-full border-0 border-r-2 z-10 m400:text-xs border-r-border rounded-none sm:text-base dark:data-[state=active]:text-text text-text dark:text-darkText last:border-r-0',
         )}
         {...props}
       />
