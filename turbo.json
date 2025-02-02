@@ -3,6 +3,7 @@
   "ui": "tui",
   "tasks": {
     "build": {
+      "env": ["GH_API_KEY"],
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
