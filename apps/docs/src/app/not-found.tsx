@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from "next/link"
 
 export default function NotFound() {
   return (
@@ -8,7 +8,7 @@ export default function NotFound() {
           404 Not Found
         </h1>
         <p className="mb-[50px] mt-[30px] font-base m800:mb-10 text-2xl m800:text-lg m400:text-base">
-          Could not find requested resource.{' '}
+          Could not find requested resource.{" "}
         </p>
 
         <Link

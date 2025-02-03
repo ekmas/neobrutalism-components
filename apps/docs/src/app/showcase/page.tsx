@@ -1,12 +1,12 @@
-import { Metadata } from 'next'
+import { Metadata } from "next"
 
-import SHOWCASE from '@/data/showcase'
+import SHOWCASE from "@/data/showcase"
 
-import ShowcaseLayout from '@/layouts/Showcase'
+import ShowcaseLayout from "@/layouts/Showcase"
 
 export const metadata: Metadata = {
-  title: 'Showcase',
-  description: 'Showcase of websites built with neobrutalism components.',
+  title: "Showcase",
+  description: "Showcase of websites built with neobrutalism components.",
 }
 
 export default function Page() {

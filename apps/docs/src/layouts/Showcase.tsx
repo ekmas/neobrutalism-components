@@ -1,6 +1,6 @@
-import clsx from 'clsx'
+import clsx from "clsx"
 
-import { StaticImageData } from 'next/image'
+import { StaticImageData } from "next/image"
 
 export default function ShowcaseLayout({
   items,
@@ -52,11 +52,11 @@ export default function ShowcaseLayout({
                   <a
                     style={{
                       backgroundColor: `${color}`,
-                      color: text ? `${text}` : 'black',
+                      color: text ? `${text}` : "black",
                     }}
                     className={clsx(
-                      'text-center border-2 py-1.5 font-base shadow-light dark:shadow-dark hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:hover:shadow-none transition-all border-border dark:border-darkBorder rounded-base',
-                      !repoUrl && 'col-span-2',
+                      "text-center border-2 py-1.5 font-base shadow-light dark:shadow-dark hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:hover:shadow-none transition-all border-border dark:border-darkBorder rounded-base",
+                      !repoUrl && "col-span-2",
                     )}
                     target="_blank"
                     href={liveUrl}
@@ -67,7 +67,7 @@ export default function ShowcaseLayout({
                     <a
                       style={{
                         backgroundColor: `${color}`,
-                        color: text ? `${text}` : 'black',
+                        color: text ? `${text}` : "black",
                       }}
                       className="text-center border-2 py-1.5 font-base shadow-light dark:shadow-dark hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:hover:shadow-none transition-all border-border dark:border-darkBorder rounded-base"
                       target="_blank"

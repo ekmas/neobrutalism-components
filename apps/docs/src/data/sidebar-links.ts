@@ -1,6 +1,6 @@
-import { transformToSlug } from '@/lib/utils'
+import { transformToSlug } from "@/lib/utils"
 
-import COMPONENTS from './components'
+import COMPONENTS from "./components"
 
 const COMPONENTS_LINKS = COMPONENTS.map((component) => {
   return {
@@ -11,73 +11,73 @@ const COMPONENTS_LINKS = COMPONENTS.map((component) => {
 
 const GETTING_STARTED_LINKS = [
   {
-    href: '/docs',
-    text: 'Introduction',
+    href: "/docs",
+    text: "Introduction",
   },
   {
-    href: '/docs/installation',
-    text: 'Installation',
+    href: "/docs/installation",
+    text: "Installation",
   },
   {
-    href: '/docs/styling',
-    text: 'Styling',
+    href: "/docs/styling",
+    text: "Styling",
   },
   {
-    href: '/docs/resources',
-    text: 'Resources',
+    href: "/docs/resources",
+    text: "Resources",
   },
   {
-    href: '/docs/figma',
-    text: 'Figma',
+    href: "/docs/figma",
+    text: "Figma",
   },
   {
-    href: '/docs/changelog',
-    text: 'Changelog',
+    href: "/docs/changelog",
+    text: "Changelog",
   },
   {
-    href: '/templates',
-    text: 'Templates',
+    href: "/templates",
+    text: "Templates",
   },
   {
-    href: '/showcase',
-    text: 'Showcase',
+    href: "/showcase",
+    text: "Showcase",
   },
 ]
 
 const MAIN_SIDEBAR = [
-  'Getting started',
+  "Getting started",
   {
-    href: '/docs',
-    text: 'Introduction',
+    href: "/docs",
+    text: "Introduction",
   },
   {
-    href: '/docs/installation',
-    text: 'Installation',
+    href: "/docs/installation",
+    text: "Installation",
   },
   {
-    href: '/docs/styling',
-    text: 'Styling',
+    href: "/docs/styling",
+    text: "Styling",
   },
   {
-    href: '/docs/resources',
-    text: 'Resources',
+    href: "/docs/resources",
+    text: "Resources",
   },
   {
-    href: '/docs/figma',
-    text: 'Figma',
+    href: "/docs/figma",
+    text: "Figma",
   },
   {
-    href: '/docs/changelog',
-    text: 'Changelog',
+    href: "/docs/changelog",
+    text: "Changelog",
   },
-  'Components',
+  "Components",
   ...COMPONENTS_LINKS,
 ]
 
 const MOBILE_MAIN_SIDEBAR = [
-  'Getting started',
+  "Getting started",
   ...GETTING_STARTED_LINKS,
-  'Components',
+  "Components",
   ...COMPONENTS_LINKS,
 ]
 

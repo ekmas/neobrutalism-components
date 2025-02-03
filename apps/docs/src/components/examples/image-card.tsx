@@ -1,4 +1,4 @@
-import ImageCard from '@/components/ui/image-card'
+import ImageCard from "@/components/ui/image-card"
 
 export default function ImageCardDemo() {
   return (

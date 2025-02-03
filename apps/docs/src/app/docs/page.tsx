@@ -1,10 +1,10 @@
-import Introduction from '@/markdown/docs/page.mdx'
+import Introduction from "@/markdown/docs/page.mdx"
 
-import { Metadata } from 'next'
+import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: 'Introduction',
-  description: 'Get started with creating neobrutalism layouts.',
+  title: "Introduction",
+  description: "Get started with creating neobrutalism layouts.",
 }
 
 export default function Page() {

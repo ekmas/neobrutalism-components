@@ -1,19 +1,19 @@
-import { CircleAlert } from 'lucide-react'
-import type { MDXComponents } from 'mdx/types'
+import { CircleAlert } from "lucide-react"
+import type { MDXComponents } from "mdx/types"
 
-import Link from 'next/link'
+import Link from "next/link"
 
-import EditThisPage from '@/components/app/EditThisPage'
-import Pagination from '@/components/app/Pagination'
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import EditThisPage from "@/components/app/EditThisPage"
+import Pagination from "@/components/app/Pagination"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-import { cn } from '@/lib/utils'
+import { cn } from "@/lib/utils"
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     Tabs: ({ className, ...props }: React.ComponentProps<typeof Tabs>) => (
-      <Tabs className={cn(className, 'w-full')} {...props} />
+      <Tabs className={cn(className, "w-full")} {...props} />
     ),
     TabsList: ({
       className,
@@ -22,7 +22,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <TabsList
         className={cn(
           className,
-          'w-full overflow-x-hidden rounded-b-none m750:h-10 shadow-light rounded-t-base bg-white p-0 dark:bg-secondaryBlack',
+          "w-full overflow-x-hidden rounded-b-none m750:h-10 shadow-light rounded-t-base bg-white p-0 dark:bg-secondaryBlack",
         )}
         {...props}
       />
@@ -34,7 +34,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <TabsTrigger
         className={cn(
           className,
-          'h-full border-0 border-r-2 z-10 m400:text-xs border-r-border rounded-none sm:text-base dark:data-[state=active]:text-text text-text dark:text-darkText last:border-r-0',
+          "h-full border-0 border-r-2 z-10 m400:text-xs border-r-border rounded-none sm:text-base dark:data-[state=active]:text-text text-text dark:text-darkText last:border-r-0",
         )}
         {...props}
       />
@@ -51,7 +51,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       ...props
     }: React.ComponentProps<typeof Alert> & { description: string }) => (
       <Alert
-        className={cn('not-prose sm:[&>svg~*]:pl-9', className)}
+        className={cn("not-prose sm:[&>svg~*]:pl-9", className)}
         {...props}
       >
         <CircleAlert className="sm:h-6 sm:w-6 w-4 h-4" />

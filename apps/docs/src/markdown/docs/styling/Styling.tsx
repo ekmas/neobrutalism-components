@@ -1,17 +1,17 @@
-'use client'
+"use client"
 
-import { useLayoutEffect, useState } from 'react'
+import { useLayoutEffect, useState } from "react"
 
-import colors from '@/data/colors'
+import colors from "@/data/colors"
 
-import Code from '@/components/app/Code'
-import { Button } from '@/components/ui/button'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import Code from "@/components/app/Code"
+import { Button } from "@/components/ui/button"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-import BorderRadius from './BorderRadius'
-import BoxShadow from './BoxShadow'
-import Colors, { type ColorPallette } from './Colors'
-import FontWeight from './FontWeight'
+import BorderRadius from "./BorderRadius"
+import BoxShadow from "./BoxShadow"
+import Colors, { type ColorPallette } from "./Colors"
+import FontWeight from "./FontWeight"
 
 export default function Styling() {
   const defaultColorPalette: ColorPallette = colors[0]
@@ -23,10 +23,10 @@ export default function Styling() {
   const [fontWeight, setFontWeight] = useState([700, 500])
 
   useLayoutEffect(() => {
-    const colorObj = JSON.parse(localStorage.getItem('color') as string)
-    const borderRadius = localStorage.getItem('borderRadius') as string
-    const boxShadow = localStorage.getItem('boxShadow')?.split(',')
-    const fontWeight = localStorage.getItem('fontWeight')?.split(',')
+    const colorObj = JSON.parse(localStorage.getItem("color") as string)
+    const borderRadius = localStorage.getItem("borderRadius") as string
+    const boxShadow = localStorage.getItem("boxShadow")?.split(",")
+    const fontWeight = localStorage.getItem("fontWeight")?.split(",")
 
     if (colorObj) {
       setActiveColorPalette(colorObj)
@@ -46,18 +46,18 @@ export default function Styling() {
   }, [])
 
   const resetStyling = () => {
-    const r = window.document.querySelector(':root') as HTMLElement
+    const r = window.document.querySelector(":root") as HTMLElement
 
-    r.style.setProperty('--bg', defaultColorPalette.bg)
-    r.style.setProperty('--main', defaultColorPalette.main)
-    r.style.setProperty('--main50', defaultColorPalette.main + 'b3')
-    r.style.setProperty('--dark-bg', defaultColorPalette.darkBg)
+    r.style.setProperty("--bg", defaultColorPalette.bg)
+    r.style.setProperty("--main", defaultColorPalette.main)
+    r.style.setProperty("--main50", defaultColorPalette.main + "b3")
+    r.style.setProperty("--dark-bg", defaultColorPalette.darkBg)
 
-    r.style.setProperty('--border-radius', '5px')
-    r.style.setProperty('--horizontal-box-shadow', '4px')
-    r.style.setProperty('--vertical-box-shadow', '4px')
-    r.style.setProperty('--heading-font-weight', '700')
-    r.style.setProperty('--base-font-weight', '500')
+    r.style.setProperty("--border-radius", "5px")
+    r.style.setProperty("--horizontal-box-shadow", "4px")
+    r.style.setProperty("--vertical-box-shadow", "4px")
+    r.style.setProperty("--heading-font-weight", "700")
+    r.style.setProperty("--base-font-weight", "500")
 
     setActiveColorPalette(defaultColorPalette)
     setBorderRadius([5])
@@ -85,10 +85,10 @@ export default function Styling() {
   --ring-offset: #fff;
 
   --border-radius: ${borderRadius}px;
-  --box-shadow-x: ${boxShadowLength[0] + 'px'};
-  --box-shadow-y: ${boxShadowLength[1] + 'px'};
-  --reverse-box-shadow-x: ${-boxShadowLength[0] + 'px'};
-  --reverse-box-shadow-y: ${-boxShadowLength[1] + 'px'};
+  --box-shadow-x: ${boxShadowLength[0] + "px"};
+  --box-shadow-y: ${boxShadowLength[1] + "px"};
+  --reverse-box-shadow-x: ${-boxShadowLength[0] + "px"};
+  --reverse-box-shadow-y: ${-boxShadowLength[1] + "px"};
   --base-font-weight: ${fontWeight[1]};
   --heading-font-weight: ${fontWeight[0]};
 
@@ -131,10 +131,10 @@ export default function Styling() {
       shadow: 'var(--shadow)'
     },
     translate: {
-      boxShadowX: '${boxShadowLength[0] + 'px'}',
-      boxShadowY: '${boxShadowLength[1] + 'px'}',
-      reverseBoxShadowX: '${-boxShadowLength[0] + 'px'}',
-      reverseBoxShadowY: '${-boxShadowLength[1] + 'px'}',
+      boxShadowX: '${boxShadowLength[0] + "px"}',
+      boxShadowY: '${boxShadowLength[1] + "px"}',
+      reverseBoxShadowX: '${-boxShadowLength[0] + "px"}',
+      reverseBoxShadowY: '${-boxShadowLength[1] + "px"}',
     },
     fontWeight: {
       base: '${fontWeight[1]}',
@@ -164,18 +164,18 @@ export default function Styling() {
       base: '${borderRadius}px'
     },
     boxShadow: {
-      light: '${boxShadowLength[0] + 'px'} ${
-        boxShadowLength[1] + 'px'
+      light: '${boxShadowLength[0] + "px"} ${
+        boxShadowLength[1] + "px"
       } 0px 0px #000',
-      dark: '${boxShadowLength[0] + 'px'} ${
-        boxShadowLength[1] + 'px'
+      dark: '${boxShadowLength[0] + "px"} ${
+        boxShadowLength[1] + "px"
       } 0px 0px #000',
     },
     translate: {
-      boxShadowX: '${boxShadowLength[0] + 'px'}',
-      boxShadowY: '${boxShadowLength[1] + 'px'}',
-      reverseBoxShadowX: '${-boxShadowLength[0] + 'px'}',
-      reverseBoxShadowY: '${-boxShadowLength[1] + 'px'}',
+      boxShadowX: '${boxShadowLength[0] + "px"}',
+      boxShadowY: '${boxShadowLength[1] + "px"}',
+      reverseBoxShadowX: '${-boxShadowLength[0] + "px"}',
+      reverseBoxShadowY: '${-boxShadowLength[1] + "px"}',
     },
     fontWeight: {
       base: '${fontWeight[1]}',

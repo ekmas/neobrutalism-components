@@ -1,8 +1,8 @@
-'use client'
+"use client"
 
-import { SetStateAction } from 'react'
+import { SetStateAction } from "react"
 
-import { Slider } from '../../../components/ui/slider'
+import { Slider } from "../../../components/ui/slider"
 
 export default function BorderRadius({
   setBorderRadius,
@@ -12,12 +12,12 @@ export default function BorderRadius({
   borderRadius: number[]
 }) {
   const updateBorderRadius = (number: [number]) => {
-    const r = window.document.querySelector(':root') as HTMLElement
-    r.style.setProperty('--border-radius', String(number[0]) + 'px')
+    const r = window.document.querySelector(":root") as HTMLElement
+    r.style.setProperty("--border-radius", String(number[0]) + "px")
 
     setBorderRadius(number)
 
-    localStorage.setItem('borderRadius', String(number))
+    localStorage.setItem("borderRadius", String(number))
   }
 
   return (

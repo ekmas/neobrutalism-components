@@ -1,12 +1,12 @@
-import { Metadata } from 'next'
+import { Metadata } from "next"
 
-import TEMPLATES from '@/data/templates'
+import TEMPLATES from "@/data/templates"
 
-import ShowcaseLayout from '@/layouts/Showcase'
+import ShowcaseLayout from "@/layouts/Showcase"
 
 export const metadata: Metadata = {
-  title: 'Templates',
-  description: 'Get started with neobrutalism templates.',
+  title: "Templates",
+  description: "Get started with neobrutalism templates.",
 }
 
 export default function Page() {

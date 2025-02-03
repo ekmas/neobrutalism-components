@@ -1,15 +1,15 @@
-'use client'
+"use client"
 
-import { Menu } from 'lucide-react'
+import { Menu } from "lucide-react"
 
-import { useState } from 'react'
-import { usePathname, useRouter } from 'next/navigation'
+import { useState } from "react"
+import { usePathname, useRouter } from "next/navigation"
 
-import { MOBILE_MAIN_SIDEBAR } from '@/data/sidebar-links'
+import { MOBILE_MAIN_SIDEBAR } from "@/data/sidebar-links"
 
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
-import { cn } from '@/lib/utils'
+import { cn } from "@/lib/utils"
 
 export default function MobileDrawer() {
   const [open, setOpen] = useState(false)
@@ -36,7 +36,7 @@ export default function MobileDrawer() {
       >
         <div className="h-full w-full overflow-y-auto scrollbar bg-white dark:bg-secondaryBlack">
           {MOBILE_MAIN_SIDEBAR.map((item, id) => {
-            return typeof item === 'string' ? (
+            return typeof item === "string" ? (
               <div
                 key={id}
                 className="sidebaritem block border-b-4 first:border-t-4 border-r-4 border-border dark:border-darkBorder p-4 text-xl font-heading m800:p-4 m800:text-base"
@@ -50,9 +50,9 @@ export default function MobileDrawer() {
                   handleLinkClick(item.href)
                 }}
                 className={cn(
-                  'sidebaritem block w-full border-b-4 border-r-4 border-border dark:border-darkBorder p-4 pl-7 text-left text-lg font-base text-black/90 dark:text-darkText/90 hover:bg-main50 dark:hover:text-text m800:p-4 m800:pl-6 m800:text-base',
+                  "sidebaritem block w-full border-b-4 border-r-4 border-border dark:border-darkBorder p-4 pl-7 text-left text-lg font-base text-black/90 dark:text-darkText/90 hover:bg-main50 dark:hover:text-text m800:p-4 m800:pl-6 m800:text-base",
                   item.href === pathname &&
-                    'bg-main dark:text-text hover:bg-main',
+                    "bg-main dark:text-text hover:bg-main",
                 )}
               >
                 {item.text}

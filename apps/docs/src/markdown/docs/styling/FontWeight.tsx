@@ -1,6 +1,6 @@
-import { SetStateAction } from 'react'
+import { SetStateAction } from "react"
 
-import { Slider } from '@/components/ui/slider'
+import { Slider } from "@/components/ui/slider"
 
 export default function FontWeight({
   fontWeight,
@@ -10,23 +10,23 @@ export default function FontWeight({
   setFontWeight: React.Dispatch<SetStateAction<number[]>>
 }) {
   const updateHeadingFontWeight = (number: [number]) => {
-    const r = window.document.querySelector(':root') as HTMLElement
+    const r = window.document.querySelector(":root") as HTMLElement
 
-    r.style.setProperty('--heading-font-weight', `${number[0]}`)
+    r.style.setProperty("--heading-font-weight", `${number[0]}`)
 
     setFontWeight([number[0], fontWeight[1]])
 
-    localStorage.setItem('fontWeight', `${number[0]},${fontWeight[1]}`)
+    localStorage.setItem("fontWeight", `${number[0]},${fontWeight[1]}`)
   }
 
   const updateBaseFontWeight = (number: [number]) => {
-    const r = window.document.querySelector(':root') as HTMLElement
+    const r = window.document.querySelector(":root") as HTMLElement
 
-    r.style.setProperty('--base-font-weight', `${number[0]}`)
+    r.style.setProperty("--base-font-weight", `${number[0]}`)
 
     setFontWeight([fontWeight[0], number[0]])
 
-    localStorage.setItem('fontWeight', `${fontWeight[0]},${number[0]}`)
+    localStorage.setItem("fontWeight", `${fontWeight[0]},${number[0]}`)
   }
 
   return (

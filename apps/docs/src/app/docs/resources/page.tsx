@@ -1,11 +1,11 @@
-import Resources from '@/markdown/docs/resources/page.mdx'
+import Resources from "@/markdown/docs/resources/page.mdx"
 
-import { Metadata } from 'next'
+import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: 'Resources',
+  title: "Resources",
   description:
-    'List of resoruces that can help you with getting into neobrutalism layouts.',
+    "List of resoruces that can help you with getting into neobrutalism layouts.",
 }
 
 export default function Page() {

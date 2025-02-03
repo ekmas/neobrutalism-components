@@ -1,23 +1,23 @@
-import Link from 'next/link'
+import Link from "next/link"
 
-import MobileDrawer from '@/components/app/MobileDrawer'
-import Search from '@/components/app/Search'
-import { ThemeSwitcher } from '@/components/app/ThemeSwitcher'
+import MobileDrawer from "@/components/app/MobileDrawer"
+import Search from "@/components/app/Search"
+import { ThemeSwitcher } from "@/components/app/ThemeSwitcher"
 
 async function getRepoData() {
   const res = await fetch(
-    'https://api.github.com/repos/ekmas/neobrutalism-components',
+    "https://api.github.com/repos/ekmas/neobrutalism-components",
     {
-      cache: 'force-cache',
+      cache: "force-cache",
       headers: {
-        'X-GitHub-Api-Version': '2022-11-28',
+        "X-GitHub-Api-Version": "2022-11-28",
         Authorization: `Bearer ${process.env.GH_API_KEY}`,
       },
     },
   )
 
   if (!res.ok) {
-    throw new Error('Failed to fetch data')
+    throw new Error("Failed to fetch data")
   }
 
   return res.json()
@@ -26,7 +26,7 @@ async function getRepoData() {
 async function Navbar() {
   const repo = await getRepoData()
 
-  const starsCount = (repo.stargazers_count / 1000).toFixed(1) + 'k'
+  const starsCount = (repo.stargazers_count / 1000).toFixed(1) + "k"
 
   return (
     <nav className="fixed left-0 top-0 z-20 mx-auto flex h-[88px] w-full items-center border-b-4 border-border dark:border-darkNavBorder bg-white dark:bg-secondaryBlack px-5 m500:h-16 ">
@@ -36,7 +36,7 @@ async function Navbar() {
         <div className="flex items-center gap-10">
           <Link
             className="text-[30px] h-11 w-11 rounded-base flex bg-main text-text border-2 border-black m500:w-9 m500:h-9 m500:text-[22px] items-center justify-center font-heading"
-            href={'/'}
+            href={"/"}
           >
             N
           </Link>

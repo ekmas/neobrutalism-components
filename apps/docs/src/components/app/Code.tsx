@@ -1,14 +1,14 @@
-import '@/styling/hljs.css'
+import "@/styling/hljs.css"
 
-import { ClassValue } from 'clsx'
-import hljs from 'highlight.js/lib/core'
-import typescript from 'highlight.js/lib/languages/typescript'
+import { ClassValue } from "clsx"
+import hljs from "highlight.js/lib/core"
+import typescript from "highlight.js/lib/languages/typescript"
 
-import { cn } from '@/lib/utils'
+import { cn } from "@/lib/utils"
 
-import CopyCode from './CopyCode'
+import CopyCode from "./CopyCode"
 
-hljs.registerLanguage('typescript', typescript)
+hljs.registerLanguage("typescript", typescript)
 
 const Code = ({
   code,
@@ -21,11 +21,11 @@ const Code = ({
   limitedHeight?: boolean
   className?: ClassValue
 }) => {
-  const component = hljs.highlight(code, { language: 'typescript' }).value
+  const component = hljs.highlight(code, { language: "typescript" }).value
   return (
     <div
       className={cn(
-        'mt-5 group border-2 border-border dark:border-darkBorder shadow-light dark:shadow-dark',
+        "mt-5 group border-2 border-border dark:border-darkBorder shadow-light dark:shadow-dark",
         className,
       )}
     >
@@ -38,9 +38,9 @@ const Code = ({
         <pre>
           <code className="not-prose">
             <div
-              style={{ height: limitedHeight ? '300px' : 'unset' }}
+              style={{ height: limitedHeight ? "300px" : "unset" }}
               className={
-                'w-max-[700px] code overflow-x-auto font-bold bg-[#101010] text-white p-4 px-5 leading-[1.65] text-sm m1000:w-full m750:h-[180px] m400:text-xs'
+                "w-max-[700px] code overflow-x-auto font-bold bg-[#101010] text-white p-4 px-5 leading-[1.65] text-sm m1000:w-full m750:h-[180px] m400:text-xs"
               }
               dangerouslySetInnerHTML={{ __html: component }}
             />

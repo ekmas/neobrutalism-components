@@ -1,13 +1,13 @@
-'use client'
+"use client"
 
-import { Search as SearchIcon } from 'lucide-react'
+import { Search as SearchIcon } from "lucide-react"
 
-import React, { useCallback, useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
+import React, { useCallback, useEffect, useState } from "react"
+import { useRouter } from "next/navigation"
 
-import { COMPONENTS_LINKS, GETTING_STARTED_LINKS } from '@/data/sidebar-links'
+import { COMPONENTS_LINKS, GETTING_STARTED_LINKS } from "@/data/sidebar-links"
 
-import { Button } from '@/components/ui/button'
+import { Button } from "@/components/ui/button"
 import {
   Command,
   CommandEmpty,
@@ -16,17 +16,17 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-} from '@/components/ui/command'
-import { Dialog, DialogContent } from '@/components/ui/dialog'
+} from "@/components/ui/command"
+import { Dialog, DialogContent } from "@/components/ui/dialog"
 
 export default function Search() {
   const DOCS_LINKS = [
     {
-      heading: 'Getting started',
+      heading: "Getting started",
       links: [...GETTING_STARTED_LINKS],
     },
     {
-      heading: 'Components',
+      heading: "Components",
       links: [...COMPONENTS_LINKS],
     },
   ]
@@ -37,13 +37,13 @@ export default function Search() {
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault()
         setOpen((open) => !open)
       }
     }
-    document.addEventListener('keydown', down)
-    return () => document.removeEventListener('keydown', down)
+    document.addEventListener("keydown", down)
+    return () => document.removeEventListener("keydown", down)
   }, [])
 
   const runCommand = useCallback((command: () => unknown) => {

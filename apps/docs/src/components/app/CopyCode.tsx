@@ -1,8 +1,8 @@
-'use client'
+"use client"
 
-import clsx from 'clsx'
+import clsx from "clsx"
 
-import { useState } from 'react'
+import { useState } from "react"
 
 export default function CopyCode({ code }: { code: string }) {
   const [isClicked, setIsClicked] = useState(false)
@@ -36,10 +36,10 @@ export default function CopyCode({ code }: { code: string }) {
 
         <div
           className={clsx(
-            'text-black bg-white border-2 border-black font-bold self-center w-max text-sm absolute ease-in-out duration-200 transition-all right-10 py-1 px-3',
+            "text-black bg-white border-2 border-black font-bold self-center w-max text-sm absolute ease-in-out duration-200 transition-all right-10 py-1 px-3",
             isClicked
-              ? 'opacity-100 top-px visible'
-              : 'opacity-0 invisible top-[5px]',
+              ? "opacity-100 top-px visible"
+              : "opacity-0 invisible top-[5px]",
           )}
         >
           Copied!

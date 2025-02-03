@@ -1,9 +1,9 @@
-import { Button } from '@/components/ui/button'
+import { Button } from "@/components/ui/button"
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from '@/components/ui/hover-card'
+} from "@/components/ui/hover-card"
 
 export default function HoverCardDemo() {
   return (

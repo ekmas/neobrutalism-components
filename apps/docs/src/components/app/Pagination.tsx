@@ -1,10 +1,10 @@
-'use client'
+"use client"
 
-import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { ArrowLeft, ArrowRight } from "lucide-react"
 
-import { useRouter } from 'next/navigation'
+import { useRouter } from "next/navigation"
 
-import { Button } from '@/components/ui/button'
+import { Button } from "@/components/ui/button"
 
 type Props = {
   prev?: {
@@ -23,11 +23,11 @@ export default function Pagination({ prev, next }: Props) {
   let justifyContent
 
   if (prev && next) {
-    justifyContent = 'justify-between'
+    justifyContent = "justify-between"
   } else if (prev) {
-    justifyContent = 'justify-start'
+    justifyContent = "justify-start"
   } else if (next) {
-    justifyContent = 'justify-end'
+    justifyContent = "justify-end"
   }
 
   return (

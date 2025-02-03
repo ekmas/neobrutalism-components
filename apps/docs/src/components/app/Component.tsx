@@ -1,6 +1,6 @@
-import { SquareArrowOutUpRight } from 'lucide-react'
+import { SquareArrowOutUpRight } from "lucide-react"
 
-import ComponentWrapper from '@/components/app/ComponentWrapper'
+import ComponentWrapper from "@/components/app/ComponentWrapper"
 
 type Props = {
   name: string

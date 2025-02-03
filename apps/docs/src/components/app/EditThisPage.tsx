@@ -1,6 +1,6 @@
-import { SquarePenIcon } from 'lucide-react'
+import { SquarePenIcon } from "lucide-react"
 
-import { Button } from '../ui/button'
+import { Button } from "../ui/button"
 
 export default function EditThisPage({
   markdownPath,
@@ -8,7 +8,7 @@ export default function EditThisPage({
   markdownPath: string
 }) {
   const repoDocsUrl =
-    'https://github.com/ekmas/neobrutalism-components/tree/main/src/markdown' +
+    "https://github.com/ekmas/neobrutalism-components/tree/main/src/markdown" +
     markdownPath
 
   return (

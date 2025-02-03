@@ -1,13 +1,13 @@
-import { Metadata } from 'next'
-import { redirect } from 'next/navigation'
+import { Metadata } from "next"
+import { redirect } from "next/navigation"
 
-import components from '@/data/components'
+import components from "@/data/components"
 
-import Component from '@/components/app/Component'
-import EditThisPage from '@/components/app/EditThisPage'
-import Pagination from '@/components/app/Pagination'
+import Component from "@/components/app/Component"
+import EditThisPage from "@/components/app/EditThisPage"
+import Pagination from "@/components/app/Pagination"
 
-import { transformToName, transformToSlug } from '@/lib/utils'
+import { transformToName, transformToSlug } from "@/lib/utils"
 
 export async function generateStaticParams() {
   const componentSlugs = components.map((component) => ({
@@ -42,7 +42,7 @@ export default async function Installation({
   )
 
   if (!currentComponent) {
-    redirect('/docs/installation')
+    redirect("/docs/installation")
   }
 
   const docsLink = !currentComponent.notShadcn

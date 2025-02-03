@@ -1,8 +1,8 @@
-'use client'
+"use client"
 
-import { SetStateAction } from 'react'
+import { SetStateAction } from "react"
 
-import colors from '@/data/colors'
+import colors from "@/data/colors"
 
 export type ColorPallette = {
   main: string
@@ -16,16 +16,16 @@ export default function Colors({
   setActiveColorPalette: React.Dispatch<SetStateAction<ColorPallette>>
 }) {
   const updateColorPalette = (color: ColorPallette) => {
-    const r = window.document.querySelector(':root') as HTMLElement
+    const r = window.document.querySelector(":root") as HTMLElement
 
-    r.style.setProperty('--bg', color.bg)
-    r.style.setProperty('--main', color.main)
-    r.style.setProperty('--main50', color.main + 'b3')
-    r.style.setProperty('--dark-bg', color.darkBg)
+    r.style.setProperty("--bg", color.bg)
+    r.style.setProperty("--main", color.main)
+    r.style.setProperty("--main50", color.main + "b3")
+    r.style.setProperty("--dark-bg", color.darkBg)
 
     setActiveColorPalette(color)
 
-    localStorage.setItem('color', JSON.stringify(color))
+    localStorage.setItem("color", JSON.stringify(color))
   }
 
   return (
@@ -39,10 +39,10 @@ export default function Colors({
         {colors.map((color, id) => {
           const flexJustify =
             id % 3 === 0
-              ? 'justify-start'
+              ? "justify-start"
               : id % 3 === 1
-              ? 'justify-center'
-              : 'justify-end'
+                ? "justify-center"
+                : "justify-end"
 
           return (
             <div className={`flex items-center ${flexJustify} mb-10`} key={id}>

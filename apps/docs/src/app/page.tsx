@@ -1,19 +1,19 @@
-import { Marquee } from '@devnomic/marquee'
-import { ArrowUpRight, Check } from 'lucide-react'
+import { Marquee } from "@devnomic/marquee"
+import { ArrowUpRight, Check } from "lucide-react"
 
-import '@/styling/marquee.css'
+import "@/styling/marquee.css"
 
-import Link from 'next/link'
+import Link from "next/link"
 
-import reviews from '@/data/reviews'
+import reviews from "@/data/reviews"
 
-import HeroComponents from '@/components/app/HeroComponents'
+import HeroComponents from "@/components/app/HeroComponents"
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion'
+} from "@/components/ui/accordion"
 
 export default function Home() {
   return (
@@ -31,7 +31,7 @@ export default function Home() {
 
             <Link
               className="flex items-center w-max m1000:mx-auto text-text rounded-base border-2 font-base border-border dark:border-darkBorder bg-main px-10 py-3 text-[22px] shadow-light dark:shadow-dark transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:hover:shadow-none m800:px-8 m800:py-2.5 m800:text-lg m500:px-6 m400:px-4 m400:text-sm m500:py-2 m500:text-base"
-              href={'/docs'}
+              href={"/docs"}
             >
               Read the docs
               <ArrowUpRight className="ml-[10px] w-[30px] h-[30px] m500:w-[20px] m500:h-[20px]" />
@@ -46,7 +46,7 @@ export default function Home() {
           direction="left"
         >
           {Array(15)
-            .fill('xd')
+            .fill("xd")
             .map((x, id) => {
               return (
                 <div className="flex items-center" key={id}>
@@ -204,14 +204,14 @@ export default function Home() {
                   How to contribute?
                 </AccordionTrigger>
                 <AccordionContent className="text-sm sm:text-base">
-                  Visit{' '}
+                  Visit{" "}
                   <a
                     target="_blank"
                     className="underline font-heading"
                     href="https://github.com/ekmas/neobrutalism-components/blob/main/CONTRIBUTING.md"
                   >
                     contributing.md
-                  </a>{' '}
+                  </a>{" "}
                   to get started.
                 </AccordionContent>
               </AccordionItem>
@@ -224,7 +224,7 @@ export default function Home() {
           reverse
         >
           {Array(15)
-            .fill('xd')
+            .fill("xd")
             .map((x, id) => {
               return (
                 <div className="flex items-center" key={id}>
@@ -242,7 +242,7 @@ export default function Home() {
 
           <Link
             className="mt-[50px] flex font-base items-center rounded-base border-2 border-black bg-white dark:bg-secondaryBlack px-10 py-3 text-[22px] shadow-light transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none m800:px-8 m800:py-2.5 m800:text-lg m500:px-6 m500:py-2 m500:text-base m400:px-4 m400:text-sm"
-            href={'/docs'}
+            href={"/docs"}
           >
             Read the docs
             <ArrowUpRight className="ml-[10px] w-[30px] h-[30px] m500:w-[20px] m500:h-[20px]" />
@@ -250,7 +250,7 @@ export default function Home() {
         </section>
       </div>
       <footer className="z-30 border-t-4 border-border dark:border-darkBorder bg-white dark:bg-secondaryBlack px-5 py-5 text-center font-base m500:text-sm">
-        Released under MIT License. The source code is available on{' '}
+        Released under MIT License. The source code is available on{" "}
         <a
           target="_blank"
           href="https://github.com/ekmas/neobrutalism-components"
@@ -316,7 +316,7 @@ const TailwindIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 481" fill="none">
     <mask
       id="mask0_16_29"
-      style={{ maskType: 'luminance' }}
+      style={{ maskType: "luminance" }}
       maskUnits="userSpaceOnUse"
       x="0"
       y="0"

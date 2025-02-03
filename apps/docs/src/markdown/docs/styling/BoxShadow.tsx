@@ -1,8 +1,8 @@
-'use client'
+"use client"
 
-import { SetStateAction } from 'react'
+import { SetStateAction } from "react"
 
-import { Slider } from '../../../components/ui/slider'
+import { Slider } from "../../../components/ui/slider"
 
 export default function BoxShadow({
   boxShadowLength,
@@ -12,23 +12,23 @@ export default function BoxShadow({
   setBoxShadowLength: React.Dispatch<SetStateAction<number[]>>
 }) {
   const updateX = (number: [number]) => {
-    const r = window.document.querySelector(':root') as HTMLElement
+    const r = window.document.querySelector(":root") as HTMLElement
 
-    r.style.setProperty('--horizontal-box-shadow', number[0] + 'px')
+    r.style.setProperty("--horizontal-box-shadow", number[0] + "px")
 
     setBoxShadowLength([number[0], boxShadowLength[1]])
 
-    localStorage.setItem('boxShadow', `${number[0]},${boxShadowLength[1]}`)
+    localStorage.setItem("boxShadow", `${number[0]},${boxShadowLength[1]}`)
   }
 
   const updateY = (number: [number]) => {
-    const r = window.document.querySelector(':root') as HTMLElement
+    const r = window.document.querySelector(":root") as HTMLElement
 
-    r.style.setProperty('--vertical-box-shadow', number[0] + 'px')
+    r.style.setProperty("--vertical-box-shadow", number[0] + "px")
 
     setBoxShadowLength([boxShadowLength[0], number[0]])
 
-    localStorage.setItem('boxShadow', `${boxShadowLength[0]},${number[0]}`)
+    localStorage.setItem("boxShadow", `${boxShadowLength[0]},${number[0]}`)
   }
 
   return (
