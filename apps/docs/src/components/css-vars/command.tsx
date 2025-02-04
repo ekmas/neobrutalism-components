@@ -1,6 +1,7 @@
 "use client"
 
 import { type DialogProps } from "@radix-ui/react-dialog"
+import clsx from "clsx"
 import { Command as CommandPrimitive } from "cmdk"
 import { Search } from "lucide-react"
 
@@ -121,9 +122,12 @@ const CommandItem = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.Item
     ref={ref}
-    className={cn(
-      "relative flex cursor-default select-none items-center rounded-base px-2 py-1.5 text-sm text-mtext outline outline-0 outline-border aria-selected:outline-2",
-      className,
+    className={clsx(
+      cn(
+        "relative flex cursor-default select-none items-center rounded-base px-2 py-1.5 text-sm text-mtext outline-border",
+        className,
+      ),
+      "outline-0 outline aria-selected:outline-2",
     )}
     {...props}
   />
