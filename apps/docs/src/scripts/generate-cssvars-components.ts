@@ -55,11 +55,7 @@ const ruleExceptions: Record<string, RegExp[]> = {
   "calendar.tsx": [/\bbg-white dark:bg-secondaryBlack\b/g],
 }
 
-const specialRules: Record<string, { rule: RegExp; text: string }[]> = {
-  "textarea.tsx": [
-    { rule: /\bplaceholder:text-mtext\b/g, text: "placeholder:text-text" },
-  ],
-}
+const specialRules: Record<string, { rule: RegExp; text: string }[]> = {}
 
 const processFile = (filePath: string, destPath: string) => {
   const content = fs.readFileSync(filePath, "utf-8")

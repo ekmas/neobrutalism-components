@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate-cssvars-components": "tsx src/scripts/generate-cssvars-components.ts",
+    "generate-cssvars-components": "tsx src/scripts/generate-cssvars-components.ts && prettier ./src/components/css-vars --write",
     "registry:build": "shadcn build"
   },
   "dependencies": {
