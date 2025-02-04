@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "image-card",
+  "type": "registry:ui",
+  "title": "Image card component (CSS Variables variant)",
+  "files": [
+    {
+      "path": "src/components/css-vars/image-card.tsx",
+      "content": "type Props = {\n  imageUrl: string\n  caption: string\n}\n\nexport default function ImageCard({ imageUrl, caption }: Props) {\n  return (\n    <figure className=\"w-[250px] overflow-hidden rounded-base border-2 border-border bg-main font-base shadow-shadow\">\n      <img className=\"w-full aspect-[4/3]\" src={imageUrl} alt=\"image\" />\n      <figcaption className=\"border-t-2 text-mtext border-border p-4\">\n        {caption}\n      </figcaption>\n    </figure>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

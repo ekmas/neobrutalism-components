@@ -1,0 +1,44 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "marquee",
+  "type": "registry:ui",
+  "title": "Marquee component (CSS Variables variant)",
+  "files": [
+    {
+      "path": "src/components/css-vars/marquee.tsx",
+      "content": "export default function Marquee({ items }: { items: string[] }) {\n  return (\n    <div className=\"relative flex w-full overflow-x-hidden border-b-2 border-t-2 border-border bg-bw text-text font-base\">\n      <div className=\"animate-marquee whitespace-nowrap py-12\">\n        {items.map((item) => {\n          return (\n            <span key={item} className=\"mx-4 text-4xl\">\n              {item}\n            </span>\n          )\n        })}\n      </div>\n\n      <div className=\"absolute top-0 animate-marquee2 whitespace-nowrap py-12\">\n        {items.map((item) => {\n          return (\n            <span key={item} className=\"mx-4 text-4xl\">\n              {item}\n            </span>\n          )\n        })}\n      </div>\n\n      {/* must have both of these in order to work */}\n    </div>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "tailwind": {
+    "config": {
+      "theme": {
+        "extend": {
+          "animation": {
+            "marquee": "marquee 5s linear infinite",
+            "marquee2": "marquee2 5s linear infinite"
+          },
+          "keyframes": {
+            "marquee": {
+              "0%": {
+                "transform": "translateX(0%)"
+              },
+              "100%": {
+                "transform": "translateX(-100%)"
+              }
+            },
+            "marquee2": {
+              "0%": {
+                "transform": "translateX(100%)"
+              },
+              "100%": {
+                "transform": "translateX(0%)"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "docs": "Make sure there is enough content in `items` so it loops perfectly. Visit https://jackwhiting.co.uk/posts/creating-a-marquee-with-tailwind to learn more."
+}
