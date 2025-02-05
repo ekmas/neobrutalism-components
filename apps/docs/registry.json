@@ -1,0 +1,620 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "Neobrutalism Components",
+  "homepage": "https://neobrutalism.dev",
+  "author": "Samuel Breznjak <samke.me>",
+  "items": [
+    {
+      "name": "accordion",
+      "title": "Accordion component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-accordion"],
+      "files": [
+        {
+          "path": "src/components/css-vars/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "tailwind": {
+        "config": {
+          "theme": {
+            "extend": {
+              "keyframes": {
+                "accordion-down": {
+                  "from": {
+                    "height": "0"
+                  },
+                  "to": {
+                    "height": "var(--radix-accordion-content-height)"
+                  }
+                },
+                "accordion-up": {
+                  "from": {
+                    "height": "var(--radix-accordion-content-height)"
+                  },
+                  "to": {
+                    "height": "0"
+                  }
+                }
+              },
+              "animation": {
+                "accordion-down": "accordion-down 0.2s ease-out",
+                "accordion-up": "accordion-up 0.2s ease-out"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "alert",
+      "title": "Alert component (CSS Variables variant)",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "src/components/css-vars/alert.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "title": "Alert dialog component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-alert-dialog"],
+      "registryDependencies": ["https://neobrutalism.dev/r/nbutton.json"],
+      "files": [
+        {
+          "path": "src/components/css-vars/alert-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "title": "Avatar component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-avatar"],
+      "files": [
+        {
+          "path": "src/components/css-vars/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "title": "Badge component (CSS Variables variant)",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "src/components/css-vars/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "title": "Breadcrumb component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-slot"],
+      "files": [
+        {
+          "path": "src/components/css-vars/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "nbutton",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-slot"],
+      "files": [
+        {
+          "path": "src/components/css-vars/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "title": "Button component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-slot"],
+      "files": [
+        {
+          "path": "src/components/css-vars/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "title": "Calendar component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["react-day-picker@8.10.1", "date-fns"],
+      "registryDependencies": ["https://neobrutalism.dev/r/nbutton.json"],
+      "files": [
+        {
+          "path": "src/components/css-vars/calendar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "title": "Card component (CSS Variables variant)",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "src/components/css-vars/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "title": "Carousel component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["embla-carousel-react"],
+      "registryDependencies": ["https://neobrutalism.dev/r/nbutton.json"],
+      "files": [
+        {
+          "path": "src/components/css-vars/carousel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "title": "Checkbox component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-checkbox"],
+      "files": [
+        {
+          "path": "src/components/css-vars/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "title": "Collapsible component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-collapsible"],
+      "files": [
+        {
+          "path": "src/components/css-vars/collapsible.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "title": "Command component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["cmdk@1.0.0"],
+      "registryDependencies": ["https://neobrutalism.dev/r/ndialog.json"],
+      "files": [
+        {
+          "path": "src/components/css-vars/command.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "title": "Context menu component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-context-menu"],
+      "files": [
+        {
+          "path": "src/components/css-vars/context-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ndialog",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-dialog"],
+      "files": [
+        {
+          "path": "src/components/css-vars/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "title": "Dialog component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-dialog"],
+      "files": [
+        {
+          "path": "src/components/css-vars/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "title": "Drawer component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["vaul", "@radix-ui/react-dialog"],
+      "files": [
+        {
+          "path": "src/components/css-vars/drawer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "title": "Dropdown menu component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-dropdown-menu"],
+      "files": [
+        {
+          "path": "src/components/css-vars/dropdown-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "form",
+      "title": "Form component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-label",
+        "@radix-ui/react-slot",
+        "@hookform/resolvers",
+        "zod",
+        "react-hook-form"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism.dev/r/nbutton.json",
+        "https://neobrutalism.dev/r/nlabel.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/css-vars/form.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "title": "Hover card component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-hover-card"],
+      "files": [
+        {
+          "path": "src/components/css-vars/hover-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "title": "Input component (CSS Variables variant)",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "src/components/css-vars/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-otp",
+      "title": "Input OTP component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["input-otp"],
+      "files": [
+        {
+          "path": "src/components/css-vars/input-otp.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "nlabel",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-label"],
+      "files": [
+        {
+          "path": "src/components/css-vars/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "title": "Label component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-label"],
+      "files": [
+        {
+          "path": "src/components/css-vars/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "title": "Menubar component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-menubar"],
+      "files": [
+        {
+          "path": "src/components/css-vars/menubar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "title": "Navigation menu component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-navigation-menu"],
+      "files": [
+        {
+          "path": "src/components/css-vars/navigation-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "title": "Pagination component (CSS Variables variant)",
+      "type": "registry:ui",
+      "registryDependencies": ["https://neobrutalism.dev/r/nbutton.json"],
+      "files": [
+        {
+          "path": "src/components/css-vars/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "title": "Popover component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-popover"],
+      "files": [
+        {
+          "path": "src/components/css-vars/popover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "title": "Progress component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-progress"],
+      "files": [
+        {
+          "path": "src/components/css-vars/progress.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "title": "Radio group component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-radio-group"],
+      "files": [
+        {
+          "path": "src/components/css-vars/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "resizable",
+      "title": "Resizable component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["react-resizable-panels"],
+      "files": [
+        {
+          "path": "src/components/css-vars/resizable.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "title": "Scroll area component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-scroll-area"],
+      "files": [
+        {
+          "path": "src/components/css-vars/scroll-area.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "title": "Select component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-select"],
+      "files": [
+        {
+          "path": "src/components/css-vars/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "title": "Sheet component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-dialog"],
+      "files": [
+        {
+          "path": "src/components/css-vars/sheet.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "title": "Skeleton component (CSS Variables variant)",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "src/components/css-vars/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "title": "Slider component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-slider"],
+      "files": [
+        {
+          "path": "src/components/css-vars/slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "title": "Switch component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-switch"],
+      "files": [
+        {
+          "path": "src/components/css-vars/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "title": "Table component (CSS Variables variant)",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "src/components/css-vars/table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "title": "Tabs component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-tabs"],
+      "files": [
+        {
+          "path": "src/components/css-vars/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "title": "Textarea component (CSS Variables variant)",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "src/components/css-vars/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "title": "Toast component (CSS Variables variant)",
+      "docs": "Don't forget to import <Toaster /> component inside layout.",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-toast"],
+      "files": [
+        {
+          "path": "src/components/css-vars/toast.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/hooks/use-toast.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "src/components/css-vars/toaster.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "title": "Tooltip component (CSS Variables variant)",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-tooltip"],
+      "files": [
+        {
+          "path": "src/components/css-vars/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "image-card",
+      "title": "Image card component (CSS Variables variant)",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "src/components/css-vars/image-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "marquee",
+      "title": "Marquee component (CSS Variables variant)",
+      "docs": "Make sure there is enough content in `items` so it loops perfectly. Visit https://jackwhiting.co.uk/posts/creating-a-marquee-with-tailwind to learn more.",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "src/components/css-vars/marquee.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "tailwind": {
+        "config": {
+          "theme": {
+            "extend": {
+              "animation": {
+                "marquee": "marquee 5s linear infinite",
+                "marquee2": "marquee2 5s linear infinite"
+              },
+              "keyframes": {
+                "marquee": {
+                  "0%": {
+                    "transform": "translateX(0%)"
+                  },
+                  "100%": {
+                    "transform": "translateX(-100%)"
+                  }
+                },
+                "marquee2": {
+                  "0%": {
+                    "transform": "translateX(100%)"
+                  },
+                  "100%": {
+                    "transform": "translateX(0%)"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

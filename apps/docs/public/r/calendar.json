@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar",
+  "type": "registry:ui",
+  "title": "Calendar component (CSS Variables variant)",
+  "dependencies": [
+    "react-day-picker@8.10.1",
+    "date-fns"
+  ],
+  "registryDependencies": [
+    "https://neobrutalism.dev/r/nbutton.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/css-vars/calendar.tsx",
+      "content": "\"use client\"\n\nimport { ChevronLeft, ChevronRight } from \"lucide-react\"\nimport { DayPicker } from \"react-day-picker\"\n\nimport * as React from \"react\"\n\nimport { buttonVariants } from \"@/components/ui/button\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport type CalendarProps = React.ComponentProps<typeof DayPicker>\n\nfunction Calendar({\n  className,\n  classNames,\n  showOutsideDays = true,\n  ...props\n}: CalendarProps) {\n  return (\n    <DayPicker\n      showOutsideDays={showOutsideDays}\n      className={cn(\n        \"!rounded-base border-2 border-border bg-main p-3 font-heading shadow-shadow\",\n        className,\n      )}\n      classNames={{\n        months: \"flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0\",\n        month: \"space-y-4\",\n        caption: \"flex justify-center text-mtext pt-1 relative items-center\",\n        caption_label: \"text-sm\",\n        nav: \"space-x-1 flex items-center\",\n        nav_button: cn(\n          buttonVariants({ variant: \"noShadow\" }),\n          \"h-7 w-7 bg-transparent p-0\",\n        ),\n        nav_button_previous: \"absolute left-1\",\n        nav_button_next: \"absolute right-1\",\n        table: \"w-full border-collapse space-y-1\",\n        head_row: \"flex\",\n        head_cell: \"text-mtext rounded-base w-9 font-base text-[0.8rem]\",\n        row: \"flex w-full mt-2\",\n        cell: \"h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-base rounded-base [&:has([aria-selected].day-outside)]:bg-white [&:has([aria-selected])]:bg-white first:[&:has([aria-selected])]:rounded-l-base last:[&:has([aria-selected])]:rounded-r-base focus-within:relative focus-within:z-20\",\n        day: cn(\n          buttonVariants({ variant: \"noShadow\" }),\n          \"h-9 w-9 p-0 font-base aria-selected:opacity-100\",\n        ),\n        day_range_end: \"day-range-end\",\n        day_selected: \"!bg-black text-white rounded-base\",\n        day_today: \"bg-white dark:bg-secondaryBlack text-text\",\n        day_outside: \"day-outside text-mtext opacity-50 aria-selected:bg-none\",\n        day_disabled: \"text-mtext opacity-50 rounded-base\",\n        day_range_middle: \"aria-selected:bg-white aria-selected:text-mtext\",\n        day_hidden: \"invisible\",\n        ...classNames,\n      }}\n      components={{\n        IconLeft: ({ ...props }) => <ChevronLeft className=\"h-4 w-4\" />,\n        IconRight: ({ ...props }) => <ChevronRight className=\"h-4 w-4\" />,\n      }}\n      {...props}\n    />\n  )\n}\nCalendar.displayName = \"Calendar\"\n\nexport { Calendar }\n",
+      "type": "registry:ui"
+    }
+  ]
+}
