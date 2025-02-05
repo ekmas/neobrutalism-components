@@ -4,6 +4,8 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo run dev",
+    "dev:docs": "turbo run dev --filter=./apps/docs",
+    "dev:reg": "turbo run dev --filter=./apps/util-registry",
     "lint": "turbo run lint",
     "check-types": "turbo check-types",
     "format:write": "prettier --write \"**/*.{ts,tsx,js}\"",
