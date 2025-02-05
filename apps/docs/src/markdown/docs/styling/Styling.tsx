@@ -232,13 +232,12 @@ export default function Styling() {
         <TabsContent className="pt-3" value="css-vars">
           <h3>CSS Variables installation</h3>
 
-          <h4>1. Add this to index.css</h4>
+          <h4>1. Update your index.css</h4>
 
           <Code className="mb-6" code={indexCss} name="index.css" />
 
           <h4>
-            2. Copy this to <code>theme</code> section inside your tailwind
-            config
+            2. Update <code>theme</code> section inside your tailwind config
           </h4>
 
           <Code
@@ -251,8 +250,7 @@ export default function Styling() {
           <h3>Utility classes installation</h3>
 
           <h4>
-            1. Copy this to <code>theme</code> section inside your tailwind
-            config
+            1. Update <code>theme</code> section inside your tailwind config
           </h4>
 
           <Code

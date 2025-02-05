@@ -1,6 +1,6 @@
 # Neobrutalism components
 
-<img src="public/preview.png" alt="preview">
+<img src="apps/docs/public/preview.png" alt="preview">
 
 ## Introduction
 

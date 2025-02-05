@@ -1,3 +1,78 @@
+## Installation
+
+### via Shadcn cli
+
+<Tabs defaultValue="css-vars" className="w-full">
+  <TabsList className="grid w-full grid-cols-2">
+    <TabsTrigger value="css-vars">CSS Variables</TabsTrigger>
+    <TabsTrigger value="util">Utility classes</TabsTrigger>
+  </TabsList>
+  <TabsContent value="css-vars">
+    <Tabs defaultValue="pnpm" className="w-full">
+      <TabsList className="grid w-full grid-cols-4">
+        <TabsTrigger value="pnpm">pnpm</TabsTrigger>
+        <TabsTrigger value="npm">npm</TabsTrigger>
+        <TabsTrigger value="yarn">yarn</TabsTrigger>
+        <TabsTrigger value="bun">bun</TabsTrigger>
+      </TabsList>
+      <TabsContent value="pnpm">
+      ```
+      pnpm dlx shadcn@latest add https://neobrutalism.dev/r/hover-card.json
+      ```
+      </TabsContent>
+      <TabsContent value="npm">
+      ```
+      npx shadcn@latest add https://neobrutalism.dev/r/hover-card.json
+      ```
+      </TabsContent>
+      <TabsContent value="yarn">
+      ```
+      npx shadcn@latest add https://neobrutalism.dev/r/hover-card.json
+      ```
+      </TabsContent>
+      <TabsContent value="bun">
+      ```
+      bunx --bun shadcn@latest add https://neobrutalism.dev/r/hover-card.json
+      ```
+      </TabsContent>
+    </Tabs>
+  </TabsContent>
+  <TabsContent value="util">
+    <Tabs defaultValue="pnpm" className="w-full">
+      <TabsList className="grid w-full grid-cols-4">
+        <TabsTrigger value="pnpm">pnpm</TabsTrigger>
+        <TabsTrigger value="npm">npm</TabsTrigger>
+        <TabsTrigger value="yarn">yarn</TabsTrigger>
+        <TabsTrigger value="bun">bun</TabsTrigger>
+      </TabsList>
+      <TabsContent value="pnpm">
+      ```
+      pnpm dlx shadcn@latest add http://util.neobrutalism.dev/r/hover-card.json
+      ```
+      </TabsContent>
+      <TabsContent value="npm">
+      ```
+      npx shadcn@latest add http://util.neobrutalism.dev/r/hover-card.json
+      ```
+      </TabsContent>
+      <TabsContent value="yarn">
+      ```
+      npx shadcn@latest add http://util.neobrutalism.dev/r/hover-card.json
+      ```
+      </TabsContent>
+      <TabsContent value="bun">
+      ```
+      bunx --bun shadcn@latest add http://util.neobrutalism.dev/r/hover-card.json
+      ```
+      </TabsContent>
+    </Tabs>
+  </TabsContent>
+</Tabs>
+
+<br />
+
+### Manually
+
 <Tabs defaultValue="css-vars" className="w-full">
   <TabsList className="grid w-full grid-cols-2">
     <TabsTrigger value="css-vars">CSS Variables</TabsTrigger>

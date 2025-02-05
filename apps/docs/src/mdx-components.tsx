@@ -22,7 +22,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <TabsList
         className={cn(
           className,
-          "w-full overflow-x-hidden rounded-b-none m750:h-10 shadow-light rounded-t-base bg-white p-0 dark:bg-secondaryBlack",
+          "w-full overflow-x-hidden rounded-none m750:h-10 shadow-light bg-white p-0 dark:bg-secondaryBlack",
         )}
         {...props}
       />
@@ -43,7 +43,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       className,
       ...props
     }: React.ComponentProps<typeof TabsContent>) => (
-      <TabsContent className="mt-0" {...props} />
+      <TabsContent className="mt-0 rounded-none" {...props} />
     ),
     Warning: ({
       description,
