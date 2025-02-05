@@ -8,6 +8,8 @@ As explained in introduction, most of these components are based on <a target="_
 
 Visit <a href='https://ui.shadcn.com/docs/installation' target='_blank'>shadcn installation page</a> to see how to install shadcn.
 
+<Warning className="mt-8 mb-4" description="When installing shadcn, you'll get this question: Would you like to use CSS variables for theming? Choose yes regardless of whether you use it or not, because there is bug when installing utility class components when cssVariables is set to false. You'll have to manually choose desired component variant." />
+
 <br />
 
 ## 2. Add styling
@@ -16,9 +18,31 @@ Delete the existing styling from your project and add your <Link href='/docs/sty
 
 <br />
 
-## 3. Add components
+## 3. Install components
 
-### Shadcn components
+### Choose the right variant
+
+Remember to copy the right variant of your component, e.g. if you decided to use css variables in your project, copy the css variables variant of that component if it's available.
+
+<br />
+
+### Install via Shadcn cli
+
+Just choose desired component variant and desired package manager, copy cli command to your terminal and you're good to go. 
+If there is no shadcn cli command on the component page you'll have to install the component manually.
+
+<br />
+
+CSS Variables components are hosted on **https://www.neobrutalism.dev**, and utility class components are hosted on **http://util.neobrutalism.dev**. 
+
+<br />
+
+For example you want to install button component, if you choose css variables variant url will look like this:
+**https://www.neobrutalism.dev/r/button.json**, and for utility class variant it will look like this: 
+**http://util.neobrutalism.dev/r/button.json**.
+<br />
+
+### Install manually
 
 In this docs below each component's name you'll have the shadcn docs link for that component.
 
@@ -35,12 +59,6 @@ After you're done you'll come back to neobrutalism button page, and copy button 
 <br />
 
 Keep in mind that neobrutalism components can have different variants than default shadcn components.
-
-<br />
-
-### Choose the right variant
-
-Remember to copy the right variant of your component, e.g. if you decided to use css variables in your project, copy the css variables variant of that component if it's available.
 
 <br />
 
