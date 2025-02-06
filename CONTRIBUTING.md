@@ -4,6 +4,14 @@ Thank you for wanting to contribute to this project. Here you can learn how to d
 
 ## Project structure
 
+This project is a monorepo, which means there is multiple projects (Documentation and utility class components registry) within this project.
+
+Documentation is inside `apps/docs` and utility class components registry is inside `apps/util-registry`.
+
+Documentation site is hosted on `neobrutalism.dev`, and it's used for docs obviously and css variables components registry, while the other project is used for utility class components registry. Utility class components registry is hosted on `util.neobrutalism.dev`.
+
+### Docs project structure
+
 ```
 src
 ├── app
@@ -24,6 +32,7 @@ src
 ├── layouts
 ├── markdown
 ├── styling
+registry.json
 ```
 
 - `app` - All pages are inside this directory.
@@ -35,8 +44,21 @@ src
 - `data/theme.jsonc` - Theme for code blocks.
 - `lib/utils.ts` - Utility functions.
 - `markdown` - All mdx files are here. They will be imported from `/app`.
+- `registry.json` - This json file is used for building components registry. 
 
 The rest of the files are pretty much self-explanatory.
+
+### Utility class components registry project structure
+
+```
+src
+└── scripts
+    ├── rm.ts
+registry.json
+```
+
+- `registry.json` - This json file is used for building components registry.
+- `scripts/rm.ts`- Used for removing all components and hooks after we build the registry. 
 
 ## Development
 
@@ -62,6 +84,24 @@ git checkout -b my-new-branch
 pnpm install
 ```
 
+### Run docs project
+
+```bash
+pnpm run dev:docs
+```
+
+### Run utility classes components registry project
+
+```bash
+pnpm run dev:util
+```
+
+### Run both projects
+
+```bash
+pnpm run dev
+```
+
 ## Commit/branch naming convention
 
 There's no commit/branch naming convention. Just make sure they briefly describe themselves.
@@ -70,34 +110,88 @@ There's no commit/branch naming convention. Just make sure they briefly describe
 
 Please either make an issue on github or contact me on [twitter](https://x.com/samuelbreznjak) and we can talk about it, thanks.
 
-## Roadmap
+## Adding new components
 
-I think I won't be adding any more components since I think i've covered most of the important ones. 
+You'll be adding new component inside docs project.
 
-The main focus now is on adding as many neobrutalism templates.
+### 1. Make a new component in `src/components/ui`
 
-### Creating templates
+Make a new *utility classes* component (we'll be converting later to css variables component inside `src/components/css-vars` with a script).
+
+### 2. Make a example component inside `src/components/examples`
+
+### 3. Make a markdown file for that component inside `src/markdown/components`
+
+### 4. Add your component to `src/data/components.ts`
+
+### 5. Add your component to `registry.json`
+
+### 6. Cd into docs projects and run following scripts in order:
+
+#### 6.1 Generate css variables components
+
+```bash
+pnpm run generate-cssvars-components
+```
+
+#### 6.2 Build css variables components registry
+
+```bash
+pnpm run registry:build
+```
+
+#### 6.3 Copy components and hooks to util-registry project
+
+```bash
+pnpm run copy
+```
+
+### 7. Cd into util-registry project and run following script:
+
+```bash
+pnpm run registry:build
+```
+
+### 8. Test the component
+
+Try installing it like this to test it:
+
+#### Css variables variant
+
+```bash
+pnpm dlx shadcn@latest add https://localhost:3000/r/your-component.json
+```
+
+#### Utility classes variant
+
+```bash
+pnpm dlx shadcn@latest add https://localhost:3001/r/your-component.json
+```
+
+This is assuming docs project would be on port 3000, and util-registry on 3001.
+
+## Creating templates
 
 If you'd like to add your neobrutalism templates to this project, here is how you can do it.
 
-#### Requirements
+### Requirements
 
 - Template must be made for React, or React compatible frameworks (Next.js, Astro, Gatsby, etc.)
 - Template must be written in Tailwind CSS
 - Template must be original (you can create templates for existing use cases, but make sure they are original)
 
-#### Get started 
+### Get started 
 
 Message me on [twitter](x.com/samuelbreznjak) or send me an email @ samuelbreznjak35@gmail.com, and I'll send you an invite for [neobrutalism-templates](https://github.com/neobrutalism-templates) organization. All templates are inside this organization.
 
-#### Choose a starter template 
+### Choose a starter template 
 
 Choose one of these starter templates for your template:
 - [nextjs](https://github.com/neobrutalism-templates/nextjs-starter-template)
 - [react](https://github.com/neobrutalism-templates/react-starter-template)
 - [astro](https://github.com/neobrutalism-templates/astro-starter-template)
 
-#### Creating the template
+### Creating the template
 
 As I said earlier make sure it looks good. Check the articles section in the [resources](https://www.neobrutalism.dev/docs/resources) page or dribble/behance for inspiration. 
 
