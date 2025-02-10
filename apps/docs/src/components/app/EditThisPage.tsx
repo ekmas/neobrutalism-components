@@ -8,7 +8,7 @@ export default function EditThisPage({
   markdownPath: string
 }) {
   const repoDocsUrl =
-    "https://github.com/ekmas/neobrutalism-components/tree/main/src/markdown" +
+    "https://github.com/ekmas/neobrutalism-components/tree/main/apps/docs/src/markdown" +
     markdownPath
 
   return (
