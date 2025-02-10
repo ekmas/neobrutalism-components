@@ -1,8 +1,8 @@
-import bento from "../../public/template-previews/bento.webp"
-import blog from "../../public/template-previews/blog.webp"
-import portfolio from "../../public/template-previews/portfolio.webp"
-import saas from "../../public/template-previews/saas.webp"
-import windowedPortfolio from "../../public/template-previews/windowed-portfolio.webp"
+import bento from "@public/template-previews/bento.webp"
+import blog from "@public/template-previews/blog.webp"
+import portfolio from "@public/template-previews/portfolio.webp"
+import saas from "@public/template-previews/saas.webp"
+import windowedPortfolio from "@public/template-previews/windowed-portfolio.webp"
 
 const TEMPLATES = [
   {

@@ -1,13 +1,20 @@
-import geschenkidee from "../../public/showcase-previews/geschenkidee.webp"
-import hasmire from "../../public/showcase-previews/hasmire.webp"
-import luizCampos from "../../public/showcase-previews/luiz-campos.webp"
-import nationSoundFront from "../../public/showcase-previews/nation-sound-front.webp"
-import nebulaDevelopers from "../../public/showcase-previews/nebula-developers.webp"
-import neokitSummerkit from "../../public/showcase-previews/neokit-summerkit.webp"
-import ocuLink from "../../public/showcase-previews/ocu-link.webp"
-import omi3 from "../../public/showcase-previews/omi3.webp"
-import ralphOrtiz from "../../public/showcase-previews/ralph-ortiz.webp"
-import timotejKovacka from "../../public/showcase-previews/timotej-kovacka.webp"
+import aicademy from "@public/showcase-previews/aicademy.webp"
+import geschenkidee from "@public/showcase-previews/geschenkidee.webp"
+import getYourMvp from "@public/showcase-previews/getyourmvp.webp"
+import hasmire from "@public/showcase-previews/hasmire.webp"
+import kuma from "@public/showcase-previews/kuma.webp"
+import luizCampos from "@public/showcase-previews/luiz-campos.webp"
+import lyceeComteDeFoix from "@public/showcase-previews/lycee-comte-de-foix.webp"
+import nationSoundFront from "@public/showcase-previews/nation-sound-front.webp"
+import neokitSummerkit from "@public/showcase-previews/neokit-summerkit.webp"
+import omi3 from "@public/showcase-previews/omi3.webp"
+import projects from "@public/showcase-previews/projects.webp"
+import qeeper from "@public/showcase-previews/qeeper.webp"
+import ralphOrtiz from "@public/showcase-previews/ralph-ortiz.webp"
+import ronitJadhav from "@public/showcase-previews/ronit-jadhav.webp"
+import timotejKovacka from "@public/showcase-previews/timotej-kovacka.webp"
+import weatherToRun from "@public/showcase-previews/weather-to-run.webp"
+import yeunwookKim from "@public/showcase-previews/yeunwook-kim.webp"
 
 const SHOWCASE = [
   {
@@ -26,11 +33,39 @@ const SHOWCASE = [
     color: "#E76E50",
   },
   {
-    title: "Hasmire",
-    previewImg: hasmire,
-    liveUrl: "https://hasmire-dev.vercel.app/",
-    repoUrl: "https://github.com/Hasmire/portfolio",
-    color: "#51B8FF",
+    title: "Lycee Comte De Foix",
+    previewImg: lyceeComteDeFoix,
+    liveUrl: "https://lycee-comte-de-foix.vercel.app/",
+    repoUrl: "https://github.com/NoeSourdes/lycee-comte-de-foix",
+    color: "#92c4fd",
+  },
+  {
+    title: "QeepeR",
+    previewImg: qeeper,
+    liveUrl: "https://qeeper-qr.vercel.app/",
+    repoUrl: "https://github.com/doulovera/QeepeR",
+    color: "#a288ef",
+  },
+  {
+    title: "Kuma",
+    previewImg: kuma,
+    liveUrl: "https://kuma-landing-2.vercel.app/",
+    color: "#fff",
+    text: "#000",
+  },
+  {
+    title: "Aicademy",
+    previewImg: aicademy,
+    liveUrl: "https://aicademy.abhiram-ar.com/",
+    repoUrl: "https://github.com/abhiram-ar/aicademy-fontend",
+    color: "#ffdc58",
+  },
+  {
+    title: "Ronit Jadhav",
+    previewImg: ronitJadhav,
+    liveUrl: "https://ronit.io/",
+    repoUrl: "https://github.com/ronitjadhav/ronit.io",
+    color: "#76fad8",
   },
   {
     title: "Ralph Ortiz",
@@ -40,18 +75,19 @@ const SHOWCASE = [
     color: "#fff",
   },
   {
+    title: "Luiz Campos",
+    previewImg: luizCampos,
+    liveUrl: "https://mochaeng.xyz/",
+    repoUrl: "https://github.com/mochaeng/mochaeng.github.io",
+    color: "#7387fc",
+    text: "#eff1f5",
+  },
+  {
     title: "Geschenkidee",
     previewImg: geschenkidee,
     liveUrl: "https://geschenkidee-chatbot.vercel.app/chat",
     repoUrl: "https://github.com/MartinSeeler/geschenkidee-chatbot",
     color: "#B0F0DA",
-  },
-  {
-    title: "Luiz Campos",
-    previewImg: luizCampos,
-    liveUrl: "https://mochaeng.github.io/",
-    repoUrl: "https://github.com/mochaeng/mochaeng.github.io",
-    color: "#E1D6E1",
   },
   {
     title: "Timotej Kovacka",
@@ -67,17 +103,37 @@ const SHOWCASE = [
     color: "#A3E636",
   },
   {
-    title: "OcuLink",
-    previewImg: ocuLink,
-    liveUrl: "https://oculink.vercel.app/",
-    repoUrl: "https://github.com/suryxnshsingh/OcuLink",
-    color: "#60A5FA",
+    title: "Get Your Mvp",
+    previewImg: getYourMvp,
+    liveUrl: "https://www.getyourmvp.com/",
+    color: "#ffdd59",
   },
   {
-    title: "Nebula Developers",
-    previewImg: nebulaDevelopers,
-    liveUrl: "https://nebudev.netlify.app/",
-    color: "#C4A1FF",
+    title: "Yeunwook Kim",
+    previewImg: yeunwookKim,
+    liveUrl: "https://yeunwook.kim/home/",
+    color: "#8abc68",
+  },
+  {
+    title: "WeatherToRun",
+    previewImg: weatherToRun,
+    liveUrl: "https://www.weathertorun.app/",
+    color: "#ccfe01",
+  },
+  {
+    title: "Projects",
+    previewImg: projects,
+    liveUrl: "https://projects.sandri.my.id/",
+    repoUrl: "https://github.com/elvxk/myproject",
+    color: "#fff",
+    text: "#000",
+  },
+  {
+    title: "Hasmire",
+    previewImg: hasmire,
+    liveUrl: "https://hasmire-dev.vercel.app/",
+    repoUrl: "https://github.com/Hasmire/portfolio",
+    color: "#51B8FF",
   },
 ]
 
