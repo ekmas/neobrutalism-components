@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "generate-cssvars-components": "tsx src/scripts/generate-cssvars-components.ts && prettier ./src/components/css-vars --write",
+    "generate-stars-ts": "tsx src/scripts/generate-stars-ts.ts",
     "copy": "tsx src/scripts/copy-to-util-registry.ts",
     "registry:build": "shadcn build"
   },
