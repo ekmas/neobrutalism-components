@@ -35,6 +35,10 @@ const GETTING_STARTED_LINKS = [
     text: "Changelog",
   },
   {
+    href: "/stars",
+    text: "Stars",
+  },
+  {
     href: "/templates",
     text: "Templates",
   },
@@ -72,6 +76,11 @@ const MAIN_SIDEBAR = [
   },
   "Components",
   ...COMPONENTS_LINKS,
+  "Stars",
+  {
+    href: "/docs/stars",
+    text: "Installation",
+  },
 ]
 
 const MOBILE_MAIN_SIDEBAR = [

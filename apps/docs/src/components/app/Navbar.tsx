@@ -42,28 +42,23 @@ async function Navbar() {
           </Link>
 
           <div className="flex items-center gap-10 m1100:gap-8 m900:hidden">
-            <Link className="text-xl m1100:text-base font-base" href="/docs">
+            <Link className="text-xl font-base" href="/docs">
               Docs
             </Link>
 
-            <Link
-              className="text-xl m1100:text-base font-base"
-              href="/components/accordion"
-            >
+            <Link className="text-xl font-base" href="/components/accordion">
               Components
             </Link>
 
-            <Link
-              className="text-xl m1100:text-base font-base"
-              href="/templates"
-            >
+            <Link className="text-xl font-base" href="/stars">
+              Stars
+            </Link>
+
+            <Link className="text-xl font-base" href="/templates">
               Templates
             </Link>
 
-            <Link
-              className="text-xl m1100:text-base font-base"
-              href="/showcase"
-            >
+            <Link className="text-xl font-base" href="/showcase">
               Showcase
             </Link>
           </div>

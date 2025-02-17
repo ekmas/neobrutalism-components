@@ -1,0 +1,119 @@
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table'
+
+# Stars installation
+
+You can install it in the same way you would install main components.
+You can copy the shadcn cli command or copy the component directly.
+
+<br />
+If you choose to install it via shadcn cli command, you'll have
+to choose desired package manager.
+
+<br />
+
+## Component Props
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead className="w-[100px]">Name</TableHead>
+      <TableHead>Description</TableHead>
+      <TableHead className="text-right">Type</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>color</TableCell>
+      <TableCell>Star color</TableCell>
+      <TableCell className="text-right">string</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>size</TableCell>
+      <TableCell>Width and height of star in pixels</TableCell>
+      <TableCell className="text-right">number</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>stroke</TableCell>
+      <TableCell>Path stroke color</TableCell>
+      <TableCell className="text-right">string</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>strokeWidth</TableCell>
+      <TableCell>Stroke width</TableCell>
+      <TableCell className="text-right">number</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>pathClassName</TableCell>
+      <TableCell>Path classname</TableCell>
+      <TableCell className="text-right">string</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+<br />
+
+If color prop isn't present fallback value will be `currentColor`.
+
+<br />
+
+Rest of the props are extended from `<React.SVGProps>` (basically all attributes an svg can have, such as className, width, height, aria attributes etc.).
+
+<br />
+
+## Usage
+
+### Default
+
+```tsx
+<Star1 color="red" size={200} />
+```
+
+<br />
+
+### With stroke
+
+```tsx
+<Star1 color="red" size={200} stroke="black" strokeWidth={2} />
+```
+
+<br />
+
+### Custom width and height
+
+```tsx
+<Star1 color="red" width={180} height={210} stroke="black" strokeWidth={2} />
+```
+
+<br />
+
+### Dark mode color
+
+```tsx
+<Star1 className="text-red-500 dark:text-blue-500" size={200} stroke="black" strokeWidth={2} />
+```
+
+<br />
+
+### Dark mode stroke color
+
+```tsx
+<Star1 className="text-red-500 dark:text-blue-500" pathClassName="stroke-black dark:stroke-white" size={200} strokeWidth={2} />
+```
+
+<EditThisPage markdownPath="/docs/stars/page.mdx" />
+
+<Pagination
+  next={{
+    name: 'Installation',
+    path: '/docs/installation',
+  }}
+/>
