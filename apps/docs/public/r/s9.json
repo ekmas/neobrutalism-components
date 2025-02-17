@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "s9",
+  "type": "registry:component",
+  "title": "Star 9",
+  "files": [
+    {
+      "path": "src/components/stars/s9.tsx",
+      "content": "/**\n * @preview ![img](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAiFJREFUSEuVVUFym0AQ7DVURQFXfNA1GH0geoflp0gPUPID2XclL0mUd+gFEOVoH1RlKB2QJsWysDvsgBwuSMvM9E7PTI8iIoJ+6pfqv+x5Y+Q8xt6cuP/c3+pCRMpz5oEICorH611oKDygdAb88qNwVxLRwO6FGgBDkf7g/e5YQ2uqrSybHo2MIg9Af5XrUVWVhg+DsAfgFoJz2dRACCrxdDwe9fHdpzsL4NHPDxyKeDt4NQWw3++10fzLfISiHoDbRfaTFB54enrGhS74tv46kgGni3WRpUVuq/v7BDfqBlmWezXwWDYhfIqEoauPyrJEHMe6y96KAlEUtd0td24LcH3QmuDT6RSn00kHm0wmeH19QRTFHR/eMJqU+BwQcK7OKMoCWZ5j9/MXvv/Y4nD4qykB1RPQzGX9JEmC1WqFxeIBaTpDHMUIwgBQdp54DYhQnc8oihJZnuH3bofttgY4GIDupXUrST5juVzi8XGBWTpDFMcIggBKWfFhNZB7h1NUu35wKRpyMlkOFNmXyKbIt1oWCl3kj436XhFKh6JhRWxjpGmKCxEO+R8rJ27XCWDjc9Bz2Gw2mt/1ej2yJ1wnwuA+cAendemkYj639/6fGshSYfQdABc7e97tAGFIWQYugN0NNuVOrsNQpkjIxpFrzp3UId3CMX1uaXzXyhwyGiKZ20sZ19S9ew7a/DwaXeEVlo9fA8+BZyB1Vw0uL0XCPwXJZr7x0QIaAAAAAElFTkSuQmCC)\n */\nexport default function Star9({\n  color,\n  size,\n  stroke,\n  strokeWidth,\n  pathClassName,\n  width,\n  height,\n  ...props\n}: React.SVGProps<SVGSVGElement> & {\n  color?: string\n  size?: number\n  stroke?: string\n  pathClassName?: string\n  strokeWidth?: number\n}) {\n  return (\n    <svg\n      xmlns=\"http://www.w3.org/2000/svg\"\n      fill=\"none\"\n      viewBox=\"0 0 200 200\"\n      width={size ?? width}\n      height={size ?? height}\n      {...props}\n    >\n      <path\n        fill={color ?? \"currentColor\"}\n        stroke={stroke}\n        strokeWidth={strokeWidth}\n        className={pathClassName}\n        d=\"M195 100c-87.305 4.275-90.725 7.695-95 95-4.275-87.305-7.695-90.725-95-95 87.305-4.275 90.725-7.695 95-95 4.275 87.305 7.695 90.725 95 95\"\n      />\n    </svg>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/stars/s9.tsx"
+    }
+  ]
+}

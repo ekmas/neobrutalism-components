@@ -615,6 +615,486 @@
           }
         }
       }
+    },
+    {
+      "name": "s1",
+      "title": "Star 1",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s1.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s1.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s2",
+      "title": "Star 2",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s2.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s2.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s3",
+      "title": "Star 3",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s3.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s3.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s4",
+      "title": "Star 4",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s4.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s4.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s5",
+      "title": "Star 5",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s5.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s5.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s6",
+      "title": "Star 6",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s6.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s6.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s7",
+      "title": "Star 7",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s7.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s7.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s8",
+      "title": "Star 8",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s8.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s8.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s9",
+      "title": "Star 9",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s9.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s9.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s10",
+      "title": "Star 10",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s10.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s10.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s11",
+      "title": "Star 11",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s11.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s11.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s12",
+      "title": "Star 12",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s12.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s12.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s13",
+      "title": "Star 13",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s13.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s13.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s14",
+      "title": "Star 14",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s14.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s14.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s15",
+      "title": "Star 15",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s15.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s15.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s16",
+      "title": "Star 16",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s16.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s16.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s17",
+      "title": "Star 17",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s17.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s17.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s18",
+      "title": "Star 18",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s18.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s18.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s19",
+      "title": "Star 19",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s19.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s19.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s20",
+      "title": "Star 20",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s20.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s20.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s21",
+      "title": "Star 21",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s21.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s21.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s22",
+      "title": "Star 22",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s22.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s22.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s23",
+      "title": "Star 23",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s23.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s23.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s24",
+      "title": "Star 24",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s24.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s24.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s25",
+      "title": "Star 25",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s25.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s25.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s26",
+      "title": "Star 26",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s26.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s26.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s27",
+      "title": "Star 27",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s27.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s27.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s28",
+      "title": "Star 28",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s28.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s28.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s29",
+      "title": "Star 29",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s29.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s29.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s30",
+      "title": "Star 30",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s30.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s30.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s31",
+      "title": "Star 31",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s31.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s31.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s32",
+      "title": "Star 32",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s32.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s32.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s33",
+      "title": "Star 33",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s33.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s33.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s34",
+      "title": "Star 34",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s34.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s34.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s35",
+      "title": "Star 35",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s35.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s35.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s36",
+      "title": "Star 36",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s36.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s36.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s37",
+      "title": "Star 37",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s37.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s37.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s38",
+      "title": "Star 38",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s38.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s38.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s39",
+      "title": "Star 39",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s39.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s39.tsx"
+        }
+      ]
+    },
+    {
+      "name": "s40",
+      "title": "Star 40",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/stars/s40.tsx",
+          "type": "registry:component",
+          "target": "components/stars/s40.tsx"
+        }
+      ]
     }
   ]
 }

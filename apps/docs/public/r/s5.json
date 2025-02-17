@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "s5",
+  "type": "registry:component",
+  "title": "Star 5",
+  "files": [
+    {
+      "path": "src/components/stars/s5.tsx",
+      "content": "/**\n * @preview ![img](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAiJJREFUSEuFVktSwkAQfVOlJRs5gZxArCLDgg2egs8NiHeCGyB6Cd1glYkLbhAvIBuxRMeaSSfz65EsIJnpzOvX/bo7QimlQJe+Ec2D/qcFu66gICDMgmvtrxsbc46CMAC+bYDS4rjQ9Lo1ZTDNZg0QMfC56KevzwPkUBrLoijQ6XQ8vyw6sUkyiPwE8jzHarXydhaLBZbLZTqMZO0w8JF1HB8fHzCbzmBI6qAq82PvBbC5v8dkMkmwCULUuFhVFfr9Pvb7PcMnWBJA97KL3W6HXq8XbCqIX6WMX9qz7+MPbsdjbLcvnqcCtQ705RKxp9XMRqMRnp+fcHZ23m55KpJSoizL4D03LClCZAMgyzIjgiZmnooyKfHmAvwbIB44ywZ4Lcq2njwGPID1jsULtlsGsYqAFICbAxfEPbu590MUJFnKIcq3so6fc9mDApm2krXGPAMqXD7JpJxTrtO+D9D0IpJpJocnkxyxseI1d3ySCd0wYEKUKoDTOYBbaEyS+apKi1cA2YBkSu01rgNiEJ3NgHHJ1wBF0RSrlwPgeDxibFrF9n8VuW3DsfRaBQnH66bN+Kiqd9z0r/Fhmh1TscFSt0vN7qoXDSsvRGFwN5sN5vN53a4ZmQohsF6vMZ1OwmHL96JoJpN88/wuPXBc4Gj0NpXMbIRcD4cDtIz1VY/Mi8QHQEDWnQfBCGfk6E49dtt+bcRJTss7+mKg0BmHTnyR/AGKynDAspMBcgAAAABJRU5ErkJggg==)\n */\nexport default function Star5({\n  color,\n  size,\n  stroke,\n  strokeWidth,\n  pathClassName,\n  width,\n  height,\n  ...props\n}: React.SVGProps<SVGSVGElement> & {\n  color?: string\n  size?: number\n  stroke?: string\n  pathClassName?: string\n  strokeWidth?: number\n}) {\n  return (\n    <svg\n      xmlns=\"http://www.w3.org/2000/svg\"\n      fill=\"none\"\n      viewBox=\"0 0 200 200\"\n      width={size ?? width}\n      height={size ?? height}\n      {...props}\n    >\n      <path\n        fill={color ?? \"currentColor\"}\n        stroke={stroke}\n        strokeWidth={strokeWidth}\n        className={pathClassName}\n        d=\"m100 5 82.272 47.5v95L100 195l-82.272-47.5v-95z\"\n      />\n    </svg>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/stars/s5.tsx"
+    }
+  ]
+}

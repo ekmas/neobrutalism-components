@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "s28",
+  "type": "registry:component",
+  "title": "Star 28",
+  "files": [
+    {
+      "path": "src/components/stars/s28.tsx",
+      "content": "/**\n * @preview ![img](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAmVJREFUSEuNVU162jAQfcaB72uzKUk3cJk6h0hXKXCBJj0BknwDuEBDwo5DxLkMrAi79CsUq4wkyxKWAtrAN5bmzbw3P0kppUwkgATnH3XffRR3kEgp6SsAc8n9abyLO3Ux3VuJysDEfiomimU0GmE+n2M8ZmBsbOMKxKiCdgB89xKJYU3bt3+3+Hz5CeW+VLlyzjFmzDD1AUWxDI4Fuf56jbf1mzUTAGMsqFuTIp/++pGxr1Yr9Pv92n7glI85GA8DuKhRkV1Op9MpHn49AEotXROckwY8oJ7rXkIDBCisq0JCcAEuhHqpICgDFtCgUb5UzbZMTUGYS0pkAywOzolzH0A4VRQocZOIBRAiRwKdjH8SvBYveCkKz5xlN8iyb8rW7X7B7e139Hq95uuqk9OLC5Tl3l6o2fYk0xpUPDn/Kbju1RWoIDqdju0P2wfD4RDPT08mA+qBUDbHuXm6q49pmuLfbgckun0tRSRFu93Gfk9ZmPgbaYTzstoY/MFggNls5gNQTtvtDr1+TzWU66rBSC23T6l51Gq1TKBHVVTdJh4XiwU2m40yFUWB4rWoWkDZsizDTZZpSqluVcnpQzg0RjyKGvJbgwQ/VJhQZVprY0eFW9YBJ9FhVy8IiVzkYC6AajTTyR/uhmqanlg41MU6Ays/JpMJft7f2z1Vu/AXSnMWKTdUonUn51yAiWruaB6Wy6VurBNLxBsVMR2ORwU11Hq9dnyfuQ9iALkQVoNW2sKf93fdrWecaAZuTAQg8hx3dz/w+PgbienSM/y70zS2dVw3cSrCX0L7IDDTYxCNyjEXXbD/bYVxwxE7mjEAAAAASUVORK5CYII=)\n */\nexport default function Star28({\n  color,\n  size,\n  stroke,\n  strokeWidth,\n  pathClassName,\n  width,\n  height,\n  ...props\n}: React.SVGProps<SVGSVGElement> & {\n  color?: string\n  size?: number\n  stroke?: string\n  pathClassName?: string\n  strokeWidth?: number\n}) {\n  return (\n    <svg\n      xmlns=\"http://www.w3.org/2000/svg\"\n      fill=\"none\"\n      viewBox=\"0 0 200 200\"\n      width={size ?? width}\n      height={size ?? height}\n      {...props}\n    >\n      <path\n        fill={color ?? \"currentColor\"}\n        stroke={stroke}\n        strokeWidth={strokeWidth}\n        className={pathClassName}\n        d=\"M121 5C96.7 5 77 24.7 77 49v29H5c0 24.301 19.7 44 44 44h28v73c24.301 0 44-19.699 44-44v-29h74c0-24.3-19.699-44-44-44h-30z\"\n        clipRule=\"evenodd\"\n        fillRule=\"evenodd\"\n      />\n    </svg>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/stars/s28.tsx"
+    }
+  ]
+}

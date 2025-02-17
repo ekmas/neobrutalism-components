@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "s20",
+  "type": "registry:component",
+  "title": "Star 20",
+  "files": [
+    {
+      "path": "src/components/stars/s20.tsx",
+      "content": "/**\n * @preview ![img](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAglJREFUSEuNVc16gyAQHG/VvFaOgk9UU+0TCR7tY1V7Kv0WFl0Ek+YSRdifmZ2hcs458I8eqviy//Oq/Jg9OzhUqORWfq6yBP5DIVoh+7F0/TFJcBSfHohvTdOAnrd19VvLTXE3HCwkKGOTRgBACei3fq8lLFNQSxDFHeM44r3vdz5kBz4BdyDpojN932cMZhDRxsfjAaUUjDEJEMUOHKA7jdlafAxDlqT6dc4lnALQWsHaWSQJhaUJQl9aa1hr0SoF6wtKkRUdpOPoD84WqlWYjPGD1dxSkmNw6tbvkePO05hPkSBcBjCT8QkiybrjLlsFY0PlpWERU1RQCeNLEFAny9fi49zvdw+L5MkLTVIcp+jg4EqqxEmAiyqkILTzCC6Kz0RKmmWriATGNs/pfn42wHH4Cqjf6mwk5UIcZZGADuROFIHdti0JWNd1DrmoKktQZIhDRrJlBqVaTMYWS5L7XlpFFBHN+bIUSJ7MyRxT5P4/psYcQlvXXWCR7CurD0rmIZaerrTGzEILliGU7L3IQevuNK5CDM/MbhcYi6hsdsGWO8WK373rCUQU6FOa3Qnf830Q1Us8kfAGaXaXNxqAcSRXfEhn2SGSF46sdaDCntt14RY7Mdc0QSv5fZDKUtrGxZ3MqjjZU3MjcVXYXtxouQ4yk0ojXxnZlYPK9byDq2QFpywnSO+VP1TFncapthQ8AAAAAElFTkSuQmCC)\n */\nexport default function Star20({\n  color,\n  size,\n  stroke,\n  strokeWidth,\n  pathClassName,\n  width,\n  height,\n  ...props\n}: React.SVGProps<SVGSVGElement> & {\n  color?: string\n  size?: number\n  stroke?: string\n  pathClassName?: string\n  strokeWidth?: number\n}) {\n  return (\n    <svg\n      xmlns=\"http://www.w3.org/2000/svg\"\n      fill=\"none\"\n      viewBox=\"0 0 200 200\"\n      width={size ?? width}\n      height={size ?? height}\n      {...props}\n    >\n      <path\n        fill={color ?? \"currentColor\"}\n        stroke={stroke}\n        strokeWidth={strokeWidth}\n        className={pathClassName}\n        d=\"M107.6 5H92.4v76.652L38.199 27.451 27.45 38.199 81.65 92.4H5v15.2h76.652L27.45 161.801l10.748 10.748L92.4 118.348V195h15.2v-76.652l54.201 54.201 10.748-10.748-54.201-54.201H195V92.4h-76.652l54.201-54.201-10.748-10.748-54.201 54.2z\"\n        clipRule=\"evenodd\"\n        fillRule=\"evenodd\"\n      />\n    </svg>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/stars/s20.tsx"
+    }
+  ]
+}
