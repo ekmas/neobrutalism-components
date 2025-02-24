@@ -2,23 +2,49 @@ import Link from 'next/link'
 
 # Installation
 
-## 1. Install shadcn
+## Tailwind v4 support
+
+These components currently use <a href='https://v3.tailwindcss.com/docs/installation' target='_blank'>Tailwind v3</a>, so you'll have to use it until I migrate the components to v4.
+
+<br />
+
+## 1. Initialize your app
+
+### 1.1 Next.js
+
+```
+npx create-next-app@15.1.7
+```
+
+<br />
+
+Use `15.1.7` version instead of `latest` because that version creates project with v3 tailwind.
+
+<br />
+
+### 1.2 Other
+
+Initialize your non nextjs app like you would normally do, just remember to install <a href='https://v3.tailwindcss.com/docs/installation' target='_blank'>Tailwind v3</a> like it's shown in the docs. 
+
+<br />
+
+## 2. Initialize shadcn
 
 As explained in introduction, most of these components are based on <a target="_blank" href="https://ui.shadcn.com/">Shadcn UI</a>. 
 
-Visit <a href='https://ui.shadcn.com/docs/installation' target='_blank'>shadcn installation page</a> to see how to install shadcn.
+Visit <a href='https://ui.shadcn.com/docs/cli#init' target='_blank'>shadcn docs</a> to see how to initialize shadcn.
 
 <Warning className="mt-8 mb-4" description="When installing shadcn, you'll get this question: Would you like to use CSS variables for theming? Choose yes regardless of whether you use it or not, because there is bug when installing utility class components when cssVariables is set to false. You'll have to manually choose desired component variant." />
 
 <br />
 
-## 2. Add styling
+## 3. Add styling
 
 Delete the existing styling from your project and add your <Link href='/docs/styling'>desired styling</Link> to your tailwind config.
 
 <br />
 
-## 3. Install components
+## 4. Install components
 
 ### Choose the right variant
 
