@@ -7,40 +7,42 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
-const InputOTP = React.forwardRef<
-  React.ElementRef<typeof OTPInput>,
-  React.ComponentPropsWithoutRef<typeof OTPInput>
->(({ className, containerClassName, ...props }, ref) => (
-  <OTPInput
-    ref={ref}
-    containerClassName={cn(
-      "flex items-center gap-2 has-[:disabled]:opacity-50",
-      containerClassName,
-    )}
-    className={cn("disabled:cursor-not-allowed", className)}
-    {...props}
-  />
-))
+function InputOTP({
+  className,
+  containerClassName,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof OTPInput>) {
+  return (
+    <OTPInput
+      containerClassName={cn(
+        "flex items-center gap-2 has-[:disabled]:opacity-50",
+        containerClassName,
+      )}
+      className={cn("disabled:cursor-not-allowed", className)}
+      {...props}
+    />
+  )
+}
 InputOTP.displayName = "InputOTP"
 
-const InputOTPGroup = React.forwardRef<
-  React.ElementRef<"div">,
-  React.ComponentPropsWithoutRef<"div">
->(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("flex items-center", className)} {...props} />
-))
+function InputOTPGroup({
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<"div">) {
+  return <div className={cn("flex items-center", className)} {...props} />
+}
 InputOTPGroup.displayName = "InputOTPGroup"
 
-const InputOTPSlot = React.forwardRef<
-  React.ElementRef<"div">,
-  React.ComponentPropsWithoutRef<"div"> & { index: number }
->(({ index, className, ...props }, ref) => {
+function InputOTPSlot({
+  index,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<"div"> & { index: number }) {
   const inputOTPContext = React.useContext(OTPInputContext)
   const { char, hasFakeCaret, isActive } = inputOTPContext.slots[index]
 
   return (
     <div
-      ref={ref}
       className={cn(
         "relative bg-white dark:bg-secondaryBlack flex h-10 w-10 items-center justify-center border-y-2 border-r-2 border-border dark:border-darkBorder text-sm font-base transition-all first:rounded-l-base first:border-l-2 last:rounded-r-base",
         isActive &&
@@ -57,17 +59,18 @@ const InputOTPSlot = React.forwardRef<
       )}
     </div>
   )
-})
+}
 InputOTPSlot.displayName = "InputOTPSlot"
 
-const InputOTPSeparator = React.forwardRef<
-  React.ElementRef<"div">,
-  React.ComponentPropsWithoutRef<"div">
->(({ ...props }, ref) => (
-  <div ref={ref} role="separator" {...props}>
-    <Dot />
-  </div>
-))
+function InputOTPSeparator({
+  ...props
+}: React.ComponentPropsWithoutRef<"div">) {
+  return (
+    <div role="separator" {...props}>
+      <Dot />
+    </div>
+  )
+}
 InputOTPSeparator.displayName = "InputOTPSeparator"
 
 export { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator }
