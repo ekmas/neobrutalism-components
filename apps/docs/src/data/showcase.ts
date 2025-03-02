@@ -118,7 +118,8 @@ const SHOWCASE = [
     title: "WeatherToRun",
     previewImg: weatherToRun,
     liveUrl: "https://www.weathertorun.app/",
-    color: "#ccfe01",
+    color: "#3300FF",
+    text: "#FFF",
   },
   {
     title: "Projects",
