@@ -19,11 +19,10 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { name: string }
+export async function generateMetadata(props: {
+  params: Promise<{ name: string }>
 }): Promise<Metadata> {
+  const params = await props.params
   const component = transformToName(params.name)
 
   return {
@@ -32,11 +31,10 @@ export async function generateMetadata({
   }
 }
 
-export default async function Installation({
-  params,
-}: {
-  params: { name: string }
+export default async function Installation(props: {
+  params: Promise<{ name: string }>
 }) {
+  const params = await props.params
   const currentComponent = components.find(
     (component) => transformToSlug(component.name) === params.name,
   )
