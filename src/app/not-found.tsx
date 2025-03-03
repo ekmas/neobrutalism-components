@@ -3,7 +3,7 @@ import Link from "next/link"
 export default function NotFound() {
   return (
     <div className="text-text max-h-[100dvh] h-[100dvh] portrait:max-h-[100dvh] portrait:h-[100dvh] w-full flex items-center justify-center bg-bg dark:bg-darkBg dark:text-darkText">
-      <div className="text-center max-w-screen-xl px-5">
+      <div className="text-center max-w-(--breakpoint-xl) px-5">
         <h1 className="text-5xl font-heading m1000:text-4xl m800:text-3xl m500:text-2xl m400:text-xl">
           404 Not Found
         </h1>

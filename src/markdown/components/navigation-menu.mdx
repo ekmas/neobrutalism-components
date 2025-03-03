@@ -160,7 +160,7 @@ Here is the whole navigation-menu component:
 
     export default function NavigationMenuDemo() {
       return (
-        <NavigationMenu className="z-[5] m750:max-w-[300px]">
+        <NavigationMenu className="z-5 m750:max-w-[300px]">
           <NavigationMenuList className="m750:max-w-[300px]">
             <NavigationMenuItem>
               <NavigationMenuTrigger className="m750:max-w-[80px] m750:text-xs">
@@ -172,7 +172,7 @@ Here is the whole navigation-menu component:
                   <li className="row-span-3">
                     <NavigationMenuLink asChild>
                       <a
-                        className="from-muted/50 to-muted flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b p-6 no-underline outline-none focus:shadow-md"
+                        className="from-muted/50 to-muted flex h-full w-full select-none flex-col justify-end rounded-md bg-linear-to-b p-6 no-underline outline-hidden focus:shadow-md"
                         href="https://ui.shadcn.com"
                       >
                         <div className="mb-2 mt-4 text-lg font-heading">
@@ -246,7 +246,7 @@ Here is the whole navigation-menu component:
             <a
               ref={ref}
               className={cn(
-                'hover:bg-accent block text-mtext select-none space-y-1 rounded-base border-2 border-transparent p-3 leading-none no-underline outline-none transition-colors hover:border-border dark:hover:border-darkBorder',
+                'hover:bg-accent block text-mtext select-none space-y-1 rounded-base border-2 border-transparent p-3 leading-none no-underline outline-hidden transition-colors hover:border-border dark:hover:border-darkBorder',
                 className,
               )}
               {...props}
@@ -322,7 +322,7 @@ Here is the whole navigation-menu component:
 
     export default function NavigationMenuDemo() {
       return (
-        <NavigationMenu className="z-[5] m750:max-w-[300px]">
+        <NavigationMenu className="z-5 m750:max-w-[300px]">
           <NavigationMenuList className="m750:max-w-[300px]">
             <NavigationMenuItem>
               <NavigationMenuTrigger className="m750:max-w-[80px] m750:text-xs">
@@ -334,7 +334,7 @@ Here is the whole navigation-menu component:
                   <li className="row-span-3">
                     <NavigationMenuLink asChild>
                       <a
-                        className="from-muted/50 to-muted flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b p-6 no-underline outline-none focus:shadow-md"
+                        className="from-muted/50 to-muted flex h-full w-full select-none flex-col justify-end rounded-md bg-linear-to-b p-6 no-underline outline-hidden focus:shadow-md"
                         href="https://ui.shadcn.com"
                       >
                         <div className="mb-2 mt-4 text-lg font-heading">
@@ -408,7 +408,7 @@ Here is the whole navigation-menu component:
             <a
               ref={ref}
               className={cn(
-                'hover:bg-accent block text-text select-none space-y-1 rounded-base border-2 border-transparent p-3 leading-none no-underline outline-none transition-colors hover:border-border dark:hover:border-darkBorder',
+                'hover:bg-accent block text-text select-none space-y-1 rounded-base border-2 border-transparent p-3 leading-none no-underline outline-hidden transition-colors hover:border-border dark:hover:border-darkBorder',
                 className,
               )}
               {...props}

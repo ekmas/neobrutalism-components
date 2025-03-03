@@ -36,7 +36,7 @@ export default function DatePickerDemo() {
           )}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-auto !border-0 p-0">
+      <PopoverContent className="w-auto border-0! p-0">
         <Calendar
           mode="single"
           selected={date}

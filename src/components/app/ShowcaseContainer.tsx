@@ -22,7 +22,7 @@ export default function ShowcaseContainer({
             className="p-[15px] bg-white dark:bg-secondaryBlack rounded-base shadow-light dark:shadow-dark border-2 border-border dark:border-darkBorder"
             key={title}
           >
-            <div className="border-2 border-border dark:border-darkBorder rounded-base aspect-[2/1]">
+            <div className="border-2 border-border dark:border-darkBorder rounded-base aspect-2/1">
               <img
                 className="rounded-base"
                 src={`${previewImg.src}`}

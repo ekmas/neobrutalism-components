@@ -5,7 +5,7 @@ export default function Star32Example() {
     <Star32
       color="var(--main)"
       className="w-full h-full"
-      pathClassName="stroke-black stroke-[3] dark:stroke-2"
+      pathClassName="stroke-black stroke-3 dark:stroke-2"
     />
   )
 }

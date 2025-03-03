@@ -5,7 +5,7 @@ export default function Star27Example() {
     <Star27
       color="var(--main)"
       className="w-full h-full"
-      pathClassName="stroke-black stroke-[3] dark:stroke-2"
+      pathClassName="stroke-black stroke-3 dark:stroke-2"
     />
   )
 }
