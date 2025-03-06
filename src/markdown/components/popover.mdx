@@ -2,70 +2,32 @@
 
 ### via Shadcn cli
 
-<Tabs defaultValue="css-vars" className="w-full">
-  <TabsList className="grid w-full grid-cols-2">
-    <TabsTrigger value="css-vars">CSS Variables</TabsTrigger>
-    <TabsTrigger value="util">Utility classes</TabsTrigger>
+<Tabs defaultValue="pnpm" className="w-full">
+  <TabsList className="grid w-full grid-cols-4">
+    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
+    <TabsTrigger value="npm">npm</TabsTrigger>
+    <TabsTrigger value="yarn">yarn</TabsTrigger>
+    <TabsTrigger value="bun">bun</TabsTrigger>
   </TabsList>
-  <TabsContent value="css-vars">
-    <Tabs defaultValue="pnpm" className="w-full">
-      <TabsList className="grid w-full grid-cols-4">
-        <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-        <TabsTrigger value="npm">npm</TabsTrigger>
-        <TabsTrigger value="yarn">yarn</TabsTrigger>
-        <TabsTrigger value="bun">bun</TabsTrigger>
-      </TabsList>
-      <TabsContent value="pnpm">
-      ```
-      pnpm dlx shadcn@latest add https://neobrutalism.dev/r/popover.json
-      ```
-      </TabsContent>
-      <TabsContent value="npm">
-      ```
-      npx shadcn@latest add https://neobrutalism.dev/r/popover.json
-      ```
-      </TabsContent>
-      <TabsContent value="yarn">
-      ```
-      npx shadcn@latest add https://neobrutalism.dev/r/popover.json
-      ```
-      </TabsContent>
-      <TabsContent value="bun">
-      ```
-      bunx --bun shadcn@latest add https://neobrutalism.dev/r/popover.json
-      ```
-      </TabsContent>
-    </Tabs>
+  <TabsContent value="pnpm">
+  ```
+  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/popover.json
+  ```
   </TabsContent>
-  <TabsContent value="util">
-    <Tabs defaultValue="pnpm" className="w-full">
-      <TabsList className="grid w-full grid-cols-4">
-        <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-        <TabsTrigger value="npm">npm</TabsTrigger>
-        <TabsTrigger value="yarn">yarn</TabsTrigger>
-        <TabsTrigger value="bun">bun</TabsTrigger>
-      </TabsList>
-      <TabsContent value="pnpm">
-      ```
-      pnpm dlx shadcn@latest add http://util.neobrutalism.dev/r/popover.json
-      ```
-      </TabsContent>
-      <TabsContent value="npm">
-      ```
-      npx shadcn@latest add http://util.neobrutalism.dev/r/popover.json
-      ```
-      </TabsContent>
-      <TabsContent value="yarn">
-      ```
-      npx shadcn@latest add http://util.neobrutalism.dev/r/popover.json
-      ```
-      </TabsContent>
-      <TabsContent value="bun">
-      ```
-      bunx --bun shadcn@latest add http://util.neobrutalism.dev/r/popover.json
-      ```
-      </TabsContent>
-    </Tabs>
+  <TabsContent value="npm">
+  ```
+  npx shadcn@latest add https://neobrutalism.dev/r/popover.json 
+  ```
+  </TabsContent>
+  <TabsContent value="yarn">
+  ```
+  npx shadcn@latest add https://neobrutalism.dev/r/popover.json
+  ```
+  </TabsContent>
+  <TabsContent value="bun">
+  ```
+  bunx --bun shadcn@latest add https://neobrutalism.dev/r/popover.json
+  ```
   </TabsContent>
 </Tabs>
 
@@ -73,20 +35,8 @@
 
 ### Manually
 
-<Tabs defaultValue="css-vars" className="w-full">
-  <TabsList className="grid w-full grid-cols-2">
-    <TabsTrigger value="css-vars">CSS Variables</TabsTrigger>
-    <TabsTrigger value="util">Utility classes</TabsTrigger>
-  </TabsList>
-  <TabsContent value="css-vars">
-    ```tsx file=<rootDir>/src/components/css-vars/popover.tsx title="components/ui/popover.tsx"
-    ```
-  </TabsContent>
-  <TabsContent value="util">
-    ```tsx file=<rootDir>/src/components/ui/popover.tsx title="components/ui/popover.tsx"
-    ```
-  </TabsContent>
-</Tabs>
+```tsx file=<rootDir>/src/components/ui/popover.tsx title="components/ui/popover.tsx"
+```
 
 <br />
 
@@ -105,111 +55,52 @@ import {
 
 <br />
 
-<Tabs defaultValue="css-vars" className="w-full">
-  <TabsList className="grid w-full grid-cols-2">
-    <TabsTrigger value="css-vars">CSS Variables</TabsTrigger>
-    <TabsTrigger value="util">Utility classes</TabsTrigger>
-  </TabsList>
-  <TabsContent value="css-vars">
-    ```tsx
-    <Popover>
-      <PopoverTrigger asChild>
-        <Button variant="noShadow">Open popover</Button>
-      </PopoverTrigger>
-      <PopoverContent className="w-80 text-mtext">
-        <div className="grid gap-4">
-          <div className="space-y-2">
-            <h4 className="font-heading leading-none">Dimensions</h4>
-            <p className="text-sm">Set the dimensions for the layer.</p>
-          </div>
-          <div className="grid gap-2">
-            <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="width">Width</Label>
-              <Input
-                id="width"
-                defaultValue="100%"
-                className="col-span-2 h-8"
-              />
-            </div>
-            <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="maxWidth">Max. width</Label>
-              <Input
-                id="maxWidth"
-                defaultValue="300px"
-                className="col-span-2 h-8"
-              />
-            </div>
-            <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="height">Height</Label>
-              <Input
-                id="height"
-                defaultValue="25px"
-                className="col-span-2 h-8"
-              />
-            </div>
-            <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="maxHeight">Max. height</Label>
-              <Input
-                id="maxHeight"
-                defaultValue="none"
-                className="col-span-2 h-8"
-              />
-            </div>
-          </div>
+```tsx
+<Popover>
+  <PopoverTrigger asChild>
+    <Button variant="noShadow">Open popover</Button>
+  </PopoverTrigger>
+  <PopoverContent className="w-80 text-mtext">
+    <div className="grid gap-4">
+      <div className="space-y-2">
+        <h4 className="font-heading leading-none">Dimensions</h4>
+        <p className="text-sm">Set the dimensions for the layer.</p>
+      </div>
+      <div className="grid gap-2">
+        <div className="grid grid-cols-3 items-center gap-4">
+          <Label htmlFor="width">Width</Label>
+          <Input
+            id="width"
+            defaultValue="100%"
+            className="col-span-2 h-8"
+          />
         </div>
-      </PopoverContent>
-    </Popover>
-    ```
-  </TabsContent>
-  <TabsContent value="util">
-    ```tsx
-    <Popover>
-      <PopoverTrigger asChild>
-        <Button variant="noShadow">Open popover</Button>
-      </PopoverTrigger>
-      <PopoverContent className="w-80 text-text">
-        <div className="grid gap-4">
-          <div className="space-y-2">
-            <h4 className="font-heading leading-none">Dimensions</h4>
-            <p className="text-sm">Set the dimensions for the layer.</p>
-          </div>
-          <div className="grid gap-2">
-            <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="width">Width</Label>
-              <Input
-                id="width"
-                defaultValue="100%"
-                className="col-span-2 h-8"
-              />
-            </div>
-            <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="maxWidth">Max. width</Label>
-              <Input
-                id="maxWidth"
-                defaultValue="300px"
-                className="col-span-2 h-8"
-              />
-            </div>
-            <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="height">Height</Label>
-              <Input
-                id="height"
-                defaultValue="25px"
-                className="col-span-2 h-8"
-              />
-            </div>
-            <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="maxHeight">Max. height</Label>
-              <Input
-                id="maxHeight"
-                defaultValue="none"
-                className="col-span-2 h-8"
-              />
-            </div>
-          </div>
+        <div className="grid grid-cols-3 items-center gap-4">
+          <Label htmlFor="maxWidth">Max. width</Label>
+          <Input
+            id="maxWidth"
+            defaultValue="300px"
+            className="col-span-2 h-8"
+          />
         </div>
-      </PopoverContent>
-    </Popover>
-    ```
-  </TabsContent>
-</Tabs>
+        <div className="grid grid-cols-3 items-center gap-4">
+          <Label htmlFor="height">Height</Label>
+          <Input
+            id="height"
+            defaultValue="25px"
+            className="col-span-2 h-8"
+          />
+        </div>
+        <div className="grid grid-cols-3 items-center gap-4">
+          <Label htmlFor="maxHeight">Max. height</Label>
+          <Input
+            id="maxHeight"
+            defaultValue="none"
+            className="col-span-2 h-8"
+          />
+        </div>
+      </div>
+    </div>
+  </PopoverContent>
+</Popover>
+```

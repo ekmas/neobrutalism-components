@@ -2,70 +2,32 @@
 
 ### via Shadcn cli
 
-<Tabs defaultValue="css-vars" className="w-full">
-  <TabsList className="grid w-full grid-cols-2">
-    <TabsTrigger value="css-vars">CSS Variables</TabsTrigger>
-    <TabsTrigger value="util">Utility classes</TabsTrigger>
+<Tabs defaultValue="pnpm" className="w-full">
+  <TabsList className="grid w-full grid-cols-4">
+    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
+    <TabsTrigger value="npm">npm</TabsTrigger>
+    <TabsTrigger value="yarn">yarn</TabsTrigger>
+    <TabsTrigger value="bun">bun</TabsTrigger>
   </TabsList>
-  <TabsContent value="css-vars">
-    <Tabs defaultValue="pnpm" className="w-full">
-      <TabsList className="grid w-full grid-cols-4">
-        <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-        <TabsTrigger value="npm">npm</TabsTrigger>
-        <TabsTrigger value="yarn">yarn</TabsTrigger>
-        <TabsTrigger value="bun">bun</TabsTrigger>
-      </TabsList>
-      <TabsContent value="pnpm">
-      ```
-      pnpm dlx shadcn@latest add https://neobrutalism.dev/r/card.json
-      ```
-      </TabsContent>
-      <TabsContent value="npm">
-      ```
-      npx shadcn@latest add https://neobrutalism.dev/r/card.json
-      ```
-      </TabsContent>
-      <TabsContent value="yarn">
-      ```
-      npx shadcn@latest add https://neobrutalism.dev/r/card.json
-      ```
-      </TabsContent>
-      <TabsContent value="bun">
-      ```
-      bunx --bun shadcn@latest add https://neobrutalism.dev/r/card.json
-      ```
-      </TabsContent>
-    </Tabs>
+  <TabsContent value="pnpm">
+  ```
+  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/card.json
+  ```
   </TabsContent>
-  <TabsContent value="util">
-    <Tabs defaultValue="pnpm" className="w-full">
-      <TabsList className="grid w-full grid-cols-4">
-        <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-        <TabsTrigger value="npm">npm</TabsTrigger>
-        <TabsTrigger value="yarn">yarn</TabsTrigger>
-        <TabsTrigger value="bun">bun</TabsTrigger>
-      </TabsList>
-      <TabsContent value="pnpm">
-      ```
-      pnpm dlx shadcn@latest add http://util.neobrutalism.dev/r/card.json
-      ```
-      </TabsContent>
-      <TabsContent value="npm">
-      ```
-      npx shadcn@latest add http://util.neobrutalism.dev/r/card.json
-      ```
-      </TabsContent>
-      <TabsContent value="yarn">
-      ```
-      npx shadcn@latest add http://util.neobrutalism.dev/r/card.json
-      ```
-      </TabsContent>
-      <TabsContent value="bun">
-      ```
-      bunx --bun shadcn@latest add http://util.neobrutalism.dev/r/card.json
-      ```
-      </TabsContent>
-    </Tabs>
+  <TabsContent value="npm">
+  ```
+  npx shadcn@latest add https://neobrutalism.dev/r/card.json
+  ```
+  </TabsContent>
+  <TabsContent value="yarn">
+  ```
+  npx shadcn@latest add https://neobrutalism.dev/r/card.json
+  ```
+  </TabsContent>
+  <TabsContent value="bun">
+  ```
+  bunx --bun shadcn@latest add https://neobrutalism.dev/r/card.json
+  ```
   </TabsContent>
 </Tabs>
 
@@ -73,20 +35,8 @@
 
 ### Manually
 
-<Tabs defaultValue="css-vars" className="w-full">
-  <TabsList className="grid w-full grid-cols-2">
-    <TabsTrigger value="css-vars">CSS Variables</TabsTrigger>
-    <TabsTrigger value="util">Utility classes</TabsTrigger>
-  </TabsList>
-  <TabsContent value="css-vars">
-    ```tsx file=<rootDir>/src/components/css-vars/card.tsx title="components/ui/card.tsx"
-    ```
-  </TabsContent>
-  <TabsContent value="util">
-    ```tsx file=<rootDir>/src/components/ui/card.tsx title="components/ui/card.tsx"
-    ```
-  </TabsContent>
-</Tabs>
+```tsx file=<rootDir>/src/components/ui/card.tsx title="components/ui/card.tsx"
+```
 
 <br />
 
@@ -115,88 +65,39 @@ import {
 
 <br />
 
-<Tabs defaultValue="css-vars" className="w-full">
-  <TabsList className="grid w-full grid-cols-2">
-    <TabsTrigger value="css-vars">CSS Variables</TabsTrigger>
-    <TabsTrigger value="util">Utility classes</TabsTrigger>
-  </TabsList>
-  <TabsContent value="css-vars">
-    ```tsx
-    <Card className="w-[350px]">
-      <CardHeader>
-        <CardTitle>Create project</CardTitle>
-        <CardDescription>Deploy your new project in one-click.</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <form>
-          <div className="grid w-full items-center gap-4">
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" placeholder="Name of your project" />
-            </div>
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="framework">Framework</Label>
-              <Select>
-                <SelectTrigger className="bg-bw text-text" id="framework">
-                  <SelectValue placeholder="Select" />
-                </SelectTrigger>
-                <SelectContent position="popper">
-                  <SelectItem value="next">Next.js</SelectItem>
-                  <SelectItem value="sveltekit">SvelteKit</SelectItem>
-                  <SelectItem value="astro">Astro</SelectItem>
-                  <SelectItem value="nuxt">Nuxt.js</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-          </div>
-        </form>
-      </CardContent>
-      <CardFooter className="flex justify-between">
-        <Button>Cancel</Button>
-        <Button variant="neutral">Deploy</Button>
-      </CardFooter>
-    </Card>
-    ```
-  </TabsContent>
-  <TabsContent value="util">
-    ```tsx
-    <Card className="w-[350px]">
-      <CardHeader>
-        <CardTitle>Create project</CardTitle>
-        <CardDescription>Deploy your new project in one-click.</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <form>
-          <div className="grid w-full items-center gap-4">
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" placeholder="Name of your project" />
-            </div>
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="framework">Framework</Label>
-              <Select>
-                <SelectTrigger
-                  className="bg-white text-black dark:bg-secondaryBlack dark:text-darkText"
-                  id="framework"
-                >
-                  <SelectValue placeholder="Select" />
-                </SelectTrigger>
-                <SelectContent position="popper">
-                  <SelectItem value="next">Next.js</SelectItem>
-                  <SelectItem value="sveltekit">SvelteKit</SelectItem>
-                  <SelectItem value="astro">Astro</SelectItem>
-                  <SelectItem value="nuxt">Nuxt.js</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-          </div>
-        </form>
-      </CardContent>
-      <CardFooter className="flex justify-between">
-        <Button>Cancel</Button>
-        <Button variant="neutral">Deploy</Button>
-      </CardFooter>
-    </Card>
-    ```    
-  </TabsContent>
-</Tabs>
+```tsx
+<Card className="w-[350px]">
+  <CardHeader>
+    <CardTitle>Create project</CardTitle>
+    <CardDescription>Deploy your new project in one-click.</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <form>
+      <div className="grid w-full items-center gap-4">
+        <div className="flex flex-col space-y-1.5">
+          <Label htmlFor="name">Name</Label>
+          <Input id="name" placeholder="Name of your project" />
+        </div>
+        <div className="flex flex-col space-y-1.5">
+          <Label htmlFor="framework">Framework</Label>
+          <Select>
+            <SelectTrigger id="framework">
+              <SelectValue placeholder="Select" />
+            </SelectTrigger>
+            <SelectContent position="popper">
+              <SelectItem value="next">Next.js</SelectItem>
+              <SelectItem value="sveltekit">SvelteKit</SelectItem>
+              <SelectItem value="astro">Astro</SelectItem>
+              <SelectItem value="nuxt">Nuxt.js</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+      </div>
+    </form>
+  </CardContent>
+  <CardFooter className="flex justify-between">
+    <Button>Cancel</Button>
+    <Button variant="neutral">Deploy</Button>
+  </CardFooter>
+</Card>
+```

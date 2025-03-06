@@ -2,70 +2,32 @@
 
 ### via Shadcn cli
 
-<Tabs defaultValue="css-vars" className="w-full">
-  <TabsList className="grid w-full grid-cols-2">
-    <TabsTrigger value="css-vars">CSS Variables</TabsTrigger>
-    <TabsTrigger value="util">Utility classes</TabsTrigger>
+<Tabs defaultValue="pnpm" className="w-full">
+  <TabsList className="grid w-full grid-cols-4">
+    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
+    <TabsTrigger value="npm">npm</TabsTrigger>
+    <TabsTrigger value="yarn">yarn</TabsTrigger>
+    <TabsTrigger value="bun">bun</TabsTrigger>
   </TabsList>
-  <TabsContent value="css-vars">
-    <Tabs defaultValue="pnpm" className="w-full">
-      <TabsList className="grid w-full grid-cols-4">
-        <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-        <TabsTrigger value="npm">npm</TabsTrigger>
-        <TabsTrigger value="yarn">yarn</TabsTrigger>
-        <TabsTrigger value="bun">bun</TabsTrigger>
-      </TabsList>
-      <TabsContent value="pnpm">
-      ```
-      pnpm dlx shadcn@latest add https://neobrutalism.dev/r/context-menu.json
-      ```
-      </TabsContent>
-      <TabsContent value="npm">
-      ```
-      npx shadcn@latest add https://neobrutalism.dev/r/context-menu.json
-      ```
-      </TabsContent>
-      <TabsContent value="yarn">
-      ```
-      npx shadcn@latest add https://neobrutalism.dev/r/context-menu.json
-      ```
-      </TabsContent>
-      <TabsContent value="bun">
-      ```
-      bunx --bun shadcn@latest add https://neobrutalism.dev/r/context-menu.json
-      ```
-      </TabsContent>
-    </Tabs>
+  <TabsContent value="pnpm">
+  ```
+  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/carousel.json
+  ```
   </TabsContent>
-  <TabsContent value="util">
-    <Tabs defaultValue="pnpm" className="w-full">
-      <TabsList className="grid w-full grid-cols-4">
-        <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-        <TabsTrigger value="npm">npm</TabsTrigger>
-        <TabsTrigger value="yarn">yarn</TabsTrigger>
-        <TabsTrigger value="bun">bun</TabsTrigger>
-      </TabsList>
-      <TabsContent value="pnpm">
-      ```
-      pnpm dlx shadcn@latest add http://util.neobrutalism.dev/r/context-menu.json
-      ```
-      </TabsContent>
-      <TabsContent value="npm">
-      ```
-      npx shadcn@latest add http://util.neobrutalism.dev/r/context-menu.json
-      ```
-      </TabsContent>
-      <TabsContent value="yarn">
-      ```
-      npx shadcn@latest add http://util.neobrutalism.dev/r/context-menu.json
-      ```
-      </TabsContent>
-      <TabsContent value="bun">
-      ```
-      bunx --bun shadcn@latest add http://util.neobrutalism.dev/r/context-menu.json
-      ```
-      </TabsContent>
-    </Tabs>
+  <TabsContent value="npm">
+  ```
+  npx shadcn@latest add https://neobrutalism.dev/r/carousel.json
+  ```
+  </TabsContent>
+  <TabsContent value="yarn">
+  ```
+  npx shadcn@latest add https://neobrutalism.dev/r/carousel.json
+  ```
+  </TabsContent>
+  <TabsContent value="bun">
+  ```
+  bunx --bun shadcn@latest add https://neobrutalism.dev/r/carousel.json
+  ```
   </TabsContent>
 </Tabs>
 
@@ -73,20 +35,8 @@
 
 ### Manually
 
-<Tabs defaultValue="css-vars" className="w-full">
-  <TabsList className="grid w-full grid-cols-2">
-    <TabsTrigger value="css-vars">CSS Variables</TabsTrigger>
-    <TabsTrigger value="util">Utility classes</TabsTrigger>
-  </TabsList>
-  <TabsContent value="css-vars">
-    ```tsx file=<rootDir>/src/components/css-vars/context-menu.tsx title="components/ui/context-menu.tsx"
-    ```
-  </TabsContent>
-  <TabsContent value="util">
-    ```tsx file=<rootDir>/src/components/ui/context-menu.tsx title="components/ui/context-menu.tsx"
-    ```
-  </TabsContent>
-</Tabs>
+```tsx file=<rootDir>/src/components/ui/context-menu.tsx title="components/ui/context-menu.tsx"
+```
 
 <br />
 
@@ -112,111 +62,52 @@ import {
 
 <br />
 
-<Tabs defaultValue="css-vars" className="w-full">
-  <TabsList className="grid w-full grid-cols-2">
-    <TabsTrigger value="css-vars">CSS Variables</TabsTrigger>
-    <TabsTrigger value="util">Utility classes</TabsTrigger>
-  </TabsList>
-  <TabsContent value="css-vars">
-    ```tsx
-    <ContextMenu>
-      <ContextMenuTrigger className="flex h-[150px] w-[300px] items-center justify-center rounded-md border border-text border-dashed text-sm font-base">
-        Right click here
-      </ContextMenuTrigger>
-      <ContextMenuContent className="w-64">
-        <ContextMenuItem inset>
-          Back
-          <ContextMenuShortcut>⌘[</ContextMenuShortcut>
+```tsx
+<ContextMenu>
+  <ContextMenuTrigger className="flex h-[150px] w-[300px] items-center justify-center rounded-md border border-text border-dashed text-sm font-base">
+    Right click here
+  </ContextMenuTrigger>
+  <ContextMenuContent className="w-64">
+    <ContextMenuItem inset>
+      Back
+      <ContextMenuShortcut>⌘[</ContextMenuShortcut>
+    </ContextMenuItem>
+    <ContextMenuItem inset disabled>
+      Forward
+      <ContextMenuShortcut>⌘]</ContextMenuShortcut>
+    </ContextMenuItem>
+    <ContextMenuItem inset>
+      Reload
+      <ContextMenuShortcut>⌘R</ContextMenuShortcut>
+    </ContextMenuItem>
+    <ContextMenuSub>
+      <ContextMenuSubTrigger inset>More Tools</ContextMenuSubTrigger>
+      <ContextMenuSubContent className="w-48">
+        <ContextMenuItem>
+          Save Page As...
+          <ContextMenuShortcut>⇧⌘S</ContextMenuShortcut>
         </ContextMenuItem>
-        <ContextMenuItem inset disabled>
-          Forward
-          <ContextMenuShortcut>⌘]</ContextMenuShortcut>
-        </ContextMenuItem>
-        <ContextMenuItem inset>
-          Reload
-          <ContextMenuShortcut>⌘R</ContextMenuShortcut>
-        </ContextMenuItem>
-        <ContextMenuSub>
-          <ContextMenuSubTrigger inset>More Tools</ContextMenuSubTrigger>
-          <ContextMenuSubContent className="w-48">
-            <ContextMenuItem>
-              Save Page As...
-              <ContextMenuShortcut>⇧⌘S</ContextMenuShortcut>
-            </ContextMenuItem>
-            <ContextMenuItem>Create Shortcut...</ContextMenuItem>
-            <ContextMenuItem>Name Window...</ContextMenuItem>
-            <ContextMenuSeparator />
-            <ContextMenuItem>Developer Tools</ContextMenuItem>
-          </ContextMenuSubContent>
-        </ContextMenuSub>
+        <ContextMenuItem>Create Shortcut...</ContextMenuItem>
+        <ContextMenuItem>Name Window...</ContextMenuItem>
         <ContextMenuSeparator />
-        <ContextMenuCheckboxItem checked>
-          Show Bookmarks Bar
-          <ContextMenuShortcut>⌘⇧B</ContextMenuShortcut>
-        </ContextMenuCheckboxItem>
-        <ContextMenuCheckboxItem>Show Full URLs</ContextMenuCheckboxItem>
-        <ContextMenuSeparator />
-        <ContextMenuRadioGroup value="pedro">
-          <ContextMenuLabel inset>People</ContextMenuLabel>
-          <ContextMenuSeparator />
-          <ContextMenuRadioItem value="pedro">
-            Pedro Duarte
-          </ContextMenuRadioItem>
-          <ContextMenuRadioItem value="colm">Colm Tuite</ContextMenuRadioItem>
-        </ContextMenuRadioGroup>
-      </ContextMenuContent>
-    </ContextMenu>
-    ```
-  </TabsContent>
-  <TabsContent value="util">
-    ```tsx
-    <ContextMenu>
-      <ContextMenuTrigger className="flex h-[150px] w-[300px] items-center justify-center rounded-md border border-border dark:border-darkText border-dashed text-sm font-base">
-        Right click here
-      </ContextMenuTrigger>
-      <ContextMenuContent className="w-64">
-        <ContextMenuItem inset>
-          Back
-          <ContextMenuShortcut>⌘[</ContextMenuShortcut>
-        </ContextMenuItem>
-        <ContextMenuItem inset disabled>
-          Forward
-          <ContextMenuShortcut>⌘]</ContextMenuShortcut>
-        </ContextMenuItem>
-        <ContextMenuItem inset>
-          Reload
-          <ContextMenuShortcut>⌘R</ContextMenuShortcut>
-        </ContextMenuItem>
-        <ContextMenuSub>
-          <ContextMenuSubTrigger inset>More Tools</ContextMenuSubTrigger>
-          <ContextMenuSubContent className="w-48">
-            <ContextMenuItem>
-              Save Page As...
-              <ContextMenuShortcut>⇧⌘S</ContextMenuShortcut>
-            </ContextMenuItem>
-            <ContextMenuItem>Create Shortcut...</ContextMenuItem>
-            <ContextMenuItem>Name Window...</ContextMenuItem>
-            <ContextMenuSeparator />
-            <ContextMenuItem>Developer Tools</ContextMenuItem>
-          </ContextMenuSubContent>
-        </ContextMenuSub>
-        <ContextMenuSeparator />
-        <ContextMenuCheckboxItem checked>
-          Show Bookmarks Bar
-          <ContextMenuShortcut>⌘⇧B</ContextMenuShortcut>
-        </ContextMenuCheckboxItem>
-        <ContextMenuCheckboxItem>Show Full URLs</ContextMenuCheckboxItem>
-        <ContextMenuSeparator />
-        <ContextMenuRadioGroup value="pedro">
-          <ContextMenuLabel inset>People</ContextMenuLabel>
-          <ContextMenuSeparator />
-          <ContextMenuRadioItem value="pedro">
-            Pedro Duarte
-          </ContextMenuRadioItem>
-          <ContextMenuRadioItem value="colm">Colm Tuite</ContextMenuRadioItem>
-        </ContextMenuRadioGroup>
-      </ContextMenuContent>
-    </ContextMenu>
-    ```
-  </TabsContent>
-</Tabs>
+        <ContextMenuItem>Developer Tools</ContextMenuItem>
+      </ContextMenuSubContent>
+    </ContextMenuSub>
+    <ContextMenuSeparator />
+    <ContextMenuCheckboxItem checked>
+      Show Bookmarks Bar
+      <ContextMenuShortcut>⌘⇧B</ContextMenuShortcut>
+    </ContextMenuCheckboxItem>
+    <ContextMenuCheckboxItem>Show Full URLs</ContextMenuCheckboxItem>
+    <ContextMenuSeparator />
+    <ContextMenuRadioGroup value="pedro">
+      <ContextMenuLabel inset>People</ContextMenuLabel>
+      <ContextMenuSeparator />
+      <ContextMenuRadioItem value="pedro">
+        Pedro Duarte
+      </ContextMenuRadioItem>
+      <ContextMenuRadioItem value="colm">Colm Tuite</ContextMenuRadioItem>
+    </ContextMenuRadioGroup>
+  </ContextMenuContent>
+</ContextMenu>
+```
