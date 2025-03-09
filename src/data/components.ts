@@ -37,11 +37,11 @@ import SelectMarkdown from "@/markdown/components/select.mdx"
 import SheetMarkdown from "@/markdown/components/sheet.mdx"
 import SkeletonMarkdown from "@/markdown/components/skeleton.mdx"
 import SliderMarkdown from "@/markdown/components/slider.mdx"
+import SonnerMarkdown from "@/markdown/components/sonner.mdx"
 import SwitchMarkdown from "@/markdown/components/switch.mdx"
 import TableMarkdown from "@/markdown/components/table.mdx"
 import TabsMarkdown from "@/markdown/components/tabs.mdx"
 import TextareaMarkdown from "@/markdown/components/textarea.mdx"
-import ToastMarkdown from "@/markdown/components/toast.mdx"
 import TooltipMarkdown from "@/markdown/components/tooltip.mdx"
 
 import AccordionDemo from "@/components/examples/ui/accordion"
@@ -83,11 +83,11 @@ import SelectDemo from "@/components/examples/ui/select"
 import SheetDemo from "@/components/examples/ui/sheet"
 import SkeletonDemo from "@/components/examples/ui/skeleton"
 import SliderDemo from "@/components/examples/ui/slider"
+import SonnerDemo from "@/components/examples/ui/sonner"
 import SwitchDemo from "@/components/examples/ui/switch"
 import TableDemo from "@/components/examples/ui/table"
 import TabsDemo from "@/components/examples/ui/tabs"
 import TextareaDemo from "@/components/examples/ui/textarea"
-import ToastDemo from "@/components/examples/ui/toast"
 import TooltipDemo from "@/components/examples/ui/tooltip"
 
 type Component = {
@@ -372,13 +372,20 @@ const COMPONENTS: Component[] = [
     markdown: SliderMarkdown,
     exampleComponent: SliderDemo,
     prevComponent: "skeleton",
+    nextComponent: "sonner",
+  },
+  {
+    name: "Sonner",
+    markdown: SonnerMarkdown,
+    exampleComponent: SonnerDemo,
+    prevComponent: "slider",
     nextComponent: "switch",
   },
   {
     name: "Switch",
     markdown: SwitchMarkdown,
     exampleComponent: SwitchDemo,
-    prevComponent: "slider",
+    prevComponent: "sonner",
     nextComponent: "table",
   },
   {
@@ -400,20 +407,13 @@ const COMPONENTS: Component[] = [
     markdown: TextareaMarkdown,
     exampleComponent: TextareaDemo,
     prevComponent: "tabs",
-    nextComponent: "toast",
-  },
-  {
-    name: "Toast",
-    markdown: ToastMarkdown,
-    exampleComponent: ToastDemo,
-    prevComponent: "textarea",
     nextComponent: "tooltip",
   },
   {
     name: "Tooltip",
     markdown: TooltipMarkdown,
     exampleComponent: TooltipDemo,
-    prevComponent: "toast",
+    prevComponent: "textarea",
   },
 ]
 

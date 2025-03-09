@@ -1,0 +1,67 @@
+## Installation
+
+### via Shadcn cli
+
+<Tabs defaultValue="pnpm" className="w-full">
+  <TabsList className="grid w-full grid-cols-4">
+    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
+    <TabsTrigger value="npm">npm</TabsTrigger>
+    <TabsTrigger value="yarn">yarn</TabsTrigger>
+    <TabsTrigger value="bun">bun</TabsTrigger>
+  </TabsList>
+  <TabsContent value="pnpm">
+  ```
+  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/sonner.json
+  ```
+  </TabsContent>
+  <TabsContent value="npm">
+  ```
+  npx shadcn@latest add https://neobrutalism.dev/r/sonner.json
+  ```
+  </TabsContent>
+  <TabsContent value="yarn">
+  ```
+  npx shadcn@latest add https://neobrutalism.dev/r/sonner.json
+  ```
+  </TabsContent>
+  <TabsContent value="bun">
+  ```
+  bunx --bun shadcn@latest add https://neobrutalism.dev/r/sonner.json
+  ```
+  </TabsContent>
+</Tabs>
+
+<br />
+
+### Manually
+
+```tsx file=<rootDir>/src/components/ui/sonner.tsx title="components/ui/sonner.tsx"
+```
+
+<br />
+
+## Usage
+
+```ts
+import { toast } from "sonner"
+
+import { Button } from "@/components/ui/button"
+```
+
+<br />
+
+```tsx
+<Button
+  onClick={() =>
+    toast("Event has been created", {
+      description: "Sunday, December 03, 2023 at 9:00 AM",
+      action: {
+        label: "Undo",
+        onClick: () => console.log("Undo"),
+      },
+    })
+  }
+>
+  Show Toast
+</Button>
+```

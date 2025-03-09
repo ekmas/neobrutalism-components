@@ -10,7 +10,7 @@ import Navbar from "@/components/app/Navbar"
 import ScrollToTop from "@/components/app/ScrollToTop"
 import SetStylingPref from "@/components/app/SetStylingPref"
 import { ThemeProvider } from "@/components/app/ThemeProvider"
-import { Toaster } from "@/components/ui/toaster"
+import { Toaster } from "@/components/ui/sonner"
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -72,9 +72,9 @@ export default function RootLayout({
           {children}
           <div id="drawer"></div>
           <div id="modal"></div>
-          <Toaster />
           <SetStylingPref />
           <ScrollToTop />
+          <Toaster />
           <div className="hidden">
             <ECInit />
           </div>
