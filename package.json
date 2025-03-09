@@ -74,6 +74,7 @@
     "rehype-expressive-code": "^0.35.2",
     "remark-code-import": "^1.2.0",
     "shadcn": "2.2.0-canary.3",
+    "sonner": "^2.0.1",
     "tailwind-merge": "^3.0.2",
     "tailwindcss": "4.0.9",
     "tailwindcss-animate": "^1.0.7",
