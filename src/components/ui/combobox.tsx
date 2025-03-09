@@ -1,6 +1,5 @@
 "use client"
 
-import { CommandList } from "cmdk"
 import { Check, ChevronsUpDown } from "lucide-react"
 
 import * as React from "react"
@@ -44,7 +43,7 @@ const frameworks = [
   },
 ]
 
-export function ComboboxDemo() {
+function ComboboxDemo() {
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState("")
 
@@ -60,37 +59,37 @@ export function ComboboxDemo() {
           {value
             ? frameworks.find((framework) => framework.value === value)?.label
             : "Select framework..."}
-          <ChevronsUpDown color="black" className="ml-2 h-4 w-4 shrink-0" />
+          <ChevronsUpDown className="ml-2 size-4 shrink-0" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] border-0! p-0 font-base">
         <Command>
-          <CommandList>
-            <CommandInput placeholder="Search framework..." />
-            <CommandEmpty>No framework found.</CommandEmpty>
-            <CommandGroup>
-              {frameworks.map((framework) => (
-                <CommandItem
-                  key={framework.value}
-                  value={framework.value}
-                  onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue)
-                    setOpen(false)
-                  }}
-                >
-                  <Check
-                    className={cn(
-                      "mr-2 h-4 w-4",
-                      value === framework.value ? "opacity-100" : "opacity-0",
-                    )}
-                  />
-                  {framework.label}
-                </CommandItem>
-              ))}
-            </CommandGroup>
-          </CommandList>
+          <CommandInput placeholder="Search framework..." />
+          <CommandEmpty>No framework found.</CommandEmpty>
+          <CommandGroup>
+            {frameworks.map((framework) => (
+              <CommandItem
+                key={framework.value}
+                value={framework.value}
+                onSelect={(currentValue) => {
+                  setValue(currentValue === value ? "" : currentValue)
+                  setOpen(false)
+                }}
+              >
+                <Check
+                  className={cn(
+                    "mr-2 size-4",
+                    value === framework.value ? "opacity-100" : "opacity-0",
+                  )}
+                />
+                {framework.label}
+              </CommandItem>
+            ))}
+          </CommandGroup>
         </Command>
       </PopoverContent>
     </Popover>
   )
 }
+
+export { ComboboxDemo }

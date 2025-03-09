@@ -15,7 +15,7 @@ import {
 
 import { cn } from "@/lib/utils"
 
-export default function DatePickerDemo() {
+function DatePickerDemo() {
   const [date, setDate] = React.useState<Date>()
 
   return (
@@ -25,15 +25,11 @@ export default function DatePickerDemo() {
           variant="noShadow"
           className={cn(
             "w-[280px] justify-start text-left font-base",
-            !date && "text-muted-foreground",
+            !date && "text-mtext",
           )}
         >
-          <CalendarIcon className="mr-2 h-4 w-4 text-mtext" />
-          {date ? (
-            format(date, "PPP")
-          ) : (
-            <span className="text-mtext">Pick a date</span>
-          )}
+          <CalendarIcon className="mr-2 size-4 text-mtext" />
+          {date ? format(date, "PPP") : <span>Pick a date</span>}
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-auto border-0! p-0">
@@ -47,3 +43,5 @@ export default function DatePickerDemo() {
     </Popover>
   )
 }
+
+export { DatePickerDemo }

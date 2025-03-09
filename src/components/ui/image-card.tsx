@@ -1,7 +1,7 @@
 type Props = {
-  imageUrl: string
-  caption: string
-}
+  imageUrl: string;
+  caption: string;
+};
 
 export default function ImageCard({ imageUrl, caption }: Props) {
   return (
@@ -11,5 +11,5 @@ export default function ImageCard({ imageUrl, caption }: Props) {
         {caption}
       </figcaption>
     </figure>
-  )
+  );
 }

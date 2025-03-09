@@ -7,7 +7,7 @@ export default function Marquee({ items }: { items: string[] }) {
             <span key={item} className="mx-4 text-4xl">
               {item}
             </span>
-          )
+          );
         })}
       </div>
 
@@ -17,11 +17,11 @@ export default function Marquee({ items }: { items: string[] }) {
             <span key={item} className="mx-4 text-4xl">
               {item}
             </span>
-          )
+          );
         })}
       </div>
 
       {/* must have both of these in order to work */}
     </div>
-  )
+  );
 }
