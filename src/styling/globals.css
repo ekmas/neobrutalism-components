@@ -6,20 +6,18 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --bg: #dfe5f2;
+  --bw: #fff;
+  --blank: #000;
+  --border: #000;
+  --text: #000;
+  --mtext: #000;
+  --ring: #000;
+  --ring-offset: #fff;
+
   --main: #88aaee;
   --main50: #88aaeeb3;
-
-  --bg: #dfe5f2;
-  --border: #000;
-
-  --dark-bg: #272933;
-  --dark-border: #000;
-
-  --border-radius: 5px;
-  --horizontal-box-shadow: 4px;
-  --vertical-box-shadow: 4px;
-  --heading-font-weight: 700;
-  --base-font-weight: 500;
+  --overlay: rgba(0, 0, 0, 0.8);
 
   --border-radius: 5px;
   --box-shadow-x: 4px;
@@ -30,17 +28,30 @@
   --shadow: var(--box-shadow-x) var(--box-shadow-y) 0px 0px var(--border);
 }
 
+.dark {
+  --bg: #272933;
+  --bw: #212121;
+  --blank: #fff;
+  --border: #000;
+  --text: #e6e6e6;
+  --mtext: #000;
+  --ring: #fff;
+  --ring-offset: #000;
+
+  --shadow: var(--box-shadow-x) var(--box-shadow-y) 0px 0px var(--border);
+}
+
 @theme inline {
-  --color-main: #88aaee;
-  --color-main50: #88aaeeb3;
-  --color-bg: #dfe5f2;
-  --color-darkBg: #272933;
-  --color-border: #000;
-  --color-darkBorder: #000;
-  --color-overlay: rgba(0, 0, 0, 0.8);
-  --color-text: #000;
-  --color-darkText: #e6e6e6;
-  --color-secondaryBlack: #212121;
+  --color-main: var(--main);
+  --color-main50: var(--main50);
+  --color-bg: var(--bg);
+  --color-bw: var(--bw);
+  --color-blank: var(--blank);
+  --color-border: var(--border);
+  --color-overlay: var(--overlay);
+  --color-text: var(--text);
+  --color-mtext: var(--mtext);
+  --color-secondaryBlack: #1c1c1c;
 
   --spacing-boxShadowX: var(--box-shadow-x);
   --spacing-boxShadowY: var(--box-shadow-y);
@@ -49,9 +60,7 @@
 
   --radius-base: var(--border-radius);
 
-  --shadow-light: var(--box-shadow-x) var(--box-shadow-y) 0px 0px var(--border);
-  --shadow-dark: var(--box-shadow-x) var(--box-shadow-y) 0px 0px
-    var(--dark-border);
+  --shadow-shadow: var(--shadow);
   --shadow-nav: 4px 4px 0px 0px var(--border);
   --shadow-darkNav: 4px 4px 0px 0px var(--dark-border);
 
@@ -65,6 +74,8 @@
   --animate-caret-blink: caret-blink 1.25s ease-out infinite;
 
   --spacing-container: 1300px;
+
+  --font-toast: "DM Sans", sans-serif;
 
   --breakpoint-m1600: max-width: 1600px;
   --breakpoint-m1500: max-width: 1500px;
@@ -151,7 +162,7 @@ body,
 
 html.dark body,
 html.dark .scrollbar {
-  --sb-track-color: #212121;
+  --sb-track-color: #1c1c1c;
   --sb-thumb-color: #e6e6e6;
 }
 
