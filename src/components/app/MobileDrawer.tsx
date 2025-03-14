@@ -50,9 +50,8 @@ export default function MobileDrawer() {
                   handleLinkClick(item.href)
                 }}
                 className={cn(
-                  "sidebaritem block w-full border-b-4 border-r-4 border-border dark:border-darkBorder p-4 pl-7 text-left text-lg font-base text-black/90 dark:text-darkText/90 hover:bg-main50 dark:hover:text-text m800:p-4 m800:pl-6 m800:text-base",
-                  item.href === pathname &&
-                    "bg-main dark:text-text hover:bg-main",
+                  "sidebaritem block w-full border-b-4 border-r-4 border-border dark:border-darkBorder p-4 pl-7 text-left text-lg font-base text-black/90 hover:bg-main50 dark:hover:text-mtext m800:p-4 m800:pl-6 m800:text-base",
+                  item.href === pathname && "bg-main text-mtext hover:bg-main",
                 )}
               >
                 {item.text}
