@@ -4,7 +4,7 @@ import COMPONENTS from "./components"
 
 const COMPONENTS_LINKS = COMPONENTS.map((component) => {
   return {
-    href: `/components/${transformToSlug(component.name)}`,
+    href: `/docs/${transformToSlug(component.name)}`,
     text: component.name,
   }
 })
@@ -17,10 +17,6 @@ const GETTING_STARTED_LINKS = [
   {
     href: "/docs/installation",
     text: "Installation",
-  },
-  {
-    href: "/docs/styling",
-    text: "Styling",
   },
   {
     href: "/docs/resources",
@@ -57,10 +53,6 @@ const MAIN_SIDEBAR = [
   {
     href: "/docs/installation",
     text: "Installation",
-  },
-  {
-    href: "/docs/styling",
-    text: "Styling",
   },
   {
     href: "/docs/resources",

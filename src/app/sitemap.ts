@@ -8,13 +8,14 @@ const root = "https://www.neobrutalism.dev"
 
 const DOCS_PAGES = [
   "/docs",
-  "/docs/styling",
   "/docs/resources",
   "/docs/figma",
   "/docs/changelog",
   "/docs/installation",
+  "/docs/stars",
   "/templates",
   "/showcase",
+  "/stars",
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -30,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     })),
     ...COMPONENTS.map((page) => ({
-      url: root + "/components/" + transformToSlug(page.name),
+      url: root + "/docs/" + transformToSlug(page.name),
       lastModified: new Date(),
       priority: 0.8,
     })),
