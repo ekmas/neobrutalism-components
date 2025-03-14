@@ -1,44 +1,17 @@
+---
+title: Card
+description: Displays a card with header, content, and footer.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/card
+---
+
+<ComponentPreview component="card" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="card">
+  ```tsx file=<rootDir>/src/components/ui/card.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/card.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/card.json
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/card.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/card.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/card.tsx title="components/ui/card.tsx"
-```
-
-<br />
+</Installation>
 
 ## Usage
 
@@ -62,8 +35,6 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 ```
-
-<br />
 
 ```tsx
 <Card className="w-[350px]">

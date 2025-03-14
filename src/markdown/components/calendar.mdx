@@ -1,44 +1,17 @@
+---
+title: Calendar
+description: A date field component that allows users to enter and edit date.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/calendar
+---
+
+<ComponentPreview component="calendar" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="calendar">
+  ```tsx file=<rootDir>/src/components/ui/calendar.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/calendar.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/calendar.json
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/calendar.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/calendar.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/calendar.tsx title="components/ui/calendar.tsx"
-```
-
-<br />
+</Installation>
 
 ## Usage
 
@@ -48,13 +21,9 @@ import { useState } from 'react'
 import { Calendar } from '@/components/ui/calendar'
 ```
 
-<br />
-
 ```tsx
 const [date, setDate] = useState<Date | undefined>(new Date())
 ```
-
-<br />
 
 ```tsx
 <Calendar mode="single" selected={date} onSelect={setDate} />

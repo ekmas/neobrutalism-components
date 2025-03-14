@@ -1,52 +1,23 @@
+---
+title: Scroll Area
+description: Augments native scroll functionality for custom, cross-browser styling.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/scroll-area
+---
+
+<ComponentPreview component="scroll-area" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="scroll-area">
+  ```tsx file=<rootDir>/src/components/ui/scroll-area.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/scroll-area.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/scroll-area.json
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/scroll-area.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/scroll-area.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/scroll-area.tsx title="components/ui/scroll-area.tsx"
-```
-
-<br />
+</Installation>
 
 ## Usage
 
 ```ts
 import { ScrollArea } from '@/components/ui/scroll-area'
 ```
-
-<br />
 
 ```tsx
 <ScrollArea className="rounded-base h-[200px] w-[350px] text-mtext border-2 border-border bg-main p-4 shadow-shadow">

@@ -1,44 +1,17 @@
+---
+title: Alert
+description: Displays a callout for user attention.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/alert
+---
+
+<ComponentPreview component="alert" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="alert">
+  ```tsx file=<rootDir>/src/components/ui/alert.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/alert.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/alert.json
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/alert.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/alert.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/alert.tsx title="components/ui/alert.tsx"
-```
-
-<br />
+</Installation>
 
 ## Usage
 
@@ -47,8 +20,6 @@ import { Terminal } from 'lucide-react'
 
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 ```
-
-<br />
 
 ```tsx
 <Alert>

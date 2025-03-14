@@ -1,44 +1,17 @@
+---
+title: Form
+description: Building forms with React Hook Form and Zod.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/form
+---
+
+<ComponentPreview component="form" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="form">
+  ```tsx file=<rootDir>/src/components/ui/form.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/form.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/form.json
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/form.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/form.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/form.tsx title="components/ui/form.tsx"
-```
-
-<br />
+</Installation>
 
 ## Usage
 
@@ -60,8 +33,6 @@ import {
 import { Input } from '@/components/ui/input'
 ```
 
-<br />
-
 ```ts
 const formSchema = z.object({
   username: z.string().min(2, {
@@ -80,8 +51,6 @@ function onSubmit(values: z.infer<typeof formSchema>) {
   console.log(values);
 }
 ```
-
-<br />
 
 ```tsx
 <Form {...form}>

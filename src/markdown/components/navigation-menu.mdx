@@ -1,52 +1,23 @@
+---
+title: "Navigation Menu"
+description: A collection of links for site navigation.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/navigation-menu
+---
+
+<ComponentPreview component="navigation-menu" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="navigation-menu">
+  ```tsx file=<rootDir>/src/components/ui/navigation-menu.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/navigation-menu.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/navigation-menu.json
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/navigation-menu.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/navigation-menu.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/navigation-menu.tsx title="components/ui/navigation-menu.tsx"
-```
-
-<br />
+</Installation>
 
 ## Usage
 
 Here is the whole navigation-menu component:
 
-<br />
-
-```tsx title="components/ui/navigation-menu.tsx"
+```tsx
 'use client'
 
 import * as React from 'react'
@@ -205,4 +176,3 @@ const ListItem = React.forwardRef<
   )
 })
 ListItem.displayName = 'ListItem'
-```

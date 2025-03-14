@@ -1,52 +1,23 @@
+---
+title: Slider
+description: An input where the user selects a value from within a given range.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/slider
+---
+
+<ComponentPreview component="slider" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="slider">
+  ```tsx file=<rootDir>/src/components/ui/slider.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/slider.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/slider.json
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/slider.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/slider.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/slider.tsx title="components/ui/slider.tsx"
-```
-
-<br />
+</Installation>
 
 ## Usage
 
 ```ts
 import { Slider } from '@/components/ui/slider'
 ```
-
-<br />
 
 ```tsx
 <Slider defaultValue={[33]} max={100} step={1} />

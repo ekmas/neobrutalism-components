@@ -1,44 +1,17 @@
+---
+title: Tabs
+description: A set of layered sections of content that display one panel at a time.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/tabs
+---
+
+<ComponentPreview component="tabs" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="tabs">
+  ```tsx file=<rootDir>/src/components/ui/tabs.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/tabs.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/tabs.json
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/tabs.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/tabs.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/tabs.tsx title="components/ui/tabs.tsx"
-```
-
-<br />
+</Installation>
 
 ## Usage
 
@@ -56,8 +29,6 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 ```
-
-<br />
 
 ```tsx
 <Tabs defaultValue="account" className="w-[400px]">

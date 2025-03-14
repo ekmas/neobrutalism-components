@@ -1,52 +1,23 @@
+---
+title: Skeleton
+description: Use to show a placeholder while content is loading.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/skeleton
+---
+
+<ComponentPreview component="skeleton" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="skeleton">
+  ```tsx file=<rootDir>/src/components/ui/skeleton.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/skeleton.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/skeleton.json
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/skeleton.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/skeleton.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/skeleton.tsx title="components/ui/skeleton.tsx"
-```
-
-<br />
+</Installation>
 
 ## Usage
 
 ```ts
 import { Skeleton } from '@/components/ui/skeleton'
 ```
-
-<br />
 
 ```tsx
 <div className="flex items-center space-x-4">

@@ -1,52 +1,22 @@
+---
+title: Marquee
+description: A scrolling text component that animates horizontally.
+---
+
+<ComponentPreview component="marquee" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="marquee">
+  ```tsx file=<rootDir>/src/components/ui/marquee.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/marquee.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/marquee.json
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/marquee.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/marquee.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/marquee.tsx title="components/ui/marquee.tsx"
-```
-
-<br />
+</Installation>
 
 ## Before using
 
 You'll have to add this to `theme` section inside your tailwind config:
 
-<br />
-
-```tsx title="tailwind.config.js"
+```tsx
 theme: {
   extend: {
     animation: {
@@ -67,13 +37,9 @@ theme: {
 },
 ```
 
-<br />
-
 Make sure there is enough content in items so it loops perfectly.
 
 Visit <a target="_blank" href="https://jackwhiting.co.uk/posts/creating-a-marquee-with-tailwind/">this article</a> to learn more.
-
-<br />
 
 ## Usage
 
@@ -81,13 +47,9 @@ Visit <a target="_blank" href="https://jackwhiting.co.uk/posts/creating-a-marque
 import Marquee from '@/components/ui/marquee'
 ```
 
-<br />
-
 ```ts
 const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5']
 ```
-
-<br />
 
 ```tsx
 <Marquee items={items} />

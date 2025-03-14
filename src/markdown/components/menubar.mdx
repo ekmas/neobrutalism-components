@@ -1,44 +1,17 @@
+---
+title: Menubar
+description: A horizontal navigation bar with clickable menu items.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/menubar
+---
+
+<ComponentPreview component="menubar" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="menubar">
+  ```tsx file=<rootDir>/src/components/ui/menubar.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/menubar.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/menubar.json
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/menubar.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/menubar.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/menubar.tsx title="components/ui/menubar.tsx"
-```
-
-<br />
+</Installation>
 
 ## Usage
 
@@ -59,8 +32,6 @@ import {
   MenubarTrigger,
 } from '@/components/ui/menubar'
 ```
-
-<br />
 
 ```tsx
 <Menubar>

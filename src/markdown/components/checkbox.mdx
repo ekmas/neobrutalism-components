@@ -1,52 +1,23 @@
+---
+title: Checkbox
+description: A control that allows the user to toggle between checked and not checked.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/checkbox
+---
+
+<ComponentPreview component="checkbox" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="checkbox">
+  ```tsx file=<rootDir>/src/components/ui/checkbox.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/checkbox.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/checkbox.json
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/checkbox.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/checkbox.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/checkbox.tsx title="components/ui/checkbox.tsx"
-```
-
-<br />
+</Installation>
 
 ## Usage
 
 ```ts
 import { Checkbox } from '@/components/ui/checkbox'
 ```
-
-<br />
 
 ```tsx
 <Checkbox />

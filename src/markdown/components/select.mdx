@@ -1,44 +1,17 @@
+---
+title: Select
+description: Displays a list of options for the user to pick from.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/select
+---
+
+<ComponentPreview component="select" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="select">
+  ```tsx file=<rootDir>/src/components/ui/select.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/select.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/select.json
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/select.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/select.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/select.tsx title="components/ui/select.tsx"
-```
-
-<br />
+</Installation>
 
 ## Usage
 
@@ -53,8 +26,6 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 ```
-
-<br />
 
 ```tsx
 <Select>

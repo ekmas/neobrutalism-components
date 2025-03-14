@@ -1,44 +1,17 @@
+---
+title: Hover Card
+description: For sighted users to preview content available behind a link.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/hover-card
+---
+
+<ComponentPreview component="hover-card" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="hover-card">
+  ```tsx file=<rootDir>/src/components/ui/hover-card.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/hover-card.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/hover-card.json
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/hover-card.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/hover-card.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/hover-card.tsx title="components/ui/hover-card.tsx"
-```
-
-<br />
+</Installation>
 
 ## Usage
 
@@ -50,8 +23,6 @@ import {
   HoverCardTrigger,
 } from '@/components/ui/hover-card'
 ```
-
-<br />
 
 ```tsx
 <HoverCard>

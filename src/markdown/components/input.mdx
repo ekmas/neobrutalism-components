@@ -1,52 +1,23 @@
+---
+title: Input
+description: Displays a form input field or a component that looks like an input field.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/input
+---
+
+<ComponentPreview component="input" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="input">
+  ```tsx file=<rootDir>/src/components/ui/input.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/input.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/input.json
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/input.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/input.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/input.tsx title="components/ui/input.tsx"
-```
-
-<br />
+</Installation>
 
 ## Usage
 
 ```ts
 import { Input } from '@/components/ui/input'
 ```
-
-<br />
 
 ```tsx
 <Input className="w-[200px]" type="email" placeholder="Email" />

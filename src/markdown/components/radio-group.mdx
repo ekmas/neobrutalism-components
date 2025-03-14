@@ -1,44 +1,17 @@
+---
+title: Radio Group
+description: A set of checkable buttons where only one can be checked at a time.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/radio-group
+---
+
+<ComponentPreview component="radio-group" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="radio-group">
+  ```tsx file=<rootDir>/src/components/ui/radio-group.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/radio-group.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/radio-group.json
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/radio-group.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/radio-group.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/radio-group.tsx title="components/ui/radio-group.tsx"
-```
-
-<br />
+</Installation>
 
 ## Usage
 
@@ -46,8 +19,6 @@
 import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 ```
-
-<br />
 
 ```tsx
 <RadioGroup defaultValue="comfortable">

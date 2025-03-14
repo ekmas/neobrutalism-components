@@ -1,44 +1,17 @@
+---
+title: Popover
+description: Displays floating content in relation to a target element.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/popover
+---
+
+<ComponentPreview component="popover" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="popover">
+  ```tsx file=<rootDir>/src/components/ui/popover.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/popover.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/popover.json 
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/popover.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/popover.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/popover.tsx title="components/ui/popover.tsx"
-```
-
-<br />
+</Installation>
 
 ## Usage
 
@@ -52,8 +25,6 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover'
 ```
-
-<br />
 
 ```tsx
 <Popover>

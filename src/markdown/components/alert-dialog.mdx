@@ -1,44 +1,17 @@
+---
+title: Alert Dialog
+description: A modal dialog that interrupts the user with important content and expects a response.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/alert-dialog
+---
+
+<ComponentPreview component="alert-dialog" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="alert-dialog">
+  ```tsx file=<rootDir>/src/components/ui/alert-dialog.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/alert-dialog.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/alert-dialog.json
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/alert-dialog.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/alert-dialog.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/alert-dialog.tsx title="components/ui/alert-dialog.tsx"
-```
-
-<br />
+</Installation>
 
 ## Usage
 
@@ -56,8 +29,6 @@ import {
 } from '@/components/ui/alert-dialog'
 import { Button } from '@/components/ui/button'
 ```
-
-<br />
 
 ```tsx
 <AlertDialog>

@@ -1,44 +1,17 @@
+---
+title: Pagination
+description: Displays page numbers and controls for navigating paginated data.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/pagination
+---
+
+<ComponentPreview component="pagination" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="pagination">
+  ```tsx file=<rootDir>/src/components/ui/pagination.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/pagination.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/pagination.json
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/pagination.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/pagination.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/pagination.tsx title="components/ui/pagination.tsx"
-```
-
-<br />
+</Installation>
 
 ## Usage
 
@@ -53,8 +26,6 @@ import {
   PaginationPrevious,
 } from '@/components/ui/pagination'
 ```
-
-<br />
 
 ```tsx
 <Pagination>

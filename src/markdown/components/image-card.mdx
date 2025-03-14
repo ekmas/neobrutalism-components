@@ -1,52 +1,22 @@
+---
+title: Image Card
+description: A card component optimized for displaying images with captions.
+---
+
+<ComponentPreview component="image-card" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="image-card">
+  ```tsx file=<rootDir>/src/components/ui/image-card.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/image-card.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/image-card.json
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/image-card.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/image-card.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/image-card.tsx title="components/ui/image-card.tsx"
-```
-
-<br />
+</Installation>
 
 ## Usage
 
 ```ts
 import ImageCard from '@/components/ui/image-card'
 ```
-
-<br />
 
 ```tsx
 <ImageCard

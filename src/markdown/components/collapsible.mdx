@@ -1,44 +1,17 @@
+---
+title: Collapsible
+description: An interactive component that expands/collapses a panel.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/collapsible
+---
+
+<ComponentPreview component="collapsible" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="collapsible">
+  ```tsx file=<rootDir>/src/components/ui/collapsible.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/collapsible.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/collapsible.json
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/collapsible.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/collapsible.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/collapsible.tsx title="components/ui/collapsible.tsx"
-```
-
-<br />
+</Installation>
 
 ## Usage
 
@@ -55,13 +28,10 @@ import {
 } from '@/components/ui/collapsible'
 ```
 
-<br />
-
 ```tsx
 const [isOpen, setIsOpen] = React.useState(false)
 ```
 
-<br />
 
 ```tsx
 <Collapsible

@@ -1,44 +1,17 @@
+---
+title: Breadcrumb
+description: Displays the current page location within a hierarchical structure.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/breadcrumb
+---
+
+<ComponentPreview component="breadcrumb" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="breadcrumb">
+  ```tsx file=<rootDir>/src/components/ui/breadcrumb.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/breadcrumb.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/breadcrumb.json
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/breadcrumb.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/breadcrumb.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/breadcrumb.tsx title="components/ui/breadcrumb.tsx"
-```
-
-<br />
+</Installation>
 
 ## Usage
 
@@ -52,8 +25,6 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb'
 ```
-
-<br />
 
 ```tsx
 <Breadcrumb>

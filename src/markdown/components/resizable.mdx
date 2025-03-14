@@ -1,44 +1,17 @@
+---
+title: Resizable
+description: Accessible resizable panel groups with keyboard support.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/resizable
+---
+
+<ComponentPreview component="resizable" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="resizable">
+  ```tsx file=<rootDir>/src/components/ui/resizable.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/resizable.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/resizable.json
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/resizable.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/resizable.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/resizable.tsx title="components/ui/resizable.tsx"
-```
-
-<br />
+</Installation>
 
 ## Usage
 
@@ -49,8 +22,6 @@ import {
   ResizablePanelGroup,
 } from '@/components/ui/resizable'
 ```
-
-<br />
 
 ```tsx
 <ResizablePanelGroup

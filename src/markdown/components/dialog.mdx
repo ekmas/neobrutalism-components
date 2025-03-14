@@ -1,44 +1,17 @@
+---
+title: Dialog
+description: A window overlaid on either the primary window or another dialog window.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/dialog
+---
+
+<ComponentPreview component="dialog" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="dialog">
+  ```tsx file=<rootDir>/src/components/ui/dialog.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/dialog.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/dialog.json
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/dialog.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/dialog.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/dialog.tsx title="components/ui/dialog.tsx"
-```
-
-<br />
+</Installation>
 
 ## Usage
 
@@ -56,8 +29,6 @@ import {
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 ```
-
-<br />
 
 ```tsx
 <Dialog>

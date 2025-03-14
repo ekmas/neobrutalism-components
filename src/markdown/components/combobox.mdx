@@ -1,7 +1,15 @@
-```tsx file=<rootDir>/src/components/ui/combobox.tsx title="components/ui/combobox.tsx"
-```
+---
+title: Combobox
+description: Autocomplete input and command palette with a list of suggestions.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/combobox
+---
 
-<br />
+<ComponentPreview component="combobox" />
+
+<Installation component="combobox">
+  ```tsx file=<rootDir>/src/components/ui/combobox.tsx
+  ```
+</Installation>
 
 ## Usage
 
@@ -28,8 +36,6 @@ import {
 import { cn } from '@/lib/utils'
 ```
 
-<br />
-
 ```ts
 const frameworks = [
   {
@@ -55,14 +61,10 @@ const frameworks = [
 ]
 ```
 
-<br />
-
 ```tsx
 const [open, setOpen] = React.useState(false)
 const [value, setValue] = React.useState('')
 ```
-
-<br />
 
 ```tsx
 <Popover open={open} onOpenChange={setOpen}>

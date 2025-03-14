@@ -1,44 +1,17 @@
+---
+title: Sheet
+description: Extends the Dialog component to display content that complements the main content of the screen.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/sheet
+---
+
+<ComponentPreview component="sheet" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="sheet">
+  ```tsx file=<rootDir>/src/components/ui/sheet.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/sheet.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/sheet.json
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/sheet.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/sheet.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/sheet.tsx title="components/ui/sheet.tsx"
-```
-
-<br />
+</Installation>
 
 ## Usage
 
@@ -57,8 +30,6 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet'
 ```
-
-<br />
 
 ```tsx
 <Sheet>

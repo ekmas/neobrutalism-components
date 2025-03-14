@@ -1,44 +1,17 @@
+---
+title: Context Menu
+description: Displays a menu to the user — such as a set of actions or functions.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/context-menu
+---
+
+<ComponentPreview component="context-menu" />
+
 ## Installation
 
-### via Shadcn cli
-
-<Tabs defaultValue="pnpm" className="w-full">
-  <TabsList className="grid w-full grid-cols-4">
-    <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-    <TabsTrigger value="npm">npm</TabsTrigger>
-    <TabsTrigger value="yarn">yarn</TabsTrigger>
-    <TabsTrigger value="bun">bun</TabsTrigger>
-  </TabsList>
-  <TabsContent value="pnpm">
+<Installation component="context-menu">
+  ```tsx file=<rootDir>/src/components/ui/context-menu.tsx
   ```
-  pnpm dlx shadcn@latest add https://neobrutalism.dev/r/carousel.json
-  ```
-  </TabsContent>
-  <TabsContent value="npm">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/carousel.json
-  ```
-  </TabsContent>
-  <TabsContent value="yarn">
-  ```
-  npx shadcn@latest add https://neobrutalism.dev/r/carousel.json
-  ```
-  </TabsContent>
-  <TabsContent value="bun">
-  ```
-  bunx --bun shadcn@latest add https://neobrutalism.dev/r/carousel.json
-  ```
-  </TabsContent>
-</Tabs>
-
-<br />
-
-### Manually
-
-```tsx file=<rootDir>/src/components/ui/context-menu.tsx title="components/ui/context-menu.tsx"
-```
-
-<br />
+</Installation>
 
 ## Usage
 
@@ -59,8 +32,6 @@ import {
   ContextMenuTrigger,
 } from '@/components/ui/context-menu'
 ```
-
-<br />
 
 ```tsx
 <ContextMenu>

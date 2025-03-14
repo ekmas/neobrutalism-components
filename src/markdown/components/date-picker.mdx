@@ -1,7 +1,17 @@
-```tsx file=<rootDir>/src/components/ui/date-picker.tsx title="components/ui/date-picker.tsx"
-```
+---
+title: Date Picker
+description: A date picker component with calendar popup.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/date-picker
+---
 
-<br />
+<ComponentPreview component="date-picker" />
+
+## Installation
+
+<Installation component="date-picker">
+  ```tsx file=<rootDir>/src/components/ui/date-picker.tsx
+  ```
+</Installation>
 
 ## Usage
 
@@ -22,13 +32,9 @@ import {
 import { cn } from '@/lib/utils'
 ```
 
-<br />
-
 ```tsx
 const [date, setDate] = React.useState<Date>()
 ```
-
-<br />
 
 ```tsx
 <Popover>
