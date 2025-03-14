@@ -1,7 +1,4 @@
 import "@/styling/globals.css"
-import "@/styling/expressive-code.css"
-
-import ECInit from "@/markdown/expressive-code-init.mdx"
 
 import type { Metadata } from "next"
 import { DM_Sans } from "next/font/google"
@@ -61,7 +58,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html suppressHydrationWarning lang="en">
+    <html className="scroll-smooth" suppressHydrationWarning lang="en">
       <body className={dmSans.className}>
         <ThemeProvider
           attribute="class"
@@ -70,18 +67,9 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
-          <div id="drawer"></div>
-          <div id="modal"></div>
           <SetStylingPref />
           <ScrollToTop />
           <Toaster />
-          <div className="hidden">
-            <ECInit />
-          </div>
-          {/* 
-            Imported markdown to root layout, so copy button on code blocks can work on route change.
-            For more info visit: https://github.com/expressive-code/expressive-code/issues/203
-          */}
         </ThemeProvider>
       </body>
     </html>

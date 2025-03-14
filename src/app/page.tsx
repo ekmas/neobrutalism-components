@@ -7,7 +7,6 @@ import Link from "next/link"
 
 import reviews from "@/data/reviews"
 
-import HeroComponents from "@/components/app/HeroComponents"
 import {
   Accordion,
   AccordionContent,
@@ -38,7 +37,6 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <HeroComponents />
       </main>
       <div>
         <Marquee

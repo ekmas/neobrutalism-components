@@ -1,4 +1,3 @@
-import DocsLayout from "@/layouts/Docs"
 import Sidebar from "@/components/app/Sidebar"
 
 export default function MainDocsLayout({
@@ -9,7 +8,7 @@ export default function MainDocsLayout({
   return (
     <>
       <Sidebar />
-      <DocsLayout>{children}</DocsLayout>
+      {children}
     </>
   )
 }
