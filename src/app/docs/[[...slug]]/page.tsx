@@ -77,7 +77,7 @@ export default async function DocPage(props: DocPageProps) {
   const { description, title, body, shadcnDocsLink, slug, slugAsParams } = doc
 
   const filteredSidebar = MAIN_SIDEBAR.filter(
-    (item) => typeof item === "object",
+    (item): item is { href: string; text: string } => typeof item === "object",
   )
 
   const currentIndex = filteredSidebar.findIndex((item) => {
