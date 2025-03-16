@@ -19,6 +19,14 @@ const starFiles = fs
 
 const imports: string[] = []
 const starsArray: string[] = []
+const exampleImports: string[] = []
+const exampleKeys = [
+  "custom-width-height",
+  "dark-mode-stroke",
+  "dark-mode",
+  "default",
+  "with-stroke",
+]
 
 starFiles.forEach((file) => {
   const match = file.match(/s(\d+)\.tsx$/)
@@ -26,7 +34,7 @@ starFiles.forEach((file) => {
 
   const starNumber = match[1]
   const componentName = `Star${starNumber}`
-  const importPath = `@/components/examples/stars/s${starNumber}`
+  const importPath = `@/examples/stars/s${starNumber}`
   const filePath = path.join(starsDir, file)
 
   try {
@@ -41,10 +49,22 @@ starFiles.forEach((file) => {
   }
 })
 
+// Add example imports
+exampleKeys.forEach((key) => {
+  const componentName = key
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join("")
+  exampleImports.push(
+    `import ${componentName} from "@/examples/stars/docs/${key}";`,
+  )
+})
+
 const newStarsContent = `
 // Auto-generated file. Do not modify manually.
 
 ${imports.join("\n")}
+${exampleImports.join("\n")}
 
 type Star = {
   componentExample: React.ComponentType;
@@ -54,6 +74,18 @@ type Star = {
 const STARS: Star[] = [
 ${starsArray.join(",\n")}
 ];
+
+export const STARS_EXAMPLES = {
+  ${exampleKeys
+    .map((key) => {
+      const componentName = key
+        .split("-")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join("")
+      return `"${key}": ${componentName}`
+    })
+    .join(",\n  ")}
+};
 
 export default STARS;
 `
