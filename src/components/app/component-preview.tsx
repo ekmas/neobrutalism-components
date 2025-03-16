@@ -1,16 +1,60 @@
 import components from "@/data/components"
+import { STARS_EXAMPLES } from "@/data/stars"
 
 import { transformToSlug } from "@/lib/utils"
 
-export default function ComponentPreview({ component }: { component: string }) {
-  const componentData = components.find(
-    (c) => transformToSlug(c.name) === component,
-  )
-  if (!componentData) return null
+import { sharedComponents } from "./mdx-components"
+
+export default function ComponentPreview({
+  component,
+  children,
+  variant,
+  type = "component",
+}: {
+  component: string
+  children: React.ReactNode
+  variant?: string
+  type?: "star" | "component"
+}) {
+  const { Tabs, TabsList, TabsTrigger, TabsContent } = sharedComponents
+
+  let ExampleComponent: React.ComponentType | undefined
+
+  if (type === "star") {
+    const starData = STARS_EXAMPLES[component as keyof typeof STARS_EXAMPLES]
+    if (!starData) return null
+
+    ExampleComponent = starData
+  } else {
+    const componentData = components.find(
+      (c) => transformToSlug(c.name) === component,
+    )
+
+    if (!componentData) return null
+
+    if (type === "component") {
+      ExampleComponent = variant
+        ? componentData.variants?.[variant]
+        : componentData.exampleComponent
+    }
+  }
+
+  if (!ExampleComponent) return null
 
   return (
-    <div className="not-prose flex w-full items-center justify-center z-15 relative border-2 mb-5 border-border bg-bw bg-[radial-gradient(#80808080_1px,transparent_1px)] px-10 py-20 shadow-shadow [background-size:16px_16px]">
-      <componentData.exampleComponent />
-    </div>
+    <>
+      <Tabs defaultValue="preview" className="w-full">
+        <TabsList className="grid w-full border-b-0 grid-cols-2">
+          <TabsTrigger value="preview">Preview</TabsTrigger>
+          <TabsTrigger value="code">Code</TabsTrigger>
+        </TabsList>
+        <TabsContent value="preview">
+          <div className="not-prose flex w-full items-center justify-center z-15 relative border-2 mb-5 min-h-[200px] border-border bg-bw bg-[15px_20px] bg-[linear-gradient(to_right,#8080804D_1px,transparent_1px),linear-gradient(to_bottom,#80808090_1px,transparent_1px)] px-10 py-20 shadow-shadow [background-size:40px_40px]">
+            <ExampleComponent />
+          </div>
+        </TabsContent>
+        <TabsContent value="code">{children}</TabsContent>
+      </Tabs>
+    </>
   )
 }
