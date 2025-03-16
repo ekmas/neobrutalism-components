@@ -41,10 +41,10 @@ function Calendar({
         head_cell: "text-mtext rounded-base w-9 font-base text-[0.8rem]",
         row: "flex w-full mt-2",
         cell: cn(
-          "relative p-0 text-center text-sm focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-black/65 [&:has([aria-selected])]:text-white! [&:has([aria-selected].day-range-end)]:rounded-r-base",
+          "relative p-0 text-center text-sm focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-black/50 [&:has([aria-selected])]:text-white! [&:has([aria-selected].day-range-end)]:rounded-r-base",
           props.mode === "range"
-            ? "[&:has(>.day-range-end)]:rounded-r-base [&:has(>.day-range-start)]:rounded-l-base [&:has([aria-selected])]:bg-black/65! first:[&:has([aria-selected])]:rounded-l-base last:[&:has([aria-selected])]:rounded-r-base"
-            : "[&:has([aria-selected])]:rounded-base [&:has([aria-selected])]:bg-black/65",
+            ? "[&:has(>.day-range-end)]:rounded-r-base [&:has(>.day-range-start)]:rounded-l-base [&:has([aria-selected])]:bg-black/50! first:[&:has([aria-selected])]:rounded-l-base last:[&:has([aria-selected])]:rounded-r-base"
+            : "[&:has([aria-selected])]:rounded-base [&:has([aria-selected])]:bg-black/50",
         ),
         day: cn(
           buttonVariants({ variant: "noShadow" }),
@@ -58,7 +58,7 @@ function Calendar({
         day_today: "bg-white dark:bg-secondaryBlack text-text",
         day_outside: "day-outside text-mtext opacity-50 aria-selected:bg-none",
         day_disabled: "text-mtext opacity-50 rounded-base",
-        day_range_middle: "aria-selected:bg-black/65! aria-selected:text-white",
+        day_range_middle: "aria-selected:bg-black/50! aria-selected:text-white",
         day_hidden: "invisible",
         ...classNames,
       }}

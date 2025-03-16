@@ -29,7 +29,7 @@ export default function Home() {
             </p>
 
             <Link
-              className="flex items-center w-max m1000:mx-auto text-text rounded-base border-2 font-base border-border dark:border-darkBorder bg-main px-10 py-3 text-[22px] shadow-light dark:shadow-dark transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:hover:shadow-none m800:px-8 m800:py-2.5 m800:text-lg m500:px-6 m400:px-4 m400:text-sm m500:py-2 m500:text-base"
+              className="flex items-center w-max m1000:mx-auto text-mtext rounded-base border-2 font-base border-border dark:border-darkBorder bg-main px-10 py-3 text-[22px] shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:hover:shadow-none m800:px-8 m800:py-2.5 m800:text-lg m500:px-6 m400:px-4 m400:text-sm m500:py-2 m500:text-base"
               href={"/docs"}
             >
               Read the docs
@@ -56,7 +56,7 @@ export default function Home() {
             })}
         </Marquee>
         <div className="grid grid-cols-2 border-b-4 border-t-4 border-border dark:border-darkBorder m700:grid-cols-1">
-          <section className="border-b-4 border-r-4 border-border dark:border-darkBorder bg-bg dark:bg-darkBg p-14 py-16 m1300:p-10 m1300:py-12 m800:p-6 m800:py-8 m700:border-r-0 m700:bg-main dark:m700:bg-main m700:dark:text-text">
+          <section className="border-b-4 border-r-4 border-border dark:border-darkBorder bg-bg dark:bg-darkBg p-14 py-16 m1300:p-10 m1300:py-12 m800:p-6 m800:py-8 m700:border-r-0 m700:bg-main dark:m700:bg-main m700:dark:text-mtext">
             <div className="flex items-center gap-6 mb-6">
               <div className="w-[70px] h-[70px] m1300:w-[55px] m1300:h-[55px] m800:h-10 m800:w-10 flex items-center justify-center">
                 <TailwindIcon />
@@ -72,7 +72,7 @@ export default function Home() {
               utility classes, enabling swift and straightforward styling.
             </p>
           </section>
-          <section className="border-b-4 border-border dark:border-darkBorder dark:text-text m700:dark:text-darkText bg-main p-14 py-16 m1300:p-10 m1300:py-12 m800:p-6 m800:py-8 m700:bg-bg m700:dark:bg-darkBg">
+          <section className="border-b-4 border-border dark:border-darkBorder text-mtext m700:dark:text-mtext bg-main p-14 py-16 m1300:p-10 m1300:py-12 m800:p-6 m800:py-8 m700:bg-bg m700:dark:bg-darkBg">
             <div className="flex items-center gap-6 mb-6">
               <div className="w-[70px] h-[70px] m1300:w-[55px] m1300:h-[55px] m800:h-10 m800:w-10 flex items-center justify-center">
                 <OpenSourceIcon />
@@ -88,7 +88,7 @@ export default function Home() {
               collaboration and allowing widespread adoption and modification.
             </p>
           </section>
-          <section className="border-r-4 border-border dark:border-darkBorder bg-main dark:text-text p-14 py-16 m1300:p-10 m1300:py-12 m800:p-6 m800:py-8 m700:border-b-4 m700:border-r-0">
+          <section className="border-r-4 border-border dark:border-darkBorder bg-main dark:text-mtext p-14 py-16 m1300:p-10 m1300:py-12 m800:p-6 m800:py-8 m700:border-b-4 m700:border-r-0">
             <div className="flex items-center gap-6 mb-6">
               <div className="w-[70px] h-[70px] m1300:w-[55px] m1300:h-[55px] m800:h-10 m800:w-10 flex items-center justify-center">
                 <ShadcnIcon />
@@ -134,7 +134,7 @@ export default function Home() {
                 <div className="group flex flex-col justify-center" key={index}>
                   {card.map(({ jobTitle, pfp, fullName, review }, index) => (
                     <div
-                      className="m1000:min-h-20 m1000:w-2/3 m1000:mx-auto m500:w-full mb-4 min-h-48 w-full rounded-base border-2 border-border dark:border-darkBorder bg-bg dark:bg-darkBg p-5 shadow-light dark:shadow-dark lg:mb-8"
+                      className="m1000:min-h-20 m1000:w-2/3 m1000:mx-auto m500:w-full mb-4 min-h-48 w-full rounded-base border-2 border-border dark:border-darkBorder bg-bg dark:bg-darkBg p-5 shadow-shadow lg:mb-8"
                       key={index}
                     >
                       <div className="flex items-center gap-5">
@@ -234,7 +234,7 @@ export default function Home() {
             })}
         </Marquee>
         <section className="inset-0 w-full flex flex-col items-center justify-center bg-main  bg-[linear-gradient(to_right,#00000033_1px,transparent_1px),linear-gradient(to_bottom,#00000033_1px,transparent_1px)] bg-[size:70px_70px] px-5 py-[200px] m1000:py-[150px] m500:py-[120px]">
-          <h2 className="text-center text-text font-heading text-5xl m1000:text-3xl m500:text-2xl m400:text-xl">
+          <h2 className="text-center text-mtext font-heading text-5xl m1000:text-3xl m500:text-2xl m400:text-xl">
             Start making neobrutalism layouts today.
           </h2>
 

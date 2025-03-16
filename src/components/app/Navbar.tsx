@@ -35,7 +35,7 @@ async function Navbar() {
 
         <div className="flex items-center gap-10">
           <Link
-            className="text-[30px] h-11 w-11 rounded-base flex bg-main text-text border-2 border-black m500:w-9 m500:h-9 m500:text-[22px] items-center justify-center font-heading"
+            className="text-[30px] h-11 w-11 rounded-base flex bg-main text-mtext border-2 border-black m500:w-9 m500:h-9 m500:text-[22px] items-center justify-center font-heading"
             href={"/"}
           >
             N

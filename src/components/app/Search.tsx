@@ -17,7 +17,7 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command"
-import { Dialog, DialogContent } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 
 export default function Search() {
   const DOCS_LINKS = [
@@ -55,7 +55,7 @@ export default function Search() {
     <>
       <Button
         onClick={() => setOpen(true)}
-        className="relative bg-white dark:text-white dark:bg-secondaryBlack shadow-nav dark:shadow-navDark hover:translate-x-[4px]! hover:translate-y-[4px]! hover:shadow-none dark:hover:shadow-none px-5 m1250:pr-14 m1200:pr-5 m1200:p-2 pr-20 m500:h-9 shrink-0 m500:w-9 m500:p-0 h-[44px] text-lg"
+        className="relative bg-bw dark:text-white shadow-nav dark:shadow-navDark hover:translate-x-[4px]! hover:translate-y-[4px]! hover:shadow-none dark:hover:shadow-none px-5 m1250:pr-14 m1200:pr-5 m1200:p-2 pr-20 m500:h-9 shrink-0 m500:w-9 m500:p-0 h-[44px] text-lg"
       >
         <span className="m1200:hidden">Search docs...</span>
         <span className="hidden m1200:inline">
@@ -67,6 +67,7 @@ export default function Search() {
         </span>
       </Button>
       <Dialog open={open} onOpenChange={setOpen}>
+        <DialogTitle className="sr-only">Search documentation</DialogTitle>
         <DialogContent className="overflow-hidden rounded-none border-0 p-0">
           <Command className="rounded-none">
             <CommandInput placeholder="Search documentation..." />

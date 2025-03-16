@@ -44,20 +44,20 @@ const ShadcnIcon = () => (
     viewBox="0 0 256 256"
     fill="none"
   >
-    <g clip-path="url(#clip0_574_2)">
+    <g clipPath="url(#clip0_574_2)">
       <path
         d="M208 128L128 208"
         stroke="black"
-        stroke-width="32"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="32"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M192 40L40 192"
         stroke="black"
-        stroke-width="32"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="32"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </g>
     <defs>
