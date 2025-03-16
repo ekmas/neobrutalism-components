@@ -52,34 +52,39 @@ If color prop isn't present fallback value will be `currentColor`.
 
 Rest of the props are extended from `<React.SVGProps>` (basically all attributes an svg can have, such as className, width, height, aria attributes etc.).
 
-## Usage
+## Examples
 
 ### Default
 
-```tsx
-<Star1 color="red" size={200} />
-```
+<ComponentPreview component="default" type="star" >
+  ```tsx file=<rootDir>/src/examples/stars/docs/default.tsx
+  ```
+</ComponentPreview>
 
 ### With stroke
 
-```tsx
-<Star1 color="red" size={200} stroke="black" strokeWidth={2} />
-```
+<ComponentPreview component="with-stroke" type="star" >
+  ```tsx file=<rootDir>/src/examples/stars/docs/with-stroke.tsx
+  ```
+</ComponentPreview>
 
 ### Custom width and height
 
-```tsx
-<Star1 color="red" width={180} height={210} stroke="black" strokeWidth={2} />
-```
+<ComponentPreview component="custom-width-height" type="star" >
+  ```tsx file=<rootDir>/src/examples/stars/docs/custom-width-height.tsx
+  ```
+</ComponentPreview>
 
 ### Dark mode color
 
-```tsx
-<Star1 className="text-red-500 dark:text-blue-500" size={200} stroke="black" strokeWidth={2} />
-```
+<ComponentPreview component="dark-mode" type="star" >
+  ```tsx file=<rootDir>/src/examples/stars/docs/dark-mode.tsx
+  ```
+</ComponentPreview>
 
 ### Dark mode stroke color
 
-```tsx
-<Star1 className="text-red-500 dark:text-blue-500" pathClassName="stroke-black dark:stroke-white" size={200} strokeWidth={2} />
-```
+<ComponentPreview component="dark-mode-stroke" type="star" >
+  ```tsx file=<rootDir>/src/examples/stars/docs/dark-mode-stroke.tsx
+  ```
+</ComponentPreview>

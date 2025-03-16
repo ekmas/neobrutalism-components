@@ -4,7 +4,11 @@ description: A date field component that allows users to enter and edit date.
 shadcnDocsLink: https://ui.shadcn.com/docs/components/calendar
 ---
 
-<ComponentPreview component="calendar" />
+<ComponentPreview component="calendar" >
+  ```tsx file=<rootDir>/src/examples/ui/calendar/index.tsx
+  ```
+</ComponentPreview>
+
 
 ## Installation
 
@@ -28,3 +32,19 @@ const [date, setDate] = useState<Date | undefined>(new Date())
 ```tsx
 <Calendar mode="single" selected={date} onSelect={setDate} />
 ```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="calendar">
+  ```tsx file=<rootDir>/src/examples/ui/calendar/index.tsx
+  ```
+</ComponentPreview>
+
+### Range
+
+<ComponentPreview component="calendar" variant="range">
+  ```tsx file=<rootDir>/src/examples/ui/calendar/range.tsx
+  ```
+</ComponentPreview>
