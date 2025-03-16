@@ -2,7 +2,7 @@ import { Metadata } from "next"
 
 import TEMPLATES from "@/data/templates"
 
-import ShowcaseContainer from "@/components/app/ShowcaseContainer"
+import ShowcaseContainer from "@/components/app/showcase-container"
 
 export const metadata: Metadata = {
   title: "Templates",

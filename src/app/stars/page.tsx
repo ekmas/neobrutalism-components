@@ -1,7 +1,7 @@
 import { Metadata } from "next"
 import Link from "next/link"
 
-import StarsGrid from "./StarsGrid"
+import StarsGrid from "./stars-grid"
 
 export const metadata: Metadata = {
   title: "Stars",

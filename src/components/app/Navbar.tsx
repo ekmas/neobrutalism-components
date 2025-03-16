@@ -1,8 +1,8 @@
 import Link from "next/link"
 
-import MobileDrawer from "@/components/app/MobileDrawer"
-import Search from "@/components/app/Search"
-import { ThemeSwitcher } from "@/components/app/ThemeSwitcher"
+import MobileDrawer from "@/components/app/mobile-drawer"
+import Search from "@/components/app/search"
+import { ThemeSwitcher } from "@/components/app/theme-switcher"
 
 async function getRepoData() {
   const res = await fetch(

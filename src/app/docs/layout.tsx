@@ -1,4 +1,4 @@
-import Sidebar from "@/components/app/Sidebar"
+import Sidebar from "@/components/app/sidebar"
 
 export default function MainDocsLayout({
   children,

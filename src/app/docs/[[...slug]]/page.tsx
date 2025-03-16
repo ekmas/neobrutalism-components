@@ -8,7 +8,7 @@ import { notFound } from "next/navigation"
 import { MAIN_SIDEBAR } from "@/data/sidebar-links"
 
 import { MDXContent, MDXTableOfContents } from "@/components/app/mdx-components"
-import Pagination from "@/components/app/Pagination"
+import Pagination from "@/components/app/pagination"
 import { TableOfContents } from "@/components/app/toc"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"

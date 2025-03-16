@@ -15,8 +15,8 @@ import {
 } from "@/components/ui/select"
 import { TooltipProvider } from "@/components/ui/tooltip"
 
-import CopyBtn from "./CopyBtn"
-import ShadcnBtn from "./ShadcnBtn"
+import CopyBtn from "./copy-btn"
+import ShadcnBtn from "./shadcn-btn"
 
 export default function StarsGrid() {
   const [command, setCommand] = useState(

@@ -3,10 +3,10 @@ import "@/styling/globals.css"
 import type { Metadata } from "next"
 import { DM_Sans } from "next/font/google"
 
-import Navbar from "@/components/app/Navbar"
-import ScrollToTop from "@/components/app/ScrollToTop"
-import SetStylingPref from "@/components/app/SetStylingPref"
-import { ThemeProvider } from "@/components/app/ThemeProvider"
+import Navbar from "@/components/app/navbar"
+import ScrollToTop from "@/components/app/scroll-to-top"
+import SetStylingPref from "@/components/app/set-styling-pref"
+import { ThemeProvider } from "@/components/app/theme-provider"
 import { Toaster } from "@/components/ui/sonner"
 
 const dmSans = DM_Sans({
