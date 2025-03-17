@@ -44,7 +44,7 @@ export const sharedComponents = {
     <TabsTrigger
       className={cn(
         className,
-        "h-full border-0 border-r-2 z-10 m400:text-xs border-r-border rounded-none sm:text-base dark:data-[state=active]:text-mtext text-text last:border-r-0",
+        "h-full border-0 border-r-2 z-10 m400:text-xs border-r-border rounded-none sm:text-base data-[state=active]:text-mtext text-text last:border-r-0",
       )}
       {...props}
     />

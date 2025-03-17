@@ -16,8 +16,8 @@ import {
 
 export default function Home() {
   return (
-    <div className="text-text dark:text-darkText">
-      <main className="relative flex min-h-[100svh] flex-col items-center justify-center bg-bg dark:bg-darkBg px-5 py-[200px] font-bold">
+    <div className="text-text">
+      <main className="relative flex min-h-[100svh] flex-col items-center justify-center bg-bg px-5 py-[200px] font-bold">
         <div className="mx-auto w-container max-w-full grid grid-cols-2 m1100:grid-cols-1">
           <div className="text-left m1000:text-center m1100:w-4/5 m1000:w-full">
             <h1 className="text-5xl font-heading m1400:text-4xl m800:text-3xl m500:text-2xl m400:text-xl">
@@ -29,7 +29,7 @@ export default function Home() {
             </p>
 
             <Link
-              className="flex items-center w-max m1000:mx-auto text-mtext rounded-base border-2 font-base border-border dark:border-darkBorder bg-main px-10 py-3 text-[22px] shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:hover:shadow-none m800:px-8 m800:py-2.5 m800:text-lg m500:px-6 m400:px-4 m400:text-sm m500:py-2 m500:text-base"
+              className="flex items-center w-max m1000:mx-auto text-mtext rounded-base border-2 font-base border-border bg-main px-10 py-3 text-[22px] shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none m800:px-8 m800:py-2.5 m800:text-lg m500:px-6 m400:px-4 m400:text-sm m500:py-2 m500:text-base"
               href={"/docs"}
             >
               Read the docs
@@ -40,7 +40,7 @@ export default function Home() {
       </main>
       <div>
         <Marquee
-          className="border-t-4 border-border dark:border-darkBorder bg-white dark:bg-secondaryBlack py-5 m500:py-4 font-base"
+          className="border-t-4 border-border bg-bw py-5 m500:py-4 font-base"
           direction="left"
         >
           {Array(15)
@@ -55,8 +55,8 @@ export default function Home() {
               )
             })}
         </Marquee>
-        <div className="grid grid-cols-2 border-b-4 border-t-4 border-border dark:border-darkBorder m700:grid-cols-1">
-          <section className="border-b-4 border-r-4 border-border dark:border-darkBorder bg-bg dark:bg-darkBg p-14 py-16 m1300:p-10 m1300:py-12 m800:p-6 m800:py-8 m700:border-r-0 m700:bg-main dark:m700:bg-main m700:dark:text-mtext">
+        <div className="grid grid-cols-2 border-b-4 border-t-4 border-border m700:grid-cols-1">
+          <section className="border-b-4 border-r-4 border-border bg-bg p-14 py-16 m1300:p-10 m1300:py-12 m800:p-6 m800:py-8 m700:border-r-0 m700:bg-main dark:m700:bg-main m700:dark:text-mtext">
             <div className="flex items-center gap-6 mb-6">
               <div className="w-[70px] h-[70px] m1300:w-[55px] m1300:h-[55px] m800:h-10 m800:w-10 flex items-center justify-center">
                 <TailwindIcon />
@@ -72,7 +72,7 @@ export default function Home() {
               utility classes, enabling swift and straightforward styling.
             </p>
           </section>
-          <section className="border-b-4 border-border dark:border-darkBorder text-mtext m700:dark:text-mtext bg-main p-14 py-16 m1300:p-10 m1300:py-12 m800:p-6 m800:py-8 m700:bg-bg m700:dark:bg-darkBg">
+          <section className="border-b-4 border-border text-mtext m700:dark:text-mtext bg-main p-14 py-16 m1300:p-10 m1300:py-12 m800:p-6 m800:py-8 m700:bg-bg">
             <div className="flex items-center gap-6 mb-6">
               <div className="w-[70px] h-[70px] m1300:w-[55px] m1300:h-[55px] m800:h-10 m800:w-10 flex items-center justify-center">
                 <OpenSourceIcon />
@@ -88,7 +88,7 @@ export default function Home() {
               collaboration and allowing widespread adoption and modification.
             </p>
           </section>
-          <section className="border-r-4 border-border dark:border-darkBorder bg-main dark:text-mtext p-14 py-16 m1300:p-10 m1300:py-12 m800:p-6 m800:py-8 m700:border-b-4 m700:border-r-0">
+          <section className="border-r-4 border-border bg-main dark:text-mtext p-14 py-16 m1300:p-10 m1300:py-12 m800:p-6 m800:py-8 m700:border-b-4 m700:border-r-0">
             <div className="flex items-center gap-6 mb-6">
               <div className="w-[70px] h-[70px] m1300:w-[55px] m1300:h-[55px] m800:h-10 m800:w-10 flex items-center justify-center">
                 <ShadcnIcon />
@@ -104,7 +104,7 @@ export default function Home() {
               high-quality components with best practices.
             </p>
           </section>
-          <section className="bg-bg dark:bg-darkBg p-14 py-16 m1300:p-10 m1300:py-12 m800:p-6 m800:py-8">
+          <section className="bg-bg p-14 py-16 m1300:p-10 m1300:py-12 m800:p-6 m800:py-8">
             <div className="flex items-center gap-6 mb-6">
               <div className="w-[70px] h-[70px] m1300:w-[55px] m1300:h-[55px] m800:h-10 m800:w-10 flex items-center justify-center">
                 <CustomizableIcon />
@@ -120,7 +120,7 @@ export default function Home() {
             </p>
           </section>
         </div>
-        <section className="inset-0 flex w-full px-5 flex-col items-center justify-center bg-white dark:bg-secondaryBlack bg-[linear-gradient(to_right,#80808033_1px,transparent_1px),linear-gradient(to_bottom,#80808033_1px,transparent_1px)] bg-[size:70px_70px] font-base">
+        <section className="inset-0 flex w-full px-5 flex-col items-center justify-center bg-bw bg-[linear-gradient(to_right,#80808033_1px,transparent_1px),linear-gradient(to_bottom,#80808033_1px,transparent_1px)] bg-[size:70px_70px] font-base">
           <div className="mx-auto w-container max-w-full py-20 m500:py-14 lg:py-[100px]">
             <h2 className="mb-10 text-center text-4xl font-heading m1300:text-3xl m700:text-2xl m500:text-xl lg:mb-20">
               Loved by the community
@@ -134,12 +134,12 @@ export default function Home() {
                 <div className="group flex flex-col justify-center" key={index}>
                   {card.map(({ jobTitle, pfp, fullName, review }, index) => (
                     <div
-                      className="m1000:min-h-20 m1000:w-2/3 m1000:mx-auto m500:w-full mb-4 min-h-48 w-full rounded-base border-2 border-border dark:border-darkBorder bg-bg dark:bg-darkBg p-5 shadow-shadow lg:mb-8"
+                      className="m1000:min-h-20 m1000:w-2/3 m1000:mx-auto m500:w-full mb-4 min-h-48 w-full rounded-base border-2 border-border bg-bg p-5 shadow-shadow lg:mb-8"
                       key={index}
                     >
                       <div className="flex items-center gap-5">
                         <img
-                          className="h-12 w-12 rounded-base border-2 border-border dark:border-darkBorder"
+                          className="h-12 w-12 rounded-base border-2 border-border"
                           src={`${pfp.src}`}
                           alt="pfp"
                         />
@@ -157,7 +157,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="border-t-4 border-t-border dark:border-t-darkBorder border-b-4 border-b-border dark:border-b-darkBorder bg-bg dark:bg-darkBg py-20 m500:py-14 font-base lg:py-[100px]">
+        <section className="border-t-4 border-t-border border-b-4 border-b-border bg-bg py-20 m500:py-14 font-base lg:py-[100px]">
           <h2 className="mb-10 px-5 text-center text-4xl font-heading m1300:text-3xl m700:text-2xl m500:text-xl lg:mb-20">
             Frequently asked questions
           </h2>
@@ -217,7 +217,7 @@ export default function Home() {
           </div>
         </section>
         <Marquee
-          className="border-b-4 border-border dark:border-darkBorder bg-white dark:bg-secondaryBlack py-5 m500:py-4 font-base"
+          className="border-b-4 border-border bg-bw py-5 m500:py-4 font-base"
           direction="left"
           reverse
         >
@@ -239,7 +239,7 @@ export default function Home() {
           </h2>
 
           <Link
-            className="mt-[50px] flex font-base items-center rounded-base border-2 border-black bg-white dark:bg-secondaryBlack px-10 py-3 text-[22px] shadow-light transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none m800:px-8 m800:py-2.5 m800:text-lg m500:px-6 m500:py-2 m500:text-base m400:px-4 m400:text-sm"
+            className="mt-[50px] flex font-base items-center rounded-base border-2 border-black bg-bw px-10 py-3 text-[22px] shadow-light transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none m800:px-8 m800:py-2.5 m800:text-lg m500:px-6 m500:py-2 m500:text-base m400:px-4 m400:text-sm"
             href={"/docs"}
           >
             Read the docs
@@ -247,7 +247,7 @@ export default function Home() {
           </Link>
         </section>
       </div>
-      <footer className="z-30 border-t-4 border-border dark:border-darkBorder bg-white dark:bg-secondaryBlack px-5 py-5 text-center font-base m500:text-sm">
+      <footer className="z-30 border-t-4 border-border bg-bw px-5 py-5 text-center font-base m500:text-sm">
         Released under MIT License. The source code is available on{" "}
         <a
           target="_blank"

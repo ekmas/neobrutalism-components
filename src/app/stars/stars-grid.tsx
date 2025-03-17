@@ -60,7 +60,7 @@ export default function StarsGrid() {
         {STARS.map((star, i) => {
           return (
             <div
-              className="flex items-center gap-4 p-5 justify-center flex-col border-2 border-border dark:border-darkBorder bg-white dark:bg-secondaryBlack rounded-base shadow-light dark:shadow-dark"
+              className="flex items-center gap-4 p-5 justify-center flex-col border-2 border-border bg-bw rounded-base shadow-shadow"
               key={i}
             >
               <div className="w-[200px] h-[200px] m1200:w-[160px] m1200:h-[160px] m800:w-[120px] m800:h-[120px] ">

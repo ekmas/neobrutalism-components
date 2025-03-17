@@ -19,10 +19,10 @@ export default function ShowcaseContainer({
       {items.map(({ color, text, liveUrl, previewImg, repoUrl, title }) => {
         return (
           <div
-            className="p-[15px] bg-white dark:bg-secondaryBlack rounded-base shadow-light dark:shadow-dark border-2 border-border dark:border-darkBorder"
+            className="p-[15px] bg-bw rounded-base shadow-shadow border-2 border-border"
             key={title}
           >
-            <div className="border-2 border-border dark:border-darkBorder rounded-base aspect-2/1">
+            <div className="border-2 border-border rounded-base aspect-2/1">
               <img
                 className="rounded-base"
                 src={`${previewImg.src}`}
@@ -41,7 +41,7 @@ export default function ShowcaseContainer({
                   color: text ? `${text}` : "black",
                 }}
                 className={clsx(
-                  "text-center border-2 py-1.5 font-base shadow-light dark:shadow-dark hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:hover:shadow-none transition-all border-border dark:border-darkBorder rounded-base",
+                  "text-center border-2 py-1.5 font-base shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:hover:shadow-none transition-all border-border rounded-base",
                   !repoUrl && "col-span-2",
                 )}
                 target="_blank"
@@ -55,7 +55,7 @@ export default function ShowcaseContainer({
                     backgroundColor: `${color}`,
                     color: text ? `${text}` : "black",
                   }}
-                  className="text-center border-2 py-1.5 font-base shadow-light dark:shadow-dark hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:hover:shadow-none transition-all border-border dark:border-darkBorder rounded-base"
+                  className="text-center border-2 py-1.5 font-base shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:hover:shadow-none transition-all border-border rounded-base"
                   target="_blank"
                   href={repoUrl}
                 >
