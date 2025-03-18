@@ -57,7 +57,7 @@ const invoices = [
 export default function TableDemo() {
   return (
     <Table>
-      <TableCaption className="text-text">
+      <TableCaption className="text-foreground">
         A list of your recent invoices.
       </TableCaption>
       <TableHeader>

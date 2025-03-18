@@ -111,13 +111,13 @@ export default async function DocPage(props: DocPageProps) {
   const isTocEmpty = tableOfContents.length < 2
 
   return (
-    <div className="docs min-h-[100dvh] w-[full-250px] bg-bg px-5 pt-[88px]">
-      <div className="prose-p:text-text prose-p:mt-6 prose-headings:scroll-mt-32 prose-h1:mb-4 prose-ul:pl-5 prose-ul:list-disc prose-li:font-base mx-auto w-[750px] py-20 leading-relaxed prose-h2:mt-10 prose-h2:mb-6 prose-h3:mt-8 prose-headings:font-heading prose-h1:text-3xl prose-h2:text-2xl prose-h3:mb-4 prose-h3:text-xl prose-p:leading-7 prose-p:font-base prose-code:p-[3px] prose-a:underline prose-a:font-heading prose-code:mx-1 prose-code:rounded-base prose-code:font-bold prose-code:border prose-code:text-text prose-code:text-sm prose-code:border-border prose-code:bg-main prose-code:px-2">
+    <div className="docs min-h-[100dvh] w-[full-250px] bg-background px-5 pt-[88px]">
+      <div className="prose-p:text-foreground prose-p:mt-6 prose-headings:scroll-mt-32 prose-h1:mb-4 prose-ul:pl-5 prose-ul:list-disc prose-li:font-base mx-auto w-[750px] py-20 leading-relaxed prose-h2:mt-10 prose-h2:mb-6 prose-h3:mt-8 prose-headings:font-heading prose-h1:text-3xl prose-h2:text-2xl prose-h3:mb-4 prose-h3:text-xl prose-p:leading-7 prose-p:font-base prose-code:p-[3px] prose-a:underline prose-a:font-heading prose-code:mx-1 prose-code:rounded-base prose-code:font-bold prose-code:border prose-code:text-foreground prose-code:text-sm prose-code:border-border prose-code:bg-main prose-code:px-2">
         <article>
           <div className="mb-8">
             <h1>{title}</h1>
             {description && (
-              <p className="mt-0 mb-4 text-lg text-text">{description}</p>
+              <p className="mt-0 mb-4 text-lg text-foreground">{description}</p>
             )}
             {shadcnDocsLink && (
               <a href={shadcnDocsLink} target="_blank">
@@ -133,7 +133,7 @@ export default async function DocPage(props: DocPageProps) {
           <div className="mt-14">
             {isTocEmpty && (
               <Button
-                className="bg-bw text-text mb-10 not-prose px-5 py-2"
+                className="bg-secondary-background text-foreground mb-10 not-prose px-5 py-2"
                 variant="noShadow"
                 asChild
               >
@@ -148,10 +148,10 @@ export default async function DocPage(props: DocPageProps) {
           </div>
         </article>
         {!isTocEmpty && (
-          <aside className="fixed bg-bw border-l-4 not-prose border-l-border overflow-hidden top-[88px] flex flex-col justify-between right-0 w-[250px] h-[calc(100svh-88px)] overflow-y-auto">
+          <aside className="fixed bg-secondary-background border-l-4 not-prose border-l-border overflow-hidden top-[88px] flex flex-col justify-between right-0 w-[250px] h-[calc(100svh-88px)] overflow-y-auto">
             <TableOfContents items={tableOfContents} />
             <Button
-              className="bg-bw w-full border-0 rounded-none border-t-3 text-text border-t-border not-prose px-5 py-2 m400:px-3.5 h-[unset] m400:text-xs font-base gap-2 mt-12"
+              className="bg-secondary-background w-full border-0 rounded-none border-t-3 text-foreground border-t-border not-prose px-5 py-2 m400:px-3.5 h-[unset] m400:text-xs font-base gap-2 mt-12"
               variant="noShadow"
               asChild
             >

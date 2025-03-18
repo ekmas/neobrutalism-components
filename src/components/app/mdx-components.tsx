@@ -32,7 +32,7 @@ export const sharedComponents = {
     <TabsList
       className={cn(
         className,
-        "w-full overflow-x-hidden rounded-none m750:h-10 p-0 bg-bw",
+        "w-full overflow-x-hidden rounded-none m750:h-10 p-0 bg-secondary-background",
       )}
       {...props}
     />
@@ -44,7 +44,7 @@ export const sharedComponents = {
     <TabsTrigger
       className={cn(
         className,
-        "h-full border-0 border-r-2 z-10 m400:text-xs border-r-border rounded-none sm:text-base data-[state=active]:text-mtext text-text last:border-r-0",
+        "h-full border-0 border-r-2 z-10 m400:text-xs border-r-border rounded-none sm:text-base data-[state=active]:text-main-foreground text-foreground last:border-r-0",
       )}
       {...props}
     />

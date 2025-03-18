@@ -50,7 +50,7 @@ function InputOTPSlot({
       data-slot="input-otp-slot"
       data-active={isActive}
       className={cn(
-        "relative flex size-10 items-center justify-center border-y-2 border-r-2 border-border bg-bw text-sm font-base text-text first:rounded-l-base first:border-l-2 last:rounded-r-base transition-all",
+        "relative flex size-10 items-center justify-center border-y-2 border-r-2 border-border bg-secondary-background text-sm font-base text-foreground first:rounded-l-base first:border-l-2 last:rounded-r-base transition-all",
         isActive && "z-10 ring-1 ring-ring ring-offset-ringOffset",
         className,
       )}

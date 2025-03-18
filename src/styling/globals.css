@@ -1,17 +1,17 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-@plugin "tailwindcss-animate";
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --bg: #dfe5f2;
-  --bw: #fff;
+  --background: #dfe5f2;
+  --secondary-background: #fff;
   --blank: #000;
   --border: #000;
-  --text: #000;
-  --mtext: #000;
+  --foreground: #000;
+  --main-foreground: #000;
   --ring: #000;
   --ring-offset: #fff;
 
@@ -29,12 +29,12 @@
 }
 
 .dark {
-  --bg: #272933;
-  --bw: #212121;
+  --background: #272933;
+  --secondary-background: #212121;
   --blank: #fff;
   --border: #000;
-  --text: #e6e6e6;
-  --mtext: #000;
+  --foreground: #e6e6e6;
+  --main-foreground: #000;
   --ring: #fff;
   --ring-offset: #000;
 
@@ -44,13 +44,13 @@
 @theme inline {
   --color-main: var(--main);
   --color-main50: var(--main50);
-  --color-bg: var(--bg);
-  --color-bw: var(--bw);
+  --color-background: var(--background);
+  --color-secondary-background: var(--secondary-background);
   --color-blank: var(--blank);
   --color-border: var(--border);
   --color-overlay: var(--overlay);
-  --color-text: var(--text);
-  --color-mtext: var(--mtext);
+  --color-foreground: var(--foreground);
+  --color-main-foreground: var(--main-foreground);
   --color-secondaryBlack: #1c1c1c;
 
   --spacing-boxShadowX: var(--box-shadow-x);

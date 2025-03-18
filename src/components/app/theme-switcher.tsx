@@ -13,11 +13,11 @@ export function ThemeSwitcher() {
   return (
     <>
       <Button
-        className="h-11 w-11 p-0 [&_svg]:size-6 shadow-nav hover:translate-x-[4px]! hover:translate-y-[4px]! hover:shadow-none bg-bw"
+        className="h-11 w-11 p-0 [&_svg]:size-6 shadow-nav hover:translate-x-[4px]! hover:translate-y-[4px]! hover:shadow-none bg-secondary-background"
         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
       >
-        <Sun className="hidden dark:inline stroke-text" />
-        <Moon className="inline dark:hidden stroke-text" />
+        <Sun className="hidden dark:inline stroke-foreground" />
+        <Moon className="inline dark:hidden stroke-foreground" />
         <span className="sr-only">Toggle theme</span>
       </Button>
     </>

@@ -200,7 +200,7 @@ export default function DataTableDemo() {
   })
 
   return (
-    <div className="w-full font-base text-mtext">
+    <div className="w-full font-base text-main-foreground">
       <div className="flex items-center py-4">
         <Input
           placeholder="Filter emails..."
@@ -288,7 +288,7 @@ export default function DataTableDemo() {
         </Table>
       </div>
       <div className="flex items-center justify-end space-x-2 py-4">
-        <div className="text-text flex-1 text-sm">
+        <div className="text-foreground flex-1 text-sm">
           {table.getFilteredSelectedRowModel().rows.length} of{" "}
           {table.getFilteredRowModel().rows.length} row(s) selected.
         </div>

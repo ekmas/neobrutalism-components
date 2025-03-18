@@ -11,7 +11,7 @@ export default function Sidebar() {
   const pathname = usePathname()
 
   return (
-    <aside className="scrollbar fixed top-[88px] bg-bw h-[calc(100svh-88px)] max-h-[calc(100svh-88px)] w-[250px] overflow-y-auto border-r-4 border-border m900:hidden">
+    <aside className="scrollbar fixed top-[88px] bg-secondary-background h-[calc(100svh-88px)] max-h-[calc(100svh-88px)] w-[250px] overflow-y-auto border-r-4 border-border m900:hidden">
       {MAIN_SIDEBAR.map((item, id) => {
         return typeof item === "string" ? (
           <div
@@ -25,8 +25,9 @@ export default function Sidebar() {
             key={id}
             href={`${item.href}`}
             className={cn(
-              "block border-b-4 border-r-4 border-border p-4 pl-7 text-lg font-base text-text/90 hover:bg-main50 hover:text-mtext",
-              item.href === pathname && "bg-main text-mtext hover:bg-main",
+              "block border-b-4 border-r-4 border-border p-4 pl-7 text-lg font-base text-foreground/90 hover:bg-main50 hover:text-main-foreground",
+              item.href === pathname &&
+                "bg-main text-main-foreground hover:bg-main",
             )}
           >
             {item.text}

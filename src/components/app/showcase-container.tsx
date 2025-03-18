@@ -19,7 +19,7 @@ export default function ShowcaseContainer({
       {items.map(({ color, text, liveUrl, previewImg, repoUrl, title }) => {
         return (
           <div
-            className="p-[15px] bg-bw rounded-base shadow-shadow border-2 border-border"
+            className="p-[15px] bg-secondary-background rounded-base shadow-shadow border-2 border-border"
             key={title}
           >
             <div className="border-2 border-border rounded-base aspect-2/1">

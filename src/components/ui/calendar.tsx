@@ -27,7 +27,8 @@ function Calendar({
       classNames={{
         months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
         month: "space-y-4",
-        caption: "flex justify-center text-mtext pt-1 relative items-center",
+        caption:
+          "flex justify-center text-main-foreground pt-1 relative items-center",
         caption_label: "text-sm",
         nav: "space-x-1 flex items-center",
         nav_button: cn(
@@ -38,7 +39,8 @@ function Calendar({
         nav_button_next: "absolute right-1",
         table: "w-full border-collapse space-y-1",
         head_row: "flex",
-        head_cell: "text-mtext rounded-base w-9 font-base text-[0.8rem]",
+        head_cell:
+          "text-main-foreground rounded-base w-9 font-base text-[0.8rem]",
         row: "flex w-full mt-2",
         cell: cn(
           "relative p-0 text-center text-sm focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-black/50 [&:has([aria-selected])]:text-white! [&:has([aria-selected].day-range-end)]:rounded-r-base",
@@ -55,9 +57,10 @@ function Calendar({
         day_range_end:
           "day-range-end aria-selected:bg-black! aria-selected:text-white rounded-base",
         day_selected: "bg-black! text-white rounded-base",
-        day_today: "bg-white dark:bg-secondaryBlack text-text",
-        day_outside: "day-outside text-mtext opacity-50 aria-selected:bg-none",
-        day_disabled: "text-mtext opacity-50 rounded-base",
+        day_today: "bg-white dark:bg-secondaryBlack text-foreground!",
+        day_outside:
+          "day-outside text-main-foreground opacity-50 aria-selected:bg-none",
+        day_disabled: "text-main-foreground opacity-50 rounded-base",
         day_range_middle: "aria-selected:bg-black/50! aria-selected:text-white",
         day_hidden: "invisible",
         ...classNames,

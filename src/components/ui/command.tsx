@@ -18,7 +18,7 @@ function Command({
     <CommandPrimitive
       data-slot="command"
       className={cn(
-        "flex h-full w-full flex-col overflow-hidden rounded-base border-2 border-border bg-main font-base text-mtext",
+        "flex h-full w-full flex-col overflow-hidden rounded-base border-2 border-border bg-main font-base text-main-foreground",
         className,
       )}
       {...props}
@@ -30,7 +30,7 @@ function CommandDialog({ children, ...props }: DialogProps) {
   return (
     <Dialog {...props}>
       <DialogContent className="overflow-hidden p-0 shadow-shadow">
-        <Command className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:text-mtext [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:size-4 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:size-4">
+        <Command className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:text-main-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:size-4 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:size-4">
           {children}
         </Command>
       </DialogContent>
@@ -51,7 +51,7 @@ function CommandInput({
       <Search className="mr-2 size-4 shrink-0" />
       <CommandPrimitive.Input
         className={cn(
-          "flex h-11 w-full rounded-base bg-transparent py-3 text-sm outline-hidden placeholder:text-mtext placeholder:opacity-50 disabled:cursor-not-allowed disabled:opacity-50",
+          "flex h-11 w-full rounded-base bg-transparent py-3 text-sm outline-hidden placeholder:text-main-foreground placeholder:opacity-50 disabled:cursor-not-allowed disabled:opacity-50",
           className,
         )}
         {...props}
@@ -97,7 +97,7 @@ function CommandGroup({
     <CommandPrimitive.Group
       data-slot="command-group"
       className={cn(
-        "overflow-hidden rounded-base p-2 text-mtext/80 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-base [&_[cmdk-group-heading]]:font-heading [&_[cmdk-group-heading]]:text-mtext/80",
+        "overflow-hidden rounded-base p-2 text-main-foreground/80 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-base [&_[cmdk-group-heading]]:font-heading [&_[cmdk-group-heading]]:text-main-foreground/80",
         className,
       )}
       {...props}
@@ -126,7 +126,7 @@ function CommandItem({
     <CommandPrimitive.Item
       data-slot="command-item"
       className={cn(
-        "relative flex cursor-default select-none items-center rounded-base px-2 py-1.5 gap-2 text-sm text-mtext outline-border outline-0 aria-selected:outline-2",
+        "relative flex cursor-default select-none items-center rounded-base px-2 py-1.5 gap-2 text-sm text-main-foreground outline-border outline-0 aria-selected:outline-2",
         className,
       )}
       {...props}
@@ -141,7 +141,10 @@ function CommandShortcut({
   return (
     <span
       data-slot="command-shortcut"
-      className={cn("ml-auto text-xs tracking-widest text-mtext", className)}
+      className={cn(
+        "ml-auto text-xs tracking-widest text-main-foreground",
+        className,
+      )}
       {...props}
     />
   )

@@ -11,7 +11,7 @@ import {
 export default function SelectDemo() {
   return (
     <Select>
-      <SelectTrigger className="w-[180px] text-mtext">
+      <SelectTrigger className="w-[180px] text-main-foreground">
         <SelectValue placeholder="Select a fruit" />
       </SelectTrigger>
       <SelectContent>
