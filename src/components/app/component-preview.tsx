@@ -8,12 +8,12 @@ import { sharedComponents } from "./mdx-components"
 export default function ComponentPreview({
   component,
   children,
-  variant,
+  example,
   type = "component",
 }: {
   component: string
   children: React.ReactNode
-  variant?: string
+  example?: string
   type?: "star" | "component"
 }) {
   const { Tabs, TabsList, TabsTrigger, TabsContent } = sharedComponents
@@ -33,8 +33,8 @@ export default function ComponentPreview({
     if (!componentData) return null
 
     if (type === "component") {
-      ExampleComponent = variant
-        ? componentData.variants?.[variant]
+      ExampleComponent = example
+        ? componentData.examples?.[example]
         : componentData.exampleComponent
     }
   }
