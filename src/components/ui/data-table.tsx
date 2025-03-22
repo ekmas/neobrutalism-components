@@ -37,8 +37,6 @@ import {
   TableRow,
 } from "@/components/ui/table"
 
-import { cn } from "@/lib/utils"
-
 const data: Payment[] = [
   {
     id: "m5gr84i9",
@@ -119,7 +117,7 @@ export const columns: ColumnDef<Payment>[] = [
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           Email
-          <ArrowUpDown className="ml-2 h-4 w-4" />
+          <ArrowUpDown />
         </Button>
       )
     },
@@ -149,9 +147,9 @@ export const columns: ColumnDef<Payment>[] = [
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="noShadow" className="h-8 w-8 p-0">
+            <Button variant="noShadow" className="size-8 p-0">
               <span className="sr-only">Open menu</span>
-              <MoreHorizontal className="h-4 w-4" />
+              <MoreHorizontal />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
@@ -213,7 +211,7 @@ export default function DataTableDemo() {
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="noShadow" className="ml-auto">
-              Columns <ChevronDown className="ml-2 h-4 w-4" />
+              Columns <ChevronDown />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
@@ -237,7 +235,7 @@ export default function DataTableDemo() {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <div className="rounded-md">
+      <div>
         <Table>
           <TableHeader className="font-heading">
             {table.getHeaderGroups().map((headerGroup) => (
@@ -265,7 +263,7 @@ export default function DataTableDemo() {
                   data-state={row.getIsSelected() && "selected"}
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
+                    <TableCell className="px-4 py-2" key={cell.id}>
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext(),
@@ -312,18 +310,5 @@ export default function DataTableDemo() {
         </div>
       </div>
     </div>
-  )
-}
-
-function DataTableHeader({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="data-table-header"
-      className={cn(
-        "flex items-center justify-between p-4 bg-main border-b-2 border-border",
-        className,
-      )}
-      {...props}
-    />
   )
 }

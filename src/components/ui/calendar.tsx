@@ -25,12 +25,12 @@ function Calendar({
         className,
       )}
       classNames={{
-        months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
-        month: "space-y-4",
+        months: "flex flex-col sm:flex-row gap-2",
+        month: "flex flex-col gap-4",
         caption:
-          "flex justify-center text-main-foreground pt-1 relative items-center",
-        caption_label: "text-sm",
-        nav: "space-x-1 flex items-center",
+          "flex justify-center pt-1 relative items-center w-full text-main-foreground",
+        caption_label: "text-sm font-heading",
+        nav: "gap-1 flex items-center",
         nav_button: cn(
           buttonVariants({ variant: "noShadow" }),
           "size-7 bg-transparent p-0",
@@ -56,7 +56,7 @@ function Calendar({
           "day-range-start aria-selected:bg-black! aria-selected:text-white rounded-base",
         day_range_end:
           "day-range-end aria-selected:bg-black! aria-selected:text-white rounded-base",
-        day_selected: "bg-black! text-white rounded-base",
+        day_selected: "bg-black! text-white! rounded-base",
         day_today: "bg-white dark:bg-secondaryBlack text-foreground!",
         day_outside:
           "day-outside text-main-foreground opacity-50 aria-selected:bg-none",
@@ -66,8 +66,12 @@ function Calendar({
         ...classNames,
       }}
       components={{
-        IconLeft: () => <ChevronLeft className="size-4" />,
-        IconRight: () => <ChevronRight className="size-4" />,
+        IconLeft: ({ className, ...props }) => (
+          <ChevronLeft className={cn("size-4", className)} {...props} />
+        ),
+        IconRight: ({ className, ...props }) => (
+          <ChevronRight className={cn("size-4", className)} {...props} />
+        ),
       }}
       {...props}
     />
