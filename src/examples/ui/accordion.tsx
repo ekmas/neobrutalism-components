@@ -7,8 +7,8 @@ import {
 
 export default function AccordionDemo() {
   return (
-    <Accordion className="m1000:w-full" type="single" collapsible>
-      <AccordionItem className="w-[500px] m1000:max-w-full" value="item-1">
+    <Accordion type="single" collapsible className="w-full max-w-xl">
+      <AccordionItem value="item-1">
         <AccordionTrigger>Is it accessible?</AccordionTrigger>
         <AccordionContent>
           Yes. It adheres to the WAI-ARIA design pattern.

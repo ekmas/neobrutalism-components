@@ -30,7 +30,7 @@ export default function CollapsibleDemo() {
             size="sm"
             className="w-9 bg-secondary-background text-foreground p-0"
           >
-            <ChevronsUpDown className="h-4 w-4" />
+            <ChevronsUpDown className="size-4" />
             <span className="sr-only">Toggle</span>
           </Button>
         </CollapsibleTrigger>

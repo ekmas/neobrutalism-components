@@ -1,5 +1,3 @@
-import { AppWindowIcon, CodeIcon } from "lucide-react"
-
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -40,7 +38,9 @@ export default function TabsDemo() {
             </div>
           </CardContent>
           <CardFooter>
-            <Button variant="neutral">Save changes</Button>
+            <Button className="w-full" variant="neutral">
+              Save changes
+            </Button>
           </CardFooter>
         </Card>
       </TabsContent>
@@ -64,7 +64,9 @@ export default function TabsDemo() {
             </div>
           </CardContent>
           <CardFooter>
-            <Button variant="neutral">Save password</Button>
+            <Button className="w-full" variant="neutral">
+              Save password
+            </Button>
           </CardFooter>
         </Card>
       </TabsContent>

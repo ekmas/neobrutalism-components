@@ -1,7 +1,6 @@
 "use client"
 
-import { CommandList } from "cmdk"
-import { Check, ChevronsUpDown } from "lucide-react"
+import { CheckIcon, ChevronsUpDown } from "lucide-react"
 
 import * as React from "react"
 
@@ -12,6 +11,7 @@ import {
   CommandGroup,
   CommandInput,
   CommandItem,
+  CommandList,
 } from "@/components/ui/command"
 import {
   Popover,
@@ -44,7 +44,7 @@ const frameworks = [
   },
 ]
 
-export default function ComboboxDemo() {
+export default function FrameworkCombobox() {
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState("")
 
@@ -55,18 +55,18 @@ export default function ComboboxDemo() {
           variant="noShadow"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between"
+          className="w-full justify-between md:max-w-[200px]"
         >
           {value
             ? frameworks.find((framework) => framework.value === value)?.label
             : "Select framework..."}
-          <ChevronsUpDown color="black" className="ml-2 h-4 w-4 shrink-0" />
+          <ChevronsUpDown />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] border-0! p-0 font-heading">
-        <Command>
-          <CommandList>
-            <CommandInput placeholder="Search framework..." />
+      <PopoverContent className="w-(--radix-popover-trigger-width) border-0 p-0">
+        <Command className="**:data-[slot=command-input-wrapper]:h-11">
+          <CommandInput placeholder="Search framework..." />
+          <CommandList className="p-1">
             <CommandEmpty>No framework found.</CommandEmpty>
             <CommandGroup>
               {frameworks.map((framework) => (
@@ -78,13 +78,13 @@ export default function ComboboxDemo() {
                     setOpen(false)
                   }}
                 >
-                  <Check
+                  {framework.label}
+                  <CheckIcon
                     className={cn(
-                      "mr-2 h-4 w-4",
+                      "ml-auto",
                       value === framework.value ? "opacity-100" : "opacity-0",
                     )}
                   />
-                  {framework.label}
                 </CommandItem>
               ))}
             </CommandGroup>

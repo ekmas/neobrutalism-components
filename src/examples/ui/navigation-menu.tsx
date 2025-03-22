@@ -63,11 +63,11 @@ export default function NavigationMenuDemo() {
             <span className="hidden m750:inline">Home</span>
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[500px] gap-3 p-6 lg:grid-cols-[.75fr_1fr] m750:w-[300px]">
+            <ul className="grid w-[500px] gap-3 p-2 lg:grid-cols-[.75fr_1fr] m750:w-[300px]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <a
-                    className="from-muted/50 to-muted flex h-full w-full select-none flex-col justify-end rounded-md bg-linear-to-b p-6 no-underline outline-hidden"
+                    className="flex h-full w-full select-none flex-col justify-end rounded-base p-6 no-underline outline-hidden"
                     href="https://ui.shadcn.com"
                   >
                     <div className="mb-2 mt-4 text-lg font-heading">
@@ -104,7 +104,7 @@ export default function NavigationMenuDemo() {
             Components
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+            <ul className="grid w-[400px] gap-3 p-2 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {components.map((component) => (
                 <ListItem
                   key={component.title}
@@ -141,13 +141,13 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "hover:bg-accent block text-main-foreground select-none space-y-1 rounded-base border-2 border-transparent p-3 leading-none no-underline outline-hidden transition-colors hover:border-border dark:hover:border-darkBorder",
+            "hover:bg-accent block text-main-foreground select-none space-y-1 rounded-base border-2 border-transparent p-3 leading-none no-underline outline-hidden transition-colors hover:border-border",
             className,
           )}
           {...props}
         >
           <div className="text-base font-heading leading-none">{title}</div>
-          <p className="text-muted-foreground font-base line-clamp-2 text-sm leading-snug">
+          <p className="font-base line-clamp-2 text-sm leading-snug">
             {children}
           </p>
         </a>

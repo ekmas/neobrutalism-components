@@ -1,14 +1,14 @@
-import { Terminal } from "lucide-react"
+import { CheckCircle2Icon } from "lucide-react"
 
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 
 export default function AlertDemo() {
   return (
     <Alert>
-      <Terminal />
-      <AlertTitle>Default Alert</AlertTitle>
+      <CheckCircle2Icon />
+      <AlertTitle>Success! Your changes have been saved</AlertTitle>
       <AlertDescription>
-        You can add components and dependencies to your app using the cli.
+        This is an alert with icon, title and description.
       </AlertDescription>
     </Alert>
   )
