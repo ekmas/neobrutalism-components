@@ -5,7 +5,7 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/drawer
 ---
 
 <ComponentPreview component="drawer">
-  ```tsx file=<rootDir>/src/examples/ui/drawer.tsx
+  ```tsx file=<rootDir>/src/examples/ui/drawer/index.tsx
   ```
 </ComponentPreview>
 
@@ -44,9 +44,9 @@ import {
         <DrawerDescription>This action cannot be undone.</DrawerDescription>
       </DrawerHeader>
       <DrawerFooter className="grid grid-cols-2">
-        <Button variant="noShadow">Submit</Button>
+        <Button example="noShadow">Submit</Button>
         <DrawerClose asChild>
-          <Button className="bg-secondary-background text-foreground" variant="noShadow">
+          <Button className="bg-secondary-background text-foreground" example="noShadow">
             Cancel
           </Button>
         </DrawerClose>
@@ -55,3 +55,19 @@ import {
   </DrawerContent>
 </Drawer>
 ```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="drawer" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/drawer/index.tsx
+  ```
+</ComponentPreview>
+
+### With Scrollable Content
+
+<ComponentPreview component="drawer" example="scrollable-content">
+  ```tsx file=<rootDir>/src/examples/ui/drawer/scrollable-content.tsx
+  ```
+</ComponentPreview>

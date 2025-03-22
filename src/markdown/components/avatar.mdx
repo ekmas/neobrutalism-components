@@ -5,7 +5,7 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/avatar
 ---
 
 <ComponentPreview component="avatar">
-  ```tsx file=<rootDir>/src/examples/ui/avatar.tsx
+  ```tsx file=<rootDir>/src/examples/ui/avatar/index.tsx
   ```
 </ComponentPreview>
 
@@ -24,7 +24,23 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 ```tsx
 <Avatar>
-  <AvatarImage src="https://github.com/ekmas.png" />
-  <AvatarFallback>SB</AvatarFallback>
+  <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+  <AvatarFallback>CN</AvatarFallback>
 </Avatar>
 ```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="avatar" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/avatar/index.tsx
+  ```
+</ComponentPreview>
+
+### Fallback
+
+<ComponentPreview component="avatar" example="fallback">
+  ```tsx file=<rootDir>/src/examples/ui/avatar/fallback.tsx
+  ```
+</ComponentPreview>

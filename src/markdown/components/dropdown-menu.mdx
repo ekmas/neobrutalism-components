@@ -5,7 +5,7 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/dropdown-menu
 ---
 
 <ComponentPreview component="dropdown-menu">
-  ```tsx file=<rootDir>/src/examples/ui/dropdown-menu.tsx
+  ```tsx file=<rootDir>/src/examples/ui/dropdown-menu/index.tsx
   ```
 </ComponentPreview>
 
@@ -58,7 +58,7 @@ import {
 ```tsx
 <DropdownMenu>
   <DropdownMenuTrigger asChild>
-    <Button variant={'noShadow'}>Open</Button>
+    <Button example={'noShadow'}>Open</Button>
   </DropdownMenuTrigger>
   <DropdownMenuContent className="w-56">
     <DropdownMenuLabel>My Account</DropdownMenuLabel>
@@ -142,3 +142,26 @@ import {
   </DropdownMenuContent>
 </DropdownMenu>
 ```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="dropdown-menu">
+  ```tsx file=<rootDir>/src/examples/ui/dropdown-menu/index.tsx
+  ```
+</ComponentPreview>
+
+### Checkboxes
+
+<ComponentPreview component="dropdown-menu" example="checkboxes">
+  ```tsx file=<rootDir>/src/examples/ui/dropdown-menu/checkboxes.tsx
+  ```
+</ComponentPreview>
+
+### Radio Group
+
+<ComponentPreview component="dropdown-menu" example="radio">
+  ```tsx file=<rootDir>/src/examples/ui/dropdown-menu/radio.tsx
+  ```
+</ComponentPreview>

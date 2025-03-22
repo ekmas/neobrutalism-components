@@ -11,10 +11,9 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/date-picker
 
 ## Installation
 
-<Installation component="date-picker">
-  ```tsx file=<rootDir>/src/components/ui/date-picker.tsx
-  ```
-</Installation>
+The Date Picker is built using a composition of the `<Popover />` and the `<Calendar />` components.
+
+See installation instructions for the <Link href="/docs/popover">Popover</Link> and the <Link href="/docs/calendar">Calendar</Link> components.
 
 ## Usage
 
@@ -31,8 +30,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover'
-
-import { cn } from '@/lib/utils'
 ```
 
 ```tsx
@@ -44,17 +41,10 @@ const [date, setDate] = React.useState<Date>()
   <PopoverTrigger asChild>
     <Button
       variant="noShadow"
-      className={cn(
-        'w-[280px] justify-start text-left font-base',
-        !date && 'text-muted-foreground',
-      )}
+      className="w-[280px] justify-start text-left font-base"
     >
-      <CalendarIcon className="mr-2 h-4 w-4 text-main-foreground" />
-      {date ? (
-        format(date, 'PPP')
-      ) : (
-        <span className="text-main-foreground">Pick a date</span>
-      )}
+      <CalendarIcon />
+      {date ? format(date, "PPP") : <span>Pick a date</span>}
     </Button>
   </PopoverTrigger>
   <PopoverContent className="w-auto border-0! p-0">

@@ -19,16 +19,16 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/collapsible
 ## Usage
 
 ```ts
-import { ChevronsUpDown } from 'lucide-react'
+import { ChevronsUpDown } from "lucide-react"
 
-import * as React from 'react'
+import * as React from "react"
 
-import { Button } from '@/components/ui/button'
+import { Button } from "@/components/ui/button"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from '@/components/ui/collapsible'
+} from "@/components/ui/collapsible"
 ```
 
 ```tsx
@@ -52,7 +52,7 @@ const [isOpen, setIsOpen] = React.useState(false)
         size="sm"
         className="w-9 bg-secondary-background text-foreground p-0"
       >
-        <ChevronsUpDown className="h-4 w-4" />
+        <ChevronsUpDown className="size-4" />
         <span className="sr-only">Toggle</span>
       </Button>
     </CollapsibleTrigger>
