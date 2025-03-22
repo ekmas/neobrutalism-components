@@ -25,7 +25,7 @@ export default function Sidebar() {
             key={id}
             href={`${item.href}`}
             className={cn(
-              "block border-b-4 border-r-4 border-border p-4 pl-7 text-lg font-base text-foreground/90 hover:bg-main50 hover:text-main-foreground",
+              "block border-b-4 border-r-4 border-border p-4 pl-7 text-lg font-base text-foreground/90 hover:bg-main/70 hover:text-main-foreground",
               item.href === pathname &&
                 "bg-main text-main-foreground hover:bg-main",
             )}

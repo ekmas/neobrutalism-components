@@ -6,52 +6,52 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #dfe5f2;
-  --secondary-background: #fff;
-  --blank: #000;
-  --border: #000;
-  --foreground: #000;
-  --main-foreground: #000;
-  --ring: #000;
-  --ring-offset: #fff;
-
-  --main: #88aaee;
-  --main50: #88aaeeb3;
-  --overlay: rgba(0, 0, 0, 0.8);
-
   --border-radius: 5px;
   --box-shadow-x: 4px;
   --box-shadow-y: 4px;
   --reverse-box-shadow-x: -4px;
   --reverse-box-shadow-y: -4px;
 
+  --background: oklch(93.46% 0.0304 254.32);
+  --secondary-background: oklch(100% 0 0);
+  --foreground: oklch(0% 0 0);
+  --main-foreground: oklch(0% 0 0);
+
+  --main: oklch(67.47% 0.1725 259.61);
+  --blank: oklch(0% 0 0);
+  --border: oklch(0% 0 0);
+  --ring: oklch(0% 0 0);
+  --ring-offset: oklch(100% 0 0);
+  --overlay: oklch(0% 0 0 / 0.8);
+
   --shadow: var(--box-shadow-x) var(--box-shadow-y) 0px 0px var(--border);
 }
 
 .dark {
-  --background: #272933;
-  --secondary-background: #212121;
-  --blank: #fff;
-  --border: #000;
-  --foreground: #e6e6e6;
-  --main-foreground: #000;
-  --ring: #fff;
-  --ring-offset: #000;
+  --background: oklch(29.12% 0.0633 270.86);
+  --secondary-background: oklch(23.93% 0 0);
+  --foreground: oklch(92.49% 0 0);
+  --main-foreground: oklch(0% 0 0);
+
+  --blank: oklch(100% 0 0);
+  --border: oklch(0% 0 0);
+  --ring: oklch(100% 0 0);
+  --ring-offset: oklch(0% 0 0);
 
   --shadow: var(--box-shadow-x) var(--box-shadow-y) 0px 0px var(--border);
 }
 
 @theme inline {
   --color-main: var(--main);
-  --color-main50: var(--main50);
   --color-background: var(--background);
   --color-secondary-background: var(--secondary-background);
+  --color-foreground: var(--foreground);
+  --color-main-foreground: var(--main-foreground);
   --color-blank: var(--blank);
   --color-border: var(--border);
   --color-overlay: var(--overlay);
-  --color-foreground: var(--foreground);
-  --color-main-foreground: var(--main-foreground);
-  --color-secondaryBlack: #1c1c1c;
+
+  --color-secondaryBlack: oklch(23.93% 0 0);
 
   --spacing-boxShadowX: var(--box-shadow-x);
   --spacing-boxShadowY: var(--box-shadow-y);
@@ -161,7 +161,7 @@ body,
 
 html.dark body,
 html.dark .scrollbar {
-  --sb-track-color: #1c1c1c;
+  --sb-track-color: #1f1f1f;
   --sb-thumb-color: #e6e6e6;
 }
 

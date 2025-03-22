@@ -83,6 +83,10 @@
   margin-top: 0.5rem; /* mt-2 */
 }
 
+[data-highlighted-chars] {
+  background-color: transparent;
+}
+
 pre.scrollbar::-webkit-scrollbar {
   width: 7px;
   height: 7px;

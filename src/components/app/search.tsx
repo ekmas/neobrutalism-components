@@ -9,7 +9,7 @@ import { COMPONENTS_LINKS, GETTING_STARTED_LINKS } from "@/data/sidebar-links"
 
 import { Button } from "@/components/ui/button"
 import {
-  Command,
+  CommandDialog,
   CommandEmpty,
   CommandGroup,
   CommandInput,
@@ -17,7 +17,6 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command"
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 
 export default function Search() {
   const DOCS_LINKS = [
@@ -66,39 +65,38 @@ export default function Search() {
           ⌘K
         </span>
       </Button>
-      <Dialog open={open} onOpenChange={setOpen}>
-        <DialogTitle className="sr-only">Search documentation</DialogTitle>
-        <DialogContent className="overflow-hidden rounded-none border-0 p-0">
-          <Command className="rounded-none">
-            <CommandInput placeholder="Search documentation..." />
-            <CommandList className="command-scrollbar">
-              <CommandEmpty>No results found.</CommandEmpty>
-              {DOCS_LINKS.map(({ heading, links }, i) => {
-                return (
-                  <React.Fragment key={heading}>
-                    <CommandGroup heading={heading}>
-                      {links.map(({ text, href }) => {
-                        return (
-                          <CommandItem
-                            value={text}
-                            onSelect={() => {
-                              runCommand(() => router.push(href))
-                            }}
-                            key={href}
-                          >
-                            {text}
-                          </CommandItem>
-                        )
-                      })}
-                    </CommandGroup>
-                    {i < 2 && <CommandSeparator />}
-                  </React.Fragment>
-                )
-              })}
-            </CommandList>
-          </Command>
-        </DialogContent>
-      </Dialog>
+      <CommandDialog
+        title="Search documentation"
+        open={open}
+        onOpenChange={setOpen}
+      >
+        <CommandInput placeholder="Search documentation..." />
+        <CommandList className="command-scrollbar **:data-[slot=command-item]:py-1.5!">
+          <CommandEmpty>No results found.</CommandEmpty>
+          {DOCS_LINKS.map(({ heading, links }, i) => {
+            return (
+              <React.Fragment key={heading}>
+                <CommandGroup heading={heading}>
+                  {links.map(({ text, href }) => {
+                    return (
+                      <CommandItem
+                        value={text}
+                        onSelect={() => {
+                          runCommand(() => router.push(href))
+                        }}
+                        key={href}
+                      >
+                        {text}
+                      </CommandItem>
+                    )
+                  })}
+                </CommandGroup>
+                {i < 2 && <CommandSeparator />}
+              </React.Fragment>
+            )
+          })}
+        </CommandList>
+      </CommandDialog>
     </>
   )
 }

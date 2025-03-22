@@ -35,7 +35,7 @@ export function TableOfContents({ items }: TocProps) {
             key={id}
             href={`#${id}`}
             className={cn(
-              "block border-t-3 text-foreground border-t-border last:border-b-3 last:border-b-border hover:bg-main50 hover:text-main-foreground font-base py-1 pr-3",
+              "block border-t-3 text-foreground border-t-border last:border-b-3 last:border-b-border hover:bg-main/70 hover:text-main-foreground font-base py-1 pr-3",
               depth === 2 ? "pl-3" : depth === 3 ? "pl-6" : "pl-9",
               id === activeHeading &&
                 "bg-main hover:bg-main text-main-foreground",

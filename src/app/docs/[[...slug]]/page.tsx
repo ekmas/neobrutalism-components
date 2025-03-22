@@ -112,7 +112,7 @@ export default async function DocPage(props: DocPageProps) {
 
   return (
     <div className="docs min-h-[100dvh] w-[full-250px] bg-background px-5 pt-[88px]">
-      <div className="prose-p:text-foreground prose-p:mt-6 prose-headings:scroll-mt-32 prose-h1:mb-4 prose-ul:pl-5 prose-ul:list-disc prose-li:font-base mx-auto w-[750px] py-20 leading-relaxed prose-h2:mt-10 prose-h2:mb-6 prose-h3:mt-8 prose-headings:font-heading prose-h1:text-3xl prose-h2:text-2xl prose-h3:mb-4 prose-h3:text-xl prose-p:leading-7 prose-p:font-base prose-code:p-[3px] prose-a:underline prose-a:font-heading prose-code:mx-1 prose-code:rounded-base prose-code:font-bold prose-code:border prose-code:text-foreground prose-code:text-sm prose-code:border-border prose-code:bg-main prose-code:px-2">
+      <div className="prose-p:text-foreground prose-p:mt-6 prose-headings:scroll-mt-32 prose-h1:mb-4 prose-ul:pl-5 prose-ul:list-disc prose-li:font-base mx-auto w-[750px] py-20 leading-relaxed prose-h2:mt-10 prose-h2:mb-6 prose-h3:mt-8 prose-headings:font-heading prose-h1:text-3xl prose-h2:text-2xl prose-h3:mb-6 prose-h3:text-xl prose-p:leading-7 prose-p:font-base prose-code:p-[3px] prose-a:underline prose-a:font-heading prose-code:mx-1 prose-code:rounded-base prose-code:font-bold prose-code:border prose-code:text-foreground prose-code:text-sm prose-code:border-border prose-code:bg-main prose-code:px-2">
         <article>
           <div className="mb-8">
             <h1>{title}</h1>
