@@ -44,7 +44,7 @@ export default function UserCombobox() {
 
   const selectedUser = React.useMemo(
     () => users.find((user) => user.id === value),
-    [value, users],
+    [value],
   )
 
   return (

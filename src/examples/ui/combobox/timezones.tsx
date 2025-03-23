@@ -64,15 +64,20 @@ export default function TimezoneCombobox() {
   const selectedGroup = React.useMemo(
     () =>
       timezones.find((group) =>
-        group.timezones.find((tz) => tz.value === value),
+        group.timezones.some((tz) => tz.value === value),
       ),
-    [value, timezones],
+    [value],
   )
 
-  const selectedTimezoneLabel = React.useMemo(
-    () => selectedGroup?.timezones.find((tz) => tz.value === value)?.label,
-    [value, selectedGroup],
-  )
+  const selectedTimezoneLabel = React.useMemo(() => {
+    if (!selectedGroup) return undefined
+    for (const tz of selectedGroup.timezones) {
+      if (tz.value === value) {
+        return tz.label
+      }
+    }
+    return undefined
+  }, [value, selectedGroup])
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
