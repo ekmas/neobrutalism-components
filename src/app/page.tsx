@@ -1,5 +1,5 @@
 import { Marquee } from "@devnomic/marquee"
-import { ArrowUpRight, Check } from "lucide-react"
+import { ArrowUpRight } from "lucide-react"
 
 import "@/styling/marquee.css"
 
@@ -7,6 +7,21 @@ import Link from "next/link"
 
 import reviews from "@/data/reviews"
 
+import HeroComponents from "@/components/app/hero-components"
+import { sharedComponents } from "@/components/app/mdx-components"
+import { Pre } from "@/components/app/pre"
+import StylingCustomizer from "@/components/app/styling-customizer"
+import Star8 from "@/components/stars/s8"
+import Star9 from "@/components/stars/s9"
+import Star11 from "@/components/stars/s11"
+import Star14 from "@/components/stars/s14"
+import Star16 from "@/components/stars/s16"
+import Star20 from "@/components/stars/s20"
+import Star22 from "@/components/stars/s22"
+import Star26 from "@/components/stars/s26"
+import Star29 from "@/components/stars/s29"
+import Star32 from "@/components/stars/s32"
+import Star37 from "@/components/stars/s37"
 import {
   Accordion,
   AccordionContent,
@@ -15,16 +30,38 @@ import {
 } from "@/components/ui/accordion"
 
 export default function Home() {
+  const { Tabs, TabsContent, TabsList, TabsTrigger } = sharedComponents
+
   return (
     <div className="text-foreground">
-      <main className="relative flex min-h-[100svh] flex-col items-center justify-center bg-background px-5 py-[200px] font-bold">
-        <div className="mx-auto w-container max-w-full grid grid-cols-2 m1100:grid-cols-1">
-          <div className="text-left m1000:text-center m1100:w-4/5 m1000:w-full">
-            <h1 className="text-5xl font-heading m1400:text-4xl m800:text-3xl m500:text-2xl m400:text-xl">
-              Neobrutalism components
+      <main className="relative flex min-h-[100svh] flex-col overflow-x-hidden items-center justify-center bg-background px-5 py-[200px] bg-[linear-gradient(to_right,#80808033_1px,transparent_1px),linear-gradient(to_bottom,#80808033_1px,transparent_1px)] bg-[size:70px_70px]">
+        <HeroComponents className="-left-[130px]" />
+        <HeroComponents className="-right-[130px]" reverse />
+        <div className="mx-auto w-container max-w-full">
+          <div className="flex flex-col items-center text-center">
+            <h1 className="text-6xl leading-normal font-heading m1400:text-4xl m800:text-3xl m500:text-2xl m400:text-xl">
+              Get started with creating <br />{" "}
+              <span className="relative px-2 mr-2 bg-main/50 rounded-base border-2 border-border/40 dark:border-border/70">
+                neobrutalism
+                <Star9
+                  className="absolute -bottom-4 -right-5"
+                  size={45}
+                  color="var(--main)"
+                  stroke="black"
+                  pathClassName="stroke-5 dark:stroke-3.5"
+                />
+                <Star9
+                  className="absolute -top-4 -left-5"
+                  size={45}
+                  color="var(--main)"
+                  stroke="black"
+                  pathClassName="stroke-5 dark:stroke-3.5"
+                />
+              </span>{" "}
+              layouts.
             </h1>
 
-            <p className="mb-[60px] leading-snug m800:mb-10 m800:mt-8 m1100:w-3/4 m1000:w-full mt-[40px] m1400:text-2xl font-base text-3xl m800:text-lg m400:text-base">
+            <p className="mt-[50px] mb-[60px] leading-snug m800:mb-10 m800:mt-8 m1100:w-3/4 m1000:w-full m1400:text-2xl font-base text-3xl m800:text-lg m400:text-base">
               A collection of neobrutalism-styled components based on shadcn/ui.
             </p>
 
@@ -33,27 +70,55 @@ export default function Home() {
               href={"/docs"}
             >
               Read the docs
-              <ArrowUpRight className="ml-[10px] w-[30px] h-[30px] m500:w-[20px] m500:h-[20px]" />
+              <ArrowUpRight className="ml-[10px] size-[30px] m500:w-[20px] m500:h-[20px]" />
             </Link>
           </div>
         </div>
       </main>
       <div>
         <Marquee
-          className="border-t-4 border-border bg-secondary-background py-5 m500:py-4 font-base"
+          className="border-t-4 border-border [&_.animate-marquee-left]:gap-[50px]! bg-secondary-background py-4 font-base"
           direction="left"
         >
-          {Array(15)
-            .fill("xd")
-            .map((x, id) => {
-              return (
-                <div className="flex items-center" key={id}>
-                  <span className="mx-5 text-4xl m800:text-2xl m500:text-xl">
-                    Neobrutalism components
-                  </span>
-                </div>
-              )
-            })}
+          {Array.from({ length: 7 }).map((_, id) => {
+            return (
+              <div className="flex items-center gap-[50px]" key={id}>
+                <span className="text-3xl m800:text-2xl m500:text-xl">
+                  Neobrutalism components
+                </span>
+
+                <Star32 size={50} className="text-foreground" />
+
+                <span className="text-3xl m800:text-2xl m500:text-xl">
+                  Neobrutalism components
+                </span>
+
+                <Star22
+                  size={50}
+                  stroke="black"
+                  strokeWidth={6}
+                  color="var(--main)"
+                />
+
+                <span className="text-3xl m800:text-2xl m500:text-xl">
+                  Neobrutalism components
+                </span>
+
+                <Star11 size={50} className="text-foreground" />
+
+                <span className="text-3xl m800:text-2xl m500:text-xl">
+                  Neobrutalism components
+                </span>
+
+                <Star26
+                  size={50}
+                  color="var(--main)"
+                  stroke="black"
+                  strokeWidth={7}
+                />
+              </div>
+            )
+          })}
         </Marquee>
         <div className="grid grid-cols-2 border-b-4 border-t-4 border-border m700:grid-cols-1">
           <section className="border-b-4 border-r-4 border-border bg-background p-14 py-16 m1300:p-10 m1300:py-12 m800:p-6 m800:py-8 m700:border-r-0 m700:bg-main dark:m700:bg-main m700:dark:text-main-foreground">
@@ -120,7 +185,37 @@ export default function Home() {
             </p>
           </section>
         </div>
-        <section className="inset-0 flex w-full px-5 flex-col items-center justify-center bg-secondary-background bg-[linear-gradient(to_right,#80808033_1px,transparent_1px),linear-gradient(to_bottom,#80808033_1px,transparent_1px)] bg-[size:70px_70px] font-base">
+        <section className="border-b-4 border-b-border bg-background py-20 m500:py-14 font-base lg:py-[100px]">
+          <h2 className="mb-5 px-5 text-center text-4xl font-heading m1300:text-3xl m700:text-2xl m500:text-xl">
+            Fully customizable set of components.
+          </h2>
+
+          <p className="text-center text-lg font-base m1300:text-base m800:text-sm m500:text-xs">
+            You can customize the styling of the components to your liking.
+            Visit{" "}
+            <Link className="underline font-heading" href={"/styling"}>
+              styling page
+            </Link>{" "}
+            to see the available options.
+          </p>
+
+          <StylingCustomizer />
+        </section>
+        <section className="inset-0 flex relative overflow-hidden w-full px-5 flex-col items-center justify-center bg-secondary-background bg-[linear-gradient(to_right,#80808033_1px,transparent_1px),linear-gradient(to_bottom,#80808033_1px,transparent_1px)] bg-[size:70px_70px] font-base">
+          <Star20
+            size={300}
+            color="var(--main)"
+            stroke="black"
+            strokeWidth={3}
+            className="absolute top-[120px] -left-[145px]"
+          />
+          <Star14
+            size={250}
+            color="var(--main)"
+            stroke="black"
+            strokeWidth={3}
+            className="absolute bottom-[120px] -right-[125px]"
+          />
           <div className="mx-auto w-container max-w-full py-20 m500:py-14 lg:py-[100px]">
             <h2 className="mb-10 text-center text-4xl font-heading m1300:text-3xl m700:text-2xl m500:text-xl lg:mb-20">
               Loved by the community
@@ -217,34 +312,111 @@ export default function Home() {
           </div>
         </section>
         <Marquee
-          className="border-b-4 border-border bg-secondary-background py-5 m500:py-4 font-base"
+          className="border-b-4 border-border [&_.animate-marquee-left]:gap-[50px]! bg-secondary-background py-4 font-base"
           direction="left"
           reverse
         >
-          {Array(15)
-            .fill("xd")
-            .map((x, id) => {
-              return (
-                <div className="flex items-center" key={id}>
-                  <span className="mx-5 text-4xl m800:text-2xl m500:text-xl">
-                    Neobrutalism components
-                  </span>
-                </div>
-              )
-            })}
+          {Array.from({ length: 7 }).map((_, id) => {
+            return (
+              <div className="flex items-center gap-[50px]" key={id}>
+                <span className="text-3xl m800:text-2xl m500:text-xl">
+                  Neobrutalism components
+                </span>
+
+                <Star29 size={50} className="text-foreground" />
+
+                <span className="text-3xl m800:text-2xl m500:text-xl">
+                  Neobrutalism components
+                </span>
+
+                <Star37
+                  size={50}
+                  stroke="black"
+                  strokeWidth={6}
+                  color="var(--main)"
+                />
+
+                <span className="text-3xl m800:text-2xl m500:text-xl">
+                  Neobrutalism components
+                </span>
+
+                <Star16 size={50} className="text-foreground" />
+
+                <span className="text-3xl m800:text-2xl m500:text-xl">
+                  Neobrutalism components
+                </span>
+
+                <Star8
+                  size={50}
+                  color="var(--main)"
+                  stroke="black"
+                  strokeWidth={7}
+                />
+              </div>
+            )
+          })}
         </Marquee>
         <section className="inset-0 w-full flex flex-col items-center justify-center bg-main  bg-[linear-gradient(to_right,#00000033_1px,transparent_1px),linear-gradient(to_bottom,#00000033_1px,transparent_1px)] bg-[size:70px_70px] px-5 py-[200px] m1000:py-[150px] m500:py-[120px]">
-          <h2 className="text-center text-main-foreground font-heading text-5xl m1000:text-3xl m500:text-2xl m400:text-xl">
-            Start making neobrutalism layouts today.
+          <h2 className="text-center text-main-foreground mb-12 font-heading text-5xl m1000:text-3xl m500:text-2xl m400:text-xl">
+            Start your neobrutalism project today.
           </h2>
 
-          <Link
-            className="mt-[50px] flex font-base items-center rounded-base border-2 border-black bg-secondary-background px-10 py-3 text-[22px] shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none m800:px-8 m800:py-2.5 m800:text-lg m500:px-6 m500:py-2 m500:text-base m400:px-4 m400:text-sm"
-            href={"/docs"}
-          >
-            Read the docs
-            <ArrowUpRight className="ml-[10px] w-[30px] h-[30px] m500:w-[20px] m500:h-[20px]" />
-          </Link>
+          <Tabs defaultValue="pnpm" className="w-[600px] h-max">
+            <TabsList className="grid w-full grid-cols-4">
+              <TabsTrigger value="pnpm">pnpm</TabsTrigger>
+              <TabsTrigger value="npm">npm</TabsTrigger>
+              <TabsTrigger value="yarn">yarn</TabsTrigger>
+              <TabsTrigger value="bun">bun</TabsTrigger>
+            </TabsList>
+            <TabsContent value="pnpm">
+              <Pre
+                __rawstring__="pnpm dlx shadcn@latest init https://neobrutalism.dev/r/init.json"
+                data-language="bash"
+                wrapperClassName="mb-0!"
+              >
+                <code>
+                  <span className="text-white font-bold">pnpm</span>
+                  <span className="text-white/[0.53] ">{` dlx shadcn@latest init https://neobrutalism.dev/r/init.json`}</span>
+                </code>
+              </Pre>
+            </TabsContent>
+            <TabsContent className="**:data-avatar:mb-0" value="npm">
+              <Pre
+                __rawstring__="npx shadcn@latest init https://neobrutalism.dev/r/init.json"
+                data-language="bash"
+                wrapperClassName="mb-0!"
+              >
+                <code>
+                  <span className="text-white font-bold">npx</span>
+                  <span className="text-white/[0.53] ">{` shadcn@latest init https://neobrutalism.dev/r/init.json`}</span>
+                </code>
+              </Pre>
+            </TabsContent>
+            <TabsContent value="yarn">
+              <Pre
+                __rawstring__="npx shadcn@latest init https://neobrutalism.dev/r/init.json"
+                data-language="bash"
+                wrapperClassName="mb-0!"
+              >
+                <code>
+                  <span className="text-white font-bold">npx</span>
+                  <span className="text-white/[0.53] ">{` shadcn@latest init https://neobrutalism.dev/r/init.json`}</span>
+                </code>
+              </Pre>
+            </TabsContent>
+            <TabsContent value="bun">
+              <Pre
+                __rawstring__="bunx shadcn@latest init https://neobrutalism.dev/r/init.json"
+                data-language="bash"
+                wrapperClassName="mb-0!"
+              >
+                <code>
+                  <span className="text-white font-bold">bunx</span>
+                  <span className="text-white/[0.53] ">{` --bun shadcn@latest init https://neobrutalism.dev/r/init.json`}</span>
+                </code>
+              </Pre>
+            </TabsContent>
+          </Tabs>
         </section>
       </div>
       <footer className="z-30 border-t-4 border-border bg-secondary-background px-5 py-5 text-center font-base m500:text-sm">
