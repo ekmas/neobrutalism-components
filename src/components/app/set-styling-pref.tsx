@@ -10,12 +10,21 @@ export default function SetStylingPref() {
     const fontWeight = localStorage.getItem("fontWeight")?.split(",")
 
     const r = window.document.querySelector(":root") as HTMLElement
+    const isDarkMode = document.documentElement.classList.contains("dark")
 
     if (colorObj) {
-      r.style.setProperty("--bg", colorObj.bg)
-      r.style.setProperty("--main", colorObj.main)
-      r.style.setProperty("--main/70", colorObj.main + "b3")
-      r.style.setProperty("--dark-bg", colorObj.darkBg)
+      if (isDarkMode) {
+        r.style.setProperty("--background", colorObj.darkBg)
+        r.style.setProperty("--main", colorObj.darkMain)
+      } else {
+        r.style.setProperty("--background", colorObj.bg)
+        r.style.setProperty("--main", colorObj.main)
+      }
+
+      r.style.setProperty("--dark-background", colorObj.darkBg)
+      r.style.setProperty("--dark-main", colorObj.darkMain)
+      r.style.setProperty("--light-background", colorObj.bg)
+      r.style.setProperty("--light-main", colorObj.main)
     }
 
     if (borderRadius) {
@@ -23,8 +32,8 @@ export default function SetStylingPref() {
     }
 
     if (boxShadow) {
-      r.style.setProperty("--horizontal-box-shadow", boxShadow[0] + "px")
-      r.style.setProperty("--vertical-box-shadow", boxShadow[1] + "px")
+      r.style.setProperty("--box-shadow-x", boxShadow[0] + "px")
+      r.style.setProperty("--box-shadow-y", boxShadow[1] + "px")
     }
 
     if (fontWeight) {
