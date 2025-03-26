@@ -23,7 +23,7 @@ import ShadcnCliCommand from "./shadcn-cli-command"
 
 export const sharedComponents = {
   Tabs: ({ className, ...props }: React.ComponentProps<typeof Tabs>) => (
-    <Tabs className={cn(className, "w-full shadow-shadow")} {...props} />
+    <Tabs className={cn("w-full shadow-shadow", className)} {...props} />
   ),
   TabsList: ({
     className,
@@ -31,8 +31,8 @@ export const sharedComponents = {
   }: React.ComponentProps<typeof TabsList>) => (
     <TabsList
       className={cn(
-        className,
         "w-full overflow-x-hidden rounded-none m750:h-10 p-0 bg-secondary-background",
+        className,
       )}
       {...props}
     />
@@ -43,8 +43,8 @@ export const sharedComponents = {
   }: React.ComponentProps<typeof TabsTrigger>) => (
     <TabsTrigger
       className={cn(
-        className,
         "h-full border-0 border-r-2 z-10 m400:text-xs border-r-border rounded-none sm:text-base data-[state=active]:text-main-foreground text-foreground last:border-r-0",
+        className,
       )}
       {...props}
     />

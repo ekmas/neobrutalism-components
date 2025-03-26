@@ -87,6 +87,10 @@
   background-color: transparent;
 }
 
+[data-slot="pre-wrapper"] {
+  margin-bottom: 20px;
+}
+
 pre.scrollbar::-webkit-scrollbar {
   width: 7px;
   height: 7px;

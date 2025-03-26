@@ -1,7 +1,7 @@
 button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
 }
 :-moz-focusring {
@@ -17,7 +17,7 @@ progress {
 ::-webkit-outer-spin-button {
   height: auto;
 }
-[type='search'] {
+[type="search"] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
@@ -38,7 +38,7 @@ progress {
   }
 }
 .animate-marquee-left {
-  animation: marquee-left var(--duration, 60s) linear infinite;
+  animation: marquee-left var(--duration, 100s) linear infinite;
 }
 @keyframes marquee-up {
   from {
@@ -61,8 +61,9 @@ progress {
   justify-content: space-around;
 }
 .gap-\[1rem\] {
-  gap: 1rem;
+  gap: 20px;
 }
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -102,8 +103,9 @@ progress {
   animation-direction: reverse;
 }
 .\[--gap\:1rem\] {
-  --gap: 1rem;
+  --gap: 20px;
 }
+
 .group:hover .group-hover\:\[animation-play-state\:paused\] {
   animation-play-state: paused;
 }

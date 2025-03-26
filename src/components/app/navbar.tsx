@@ -29,54 +29,48 @@ async function Navbar() {
   const starsCount = (repo.stargazers_count / 1000).toFixed(1) + "k"
 
   return (
-    <nav className="fixed left-0 top-0 z-20 mx-auto flex h-[88px] w-full items-center border-b-4 border-border bg-secondary-background px-5 m500:h-16 ">
+    <nav className="fixed left-0 top-0 z-20 mx-auto flex h-20 w-full items-center border-b-4 border-border bg-secondary-background px-5 m500:h-16 ">
       <div className="mx-auto flex w-[1300px] text-foreground max-w-full items-center justify-between">
         <MobileDrawer />
 
         <div className="flex items-center gap-10">
           <Link
-            className="text-[30px] h-11 w-11 rounded-base flex bg-main text-main-foreground border-2 border-black m500:w-9 m500:h-9 m500:text-[22px] items-center justify-center font-heading"
+            className="text-[26px] size-10 rounded-base flex bg-main text-main-foreground border-2 border-black m500:w-9 m500:h-9 m500:text-[22px] items-center justify-center font-heading"
             href={"/"}
           >
             N
           </Link>
 
-          <div className="flex items-center gap-10 m1100:gap-8 m900:hidden">
-            <Link className="text-xl font-base" href="/docs">
-              Docs
-            </Link>
+          <div className="flex items-center text-lg font-base gap-12 m1100:gap-8 m900:hidden">
+            <Link href="/docs">Docs</Link>
 
-            <Link className="text-xl font-base" href="/components/accordion">
-              Components
-            </Link>
+            <Link href="/docs/accordion">Components</Link>
 
-            <Link className="text-xl font-base" href="/stars">
-              Stars
-            </Link>
+            <Link href="/styling">Styling</Link>
 
-            <Link className="text-xl font-base" href="/templates">
-              Templates
-            </Link>
+            {/* <Link href="/blocks">Blocks</Link> */}
 
-            <Link className="text-xl font-base" href="/showcase">
-              Showcase
-            </Link>
+            <Link href="/stars">Stars</Link>
+
+            <Link href="/templates">Templates</Link>
+
+            <Link href="/showcase">Showcase</Link>
           </div>
         </div>
 
-        <div className="flex items-center gap-5 m1000:gap-5">
+        <div className="flex items-center gap-4">
           <Search />
 
-          <div className="flex items-center justify-end gap-5 m800:w-[unset] m400:gap-3">
+          <div className="flex items-center justify-end gap-4 m800:w-[unset] m400:gap-3">
             <a
               target="_blank"
               href="https://github.com/ekmas/neobrutalism-components"
-              className="m800:hidden flex gap-2 items-center justify-center rounded-base border-2 border-border shadow-nav dark:shadow-navDark dark:border-darkBorder p-2 transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none dark:hover:shadow-none"
+              className="m800:hidden flex gap-2 items-center justify-center rounded-base border-2 border-border shadow-nav dark:shadow-navDark dark:border-darkBorder px-1.5 h-10 transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none dark:hover:shadow-none"
             >
               <p className="font-semibold m1100:hidden">{starsCount}</p>
 
               <svg
-                className="h-6 w-6 m500:h-4 m500:w-4"
+                className="size-[22px] m500:h-4 m500:w-4"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 496 512"
               >
@@ -89,10 +83,10 @@ async function Navbar() {
             <a
               target="_blank"
               href="https://twitter.com/samuelbreznjak"
-              className="m800:hidden flex items-center justify-center rounded-base border-2 border-border shadow-nav dark:shadow-navDark dark:border-darkBorder p-2 transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none dark:hover:shadow-none"
+              className="m800:hidden flex items-center justify-center rounded-base border-2 border-border shadow-nav dark:shadow-navDark dark:border-darkBorder size-10 transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none dark:hover:shadow-none"
             >
               <svg
-                className="h-6 w-6 m500:h-4 m500:w-4"
+                className="size-[22px] m500:h-4 m500:w-4"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
               >

@@ -12,6 +12,9 @@
   --reverse-box-shadow-x: -4px;
   --reverse-box-shadow-y: -4px;
 
+  --heading-font-weight: 700;
+  --base-font-weight: 500;
+
   --background: oklch(93.46% 0.0304 254.32);
   --secondary-background: oklch(100% 0 0);
   --foreground: oklch(0% 0 0);
@@ -64,8 +67,8 @@
   --shadow-nav: 4px 4px 0px 0px var(--border);
   --shadow-darkNav: 4px 4px 0px 0px var(--dark-border);
 
-  --font-weight-base: 500;
-  --font-weight-heading: 700;
+  --font-weight-base: var(--base-font-weight);
+  --font-weight-heading: var(--heading-font-weight);
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
