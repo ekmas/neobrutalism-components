@@ -70,6 +70,9 @@ import SheetDemo from "@/examples/ui/sheet"
 import SheetSideDemo from "@/examples/ui/sheet/side"
 import SkeletonDemo from "@/examples/ui/skeleton"
 import SliderDemo from "@/examples/ui/slider"
+import SliderControlled from "@/examples/ui/slider/controlled"
+import TwoThumbsSliderDemo from "@/examples/ui/slider/two-thumbs"
+import VerticalSliderDemo from "@/examples/ui/slider/vertical"
 import SonnerDemo from "@/examples/ui/sonner"
 import SonnerActionDemo from "@/examples/ui/sonner/action"
 import SonnerCancelDemo from "@/examples/ui/sonner/cancel"
@@ -318,6 +321,12 @@ const COMPONENTS: Component[] = [
   {
     name: "Slider",
     exampleComponent: SliderDemo,
+    examples: {
+      default: SliderDemo,
+      "two-thumbs": TwoThumbsSliderDemo,
+      vertical: VerticalSliderDemo,
+      controlled: SliderControlled,
+    },
   },
   {
     name: "Sonner",
