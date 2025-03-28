@@ -7,7 +7,8 @@
     "start": "next start",
     "lint": "next lint",
     "generate-stars-ts": "tsx src/scripts/generate-stars-ts.ts",
-    "registry:build": "shadcn build",
+    "generate-registry-json": "tsx src/scripts/generate-registry-json.ts",
+    "registry:build": "shadcn build && tsx src/scripts/add-registry-styles.ts",
     "format:write": "prettier --write \"**/*.{ts,tsx,js}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,js}\""
   },
@@ -75,7 +76,7 @@
     "rehype-pretty-code": "^0.14.0",
     "rehype-slug": "^6.0.0",
     "remark-code-import": "^1.2.0",
-    "shadcn": "2.2.0-canary.3",
+    "shadcn": "2.3.0",
     "shiki": "^1.29.2",
     "sonner": "^2.0.1",
     "tailwind-merge": "^3.0.2",
