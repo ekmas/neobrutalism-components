@@ -7,7 +7,7 @@
     "start": "next start",
     "lint": "next lint",
     "generate-stars-ts": "tsx src/scripts/generate-stars-ts.ts",
-    "generate-registry-json": "tsx src/scripts/generate-registry-json.ts",
+    "registry:generate": "tsx src/scripts/generate-registry-json.ts",
     "registry:build": "shadcn build && tsx src/scripts/add-registry-styles.ts",
     "format:write": "prettier --write \"**/*.{ts,tsx,js}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,js}\""
