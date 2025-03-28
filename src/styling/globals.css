@@ -70,15 +70,10 @@
   --font-weight-base: var(--base-font-weight);
   --font-weight-heading: var(--heading-font-weight);
 
-  --animate-accordion-down: accordion-down 0.2s ease-out;
-  --animate-accordion-up: accordion-up 0.2s ease-out;
   --animate-marquee: marquee 5s linear infinite;
   --animate-marquee2: marquee2 5s linear infinite;
-  --animate-caret-blink: caret-blink 1.25s ease-out infinite;
 
   --spacing-container: 1300px;
-
-  --font-toast: "DM Sans", sans-serif;
 
   --breakpoint-m1600: max-width: 1600px;
   --breakpoint-m1500: max-width: 1500px;
@@ -107,24 +102,6 @@
   --breakpoint-xl: 80rem;
   --breakpoint-2xl: 96rem;
 
-  @keyframes accordion-down {
-    from {
-      height: 0;
-    }
-    to {
-      height: var(--radix-accordion-content-height);
-    }
-  }
-
-  @keyframes accordion-up {
-    from {
-      height: var(--radix-accordion-content-height);
-    }
-    to {
-      height: 0;
-    }
-  }
-
   @keyframes marquee {
     0% {
       transform: translateX(0%);
@@ -140,18 +117,6 @@
     }
     100% {
       transform: translateX(0%);
-    }
-  }
-
-  @keyframes caret-blink {
-    0%,
-    70%,
-    100% {
-      opacity: 1;
-    }
-    20%,
-    50% {
-      opacity: 0;
     }
   }
 }

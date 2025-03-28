@@ -9,11 +9,12 @@ const Toaster = ({ ...props }: ToasterProps) => {
   return (
     <Sonner
       theme={theme as ToasterProps["theme"]}
+      style={{ fontFamily: "inherit" }}
       toastOptions={{
         unstyled: true,
         classNames: {
           toast:
-            "bg-background text-foreground border-border border-2 font-heading font-toast shadow-shadow rounded-base text-[13px] flex items-center gap-2.5 p-4 w-[356px] [&:has(button)]:justify-between",
+            "bg-background text-foreground border-border border-2 font-heading shadow-shadow rounded-base text-[13px] flex items-center gap-2.5 p-4 w-[356px] [&:has(button)]:justify-between",
           description: "font-base",
           actionButton:
             "font-base border-2 text-[12px] h-6 px-2 bg-main text-main-foreground border-border rounded-base",

@@ -361,7 +361,7 @@ export default function Home() {
             Start your neobrutalism project today.
           </h2>
 
-          <Tabs defaultValue="pnpm" className="w-[600px] h-max">
+          <Tabs defaultValue="pnpm" className="w-[650px] h-max">
             <TabsList className="grid w-full grid-cols-4">
               <TabsTrigger value="pnpm">pnpm</TabsTrigger>
               <TabsTrigger value="npm">npm</TabsTrigger>
@@ -370,49 +370,49 @@ export default function Home() {
             </TabsList>
             <TabsContent value="pnpm">
               <Pre
-                __rawstring__="pnpm dlx shadcn@latest init https://neobrutalism.dev/r/init.json"
+                __rawstring__="pnpm dlx shadcn@latest init https://neobrutalism.dev/r/styling/blue.json"
                 data-language="bash"
                 wrapperClassName="mb-0!"
               >
                 <code>
                   <span className="text-white font-bold">pnpm</span>
-                  <span className="text-white/[0.53] ">{` dlx shadcn@latest init https://neobrutalism.dev/r/init.json`}</span>
+                  <span className="text-white/[0.53] ">{` dlx shadcn@latest init https://neobrutalism.dev/r/styling/blue.json`}</span>
                 </code>
               </Pre>
             </TabsContent>
             <TabsContent className="**:data-avatar:mb-0" value="npm">
               <Pre
-                __rawstring__="npx shadcn@latest init https://neobrutalism.dev/r/init.json"
+                __rawstring__="npx shadcn@latest init https://neobrutalism.dev/r/styling/blue.json"
                 data-language="bash"
                 wrapperClassName="mb-0!"
               >
                 <code>
                   <span className="text-white font-bold">npx</span>
-                  <span className="text-white/[0.53] ">{` shadcn@latest init https://neobrutalism.dev/r/init.json`}</span>
+                  <span className="text-white/[0.53] ">{` shadcn@latest init https://neobrutalism.dev/r/styling/blue.json`}</span>
                 </code>
               </Pre>
             </TabsContent>
             <TabsContent value="yarn">
               <Pre
-                __rawstring__="npx shadcn@latest init https://neobrutalism.dev/r/init.json"
+                __rawstring__="npx shadcn@latest init https://neobrutalism.dev/r/styling/blue.json"
                 data-language="bash"
                 wrapperClassName="mb-0!"
               >
                 <code>
                   <span className="text-white font-bold">npx</span>
-                  <span className="text-white/[0.53] ">{` shadcn@latest init https://neobrutalism.dev/r/init.json`}</span>
+                  <span className="text-white/[0.53] ">{` shadcn@latest init https://neobrutalism.dev/r/styling/blue.json`}</span>
                 </code>
               </Pre>
             </TabsContent>
             <TabsContent value="bun">
               <Pre
-                __rawstring__="bunx shadcn@latest init https://neobrutalism.dev/r/init.json"
+                __rawstring__="bunx shadcn@latest init https://neobrutalism.dev/r/styling/blue.json"
                 data-language="bash"
                 wrapperClassName="mb-0!"
               >
                 <code>
                   <span className="text-white font-bold">bunx</span>
-                  <span className="text-white/[0.53] ">{` --bun shadcn@latest init https://neobrutalism.dev/r/init.json`}</span>
+                  <span className="text-white/[0.53] ">{` --bun shadcn@latest init https://neobrutalism.dev/r/styling/blue.json`}</span>
                 </code>
               </Pre>
             </TabsContent>
