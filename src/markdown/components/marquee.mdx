@@ -17,29 +17,31 @@ description: A scrolling text component that animates horizontally.
 
 ## Before using
 
-You'll have to add this to `theme` section inside your tailwind config:
+You'll have to add this to `@theme inline` section inside your styling:
 
 <br />
 
-```tsx
-theme: {
-  extend: {
-    animation: {
-      marquee: "marquee 5s linear infinite",
-      marquee2: "marquee2 5s linear infinite",
-    },
-    keyframes: {
-      marquee: {
-        "0%": { transform: "translateX(0%)" },
-        "100%": { transform: "translateX(-100%)" },
-      },
-      marquee2: {
-        "0%": { transform: "translateX(100%)" },
-        "100%": { transform: "translateX(0%)" },
-      },
-    },
-  },
-},
+```css
+--animate-marquee: marquee 5s linear infinite;
+--animate-marquee2: marquee2 5s linear infinite;
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee2 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
 ```
 
 Make sure there is enough content in items so it loops perfectly.
