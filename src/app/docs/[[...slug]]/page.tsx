@@ -1,7 +1,7 @@
 import "@/styling/code.css"
 
 import { docs } from "@docs"
-import { ExternalLink, SquarePenIcon } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 
 import { notFound } from "next/navigation"
 
@@ -11,7 +11,6 @@ import { MDXContent, MDXTableOfContents } from "@/components/app/mdx-components"
 import Pagination from "@/components/app/pagination"
 import { TableOfContents } from "@/components/app/toc"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
 
 interface DocPageProps {
   params: Promise<{
@@ -98,11 +97,6 @@ export default async function DocPage(props: DocPageProps) {
 
   const docsSlug = slug === "/docs" ? "index" : slug
 
-  const repoDocsUrl =
-    "https://github.com/ekmas/neobrutalism-components/tree/main/src/markdown/" +
-    docsSlug +
-    ".mdx"
-
   const paginationProps = {
     prev: prevItem ? { name: prevItem.text, path: prevItem.href } : undefined,
     next: nextItem ? { name: nextItem.text, path: nextItem.href } : undefined,
@@ -111,57 +105,38 @@ export default async function DocPage(props: DocPageProps) {
   const isTocEmpty = tableOfContents.length < 2
 
   return (
-    <div className="docs min-h-[100dvh] w-[full-250px] bg-background px-5 pt-20">
-      <div className="prose-p:text-foreground prose-p:mt-6 prose-headings:scroll-mt-32 prose-h1:mb-4 prose-ul:pl-5 prose-ul:list-disc prose-li:font-base mx-auto w-[750px] py-20 leading-relaxed prose-h2:mt-10 prose-h2:mb-6 prose-h3:mt-8 prose-headings:font-heading prose-h1:text-3xl prose-h2:text-2xl prose-h3:mb-6 prose-h3:text-xl prose-p:leading-7 prose-p:font-base prose-code:p-[3px] prose-a:underline prose-a:font-heading prose-code:mx-1 prose-code:rounded-base prose-code:font-bold prose-code:border prose-code:text-foreground prose-code:text-sm prose-code:border-border prose-code:bg-main prose-code:px-2">
-        <article>
-          <div className="mb-8">
-            <h1>{title}</h1>
-            {description && (
-              <p className="mt-0 mb-4 text-lg text-foreground">{description}</p>
-            )}
-            {shadcnDocsLink && (
-              <a href={shadcnDocsLink} target="_blank">
-                <Badge className="gap-2">
-                  shadcn/ui docs
-                  <ExternalLink />
-                </Badge>
-              </a>
-            )}
-          </div>
-          <MDXContent code={body} />
-
-          <div className="mt-14">
-            {isTocEmpty && (
-              <Button
-                className="bg-secondary-background text-foreground mb-10 not-prose px-5 py-2"
-                variant="noShadow"
-                asChild
-              >
-                <a target="_blank" href={repoDocsUrl}>
-                  <SquarePenIcon className="w-4 h-4" />
-                  Edit this page
+    <div className="docs min-h-[100dvh] w-full bg-background pt-[70px]">
+      <div className="lg:ml-[250px] xl:mr-[250px] mr-0 ml-0 prose-p:text-foreground prose-p:mt-6 prose-headings:scroll-mt-32 prose-h1:mb-4 prose-ul:pl-5 prose-ul:list-disc prose-li:font-base sm:prose-li:text-base prose-li:text-sm lg:py-20 sm:py-16 py-12 leading-relaxed prose-h2:mt-10 prose-h2:mb-6 prose-h3:mt-8 prose-headings:font-heading sm:prose-h1:text-3xl prose-h1:text-2xl sm:prose-h2:text-2xl prose-h2:text-xl prose-h3:mb-6 sm:prose-h3:text-xl prose-h3:text-lg prose-p:leading-7 sm:prose-p:text-base prose-p:text-sm prose-p:font-base prose-code:px-[5px] prose-code:py-[3px] prose-a:underline prose-a:font-heading prose-code:rounded-base prose-code:font-bold prose-code:border prose-code:text-main-foreground prose-code:break-normal prose-code:text-sm prose-code:mx-0.5 prose-code:border-border prose-code:bg-main">
+        <div className="2xl:max-w-[750px] max-w-[650px] w-full px-5 mx-auto">
+          <article>
+            <div className="mb-8">
+              <h1>{title}</h1>
+              {description && (
+                <p className="mt-0 mb-4 not-prose sm:text-lg text-base font-base text-foreground">
+                  {description}
+                </p>
+              )}
+              {shadcnDocsLink && (
+                <a href={shadcnDocsLink} target="_blank">
+                  <Badge className="gap-2">
+                    shadcn/ui docs
+                    <ExternalLink />
+                  </Badge>
                 </a>
-              </Button>
-            )}
+              )}
+            </div>
+            <MDXContent code={body} />
 
-            <Pagination {...paginationProps} />
-          </div>
-        </article>
-        {!isTocEmpty && (
-          <aside className="fixed bg-secondary-background border-l-4 not-prose border-l-border overflow-hidden top-20 flex flex-col justify-between right-0 w-[250px] h-[calc(100svh-80px)] overflow-y-auto">
-            <TableOfContents items={tableOfContents} />
-            <Button
-              className="bg-secondary-background w-full border-0 rounded-none border-t-3 text-foreground border-t-border not-prose px-5 py-2 m400:px-3.5 h-[unset] m400:text-xs font-base gap-2 mt-12"
-              variant="noShadow"
-              asChild
-            >
-              <a target="_blank" href={repoDocsUrl}>
-                <SquarePenIcon className="w-4 h-4" />
-                Edit this page
-              </a>
-            </Button>
-          </aside>
-        )}
+            <div className="mt-14">
+              <Pagination {...paginationProps} />
+            </div>
+          </article>
+          {!isTocEmpty && (
+            <aside className="fixed bg-secondary-background border-l-4 not-prose border-l-border overflow-hidden top-[70px] xl:flex hidden flex-col justify-between right-0 w-[250px] h-[calc(100svh-70px)] overflow-y-auto">
+              <TableOfContents items={tableOfContents} />
+            </aside>
+          )}
+        </div>
       </div>
     </div>
   )

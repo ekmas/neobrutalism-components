@@ -56,22 +56,20 @@ export default function StarsGrid() {
         </Select>
       </div>
 
-      <div className="grid grid-cols-4 m1200:gap-5 m1100:grid-cols-3 m800:grid-cols-2 m400:grid-cols-1 gap-[50px]">
+      <div className="grid gap-5 xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:gap-[50px]">
         {STARS.map((star, i) => {
           return (
             <div
               className="flex items-center gap-4 p-5 justify-center flex-col border-2 border-border bg-secondary-background rounded-base shadow-shadow"
               key={i}
             >
-              <div className="w-[200px] h-[200px] m1200:w-[160px] m1200:h-[160px] m800:w-[120px] m800:h-[120px] ">
+              <div className="xl:size-[200px] md:size-[160px] size-[120px]">
                 <star.componentExample />
               </div>
 
-              <p className="text-2xl font-heading m800:text-xl m500:text-lg m400:text-base">
-                Star {i + 1}
-              </p>
+              <h4 className="font-heading">Star {i + 1}</h4>
 
-              <div className="flex items-center gap-2 m600:flex-col">
+              <div className="flex items-center gap-2">
                 <TooltipProvider delayDuration={0}>
                   <ShadcnBtn command={command + `s${i + 1}.json`} />
                   <CopyBtn code={star.code} />

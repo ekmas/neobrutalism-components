@@ -64,21 +64,21 @@ export default function StylingCustomizer() {
   )
 
   return (
-    <div className="mx-auto w-[800px] max-w-full mt-20 m500:py-14">
-      <div className="grid gap-10">
-        <div className="grid grid-cols-4 gap-4">
+    <div className="mx-auto max-w-[800px] w-full mt-20 sm:px-5 px-0">
+      <div className="grid md:gap-10 gap-5">
+        <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-2 gap-4 sm:w-full w-2/3 mx-auto">
           {previewStyling.map((color) => (
             <Button
               key={color.name}
-              className={`h-full border-2 border-border text-xl ${color.main}`}
+              className={`h-full border-2 border-border md:text-xl sm:text-sm text-xs sm:px-4 px-2 ${color.main}`}
               onClick={() => setStyling(color)}
             >
-              {color.name}
+              try {color.name}
             </Button>
           ))}
         </div>
         <div
-          className={`${bg} border-2 shadow-shadow flex flex-col justify-between p-8 border-border h-[350px] bg-[linear-gradient(to_right,#80808033_1px,transparent_1px),linear-gradient(to_bottom,#80808033_1px,transparent_1px)] bg-[size:30px_30px] ${bg}`}
+          className={`${bg} sm:border-x-2 border-x-0 border-y-2 sm:shadow-shadow shadow-none flex flex-col justify-between sm:p-8 p-4 border-border h-[350px] bg-[linear-gradient(to_right,#80808033_1px,transparent_1px),linear-gradient(to_bottom,#80808033_1px,transparent_1px)] bg-[size:30px_30px] ${bg}`}
         >
           <Alert
             style={{
@@ -127,36 +127,40 @@ export default function StylingCustomizer() {
             >
               Button
             </Button>
-            <Badge className={`${main} ${rounded} transition-all duration-200`}>
+            <Badge
+              className={`${main} ${rounded} transition-all hidden md:block duration-200`}
+            >
               Badge
             </Badge>
 
-            <Select>
-              <SelectTrigger
-                className={`${main} ${rounded} w-[180px] transition-all duration-200`}
-              >
-                <SelectValue placeholder="Select a fruit" />
-              </SelectTrigger>
-              <SelectContent
-                className={`${main} ${rounded} transition-all duration-200`}
-              >
-                <SelectGroup>
-                  <SelectLabel>Fruits</SelectLabel>
-                  <SelectItem className={`${rounded}`} value="apple">
-                    Apple
-                  </SelectItem>
-                  <SelectItem className={`${rounded}`} value="banana">
-                    Banana
-                  </SelectItem>
-                  <SelectItem className={`${rounded}`} value="blueberry">
-                    Blueberry
-                  </SelectItem>
-                  <SelectItem className={`${rounded}`} value="grapes">
-                    Grapes
-                  </SelectItem>
-                </SelectGroup>
-              </SelectContent>
-            </Select>
+            <div className="hidden sm:block">
+              <Select>
+                <SelectTrigger
+                  className={`${main} ${rounded} w-[180px] transition-all duration-200`}
+                >
+                  <SelectValue placeholder="Select a fruit" />
+                </SelectTrigger>
+                <SelectContent
+                  className={`${main} ${rounded} transition-all duration-200`}
+                >
+                  <SelectGroup>
+                    <SelectLabel>Fruits</SelectLabel>
+                    <SelectItem className={`${rounded}`} value="apple">
+                      Apple
+                    </SelectItem>
+                    <SelectItem className={`${rounded}`} value="banana">
+                      Banana
+                    </SelectItem>
+                    <SelectItem className={`${rounded}`} value="blueberry">
+                      Blueberry
+                    </SelectItem>
+                    <SelectItem className={`${rounded}`} value="grapes">
+                      Grapes
+                    </SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+            </div>
           </div>
         </div>
       </div>

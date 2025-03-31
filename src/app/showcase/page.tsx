@@ -22,8 +22,9 @@ export default function Page() {
         <PageHeading>Showcase</PageHeading>
 
         <PageDescription>
-          Showcase of websites built with neobrutalism components. If
-          you&apos;ve built something and want to get it featured here,{" "}
+          Showcase of websites built with neobrutalism components.
+          <br />
+          If you&apos;ve built something and want to get it featured here,{" "}
           <a
             className="underline"
             target="_blank"

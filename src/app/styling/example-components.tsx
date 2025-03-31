@@ -24,7 +24,7 @@ import ScrollAreaDemo from "./demos/scroll-area"
 
 export default function ExampleComponents() {
   return (
-    <div className="w-full grid grid-cols-3 mt-10 gap-5">
+    <div className="w-full grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 mt-10 gap-5 not-prose">
       <div className="flex flex-col gap-5">
         <CollapsibleDemo />
         <AccordionDemo />
@@ -32,13 +32,13 @@ export default function ExampleComponents() {
         <AlertDemo />
         <CardDemo2 />
       </div>
-      <div className="flex flex-col gap-5">
+      <div className="lg:flex hidden flex-col gap-5">
         <ScrollAreaDemo />
         <AlertDemo />
         <CardDemo3 />
         <ImageCardDemo />
       </div>
-      <div className="flex flex-col gap-5">
+      <div className="sm:flex hidden flex-col gap-5">
         <ResizableDemo />
         <CommandDemo />
         <CardDemo />

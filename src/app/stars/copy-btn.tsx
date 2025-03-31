@@ -28,9 +28,9 @@ export default function CopyBtn({ code }: { code: string }) {
         <Button onClick={handleCopy} variant="noShadow">
           Copy
           {copied ? (
-            <Check className="w-[18px] h-[18px]" />
+            <Check className="size-[18px]" />
           ) : (
-            <Copy className="w-[18px] h-[18px]" />
+            <Copy className="size-[18px]" />
           )}
         </Button>
       </TooltipTrigger>

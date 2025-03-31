@@ -31,7 +31,7 @@ export const sharedComponents = {
   }: React.ComponentProps<typeof TabsList>) => (
     <TabsList
       className={cn(
-        "w-full overflow-x-hidden rounded-none m750:h-10 p-0 bg-secondary-background",
+        "w-full overflow-x-hidden rounded-none sm:h-12 h-10 p-0 bg-secondary-background",
         className,
       )}
       {...props}
@@ -43,7 +43,7 @@ export const sharedComponents = {
   }: React.ComponentProps<typeof TabsTrigger>) => (
     <TabsTrigger
       className={cn(
-        "h-full border-0 border-r-2 z-10 m400:text-xs border-r-border rounded-none sm:text-base data-[state=active]:text-main-foreground text-foreground last:border-r-0",
+        "h-full border-0 border-r-2 z-10 border-r-border rounded-none sm:text-base data-[state=active]:text-main-foreground text-foreground last:border-r-0",
         className,
       )}
       {...props}
@@ -60,9 +60,15 @@ export const sharedComponents = {
     className,
     ...props
   }: React.ComponentProps<typeof Alert> & { description: string }) => (
-    <Alert className={cn("not-prose sm:[&>svg~*]:pl-9", className)} {...props}>
-      <CircleAlert className="sm:h-6 sm:w-6 w-4 h-4" />
-      <AlertTitle className="sm:text-lg sm:leading-6">Warning</AlertTitle>
+    <Alert
+      className={cn(
+        "not-prose sm:has-[>svg]:gap-x-4 has-[>svg]:gap-x-3 sm:gap-y-2.5 gap-y-1.5 sm:[&>svg]:size-5 [&>svg]:size-4",
+        className,
+      )}
+      {...props}
+    >
+      <CircleAlert />
+      <AlertTitle className="sm:text-lg sm:leading-5">Warning</AlertTitle>
       <AlertDescription className="sm:text-base">
         {description}
       </AlertDescription>

@@ -54,15 +54,15 @@ export default function Search() {
     <>
       <Button
         onClick={() => setOpen(true)}
-        className="relative bg-secondary-background dark:text-white shadow-nav dark:shadow-navDark hover:translate-x-[4px]! hover:translate-y-[4px]! hover:shadow-none dark:hover:shadow-none px-3 m1250:pr-14 m1200:pr-5 m1200:p-2 pr-16 m500:h-9 shrink-0 m500:w-9 m500:p-0 h-10 text-base"
+        className="relative bg-secondary-background dark:text-white shadow-nav dark:shadow-navDark hover:translate-x-[4px]! hover:translate-y-[4px]! hover:shadow-none dark:hover:shadow-none px-3 pr-3 xl:pr-16 lg:pr-12 shrink-0 lg:w-[unset] w-9 h-9 text-base"
       >
-        <span className="m1200:hidden flex items-center gap-1">
-          <SearchIcon className="h-4 w-4 m1200:w-6 m1200:h-6 m500:h-4 m500:w-4 shrink-0" />
-          Search
+        <span className="flex text-sm items-center gap-1">
+          <SearchIcon className="size-5! lg:size-4! shrink-0" />
+          <span className="xl:inline hidden">Search</span>
         </span>
 
-        <span className="absolute m1200:hidden text-black border text-sm px-1 border-black rounded-base bg-main h-6 right-2 top-1.5">
-          ⌘K
+        <span className="absolute lg:flex hidden items-center justify-center text-black border text-xs px-1 border-black rounded-base bg-main h-6 right-2 top-1">
+          ⌘ K
         </span>
       </Button>
       <CommandDialog

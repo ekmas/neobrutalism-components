@@ -27,7 +27,7 @@ export default function ShadcnBtn({ command }: { command: string }) {
       <TooltipTrigger asChild>
         <Button onClick={handleCopy} variant="noShadow">
           Copy
-          {copied ? <Check className="w-[18px] h-[18px]" /> : <ShadcnIcon />}
+          {copied ? <Check className="size-[18px]" /> : <ShadcnIcon />}
         </Button>
       </TooltipTrigger>
       <TooltipContent>
@@ -40,7 +40,7 @@ export default function ShadcnBtn({ command }: { command: string }) {
 const ShadcnIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className="w-[18px] h-[18px]"
+    className="size-[18px]"
     viewBox="0 0 256 256"
     fill="none"
   >

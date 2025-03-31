@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils"
 
 function PageWrapper({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-[100dvh] bg-background bg-[linear-gradient(to_right,#80808033_1px,transparent_1px),linear-gradient(to_bottom,#80808033_1px,transparent_1px)] bg-[size:70px_70px] px-5 pt-20">
+    <div className="min-h-[100dvh] bg-background bg-[linear-gradient(to_right,#80808033_1px,transparent_1px),linear-gradient(to_bottom,#80808033_1px,transparent_1px)] bg-[size:70px_70px] px-5 pt-[70px] prose-h4:xl:text-2xl prose-h4:lg:text-xl prose-h4:text-lg">
       <div className="py-16 mx-auto w-container max-w-full text-foreground text-left">
         {children}
       </div>
@@ -17,7 +17,7 @@ function PageHeading({
   return (
     <h1
       className={cn(
-        "text-4xl font-heading m800:text-3xl m500:text-2xl m400:text-xl",
+        "font-heading text-center 2xl:text-4xl xl:text-3xl text-2xl",
         className,
       )}
       {...props}
@@ -44,7 +44,7 @@ function PageDescription({
   return (
     <p
       className={cn(
-        "font-base text-2xl m800:text-lg m400:text-base",
+        "font-base 2xl:text-2xl xl:text-xl md:text-lg sm:text-lg text-base text-center",
         className,
       )}
       {...props}
@@ -59,7 +59,7 @@ function PageActions({
   return (
     <div
       className={cn(
-        "flex w-full items-center justify-start gap-2 pt-2",
+        "flex w-full items-center justify-center gap-2 pt-2",
         className,
       )}
       {...props}

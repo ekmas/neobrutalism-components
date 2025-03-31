@@ -1,6 +1,5 @@
 import Link from "next/link"
 
-import MobileDrawer from "@/components/app/mobile-drawer"
 import Search from "@/components/app/search"
 import { ThemeSwitcher } from "@/components/app/theme-switcher"
 
@@ -29,26 +28,26 @@ async function Navbar() {
   const starsCount = (repo.stargazers_count / 1000).toFixed(1) + "k"
 
   return (
-    <nav className="fixed left-0 top-0 z-20 mx-auto flex h-20 w-full items-center border-b-4 border-border bg-secondary-background px-5 m500:h-16 ">
+    <nav className="fixed left-0 top-0 z-20 mx-auto flex h-[70px] w-full items-center border-b-4 border-border bg-secondary-background px-5">
       <div className="mx-auto flex w-[1300px] text-foreground max-w-full items-center justify-between">
-        <MobileDrawer />
-
-        <div className="flex items-center gap-10">
+        <div className="flex items-center xl:gap-10 gap-10">
           <Link
-            className="text-[26px] size-10 rounded-base flex bg-main text-main-foreground border-2 border-black m500:w-9 m500:h-9 m500:text-[22px] items-center justify-center font-heading"
+            className="text-[22px] size-8 rounded-base flex bg-main text-main-foreground border-2 border-black items-center justify-center font-heading"
             href={"/"}
           >
             N
           </Link>
 
-          <div className="flex items-center text-lg font-base gap-12 m1100:gap-8 m900:hidden">
+          <div className="items-center text-base font-base xl:gap-10 lg:flex gap-10 hidden">
             <Link href="/docs">Docs</Link>
 
             <Link href="/docs/accordion">Components</Link>
 
             <Link href="/styling">Styling</Link>
 
-            {/* <Link href="/blocks">Blocks</Link> */}
+            {/* <Link href="/blocks">Blocks</Link>
+
+            <Link href="/charts">Charts</Link> */}
 
             <Link href="/stars">Stars</Link>
 
@@ -61,16 +60,16 @@ async function Navbar() {
         <div className="flex items-center gap-4">
           <Search />
 
-          <div className="flex items-center justify-end gap-4 m800:w-[unset] m400:gap-3">
+          <div className="flex items-center justify-end gap-4">
             <a
               target="_blank"
               href="https://github.com/ekmas/neobrutalism-components"
-              className="m800:hidden flex gap-2 items-center justify-center rounded-base border-2 border-border shadow-nav dark:shadow-navDark dark:border-darkBorder px-1.5 h-10 transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none dark:hover:shadow-none"
+              className="flex gap-2 items-center justify-center rounded-base border-2 border-border shadow-nav dark:shadow-navDark dark:border-darkBorder px-1.5 h-9 transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none dark:hover:shadow-none"
             >
-              <p className="font-semibold m1100:hidden">{starsCount}</p>
+              <p className="font-semibold sm:inline hidden">{starsCount}</p>
 
               <svg
-                className="size-[22px] m500:h-4 m500:w-4"
+                className="size-5"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 496 512"
               >
@@ -83,10 +82,10 @@ async function Navbar() {
             <a
               target="_blank"
               href="https://twitter.com/samuelbreznjak"
-              className="m800:hidden flex items-center justify-center rounded-base border-2 border-border shadow-nav dark:shadow-navDark dark:border-darkBorder size-10 transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none dark:hover:shadow-none"
+              className="flex items-center justify-center rounded-base border-2 border-border shadow-nav dark:shadow-navDark dark:border-darkBorder size-9 transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none dark:hover:shadow-none"
             >
               <svg
-                className="size-[22px] m500:h-4 m500:w-4"
+                className="size-5"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
               >

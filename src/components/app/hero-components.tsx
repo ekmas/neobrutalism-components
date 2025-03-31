@@ -114,6 +114,7 @@ const CardExample = () => (
               type="email"
               placeholder="m@example.com"
               required
+              tabIndex={-1}
             />
           </div>
           <div className="grid gap-2">
@@ -122,25 +123,26 @@ const CardExample = () => (
               <a
                 href="#"
                 className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
+                tabIndex={-1}
               >
                 Forgot your password?
               </a>
             </div>
-            <Input id="password" type="password" required />
+            <Input id="password" type="password" required tabIndex={-1} />
           </div>
         </div>
       </form>
     </CardContent>
     <CardFooter className="flex-col gap-2">
-      <Button type="submit" className="w-full">
+      <Button type="submit" className="w-full" tabIndex={-1}>
         Login
       </Button>
-      <Button variant="neutral" className="w-full">
+      <Button variant="neutral" className="w-full" tabIndex={-1}>
         Login with Google
       </Button>
       <div className="mt-4 text-center text-sm">
         Don&apos;t have an account?{" "}
-        <a href="#" className="underline underline-offset-4">
+        <a href="#" className="underline underline-offset-4" tabIndex={-1}>
           Sign up
         </a>
       </div>
@@ -161,7 +163,7 @@ const AlertExample = () => (
 const AccordionExample = () => (
   <Accordion className="w-full" type="single" collapsible>
     <AccordionItem className="max-w-full" value="item-1">
-      <AccordionTrigger>Is it accessible?</AccordionTrigger>
+      <AccordionTrigger tabIndex={-1}>Is it accessible?</AccordionTrigger>
       <AccordionContent>
         Yes. It adheres to the WAI-ARIA design pattern.
       </AccordionContent>
@@ -175,17 +177,17 @@ const InputOTPExample = () => (
       Your OTP code is:
     </p>
 
-    <InputOTP maxLength={6}>
+    <InputOTP inert maxLength={6}>
       <InputOTPGroup>
-        <InputOTPSlot index={0} />
-        <InputOTPSlot index={1} />
-        <InputOTPSlot index={2} />
+        {[0, 1, 2].map((index) => (
+          <InputOTPSlot key={index} index={index} tabIndex={-1} />
+        ))}
       </InputOTPGroup>
       <InputOTPSeparator />
       <InputOTPGroup>
-        <InputOTPSlot index={3} />
-        <InputOTPSlot index={4} />
-        <InputOTPSlot index={5} />
+        {[3, 4, 5].map((index) => (
+          <InputOTPSlot key={index} index={index} tabIndex={-1} />
+        ))}
       </InputOTPGroup>
     </InputOTP>
   </div>
@@ -194,23 +196,24 @@ const InputOTPExample = () => (
 const ResizableExample = () => (
   <ResizablePanelGroup
     direction="horizontal"
+    inert
     className="rounded-base max-w-md max-h-[200px] min-h-[200px] border-2 border-border text-main-foreground shadow-shadow"
   >
-    <ResizablePanel defaultSize={50}>
+    <ResizablePanel tabIndex={-1} defaultSize={50}>
       <div className="flex h-full items-center justify-center bg-main p-6">
         <span className="font-base">One</span>
       </div>
     </ResizablePanel>
     <ResizableHandle />
-    <ResizablePanel defaultSize={50}>
+    <ResizablePanel tabIndex={-1} defaultSize={50}>
       <ResizablePanelGroup direction="vertical">
-        <ResizablePanel defaultSize={25}>
+        <ResizablePanel tabIndex={-1} defaultSize={25}>
           <div className="flex h-full items-center justify-center bg-main p-6">
             <span className="font-base">Two</span>
           </div>
         </ResizablePanel>
         <ResizableHandle />
-        <ResizablePanel defaultSize={75}>
+        <ResizablePanel tabIndex={-1} defaultSize={75}>
           <div className="flex h-full items-center justify-center bg-main p-6">
             <span className="font-base">Three</span>
           </div>
@@ -221,7 +224,11 @@ const ResizableExample = () => (
 )
 
 const ScrollAreaExample = () => (
-  <ScrollArea className="rounded-base h-[150px] w-full text-main-foreground border-2 border-border bg-main p-4 shadow-shadow">
+  <ScrollArea
+    tabIndex={-1}
+    inert
+    className="rounded-base h-[150px] w-full text-main-foreground border-2 border-border bg-main p-4 shadow-shadow"
+  >
     Jokester began sneaking into the castle in the middle of the night and
     leaving jokes all over the place: under the king&apos;s pillow, in his soup,
     even in the royal toilet. The king was furious, but he couldn&apos;t seem to
@@ -233,7 +240,7 @@ const ScrollAreaExample = () => (
 
 const SliderExample = () => (
   <div className="bg-main w-full border-2 border-border shadow-shadow p-4 py-6 flex items-center justify-center rounded-base">
-    <Slider defaultValue={[33]} max={100} step={1} />
+    <Slider defaultValue={[33]} max={100} step={1} tabIndex={-1} inert />
   </div>
 )
 
@@ -242,17 +249,19 @@ const BreadcrumbExample = () => (
     <Breadcrumb>
       <BreadcrumbList className="gap-1 sm:gap-1 text-main-foreground">
         <BreadcrumbItem>
-          <BreadcrumbLink href="/">Home</BreadcrumbLink>
+          <BreadcrumbLink tabIndex={-1} href="/">
+            Home
+          </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink href="/shadcn/components/button">
+          <BreadcrumbLink tabIndex={-1} href="/shadcn/components/button">
             Components
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbPage>Button</BreadcrumbPage>
+          <BreadcrumbPage tabIndex={-1}>Button</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>
@@ -261,9 +270,10 @@ const BreadcrumbExample = () => (
 
 const RadioGroupExample = () => (
   <div className="bg-main w-full border-2 border-border shadow-shadow p-4 flex items-center justify-center rounded-base">
-    <RadioGroup defaultValue="comfortable">
+    <RadioGroup defaultValue="comfortable" inert>
       <div className="flex items-center space-x-2">
         <RadioGroupItem
+          tabIndex={-1}
           className="dark:text-main-foreground"
           value="default"
           id="r1"
@@ -274,6 +284,7 @@ const RadioGroupExample = () => (
       </div>
       <div className="flex items-center space-x-2">
         <RadioGroupItem
+          tabIndex={-1}
           className="dark:text-main-foreground"
           value="comfortable"
           id="r2"
@@ -284,6 +295,7 @@ const RadioGroupExample = () => (
       </div>
       <div className="flex items-center space-x-2">
         <RadioGroupItem
+          tabIndex={-1}
           className="dark:text-main-foreground"
           value="compact"
           id="r3"
@@ -299,7 +311,7 @@ const RadioGroupExample = () => (
 const CheckboxExample = () => (
   <div className="bg-main w-full border-2 border-border shadow-shadow p-4 flex text-main-foreground items-center justify-center rounded-base">
     <div className="flex items-center space-x-2">
-      <Checkbox id="terms" />
+      <Checkbox id="terms" tabIndex={-1} />
       <Label htmlFor="terms">Accept terms and conditions</Label>
     </div>
   </div>
@@ -321,8 +333,8 @@ const CarouselExample = () => (
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious tabIndex={-1} />
+      <CarouselNext tabIndex={-1} />
     </Carousel>
   </div>
 )
@@ -336,6 +348,7 @@ const CollapsibleExample = () => (
           variant="noShadow"
           size="sm"
           className="w-9 bg-secondary-background text-foreground p-0"
+          tabIndex={-1}
         >
           <ChevronsUpDown className="size-4" />
           <span className="sr-only">Toggle</span>

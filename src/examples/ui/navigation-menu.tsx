@@ -55,15 +55,12 @@ const components: { title: string; href: string; description: string }[] = [
 
 export default function NavigationMenuDemo() {
   return (
-    <NavigationMenu className="z-5 m750:max-w-[300px]">
-      <NavigationMenuList className="m750:max-w-[300px]">
+    <NavigationMenu className="z-5 ">
+      <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="m750:max-w-[80px] m750:text-xs">
-            <span className="m750:hidden">Getting started</span>
-            <span className="hidden m750:inline">Home</span>
-          </NavigationMenuTrigger>
+          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[500px] gap-3 p-2 lg:grid-cols-[.75fr_1fr] m750:w-[300px]">
+            <ul className="grid w-[500px] gap-3 p-2 lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <a
@@ -100,9 +97,7 @@ export default function NavigationMenuDemo() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="m750:max-w-[80px] m750:text-xs">
-            Components
-          </NavigationMenuTrigger>
+          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-2 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {components.map((component) => (
@@ -120,9 +115,7 @@ export default function NavigationMenuDemo() {
         <NavigationMenuItem>
           <Link href="https://ui.shadcn.com/docs" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              <span className="m750:max-w-[80px] m750:text-xs">
-                Documentation
-              </span>
+              Documentation
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
@@ -131,15 +124,16 @@ export default function NavigationMenuDemo() {
   )
 }
 
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+function ListItem({
+  className,
+  title,
+  children,
+  ...props
+}: React.ComponentProps<"a">) {
   return (
     <li>
       <NavigationMenuLink asChild>
         <a
-          ref={ref}
           className={cn(
             "hover:bg-accent block text-main-foreground select-none space-y-1 rounded-base border-2 border-transparent p-3 leading-none no-underline outline-hidden transition-colors hover:border-border",
             className,
@@ -154,5 +148,5 @@ const ListItem = React.forwardRef<
       </NavigationMenuLink>
     </li>
   )
-})
+}
 ListItem.displayName = "ListItem"

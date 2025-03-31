@@ -30,8 +30,8 @@ export default function Pagination({ prev, next }: Props) {
     <div className={`${justifyContent} flex w-full items-center`}>
       {prev?.name && (
         <Link href={prev.path}>
-          <Button className="px-5 py-2 h-[unset] m400:px-3.5 m400:text-xs">
-            <ArrowLeft className="mr-2 w-4 h-4" />
+          <Button className="sm:px-5 px-3.5 py-2 h-[unset] sm:text-sm text-xs">
+            <ArrowLeft />
             {prev.name}
           </Button>
         </Link>
@@ -39,9 +39,9 @@ export default function Pagination({ prev, next }: Props) {
 
       {next?.name && (
         <Link href={next.path}>
-          <Button className="px-5 py-2 h-[unset] m400:px-3.5 m400:text-xs">
+          <Button className="sm:px-5 px-3.5 py-2 h-[unset] sm:text-sm text-xs">
             {next.name}
-            <ArrowRight className="ml-2 w-4 h-4" />
+            <ArrowRight />
           </Button>
         </Link>
       )}

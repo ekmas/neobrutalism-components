@@ -15,7 +15,7 @@ export default function ShowcaseContainer({
   }[]
 }) {
   return (
-    <div className="max-w-full grid grid-cols-2 m700:grid-cols-1 gap-5">
+    <div className="max-w-full grid sm:grid-cols-2 grid-cols-1 gap-5">
       {items.map(({ color, text, liveUrl, previewImg, repoUrl, title }) => {
         return (
           <div
@@ -30,11 +30,9 @@ export default function ShowcaseContainer({
               />
             </div>
 
-            <h4 className="text-center m400:text-lg text-xl font-heading mt-4">
-              {title}
-            </h4>
+            <h4 className="text-center font-heading mt-4">{title}</h4>
 
-            <div className="grid grid-cols-2 m800:text-sm gap-5 mt-8">
+            <div className="grid grid-cols-2 md:text-base text-sm gap-5 mt-8">
               <a
                 style={{
                   backgroundColor: `${color}`,

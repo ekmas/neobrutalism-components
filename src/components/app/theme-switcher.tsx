@@ -35,7 +35,7 @@ export function ThemeSwitcher() {
   return (
     <>
       <Button
-        className="size-10 p-0 [&_svg]:size-[22px] shadow-nav hover:translate-x-[4px]! hover:translate-y-[4px]! hover:shadow-none bg-secondary-background"
+        className="size-9 p-0 [&_svg]:size-5 shadow-nav hover:translate-x-[4px]! hover:translate-y-[4px]! hover:shadow-none bg-secondary-background"
         onClick={handleThemeChange}
       >
         <Sun className="hidden dark:inline stroke-foreground" />

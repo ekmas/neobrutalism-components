@@ -75,33 +75,6 @@
 
   --spacing-container: 1300px;
 
-  --breakpoint-m1600: max-width: 1600px;
-  --breakpoint-m1500: max-width: 1500px;
-  --breakpoint-m1400: max-width: 1400px;
-  --breakpoint-m1300: max-width: 1300px;
-  --breakpoint-m1250: max-width: 1250px;
-  --breakpoint-m1200: max-width: 1200px;
-  --breakpoint-m1100: max-width: 1100px;
-  --breakpoint-m1000: max-width: 1000px;
-  --breakpoint-m900: max-width: 900px;
-  --breakpoint-m850: max-width: 850px;
-  --breakpoint-m800: max-width: 800px;
-  --breakpoint-m750: max-width: 750px;
-  --breakpoint-m700: max-width: 700px;
-  --breakpoint-m650: max-width: 650px;
-  --breakpoint-m600: max-width: 600px;
-  --breakpoint-m550: max-width: 550px;
-  --breakpoint-m500: max-width: 500px;
-  --breakpoint-m450: max-width: 450px;
-  --breakpoint-m400: max-width: 400px;
-  --breakpoint-m350: max-width: 350px;
-
-  --breakpoint-sm: 40rem;
-  --breakpoint-md: 48rem;
-  --breakpoint-lg: 64rem;
-  --breakpoint-xl: 80rem;
-  --breakpoint-2xl: 96rem;
-
   @keyframes marquee {
     0% {
       transform: translateX(0%);
