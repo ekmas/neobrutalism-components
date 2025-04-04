@@ -57,7 +57,7 @@ export default function NavigationMenuDemo() {
   return (
     <NavigationMenu className="z-5 ">
       <NavigationMenuList>
-        <NavigationMenuItem>
+        <NavigationMenuItem className="sm:block hidden">
           <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[500px] gap-3 p-2 lg:grid-cols-[.75fr_1fr]">
