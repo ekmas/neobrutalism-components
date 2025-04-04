@@ -23,7 +23,6 @@
   --main: oklch(67.47% 0.1725 259.61);
   --border: oklch(0% 0 0);
   --ring: oklch(0% 0 0);
-  --ring-offset: oklch(100% 0 0);
   --overlay: oklch(0% 0 0 / 0.8);
 
   --shadow: var(--box-shadow-x) var(--box-shadow-y) 0px 0px var(--border);
@@ -37,7 +36,6 @@
 
   --border: oklch(0% 0 0);
   --ring: oklch(100% 0 0);
-  --ring-offset: oklch(0% 0 0);
 
   --shadow: var(--box-shadow-x) var(--box-shadow-y) 0px 0px var(--border);
 }
@@ -50,6 +48,7 @@
   --color-main-foreground: var(--main-foreground);
   --color-border: var(--border);
   --color-overlay: var(--overlay);
+  --color-ring: var(--ring);
 
   --spacing-boxShadowX: var(--box-shadow-x);
   --spacing-boxShadowY: var(--box-shadow-y);
