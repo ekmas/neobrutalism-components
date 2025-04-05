@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "src/components/ui/label.tsx",
-      "content": "\"use client\"\n\nimport * as LabelPrimitive from \"@radix-ui/react-label\"\n\nimport * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction Label({\n  className,\n  ...props\n}: React.ComponentProps<typeof LabelPrimitive.Root>) {\n  return (\n    <LabelPrimitive.Root\n      data-slot=\"label\"\n      className={cn(\n        \"text-sm font-heading leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70\",\n        className,\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Label }\n",
+      "content": "\"use client\"\r\n\r\nimport * as LabelPrimitive from \"@radix-ui/react-label\"\r\n\r\nimport * as React from \"react\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n\r\nfunction Label({\r\n  className,\r\n  ...props\r\n}: React.ComponentProps<typeof LabelPrimitive.Root>) {\r\n  return (\r\n    <LabelPrimitive.Root\r\n      data-slot=\"label\"\r\n      className={cn(\r\n        \"text-sm font-heading leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70\",\r\n        className,\r\n      )}\r\n      {...props}\r\n    />\r\n  )\r\n}\r\n\r\nexport { Label }\r\n",
       "type": "registry:ui"
     }
   ]

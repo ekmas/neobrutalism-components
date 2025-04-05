@@ -10,11 +10,9 @@
       "main": "oklch(79.36% 0.1624 92.49)",
       "ring": "oklch(100% 0 0)",
       "foreground": "oklch(92.49% 0 0)",
-      "blank": "oklch(100% 0 0)",
       "main-foreground": "oklch(0% 0 0)",
       "border": "oklch(0% 0 0)",
       "overlay": "rgba(0, 0, 0, 0.8)",
-      "ring-offset": "oklch(0% 0 0)",
       "shadow": "4px 4px 0px 0px var(--border)"
     },
     "light": {
@@ -23,11 +21,9 @@
       "main": "oklch(86.03% 0.176 92.36)",
       "ring": "oklch(0% 0 0)",
       "foreground": "oklch(0% 0 0)",
-      "blank": "oklch(0% 0 0)",
       "main-foreground": "oklch(0% 0 0)",
       "border": "oklch(0% 0 0)",
       "overlay": "rgba(0, 0, 0, 0.8)",
-      "ring-offset": "oklch(100% 0 0)",
       "shadow": "4px 4px 0px 0px var(--border)"
     },
     "theme": {
@@ -36,10 +32,9 @@
       "color-secondary-background": "var(--secondary-background)",
       "color-foreground": "var(--foreground)",
       "color-main-foreground": "var(--main-foreground)",
-      "color-blank": "var(--blank)",
       "color-border": "var(--border)",
+      "color-ring": "var(--ring)",
       "color-overlay": "var(--overlay)",
-      "color-secondaryBlack": "oklch(23.93% 0 0)",
       "spacing-boxShadowX": "4px",
       "spacing-boxShadowY": "4px",
       "spacing-reverseBoxShadowX": "-4px",
