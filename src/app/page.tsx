@@ -312,7 +312,15 @@ export default function Home() {
             Start your neobrutalism project today.
           </h2>
 
-          <Tabs defaultValue="pnpm" className="max-w-[650px] w-full h-max">
+          <Link
+            className="flex items-center gap-2.5 w-max text-foreground rounded-base border-2 border-border bg-background dark:bg-secondary-background md:px-10 px-4 md:py-3 py-2 md:text-[22px] text-base shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none"
+            href={"/docs"}
+          >
+            Read the docs
+            <ArrowUpRight className="md:size-[30px] size-5" />
+          </Link>
+
+          {/* <Tabs defaultValue="pnpm" className="max-w-[650px] w-full h-max">
             <TabsList className="grid w-full grid-cols-4">
               <TabsTrigger value="pnpm">pnpm</TabsTrigger>
               <TabsTrigger value="npm">npm</TabsTrigger>
@@ -367,7 +375,7 @@ export default function Home() {
                 </code>
               </Pre>
             </TabsContent>
-          </Tabs>
+          </Tabs> */}
         </section>
       </div>
       <footer className="z-30 border-t-4 border-border bg-secondary-background px-5 py-5 text-center sm:text-base text-sm">
