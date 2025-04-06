@@ -1,6 +1,9 @@
+import ninethavenue from "@public/showcase-previews/9thavenue.webp"
 import aicademy from "@public/showcase-previews/aicademy.webp"
+import dreamchanted from "@public/showcase-previews/dreamchanted.webp"
 import geschenkidee from "@public/showcase-previews/geschenkidee.webp"
 import getYourMvp from "@public/showcase-previews/getyourmvp.webp"
+import habboimx from "@public/showcase-previews/habboimx.webp"
 import hasmire from "@public/showcase-previews/hasmire.webp"
 import kuma from "@public/showcase-previews/kuma.webp"
 import luizCampos from "@public/showcase-previews/luiz-campos.webp"
@@ -11,6 +14,7 @@ import omi3 from "@public/showcase-previews/omi3.webp"
 import projects from "@public/showcase-previews/projects.webp"
 import qeeper from "@public/showcase-previews/qeeper.webp"
 import ralphOrtiz from "@public/showcase-previews/ralph-ortiz.webp"
+import redditWrapped from "@public/showcase-previews/reddit-wrapped.webp"
 import ronitJadhav from "@public/showcase-previews/ronit-jadhav.webp"
 import timotejKovacka from "@public/showcase-previews/timotej-kovacka.webp"
 import weatherToRun from "@public/showcase-previews/weather-to-run.webp"
@@ -40,6 +44,12 @@ const SHOWCASE = [
     color: "#92c4fd",
   },
   {
+    title: "Dreamchanted",
+    previewImg: dreamchanted,
+    liveUrl: "https://www.dreamchanted.com/",
+    color: "#838afb",
+  },
+  {
     title: "QeepeR",
     previewImg: qeeper,
     liveUrl: "https://qeeper-qr.vercel.app/",
@@ -52,6 +62,12 @@ const SHOWCASE = [
     liveUrl: "https://kuma-landing-2.vercel.app/",
     color: "#fff",
     text: "#000",
+  },
+  {
+    title: "Reddit Wrapped",
+    previewImg: redditWrapped,
+    liveUrl: "https://reddit-wrapped.kadoa.com/",
+    color: "#ff9742",
   },
   {
     title: "Aicademy",
@@ -75,12 +91,26 @@ const SHOWCASE = [
     color: "#fff",
   },
   {
+    title: "HabboIMX",
+    previewImg: habboimx,
+    liveUrl: "https://habboimx.com/",
+    color: "#ff9747",
+  },
+  {
     title: "Luiz Campos",
     previewImg: luizCampos,
     liveUrl: "https://mochaeng.xyz/",
     repoUrl: "https://github.com/mochaeng/mochaeng.github.io",
     color: "#7387fc",
     text: "#eff1f5",
+  },
+  {
+    title: "9thavenue",
+    previewImg: ninethavenue,
+    liveUrl: "https://9thavenue.dev/",
+    repoUrl: "https://github.com/f4ztx/9th",
+    color: "#f7f8fb",
+    text: "#011b5e",
   },
   {
     title: "Geschenkidee",
