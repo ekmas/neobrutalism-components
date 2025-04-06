@@ -4,7 +4,17 @@ import { useLayoutEffect, useState } from "react"
 
 import colors from "@/data/colors"
 
+import { Pre } from "@/components/app/pre"
 import { Button } from "@/components/ui/button"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import {
   Select,
@@ -17,7 +27,6 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetDescription,
   SheetFooter,
   SheetHeader,
   SheetTitle,
@@ -29,7 +38,8 @@ import { cn } from "@/lib/utils"
 export default function Styling() {
   const defaultColorPalette = colors[10]
 
-  const [color, setColor] = useState(defaultColorPalette)
+  const [{ bg, darkBg, darkMain, main, name }, setColor] =
+    useState(defaultColorPalette)
   const [borderRadius, setBorderRadius] = useState(5)
   const [boxShadowLength, setBoxShadowLength] = useState([4, 4])
   const [fontWeight, setFontWeight] = useState([700, 500])
@@ -145,8 +155,56 @@ export default function Styling() {
     localStorage.clear()
   }
 
+  const styling = `@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: ${bg};
+  --secondary-background: oklch(100% 0 0);
+  --foreground: oklch(0% 0 0);
+  --main-foreground: oklch(0% 0 0);
+  --main: ${main};
+  --border: oklch(0% 0 0);
+  --ring: oklch(0% 0 0);
+  --overlay: oklch(0% 0 0 / 0.8);
+  --shadow: ${boxShadowLength[0]}px ${boxShadowLength[1]}px 0px 0px var(--border);
+}
+
+.dark {
+  --background: ${darkBg};
+  --secondary-background: oklch(23.93% 0 0);
+  --foreground: oklch(92.49% 0 0);
+  --main-foreground: oklch(0% 0 0);
+  --main: ${darkMain};
+  --border: oklch(0% 0 0);
+  --ring: oklch(100% 0 0);
+  --shadow: ${boxShadowLength[0]}px ${boxShadowLength[1]}px 0px 0px var(--border);
+}
+
+@theme inline {
+  --color-main: var(--main);
+  --color-background: var(--background);
+  --color-secondary-background: var(--secondary-background);
+  --color-foreground: var(--foreground);
+  --color-main-foreground: var(--main-foreground);
+  --color-border: var(--border);
+  --color-overlay: var(--overlay);
+  --color-ring: var(--ring);
+
+  --spacing-boxShadowX: ${boxShadowLength[0]}px;
+  --spacing-boxShadowY: ${boxShadowLength[1]}px;
+  --spacing-reverseBoxShadowX: -${boxShadowLength[0]}px;
+  --spacing-reverseBoxShadowY: -${boxShadowLength[1]}px;
+  --radius-base: ${borderRadius}px;
+  --shadow-shadow: var(--shadow);
+  --font-weight-base: ${fontWeight[1]};
+  --font-weight-heading: ${fontWeight[0]};
+}`
+
   return (
-    <div className="flex items-center justify-center gap-2">
+    <div className="flex items-center justify-center gap-4">
       <Sheet>
         <SheetTrigger asChild>
           <Button>Customize</Button>
@@ -158,7 +216,7 @@ export default function Styling() {
           <div className="grid flex-1 auto-rows-min overflow-y-auto gap-4 px-4">
             <div className="grid gap-3">
               <Label htmlFor="color">Color</Label>
-              <Select value={color.name} onValueChange={updateColor}>
+              <Select value={name} onValueChange={updateColor}>
                 <SelectTrigger
                   id="color"
                   className="bg-secondary-background text-foreground"
@@ -291,7 +349,25 @@ export default function Styling() {
           </SheetFooter>
         </SheetContent>
       </Sheet>
-      {/* <CopyCodeButton variant="ghost" size="sm" className="[&_svg]:hidden" /> */}
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button variant="neutral">Copy</Button>
+        </DialogTrigger>
+        <DialogContent className="max-w-full">
+          <DialogHeader>
+            <DialogTitle>Theming</DialogTitle>
+            <DialogDescription>
+              Copy the styling to your globals.css file.
+            </DialogDescription>
+          </DialogHeader>
+          <Pre
+            wrapperClassName="w-full max-w-full text-white overflow-x-auto"
+            __rawstring__={styling}
+          >
+            {styling}
+          </Pre>
+        </DialogContent>
+      </Dialog>
     </div>
   )
 }
