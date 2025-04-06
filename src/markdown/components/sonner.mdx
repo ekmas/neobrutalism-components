@@ -1,0 +1,99 @@
+---
+title: Sonner
+description: An opinionated toast component for React.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/sonner
+---
+
+<ComponentPreview component="sonner">
+  ```tsx file=<rootDir>/src/examples/ui/sonner/index.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+<Installation component="sonner">
+  ```tsx file=<rootDir>/src/components/ui/sonner.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import { toast } from "sonner"
+
+import { Button } from "@/components/ui/button"
+```
+
+```tsx
+<Button
+  onClick={() =>
+    toast("Event has been created", {
+      description: "Sunday, December 03, 2023 at 9:00 AM",
+      action: {
+        label: "Undo",
+        onClick: () => console.log("Undo"),
+      },
+    })
+  }
+>
+  Show Toast
+</Button>
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="sonner" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/sonner/index.tsx
+  ```
+</ComponentPreview>
+
+### Success
+
+<ComponentPreview component="sonner" example="success">
+  ```tsx file=<rootDir>/src/examples/ui/sonner/success.tsx
+  ```
+</ComponentPreview>
+
+### Info
+
+<ComponentPreview component="sonner" example="info">
+  ```tsx file=<rootDir>/src/examples/ui/sonner/info.tsx
+  ```
+</ComponentPreview>
+
+### Warning
+
+<ComponentPreview component="sonner" example="warning">
+  ```tsx file=<rootDir>/src/examples/ui/sonner/warning.tsx
+  ```
+</ComponentPreview>
+
+### Error
+
+<ComponentPreview component="sonner" example="error">
+  ```tsx file=<rootDir>/src/examples/ui/sonner/error.tsx
+  ```
+</ComponentPreview>
+
+### Action
+
+<ComponentPreview component="sonner" example="action">
+  ```tsx file=<rootDir>/src/examples/ui/sonner/action.tsx
+  ```
+</ComponentPreview>
+
+### Cancel
+
+<ComponentPreview component="sonner" example="cancel">
+  ```tsx file=<rootDir>/src/examples/ui/sonner/cancel.tsx
+  ```
+</ComponentPreview>
+
+### Promise
+
+<ComponentPreview component="sonner" example="promise">
+  ```tsx file=<rootDir>/src/examples/ui/sonner/promise.tsx
+  ```
+</ComponentPreview>

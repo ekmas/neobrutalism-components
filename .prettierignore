@@ -6,3 +6,4 @@ pnpm-lock.yaml
 public
 *.mdx
 *.md
+src/data/stars.ts

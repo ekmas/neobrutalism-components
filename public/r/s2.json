@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "s2",
+  "type": "registry:component",
+  "title": "Star 2",
+  "files": [
+    {
+      "path": "src/components/stars/s2.tsx",
+      "content": "/**\r\n * @preview ![img](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAhtJREFUSEuVVrtSwkAUPdGI2qG1NHSGn0AN2sIMQyEfgZWWYKuVfAOdDGALM6D/oJQ02EPFQyWrLJC9m90NkYZw92bv45x7LpbHGLOw/DAAq6flM4Pl/1obxRd1pe8qdsBijC3N2+/wQ2/SkBPiVm6SkzMEWL8sf+nykAvXeEQIIDL9+fnmbbRtO6RdcsxVAFra+pnisXkej0c8QDweD6BmxuxfFfT7fX6xc+rwXosk5N6IEwZLzyL6gnBvNpv8IJfLiQpoxRp2qRVoEtuYyuUKrL9+Vu7vFWKbQDHSlKa4mYlsNsvhemm1xNxsYVr4HASqcRyHx11hIR/SvlOCSAGok5hkYT06OuYXj0ZLNvlzFQp4OIsI1gtvgf3YPs97Pp3B3rMDNehQYGapoO691zecn50JkwX0uj2k02lfQKh2CWIFAih9ZMDl1SU6nQ5SqRS63S7AGC5cF+/vH8hkXLTbbQUPSnIyyXJPh8NPJJNJuK6LZqOBg8NDqQfT2RT5fJ4HGAwGOEkk1upLaSVVIA5u724xmUxQfapiZ3cnIOSymnoLD6WbEk/g8eFBoS+ZZGD+9YV6/RnF62IEAClRV8nVajUUCgXEYjEfG0kqdNQ0Lx+zFlEOG6RCs0wUcdAMmrJwItHUpJTKitM6GsVO34AQJdTvOyrXGg9lERluUf4yCDWKsA9oK6JVQL1Ii+QB4YxS1icdRg0GmnX7C+DxTr75fwQvAAAAAElFTkSuQmCC)\r\n */\r\nexport default function Star2({\r\n  color,\r\n  size,\r\n  stroke,\r\n  strokeWidth,\r\n  pathClassName,\r\n  width,\r\n  height,\r\n  ...props\r\n}: React.SVGProps<SVGSVGElement> & {\r\n  color?: string\r\n  size?: number\r\n  stroke?: string\r\n  pathClassName?: string\r\n  strokeWidth?: number\r\n}) {\r\n  return (\r\n    <svg\r\n      xmlns=\"http://www.w3.org/2000/svg\"\r\n      fill=\"none\"\r\n      viewBox=\"0 0 200 200\"\r\n      width={size ?? width}\r\n      height={size ?? height}\r\n      {...props}\r\n    >\r\n      <path\r\n        fill={color ?? \"currentColor\"}\r\n        stroke={stroke}\r\n        strokeWidth={strokeWidth}\r\n        className={pathClassName}\r\n        d=\"m100 5 67.175 27.825L195 100l-27.825 67.175L100 195l-67.175-27.825L5 100l27.825-67.175z\"\r\n      />\r\n    </svg>\r\n  )\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/stars/s2.tsx"
+    }
+  ]
+}

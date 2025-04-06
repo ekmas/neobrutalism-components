@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs",
+  "type": "registry:ui",
+  "title": "Tabs",
+  "dependencies": [
+    "@radix-ui/react-tabs"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/tabs.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as TabsPrimitive from \"@radix-ui/react-tabs\"\r\n\r\nimport * as React from \"react\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n\r\nfunction Tabs({\r\n  className,\r\n  ...props\r\n}: React.ComponentProps<typeof TabsPrimitive.Root>) {\r\n  return (\r\n    <TabsPrimitive.Root\r\n      data-slot=\"tabs\"\r\n      className={cn(\"w-full\", className)}\r\n      {...props}\r\n    />\r\n  )\r\n}\r\n\r\nfunction TabsList({\r\n  className,\r\n  ...props\r\n}: React.ComponentProps<typeof TabsPrimitive.List>) {\r\n  return (\r\n    <TabsPrimitive.List\r\n      data-slot=\"tabs-list\"\r\n      className={cn(\r\n        \"inline-flex h-12 items-center justify-center rounded-base border-2 border-border bg-background p-1 text-foreground\",\r\n        className,\r\n      )}\r\n      {...props}\r\n    />\r\n  )\r\n}\r\n\r\nfunction TabsTrigger({\r\n  className,\r\n  ...props\r\n}: React.ComponentProps<typeof TabsPrimitive.Trigger>) {\r\n  return (\r\n    <TabsPrimitive.Trigger\r\n      data-slot=\"tabs-trigger\"\r\n      className={cn(\r\n        \"inline-flex items-center justify-center whitespace-nowrap rounded-base border-2 border-transparent px-2 py-1 gap-1.5 text-sm font-heading ring-offset-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-main data-[state=active]:text-main-foreground data-[state=active]:border-border\",\r\n        className,\r\n      )}\r\n      {...props}\r\n    />\r\n  )\r\n}\r\n\r\nfunction TabsContent({\r\n  className,\r\n  ...props\r\n}: React.ComponentProps<typeof TabsPrimitive.Content>) {\r\n  return (\r\n    <TabsPrimitive.Content\r\n      data-slot=\"tabs-content\"\r\n      className={cn(\r\n        \"mt-2 ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2\",\r\n        className,\r\n      )}\r\n      {...props}\r\n    />\r\n  )\r\n}\r\n\r\nexport { Tabs, TabsList, TabsTrigger, TabsContent }\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}

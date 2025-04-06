@@ -1,0 +1,56 @@
+---
+title: Resizable
+description: Accessible resizable panel groups with keyboard support.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/resizable
+---
+
+<ComponentPreview component="resizable">
+  ```tsx file=<rootDir>/src/examples/ui/resizable.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+<Installation component="resizable">
+  ```tsx file=<rootDir>/src/components/ui/resizable.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from '@/components/ui/resizable'
+```
+
+```tsx
+<ResizablePanelGroup
+  direction="horizontal"
+  className="rounded-base max-w-md border-2 border-border text-main-foreground shadow-shadow"
+>
+  <ResizablePanel defaultSize={50}>
+    <div className="flex h-[200px] items-center justify-center bg-main p-6">
+      <span className="font-base">One</span>
+    </div>
+  </ResizablePanel>
+  <ResizableHandle />
+  <ResizablePanel defaultSize={50}>
+    <ResizablePanelGroup direction="vertical">
+      <ResizablePanel defaultSize={25}>
+        <div className="flex h-full items-center justify-center bg-main p-6">
+          <span className="font-base">Two</span>
+        </div>
+      </ResizablePanel>
+      <ResizableHandle />
+      <ResizablePanel defaultSize={75}>
+        <div className="flex h-full items-center justify-center bg-main p-6">
+          <span className="font-base">Three</span>
+        </div>
+      </ResizablePanel>
+    </ResizablePanelGroup>
+  </ResizablePanel>
+</ResizablePanelGroup>
+```

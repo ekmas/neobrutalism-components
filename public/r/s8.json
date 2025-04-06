@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "s8",
+  "type": "registry:component",
+  "title": "Star 8",
+  "files": [
+    {
+      "path": "src/components/stars/s8.tsx",
+      "content": "/**\r\n * @preview ![img](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAiZJREFUSEuNVU162jAUHJkeoNjtHjiTc4SQJeHjp/QGbkwCWcIVQo/Uwj62yQFqqZ9ky/onZmWkJ82befOeCGOMQf/xf6Rd0L+dmHYzFNPGEwXwSaTY9qB7jumhhDLGmoQZGIh5R++sw8AagEcWS4WyrIR8yTC2ZAzpytBI5NDnfKQiLTMAh8MRhADT+6nYvMnYrYGn0pa+4/FEZH7+81cxCBMXO0YNnFPaYTCGKIrECqVUMAnF66k2ACHHadLt93vM53Ph4Kc8x3K5bO65eZYr2fVB2Nc848FgoBIjQP2v7hgZfWT9MVzk6wRKayTfvuPjem005UkTYPh1iKIoPgVxbSp5M2C7fcZqvQbhPSJvFpo0UHz9ZbfDbDYDL4ortbRpe2lZXfH77YTsV4bz+dyRFXer/D3rwGg0wmazQZqmiJOkmzZaDYCqLPF2OiHLMlwul34ALfpoPMbPHxukdymGcWwB+MRnDPvXV+EcXXwhl8Ymz3MsFguQxrfKVlJIZ5paQXaR5d28yO9FgYHojfCg7GXTmlJ8aW0q61HXNUgUmYX1jCRtFoXdzM8951us1isRtHvZ4XH+eMv+qn7+RnObjvdjNyoYbYsodQ9hsT6zSPGeTCbgQNLCakdN3A6qHTPuuL7xZB6PB1HP6cODStmpr7kQmKZ6Ruq7qirBIIkT6/n0ONRlYOroN54phT95Mzmjkz19YkkResXCr1uvPnCAw33l1OY/qYFdwspl7m4AAAAASUVORK5CYII=)\r\n */\r\nexport default function Star8({\r\n  color,\r\n  size,\r\n  stroke,\r\n  strokeWidth,\r\n  pathClassName,\r\n  width,\r\n  height,\r\n  ...props\r\n}: React.SVGProps<SVGSVGElement> & {\r\n  color?: string\r\n  size?: number\r\n  stroke?: string\r\n  pathClassName?: string\r\n  strokeWidth?: number\r\n}) {\r\n  return (\r\n    <svg\r\n      xmlns=\"http://www.w3.org/2000/svg\"\r\n      fill=\"none\"\r\n      viewBox=\"0 0 200 200\"\r\n      width={size ?? width}\r\n      height={size ?? height}\r\n      {...props}\r\n    >\r\n      <path\r\n        fill={color ?? \"currentColor\"}\r\n        stroke={stroke}\r\n        strokeWidth={strokeWidth}\r\n        className={pathClassName}\r\n        d=\"M100 5s5.088 49.035 25.527 69.473C145.965 94.912 195 100 195 100s-49.035 5.088-69.473 25.527C105.088 145.965 100 195 100 195s-5.088-49.035-25.527-69.473C54.035 105.088 5 100 5 100s49.035-5.088 69.473-25.527C94.912 54.035 100 5 100 5\"\r\n      />\r\n    </svg>\r\n  )\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/stars/s8.tsx"
+    }
+  ]
+}

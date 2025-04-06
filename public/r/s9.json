@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "s9",
+  "type": "registry:component",
+  "title": "Star 9",
+  "files": [
+    {
+      "path": "src/components/stars/s9.tsx",
+      "content": "/**\r\n * @preview ![img](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAiFJREFUSEuVVUFym0AQ7DVURQFXfNA1GH0geoflp0gPUPID2XclL0mUd+gFEOVoH1RlKB2QJsWysDvsgBwuSMvM9E7PTI8iIoJ+6pfqv+x5Y+Q8xt6cuP/c3+pCRMpz5oEICorH611oKDygdAb88qNwVxLRwO6FGgBDkf7g/e5YQ2uqrSybHo2MIg9Af5XrUVWVhg+DsAfgFoJz2dRACCrxdDwe9fHdpzsL4NHPDxyKeDt4NQWw3++10fzLfISiHoDbRfaTFB54enrGhS74tv46kgGni3WRpUVuq/v7BDfqBlmWezXwWDYhfIqEoauPyrJEHMe6y96KAlEUtd0td24LcH3QmuDT6RSn00kHm0wmeH19QRTFHR/eMJqU+BwQcK7OKMoCWZ5j9/MXvv/Y4nD4qykB1RPQzGX9JEmC1WqFxeIBaTpDHMUIwgBQdp54DYhQnc8oihJZnuH3bofttgY4GIDupXUrST5juVzi8XGBWTpDFMcIggBKWfFhNZB7h1NUu35wKRpyMlkOFNmXyKbIt1oWCl3kj436XhFKh6JhRWxjpGmKCxEO+R8rJ27XCWDjc9Bz2Gw2mt/1ej2yJ1wnwuA+cAendemkYj639/6fGshSYfQdABc7e97tAGFIWQYugN0NNuVOrsNQpkjIxpFrzp3UId3CMX1uaXzXyhwyGiKZ20sZ19S9ew7a/DwaXeEVlo9fA8+BZyB1Vw0uL0XCPwXJZr7x0QIaAAAAAElFTkSuQmCC)\r\n */\r\nexport default function Star9({\r\n  color,\r\n  size,\r\n  stroke,\r\n  strokeWidth,\r\n  pathClassName,\r\n  width,\r\n  height,\r\n  ...props\r\n}: React.SVGProps<SVGSVGElement> & {\r\n  color?: string\r\n  size?: number\r\n  stroke?: string\r\n  pathClassName?: string\r\n  strokeWidth?: number\r\n}) {\r\n  return (\r\n    <svg\r\n      xmlns=\"http://www.w3.org/2000/svg\"\r\n      fill=\"none\"\r\n      viewBox=\"0 0 200 200\"\r\n      width={size ?? width}\r\n      height={size ?? height}\r\n      {...props}\r\n    >\r\n      <path\r\n        fill={color ?? \"currentColor\"}\r\n        stroke={stroke}\r\n        strokeWidth={strokeWidth}\r\n        className={pathClassName}\r\n        d=\"M195 100c-87.305 4.275-90.725 7.695-95 95-4.275-87.305-7.695-90.725-95-95 87.305-4.275 90.725-7.695 95-95 4.275 87.305 7.695 90.725 95 95\"\r\n      />\r\n    </svg>\r\n  )\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/stars/s9.tsx"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+---
+title: Date Picker
+description: A date picker component with calendar popup.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/date-picker
+---
+
+<ComponentPreview component="date-picker">
+  ```tsx file=<rootDir>/src/examples/ui/date-picker.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+The Date Picker is built using a composition of the `<Popover />` and the `<Calendar />` components.
+
+See installation instructions for the <Link href="/docs/popover">Popover</Link> and the <Link href="/docs/calendar">Calendar</Link> components.
+
+## Usage
+
+```ts
+import { format } from 'date-fns'
+import { Calendar as CalendarIcon } from 'lucide-react'
+
+import * as React from 'react'
+
+import { Button } from '@/components/ui/button'
+import { Calendar } from '@/components/ui/calendar'
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover'
+```
+
+```tsx
+const [date, setDate] = React.useState<Date>()
+```
+
+```tsx
+<Popover>
+  <PopoverTrigger asChild>
+    <Button
+      variant="noShadow"
+      className="w-[280px] justify-start text-left font-base"
+    >
+      <CalendarIcon />
+      {date ? format(date, "PPP") : <span>Pick a date</span>}
+    </Button>
+  </PopoverTrigger>
+  <PopoverContent className="w-auto border-0! p-0">
+    <Calendar
+      mode="single"
+      selected={date}
+      onSelect={setDate}
+      initialFocus
+    />
+  </PopoverContent>
+</Popover>
+```

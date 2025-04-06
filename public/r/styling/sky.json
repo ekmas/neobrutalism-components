@@ -1,0 +1,58 @@
+{
+  "name": "neobrutalism-sky",
+  "type": "registry:style",
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "title": "Neobrutalism Sky",
+  "cssVars": {
+    "dark": {
+      "background": "oklch(27.08% 0.0336 240.69)",
+      "secondary-background": "oklch(100% 0 0)",
+      "main": "oklch(61.9% 0.16907 248.5982)",
+      "ring": "oklch(100% 0 0)",
+      "foreground": "oklch(92.49% 0 0)",
+      "main-foreground": "oklch(0% 0 0)",
+      "border": "oklch(0% 0 0)",
+      "overlay": "rgba(0, 0, 0, 0.8)",
+      "shadow": "4px 4px 0px 0px var(--border)"
+    },
+    "light": {
+      "background": "oklch(94.27% 0.0268 242.57)",
+      "secondary-background": "oklch(23.93% 0 0)",
+      "main": "oklch(66.9% 0.18368 248.8066)",
+      "ring": "oklch(0% 0 0)",
+      "foreground": "oklch(0% 0 0)",
+      "main-foreground": "oklch(0% 0 0)",
+      "border": "oklch(0% 0 0)",
+      "overlay": "rgba(0, 0, 0, 0.8)",
+      "shadow": "4px 4px 0px 0px var(--border)"
+    },
+    "theme": {
+      "color-main": "var(--main)",
+      "color-background": "var(--background)",
+      "color-secondary-background": "var(--secondary-background)",
+      "color-foreground": "var(--foreground)",
+      "color-main-foreground": "var(--main-foreground)",
+      "color-border": "var(--border)",
+      "color-ring": "var(--ring)",
+      "color-overlay": "var(--overlay)",
+      "spacing-boxShadowX": "4px",
+      "spacing-boxShadowY": "4px",
+      "spacing-reverseBoxShadowX": "-4px",
+      "spacing-reverseBoxShadowY": "-4px",
+      "radius-base": "5px",
+      "font-weight-base": "500",
+      "font-weight-heading": "700",
+      "shadow-shadow": "var(--shadow)"
+    }
+  },
+  "extends": "none",
+  "description": "A collection of neobrutalism-styled components based on shadcn/ui.",
+  "dependencies": [
+    "tw-animate-css",
+    "class-variance-authority",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ]
+}

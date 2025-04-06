@@ -1,0 +1,69 @@
+---
+title: Breadcrumb
+description: Displays the current page location within a hierarchical structure.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/breadcrumb
+---
+
+<ComponentPreview component="breadcrumb">
+  ```tsx file=<rootDir>/src/examples/ui/breadcrumb.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+<Installation component="breadcrumb">
+  ```tsx file=<rootDir>/src/components/ui/breadcrumb.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import {
+  Breadcrumb,
+  BreadcrumbEllipsis,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+```
+
+```tsx
+<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/">Home</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <DropdownMenu>
+        <DropdownMenuTrigger className="flex items-center gap-1">
+          <BreadcrumbEllipsis className="size-4" />
+          <span className="sr-only">Toggle menu</span>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="start">
+          <DropdownMenuItem>Documentation</DropdownMenuItem>
+          <DropdownMenuItem>Themes</DropdownMenuItem>
+          <DropdownMenuItem>GitHub</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/components">Components</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+    </BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>
+```

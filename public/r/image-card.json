@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "image-card",
+  "type": "registry:ui",
+  "title": "Image card",
+  "files": [
+    {
+      "path": "src/components/ui/image-card.tsx",
+      "content": "import { cn } from \"@/lib/utils\"\r\n\r\ntype Props = {\r\n  imageUrl: string\r\n  caption: string\r\n  className?: string\r\n}\r\n\r\nexport default function ImageCard({ imageUrl, caption, className }: Props) {\r\n  return (\r\n    <figure\r\n      className={cn(\r\n        \"w-[250px] overflow-hidden rounded-base border-2 border-border bg-main font-base shadow-shadow\",\r\n        className,\r\n      )}\r\n    >\r\n      <img className=\"w-full aspect-4/3\" src={imageUrl} alt=\"image\" />\r\n      <figcaption className=\"border-t-2 text-main-foreground border-border p-4\">\r\n        {caption}\r\n      </figcaption>\r\n    </figure>\r\n  )\r\n}\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}

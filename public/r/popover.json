@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover",
+  "type": "registry:ui",
+  "title": "Popover",
+  "dependencies": [
+    "@radix-ui/react-popover"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/popover.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as PopoverPrimitive from \"@radix-ui/react-popover\"\r\n\r\nimport * as React from \"react\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n\r\nfunction Popover({\r\n  ...props\r\n}: React.ComponentProps<typeof PopoverPrimitive.Root>) {\r\n  return <PopoverPrimitive.Root data-slot=\"popover\" {...props} />\r\n}\r\n\r\nfunction PopoverTrigger({\r\n  ...props\r\n}: React.ComponentProps<typeof PopoverPrimitive.Trigger>) {\r\n  return <PopoverPrimitive.Trigger data-slot=\"popover-trigger\" {...props} />\r\n}\r\n\r\nfunction PopoverContent({\r\n  className,\r\n  align = \"center\",\r\n  sideOffset = 4,\r\n  ...props\r\n}: React.ComponentProps<typeof PopoverPrimitive.Content>) {\r\n  return (\r\n    <PopoverPrimitive.Portal>\r\n      <PopoverPrimitive.Content\r\n        data-slot=\"popover-content\"\r\n        align={align}\r\n        sideOffset={sideOffset}\r\n        className={cn(\r\n          \"z-50 w-72 rounded-base border-2 border-border bg-main p-4 text-foreground outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 origin-(--radix-popover-content-transform-origin)\",\r\n          className,\r\n        )}\r\n        {...props}\r\n      />\r\n    </PopoverPrimitive.Portal>\r\n  )\r\n}\r\n\r\nexport { Popover, PopoverTrigger, PopoverContent }\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "s19",
+  "type": "registry:component",
+  "title": "Star 19",
+  "files": [
+    {
+      "path": "src/components/stars/s19.tsx",
+      "content": "/**\r\n * @preview ![img](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAgNJREFUSEulVm12gyAQHHqWNNeIvUZ6k8YIi7E3aXKM2mtUe5XQB6wIERL7yp8oWXaY2S+FMcbAABCYflBeGUPecmfiZ3YiHMB/1t3LGYirMUY4o9jSkhLJ1qlt0TSNu8rpdMLh8OZp88oTMSgyiA+M44jn7bOXgNcwDNhsNsG9u1BGiYhB5iosLOkWSkkHYJ1YHCIKjO4pnDCYlUqjZZ0ppZyfCcC+N1IGGRcg7GIJsCBiQEpDaQWYyT0coJTyYcJ5gEV6pSEj0oHBREPJNQC5IMcZxffTiiAplUgqgpJNuXgSifhlGEdczmekpSHQ95/o+95FQMATrqoX7Kpdkjn23/3rPsmuEIOue0ddH4Kms9rzUxzksvgCrSbUx6NXcyo08eTzOFfWJbAY5PasVyGKgRBPnj5blsCSXC3QsGev3IE8AwBt1AqCFDGKe55jkJWL7V0reTu4oonqwGAYf3D5OHMY56r66nt8uiDPywa5qnbJ3t0gB8u057lbaCJIruS5DgjyYZre1EGp3uJWMV3kYSWz4Yp5YKBJBwYcCtcmbDU/6gJJDBZjjSmtZpAZCisYAFpbBr5dT4tIoWl4bxpW3N7jQVRo12mC2xayjQeOAIbveOCU6vrORLs90nUd6rp227rVONbHSP7y5F81MjPMb/B5hi8M/8AgyZbFRwLjZYj8AhkTWb5ydi0dAAAAAElFTkSuQmCC)\r\n */\r\nexport default function Star19({\r\n  color,\r\n  size,\r\n  stroke,\r\n  strokeWidth,\r\n  pathClassName,\r\n  width,\r\n  height,\r\n  ...props\r\n}: React.SVGProps<SVGSVGElement> & {\r\n  color?: string\r\n  size?: number\r\n  stroke?: string\r\n  pathClassName?: string\r\n  strokeWidth?: number\r\n}) {\r\n  return (\r\n    <svg\r\n      xmlns=\"http://www.w3.org/2000/svg\"\r\n      fill=\"none\"\r\n      viewBox=\"0 0 200 200\"\r\n      width={size ?? width}\r\n      height={size ?? height}\r\n      {...props}\r\n    >\r\n      <path\r\n        fill={color ?? \"currentColor\"}\r\n        stroke={stroke}\r\n        strokeWidth={strokeWidth}\r\n        className={pathClassName}\r\n        d=\"M100 5C86.883 5 76.25 15.633 76.25 28.75v47.5h-47.5C15.633 76.25 5 86.883 5 100s10.633 23.75 23.75 23.75h47.5v47.5C76.25 184.367 86.883 195 100 195s23.75-10.633 23.75-23.75v-47.5h47.5c13.117 0 23.75-10.633 23.75-23.75s-10.633-23.75-23.75-23.75h-47.5v-47.5C123.75 15.633 113.117 5 100 5\"\r\n        clipRule=\"evenodd\"\r\n        fillRule=\"evenodd\"\r\n      />\r\n    </svg>\r\n  )\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/stars/s19.tsx"
+    }
+  ]
+}

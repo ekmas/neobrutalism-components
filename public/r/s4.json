@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "s4",
+  "type": "registry:component",
+  "title": "Star 4",
+  "files": [
+    {
+      "path": "src/components/stars/s4.tsx",
+      "content": "/**\r\n * @preview ![img](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAm9JREFUSEuNVstuGjEUPUZkaBcsGtJFihqxga8gFRJkSBul38EWFukvsCLdIb4jVIKBVGnDV5BuqJpmA2zY8HZlz8P2jD3Um7Hs+zz33OshlFIKvtiHBB/TkSsbXp6urOTtiXBwQE9v2azk+Yx3EFJfrVYsR1ipVIw7GQkKsqeUMqUAJH4vpyxQazabSBCCm5svehkNUoYM9Jim02keyGKxCAWkJiS0dRkYkt9utzg6sjgZNpsNksmkwg0TZi5EZhJwYrHV6XRQq9X4vt1u870GzZAfiihEEba6B5lMBvP5nPt7c3yM2WzmE1tQXDavY1HQEr4gs0YJ9vudgMS72253SCR8enBB74bwrH1UFIhs28ZgMOCCsooIzDvVX3IxZqPf7wcqigMWg9Pv4/LyoxpREJ0IUj1yPfZ6PVSrVYXzUg1EpdfrNbLZLKbTaUxDiauTk7d4fv4Di7FMmTYHaNpoNHB7+9WQjRt1vV5Hq9WSAlGb9OCoyOVy+D2ZsFqLOnpVOjt7j8lkEpOlT1MDoSkoEiRhKLhLhB3dg/jNEnEV6gM1OeD++z0q5QsFIgLmVqzhcIhyuSz1hOolFqJCoYCnp19gRlOvX+Hl7ws39O70FMvlklvK5/MYj8dGmJRpyqUkuAhrJAp8urrCt7tuMDaY2PX1Z3S7d66K/2YJA+Y+8HtzNBrh/MM5Bo6DSoXBFF2D4RC2fYHHn48oFotamWgGnlipVILjOLAsNkF148atGOsZ5uTh4cchB+pIpQZumAavvggKTbXvfSR4+TGJ/CToavA/j34k6jCflT8SRmPRGdpZFKQrN6DpddE4kx38A317Tr+wotUPAAAAAElFTkSuQmCC)\r\n */\r\nexport default function Star4({\r\n  color,\r\n  size,\r\n  stroke,\r\n  strokeWidth,\r\n  pathClassName,\r\n  width,\r\n  height,\r\n  ...props\r\n}: React.SVGProps<SVGSVGElement> & {\r\n  color?: string\r\n  size?: number\r\n  stroke?: string\r\n  pathClassName?: string\r\n  strokeWidth?: number\r\n}) {\r\n  return (\r\n    <svg\r\n      xmlns=\"http://www.w3.org/2000/svg\"\r\n      fill=\"none\"\r\n      viewBox=\"0 0 200 200\"\r\n      width={size ?? width}\r\n      height={size ?? height}\r\n      {...props}\r\n    >\r\n      <path\r\n        fill={color ?? \"currentColor\"}\r\n        stroke={stroke}\r\n        strokeWidth={strokeWidth}\r\n        className={pathClassName}\r\n        d=\"M158.727 195 100 150.193 41.273 195l22.353-72.545L5 77.545l72.546-.101L100 5l22.455 72.444 72.545.102-58.626 44.909z\"\r\n      />\r\n    </svg>\r\n  )\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/stars/s4.tsx"
+    }
+  ]
+}

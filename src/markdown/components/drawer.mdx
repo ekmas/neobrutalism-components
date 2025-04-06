@@ -1,0 +1,73 @@
+---
+title: Drawer
+description: A drawer component that slides out from the edge of the screen.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/drawer
+---
+
+<ComponentPreview component="drawer">
+  ```tsx file=<rootDir>/src/examples/ui/drawer/index.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+<Installation component="drawer">
+  ```tsx file=<rootDir>/src/components/ui/drawer.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import { Button } from '@/components/ui/button'
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from '@/components/ui/drawer'
+```
+
+```tsx
+<Drawer>
+  <DrawerTrigger asChild>
+    <Button>Open</Button>
+  </DrawerTrigger>
+  <DrawerContent>
+    <div className="mx-auto w-[300px]">
+      <DrawerHeader>
+        <DrawerTitle>Are you absolutely sure?</DrawerTitle>
+        <DrawerDescription>This action cannot be undone.</DrawerDescription>
+      </DrawerHeader>
+      <DrawerFooter className="grid grid-cols-2">
+        <Button example="noShadow">Submit</Button>
+        <DrawerClose asChild>
+          <Button className="bg-secondary-background text-foreground" example="noShadow">
+            Cancel
+          </Button>
+        </DrawerClose>
+      </DrawerFooter>
+    </div>
+  </DrawerContent>
+</Drawer>
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="drawer" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/drawer/index.tsx
+  ```
+</ComponentPreview>
+
+### With Scrollable Content
+
+<ComponentPreview component="drawer" example="scrollable-content">
+  ```tsx file=<rootDir>/src/examples/ui/drawer/scrollable-content.tsx
+  ```
+</ComponentPreview>

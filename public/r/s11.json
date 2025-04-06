@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "s11",
+  "type": "registry:component",
+  "title": "Star 11",
+  "files": [
+    {
+      "path": "src/components/stars/s11.tsx",
+      "content": "/**\r\n * @preview ![img](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAmpJREFUSEuVVTuS2kAQfePymoQDrAMLAlaqMsSsA04CGRDhGHwHyImADHwQbwJOkcuiqDJiHXAANsBU7djzQdNiRqv1RKKZ7jf9ef3YM+ecQRwODgbGAShDcqjJ+pYG7Zt2k7/YawAcfpZJ40gw+kLGOReWq0NfZBzO57O8d3Nz4wZwpK0AHGWx7nJg8XUhzc1mMz8pHTOVgRtHWzlQuavIwNvtVvZMlsLUxglKANKNMmDmizE9Dq6q2lWW+KTJLz9mH+9RKpfkgO3iGJ73gTTTMWeuEh0OBzQaDfT7fbRaLRSLxaQU3W4X0+lM/m6325hOp0l1jk9HzOdzjEYjPDx8w+3t+yQf0mQFGccxyuWyusCAwA8wGAzQ6/VwOp2kuVAoYDweYzgcItpEgGQSx263Q6lUUr52BibNzWaDIAhyJ0WFVSeKIvh3vkW6VJMNQTjC8AdqtZoBodHkNwOT7AfW6xDV6sf8KaIMFI7fVyvc339KAon/ZVACtlwuUa/XSfD0yskcU+Gx0gCyEFYGKuYFIIurGasCCMMwKZGJTVEM5nq9RrVaTRpLa6V4QEn5bxX8f5MZougnfN+/6gOHtSr2ekx1HxH4PvqDL/gsx/SP7ME7OqZRdJlo/KJjqmc1BZBFNKET3U4Hs5kgGtDpdDCZTJIdeTzmEU0nRvePFB9i//34CM8TJOKSjJ7nEUKl1zv1zdQDS9YEsdkbpXzPeqpeouKFyUbRrDSsqahU6Lp2RLfk09FklyZfQi0WacHJ0SnVfKNoDpm8iiAkU/TlrZbMLK2hbplEy910rgtXfBI1tgEceWdN12se8ReQcnTE9h6YjQAAAABJRU5ErkJggg==)\r\n */\r\nexport default function Star11({\r\n  color,\r\n  size,\r\n  stroke,\r\n  strokeWidth,\r\n  pathClassName,\r\n  width,\r\n  height,\r\n  ...props\r\n}: React.SVGProps<SVGSVGElement> & {\r\n  color?: string\r\n  size?: number\r\n  stroke?: string\r\n  pathClassName?: string\r\n  strokeWidth?: number\r\n}) {\r\n  return (\r\n    <svg\r\n      xmlns=\"http://www.w3.org/2000/svg\"\r\n      fill=\"none\"\r\n      viewBox=\"0 0 200 200\"\r\n      width={size ?? width}\r\n      height={size ?? height}\r\n      {...props}\r\n    >\r\n      <path\r\n        fill={color ?? \"currentColor\"}\r\n        stroke={stroke}\r\n        strokeWidth={strokeWidth}\r\n        className={pathClassName}\r\n        d=\"m100 5 18.05 63.737L182.272 52.5 136.1 100l46.172 47.5-64.222-16.236L100 195l-18.05-63.736L17.728 147.5 63.9 100 17.728 52.5 81.95 68.737z\"\r\n      />\r\n    </svg>\r\n  )\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/stars/s11.tsx"
+    }
+  ]
+}

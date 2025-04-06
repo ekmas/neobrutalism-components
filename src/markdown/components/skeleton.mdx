@@ -1,0 +1,33 @@
+---
+title: Skeleton
+description: Use to show a placeholder while content is loading.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/skeleton
+---
+
+<ComponentPreview component="skeleton">
+  ```tsx file=<rootDir>/src/examples/ui/skeleton.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+<Installation component="skeleton">
+  ```tsx file=<rootDir>/src/components/ui/skeleton.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import { Skeleton } from '@/components/ui/skeleton'
+```
+
+```tsx
+<div className="flex items-center space-x-4">
+  <Skeleton className="h-12 w-12 rounded-full" />
+  <div className="space-y-2">
+    <Skeleton className="h-4 sm:w-[250px] w-[100px]" />
+    <Skeleton className="h-4 sm:w-[200px] w-[100px]" />
+  </div>
+</div>
+```

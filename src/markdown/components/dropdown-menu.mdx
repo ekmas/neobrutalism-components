@@ -1,0 +1,167 @@
+---
+title: Dropdown Menu
+description: Displays a menu to the user — such as a set of actions or functions.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/dropdown-menu
+---
+
+<ComponentPreview component="dropdown-menu">
+  ```tsx file=<rootDir>/src/examples/ui/dropdown-menu/index.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+<Installation component="dropdown-menu">
+  ```tsx file=<rootDir>/src/components/ui/dropdown-menu.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import {
+  Cloud,
+  CreditCard,
+  Github,
+  Keyboard,
+  LifeBuoy,
+  LogOut,
+  Mail,
+  MessageSquare,
+  Plus,
+  PlusCircle,
+  Settings,
+  User,
+  UserPlus,
+  Users,
+} from 'lucide-react'
+
+import React from 'react'
+
+import { Button } from '@/components/ui/button'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
+```
+
+```tsx
+<DropdownMenu>
+  <DropdownMenuTrigger asChild>
+    <Button example={'noShadow'}>Open</Button>
+  </DropdownMenuTrigger>
+  <DropdownMenuContent className="w-56">
+    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    <DropdownMenuGroup>
+      <DropdownMenuItem>
+        <User />
+        <span>Profile</span>
+        <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+      </DropdownMenuItem>
+      <DropdownMenuItem>
+        <CreditCard />
+        <span>Billing</span>
+        <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+      </DropdownMenuItem>
+      <DropdownMenuItem>
+        <Settings />
+        <span>Settings</span>
+        <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+      </DropdownMenuItem>
+      <DropdownMenuItem>
+        <Keyboard />
+        <span>Keyboard shortcuts</span>
+        <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
+      </DropdownMenuItem>
+    </DropdownMenuGroup>
+    <DropdownMenuSeparator />
+    <DropdownMenuGroup>
+      <DropdownMenuItem>
+        <Users />
+        <span>Team</span>
+      </DropdownMenuItem>
+      <DropdownMenuSub>
+        <DropdownMenuSubTrigger>
+          <UserPlus />
+          <span>Invite users</span>
+        </DropdownMenuSubTrigger>
+        <DropdownMenuPortal>
+          <DropdownMenuSubContent>
+            <DropdownMenuItem>
+              <Mail />
+              <span>Email</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <MessageSquare />
+              <span>Message</span>
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>
+              <PlusCircle />
+              <span>More...</span>
+            </DropdownMenuItem>
+          </DropdownMenuSubContent>
+        </DropdownMenuPortal>
+      </DropdownMenuSub>
+      <DropdownMenuItem>
+        <Plus />
+        <span>New Team</span>
+        <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
+      </DropdownMenuItem>
+    </DropdownMenuGroup>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>
+      <Github />
+      <span>GitHub</span>
+    </DropdownMenuItem>
+    <DropdownMenuItem>
+      <LifeBuoy />
+      <span>Support</span>
+    </DropdownMenuItem>
+    <DropdownMenuItem disabled>
+      <Cloud />
+      <span>API</span>
+    </DropdownMenuItem>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>
+      <LogOut />
+      <span>Log out</span>
+      <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+    </DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="dropdown-menu">
+  ```tsx file=<rootDir>/src/examples/ui/dropdown-menu/index.tsx
+  ```
+</ComponentPreview>
+
+### Checkboxes
+
+<ComponentPreview component="dropdown-menu" example="checkboxes">
+  ```tsx file=<rootDir>/src/examples/ui/dropdown-menu/checkboxes.tsx
+  ```
+</ComponentPreview>
+
+### Radio Group
+
+<ComponentPreview component="dropdown-menu" example="radio">
+  ```tsx file=<rootDir>/src/examples/ui/dropdown-menu/radio.tsx
+  ```
+</ComponentPreview>

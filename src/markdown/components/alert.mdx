@@ -1,0 +1,100 @@
+---
+title: Alert
+description: Displays a callout for user attention.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/alert
+---
+
+<ComponentPreview component="alert">
+  ```tsx file=<rootDir>/src/examples/ui/alert/index.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+<Installation component="alert">
+  ```tsx file=<rootDir>/src/components/ui/alert.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import { CheckCircle2Icon } from "lucide-react"
+
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+```
+
+```tsx
+<Alert>
+  <CheckCircle2Icon />
+  <AlertTitle>Success! Your changes have been saved</AlertTitle>
+  <AlertDescription>
+    This is an alert with icon, title and description.
+  </AlertDescription>
+</Alert>
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="alert" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/alert/index.tsx
+  ```
+</ComponentPreview>
+
+### Destructive
+
+<ComponentPreview component="alert" example="destructive">
+  ```tsx file=<rootDir>/src/examples/ui/alert/destructive.tsx
+  ```
+</ComponentPreview>
+
+### Only Icon and Description
+
+<ComponentPreview component="alert" example="icon-description">
+  ```tsx file=<rootDir>/src/examples/ui/alert/icon-description.tsx
+  ```
+</ComponentPreview>
+
+### Only Description
+
+<ComponentPreview component="alert" example="description-only">
+  ```tsx file=<rootDir>/src/examples/ui/alert/description-only.tsx
+  ```
+</ComponentPreview>
+
+### Only Icon and Title
+
+<ComponentPreview component="alert" example="icon-title">
+  ```tsx file=<rootDir>/src/examples/ui/alert/icon-title.tsx
+  ```
+</ComponentPreview>
+
+### Long Description
+
+<ComponentPreview component="alert" example="long-description">
+  ```tsx file=<rootDir>/src/examples/ui/alert/long-description.tsx
+  ```
+</ComponentPreview>
+
+### Long Title
+
+<ComponentPreview component="alert" example="long-title">
+  ```tsx file=<rootDir>/src/examples/ui/alert/long-title.tsx
+  ```
+</ComponentPreview>
+
+### Long Title and Description
+
+<ComponentPreview component="alert" example="long-title-and-description">
+  ```tsx file=<rootDir>/src/examples/ui/alert/long-title-and-description.tsx
+  ```
+</ComponentPreview>
+
+### With Button
+
+<ComponentPreview component="alert" example="with-button">
+  ```tsx file=<rootDir>/src/examples/ui/alert/with-button.tsx
+  ```
+</ComponentPreview>

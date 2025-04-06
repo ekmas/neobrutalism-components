@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar",
+  "type": "registry:ui",
+  "title": "Calendar",
+  "dependencies": [
+    "react-day-picker@8.10.1",
+    "date-fns"
+  ],
+  "registryDependencies": [
+    "https://neobrutalism.dev/r/nbutton.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/calendar.tsx",
+      "content": "\"use client\"\r\n\r\nimport { ChevronLeft, ChevronRight } from \"lucide-react\"\r\nimport { DayPicker } from \"react-day-picker\"\r\n\r\nimport * as React from \"react\"\r\n\r\nimport { buttonVariants } from \"@/components/ui/button\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n\r\nexport type CalendarProps = React.ComponentProps<typeof DayPicker>\r\n\r\nfunction Calendar({\r\n  className,\r\n  classNames,\r\n  showOutsideDays = true,\r\n  ...props\r\n}: CalendarProps) {\r\n  return (\r\n    <DayPicker\r\n      showOutsideDays={showOutsideDays}\r\n      className={cn(\r\n        \"rounded-base! border-2 border-border bg-main p-3 font-heading shadow-shadow\",\r\n        className,\r\n      )}\r\n      classNames={{\r\n        months: \"flex flex-col sm:flex-row gap-2\",\r\n        month: \"flex flex-col gap-4\",\r\n        caption:\r\n          \"flex justify-center pt-1 relative items-center w-full text-main-foreground\",\r\n        caption_label: \"text-sm font-heading\",\r\n        nav: \"gap-1 flex items-center\",\r\n        nav_button: cn(\r\n          buttonVariants({ variant: \"noShadow\" }),\r\n          \"size-7 bg-transparent p-0\",\r\n        ),\r\n        nav_button_previous: \"absolute left-1\",\r\n        nav_button_next: \"absolute right-1\",\r\n        table: \"w-full border-collapse space-y-1\",\r\n        head_row: \"flex\",\r\n        head_cell:\r\n          \"text-main-foreground rounded-base w-9 font-base text-[0.8rem]\",\r\n        row: \"flex w-full mt-2\",\r\n        cell: cn(\r\n          \"relative p-0 text-center text-sm focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-black/50 [&:has([aria-selected])]:text-white! [&:has([aria-selected].day-range-end)]:rounded-r-base\",\r\n          props.mode === \"range\"\r\n            ? \"[&:has(>.day-range-end)]:rounded-r-base [&:has(>.day-range-start)]:rounded-l-base [&:has([aria-selected])]:bg-black/50! first:[&:has([aria-selected])]:rounded-l-base last:[&:has([aria-selected])]:rounded-r-base\"\r\n            : \"[&:has([aria-selected])]:rounded-base [&:has([aria-selected])]:bg-black/50\",\r\n        ),\r\n        day: cn(\r\n          buttonVariants({ variant: \"noShadow\" }),\r\n          \"size-9 p-0 font-base aria-selected:opacity-100\",\r\n        ),\r\n        day_range_start:\r\n          \"day-range-start aria-selected:bg-black! aria-selected:text-white rounded-base\",\r\n        day_range_end:\r\n          \"day-range-end aria-selected:bg-black! aria-selected:text-white rounded-base\",\r\n        day_selected: \"bg-black! text-white! rounded-base\",\r\n        day_today: \"bg-secondary-background text-foreground!\",\r\n        day_outside:\r\n          \"day-outside text-main-foreground opacity-50 aria-selected:bg-none\",\r\n        day_disabled: \"text-main-foreground opacity-50 rounded-base\",\r\n        day_range_middle: \"aria-selected:bg-black/50! aria-selected:text-white\",\r\n        day_hidden: \"invisible\",\r\n        ...classNames,\r\n      }}\r\n      components={{\r\n        IconLeft: ({ className, ...props }) => (\r\n          <ChevronLeft className={cn(\"size-4\", className)} {...props} />\r\n        ),\r\n        IconRight: ({ className, ...props }) => (\r\n          <ChevronRight className={cn(\"size-4\", className)} {...props} />\r\n        ),\r\n      }}\r\n      {...props}\r\n    />\r\n  )\r\n}\r\nCalendar.displayName = \"Calendar\"\r\n\r\nexport { Calendar }\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+---
+title: Hover Card
+description: For sighted users to preview content available behind a link.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/hover-card
+---
+
+<ComponentPreview component="hover-card">
+  ```tsx file=<rootDir>/src/examples/ui/hover-card.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+<Installation component="hover-card">
+  ```tsx file=<rootDir>/src/components/ui/hover-card.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import { Button } from '@/components/ui/button'
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from '@/components/ui/hover-card'
+```
+
+```tsx
+<HoverCard>
+  <HoverCardTrigger asChild>
+    <Button example="noShadow">Hover</Button>
+  </HoverCardTrigger>
+  <HoverCardContent>
+    The React Framework – created and maintained by @vercel.
+  </HoverCardContent>
+</HoverCard>
+```

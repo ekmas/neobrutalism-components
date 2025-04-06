@@ -1,0 +1,38 @@
+---
+title: Progress
+description: Displays an indicator showing the completion progress of a task.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/progress
+---
+
+<ComponentPreview component="progress">
+  ```tsx file=<rootDir>/src/examples/ui/progress.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+<Installation component="progress">
+  ```tsx file=<rootDir>/src/components/ui/progress.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import * as React from 'react'
+
+import { Progress } from '@/components/ui/progress'
+```
+
+```tsx
+const [progress, setProgress] = React.useState(13);
+
+React.useEffect(() => {
+  const timer = setTimeout(() => setProgress(66), 500);
+  return () => clearTimeout(timer);
+}, [])
+```
+
+```tsx
+<Progress value={progress} className="w-[60%]" />
+```

@@ -1,0 +1,39 @@
+---
+title: Installation
+description: Learn how to install neobrutalism components.
+---
+
+## 1. Initialize shadcn
+
+As explained in introduction, most of these components are based on <a target="_blank" href="https://ui.shadcn.com/">Shadcn UI</a>. 
+
+Visit <a href='https://ui.shadcn.com/docs/cli#init' target='_blank'>shadcn docs</a> to see how to initialize shadcn.
+
+<Warning className="mt-8 mb-4" description="Neobrutalism components doesn't support utility class components anymore, only css variables components. Also, it doesn't matter which baseColor you choose, because it doesn't change the styling." />
+
+## 2. Add styling
+
+Delete the existing styling from your `globals.css` and paste <Link target='_blank' href='/styling'>desired styling</Link>.
+
+## 3. Install components
+
+### Install via Shadcn cli
+
+Just choose desired component variant and desired package manager, copy cli command to your terminal and you're good to go. 
+If there is no shadcn cli command on the component page you'll have to install the component manually.
+
+### Install manually
+
+In this docs below each component's name you'll have the shadcn docs link for that component.
+
+e.g. You want to install shadcn button component. You'll navigate to <a target='_blank' href='/components/button'>button page</a>, click on the shadcn docs
+link and install the button component like it's shown in the docs.
+
+After you're done you'll come back to neobrutalism button page, and copy button component to your project inside `components/ui/button.tsx``
+(this is the default component path) or your custom component path.
+
+Keep in mind that neobrutalism components can have different variants than default shadcn components.
+
+### Other components
+
+If the shadcn docs link is not present on the component's page, just copy the component and read the instructions if there are any.

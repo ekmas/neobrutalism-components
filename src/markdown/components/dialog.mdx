@@ -1,0 +1,93 @@
+---
+title: Dialog
+description: A window overlaid on either the primary window or another dialog window.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/dialog
+---
+
+<ComponentPreview component="dialog">
+  ```tsx file=<rootDir>/src/examples/ui/dialog/index.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+<Installation component="dialog">
+  ```tsx file=<rootDir>/src/components/ui/dialog.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import { Button } from "@/components/ui/button"
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+```
+
+```tsx
+<Dialog>
+  <form>
+    <DialogTrigger asChild>
+      <Button>Edit Profile</Button>
+    </DialogTrigger>
+    <DialogContent className="sm:max-w-[425px]">
+      <DialogHeader>
+        <DialogTitle>Edit profile</DialogTitle>
+        <DialogDescription>
+          Make changes to your profile here. Click save when you&apos;re
+          done.
+        </DialogDescription>
+      </DialogHeader>
+      <div className="grid gap-4">
+        <div className="grid gap-3">
+          <Label htmlFor="name-1">Name</Label>
+          <Input id="name-1" name="name" defaultValue="Pedro Duarte" />
+        </div>
+        <div className="grid gap-3">
+          <Label htmlFor="username-1">Username</Label>
+          <Input id="username-1" name="username" defaultValue="@peduarte" />
+        </div>
+      </div>
+      <DialogFooter>
+        <DialogClose asChild>
+          <Button variant="neutral">Cancel</Button>
+        </DialogClose>
+        <Button type="submit">Save changes</Button>
+      </DialogFooter>
+    </DialogContent>
+  </form>
+</Dialog>
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="dialog" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/dialog/index.tsx
+  ```
+</ComponentPreview>
+
+### With Scrollable Content
+
+<ComponentPreview component="dialog" example="scrollable-content">
+  ```tsx file=<rootDir>/src/examples/ui/dialog/scrollable-content.tsx
+  ```
+</ComponentPreview>
+
+### With Sticky Footer
+
+<ComponentPreview component="dialog" example="sticky-footer">
+  ```tsx file=<rootDir>/src/examples/ui/dialog/sticky-footer.tsx
+  ```
+</ComponentPreview>

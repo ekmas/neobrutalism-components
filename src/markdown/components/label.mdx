@@ -1,0 +1,33 @@
+---
+title: Label
+description: Renders an accessible label associated with controls.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/label
+---
+
+<ComponentPreview component="label">
+  ```tsx file=<rootDir>/src/examples/ui/label.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+<Installation component="label">
+  ```tsx file=<rootDir>/src/components/ui/label.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import { Checkbox } from '@/components/ui/checkbox'
+import { Label } from '@/components/ui/label'
+```
+
+```tsx
+<div>
+  <div className="flex items-center space-x-2">
+    <Checkbox id="terms" />
+    <Label htmlFor="terms">Accept terms and conditions</Label>
+  </div>
+</div>
+```

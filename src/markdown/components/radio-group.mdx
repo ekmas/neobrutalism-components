@@ -1,0 +1,41 @@
+---
+title: Radio Group
+description: A set of checkable buttons where only one can be checked at a time.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/radio-group
+---
+
+<ComponentPreview component="radio-group">
+  ```tsx file=<rootDir>/src/examples/ui/radio-group.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+<Installation component="radio-group">
+  ```tsx file=<rootDir>/src/components/ui/radio-group.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import { Label } from '@/components/ui/label'
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
+```
+
+```tsx
+<RadioGroup defaultValue="comfortable">
+  <div className="flex items-center space-x-2">
+    <RadioGroupItem value="default" id="r1" />
+    <Label htmlFor="r1">Default</Label>
+  </div>
+  <div className="flex items-center space-x-2">
+    <RadioGroupItem value="comfortable" id="r2" />
+    <Label htmlFor="r2">Comfortable</Label>
+  </div>
+  <div className="flex items-center space-x-2">
+    <RadioGroupItem value="compact" id="r3" />
+    <Label htmlFor="r3">Compact</Label>
+  </div>
+</RadioGroup>
+```

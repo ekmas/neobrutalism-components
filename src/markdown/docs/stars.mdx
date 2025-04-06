@@ -1,0 +1,90 @@
+---
+title: Stars Installation
+description: Get started with adding neobrutalism stars to your project.
+---
+
+You can install it in the same way you would install main components.
+You can copy the shadcn cli command or copy the component directly.
+
+If you choose to install it via shadcn cli command, you'll have
+to choose desired package manager.
+
+## Component Props
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead className="w-[100px]">Name</TableHead>
+      <TableHead>Description</TableHead>
+      <TableHead className="text-right">Type</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>color</TableCell>
+      <TableCell>Star color</TableCell>
+      <TableCell className="text-right">string</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>size</TableCell>
+      <TableCell>Width and height of star in pixels</TableCell>
+      <TableCell className="text-right">number</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>stroke</TableCell>
+      <TableCell>Path stroke color</TableCell>
+      <TableCell className="text-right">string</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>strokeWidth</TableCell>
+      <TableCell>Stroke width</TableCell>
+      <TableCell className="text-right">number</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>pathClassName</TableCell>
+      <TableCell>Path classname</TableCell>
+      <TableCell className="text-right">string</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+If color prop isn't present fallback value will be `currentColor`.
+
+Rest of the props are extended from `<React.SVGProps>` (basically all attributes an svg can have, such as className, width, height, aria attributes etc.).
+
+## Examples
+
+### Default
+
+<ComponentPreview component="default" type="star" >
+  ```tsx file=<rootDir>/src/examples/stars/docs/default.tsx
+  ```
+</ComponentPreview>
+
+### With stroke
+
+<ComponentPreview component="with-stroke" type="star" >
+  ```tsx file=<rootDir>/src/examples/stars/docs/with-stroke.tsx
+  ```
+</ComponentPreview>
+
+### Custom width and height
+
+<ComponentPreview component="custom-width-height" type="star" >
+  ```tsx file=<rootDir>/src/examples/stars/docs/custom-width-height.tsx
+  ```
+</ComponentPreview>
+
+### Dark mode color
+
+<ComponentPreview component="dark-mode" type="star" >
+  ```tsx file=<rootDir>/src/examples/stars/docs/dark-mode.tsx
+  ```
+</ComponentPreview>
+
+### Dark mode stroke color
+
+<ComponentPreview component="dark-mode-stroke" type="star" >
+  ```tsx file=<rootDir>/src/examples/stars/docs/dark-mode-stroke.tsx
+  ```
+</ComponentPreview>

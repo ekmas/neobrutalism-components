@@ -1,0 +1,81 @@
+---
+title: Sheet
+description: Extends the Dialog component to display content that complements the main content of the screen.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/sheet
+---
+
+<ComponentPreview component="sheet">
+  ```tsx file=<rootDir>/src/examples/ui/sheet/index.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+<Installation component="sheet">
+  ```tsx file=<rootDir>/src/components/ui/sheet.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+```
+
+```tsx
+<Sheet>
+  <SheetTrigger asChild>
+    <Button>Open</Button>
+  </SheetTrigger>
+  <SheetContent>
+    <SheetHeader>
+      <SheetTitle>Edit profile</SheetTitle>
+      <SheetDescription>
+        Make changes to your profile here. Click save when you&apos;re
+        done.
+      </SheetDescription>
+    </SheetHeader>
+    <div className="grid flex-1 auto-rows-min gap-6 px-4">
+      <div className="grid gap-3">
+        <Label htmlFor="sheet-demo-name">Name</Label>
+        <Input id="sheet-demo-name" defaultValue="Pedro Duarte" />
+      </div>
+      <div className="grid gap-3">
+        <Label htmlFor="sheet-demo-username">Username</Label>
+        <Input id="sheet-demo-username" defaultValue="@peduarte" />
+      </div>
+    </div>
+    <SheetFooter>
+      <Button type="submit">Save changes</Button>
+      <SheetClose asChild>
+        <Button variant="neutral">Close</Button>
+      </SheetClose>
+    </SheetFooter>
+  </SheetContent>
+</Sheet>
+```
+
+## Examples
+
+### Side
+
+Use the side property to `<SheetContent />` to indicate the edge of the screen where the component will appear. The values can be `top`, `right`, `bottom` or `left`.
+
+<br />
+
+<ComponentPreview component="sheet" example="side">
+  ```tsx file=<rootDir>/src/examples/ui/sheet/side.tsx
+  ```
+</ComponentPreview>

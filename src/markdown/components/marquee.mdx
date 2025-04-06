@@ -1,0 +1,63 @@
+---
+title: Marquee
+description: A scrolling text component that animates horizontally.
+---
+
+<ComponentPreview component="marquee">
+  ```tsx file=<rootDir>/src/examples/ui/marquee.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+<Installation component="marquee">
+  ```tsx file=<rootDir>/src/components/ui/marquee.tsx
+  ```
+</Installation>
+
+## Before using
+
+You'll have to add this to `@theme inline` section inside your styling:
+
+<br />
+
+```css
+--animate-marquee: marquee 5s linear infinite;
+--animate-marquee2: marquee2 5s linear infinite;
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee2 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+```
+
+Make sure there is enough content in items so it loops perfectly.
+
+Visit <a target="_blank" href="https://jackwhiting.co.uk/posts/creating-a-marquee-with-tailwind/">this article</a> to learn more.
+
+## Usage
+
+```ts
+import Marquee from '@/components/ui/marquee'
+```
+
+```ts
+const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5']
+```
+
+```tsx
+<Marquee items={items} />
+```

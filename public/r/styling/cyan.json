@@ -1,0 +1,58 @@
+{
+  "name": "neobrutalism-cyan",
+  "type": "registry:style",
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "title": "Neobrutalism Cyan",
+  "cssVars": {
+    "dark": {
+      "background": "oklch(27.11% 0.0303 225.38)",
+      "secondary-background": "oklch(100% 0 0)",
+      "main": "oklch(64.37% 0.1162 218.75)",
+      "ring": "oklch(100% 0 0)",
+      "foreground": "oklch(92.49% 0 0)",
+      "main-foreground": "oklch(0% 0 0)",
+      "border": "oklch(0% 0 0)",
+      "overlay": "rgba(0, 0, 0, 0.8)",
+      "shadow": "4px 4px 0px 0px var(--border)"
+    },
+    "light": {
+      "background": "oklch(94.61% 0.043 211.12)",
+      "secondary-background": "oklch(23.93% 0 0)",
+      "main": "oklch(76.89% 0.139164 219.13)",
+      "ring": "oklch(0% 0 0)",
+      "foreground": "oklch(0% 0 0)",
+      "main-foreground": "oklch(0% 0 0)",
+      "border": "oklch(0% 0 0)",
+      "overlay": "rgba(0, 0, 0, 0.8)",
+      "shadow": "4px 4px 0px 0px var(--border)"
+    },
+    "theme": {
+      "color-main": "var(--main)",
+      "color-background": "var(--background)",
+      "color-secondary-background": "var(--secondary-background)",
+      "color-foreground": "var(--foreground)",
+      "color-main-foreground": "var(--main-foreground)",
+      "color-border": "var(--border)",
+      "color-ring": "var(--ring)",
+      "color-overlay": "var(--overlay)",
+      "spacing-boxShadowX": "4px",
+      "spacing-boxShadowY": "4px",
+      "spacing-reverseBoxShadowX": "-4px",
+      "spacing-reverseBoxShadowY": "-4px",
+      "radius-base": "5px",
+      "font-weight-base": "500",
+      "font-weight-heading": "700",
+      "shadow-shadow": "var(--shadow)"
+    }
+  },
+  "extends": "none",
+  "description": "A collection of neobrutalism-styled components based on shadcn/ui.",
+  "dependencies": [
+    "tw-animate-css",
+    "class-variance-authority",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ]
+}

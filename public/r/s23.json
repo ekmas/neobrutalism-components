@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "s23",
+  "type": "registry:component",
+  "title": "Star 23",
+  "files": [
+    {
+      "path": "src/components/stars/s23.tsx",
+      "content": "/**\r\n * @preview ![img](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAuxJREFUSEuNVttu2kAQPQvYpMLgSORz6pA8BTt/FC5qGsgfBcgbl35OkYKhKjbgjXZ2fdl4od0HZO1lZs7MnDMwzjkHB8DoB2fXP45L79R9ljuA9FO8qTYu+jc84mCZHZZwzoXRer2Ow+GAp6cnjEYjLSCz4+Ku/B4MBhiPx7AsC1EUkQ2JAEClwkBfDHAaTazXv2Hbdu7oQoriOMZNu43tbifvMwaeJPIzRTAYDDEaveQGGcM2DOE4TiF15ah3ux1arRZUnPS+1+tlWcgQiINmswnxQFaCo1KpENRqraZyKvqBqX7gOB5PlNpERSvRO9hut1mghSJzRPEB3+pXkGYAUZxW08XH5kN3oJ67roswDHNjjGG/38Oy7ex+AYGELxC47jWS5JQ99H0fk8lEK3wQBJhOp2qPUQ03mw2ltLi0FKUHx+MR7XY7i06gWSyX8LzvhG21XKLTuQMjrKAarNdr1Gq1Eh2MDtJbMsoZGRKdcTpJVNVqNStqGZ3eCJoDE6EWiyXu7+/IYLfrk7Ppu3AKiDPP88ytbGKygcRyi3P4QYDZ7J0cPPhdTN6mAlRG/3Nslzwonap2lNaJgMFjgBmlC3jodmXRWSoJelpyqeA50fRQciyr1QqdTkelqEsHM5Wi+XyBW+/2olCWa5BGDYbHQiuyi0V+k+Q0yImmpso2jqdim8pEz+dzQiLW6tcKt574Jhn70qamLirI8h8impvTH0CpFakmPrWwUhWSFcHqRqOhAcnETkRDUnF1RUUtkkgwtLw4rt1rbJRUCJysWsH+bwTLqql0pUVWCHKxk4GJB9E+MjJUOBSM18QOgOM0EW7DfOCk86Df7+N1PFZZlZou5VpAThW0jMMk18PhEM8/nqm7shQJsRLWBRghWEJbtIGTdkBhqKbljOMIN+0bfeCcEkpD1qYCanw4oN/v4eVnYfBoQReHdJbmbJBTFl7HsC0b+68j01BF49Z//7lQ6nCGaLpts87ors79I/kENVLNwQzEWU4AAAAASUVORK5CYII=)\r\n */\r\nexport default function Star23({\r\n  color,\r\n  size,\r\n  stroke,\r\n  strokeWidth,\r\n  pathClassName,\r\n  width,\r\n  height,\r\n  ...props\r\n}: React.SVGProps<SVGSVGElement> & {\r\n  color?: string\r\n  size?: number\r\n  stroke?: string\r\n  pathClassName?: string\r\n  strokeWidth?: number\r\n}) {\r\n  return (\r\n    <svg\r\n      xmlns=\"http://www.w3.org/2000/svg\"\r\n      fill=\"none\"\r\n      viewBox=\"0 0 200 200\"\r\n      width={size ?? width}\r\n      height={size ?? height}\r\n      {...props}\r\n    >\r\n      <path\r\n        fill={color ?? \"currentColor\"}\r\n        stroke={stroke}\r\n        strokeWidth={strokeWidth}\r\n        className={pathClassName}\r\n        d=\"M108.264 100c149.028 86.91 78.646 157.387-8.264 8.264C13.09 257.387-57.387 186.91 91.737 100-57.387 13.09 13.09-57.387 100 91.737 186.91-57.387 257.387 13.09 108.264 100\"\r\n      />\r\n    </svg>\r\n  )\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/stars/s23.tsx"
+    }
+  ]
+}

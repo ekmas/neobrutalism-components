@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group",
+  "type": "registry:ui",
+  "title": "Radio group",
+  "dependencies": [
+    "@radix-ui/react-radio-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/radio-group.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as RadioGroupPrimitive from \"@radix-ui/react-radio-group\"\r\nimport { Circle } from \"lucide-react\"\r\n\r\nimport * as React from \"react\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n\r\nfunction RadioGroup({\r\n  className,\r\n  ...props\r\n}: React.ComponentProps<typeof RadioGroupPrimitive.Root>) {\r\n  return (\r\n    <RadioGroupPrimitive.Root\r\n      data-slot=\"radio-group\"\r\n      className={cn(\"grid gap-2\", className)}\r\n      {...props}\r\n    />\r\n  )\r\n}\r\n\r\nfunction RadioGroupItem({\r\n  className,\r\n  ...props\r\n}: React.ComponentProps<typeof RadioGroupPrimitive.Item>) {\r\n  return (\r\n    <RadioGroupPrimitive.Item\r\n      data-slot=\"radio-group-item\"\r\n      className={cn(\r\n        \"aspect-square size-4 rounded-full border-2 border-border text-black dark:text-white focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50\",\r\n        className,\r\n      )}\r\n      {...props}\r\n    >\r\n      <RadioGroupPrimitive.Indicator className=\"flex items-center justify-center\">\r\n        <Circle className=\"size-2 fill-current text-current\" />\r\n      </RadioGroupPrimitive.Indicator>\r\n    </RadioGroupPrimitive.Item>\r\n  )\r\n}\r\n\r\nexport { RadioGroup, RadioGroupItem }\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+[data-theme="light"] {
+  display: block;
+}
+
+[data-theme="dark"] {
+  display: none;
+}
+
+.dark [data-theme="light"] {
+  display: none;
+}
+
+.dark [data-theme="dark"] {
+  display: block;
+}
+
+[data-rehype-pretty-code-fragment] {
+  position: relative;
+}
+
+[data-rehype-pretty-code-fragment] code {
+  display: grid;
+  min-width: 100%;
+  border-radius: 0;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  word-wrap: break-word;
+  counter-reset: line;
+  box-decoration-break: clone;
+}
+
+[data-rehype-pretty-code-fragment] .line {
+  display: inline-block;
+  min-height: 1rem;
+  width: 100%;
+  padding: 0.125rem 1rem;
+}
+
+[data-rehype-pretty-code-fragment] [data-line-numbers] .line {
+  padding: 0.125rem 0.5rem;
+}
+
+[data-rehype-pretty-code-fragment] [data-line-numbers] > .line::before {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 1.8rem;
+  margin-right: 1.4rem;
+  text-align: right;
+}
+
+[data-rehype-pretty-code-fragment] .line--highlighted {
+  background-color: rgba(63, 63, 70, 0.5);
+}
+
+[data-rehype-pretty-code-fragment] .line-highlighted span {
+  position: relative;
+}
+
+[data-rehype-pretty-code-fragment] .word--highlighted {
+  border-radius: 0.375rem;
+  border-color: rgba(63, 63, 70, 0.7);
+  background-color: rgba(63, 63, 70, 0.5);
+  padding: 0.25rem;
+}
+
+.dark [data-rehype-pretty-code-fragment] .word--highlighted {
+  background-color: rgb(24, 24, 27);
+}
+
+[data-rehype-pretty-code-title] {
+  color: var(--foreground); /* text-foreground */
+  margin-top: 0.5rem; /* mt-2 */
+  padding: 1.5rem 1rem 0 1rem; /* pt-6 px-4 */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+}
+
+[data-rehype-pretty-code-title] + pre {
+  margin-top: 0.5rem; /* mt-2 */
+}
+
+[data-highlighted-chars] {
+  background-color: transparent;
+}
+
+[data-slot="pre-wrapper"] {
+  margin-bottom: 20px;
+}
+
+pre.scrollbar::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  border: 0;
+}
+
+pre.scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  border: 0;
+}
+
+pre.scrollbar::-webkit-scrollbar-corner {
+  background: transparent;
+  border: 0;
+}
+
+pre.scrollbar::-webkit-scrollbar-thumb {
+  border: 0;
+  background: white;
+  border-radius: 0px;
+}

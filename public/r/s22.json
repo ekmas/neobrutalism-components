@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "s22",
+  "type": "registry:component",
+  "title": "Star 22",
+  "files": [
+    {
+      "path": "src/components/stars/s22.tsx",
+      "content": "/**\r\n * @preview ![img](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAohJREFUSEuNVkuW4jAMLLMdMgfitxlCH4TAY4D9dN+A3vN5zafP0RBmBeFAwGzjebIdWyYOr7NJYiuSVSqVInIppYC+JIDnzxISwthwa+MgcBNSSrJ8cB8IpvxVOfXXuSkLAMS9Ho5pqsJF9Tpms3eMJ2N2rnKOi+UCr39ecb/fVfrdX12kxgd9aAPEcYzj8WicEQwEByCEwPl8RqPRcHlKILtkaLfb0AAQsNLeyNfhcFD2NoAQNQOTWi499/t9bLcbtTccDrHZbJmNDz59nRvkdQAKXtPFMwVhz26VTkaXhsBkGf7IZCZNBhKIfkb4d7/bADo/isg9WATVuoIxsE31u95uDCIJULGm02k5Vy8lH+uAb3WqxWKO8e+xOqDHolqtpkv7cKywo8BZyCHhn5MPjYCtAb1kWYZWq+XwdTj5dQ81lKlflhHjmtZC8E6mVc2QDYM/AEtFYTXTiF2ub4Od3DMNp+HnxawCSyCOu5b7XoCSFkmg9xIjTYum43hUMQroxjFS1Vx+t5cySJIEu91OezU05XSszgFIBgOs1x9MMh9YdLlc0GxSgb7DG94mzj5cZJOVomkhrs8arcQiF4C0K89zx6JCKparJaaTiS8VJbY4EXwWf7VaYTQaaZSLIkdRpCWXq4GvDA8N6AfjSdWjCLfrlUmFkmWupoFOAhQVCflC7yvaQbOUuplLBWEXJqR2M0gGWG/WyiTpJ9h9frIZ4JPCyoUo1BQANZebRH7RTqeTYZc7Ag2hTqfjDxyzTb72+z2DyLBITbW/R4V1vf4Ds/cZJuMJS6w8exfzOd7e3uzI7MUv+Np/2Z8HT01LIz0w46ts3KA3fx6emnLwzUb4/+E7EX2C/Ad3o4rFgicJjwAAAABJRU5ErkJggg==)\r\n */\r\nexport default function Star22({\r\n  color,\r\n  size,\r\n  stroke,\r\n  strokeWidth,\r\n  pathClassName,\r\n  width,\r\n  height,\r\n  ...props\r\n}: React.SVGProps<SVGSVGElement> & {\r\n  color?: string\r\n  size?: number\r\n  stroke?: string\r\n  pathClassName?: string\r\n  strokeWidth?: number\r\n}) {\r\n  return (\r\n    <svg\r\n      xmlns=\"http://www.w3.org/2000/svg\"\r\n      fill=\"none\"\r\n      viewBox=\"0 0 200 200\"\r\n      width={size ?? width}\r\n      height={size ?? height}\r\n      {...props}\r\n    >\r\n      <path\r\n        fill={color ?? \"currentColor\"}\r\n        stroke={stroke}\r\n        strokeWidth={strokeWidth}\r\n        className={pathClassName}\r\n        d=\"M158.603 100c78.169 75.604 16.906 136.867-58.603 58.603C24.396 236.867-36.867 175.604 41.397 100-36.867 24.396 24.396-36.867 100 41.397 175.604-36.867 236.867 24.396 158.603 100\"\r\n      />\r\n    </svg>\r\n  )\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/stars/s22.tsx"
+    }
+  ]
+}

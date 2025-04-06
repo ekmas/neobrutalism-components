@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge",
+  "type": "registry:ui",
+  "title": "Badge",
+  "files": [
+    {
+      "path": "src/components/ui/badge.tsx",
+      "content": "import { Slot } from \"@radix-ui/react-slot\"\r\nimport { cva, type VariantProps } from \"class-variance-authority\"\r\n\r\nimport * as React from \"react\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n\r\nconst badgeVariants = cva(\r\n  \"inline-flex items-center justify-center rounded-base border-2 border-border px-2.5 py-0.5 text-xs font-base w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] overflow-hidden\",\r\n  {\r\n    variants: {\r\n      variant: {\r\n        default: \"bg-main text-main-foreground\",\r\n        neutral: \"bg-secondary-background text-foreground\",\r\n      },\r\n    },\r\n    defaultVariants: {\r\n      variant: \"default\",\r\n    },\r\n  },\r\n)\r\n\r\nfunction Badge({\r\n  className,\r\n  variant,\r\n  asChild = false,\r\n  ...props\r\n}: React.ComponentProps<\"span\"> &\r\n  VariantProps<typeof badgeVariants> & {\r\n    asChild?: boolean\r\n  }) {\r\n  const Comp = asChild ? Slot : \"span\"\r\n\r\n  return (\r\n    <Comp\r\n      data-slot=\"badge\"\r\n      className={cn(badgeVariants({ variant }), className)}\r\n      {...props}\r\n    />\r\n  )\r\n}\r\n\r\nexport { Badge, badgeVariants }\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}

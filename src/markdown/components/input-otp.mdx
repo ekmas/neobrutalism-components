@@ -1,0 +1,44 @@
+---
+title: Input OTP
+description: Accessible one-time password input for authentication.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/input-otp
+---
+
+<ComponentPreview component="input-otp">
+  ```tsx file=<rootDir>/src/examples/ui/input-otp.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+<Installation component="input-otp">
+  ```tsx file=<rootDir>/src/components/ui/input-otp.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+} from '@/components/ui/input-otp'
+```
+
+```tsx
+<InputOTP maxLength={6}>
+  <InputOTPGroup>
+    <InputOTPSlot index={0} />
+    <InputOTPSlot index={1} />
+    <InputOTPSlot index={2} />
+  </InputOTPGroup>
+  <InputOTPSeparator />
+  <InputOTPGroup>
+    <InputOTPSlot index={3} />
+    <InputOTPSlot index={4} />
+    <InputOTPSlot index={5} />
+  </InputOTPGroup>
+</InputOTP>
+```

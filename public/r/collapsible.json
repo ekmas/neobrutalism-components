@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible",
+  "type": "registry:ui",
+  "title": "Collapsible",
+  "dependencies": [
+    "@radix-ui/react-collapsible"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/collapsible.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as CollapsiblePrimitive from \"@radix-ui/react-collapsible\"\r\n\r\nimport * as React from \"react\"\r\n\r\nfunction Collapsible({\r\n  ...props\r\n}: React.ComponentProps<typeof CollapsiblePrimitive.Root>) {\r\n  return <CollapsiblePrimitive.Root data-slot=\"collapsible\" {...props} />\r\n}\r\n\r\nfunction CollapsibleTrigger({\r\n  ...props\r\n}: React.ComponentProps<typeof CollapsiblePrimitive.CollapsibleTrigger>) {\r\n  return (\r\n    <CollapsiblePrimitive.CollapsibleTrigger\r\n      data-slot=\"collapsible-trigger\"\r\n      {...props}\r\n    />\r\n  )\r\n}\r\n\r\nfunction CollapsibleContent({\r\n  ...props\r\n}: React.ComponentProps<typeof CollapsiblePrimitive.CollapsibleContent>) {\r\n  return (\r\n    <CollapsiblePrimitive.CollapsibleContent\r\n      data-slot=\"collapsible-content\"\r\n      {...props}\r\n    />\r\n  )\r\n}\r\n\r\nexport { Collapsible, CollapsibleTrigger, CollapsibleContent }\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}

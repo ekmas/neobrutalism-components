@@ -1,0 +1,31 @@
+---
+title: Switch
+description: A toggle switch alternative to a checkbox.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/switch
+---
+
+<ComponentPreview component="switch">
+  ```tsx file=<rootDir>/src/examples/ui/switch.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+<Installation component="switch">
+  ```tsx file=<rootDir>/src/components/ui/switch.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import { Label } from '@/components/ui/label'
+import { Switch } from '@/components/ui/switch'
+```
+
+```tsx
+<div className="flex items-center space-x-2">
+  <Switch id="airplane-mode" />
+  <Label htmlFor="airplane-mode">Airplane Mode</Label>
+</div>
+```
