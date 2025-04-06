@@ -3,6 +3,51 @@ title: Changelog
 description: List of all important updates and announcements.
 ---
 
+## April 2025
+
+- The CLI now initializes projects with Tailwind v4. You can find v3 components <a target="_blank" href="https://v3.neobrutalism.dev/">here</a>.
+- All components are updated for Tailwind v4 and React 19.
+- Removed utility class components.
+- Removed the forwardRefs and adjusted the types.
+- Every primitive now has a `data-slot` attribute for styling.
+- Deprecated the toast component in favor of sonner.
+- Buttons now use the default cursor.
+- Colors are now converted to OKLCH.
+- Removed old color palettes and added 17 new ones. Check the <Link href="/styling">styling page</Link> for more information.
+- Renamed variable names to be more descriptive.
+
+<Table className="mt-8">
+  <TableHeader>
+    <TableRow>
+      <TableHead>Old variable name</TableHead>
+      <TableHead>New variable name</TableHead>
+      <TableHead>Description</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>bg</TableCell>
+      <TableCell>background</TableCell>
+      <TableCell>Background color</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>bw</TableCell>
+      <TableCell>secondary-background</TableCell>
+      <TableCell>Secondary background color</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>text </TableCell>
+      <TableCell>foreground</TableCell>
+      <TableCell>Text color</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>mtext</TableCell>
+      <TableCell>main-foreground</TableCell>
+      <TableCell>Text color when background is set to main</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
 ## February 2025
 
 - Added support for shadcn cli.

@@ -1,0 +1,174 @@
+---
+title: Migrating from V3
+description: Learn how to migrate from v3 to v4.
+---
+
+## What's new?
+
+- The CLI now initializes projects with Tailwind v4. You can find v3 components <a target="_blank" href="https://v3.neobrutalism.dev/">here</a>.
+- All components are updated for Tailwind v4 and React 19.
+- Removed utility class components.
+
+Visit <Link href="/docs/changelog">changelog</Link> to see all the changes.
+
+## 1. Follow the Tailwind v4 Upgrade Guide
+
+- Upgrade to Tailwind v4 by following the official <a target="_blank" href="https://tailwindcss.com/docs/upgrade-guide">upgrade guide</a>
+- Use the `@tailwindcss/upgrade` @next codemod to remove deprecated utility classes and update tailwind config.
+
+## 2. Upgrade your dependencies
+
+### Upgrade React dependencies
+
+If you're using Next.js, you can upgrade React and React DOM to the latest version by running the following command:
+
+<br />
+
+```bash
+npx @next/codemod@canary upgrade latest
+```
+
+Visit <a target="_blank" href="https://nextjs.org/docs/app/building-your-application/upgrading/version-15">Next.js upgrade guide</a> for more info.
+
+Otherwise, you can upgrade React and React DOM to the latest version by running the following command:
+
+<br />
+
+```bash
+pnpm up react react-dom --latest
+```
+
+### Upgrade other dependencies
+
+```bash
+pnpm up "@radix-ui/*" cmdk lucide-react recharts tailwind-merge clsx --latest
+```
+
+## 3. Deprecate tailwindcss-animate
+
+We've deprecated `tailwindcss-animate` in favor of `tw-animate-css`, so you'll have to install `tw-animate-css` and remove `tailwindcss-animate` from your project.
+
+<br />
+
+```bash
+pnpm add tw-animate-css
+```
+
+```bash
+pnpm remove tailwindcss-animate
+```
+
+## 4. Update styling
+
+Delete the tailwind config file and paste <Link target='_blank' href='/styling'>desired styling</Link> to your `globals.css` file.
+
+
+## 5. Set cssVariables to true inside components.json if you haven't already
+
+## 5. Install v4 components
+
+Install new components like you would usually do.
+
+## 6. Update old styling (page styling not components)
+
+These are new variable names:
+
+<br />
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Old variable name</TableHead>
+      <TableHead>New variable name</TableHead>
+      <TableHead>Description</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>bg</TableCell>
+      <TableCell>background</TableCell>
+      <TableCell>Background color</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>bw</TableCell>
+      <TableCell>secondary-background</TableCell>
+      <TableCell>Secondary background color</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>text </TableCell>
+      <TableCell>foreground</TableCell>
+      <TableCell>Text color</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>mtext</TableCell>
+      <TableCell>main-foreground</TableCell>
+      <TableCell>Text color when background is set to main</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+### Utility class styling upgrade
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Old styling classes</TableHead>
+      <TableHead>New styling classes</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>bg-bg dark:bg-darkBg</TableCell>
+      <TableCell>bg-background</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>bg-white dark:bg-secondaryBlack</TableCell>
+      <TableCell>bg-secondary-background</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>border-border dark:border-darkBorder</TableCell>
+      <TableCell>border-border</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>shadow-light dark:shadow-dark</TableCell>
+      <TableCell>shadow-shadow</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>text-text dark:text-darkText</TableCell>
+      <TableCell>text-foreground</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>text-text</TableCell>
+      <TableCell>text-main-foreground</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+### CSS Variables classes styling upgrade
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Old styling classes</TableHead>
+      <TableHead>New styling classes</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>bg-bg</TableCell>
+      <TableCell>bg-background</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>bg-bw</TableCell>
+      <TableCell>bg-secondary-background</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>text-text</TableCell>
+      <TableCell>text-foreground</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>text-mtext</TableCell>
+      <TableCell>text-main-foreground</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>

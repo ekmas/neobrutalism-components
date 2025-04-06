@@ -3,54 +3,24 @@ title: Installation
 description: Learn how to install neobrutalism components.
 ---
 
-## Tailwind v4 support
-
-These components currently use <a href='https://v3.tailwindcss.com/docs/installation' target='_blank'>Tailwind v3</a>, so you'll have to use it until I migrate the components to v4.
-
-I created canary release of new components you can try. Check the <a href='https://github.com/ekmas/neobrutalism-components/issues/63#issuecomment-2692536169' target='_blank'>github issue</a>.
-
-## 1. Initialize your app
-
-### 1.1 Next.js
-
-```bash
-npx create-next-app@15.1.7
-```
-
-Use `15.1.7` version instead of `latest` because that version creates project with v3 tailwind.
-
-### 1.2 Other
-
-Initialize your non nextjs app like you would normally do, just remember to install <a href='https://v3.tailwindcss.com/docs/installation' target='_blank'>Tailwind v3</a> like it's shown in the docs. 
-
-## 2. Initialize shadcn
+## 1. Initialize shadcn
 
 As explained in introduction, most of these components are based on <a target="_blank" href="https://ui.shadcn.com/">Shadcn UI</a>. 
 
 Visit <a href='https://ui.shadcn.com/docs/cli#init' target='_blank'>shadcn docs</a> to see how to initialize shadcn.
 
-<Warning className="mt-8 mb-4" description="When installing shadcn, you'll get this question: Would you like to use CSS variables for theming? Choose yes regardless of whether you use it or not, because there is bug when installing utility class components when cssVariables is set to false. You'll have to manually choose desired component variant." />
+<Warning className="mt-8 mb-4" description="Neobrutalism components doesn't support utility class components anymore, only css variables components. Also, it doesn't matter which baseColor you choose, because it doesn't change the styling." />
 
-## 3. Add styling
+## 2. Add styling
 
-Delete the existing styling from your project and add your <Link href='/docs/styling'>desired styling</Link> to your tailwind config.
+Delete the existing styling from your `globals.css` and paste <Link target='_blank' href='/styling'>desired styling</Link>.
 
-## 4. Install components
-
-### Choose the right variant
-
-Remember to copy the right variant of your component, e.g. if you decided to use css variables in your project, copy the css variables variant of that component if it's available.
+## 3. Install components
 
 ### Install via Shadcn cli
 
 Just choose desired component variant and desired package manager, copy cli command to your terminal and you're good to go. 
 If there is no shadcn cli command on the component page you'll have to install the component manually.
-
-CSS Variables components are hosted on **https://www.neobrutalism.dev**, and utility class components are hosted on **http://util.neobrutalism.dev**. 
-
-For example you want to install button component, if you choose css variables variant url will look like this:
-**https://www.neobrutalism.dev/r/button.json**, and for utility class variant it will look like this: 
-**http://util.neobrutalism.dev/r/button.json**.
 
 ### Install manually
 
@@ -59,7 +29,7 @@ In this docs below each component's name you'll have the shadcn docs link for th
 e.g. You want to install shadcn button component. You'll navigate to <a target='_blank' href='/components/button'>button page</a>, click on the shadcn docs
 link and install the button component like it's shown in the docs.
 
-After you're done you'll come back to neobrutalism button page, and copy button component to your project inside `components/ui/button.tsx`
+After you're done you'll come back to neobrutalism button page, and copy button component to your project inside `components/ui/button.tsx``
 (this is the default component path) or your custom component path.
 
 Keep in mind that neobrutalism components can have different variants than default shadcn components.
