@@ -108,6 +108,10 @@ body::-webkit-scrollbar {
   width: 20px;
 }
 
+.toc-scrollbar::-webkit-scrollbar {
+  width: 0px;
+}
+
 body::-webkit-scrollbar-track,
 .scrollbar::-webkit-scrollbar-track {
   background: var(--sb-track-color);

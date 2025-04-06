@@ -27,7 +27,7 @@ export function TableOfContents({ items }: TocProps) {
   }
 
   return (
-    <div>
+    <div className="overflow-y-auto toc-scrollbar">
       <h3 className="text-xl p-3 font-bold">On this page</h3>
       <div>
         {items.map(({ depth, id, value }) => (

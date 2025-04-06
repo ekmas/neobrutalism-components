@@ -70,7 +70,7 @@ export default function HeroComponents({
     <div
       aria-hidden="true"
       className={cn(
-        "h-[100dvh] w-[340px] absolute top-0 portrait:h-[100svh] pointer-events-none overflow-y-hidden",
+        "h-full w-[340px] absolute top-[70px] pointer-events-none overflow-y-hidden",
         className,
       )}
     >

@@ -21,7 +21,7 @@ export function CopyButton({ text }: { text: string }) {
   return (
     <Button
       size="icon"
-      className="size-9 absolute right-2.5 top-2"
+      className="size-9 absolute right-3.5 top-2"
       variant="noShadow"
       onClick={copy}
       aria-label="Copy"

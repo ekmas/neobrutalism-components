@@ -22,9 +22,8 @@ export default function Page() {
         <PageHeading>Styling</PageHeading>
 
         <PageDescription>
-          Choose a color scheme and copy the init command to initialize your
-          project. After you initialized you project, you can customize the rest
-          of the styling if you want.
+          Choose a color scheme with other styling options and copy the styling
+          to your project.
         </PageDescription>
 
         <Styling />

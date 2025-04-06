@@ -15,7 +15,7 @@ export function Pre(props: PreProps) {
       data-slot="pre-wrapper"
       className={cn("relative shadow-shadow", wrapperClassName)}
     >
-      <pre className="bg-black border-2 border-border scrollbar text-sm max-h-[300px] overflow-auto p-4 not-prose">
+      <pre className="bg-black border-2 border-border code text-sm max-h-[300px] overflow-auto p-4 not-prose">
         <CopyButton text={__rawstring__} />
         {children}
       </pre>
