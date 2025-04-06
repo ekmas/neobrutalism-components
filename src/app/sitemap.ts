@@ -13,6 +13,7 @@ const DOCS_PAGES = [
   "/docs/changelog",
   "/docs/installation",
   "/docs/stars",
+  "/docs/migrating-from-v3",
   "/templates",
   "/showcase",
   "/stars",

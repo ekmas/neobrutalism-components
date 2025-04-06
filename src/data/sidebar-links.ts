@@ -11,6 +11,10 @@ const COMPONENTS_LINKS = COMPONENTS.map((component) => {
 
 const GETTING_STARTED_LINKS = [
   {
+    href: "/docs/migrating-from-v3",
+    text: "Migrating from V3",
+  },
+  {
     href: "/docs",
     text: "Introduction",
   },
@@ -46,6 +50,10 @@ const GETTING_STARTED_LINKS = [
 
 const MAIN_SIDEBAR = [
   "Getting started",
+  {
+    href: "/docs/migrating-from-v3",
+    text: "Migrating from V3",
+  },
   {
     href: "/docs",
     text: "Introduction",
