@@ -19,6 +19,7 @@ import ronitJadhav from "@public/showcase-previews/ronit-jadhav.webp"
 import timotejKovacka from "@public/showcase-previews/timotej-kovacka.webp"
 import weatherToRun from "@public/showcase-previews/weather-to-run.webp"
 import yeunwookKim from "@public/showcase-previews/yeunwook-kim.webp"
+import eduStreamr from "@public/showcase-previews/edustreamr.webp"
 
 const SHOWCASE = [
   {
@@ -29,6 +30,14 @@ const SHOWCASE = [
     color: "#0051FF",
     text: "#FFF",
   },
+  {
+    title: "EduStreamr",
+    previewImg: eduStreamr,
+    liveUrl: "https://edustreamr.xyz/",
+    repoUrl: "https://github.com/EduStreamr/EduStreamr",
+    color: "#0EA5E9",
+    text: "#FFF", 
+},
   {
     title: "Nation Sound Front",
     previewImg: nationSoundFront,
