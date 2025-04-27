@@ -35,6 +35,10 @@ const GETTING_STARTED_LINKS = [
     text: "Changelog",
   },
   {
+    href: "/styling",
+    text: "Styling",
+  },
+  {
     href: "/stars",
     text: "Stars",
   },
@@ -83,16 +87,4 @@ const MAIN_SIDEBAR = [
   },
 ]
 
-const MOBILE_MAIN_SIDEBAR = [
-  "Getting started",
-  ...GETTING_STARTED_LINKS,
-  "Components",
-  ...COMPONENTS_LINKS,
-]
-
-export {
-  MAIN_SIDEBAR,
-  MOBILE_MAIN_SIDEBAR,
-  COMPONENTS_LINKS,
-  GETTING_STARTED_LINKS,
-}
+export { MAIN_SIDEBAR, COMPONENTS_LINKS, GETTING_STARTED_LINKS }
