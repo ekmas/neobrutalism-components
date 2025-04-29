@@ -38,8 +38,26 @@ import { cn } from "@/lib/utils"
 export default function Styling() {
   const defaultColorPalette = colors[10]
 
-  const [{ bg, darkBg, darkMain, main, name }, setColor] =
-    useState(defaultColorPalette)
+  const [
+    {
+      bg,
+      darkBg,
+      darkMain,
+      main,
+      name,
+      chart1,
+      chart2,
+      chart3,
+      chart4,
+      chart5,
+      darkChart1,
+      darkChart2,
+      darkChart3,
+      darkChart4,
+      darkChart5,
+    },
+    setColor,
+  ] = useState(defaultColorPalette)
   const [borderRadius, setBorderRadius] = useState(5)
   const [boxShadowLength, setBoxShadowLength] = useState([4, 4])
   const [fontWeight, setFontWeight] = useState([700, 500])
@@ -80,9 +98,19 @@ export default function Styling() {
     if (isDarkMode) {
       r.style.setProperty("--background", color.darkBg)
       r.style.setProperty("--main", color.darkMain)
+      r.style.setProperty("--chart-1", color.darkChart1)
+      r.style.setProperty("--chart-2", color.darkChart2)
+      r.style.setProperty("--chart-3", color.darkChart3)
+      r.style.setProperty("--chart-4", color.darkChart4)
+      r.style.setProperty("--chart-5", color.darkChart5)
     } else {
       r.style.setProperty("--background", color.bg)
       r.style.setProperty("--main", color.main)
+      r.style.setProperty("--chart-1", color.chart1)
+      r.style.setProperty("--chart-2", color.chart2)
+      r.style.setProperty("--chart-3", color.chart3)
+      r.style.setProperty("--chart-4", color.chart4)
+      r.style.setProperty("--chart-5", color.chart5)
     }
 
     r.style.setProperty("--dark-background", color.darkBg)
@@ -170,6 +198,12 @@ export default function Styling() {
   --ring: oklch(0% 0 0);
   --overlay: oklch(0% 0 0 / 0.8);
   --shadow: ${boxShadowLength[0]}px ${boxShadowLength[1]}px 0px 0px var(--border);
+  --chart-1: ${chart1};
+  --chart-2: ${chart2};
+  --chart-3: ${chart3};
+  --chart-4: ${chart4};
+  --chart-5: ${chart5};
+  --chart-active-dot: #000;
 }
 
 .dark {
@@ -181,6 +215,12 @@ export default function Styling() {
   --border: oklch(0% 0 0);
   --ring: oklch(100% 0 0);
   --shadow: ${boxShadowLength[0]}px ${boxShadowLength[1]}px 0px 0px var(--border);
+  --chart-1: ${darkChart1};
+  --chart-2: ${darkChart2};
+  --chart-3: ${darkChart3};
+  --chart-4: ${darkChart4};
+  --chart-5: ${darkChart5};
+  --chart-active-dot: #fff;
 }
 
 @theme inline {
@@ -192,6 +232,11 @@ export default function Styling() {
   --color-border: var(--border);
   --color-overlay: var(--overlay);
   --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
 
   --spacing-boxShadowX: ${boxShadowLength[0]}px;
   --spacing-boxShadowY: ${boxShadowLength[1]}px;

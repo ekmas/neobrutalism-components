@@ -16,9 +16,19 @@ export default function SetStylingPref() {
       if (isDarkMode) {
         r.style.setProperty("--background", colorObj.darkBg)
         r.style.setProperty("--main", colorObj.darkMain)
+        r.style.setProperty("--chart-1", colorObj.darkChart1)
+        r.style.setProperty("--chart-2", colorObj.darkChart2)
+        r.style.setProperty("--chart-3", colorObj.darkChart3)
+        r.style.setProperty("--chart-4", colorObj.darkChart4)
+        r.style.setProperty("--chart-5", colorObj.darkChart5)
       } else {
         r.style.setProperty("--background", colorObj.bg)
         r.style.setProperty("--main", colorObj.main)
+        r.style.setProperty("--chart-1", colorObj.chart1)
+        r.style.setProperty("--chart-2", colorObj.chart2)
+        r.style.setProperty("--chart-3", colorObj.chart3)
+        r.style.setProperty("--chart-4", colorObj.chart4)
+        r.style.setProperty("--chart-5", colorObj.chart5)
       }
 
       r.style.setProperty("--dark-background", colorObj.darkBg)

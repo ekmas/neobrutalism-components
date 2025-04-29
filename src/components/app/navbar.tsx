@@ -45,9 +45,9 @@ async function Navbar() {
 
             <Link href="/styling">Styling</Link>
 
-            {/* <Link href="/blocks">Blocks</Link>
+            {/* <Link href="/blocks">Blocks</Link> */}
 
-            <Link href="/charts">Charts</Link> */}
+            <Link href="/charts">Charts</Link>
 
             <Link href="/stars">Stars</Link>
 
