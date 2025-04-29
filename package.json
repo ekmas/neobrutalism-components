@@ -7,6 +7,7 @@
     "start": "next start",
     "lint": "next lint",
     "generate-stars-ts": "tsx src/scripts/generate-stars-ts.ts",
+    "generate-charts-ts": "tsx src/scripts/generate-charts-ts.ts",
     "registry:generate": "tsx src/scripts/generate-registry-json.ts",
     "registry:build": "shadcn build && tsx src/scripts/add-registry-styles.ts",
     "format:write": "prettier --write \"**/*.{ts,tsx,js}\"",
@@ -75,6 +76,7 @@
     "react-dom": "19.0.0",
     "react-hook-form": "^7.51.2",
     "react-resizable-panels": "^2.0.16",
+    "recharts": "^2.15.3",
     "rehype-pretty-code": "^0.14.0",
     "rehype-slug": "^6.0.0",
     "remark-code-import": "^1.2.0",
@@ -90,6 +92,9 @@
     "vaul": "^0.9.0",
     "velite": "^0.2.2",
     "zod": "^3.22.4"
+  },
+  "overrides": {
+    "react-is": "19.0.0"
   },
   "packageManager": "pnpm@9.6.0",
   "engines": {
