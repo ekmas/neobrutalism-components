@@ -25,6 +25,7 @@ import CalendarDemo from "@/examples/ui/calendar/index"
 import CalendarRangeDemo from "@/examples/ui/calendar/range"
 import CardDemo from "@/examples/ui/card"
 import CarouselDemo from "@/examples/ui/carousel"
+import ChartDemo from "@/examples/ui/chart/chart-area-stacked"
 import CheckboxDemo from "@/examples/ui/checkbox"
 import CollapsibleDemo from "@/examples/ui/collapsible"
 import ComboboxDemo from "@/examples/ui/combobox"
@@ -89,7 +90,7 @@ import TooltipDemo from "@/examples/ui/tooltip"
 
 type Component = {
   name: string
-  exampleComponent: React.ComponentType
+  exampleComponent?: React.ComponentType
   examples?: Record<string, React.ComponentType>
   notShadcn?: boolean
 }
@@ -166,6 +167,10 @@ const COMPONENTS: Component[] = [
   {
     name: "Carousel",
     exampleComponent: CarouselDemo,
+  },
+  {
+    name: "Chart",
+    exampleComponent: ChartDemo,
   },
   {
     name: "Checkbox",
