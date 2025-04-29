@@ -17,6 +17,8 @@ const DOCS_PAGES = [
   "/templates",
   "/showcase",
   "/stars",
+  "/styling",
+  "/charts",
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {

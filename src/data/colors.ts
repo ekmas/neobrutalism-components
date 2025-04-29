@@ -5,6 +5,18 @@ const colors = [
     darkMain: "oklch(70.49% 0.1869 22.23)",
     bg: "oklch(93.3% 0.0339 17.77)",
     darkBg: "oklch(24.95% 0.0491 20.19)",
+
+    chart1: "#FF4D50",
+    chart2: "#5294FF",
+    chart3: "#FACC00",
+    chart4: "#05E17A",
+    chart5: "#7A83FF",
+
+    darkChart1: "#FF6669",
+    darkChart2: "#5294FF",
+    darkChart3: "#E0B700",
+    darkChart4: "#04C86D",
+    darkChart5: "#7A83FF",
   },
   {
     name: "orange",
@@ -12,6 +24,18 @@ const colors = [
     darkMain: "oklch(67.56% 0.1796 49.61)",
     bg: "oklch(95.38% 0.0357 72.89)",
     darkBg: "oklch(26.86% 0.0327 60.06)",
+
+    chart1: "#FF7A05",
+    chart2: "#0099FF",
+    chart3: "#FFBF00",
+    chart4: "#00D696",
+    chart5: "#7A83FF",
+
+    darkChart1: "#EB6D00",
+    darkChart2: "#008AE5",
+    darkChart3: "#E5AC00",
+    darkChart4: "#00BD84",
+    darkChart5: "#7A83FF",
   },
   {
     name: "amber",
@@ -19,6 +43,18 @@ const colors = [
     darkMain: "oklch(77.7% 0.1593880864006951 84.38427202675717)",
     bg: "oklch(96.22% 0.0569 95.61)",
     darkBg: "oklch(28.91% 0.0359 90.09)",
+
+    chart1: "#FFBF00",
+    chart2: "#0099FF",
+    chart3: "#FF7A05",
+    chart4: "#00D696",
+    chart5: "#7A83FF",
+
+    darkChart1: "#E5AC00",
+    darkChart2: "#008AE5",
+    darkChart3: "#EB6D00",
+    darkChart4: "#00BD84",
+    darkChart5: "#7A83FF",
   },
   {
     name: "yellow",
@@ -26,6 +62,18 @@ const colors = [
     darkMain: "oklch(79.36% 0.1624 92.49)",
     bg: "oklch(96.79% 0.0654 102.26)",
     darkBg: "oklch(29.28% 0.0373 94.38)",
+
+    chart1: "#FACC00",
+    chart2: "#7A83FF",
+    chart3: "#FF4D50",
+    chart4: "#00D696",
+    chart5: "#0099FF",
+
+    darkChart1: "#E0B700",
+    darkChart2: "#7A83FF",
+    darkChart3: "#FF6669",
+    darkChart4: "#00BD84",
+    darkChart5: "#008AE5",
   },
   {
     name: "lime",
@@ -33,6 +81,18 @@ const colors = [
     darkMain: "oklch(76.26% 0.21309 132.4002)",
     bg: "oklch(95.37% 0.0549 125.19)",
     darkBg: "oklch(23.1% 0.0346 126.75)",
+
+    chart1: "#8AE500",
+    chart2: "#0099FF",
+    chart3: "#FF4D50",
+    chart4: "#FACC00",
+    chart5: "#7A83FF",
+
+    darkChart1: "#7ACC00",
+    darkChart2: "#008AE5",
+    darkChart3: "#FF6669",
+    darkChart4: "#E0B700",
+    darkChart5: "#7A83FF",
   },
   {
     name: "green",
@@ -40,6 +100,18 @@ const colors = [
     darkMain: "oklch(73.03% 0.1865 153.23)",
     bg: "oklch(96.47% 0.0401 157.79)",
     darkBg: "oklch(22.45% 0.0316 158.41)",
+
+    chart1: "#00D696",
+    chart2: "#FF7A05",
+    chart3: "#0099FF",
+    chart4: "#FFBF00",
+    chart5: "#7A83FF",
+
+    darkChart1: "#00BD84",
+    darkChart2: "#EB6D00",
+    darkChart3: "#008AE5",
+    darkChart4: "#E5AC00",
+    darkChart5: "#7A83FF",
   },
   {
     name: "emerald",
@@ -47,6 +119,18 @@ const colors = [
     darkMain: "oklch(70.54% 0.1525 162.97)",
     bg: "oklch(95.31% 0.0496 169.04)",
     darkBg: "oklch(22.71% 0.0252 182.05)",
+
+    chart1: "#00D696",
+    chart2: "#7A83FF",
+    chart3: "#FACC00",
+    chart4: "#FF4D50",
+    chart5: "#0099FF",
+
+    darkChart1: "#00BD84",
+    darkChart2: "#7A83FF",
+    darkChart3: "#E0B700",
+    darkChart4: "#FF6669",
+    darkChart5: "#008AE5",
   },
   {
     name: "teal",
@@ -54,6 +138,18 @@ const colors = [
     darkMain: "oklch(71.47% 0.129261 180.4742)",
     bg: "oklch(95.08% 0.0481 184.07)",
     darkBg: "oklch(22.65% 0.0236 198.49)",
+
+    chart1: "#00D6BD",
+    chart2: "#0099FF",
+    chart3: "#7A83FF",
+    chart4: "#FF4D50",
+    chart5: "#FACC00",
+
+    darkChart1: "#00BDA7",
+    darkChart2: "#008AE5",
+    darkChart3: "#7A83FF",
+    darkChart4: "#FF6669",
+    darkChart5: "#E0B700",
   },
   {
     name: "cyan",
@@ -61,6 +157,18 @@ const colors = [
     darkMain: "oklch(64.37% 0.1162 218.75)",
     bg: "oklch(94.61% 0.043 211.12)",
     darkBg: "oklch(27.11% 0.0303 225.38)",
+
+    chart1: "#00C8F0",
+    chart2: "#FF7A05",
+    chart3: "#7A83FF",
+    chart4: "#FF4D50",
+    chart5: "#FACC00",
+
+    darkChart1: "#009DBD",
+    darkChart2: "#EB6D00",
+    darkChart3: "#7A83FF",
+    darkChart4: "#FF6669",
+    darkChart5: "#E0B700",
   },
   {
     name: "sky",
@@ -68,6 +176,18 @@ const colors = [
     darkMain: "oklch(61.9% 0.16907 248.5982)",
     bg: "oklch(94.27% 0.0268 242.57)",
     darkBg: "oklch(27.08% 0.0336 240.69)",
+
+    chart1: "#0099FF",
+    chart2: "#FF4D50",
+    chart3: "#FACC00",
+    chart4: "#05E17A",
+    chart5: "#7A83FF",
+
+    darkChart1: "#008AE5",
+    darkChart2: "#FF6669",
+    darkChart3: "#E0B700",
+    darkChart4: "#04C86D",
+    darkChart5: "#7A83FF",
   },
   {
     name: "blue",
@@ -75,6 +195,18 @@ const colors = [
     darkMain: "oklch(67.47% 0.1726 259.49)",
     bg: "oklch(93.46% 0.0305 255.11)",
     darkBg: "oklch(29.23% 0.0626 270.49)",
+
+    chart1: "#5294FF",
+    chart2: "#FF4D50",
+    chart3: "#FACC00",
+    chart4: "#05E17A",
+    chart5: "#7A83FF",
+
+    darkChart1: "#5294FF",
+    darkChart2: "#FF6669",
+    darkChart3: "#E0B700",
+    darkChart4: "#04C86D",
+    darkChart5: "#7A83FF",
   },
   {
     name: "indigo",
@@ -82,6 +214,18 @@ const colors = [
     darkMain: "oklch(66.34% 0.1806 277.2)",
     bg: "oklch(92.13% 0.0388 282.36)",
     darkBg: "oklch(26.58% 0.0737 283.96)",
+
+    chart1: "#7A83FF",
+    chart2: "#FACC00",
+    chart3: "#FF4D50",
+    chart4: "#00D696",
+    chart5: "#0099FF",
+
+    darkChart1: "#7A83FF",
+    darkChart2: "#E0B700",
+    darkChart3: "#FF6669",
+    darkChart4: "#00BD84",
+    darkChart5: "#008AE5",
   },
   {
     name: "violet",
@@ -89,6 +233,18 @@ const colors = [
     darkMain: "oklch(70.28% 0.1753 295.36)",
     bg: "oklch(93.88% 0.033 300.19)",
     darkBg: "oklch(30.14% 0.0826 296.5)",
+
+    chart1: "#A985FF",
+    chart2: "#00D696",
+    chart3: "#FACC00",
+    chart4: "#FF4D50",
+    chart5: "#0099FF",
+
+    darkChart1: "#A985FF",
+    darkChart2: "#00BD84",
+    darkChart3: "#E0B700",
+    darkChart4: "#FF6669",
+    darkChart5: "#008AE5",
   },
   {
     name: "purple",
@@ -96,6 +252,18 @@ const colors = [
     darkMain: "oklch(67.34% 0.2314 309.13)",
     bg: "oklch(94.11% 0.036556 308.0303)",
     darkBg: "oklch(29.68% 0.0791 315.62)",
+
+    chart1: "#CA7AFF",
+    chart2: "#FACC00",
+    chart3: "#00D696",
+    chart4: "#FF7A05",
+    chart5: "#0099FF",
+
+    darkChart1: "#D494FF",
+    darkChart2: "#E0B700",
+    darkChart3: "#00BD84",
+    darkChart4: "#EB6D00",
+    darkChart5: "#008AE5",
   },
   {
     name: "fuchsia",
@@ -103,6 +271,18 @@ const colors = [
     darkMain: "oklch(60.62% 0.291458 319.6391)",
     bg: "oklch(94.79% 0.0407 320.6)",
     darkBg: "oklch(26.29% 0.0683 327.3)",
+
+    chart1: "#E96BFF",
+    chart2: "#FACC00",
+    chart3: "#FF7A05",
+    chart4: "#FF4D50",
+    chart5: "#7A83FF",
+
+    darkChart1: "#C700EB",
+    darkChart2: "#E0B700",
+    darkChart3: "#EB6D00",
+    darkChart4: "#FF6669",
+    darkChart5: "#7A83FF",
   },
   {
     name: "pink",
@@ -110,6 +290,18 @@ const colors = [
     darkMain: "oklch(65.98% 0.2407 358.64)",
     bg: "oklch(95.16% 0.0242 343.23)",
     darkBg: "oklch(26.3% 0.054 358.23)",
+
+    chart1: "#FC64AB",
+    chart2: "#FACC00",
+    chart3: "#FF7A05",
+    chart4: "#FF4D50",
+    chart5: "#7A83FF",
+
+    darkChart1: "#FB3290",
+    darkChart2: "#E0B700",
+    darkChart3: "#EB6D00",
+    darkChart4: "#FF6669",
+    darkChart5: "#7A83FF",
   },
   {
     name: "rose",
@@ -117,6 +309,18 @@ const colors = [
     darkMain: "oklch(67.58% 0.2135 18.63)",
     bg: "oklch(93.37% 0.0339 12.05)",
     darkBg: "oklch(25.15% 0.0495 7.54)",
+
+    chart1: "#FF6678",
+    chart2: "#7A83FF",
+    chart3: "#FACC00",
+    chart4: "#00D696",
+    chart5: "#5294FF",
+
+    darkChart1: "#FF4D61",
+    darkChart2: "#7A83FF",
+    darkChart3: "#E0B700",
+    darkChart4: "#00BD84",
+    darkChart5: "#5294FF",
   },
 ]
 

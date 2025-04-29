@@ -107,6 +107,17 @@ const UI = [
     ],
   },
   {
+    name: "ncard",
+    title: "Card",
+    type: "registry:ui",
+    files: [
+      {
+        path: "src/components/ui/card.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "card",
     title: "Card",
     type: "registry:ui",
@@ -126,6 +137,19 @@ const UI = [
     files: [
       {
         path: "src/components/ui/carousel.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "chart",
+    title: "Chart",
+    type: "registry:ui",
+    dependencies: ["recharts", "lucide-react"],
+    registryDependencies: ["https://neobrutalism.dev/r/ncard.json"],
+    files: [
+      {
+        path: "src/components/ui/chart.tsx",
         type: "registry:ui",
       },
     ],
