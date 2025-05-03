@@ -57,7 +57,7 @@ export default function Search() {
         className="relative bg-secondary-background dark:text-white shadow-nav dark:shadow-navDark hover:translate-x-[4px]! hover:translate-y-[4px]! hover:shadow-none dark:hover:shadow-none px-3 pr-3 xl:pr-16 shrink-0 xl:w-[unset] w-9 h-9 text-base"
       >
         <span className="flex text-sm items-center gap-1">
-          <SearchIcon className="!size-5 shrink-0" />
+          <SearchIcon className="xl:!size-4 !size-5 shrink-0" />
           <span className="xl:inline hidden">Search</span>
         </span>
 
