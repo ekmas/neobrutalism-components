@@ -39,6 +39,10 @@ const GETTING_STARTED_LINKS = [
     text: "Styling",
   },
   {
+    href: "/charts",
+    text: "Charts",
+  },
+  {
     href: "/stars",
     text: "Stars",
   },
