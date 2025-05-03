@@ -69,6 +69,7 @@ import SelectLargeListDemo from "@/examples/ui/select/large-list"
 import SelectWithIconDemo from "@/examples/ui/select/with-icon"
 import SheetDemo from "@/examples/ui/sheet"
 import SheetSideDemo from "@/examples/ui/sheet/side"
+import SidebarDemo from "@/examples/ui/sidebar/page"
 import SkeletonDemo from "@/examples/ui/skeleton"
 import SliderDemo from "@/examples/ui/slider"
 import SliderControlled from "@/examples/ui/slider/controlled"
@@ -318,6 +319,10 @@ const COMPONENTS: Component[] = [
       default: SheetDemo,
       side: SheetSideDemo,
     },
+  },
+  {
+    name: "Sidebar",
+    exampleComponent: SidebarDemo,
   },
   {
     name: "Skeleton",
