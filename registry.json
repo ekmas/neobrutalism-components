@@ -361,6 +361,17 @@
       ]
     },
     {
+      "name": "ninput",
+      "title": "Input",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "src/components/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "input-otp",
       "title": "Input OTP",
       "type": "registry:ui",
@@ -554,7 +565,54 @@
       ]
     },
     {
+      "name": "nsheet",
+      "title": "Sheet",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-dialog"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/sheet.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "title": "Sidebar",
+      "type": "registry:ui",
+      "registryDependencies": [
+        "https://neobrutalism.dev/r/nbutton.json",
+        "https://neobrutalism.dev/r/nsheet.json",
+        "https://neobrutalism.dev/r/ntooltip.json",
+        "https://neobrutalism.dev/r/ninput.json",
+        "https://neobrutalism.dev/r/nskeleton.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/sidebar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/hooks/use-mobile.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
       "name": "skeleton",
+      "title": "Skeleton",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "src/components/ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "nskeleton",
       "title": "Skeleton",
       "type": "registry:ui",
       "files": [
@@ -645,6 +703,20 @@
     },
     {
       "name": "tooltip",
+      "title": "Tooltip",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-tooltip"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ntooltip",
       "title": "Tooltip",
       "type": "registry:ui",
       "dependencies": [

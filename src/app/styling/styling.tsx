@@ -246,6 +246,16 @@ export default function Styling() {
   --shadow-shadow: var(--shadow);
   --font-weight-base: ${fontWeight[1]};
   --font-weight-heading: ${fontWeight[0]};
+}
+  
+@layer base {
+  body {
+    @apply text-foreground font-base;
+  }
+
+  h1, h2, h3, h4, h5, h6{
+    @apply font-heading;
+  }
 }`
 
   return (
