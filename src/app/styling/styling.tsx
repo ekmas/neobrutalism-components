@@ -250,7 +250,7 @@ export default function Styling() {
   
 @layer base {
   body {
-    @apply text-foreground font-base;
+    @apply text-foreground font-base bg-background;
   }
 
   h1, h2, h3, h4, h5, h6{
