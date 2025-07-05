@@ -5,6 +5,7 @@ import geschenkidee from "@public/showcase-previews/geschenkidee.webp"
 import getYourMvp from "@public/showcase-previews/getyourmvp.webp"
 import habboimx from "@public/showcase-previews/habboimx.webp"
 import hasmire from "@public/showcase-previews/hasmire.webp"
+import jukebox from "@public/showcase-previews/jukebox.webp"
 import kuma from "@public/showcase-previews/kuma.webp"
 import luizCampos from "@public/showcase-previews/luiz-campos.webp"
 import lyceeComteDeFoix from "@public/showcase-previews/lycee-comte-de-foix.webp"
@@ -21,6 +22,14 @@ import weatherToRun from "@public/showcase-previews/weather-to-run.webp"
 import yeunwookKim from "@public/showcase-previews/yeunwook-kim.webp"
 
 const SHOWCASE = [
+  {
+    title: "Jukebox",
+    previewImg: jukebox,
+    liveUrl: "https://www.jukeboxhq.com/",
+    repoUrl: "https://github.com/skeptrunedev/jukebox",
+    color: "#0099FF",
+    text: "#000",
+  },
   {
     title: "Neokit Summerkit",
     previewImg: neokitSummerkit,
