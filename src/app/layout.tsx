@@ -7,7 +7,6 @@ import Navbar from "@/components/app/navbar"
 import ScrollToTop from "@/components/app/scroll-to-top"
 import SetStylingPref from "@/components/app/set-styling-pref"
 import { ThemeProvider } from "@/components/app/theme-provider"
-import { PostHogProvider } from "@/components/posthog-provider"
 import { Toaster } from "@/components/ui/sonner"
 
 const dmSans = DM_Sans({
@@ -61,7 +60,6 @@ export default function RootLayout({
   return (
     <html className="scroll-smooth" suppressHydrationWarning lang="en">
       <body className={dmSans.className}>
-        <PostHogProvider>
           <ThemeProvider
             attribute="class"
             defaultTheme="light"
@@ -73,7 +71,6 @@ export default function RootLayout({
             <ScrollToTop />
             <Toaster />
           </ThemeProvider>
-        </PostHogProvider>
       </body>
     </html>
   )
