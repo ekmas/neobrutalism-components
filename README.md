@@ -1,3 +1,6 @@
+# no longer maintained
+read [this](https://github.com/ekmas/neobrutalism-components/discussions/100) for more info
+
 # Neobrutalism components
 
 <img src="public/preview.png" alt="preview">
