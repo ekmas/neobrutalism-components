@@ -20,8 +20,15 @@ import ronitJadhav from "@public/showcase-previews/ronit-jadhav.webp"
 import timotejKovacka from "@public/showcase-previews/timotej-kovacka.webp"
 import weatherToRun from "@public/showcase-previews/weather-to-run.webp"
 import yeunwookKim from "@public/showcase-previews/yeunwook-kim.webp"
+import roammoon from "@public/showcase-previews/roammoon.webp"
 
 const SHOWCASE = [
+  {
+    title: "Roam Moon",
+    previewImg: roammoon,
+    liveUrl: "https://roammoon.com/",
+    color: "#facc00",
+  },
   {
     title: "Jukebox",
     previewImg: jukebox,
