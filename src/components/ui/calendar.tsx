@@ -1,6 +1,6 @@
 "use client"
 
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react"
 import { DayPicker } from "react-day-picker"
 
 import * as React from "react"
@@ -15,11 +15,13 @@ function Calendar({
   className,
   classNames,
   showOutsideDays = true,
+  captionLayout,
   ...props
 }: CalendarProps) {
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
+      captionLayout={captionLayout}
       className={cn(
         "rounded-base! border-2 border-border bg-main p-3 font-heading shadow-shadow",
         className,
@@ -29,7 +31,20 @@ function Calendar({
         month: "flex flex-col gap-4",
         caption:
           "flex justify-center pt-1 relative items-center w-full text-main-foreground",
-        caption_label: "text-sm font-heading",
+        caption_label:
+          captionLayout === "dropdown" ||
+          captionLayout === "dropdown-buttons"
+            ? "flex items-center gap-1 pointer-events-none text-sm font-base"
+            : "text-sm font-heading",
+        caption_dropdowns: "flex justify-center gap-1",
+        dropdown:
+          "opacity-0 absolute inset-0 w-full h-full cursor-pointer z-10",
+        dropdown_month:
+          "relative inline-flex h-10 items-center rounded-base border-2 border-border bg-main px-3 text-sm font-base text-main-foreground cursor-pointer",
+        dropdown_year:
+          "relative inline-flex h-10 items-center rounded-base border-2 border-border bg-main px-3 text-sm font-base text-main-foreground cursor-pointer",
+        dropdown_icon: "size-4 ml-1 shrink-0",
+        vhidden: "sr-only",
         nav: "gap-1 flex items-center",
         nav_button: cn(
           buttonVariants({ variant: "noShadow" }),
@@ -71,6 +86,9 @@ function Calendar({
         ),
         IconRight: ({ className, ...props }) => (
           <ChevronRight className={cn("size-4", className)} {...props} />
+        ),
+        IconDropdown: ({ className, ...props }) => (
+          <ChevronDown className={cn("size-4", className)} {...props} />
         ),
       }}
       {...props}

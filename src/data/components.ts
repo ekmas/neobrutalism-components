@@ -22,6 +22,7 @@ import ButtonNoShadowDemo from "@/examples/ui/button/no-shadow"
 import ButtonReverseDemo from "@/examples/ui/button/reverse"
 import ButtonWithIconDemo from "@/examples/ui/button/with-icon"
 import CalendarDemo from "@/examples/ui/calendar/index"
+import CalendarDropdownDemo from "@/examples/ui/calendar/dropdown"
 import CalendarRangeDemo from "@/examples/ui/calendar/range"
 import CardDemo from "@/examples/ui/card"
 import CarouselDemo from "@/examples/ui/carousel"
@@ -159,6 +160,7 @@ const COMPONENTS: Component[] = [
     examples: {
       default: CalendarDemo,
       range: CalendarRangeDemo,
+      dropdown: CalendarDropdownDemo,
     },
   },
   {
