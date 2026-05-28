@@ -9,6 +9,7 @@ import jukebox from "@public/showcase-previews/jukebox.webp"
 import kuma from "@public/showcase-previews/kuma.webp"
 import luizCampos from "@public/showcase-previews/luiz-campos.webp"
 import lyceeComteDeFoix from "@public/showcase-previews/lycee-comte-de-foix.webp"
+import memechef from "@public/showcase-previews/memechef.webp"
 import nationSoundFront from "@public/showcase-previews/nation-sound-front.webp"
 import neokitSummerkit from "@public/showcase-previews/neokit-summerkit.webp"
 import omi3 from "@public/showcase-previews/omi3.webp"
@@ -22,6 +23,12 @@ import weatherToRun from "@public/showcase-previews/weather-to-run.webp"
 import yeunwookKim from "@public/showcase-previews/yeunwook-kim.webp"
 
 const SHOWCASE = [
+  {
+    title: "MemeChef",
+    previewImg: memechef,
+    liveUrl: "https://memechef.ai/",
+    color: "#FFCC00",
+  },
   {
     title: "Jukebox",
     previewImg: jukebox,
