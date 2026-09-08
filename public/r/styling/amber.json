@@ -4,17 +4,6 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "title": "Neobrutalism Amber",
   "cssVars": {
-    "dark": {
-      "background": "oklch(28.91% 0.0359 90.09)",
-      "secondary-background": "oklch(100% 0 0)",
-      "main": "oklch(77.7% 0.1593880864006951 84.38427202675717)",
-      "ring": "oklch(100% 0 0)",
-      "foreground": "oklch(92.49% 0 0)",
-      "main-foreground": "oklch(0% 0 0)",
-      "border": "oklch(0% 0 0)",
-      "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
-    },
     "light": {
       "background": "oklch(96.22% 0.0569 95.61)",
       "secondary-background": "oklch(23.93% 0 0)",

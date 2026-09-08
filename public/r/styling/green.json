@@ -4,17 +4,6 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "title": "Neobrutalism Green",
   "cssVars": {
-    "dark": {
-      "background": "oklch(22.45% 0.0316 158.41)",
-      "secondary-background": "oklch(100% 0 0)",
-      "main": "oklch(73.03% 0.1865 153.23)",
-      "ring": "oklch(100% 0 0)",
-      "foreground": "oklch(92.49% 0 0)",
-      "main-foreground": "oklch(0% 0 0)",
-      "border": "oklch(0% 0 0)",
-      "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
-    },
     "light": {
       "background": "oklch(96.47% 0.0401 157.79)",
       "secondary-background": "oklch(23.93% 0 0)",

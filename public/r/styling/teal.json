@@ -4,17 +4,6 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "title": "Neobrutalism Teal",
   "cssVars": {
-    "dark": {
-      "background": "oklch(22.65% 0.0236 198.49)",
-      "secondary-background": "oklch(100% 0 0)",
-      "main": "oklch(71.47% 0.129261 180.4742)",
-      "ring": "oklch(100% 0 0)",
-      "foreground": "oklch(92.49% 0 0)",
-      "main-foreground": "oklch(0% 0 0)",
-      "border": "oklch(0% 0 0)",
-      "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
-    },
     "light": {
       "background": "oklch(95.08% 0.0481 184.07)",
       "secondary-background": "oklch(23.93% 0 0)",

@@ -4,17 +4,6 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "title": "Neobrutalism Orange",
   "cssVars": {
-    "dark": {
-      "background": "oklch(26.86% 0.0327 60.06)",
-      "secondary-background": "oklch(100% 0 0)",
-      "main": "oklch(67.56% 0.1796 49.61)",
-      "ring": "oklch(100% 0 0)",
-      "foreground": "oklch(92.49% 0 0)",
-      "main-foreground": "oklch(0% 0 0)",
-      "border": "oklch(0% 0 0)",
-      "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
-    },
     "light": {
       "background": "oklch(95.38% 0.0357 72.89)",
       "secondary-background": "oklch(23.93% 0 0)",

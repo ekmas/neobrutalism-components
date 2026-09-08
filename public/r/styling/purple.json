@@ -4,17 +4,6 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "title": "Neobrutalism Purple",
   "cssVars": {
-    "dark": {
-      "background": "oklch(29.68% 0.0791 315.62)",
-      "secondary-background": "oklch(100% 0 0)",
-      "main": "oklch(67.34% 0.2314 309.13)",
-      "ring": "oklch(100% 0 0)",
-      "foreground": "oklch(92.49% 0 0)",
-      "main-foreground": "oklch(0% 0 0)",
-      "border": "oklch(0% 0 0)",
-      "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
-    },
     "light": {
       "background": "oklch(94.11% 0.036556 308.0303)",
       "secondary-background": "oklch(23.93% 0 0)",

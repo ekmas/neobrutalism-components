@@ -4,17 +4,6 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "title": "Neobrutalism Indigo",
   "cssVars": {
-    "dark": {
-      "background": "oklch(26.58% 0.0737 283.96)",
-      "secondary-background": "oklch(100% 0 0)",
-      "main": "oklch(66.34% 0.1806 277.2)",
-      "ring": "oklch(100% 0 0)",
-      "foreground": "oklch(92.49% 0 0)",
-      "main-foreground": "oklch(0% 0 0)",
-      "border": "oklch(0% 0 0)",
-      "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
-    },
     "light": {
       "background": "oklch(92.13% 0.0388 282.36)",
       "secondary-background": "oklch(23.93% 0 0)",

@@ -4,17 +4,6 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "title": "Neobrutalism Red",
   "cssVars": {
-    "dark": {
-      "background": "oklch(24.95% 0.0491 20.19)",
-      "secondary-background": "oklch(100% 0 0)",
-      "main": "oklch(70.49% 0.1869 22.23)",
-      "ring": "oklch(100% 0 0)",
-      "foreground": "oklch(92.49% 0 0)",
-      "main-foreground": "oklch(0% 0 0)",
-      "border": "oklch(0% 0 0)",
-      "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
-    },
     "light": {
       "background": "oklch(93.3% 0.0339 17.77)",
       "secondary-background": "oklch(23.93% 0 0)",

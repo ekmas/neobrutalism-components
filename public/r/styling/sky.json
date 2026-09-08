@@ -4,17 +4,6 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "title": "Neobrutalism Sky",
   "cssVars": {
-    "dark": {
-      "background": "oklch(27.08% 0.0336 240.69)",
-      "secondary-background": "oklch(100% 0 0)",
-      "main": "oklch(61.9% 0.16907 248.5982)",
-      "ring": "oklch(100% 0 0)",
-      "foreground": "oklch(92.49% 0 0)",
-      "main-foreground": "oklch(0% 0 0)",
-      "border": "oklch(0% 0 0)",
-      "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
-    },
     "light": {
       "background": "oklch(94.27% 0.0268 242.57)",
       "secondary-background": "oklch(23.93% 0 0)",

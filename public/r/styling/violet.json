@@ -4,17 +4,6 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "title": "Neobrutalism Violet",
   "cssVars": {
-    "dark": {
-      "background": "oklch(30.14% 0.0826 296.5)",
-      "secondary-background": "oklch(100% 0 0)",
-      "main": "oklch(70.28% 0.1753 295.36)",
-      "ring": "oklch(100% 0 0)",
-      "foreground": "oklch(92.49% 0 0)",
-      "main-foreground": "oklch(0% 0 0)",
-      "border": "oklch(0% 0 0)",
-      "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
-    },
     "light": {
       "background": "oklch(93.88% 0.033 300.19)",
       "secondary-background": "oklch(23.93% 0 0)",

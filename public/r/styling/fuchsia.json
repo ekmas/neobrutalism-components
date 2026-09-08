@@ -4,17 +4,6 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "title": "Neobrutalism Fuchsia",
   "cssVars": {
-    "dark": {
-      "background": "oklch(26.29% 0.0683 327.3)",
-      "secondary-background": "oklch(100% 0 0)",
-      "main": "oklch(60.62% 0.291458 319.6391)",
-      "ring": "oklch(100% 0 0)",
-      "foreground": "oklch(92.49% 0 0)",
-      "main-foreground": "oklch(0% 0 0)",
-      "border": "oklch(0% 0 0)",
-      "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
-    },
     "light": {
       "background": "oklch(94.79% 0.0407 320.6)",
       "secondary-background": "oklch(23.93% 0 0)",

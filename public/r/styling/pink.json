@@ -4,17 +4,6 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "title": "Neobrutalism Pink",
   "cssVars": {
-    "dark": {
-      "background": "oklch(26.3% 0.054 358.23)",
-      "secondary-background": "oklch(100% 0 0)",
-      "main": "oklch(65.98% 0.2407 358.64)",
-      "ring": "oklch(100% 0 0)",
-      "foreground": "oklch(92.49% 0 0)",
-      "main-foreground": "oklch(0% 0 0)",
-      "border": "oklch(0% 0 0)",
-      "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
-    },
     "light": {
       "background": "oklch(95.16% 0.0242 343.23)",
       "secondary-background": "oklch(23.93% 0 0)",
