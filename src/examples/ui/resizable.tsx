@@ -7,7 +7,7 @@ import {
 export default function ResizableDemo() {
   return (
     <ResizablePanelGroup
-      direction="horizontal"
+      orientation="horizontal"
       className="rounded-base max-w-md border-2 border-border text-foreground shadow-shadow"
     >
       <ResizablePanel defaultSize={50}>
@@ -17,7 +17,7 @@ export default function ResizableDemo() {
       </ResizablePanel>
       <ResizableHandle />
       <ResizablePanel defaultSize={50}>
-        <ResizablePanelGroup direction="vertical">
+        <ResizablePanelGroup orientation="vertical">
           <ResizablePanel defaultSize={25}>
             <div className="flex h-full items-center justify-center bg-background p-6">
               <span className="font-base">Two</span>

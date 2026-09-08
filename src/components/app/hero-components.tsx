@@ -195,7 +195,7 @@ const InputOTPExample = () => (
 
 const ResizableExample = () => (
   <ResizablePanelGroup
-    direction="horizontal"
+    orientation="horizontal"
     inert
     className="rounded-base max-w-md max-h-[200px] min-h-[200px] border-2 border-border text-foreground shadow-shadow"
   >
@@ -206,7 +206,7 @@ const ResizableExample = () => (
     </ResizablePanel>
     <ResizableHandle />
     <ResizablePanel tabIndex={-1} defaultSize={50}>
-      <ResizablePanelGroup direction="vertical">
+      <ResizablePanelGroup orientation="vertical">
         <ResizablePanel tabIndex={-1} defaultSize={25}>
           <div className="flex h-full items-center justify-center bg-background p-6">
             <span className="font-base">Two</span>
