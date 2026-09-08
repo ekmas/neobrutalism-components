@@ -97,7 +97,7 @@ const UI = [
     name: "calendar",
     title: "Calendar",
     type: "registry:ui",
-    dependencies: ["react-day-picker@8.10.1", "date-fns"],
+    dependencies: ["react-day-picker@^9", "date-fns@^4"],
     registryDependencies: ["https://neobrutalism.dev/r/nbutton.json"],
     files: [
       {
@@ -145,7 +145,7 @@ const UI = [
     name: "chart",
     title: "Chart",
     type: "registry:ui",
-    dependencies: ["recharts", "lucide-react"],
+    dependencies: ["recharts@^3", "lucide-react"],
     registryDependencies: ["https://neobrutalism.dev/r/ncard.json"],
     files: [
       {
@@ -439,7 +439,7 @@ const UI = [
     name: "resizable",
     title: "Resizable",
     type: "registry:ui",
-    dependencies: ["react-resizable-panels"],
+    dependencies: ["react-resizable-panels@^4"],
     files: [
       {
         path: "src/components/ui/resizable.tsx",

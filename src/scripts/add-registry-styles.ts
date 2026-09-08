@@ -60,3 +60,17 @@ STYLES.forEach((style) => {
     JSON.stringify(style, null, 2),
   )
 })
+
+// Normalize line endings inside the generated registry items so the output
+// does not depend on the line endings of the checkout (git autocrlf on Windows).
+// The file contents are JSON strings, so CRLF shows up as the escaped "\r\n".
+const registryDir = path.join(process.cwd(), "public", "r")
+fs.readdirSync(registryDir)
+  .filter((file) => file.endsWith(".json"))
+  .forEach((file) => {
+    const filePath = path.join(registryDir, file)
+    fs.writeFileSync(
+      filePath,
+      fs.readFileSync(filePath, "utf8").replace(/\\r\\n/g, "\\n"),
+    )
+  })

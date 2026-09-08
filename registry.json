@@ -117,8 +117,8 @@
       "title": "Calendar",
       "type": "registry:ui",
       "dependencies": [
-        "react-day-picker@8.10.1",
-        "date-fns"
+        "react-day-picker@^9",
+        "date-fns@^4"
       ],
       "registryDependencies": [
         "https://neobrutalism.dev/r/nbutton.json"
@@ -174,7 +174,7 @@
       "title": "Chart",
       "type": "registry:ui",
       "dependencies": [
-        "recharts",
+        "recharts@^3",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -511,7 +511,7 @@
       "title": "Resizable",
       "type": "registry:ui",
       "dependencies": [
-        "react-resizable-panels"
+        "react-resizable-panels@^4"
       ],
       "files": [
         {
