@@ -43,14 +43,14 @@ Base UI renders popups (dialogs, menus, tooltips...) through portals. To keep th
 
 Install the components you use like you would usually do, either with the shadcn CLI command from each component page or by copying the component manually. The new files replace the old ones.
 
-## 4. Remove the Radix UI packages
+## 4. Remove the old packages
 
-Once no component imports Radix anymore, remove the packages:
+Once no component imports Radix anymore, remove the Radix packages together with `vaul` (replaced by Base UI's drawer), `sonner` (the toast component is gone) and `next-themes` (dark mode is gone):
 
 <br />
 
 ```bash
-pnpm remove @radix-ui/react-accordion @radix-ui/react-alert-dialog @radix-ui/react-avatar @radix-ui/react-checkbox @radix-ui/react-collapsible @radix-ui/react-context-menu @radix-ui/react-dialog @radix-ui/react-dropdown-menu @radix-ui/react-hover-card @radix-ui/react-label @radix-ui/react-menubar @radix-ui/react-navigation-menu @radix-ui/react-popover @radix-ui/react-progress @radix-ui/react-radio-group @radix-ui/react-scroll-area @radix-ui/react-select @radix-ui/react-slider @radix-ui/react-slot @radix-ui/react-switch @radix-ui/react-tabs @radix-ui/react-tooltip vaul
+pnpm remove @radix-ui/react-accordion @radix-ui/react-alert-dialog @radix-ui/react-avatar @radix-ui/react-checkbox @radix-ui/react-collapsible @radix-ui/react-context-menu @radix-ui/react-dialog @radix-ui/react-dropdown-menu @radix-ui/react-hover-card @radix-ui/react-label @radix-ui/react-menubar @radix-ui/react-navigation-menu @radix-ui/react-popover @radix-ui/react-progress @radix-ui/react-radio-group @radix-ui/react-scroll-area @radix-ui/react-select @radix-ui/react-slider @radix-ui/react-slot @radix-ui/react-switch @radix-ui/react-tabs @radix-ui/react-toast @radix-ui/react-tooltip vaul sonner next-themes
 ```
 
 ## 5. Update your code
@@ -265,3 +265,102 @@ If you styled components with Radix's `data-state` attribute, switch to Base UI'
 </Table>
 
 Base UI also adds `data-starting-style` and `data-ending-style` for CSS transitions. Read the <a target="_blank" href="https://base-ui.com/react/handbook/animation">Base UI animation guide</a> to learn more.
+
+## 6. Update the dependencies
+
+The components were built against the versions below. Some of the packages got a major version bump, so update them if you use the related components:
+
+<br />
+
+```bash
+pnpm add lucide-react@latest react-day-picker@^9 date-fns@^4 recharts@^3 @tanstack/react-table@^9 react-resizable-panels@^4
+```
+
+The rest of the packages only got minor updates and need no code changes, but it is a good idea to bring them up to date as well:
+
+<br />
+
+```bash
+pnpm add tailwindcss@latest @tailwindcss/postcss@latest tw-animate-css@latest tailwind-merge@latest class-variance-authority@latest cmdk@latest input-otp@latest embla-carousel-react@latest react-hook-form@latest zod@^3
+```
+
+<Table className="mt-8">
+  <TableHeader>
+    <TableRow>
+      <TableHead>Component</TableHead>
+      <TableHead>Package</TableHead>
+      <TableHead>Version</TableHead>
+      <TableHead>What changed</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>All components</TableCell>
+      <TableCell>lucide-react</TableCell>
+      <TableCell>0.477 to 1.x</TableCell>
+      <TableCell>Brand icons (Github, Twitter, Facebook...) were removed in 1.0. Replace them with another icon or your own SVG.</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Calendar, Date Picker</TableCell>
+      <TableCell>react-day-picker</TableCell>
+      <TableCell>8 to 9</TableCell>
+      <TableCell>initialFocus is now autoFocus. Custom classNames keys use the v9 names.</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Calendar, Date Picker</TableCell>
+      <TableCell>date-fns</TableCell>
+      <TableCell>3 to 4</TableCell>
+      <TableCell>No code changes for the components. Check the date-fns changelog if you use it elsewhere.</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Chart</TableCell>
+      <TableCell>recharts</TableCell>
+      <TableCell>2 to 3</TableCell>
+      <TableCell>activeIndex / activeShape are replaced by the shape prop. layout moves from Bar to the chart. ChartLegend has no className, use ChartLegendContent.</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Data Table</TableCell>
+      <TableCell>@tanstack/react-table</TableCell>
+      <TableCell>8 to 9</TableCell>
+      <TableCell>useReactTable is now useTable with a tableFeatures object. Columns are built with createColumnHelper and rendered with table.FlexRender.</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Resizable</TableCell>
+      <TableCell>react-resizable-panels</TableCell>
+      <TableCell>2 to 4</TableCell>
+      <TableCell>The direction prop is now orientation.</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Command</TableCell>
+      <TableCell>cmdk</TableCell>
+      <TableCell>1.0 to 1.1</TableCell>
+      <TableCell>No code changes.</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Input OTP</TableCell>
+      <TableCell>input-otp</TableCell>
+      <TableCell>1.2 to 1.5</TableCell>
+      <TableCell>No code changes.</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Carousel</TableCell>
+      <TableCell>embla-carousel-react</TableCell>
+      <TableCell>8.0 to 8.6</TableCell>
+      <TableCell>No code changes.</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Form</TableCell>
+      <TableCell>react-hook-form, zod</TableCell>
+      <TableCell>7.51 to 7.87, 3.22 to 3.25</TableCell>
+      <TableCell>No code changes.</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Styling</TableCell>
+      <TableCell>tailwindcss, @tailwindcss/postcss, tw-animate-css, tailwind-merge, class-variance-authority</TableCell>
+      <TableCell>4.0 to 4.3, 1.2 to 1.4, 3.0 to 3.6, 0.7.0 to 0.7.1</TableCell>
+      <TableCell>No code changes.</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+Re-install these components from their pages to get the updated versions. Each component page has a short note about the upgrade.
