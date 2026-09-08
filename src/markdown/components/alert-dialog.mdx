@@ -35,9 +35,7 @@ import { Button } from '@/components/ui/button'
 
 ```tsx
 <AlertDialog>
-  <AlertDialogTrigger asChild>
-    <Button>Open</Button>
-  </AlertDialogTrigger>
+  <AlertDialogTrigger render={<Button />}>Open</AlertDialogTrigger>
   <AlertDialogContent>
     <AlertDialogHeader>
       <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>

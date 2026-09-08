@@ -31,9 +31,7 @@ import {
 ```tsx
 <TooltipProvider>
   <Tooltip>
-    <TooltipTrigger asChild>
-      <Button example="noShadow">Hover</Button>
-    </TooltipTrigger>
+    <TooltipTrigger render={<Button variant="noShadow" />}>Hover</TooltipTrigger>
     <TooltipContent>
       <p>Add to library</p>
     </TooltipContent>

@@ -29,9 +29,7 @@ import {
 
 ```tsx
 <HoverCard>
-  <HoverCardTrigger asChild>
-    <Button example="noShadow">Hover</Button>
-  </HoverCardTrigger>
+  <HoverCardTrigger render={<Button variant="noShadow" />}>Hover</HoverCardTrigger>
   <HoverCardContent>
     The React Framework – created and maintained by @vercel.
   </HoverCardContent>

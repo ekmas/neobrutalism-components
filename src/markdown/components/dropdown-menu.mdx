@@ -44,8 +44,7 @@ import {
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuPortal,
+  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuSub,
@@ -57,9 +56,7 @@ import {
 
 ```tsx
 <DropdownMenu>
-  <DropdownMenuTrigger asChild>
-    <Button example={'noShadow'}>Open</Button>
-  </DropdownMenuTrigger>
+  <DropdownMenuTrigger render={<Button variant={'noShadow'} />}>Open</DropdownMenuTrigger>
   <DropdownMenuContent className="w-56">
     <DropdownMenuLabel>My Account</DropdownMenuLabel>
     <DropdownMenuSeparator />
@@ -96,8 +93,7 @@ import {
           <UserPlus />
           <span>Invite users</span>
         </DropdownMenuSubTrigger>
-        <DropdownMenuPortal>
-          <DropdownMenuSubContent>
+        <DropdownMenuSubContent>
             <DropdownMenuItem>
               <Mail />
               <span>Email</span>
@@ -112,7 +108,6 @@ import {
               <span>More...</span>
             </DropdownMenuItem>
           </DropdownMenuSubContent>
-        </DropdownMenuPortal>
       </DropdownMenuSub>
       <DropdownMenuItem>
         <Plus />
