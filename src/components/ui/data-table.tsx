@@ -1,16 +1,24 @@
 "use client"
 
 import {
-  ColumnDef,
-  ColumnFiltersState,
-  flexRender,
-  getCoreRowModel,
-  getFilteredRowModel,
-  getPaginationRowModel,
-  getSortedRowModel,
-  SortingState,
-  useReactTable,
-  VisibilityState,
+  columnFilteringFeature,
+  columnVisibilityFeature,
+  createColumnHelper,
+  createFilteredRowModel,
+  createPaginatedRowModel,
+  createSortedRowModel,
+  filterFn_includesString,
+  rowPaginationFeature,
+  rowSelectionFeature,
+  rowSortingFeature,
+  sortFn_alphanumeric,
+  sortFn_text,
+  tableFeatures,
+  useTable,
+  type ColumnFiltersState,
+  type ColumnVisibilityState,
+  type RowSelectionState,
+  type SortingState,
 } from "@tanstack/react-table"
 import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react"
 
@@ -77,8 +85,24 @@ export type Payment = {
   email: string
 }
 
-export const columns: ColumnDef<Payment>[] = [
-  {
+// TanStack Table v9 is modular: only the features listed here are bundled.
+const features = tableFeatures({
+  columnFilteringFeature,
+  columnVisibilityFeature,
+  rowPaginationFeature,
+  rowSelectionFeature,
+  rowSortingFeature,
+  filteredRowModel: createFilteredRowModel(),
+  paginatedRowModel: createPaginatedRowModel(),
+  sortedRowModel: createSortedRowModel(),
+  filterFns: { includesString: filterFn_includesString },
+  sortFns: { alphanumeric: sortFn_alphanumeric, text: sortFn_text },
+})
+
+const columnHelper = createColumnHelper<typeof features, Payment>()
+
+export const columns = columnHelper.columns([
+  columnHelper.display({
     id: "select",
     header: ({ table }) => (
       <Checkbox
@@ -101,16 +125,14 @@ export const columns: ColumnDef<Payment>[] = [
     ),
     enableSorting: false,
     enableHiding: false,
-  },
-  {
-    accessorKey: "status",
+  }),
+  columnHelper.accessor("status", {
     header: "Status",
     cell: ({ row }) => (
       <div className="capitalize">{row.getValue("status")}</div>
     ),
-  },
-  {
-    accessorKey: "email",
+  }),
+  columnHelper.accessor("email", {
     header: ({ column }) => {
       return (
         <Button
@@ -125,9 +147,8 @@ export const columns: ColumnDef<Payment>[] = [
       )
     },
     cell: ({ row }) => <div className="lowercase">{row.getValue("email")}</div>,
-  },
-  {
-    accessorKey: "amount",
+  }),
+  columnHelper.accessor("amount", {
     header: () => <div className="text-right">Amount</div>,
     cell: ({ row }) => {
       const amount = parseFloat(row.getValue("amount"))
@@ -140,8 +161,8 @@ export const columns: ColumnDef<Payment>[] = [
 
       return <div className="text-right font-base">{formatted}</div>
     },
-  },
-  {
+  }),
+  columnHelper.display({
     id: "actions",
     enableHiding: false,
     cell: ({ row }) => {
@@ -174,8 +195,8 @@ export const columns: ColumnDef<Payment>[] = [
         </DropdownMenu>
       )
     },
-  },
-]
+  }),
+])
 
 export default function DataTableDemo() {
   const [sorting, setSorting] = React.useState<SortingState>([])
@@ -183,18 +204,15 @@ export default function DataTableDemo() {
     [],
   )
   const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({})
-  const [rowSelection, setRowSelection] = React.useState({})
+    React.useState<ColumnVisibilityState>({})
+  const [rowSelection, setRowSelection] = React.useState<RowSelectionState>({})
 
-  const table = useReactTable({
+  const table = useTable({
+    features,
     data,
     columns,
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
-    getCoreRowModel: getCoreRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
-    getSortedRowModel: getSortedRowModel(),
-    getFilteredRowModel: getFilteredRowModel(),
     onColumnVisibilityChange: setColumnVisibility,
     onRowSelectionChange: setRowSelection,
     state: {
@@ -259,12 +277,9 @@ export default function DataTableDemo() {
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead className="text-foreground" key={header.id}>
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext(),
-                          )}
+                      {header.isPlaceholder ? null : (
+                        <table.FlexRender header={header} />
+                      )}
                     </TableHead>
                   )
                 })}
@@ -281,10 +296,7 @@ export default function DataTableDemo() {
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell className="px-4 py-2" key={cell.id}>
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext(),
-                      )}
+                      <table.FlexRender cell={cell} />
                     </TableCell>
                   ))}
                 </TableRow>
