@@ -161,7 +161,7 @@ const AlertExample = () => (
 )
 
 const AccordionExample = () => (
-  <Accordion className="w-full" type="single" collapsible>
+  <Accordion className="w-full">
     <AccordionItem className="max-w-full" value="item-1">
       <AccordionTrigger tabIndex={-1}>Is it accessible?</AccordionTrigger>
       <AccordionContent>
@@ -197,10 +197,10 @@ const ResizableExample = () => (
   <ResizablePanelGroup
     direction="horizontal"
     inert
-    className="rounded-base max-w-md max-h-[200px] min-h-[200px] border-2 border-border text-main-foreground shadow-shadow"
+    className="rounded-base max-w-md max-h-[200px] min-h-[200px] border-2 border-border text-foreground shadow-shadow"
   >
     <ResizablePanel tabIndex={-1} defaultSize={50}>
-      <div className="flex h-full items-center justify-center bg-main p-6">
+      <div className="flex h-full items-center justify-center bg-background p-6">
         <span className="font-base">One</span>
       </div>
     </ResizablePanel>
@@ -208,13 +208,13 @@ const ResizableExample = () => (
     <ResizablePanel tabIndex={-1} defaultSize={50}>
       <ResizablePanelGroup direction="vertical">
         <ResizablePanel tabIndex={-1} defaultSize={25}>
-          <div className="flex h-full items-center justify-center bg-main p-6">
+          <div className="flex h-full items-center justify-center bg-background p-6">
             <span className="font-base">Two</span>
           </div>
         </ResizablePanel>
         <ResizableHandle />
         <ResizablePanel tabIndex={-1} defaultSize={75}>
-          <div className="flex h-full items-center justify-center bg-main p-6">
+          <div className="flex h-full items-center justify-center bg-background p-6">
             <span className="font-base">Three</span>
           </div>
         </ResizablePanel>
@@ -227,7 +227,7 @@ const ScrollAreaExample = () => (
   <ScrollArea
     tabIndex={-1}
     inert
-    className="rounded-base h-[150px] w-full text-main-foreground border-2 border-border bg-main p-4 shadow-shadow"
+    className="rounded-base h-[150px] w-full text-foreground border-2 border-border bg-background p-4 shadow-shadow"
   >
     Jokester began sneaking into the castle in the middle of the night and
     leaving jokes all over the place: under the king&apos;s pillow, in his soup,
@@ -272,12 +272,7 @@ const RadioGroupExample = () => (
   <div className="bg-main w-full border-2 border-border shadow-shadow p-4 flex items-center justify-center rounded-base">
     <RadioGroup defaultValue="comfortable" inert>
       <div className="flex items-center space-x-2">
-        <RadioGroupItem
-          tabIndex={-1}
-          className="dark:text-main-foreground"
-          value="default"
-          id="r1"
-        />
+        <RadioGroupItem tabIndex={-1} className="" value="default" id="r1" />
         <Label className="text-main-foreground" htmlFor="r1">
           Default
         </Label>
@@ -285,7 +280,7 @@ const RadioGroupExample = () => (
       <div className="flex items-center space-x-2">
         <RadioGroupItem
           tabIndex={-1}
-          className="dark:text-main-foreground"
+          className=""
           value="comfortable"
           id="r2"
         />
@@ -294,12 +289,7 @@ const RadioGroupExample = () => (
         </Label>
       </div>
       <div className="flex items-center space-x-2">
-        <RadioGroupItem
-          tabIndex={-1}
-          className="dark:text-main-foreground"
-          value="compact"
-          id="r3"
-        />
+        <RadioGroupItem tabIndex={-1} className="" value="compact" id="r3" />
         <Label className="text-main-foreground" htmlFor="r3">
           Compact
         </Label>
@@ -324,7 +314,7 @@ const CarouselExample = () => (
         {Array.from({ length: 5 }).map((_, index) => (
           <CarouselItem key={index}>
             <div className="p-[10px]">
-              <Card className="shadow-none p-0 bg-main text-main-foreground">
+              <Card className="shadow-none p-0 bg-background text-foreground">
                 <CardContent className="flex aspect-square items-center justify-center p-4">
                   <span className="text-3xl font-base">{index + 1}</span>
                 </CardContent>
@@ -341,28 +331,30 @@ const CarouselExample = () => (
 
 const CollapsibleExample = () => (
   <Collapsible className="w-full space-y-2">
-    <div className="rounded-base flex items-center justify-between space-x-4 border-2 border-border text-main-foreground bg-main px-4 py-2">
+    <div className="rounded-base flex items-center justify-between space-x-4 border-2 border-border text-foreground bg-background px-4 py-2">
       <h4 className="text-sm font-heading">@peduarte starred 3 repositories</h4>
-      <CollapsibleTrigger asChild>
-        <Button
-          variant="noShadow"
-          size="sm"
-          className="w-9 bg-secondary-background text-foreground p-0"
-          tabIndex={-1}
-        >
-          <ChevronsUpDown className="size-4" />
-          <span className="sr-only">Toggle</span>
-        </Button>
+      <CollapsibleTrigger
+        render={
+          <Button
+            variant="noShadow"
+            size="sm"
+            className="w-9 bg-secondary-background text-foreground p-0"
+            tabIndex={-1}
+          />
+        }
+      >
+        <ChevronsUpDown className="size-4" />
+        <span className="sr-only">Toggle</span>
       </CollapsibleTrigger>
     </div>
-    <div className="rounded-base border-2 border-border bg-main px-4 py-3 font-mono font-base text-main-foreground text-sm">
+    <div className="rounded-base border-2 border-border bg-background px-4 py-3 font-mono font-base text-foreground text-sm">
       @radix-ui/primitives
     </div>
-    <CollapsibleContent className="space-y-2 text-main-foreground font-base">
-      <div className="rounded-base border-2 border-border bg-main px-4 py-3 font-mono text-sm">
+    <CollapsibleContent className="space-y-2 text-foreground font-base">
+      <div className="rounded-base border-2 border-border bg-background px-4 py-3 font-mono text-sm">
         @radix-ui/colors
       </div>
-      <div className="rounded-base border-2 border-border bg-main px-4 py-3 font-mono text-sm">
+      <div className="rounded-base border-2 border-border bg-background px-4 py-3 font-mono text-sm">
         @stitches/react
       </div>
     </CollapsibleContent>

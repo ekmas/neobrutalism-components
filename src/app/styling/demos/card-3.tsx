@@ -41,14 +41,21 @@ export default function CardDemo3() {
               <Label autoFocus={false} htmlFor="framework">
                 Framework
               </Label>
-              <Select>
+              <Select
+                items={{
+                  next: "Next.js",
+                  sveltekit: "SvelteKit",
+                  astro: "Astro",
+                  nuxt: "Nuxt.js",
+                }}
+              >
                 <SelectTrigger
                   className="bg-secondary-background text-foreground"
                   id="framework"
                 >
                   <SelectValue placeholder="Select" />
                 </SelectTrigger>
-                <SelectContent position="popper">
+                <SelectContent>
                   <SelectItem value="next">Next.js</SelectItem>
                   <SelectItem value="sveltekit">SvelteKit</SelectItem>
                   <SelectItem value="astro">Astro</SelectItem>

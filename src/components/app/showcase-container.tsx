@@ -39,7 +39,7 @@ export default function ShowcaseContainer({
                   color: text ? `${text}` : "black",
                 }}
                 className={clsx(
-                  "text-center border-2 py-1.5 font-base shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:hover:shadow-none transition-all border-border rounded-base",
+                  "text-center border-2 py-1.5 font-base shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all border-border rounded-base",
                   !repoUrl && "col-span-2",
                 )}
                 target="_blank"
@@ -53,7 +53,7 @@ export default function ShowcaseContainer({
                     backgroundColor: `${color}`,
                     color: text ? `${text}` : "black",
                   }}
-                  className="text-center border-2 py-1.5 font-base shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:hover:shadow-none transition-all border-border rounded-base"
+                  className="text-center border-2 py-1.5 font-base shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all border-border rounded-base"
                   target="_blank"
                   href={repoUrl}
                 >

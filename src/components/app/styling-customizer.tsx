@@ -26,32 +26,32 @@ import {
 const previewStyling = [
   {
     name: "blue",
-    main: "bg-[#5294FF] dark:bg-[#5294FF]",
-    bg: "bg-[#DCEBFE] dark:bg-[#20294B]",
+    main: "bg-[#5294FF]",
+    bg: "bg-[#DCEBFE]",
     rounded: "rounded-[5px]!",
     shadow: "shadow-[4px_4px_0_0_rgba(0,0,0,1)]!",
     boxShadow: "4px 4px 0 0 rgba(0,0,0,1)",
   },
   {
     name: "green",
-    main: "bg-[#05E17A] dark:bg-[#1EFA94]",
-    bg: "bg-[#DEFCE9] dark:bg-[#0E2016]",
+    main: "bg-[#05E17A]",
+    bg: "bg-[#DEFCE9]",
     rounded: "rounded-[15px]!",
     shadow: "shadow-[0_4px_0_0_rgba(0,0,0,1)]!",
     boxShadow: "0 4px 0 0 rgba(0,0,0,1)",
   },
   {
     name: "orange",
-    main: "bg-[#FF7A05] dark:bg-[#FF871F]",
-    bg: "bg-[#FFEDD6] dark:bg-[#322215]",
+    main: "bg-[#FF7A05]",
+    bg: "bg-[#FFEDD6]",
     rounded: "rounded-[10px]!",
     shadow: "shadow-[-4px_-4px_0_0_rgba(0,0,0,1)]!",
     boxShadow: "-4px -4px 0 0 rgba(0,0,0,1)",
   },
   {
     name: "violet",
-    main: "bg-[#A985FF] dark:bg-[#A985FF]",
-    bg: "bg-[#EEE6FE] dark:bg-[#332352]",
+    main: "bg-[#A985FF]",
+    bg: "bg-[#EEE6FE]",
     rounded: "rounded-none!",
     shadow: "shadow-[4px_-4px_0_0_rgba(0,0,0,1)]!",
     boxShadow: "4px -4px 0 0 rgba(0,0,0,1)",
@@ -93,7 +93,7 @@ export default function StylingCustomizer() {
             </AlertDescription>
           </Alert>
 
-          <Accordion type="single" defaultValue="item-1">
+          <Accordion defaultValue={["item-1"]}>
             <AccordionItem
               style={{
                 boxShadow,
@@ -134,7 +134,14 @@ export default function StylingCustomizer() {
             </Badge>
 
             <div className="hidden sm:block">
-              <Select>
+              <Select
+                items={{
+                  apple: "Apple",
+                  banana: "Banana",
+                  blueberry: "Blueberry",
+                  grapes: "Grapes",
+                }}
+              >
                 <SelectTrigger
                   className={`${main} ${rounded} w-[180px] transition-all duration-200`}
                 >

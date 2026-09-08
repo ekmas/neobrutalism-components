@@ -1,7 +1,6 @@
 import Link from "next/link"
 
 import Search from "@/components/app/search"
-import { ThemeSwitcher } from "@/components/app/theme-switcher"
 
 async function getRepoData() {
   const res = await fetch(
@@ -64,7 +63,7 @@ async function Navbar() {
             <a
               target="_blank"
               href="https://github.com/ekmas/neobrutalism-components"
-              className="flex gap-2 items-center justify-center rounded-base border-2 border-border shadow-nav dark:shadow-navDark dark:border-darkBorder px-1.5 h-9 transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none dark:hover:shadow-none"
+              className="flex gap-2 items-center justify-center rounded-base border-2 border-border shadow-nav px-1.5 h-9 transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none"
             >
               <p className="font-semibold sm:inline hidden">{starsCount}</p>
 
@@ -82,7 +81,7 @@ async function Navbar() {
             <a
               target="_blank"
               href="https://twitter.com/samuelbreznjak"
-              className="flex items-center justify-center rounded-base border-2 border-border shadow-nav dark:shadow-navDark dark:border-darkBorder size-9 transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none dark:hover:shadow-none"
+              className="flex items-center justify-center rounded-base border-2 border-border shadow-nav size-9 transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none"
             >
               <svg
                 className="size-5"
@@ -95,8 +94,6 @@ async function Navbar() {
                 />
               </svg>
             </a>
-
-            <ThemeSwitcher />
           </div>
         </div>
       </div>

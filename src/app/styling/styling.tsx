@@ -38,26 +38,8 @@ import { cn } from "@/lib/utils"
 export default function Styling() {
   const defaultColorPalette = colors[10]
 
-  const [
-    {
-      bg,
-      darkBg,
-      darkMain,
-      main,
-      name,
-      chart1,
-      chart2,
-      chart3,
-      chart4,
-      chart5,
-      darkChart1,
-      darkChart2,
-      darkChart3,
-      darkChart4,
-      darkChart5,
-    },
-    setColor,
-  ] = useState(defaultColorPalette)
+  const [{ bg, main, name, chart1, chart2, chart3, chart4, chart5 }, setColor] =
+    useState(defaultColorPalette)
   const [borderRadius, setBorderRadius] = useState(5)
   const [boxShadowLength, setBoxShadowLength] = useState([4, 4])
   const [fontWeight, setFontWeight] = useState([700, 500])
@@ -85,7 +67,8 @@ export default function Styling() {
     }
   }, [])
 
-  const updateColor = (value: string) => {
+  const updateColor = (value: string | null) => {
+    if (!value) return
     const r = window.document.querySelector(":root") as HTMLElement
     const color = colors.find((color) => color.name === value)!
 
@@ -93,30 +76,13 @@ export default function Styling() {
 
     localStorage.setItem("color", JSON.stringify(color))
 
-    const isDarkMode = document.documentElement.classList.contains("dark")
-
-    if (isDarkMode) {
-      r.style.setProperty("--background", color.darkBg)
-      r.style.setProperty("--main", color.darkMain)
-      r.style.setProperty("--chart-1", color.darkChart1)
-      r.style.setProperty("--chart-2", color.darkChart2)
-      r.style.setProperty("--chart-3", color.darkChart3)
-      r.style.setProperty("--chart-4", color.darkChart4)
-      r.style.setProperty("--chart-5", color.darkChart5)
-    } else {
-      r.style.setProperty("--background", color.bg)
-      r.style.setProperty("--main", color.main)
-      r.style.setProperty("--chart-1", color.chart1)
-      r.style.setProperty("--chart-2", color.chart2)
-      r.style.setProperty("--chart-3", color.chart3)
-      r.style.setProperty("--chart-4", color.chart4)
-      r.style.setProperty("--chart-5", color.chart5)
-    }
-
-    r.style.setProperty("--dark-background", color.darkBg)
-    r.style.setProperty("--dark-main", color.darkMain)
-    r.style.setProperty("--light-background", color.bg)
-    r.style.setProperty("--light-main", color.main)
+    r.style.setProperty("--background", color.bg)
+    r.style.setProperty("--main", color.main)
+    r.style.setProperty("--chart-1", color.chart1)
+    r.style.setProperty("--chart-2", color.chart2)
+    r.style.setProperty("--chart-3", color.chart3)
+    r.style.setProperty("--chart-4", color.chart4)
+    r.style.setProperty("--chart-5", color.chart5)
   }
 
   const updateBorderRadius = (value: number) => {
@@ -186,8 +152,6 @@ export default function Styling() {
   const styling = `@import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 :root {
   --background: ${bg};
   --secondary-background: oklch(100% 0 0);
@@ -204,23 +168,6 @@ export default function Styling() {
   --chart-4: ${chart4};
   --chart-5: ${chart5};
   --chart-active-dot: #000;
-}
-
-.dark {
-  --background: ${darkBg};
-  --secondary-background: oklch(23.93% 0 0);
-  --foreground: oklch(92.49% 0 0);
-  --main-foreground: oklch(0% 0 0);
-  --main: ${darkMain};
-  --border: oklch(0% 0 0);
-  --ring: oklch(100% 0 0);
-  --shadow: ${boxShadowLength[0]}px ${boxShadowLength[1]}px 0px 0px var(--border);
-  --chart-1: ${darkChart1};
-  --chart-2: ${darkChart2};
-  --chart-3: ${darkChart3};
-  --chart-4: ${darkChart4};
-  --chart-5: ${darkChart5};
-  --chart-active-dot: #fff;
 }
 
 @theme inline {
@@ -261,9 +208,7 @@ export default function Styling() {
   return (
     <div className="flex items-center justify-center gap-4">
       <Sheet>
-        <SheetTrigger asChild>
-          <Button>Customize</Button>
-        </SheetTrigger>
+        <SheetTrigger render={<Button />}>Customize</SheetTrigger>
         <SheetContent>
           <SheetHeader>
             <SheetTitle>Customize styling</SheetTitle>
@@ -271,7 +216,14 @@ export default function Styling() {
           <div className="grid flex-1 auto-rows-min overflow-y-auto gap-4 px-4">
             <div className="grid gap-3">
               <Label htmlFor="color">Color</Label>
-              <Select value={name} onValueChange={updateColor}>
+              <Select
+                value={name}
+                onValueChange={updateColor}
+                items={colors.map((color) => ({
+                  value: color.name,
+                  label: color.name,
+                }))}
+              >
                 <SelectTrigger
                   id="color"
                   className="bg-secondary-background text-foreground"
@@ -395,9 +347,7 @@ export default function Styling() {
             </div>
           </div>
           <SheetFooter>
-            <SheetClose asChild>
-              <Button>Save changes</Button>
-            </SheetClose>
+            <SheetClose render={<Button />}>Save changes</SheetClose>
             <Button variant="neutral" onClick={resetStyling}>
               Reset
             </Button>
@@ -405,8 +355,8 @@ export default function Styling() {
         </SheetContent>
       </Sheet>
       <Dialog>
-        <DialogTrigger asChild>
-          <Button variant="neutral">Copy</Button>
+        <DialogTrigger render={<Button variant="neutral" />}>
+          Copy
         </DialogTrigger>
         <DialogContent className="max-w-full">
           <DialogHeader>

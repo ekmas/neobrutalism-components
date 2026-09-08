@@ -118,7 +118,7 @@ export default async function DocPage(props: DocPageProps) {
               )}
               {shadcnDocsLink && (
                 <a href={shadcnDocsLink} target="_blank">
-                  <Badge className="gap-2">
+                  <Badge variant="neutral" className="gap-2">
                     shadcn/ui docs
                     <ExternalLink />
                   </Badge>
@@ -143,7 +143,7 @@ export default async function DocPage(props: DocPageProps) {
                 <a
                   href="https://8bit.cnlibs.com/"
                   target="_blank"
-                  className="mt-4 block w-full rounded-base border-2 border-border bg-black px-3 py-1.5 text-center text-sm font-base text-white transition-opacity hover:opacity-90 dark:bg-white dark:text-black"
+                  className="mt-4 block w-full rounded-base border-2 border-border bg-black px-3 py-1.5 text-center text-sm font-base text-white transition-opacity hover:opacity-90"
                 >
                   Visit
                 </a>

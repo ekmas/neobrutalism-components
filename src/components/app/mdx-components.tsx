@@ -43,7 +43,7 @@ export const sharedComponents = {
   }: React.ComponentProps<typeof TabsTrigger>) => (
     <TabsTrigger
       className={cn(
-        "h-full border-0 border-r-2 z-10 border-r-border rounded-none sm:text-base data-[state=active]:text-main-foreground text-foreground last:border-r-0",
+        "h-full border-0 border-r-2 z-10 border-r-border rounded-none sm:text-base data-active:text-main-foreground text-foreground last:border-r-0",
         className,
       )}
       {...props}

@@ -44,17 +44,17 @@ export default function Home() {
           <div className="flex flex-col items-center text-center">
             <h1 className="leading-normal">
               Get started with creating <br />{" "}
-              <span className="relative px-2 sm:mr-2 mr-0 md:[&_svg]:size-[45px] sm:[&_svg]:size-7 bg-main/50 rounded-base border-2 border-border/40 dark:border-border/70">
+              <span className="relative px-2 sm:mr-2 mr-0 md:[&_svg]:size-[45px] sm:[&_svg]:size-7 bg-main/50 rounded-base border-2 border-border/40">
                 neobrutalism
                 <Star9
                   className="absolute sm:block hidden md:-bottom-4 md:-right-5 -bottom-2.5 -right-2.5"
                   color="var(--main)"
-                  pathClassName="stroke-5 dark:stroke-3.5 stroke-black dark:stroke-black/70"
+                  pathClassName="stroke-5 stroke-black"
                 />
                 <Star9
                   className="absolute sm:block hidden md:-top-4 md:-left-5 -top-2.5 -left-2.5"
                   color="var(--main)"
-                  pathClassName="stroke-5 dark:stroke-3.5 stroke-black dark:stroke-black/70"
+                  pathClassName="stroke-5 stroke-black"
                 />
               </span>{" "}
               layouts.
@@ -112,7 +112,7 @@ export default function Home() {
               utility classes, enabling swift and straightforward styling.
             </p>
           </section>
-          <section className="border-b-4 border-border md:text-main-foreground md:dark:text-main-foreground md:bg-main text-main-foreground dark:text-foreground 2xl:p-14 2xl:py-16 xl:p-10 xl:py-10 lg:p-8 lg:py-10 p-5 py-7 bg-background">
+          <section className="border-b-4 border-border md:text-main-foreground md:bg-main text-main-foreground 2xl:p-14 2xl:py-16 xl:p-10 xl:py-10 lg:p-8 lg:py-10 p-5 py-7 bg-background">
             <div className="flex items-center sm:gap-6 gap-4 sm:mb-6 mb-4">
               <div className="xl:size-[70px] lg:size-[55px] sm:size-12 size-10 flex items-center justify-center">
                 <OpenSourceIcon />
@@ -126,7 +126,7 @@ export default function Home() {
               collaboration and allowing widespread adoption and modification.
             </p>
           </section>
-          <section className="md:border-r-4 md:border-b-0 border-border bg-main dark:text-main-foreground 2xl:p-14 2xl:py-16 xl:p-10 xl:py-10 lg:p-8 lg:py-10 p-5 py-7 border-b-4">
+          <section className="md:border-r-4 md:border-b-0 border-border bg-main 2xl:p-14 2xl:py-16 xl:p-10 xl:py-10 lg:p-8 lg:py-10 p-5 py-7 border-b-4">
             <div className="flex items-center sm:gap-6 gap-4 sm:mb-6 mb-4">
               <div className="xl:size-[70px] lg:size-[55px] sm:size-12 size-10 flex items-center justify-center">
                 <ShadcnIcon />
@@ -231,18 +231,14 @@ export default function Home() {
           </h2>
 
           <div className="mx-auto not-prose grid w-[700px] max-w-full px-5">
-            <Accordion
-              className="text-base sm:text-lg"
-              type="single"
-              collapsible
-            >
+            <Accordion className="text-base sm:text-lg">
               <AccordionItem className="mb-2" value="item-2">
                 <AccordionTrigger className="text-left">
                   Are these components accessible?
                 </AccordionTrigger>
                 <AccordionContent className="text-sm sm:text-base">
                   Most of the components are based on shadcn/ui, which means
-                  they are accessible because under the hood they use radix-ui
+                  they are accessible because under the hood they use Base UI
                   which is fully accessible.
                 </AccordionContent>
               </AccordionItem>
@@ -313,7 +309,7 @@ export default function Home() {
           </h2>
 
           <Link
-            className="flex items-center gap-2.5 w-max text-foreground rounded-base border-2 border-border bg-background dark:bg-secondary-background md:px-10 px-4 md:py-3 py-2 md:text-[22px] text-base shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none"
+            className="flex items-center gap-2.5 w-max text-foreground rounded-base border-2 border-border bg-background md:px-10 px-4 md:py-3 py-2 md:text-[22px] text-base shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none"
             href={"/docs"}
           >
             Read the docs
@@ -397,7 +393,7 @@ const OpenSourceIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 768" fill="none">
     <path
       d="M400 10C615.398 10 790 184.585 790 399.958C790 557.315 696.772 692.954 562.483 754.562L468.604 510.384C505.457 487.481 530 446.609 530 399.958C530 328.161 471.802 269.971 400 269.971C328.198 269.971 270 328.161 270 399.958C270 446.619 294.587 487.487 331.438 510.419L237.559 754.599C103.226 692.917 10 557.313 10 399.958C10 184.585 184.602 10 400 10Z"
-      className="md:fill-black fill-main md:stroke-none stroke-black md:dark:fill-black dark:fill-main"
+      className="md:fill-black fill-main md:stroke-none stroke-black"
       strokeWidth="30"
     />
   </svg>
@@ -435,7 +431,7 @@ const CustomizableIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" fill="none">
     <path
       d="M493.281 161.223L493.259 161.244L493.237 161.266C479.348 175.17 479.348 198.163 493.237 212.067L588.139 307.067C602.034 320.978 625.021 320.978 638.917 307.067L773.317 172.527C775.305 171.081 777.213 170.855 778.356 171.073C778.936 171.184 779.329 171.398 779.603 171.635C779.852 171.85 780.207 172.255 780.494 173.074C786.805 193.659 790 215.947 790 240C790 375.796 673.608 484.265 534.943 468.421C513.811 465.156 493.099 460.323 474.193 452.437L468.006 449.857L463.269 454.599L153.591 764.599C137.117 781.091 114.674 790 94.0687 790C73.4638 790 51.0205 781.091 34.5461 764.599L34.464 764.517L34.3799 764.437C1.96834 733.466 1.72473 679.929 34.5409 647.073C34.5427 647.071 34.5444 647.069 34.5461 647.067L345.87 337.086L350.624 332.352L348.046 326.157C340.129 307.138 335.322 288.025 332.083 265.39C316.219 126.527 424.606 10 560.25 10C582.145 10 605.607 13.0663 627.556 19.181C628.909 20.2855 629.87 21.8429 630.23 23.3556C630.631 25.0419 630.177 25.8434 629.774 26.254C629.77 26.2581 629.766 26.262 629.762 26.2659L493.281 161.223Z"
-      className="fill-main stroke-black md:dark:fill-main dark:fill-main"
+      className="fill-main stroke-black"
       strokeWidth="30"
     />
   </svg>
