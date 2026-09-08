@@ -174,3 +174,51 @@ body::-webkit-scrollbar-thumb,
     scrollbar-color: #000 transparent;
   }
 }
+
+/* 8-bit pixel utilities (from 8bit.cnlibs.com) */
+@utility px-rounded-md {
+  --px: var(--pixel-size,3px);
+  --px2: calc(var(--pixel-size,3px) * 2);
+  --px-shape: polygon(0 var(--px2), var(--px) var(--px2), var(--px) var(--px), var(--px2) var(--px), var(--px2) 0, calc(100% - var(--px2)) 0, calc(100% - var(--px2)) var(--px), calc(100% - var(--px)) var(--px), calc(100% - var(--px)) var(--px2), 100% var(--px2), 100% calc(100% - var(--px2)), calc(100% - var(--px)) calc(100% - var(--px2)), calc(100% - var(--px)) calc(100% - var(--px)), calc(100% - var(--px2)) calc(100% - var(--px)), calc(100% - var(--px2)) 100%, var(--px2) 100%, var(--px2) calc(100% - var(--px)), var(--px) calc(100% - var(--px)), var(--px) calc(100% - var(--px2)), 0 calc(100% - var(--px2)));
+  clip-path: var(--px-shape);
+  border-radius: 0;
+}
+
+@utility px-border-md {
+  isolation: isolate;
+  position: relative;
+
+  &::before {
+    --px: var(--pixel-size,3px);
+    --px2: calc(var(--pixel-size,3px) * 2);
+    --pw: var(--px-border-width,2px);
+    --pxw: calc(var(--px) + var(--pw));
+    --px2w: calc(var(--px2) + var(--pw));
+    inset: var(--px-border-offset,0px);
+    z-index: -1;
+    pointer-events: none;
+    content: "";
+    background: var(--px-border-color,var(--border));
+    clip-path: polygon(0 var(--px2), var(--px) var(--px2), var(--px) var(--px), var(--px2) var(--px), var(--px2) 0, calc(100% - var(--px2)) 0, calc(100% - var(--px2)) var(--px), calc(100% - var(--px)) var(--px), calc(100% - var(--px)) var(--px2), 100% var(--px2), 100% calc(100% - var(--px2)), calc(100% - var(--px)) calc(100% - var(--px2)), calc(100% - var(--px)) calc(100% - var(--px)), calc(100% - var(--px2)) calc(100% - var(--px)), calc(100% - var(--px2)) 100%, var(--px2) 100%, var(--px2) calc(100% - var(--px)), var(--px) calc(100% - var(--px)), var(--px) calc(100% - var(--px2)), 0 calc(100% - var(--px2)), 0 var(--px2), var(--pw) var(--px2w), var(--pw) calc(100% - var(--px2w)), var(--pxw) calc(100% - var(--px2w)), var(--pxw) calc(100% - var(--pxw)), var(--px2w) calc(100% - var(--pxw)), var(--px2w) calc(100% - var(--pw)), calc(100% - var(--px2w)) calc(100% - var(--pw)), calc(100% - var(--px2w)) calc(100% - var(--pxw)), calc(100% - var(--pxw)) calc(100% - var(--pxw)), calc(100% - var(--pxw)) calc(100% - var(--px2w)), calc(100% - var(--pw)) calc(100% - var(--px2w)), calc(100% - var(--pw)) var(--px2w), calc(100% - var(--pxw)) var(--px2w), calc(100% - var(--pxw)) var(--pxw), calc(100% - var(--px2w)) var(--pxw), calc(100% - var(--px2w)) var(--pw), var(--px2w) var(--pw), var(--px2w) var(--pxw), var(--pxw) var(--pxw), var(--pxw) var(--px2w), var(--pw) var(--px2w));
+    position: absolute;
+  }
+}
+
+@utility px-ring {
+  isolation: isolate;
+  position: relative;
+
+  &:focus-visible {
+    background-color: var(--px-ring-color,var(--ring));
+  }
+
+  &::after {
+    inset: var(--px-face-offset,var(--px-ring-width,2px));
+    z-index: -2;
+    pointer-events: none;
+    content: "";
+    background: var(--px-bg,transparent);
+    clip-path: var(--px-shape,none);
+    position: absolute;
+  }
+}

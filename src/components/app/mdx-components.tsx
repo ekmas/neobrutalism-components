@@ -62,7 +62,7 @@ export const sharedComponents = {
   }: React.ComponentProps<typeof Alert> & { description: string }) => (
     <Alert
       className={cn(
-        "not-prose sm:has-[>svg]:gap-x-4 has-[>svg]:gap-x-3 sm:gap-y-2.5 gap-y-1.5 sm:[&>svg]:size-5 [&>svg]:size-4",
+        "not-prose bg-secondary-background sm:has-[>svg]:gap-x-4 has-[>svg]:gap-x-3 sm:gap-y-2.5 gap-y-1.5 sm:[&>svg]:size-5 [&>svg]:size-4",
         className,
       )}
       {...props}
@@ -109,7 +109,9 @@ export const sharedComponents = {
   TableCell,
   TableHead,
   TableHeader,
-  TableRow,
+  TableRow: ({ className, ...props }: React.ComponentProps<typeof TableRow>) => (
+    <TableRow className={cn("bg-secondary-background", className)} {...props} />
+  ),
 }
 
 const useMDXComponent = (code: string) => {

@@ -2,10 +2,14 @@ import { transformToSlug } from "@/lib/utils"
 
 import COMPONENTS from "./components"
 
+type SidebarLink = { href: string; text: string; isNew?: boolean }
+type SidebarItem = string | SidebarLink
+
 const COMPONENTS_LINKS = COMPONENTS.map((component) => {
   return {
     href: `/docs/${transformToSlug(component.name)}`,
     text: component.name,
+    isNew: component.isNew,
   }
 })
 
@@ -52,7 +56,7 @@ const GETTING_STARTED_LINKS = [
   },
 ]
 
-const MAIN_SIDEBAR = [
+const MAIN_SIDEBAR: SidebarItem[] = [
   "Getting started",
   {
     href: "/docs/migrating-to-base-ui",

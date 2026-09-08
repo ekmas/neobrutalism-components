@@ -144,6 +144,7 @@ type Component = {
   exampleComponent?: React.ComponentType
   examples?: Record<string, React.ComponentType>
   notShadcn?: boolean
+  isNew?: boolean
 }
 
 const COMPONENTS: Component[] = [
@@ -172,6 +173,7 @@ const COMPONENTS: Component[] = [
   },
   {
     name: "Attachment",
+    isNew: true,
     exampleComponent: AttachmentDemo,
     examples: {
       default: AttachmentDemo,
@@ -203,6 +205,7 @@ const COMPONENTS: Component[] = [
   },
   {
     name: "Bubble",
+    isNew: true,
     exampleComponent: BubbleDemo,
     examples: {
       default: BubbleDemo,
@@ -225,6 +228,7 @@ const COMPONENTS: Component[] = [
   },
   {
     name: "Button Group",
+    isNew: true,
     exampleComponent: ButtonGroupDemo,
     examples: {
       default: ButtonGroupDemo,
@@ -299,6 +303,7 @@ const COMPONENTS: Component[] = [
   },
   {
     name: "Direction",
+    isNew: true,
     exampleComponent: DirectionDemo,
   },
   {
@@ -320,6 +325,7 @@ const COMPONENTS: Component[] = [
   },
   {
     name: "Empty",
+    isNew: true,
     exampleComponent: EmptyDemo,
     examples: {
       default: EmptyDemo,
@@ -328,6 +334,7 @@ const COMPONENTS: Component[] = [
   },
   {
     name: "Field",
+    isNew: true,
     exampleComponent: FieldDemo,
     examples: {
       default: FieldDemo,
@@ -351,6 +358,7 @@ const COMPONENTS: Component[] = [
   },
   {
     name: "Input Group",
+    isNew: true,
     exampleComponent: InputGroupDemo,
     examples: {
       default: InputGroupDemo,
@@ -376,6 +384,7 @@ const COMPONENTS: Component[] = [
   },
   {
     name: "Item",
+    isNew: true,
     exampleComponent: ItemDemo,
     examples: {
       default: ItemDemo,
@@ -386,6 +395,7 @@ const COMPONENTS: Component[] = [
   },
   {
     name: "Kbd",
+    isNew: true,
     exampleComponent: KbdDemo,
     examples: {
       default: KbdDemo,
@@ -400,6 +410,7 @@ const COMPONENTS: Component[] = [
   },
   {
     name: "Marker",
+    isNew: true,
     exampleComponent: MarkerDemo,
     examples: {
       default: MarkerDemo,
@@ -418,6 +429,7 @@ const COMPONENTS: Component[] = [
   },
   {
     name: "Message",
+    isNew: true,
     exampleComponent: MessageDemo,
     examples: {
       default: MessageDemo,
@@ -428,6 +440,7 @@ const COMPONENTS: Component[] = [
   },
   {
     name: "Message Scroller",
+    isNew: true,
     exampleComponent: MessageScrollerDemo,
     examples: {
       default: MessageScrollerDemo,
@@ -436,6 +449,7 @@ const COMPONENTS: Component[] = [
   },
   {
     name: "Native Select",
+    isNew: true,
     exampleComponent: NativeSelectDemo,
     examples: {
       default: NativeSelectDemo,
@@ -461,6 +475,7 @@ const COMPONENTS: Component[] = [
   },
   {
     name: "Questionnaire",
+    isNew: true,
     exampleComponent: QuestionnaireDemo,
   },
   {
@@ -513,6 +528,7 @@ const COMPONENTS: Component[] = [
   },
   {
     name: "Spinner",
+    isNew: true,
     exampleComponent: SpinnerDemo,
     examples: {
       default: SpinnerDemo,
@@ -539,10 +555,12 @@ const COMPONENTS: Component[] = [
   },
   {
     name: "Toast",
+    isNew: true,
     exampleComponent: ToastDemo,
   },
   {
     name: "Toggle",
+    isNew: true,
     exampleComponent: ToggleDemo,
     examples: {
       default: ToggleDemo,
@@ -553,6 +571,7 @@ const COMPONENTS: Component[] = [
   },
   {
     name: "Toggle Group",
+    isNew: true,
     exampleComponent: ToggleGroupDemo,
     examples: {
       default: ToggleGroupDemo,
