@@ -136,12 +136,12 @@ export default async function DocPage(props: DocPageProps) {
               <TableOfContents items={tableOfContents} />
 
               <div className="shrink-0 border-t-4 border-t-border bg-secondary-background px-3 py-3 text-foreground">
-                <p className="font-heading text-base">8bit/cnlibs</p>
+                <p className="font-heading text-base">cnlibs.com</p>
                 <p className="mt-2 text-sm font-base">
-                  Check out the 8bit shadcn component library I made
+                  Check out other shadcn/ui libraries I made
                 </p>
                 <a
-                  href="https://8bit.cnlibs.com/"
+                  href="https://cnlibs.com/"
                   target="_blank"
                   className="mt-4 block w-full rounded-base border-2 border-border bg-black px-3 py-1.5 text-center text-sm font-base text-white transition-opacity hover:opacity-90 dark:bg-white dark:text-black"
                 >
