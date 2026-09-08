@@ -21,6 +21,7 @@
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.2.1",
+    "@shadcn/react": "^0.3.1",
     "@shikijs/compat": "^2.5.0",
     "@stefanprobst/rehype-extract-toc": "^2.2.1",
     "@tailwindcss/postcss": "^4.3.3",

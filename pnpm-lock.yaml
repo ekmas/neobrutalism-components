@@ -29,6 +29,9 @@ importers:
       '@next/mdx':
         specifier: ^15.2.1
         version: 15.2.1(@mdx-js/loader@3.1.0(acorn@8.14.0))(@mdx-js/react@3.1.0(@types/react@19.0.10)(react@19.0.0))
+      '@shadcn/react':
+        specifier: ^0.3.1
+        version: 0.3.1(@types/react@19.0.10)(react@19.0.0)
       '@shikijs/compat':
         specifier: ^2.5.0
         version: 2.5.0
@@ -1102,6 +1105,17 @@ packages:
 
   '@rushstack/eslint-patch@1.10.5':
     resolution: {integrity: sha512-kkKUDVlII2DQiKy7UstOR1ErJP8kUKAQ4oa+SQtM0K+lPdmmjj0YnnxBgtTVYH7mUKtbsxeFC9y0AmK7Yb78/A==}
+
+  '@shadcn/react@0.3.1':
+    resolution: {integrity: sha512-2gOR0HDMtWeRsCZfNDaU0YDFdgH3zsDQ6lz67Fv/y/qjY9y+R8kJqAn6q56phqv7/zHi0wqURjntrNO9zL7vnQ==}
+    peerDependencies:
+      '@types/react': '>=19'
+      react: '>=19'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      react:
+        optional: true
 
   '@shikijs/compat@2.5.0':
     resolution: {integrity: sha512-FuKcIOhGPZ9APnwrMWXDO0M5R1RiAfJgUOSNmWhGDpiZBhITj7IdzZFGp1hq2/Du67LcCYHJacz7Q0LR8hQm3Q==}
@@ -4624,6 +4638,11 @@ snapshots:
   '@rtsao/scc@1.1.0': {}
 
   '@rushstack/eslint-patch@1.10.5': {}
+
+  '@shadcn/react@0.3.1(@types/react@19.0.10)(react@19.0.0)':
+    optionalDependencies:
+      '@types/react': 19.0.10
+      react: 19.0.0
 
   '@shikijs/compat@2.5.0':
     dependencies:
