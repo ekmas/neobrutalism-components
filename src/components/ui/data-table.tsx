@@ -82,9 +82,10 @@ export const columns: ColumnDef<Payment>[] = [
     id: "select",
     header: ({ table }) => (
       <Checkbox
-        checked={
-          table.getIsAllPageRowsSelected() ||
-          (table.getIsSomePageRowsSelected() && "indeterminate")
+        className="data-checked:bg-secondary-background data-indeterminate:bg-secondary-background"
+        checked={table.getIsAllPageRowsSelected()}
+        indeterminate={
+          table.getIsSomePageRowsSelected() && !table.getIsAllPageRowsSelected()
         }
         onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
         aria-label="Select all"
@@ -92,6 +93,7 @@ export const columns: ColumnDef<Payment>[] = [
     ),
     cell: ({ row }) => (
       <Checkbox
+        className="data-checked:bg-secondary-background data-indeterminate:bg-secondary-background"
         checked={row.getIsSelected()}
         onCheckedChange={(value) => row.toggleSelected(!!value)}
         aria-label="Select row"
@@ -113,6 +115,7 @@ export const columns: ColumnDef<Payment>[] = [
       return (
         <Button
           variant="noShadow"
+          className="bg-secondary-background text-foreground"
           size="sm"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -146,11 +149,16 @@ export const columns: ColumnDef<Payment>[] = [
 
       return (
         <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="noShadow" className="size-8 p-0">
-              <span className="sr-only">Open menu</span>
-              <MoreHorizontal />
-            </Button>
+          <DropdownMenuTrigger
+            render={
+              <Button
+                variant="noShadow"
+                className="size-8 bg-secondary-background p-0 text-foreground"
+              />
+            }
+          >
+            <span className="sr-only">Open menu</span>
+            <MoreHorizontal />
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
@@ -198,7 +206,7 @@ export default function DataTableDemo() {
   })
 
   return (
-    <div className="w-full font-base text-main-foreground">
+    <div className="w-full font-base text-foreground">
       <div className="flex items-center py-4">
         <Input
           placeholder="Filter emails..."
@@ -209,10 +217,15 @@ export default function DataTableDemo() {
           className="max-w-sm"
         />
         <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="noShadow" className="ml-auto">
-              Columns <ChevronDown />
-            </Button>
+          <DropdownMenuTrigger
+            render={
+              <Button
+                variant="noShadow"
+                className="ml-auto bg-secondary-background text-foreground"
+              />
+            }
+          >
+            Columns <ChevronDown />
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             {table
@@ -240,7 +253,7 @@ export default function DataTableDemo() {
           <TableHeader className="font-heading">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow
-                className="bg-secondary-background text-foreground"
+                className="bg-background text-foreground"
                 key={headerGroup.id}
               >
                 {headerGroup.headers.map((header) => {
@@ -262,7 +275,7 @@ export default function DataTableDemo() {
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow
-                  className="bg-secondary-background text-foreground data-[state=selected]:bg-main data-[state=selected]:text-main-foreground"
+                  className="bg-background text-foreground data-[state=selected]:bg-main data-[state=selected]:text-main-foreground"
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                 >
@@ -297,6 +310,7 @@ export default function DataTableDemo() {
         <div className="space-x-2">
           <Button
             variant="noShadow"
+            className="bg-secondary-background text-foreground"
             size="sm"
             onClick={() => table.previousPage()}
             disabled={!table.getCanPreviousPage()}
@@ -305,6 +319,7 @@ export default function DataTableDemo() {
           </Button>
           <Button
             variant="noShadow"
+            className="bg-secondary-background text-foreground"
             size="sm"
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}
