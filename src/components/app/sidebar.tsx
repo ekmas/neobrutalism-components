@@ -11,7 +11,7 @@ export default function Sidebar() {
   const pathname = usePathname()
 
   return (
-    <aside className="scrollbar fixed top-[70px] bg-secondary-background h-[calc(100svh-70px)] max-h-[calc(100svh-70px)] w-[250px] overflow-y-auto border-r-4 lg:block hidden border-border">
+    <aside className="scrollbar fixed top-[126px] md:top-[106px] bg-secondary-background h-[calc(100svh-126px)] max-h-[calc(100svh-126px)] md:h-[calc(100svh-106px)] md:max-h-[calc(100svh-106px)] w-[250px] overflow-y-auto border-r-4 lg:block hidden border-border">
       {MAIN_SIDEBAR.map((item, id) => {
         return typeof item === "string" ? (
           <div

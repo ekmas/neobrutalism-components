@@ -28,8 +28,19 @@ async function Navbar() {
   const starsCount = (repo.stargazers_count / 1000).toFixed(1) + "k"
 
   return (
-    <nav className="fixed left-0 top-0 z-20 mx-auto flex h-[70px] w-full items-center border-b-4 border-border bg-secondary-background px-5">
-      <div className="mx-auto flex w-[1300px] text-foreground max-w-full items-center justify-between">
+    <nav className="fixed left-0 top-0 z-20 mx-auto flex h-[126px] w-full flex-col border-b-4 border-border bg-secondary-background md:h-[106px]">
+      <div className="flex h-14 w-full shrink-0 items-center justify-center border-b-2 border-border bg-black px-5 text-white md:h-9">
+        <p className="text-center text-[11px] leading-tight font-base sm:text-sm">
+          These are old components without Base UI.{" "}
+          <a
+            href="https://www.neobrutalism.dev"
+            className="font-heading underline underline-offset-2"
+          >
+            See the current version at neobrutalism.dev
+          </a>
+        </p>
+      </div>
+      <div className="mx-auto flex h-[70px] w-[1300px] text-foreground max-w-full items-center justify-between px-5">
         <div className="flex items-center xl:gap-10 gap-10">
           <Link
             className="text-[22px] size-8 rounded-base flex bg-main text-main-foreground border-2 border-black items-center justify-center font-heading"
