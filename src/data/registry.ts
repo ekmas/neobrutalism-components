@@ -625,6 +625,252 @@ const UI = [
 
 const STARS = [
   {
+    name: "attachment",
+    title: "Attachment",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react", "class-variance-authority"],
+    registryDependencies: ["https://neobrutalism.dev/r/nbutton.json"],
+    files: [
+      {
+        path: "src/components/ui/attachment.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "bubble",
+    title: "Bubble",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react", "class-variance-authority"],
+    files: [
+      {
+        path: "src/components/ui/bubble.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "button-group",
+    title: "Button Group",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react", "class-variance-authority"],
+    files: [
+      {
+        path: "src/components/ui/button-group.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "direction",
+    title: "Direction",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react"],
+    files: [
+      {
+        path: "src/components/ui/direction.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "empty",
+    title: "Empty",
+    type: "registry:ui",
+    dependencies: ["class-variance-authority"],
+    files: [
+      {
+        path: "src/components/ui/empty.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "field",
+    title: "Field",
+    type: "registry:ui",
+    dependencies: ["class-variance-authority"],
+    registryDependencies: ["https://neobrutalism.dev/r/nlabel.json"],
+    files: [
+      {
+        path: "src/components/ui/field.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "input-group",
+    title: "Input Group",
+    type: "registry:ui",
+    dependencies: ["class-variance-authority"],
+    registryDependencies: [
+      "https://neobrutalism.dev/r/nbutton.json",
+      "https://neobrutalism.dev/r/ninput.json",
+      "https://neobrutalism.dev/r/ntextarea.json",
+    ],
+    files: [
+      {
+        path: "src/components/ui/input-group.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "item",
+    title: "Item",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react", "class-variance-authority"],
+    files: [
+      {
+        path: "src/components/ui/item.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "kbd",
+    title: "Kbd",
+    type: "registry:ui",
+    files: [
+      {
+        path: "src/components/ui/kbd.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "marker",
+    title: "Marker",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react", "class-variance-authority"],
+    files: [
+      {
+        path: "src/components/ui/marker.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "message",
+    title: "Message",
+    type: "registry:ui",
+    files: [
+      {
+        path: "src/components/ui/message.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "message-scroller",
+    title: "Message Scroller",
+    type: "registry:ui",
+    dependencies: ["lucide-react", "@shadcn/react"],
+    registryDependencies: ["https://neobrutalism.dev/r/nbutton.json"],
+    files: [
+      {
+        path: "src/components/ui/message-scroller.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "native-select",
+    title: "Native Select",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/components/ui/native-select.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "questionnaire",
+    title: "Questionnaire",
+    type: "registry:ui",
+    dependencies: ["lucide-react", "@shadcn/react"],
+    registryDependencies: ["https://neobrutalism.dev/r/nbutton.json"],
+    files: [
+      {
+        path: "src/components/ui/questionnaire.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "spinner",
+    title: "Spinner",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/components/ui/spinner.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "toast",
+    title: "Toast",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react", "lucide-react"],
+    registryDependencies: ["https://neobrutalism.dev/r/nbutton.json"],
+    files: [
+      {
+        path: "src/components/ui/toast.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "toggle",
+    title: "Toggle",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react", "class-variance-authority"],
+    files: [
+      {
+        path: "src/components/ui/toggle.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "toggle-group",
+    title: "Toggle Group",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react", "class-variance-authority"],
+    registryDependencies: ["https://neobrutalism.dev/r/ntoggle.json"],
+    files: [
+      {
+        path: "src/components/ui/toggle-group.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "ntoggle",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react", "class-variance-authority"],
+    files: [
+      {
+        path: "src/components/ui/toggle.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "ntextarea",
+    type: "registry:ui",
+    files: [
+      {
+        path: "src/components/ui/textarea.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "s1",
     title: "Star 1",
     type: "registry:component",
