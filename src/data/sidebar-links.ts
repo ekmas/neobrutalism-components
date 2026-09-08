@@ -47,10 +47,6 @@ const GETTING_STARTED_LINKS = [
     text: "Stars",
   },
   {
-    href: "/templates",
-    text: "Templates",
-  },
-  {
     href: "/showcase",
     text: "Showcase",
   },
