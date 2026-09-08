@@ -1,0 +1,78 @@
+---
+title: Input Group
+description: Display additional information or actions to an input or textarea.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/input-group
+---
+
+<ComponentPreview component="input-group">
+  ```tsx file=<rootDir>/src/examples/ui/input-group/index.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+The component depends on the <Link href="/docs/button">Button</Link>, <Link href="/docs/input">Input</Link> and <Link href="/docs/textarea">Textarea</Link> components. Add them first.
+
+<Installation component="input-group">
+  ```tsx file=<rootDir>/src/components/ui/input-group.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupInput,
+  InputGroupText,
+  InputGroupTextarea,
+} from '@/components/ui/input-group'
+```
+
+```tsx
+<InputGroup>
+  <InputGroupInput placeholder="Search..." />
+  <InputGroupAddon>
+    <SearchIcon />
+  </InputGroupAddon>
+  <InputGroupAddon align="inline-end">
+    <InputGroupButton>Search</InputGroupButton>
+  </InputGroupAddon>
+</InputGroup>
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="input-group" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/input-group/index.tsx
+  ```
+</ComponentPreview>
+
+### With Button
+
+Without an explicit `variant`, `InputGroupButton` renders as a flat "ghost" button. Pass `variant="default"` for the accent look. Sizes are `xs`, `sm`, `icon-xs` and `icon-sm`.
+
+<ComponentPreview component="input-group" example="with-button">
+  ```tsx file=<rootDir>/src/examples/ui/input-group/with-button.tsx
+  ```
+</ComponentPreview>
+
+### Textarea
+
+<ComponentPreview component="input-group" example="textarea">
+  ```tsx file=<rootDir>/src/examples/ui/input-group/textarea.tsx
+  ```
+</ComponentPreview>
+
+### Block Start
+
+Use `align="block-start"` or `align="block-end"` to place the addon above or below the control.
+
+<ComponentPreview component="input-group" example="block-start">
+  ```tsx file=<rootDir>/src/examples/ui/input-group/block-start.tsx
+  ```
+</ComponentPreview>

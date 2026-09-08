@@ -1,0 +1,72 @@
+---
+title: Toast
+description: A succinct message that is displayed temporarily.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/toast
+---
+
+<ComponentPreview component="toast">
+  ```tsx file=<rootDir>/src/examples/ui/toast.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+The component depends on the <Link href="/docs/button">Button</Link> component. Add it first.
+
+<Installation component="toast">
+  ```tsx file=<rootDir>/src/components/ui/toast.tsx
+  ```
+</Installation>
+
+## Usage
+
+Render `<Toaster />` once in your root layout.
+
+```tsx
+import { Toaster } from '@/components/ui/toast'
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>
+        {children}
+        <Toaster />
+      </body>
+    </html>
+  )
+}
+```
+
+Then call `toast.add` from anywhere, even outside React components.
+
+```ts
+import { toast } from '@/components/ui/toast'
+```
+
+```tsx
+toast.add({
+  title: 'Event created',
+  description: 'Sunday, December 3 at 9:00 AM',
+})
+```
+
+Set `type` to `success`, `info`, `warning`, `error` or `loading` to show an icon, pass `actionProps` to render an action button, or use `toast.promise` to track an async task.
+
+```tsx
+toast.add({
+  type: 'success',
+  title: 'Changes saved',
+  actionProps: {
+    children: 'Undo',
+    onClick: () => undo(),
+  },
+})
+
+toast.promise(saveChanges(), {
+  loading: { title: 'Saving...' },
+  success: { title: 'Saved' },
+  error: { title: 'Could not save' },
+})
+```
+
+This component replaces <a target="_blank" href="https://sonner.emilkowal.ski">sonner</a>. It is built on the Base UI toast primitive, so no extra dependency is needed.
