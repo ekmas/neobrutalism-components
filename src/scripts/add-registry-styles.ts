@@ -10,17 +10,6 @@ const STYLES = colors.map((color) => ({
   $schema: "https://ui.shadcn.com/schema/registry-item.json",
   title: `Neobrutalism ${color.name.charAt(0).toUpperCase() + color.name.slice(1)}`,
   cssVars: {
-    dark: {
-      background: color.darkBg,
-      "secondary-background": "oklch(100% 0 0)",
-      main: color.darkMain,
-      ring: "oklch(100% 0 0)",
-      foreground: "oklch(92.49% 0 0)",
-      "main-foreground": "oklch(0% 0 0)",
-      border: "oklch(0% 0 0)",
-      overlay: "rgba(0, 0, 0, 0.8)",
-      shadow: "4px 4px 0px 0px var(--border)",
-    },
     light: {
       background: color.bg,
       "secondary-background": "oklch(23.93% 0 0)",

@@ -3,8 +3,6 @@
 
 @plugin "@tailwindcss/typography";
 
-@custom-variant dark (&:is(.dark *));
-
 :root {
   --border-radius: 5px;
   --box-shadow-x: 4px;
@@ -35,20 +33,6 @@
   --chart-active-dot: #000;
 }
 
-.dark {
-  --background: oklch(29.12% 0.0633 270.86);
-  --secondary-background: oklch(23.93% 0 0);
-  --foreground: oklch(92.49% 0 0);
-  --main-foreground: oklch(0% 0 0);
-
-  --border: oklch(0% 0 0);
-  --ring: oklch(100% 0 0);
-
-  --shadow: var(--box-shadow-x) var(--box-shadow-y) 0px 0px var(--border);
-
-  --chart-active-dot: #fff;
-}
-
 @theme inline {
   --color-main: var(--main);
   --color-background: var(--background);
@@ -74,7 +58,6 @@
 
   --shadow-shadow: var(--shadow);
   --shadow-nav: 4px 4px 0px 0px var(--border);
-  --shadow-darkNav: 4px 4px 0px 0px var(--dark-border);
 
   --font-weight-base: var(--base-font-weight);
   --font-weight-heading: var(--heading-font-weight);
@@ -105,7 +88,7 @@
 
 @layer base {
   body {
-    @apply text-foreground font-base;
+    @apply relative text-foreground font-base;
   }
 
   h1,
@@ -122,12 +105,6 @@ body,
 .scrollbar {
   --sb-track-color: #ffffff;
   --sb-thumb-color: #000000;
-}
-
-html.dark body,
-html.dark .scrollbar {
-  --sb-track-color: #1f1f1f;
-  --sb-thumb-color: #e6e6e6;
 }
 
 .scrollbar::-webkit-scrollbar {
@@ -154,10 +131,6 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb,
 .scrollbar::-webkit-scrollbar-thumb {
   background: var(--sb-thumb-color);
-}
-
-html.dark body::-webkit-scrollbar-thumb {
-  border-left: 4px solid #000;
 }
 
 .code::-webkit-scrollbar-track {

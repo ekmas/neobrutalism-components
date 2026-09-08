@@ -6,14 +6,6 @@
   display: none;
 }
 
-.dark [data-theme="light"] {
-  display: none;
-}
-
-.dark [data-theme="dark"] {
-  display: block;
-}
-
 [data-rehype-pretty-code-fragment] {
   position: relative;
 }
@@ -65,10 +57,6 @@
   border-color: rgba(63, 63, 70, 0.7);
   background-color: rgba(63, 63, 70, 0.5);
   padding: 0.25rem;
-}
-
-.dark [data-rehype-pretty-code-fragment] .word--highlighted {
-  background-color: rgb(24, 24, 27);
 }
 
 [data-rehype-pretty-code-title] {
