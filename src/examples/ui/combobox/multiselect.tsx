@@ -52,18 +52,20 @@ export default function ComboboxWithCheckbox() {
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
-        <Button
-          variant="noShadow"
-          role="combobox"
-          aria-expanded={open}
-          className="w-fit min-w-[280px] justify-between"
-        >
-          {selectedFrameworks.length > 0
-            ? selectedFrameworks.map((framework) => framework.label).join(", ")
-            : "Select frameworks (multi-select)..."}
-          <ChevronsUpDown className="text-muted-foreground" />
-        </Button>
+      <PopoverTrigger
+        render={
+          <Button
+            variant="noShadow"
+            role="combobox"
+            aria-expanded={open}
+            className="w-fit min-w-[280px] justify-between"
+          />
+        }
+      >
+        {selectedFrameworks.length > 0
+          ? selectedFrameworks.map((framework) => framework.label).join(", ")
+          : "Select frameworks (multi-select)..."}
+        <ChevronsUpDown className="text-muted-foreground" />
       </PopoverTrigger>
       <PopoverContent className="w-[300px] p-0 border-0" align="start">
         <Command className="**:data-[slot=command-input-wrapper]:h-11">

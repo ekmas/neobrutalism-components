@@ -13,9 +13,7 @@ import {
 export default function DrawerDemo() {
   return (
     <Drawer>
-      <DrawerTrigger asChild>
-        <Button>Open</Button>
-      </DrawerTrigger>
+      <DrawerTrigger render={<Button />}>Open</DrawerTrigger>
       <DrawerContent>
         <div className="mx-auto w-[300px]">
           <DrawerHeader>
@@ -24,13 +22,15 @@ export default function DrawerDemo() {
           </DrawerHeader>
           <DrawerFooter className="grid grid-cols-2">
             <Button variant="noShadow">Submit</Button>
-            <DrawerClose asChild>
-              <Button
-                className="bg-secondary-background text-foreground"
-                variant="noShadow"
-              >
-                Cancel
-              </Button>
+            <DrawerClose
+              render={
+                <Button
+                  className="bg-secondary-background text-foreground"
+                  variant="noShadow"
+                />
+              }
+            >
+              Cancel
             </DrawerClose>
           </DrawerFooter>
         </div>

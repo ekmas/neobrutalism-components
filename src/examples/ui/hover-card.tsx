@@ -8,8 +8,8 @@ import {
 export default function HoverCardDemo() {
   return (
     <HoverCard>
-      <HoverCardTrigger asChild>
-        <Button variant="noShadow">Hover</Button>
+      <HoverCardTrigger render={<Button variant="noShadow" />}>
+        Hover
       </HoverCardTrigger>
       <HoverCardContent>
         The React Framework – created and maintained by @vercel.

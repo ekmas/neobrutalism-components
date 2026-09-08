@@ -75,14 +75,6 @@ import SliderDemo from "@/examples/ui/slider"
 import SliderControlled from "@/examples/ui/slider/controlled"
 import TwoThumbsSliderDemo from "@/examples/ui/slider/two-thumbs"
 import VerticalSliderDemo from "@/examples/ui/slider/vertical"
-import SonnerDemo from "@/examples/ui/sonner"
-import SonnerActionDemo from "@/examples/ui/sonner/action"
-import SonnerCancelDemo from "@/examples/ui/sonner/cancel"
-import SonnerErrorDemo from "@/examples/ui/sonner/error"
-import SonnerInfoDemo from "@/examples/ui/sonner/info"
-import SonnerPromiseDemo from "@/examples/ui/sonner/promise"
-import SonnerSuccessDemo from "@/examples/ui/sonner/success"
-import SonnerWarningDemo from "@/examples/ui/sonner/warning"
 import SwitchDemo from "@/examples/ui/switch"
 import TableDemo from "@/examples/ui/table"
 import TabsDemo from "@/examples/ui/tabs"
@@ -336,20 +328,6 @@ const COMPONENTS: Component[] = [
       "two-thumbs": TwoThumbsSliderDemo,
       vertical: VerticalSliderDemo,
       controlled: SliderControlled,
-    },
-  },
-  {
-    name: "Sonner",
-    exampleComponent: SonnerDemo,
-    examples: {
-      default: SonnerDemo,
-      success: SonnerSuccessDemo,
-      info: SonnerInfoDemo,
-      warning: SonnerWarningDemo,
-      error: SonnerErrorDemo,
-      action: SonnerActionDemo,
-      cancel: SonnerCancelDemo,
-      promise: SonnerPromiseDemo,
     },
   },
   {

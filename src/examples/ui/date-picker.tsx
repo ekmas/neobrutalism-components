@@ -18,14 +18,16 @@ export default function DatePickerDemo() {
 
   return (
     <Popover>
-      <PopoverTrigger asChild>
-        <Button
-          variant="noShadow"
-          className="w-[280px] justify-start text-left font-base"
-        >
-          <CalendarIcon />
-          {date ? format(date, "PPP") : <span>Pick a date</span>}
-        </Button>
+      <PopoverTrigger
+        render={
+          <Button
+            variant="noShadow"
+            className="w-[280px] justify-start text-left font-base"
+          />
+        }
+      >
+        <CalendarIcon />
+        {date ? format(date, "PPP") : <span>Pick a date</span>}
       </PopoverTrigger>
       <PopoverContent className="w-auto border-0! p-0">
         <Calendar

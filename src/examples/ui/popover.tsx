@@ -10,10 +10,10 @@ import {
 export default function PopoverDemo() {
   return (
     <Popover>
-      <PopoverTrigger asChild>
-        <Button variant="noShadow">Open popover</Button>
+      <PopoverTrigger render={<Button variant="noShadow" />}>
+        Open popover
       </PopoverTrigger>
-      <PopoverContent className="w-80 text-main-foreground">
+      <PopoverContent className="w-80">
         <div className="grid gap-4">
           <div className="space-y-2">
             <h4 className="font-heading leading-none">Dimensions</h4>

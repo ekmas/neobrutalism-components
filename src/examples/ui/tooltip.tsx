@@ -10,8 +10,8 @@ export default function TooltipDemo() {
   return (
     <TooltipProvider>
       <Tooltip>
-        <TooltipTrigger asChild>
-          <Button variant="noShadow">Hover</Button>
+        <TooltipTrigger render={<Button variant="noShadow" />}>
+          Hover
         </TooltipTrigger>
         <TooltipContent>
           <p>Add to library</p>

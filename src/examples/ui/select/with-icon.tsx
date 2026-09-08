@@ -13,9 +13,39 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
+const charts = [
+  {
+    value: "line",
+    label: (
+      <>
+        <ChartLineIcon />
+        Line
+      </>
+    ),
+  },
+  {
+    value: "bar",
+    label: (
+      <>
+        <ChartBarIcon />
+        Bar
+      </>
+    ),
+  },
+  {
+    value: "pie",
+    label: (
+      <>
+        <ChartPieIcon />
+        Pie
+      </>
+    ),
+  },
+]
+
 export default function SelectDemo() {
   return (
-    <Select>
+    <Select items={charts}>
       <SelectTrigger className="w-[180px]">
         <SelectValue
           placeholder={
@@ -27,18 +57,11 @@ export default function SelectDemo() {
         />
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value="line">
-          <ChartLineIcon />
-          Line
-        </SelectItem>
-        <SelectItem value="bar">
-          <ChartBarIcon />
-          Bar
-        </SelectItem>
-        <SelectItem value="pie">
-          <ChartPieIcon />
-          Pie
-        </SelectItem>
+        {charts.map((chart) => (
+          <SelectItem key={chart.value} value={chart.value}>
+            {chart.label}
+          </SelectItem>
+        ))}
       </SelectContent>
     </Select>
   )

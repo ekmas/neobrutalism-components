@@ -15,7 +15,7 @@ export default function CarouselDemo() {
           {Array.from({ length: 5 }).map((_, index) => (
             <CarouselItem key={index}>
               <div className="p-[10px]">
-                <Card className="shadow-none p-0 bg-main text-main-foreground">
+                <Card className="shadow-none p-0 bg-background text-foreground">
                   <CardContent className="flex aspect-square items-center justify-center p-4">
                     <span className="text-3xl font-base">{index + 1}</span>
                   </CardContent>
