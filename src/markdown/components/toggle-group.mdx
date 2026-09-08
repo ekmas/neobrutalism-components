@@ -1,0 +1,65 @@
+---
+title: Toggle Group
+description: A set of two-state buttons that can be toggled on or off.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/toggle-group
+---
+
+<ComponentPreview component="toggle-group">
+  ```tsx file=<rootDir>/src/examples/ui/toggle-group/index.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+The component depends on the <Link href="/docs/toggle">Toggle</Link> component. Install it first.
+
+<Installation component="toggle-group">
+  ```tsx file=<rootDir>/src/components/ui/toggle-group.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
+```
+
+```tsx
+<ToggleGroup multiple>
+  <ToggleGroupItem value="a">A</ToggleGroupItem>
+  <ToggleGroupItem value="b">B</ToggleGroupItem>
+  <ToggleGroupItem value="c">C</ToggleGroupItem>
+</ToggleGroup>
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="toggle-group" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/toggle-group/index.tsx
+  ```
+</ComponentPreview>
+
+### Single
+
+<ComponentPreview component="toggle-group" example="single">
+  ```tsx file=<rootDir>/src/examples/ui/toggle-group/single.tsx
+  ```
+</ComponentPreview>
+
+### Spacing 0
+
+Set `spacing={0}` to join the items into a single bar.
+
+<ComponentPreview component="toggle-group" example="spacing-0">
+  ```tsx file=<rootDir>/src/examples/ui/toggle-group/spacing-0.tsx
+  ```
+</ComponentPreview>
+
+### Vertical
+
+<ComponentPreview component="toggle-group" example="vertical">
+  ```tsx file=<rootDir>/src/examples/ui/toggle-group/vertical.tsx
+  ```
+</ComponentPreview>
