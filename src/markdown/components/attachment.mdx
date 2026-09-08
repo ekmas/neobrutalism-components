@@ -1,0 +1,81 @@
+---
+title: Attachment
+description: Displays a file attachment with media, title, description and actions.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/attachment
+---
+
+<ComponentPreview component="attachment">
+  ```tsx file=<rootDir>/src/examples/ui/attachment/index.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+<Installation component="attachment">
+  ```tsx file=<rootDir>/src/components/ui/attachment.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import {
+  Attachment,
+  AttachmentMedia,
+  AttachmentContent,
+  AttachmentTitle,
+  AttachmentDescription,
+  AttachmentActions,
+  AttachmentAction,
+} from '@/components/ui/attachment'
+```
+
+```tsx
+<Attachment>
+  <AttachmentMedia>
+    <FileTextIcon />
+  </AttachmentMedia>
+  <AttachmentContent>
+    <AttachmentTitle>document.pdf</AttachmentTitle>
+    <AttachmentDescription>PDF · 2.4 MB</AttachmentDescription>
+  </AttachmentContent>
+  <AttachmentActions>
+    <AttachmentAction aria-label="Remove">
+      <XIcon />
+    </AttachmentAction>
+  </AttachmentActions>
+</Attachment>
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="attachment" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/attachment/index.tsx
+  ```
+</ComponentPreview>
+
+### States
+
+Use the `state` prop (`idle`, `uploading`, `processing`, `error` or `done`) to reflect the upload progress.
+
+<ComponentPreview component="attachment" example="states">
+  ```tsx file=<rootDir>/src/examples/ui/attachment/states.tsx
+  ```
+</ComponentPreview>
+
+### Image
+
+<ComponentPreview component="attachment" example="image">
+  ```tsx file=<rootDir>/src/examples/ui/attachment/image.tsx
+  ```
+</ComponentPreview>
+
+### Vertical
+
+<ComponentPreview component="attachment" example="vertical">
+  ```tsx file=<rootDir>/src/examples/ui/attachment/vertical.tsx
+  ```
+</ComponentPreview>
+

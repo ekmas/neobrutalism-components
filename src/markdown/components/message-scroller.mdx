@@ -1,0 +1,73 @@
+---
+title: Message Scroller
+description: A scroll container for chat messages with auto scroll and a scroll-to-end button.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/message-scroller
+---
+
+<ComponentPreview component="message-scroller">
+  ```tsx file=<rootDir>/src/examples/ui/message-scroller/index.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+The component depends on the `@shadcn/react` package. Install it first:
+
+```bash
+pnpm add @shadcn/react
+```
+
+<Installation component="message-scroller">
+  ```tsx file=<rootDir>/src/components/ui/message-scroller.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import {
+  MessageScrollerProvider,
+  MessageScroller,
+  MessageScrollerViewport,
+  MessageScrollerContent,
+  MessageScrollerItem,
+  MessageScrollerButton,
+} from '@/components/ui/message-scroller'
+```
+
+```tsx
+<MessageScrollerProvider>
+  <MessageScroller>
+    <MessageScrollerViewport>
+      <MessageScrollerContent>
+        {messages.map((message) => (
+          <MessageScrollerItem key={message.id} messageId={message.id}>
+            <Message>...</Message>
+          </MessageScrollerItem>
+        ))}
+      </MessageScrollerContent>
+    </MessageScrollerViewport>
+    <MessageScrollerButton />
+  </MessageScroller>
+</MessageScrollerProvider>
+```
+
+The scroller needs a parent with a fixed height. Use the `useMessageScroller` hook inside the provider to scroll programmatically (`scrollToEnd`, `scrollToStart`, `scrollToMessage`).
+
+## Examples
+
+### Default
+
+<ComponentPreview component="message-scroller" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/message-scroller/index.tsx
+  ```
+</ComponentPreview>
+
+### Add Messages
+
+New messages are scrolled into view automatically when the viewport is already at the end.
+
+<ComponentPreview component="message-scroller" example="add-messages">
+  ```tsx file=<rootDir>/src/examples/ui/message-scroller/add-messages.tsx
+  ```
+</ComponentPreview>

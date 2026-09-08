@@ -1,0 +1,75 @@
+---
+title: Questionnaire
+description: A multi-step form for asking questions with single choice, multiple choice and free-form answers.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/questionnaire
+---
+
+<ComponentPreview component="questionnaire">
+  ```tsx file=<rootDir>/src/examples/ui/questionnaire.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+The component depends on the `@shadcn/react` package. Install it first:
+
+```bash
+pnpm add @shadcn/react
+```
+
+<Installation component="questionnaire">
+  ```tsx file=<rootDir>/src/components/ui/questionnaire.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import {
+  Questionnaire,
+  QuestionnaireActions,
+  QuestionnaireChoice,
+  QuestionnaireChoices,
+  QuestionnaireDescription,
+  QuestionnaireError,
+  QuestionnaireInput,
+  QuestionnaireItem,
+  QuestionnaireNext,
+  QuestionnairePrevious,
+  QuestionnaireProgress,
+  QuestionnaireSkip,
+  QuestionnaireSubmit,
+  QuestionnaireTitle,
+} from '@/components/ui/questionnaire'
+```
+
+```tsx
+const items = [
+  { name: "plan", choices: [{ value: "free" }, { value: "pro" }], required: true },
+  { name: "notes" },
+] as const
+
+<Questionnaire items={items} onSubmit={handleSubmit}>
+  <QuestionnaireProgress />
+  <QuestionnaireItem name="plan" required>
+    <QuestionnaireTitle>Choose a plan</QuestionnaireTitle>
+    <QuestionnaireChoices>
+      <QuestionnaireChoice value="free">Free</QuestionnaireChoice>
+      <QuestionnaireChoice value="pro">Pro</QuestionnaireChoice>
+    </QuestionnaireChoices>
+    <QuestionnaireError />
+  </QuestionnaireItem>
+  <QuestionnaireItem name="notes">
+    <QuestionnaireTitle>Anything else?</QuestionnaireTitle>
+    <QuestionnaireInput placeholder="Type your answer..." />
+  </QuestionnaireItem>
+  <QuestionnaireActions>
+    <QuestionnairePrevious />
+    <QuestionnaireSkip />
+    <QuestionnaireNext />
+    <QuestionnaireSubmit />
+  </QuestionnaireActions>
+</Questionnaire>
+```
+
+`Questionnaire` renders a `form`. The `items` prop declares the steps (`name`, optional `choices` and `required`) and drives the progress, navigation and validation. Read the answers from the form's `FormData` in `onSubmit`. Add `multiple` to a `QuestionnaireItem` to allow several choices, and `shortcuts="letters"` or `shortcuts="numbers"` to the root to enable keyboard shortcuts for the choices.

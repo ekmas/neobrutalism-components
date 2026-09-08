@@ -1,0 +1,56 @@
+---
+title: Marker
+description: A small inline status or step marker for a conversation timeline.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/marker
+---
+
+<ComponentPreview component="marker">
+  ```tsx file=<rootDir>/src/examples/ui/marker/index.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+<Installation component="marker">
+  ```tsx file=<rootDir>/src/components/ui/marker.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import { Marker, MarkerIcon, MarkerContent } from '@/components/ui/marker'
+```
+
+```tsx
+<Marker>
+  <MarkerIcon>
+    <GlobeIcon />
+  </MarkerIcon>
+  <MarkerContent>Searched the web</MarkerContent>
+</Marker>
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="marker" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/marker/index.tsx
+  ```
+</ComponentPreview>
+
+### Separator
+
+<ComponentPreview component="marker" example="separator">
+  ```tsx file=<rootDir>/src/examples/ui/marker/separator.tsx
+  ```
+</ComponentPreview>
+
+
+### With Spinner
+
+<ComponentPreview component="marker" example="with-spinner">
+  ```tsx file=<rootDir>/src/examples/ui/marker/with-spinner.tsx
+  ```
+</ComponentPreview>
