@@ -24,7 +24,7 @@ export default function ItemWithImageDemo() {
         <ItemDescription>Building things for the web.</ItemDescription>
       </ItemContent>
       <ItemActions>
-        <Button variant="neutral" size="sm" className="shadow-none!">
+        <Button variant="noShadow" size="sm">
           Follow
         </Button>
       </ItemActions>

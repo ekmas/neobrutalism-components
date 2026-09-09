@@ -193,7 +193,7 @@ function ChartTooltipContent({
   return (
     <div
       className={cn(
-        "border-border bg-background grid min-w-[8rem] items-start gap-1.5 rounded-lg border px-2.5 py-1.5 text-xs shadow-xl",
+        "border-border bg-secondary-background grid min-w-[8rem] items-start gap-1.5 rounded-lg border-2 px-2.5 py-1.5 text-xs shadow-xl",
         className,
       )}
     >
@@ -226,9 +226,9 @@ function ChartTooltipContent({
                           className={cn(
                             "shrink-0 rounded-[2px] bg-(--color-bg)",
                             {
-                              "size-2.5 border border-border":
+                              "size-3.5 border border-border":
                                 indicator === "dot",
-                              "w-1": indicator === "line",
+                              "w-2 border border-border": indicator === "line",
                               "w-0 border-[1.5px] border-dashed bg-transparent":
                                 indicator === "dashed",
                               "my-0.5": nestLabel && indicator === "dashed",
@@ -237,7 +237,9 @@ function ChartTooltipContent({
                           style={
                             {
                               "--color-bg": indicatorColor,
-                              "--color-border": indicatorColor,
+                              ...(indicator === "dashed" && {
+                                "--color-border": indicatorColor,
+                              }),
                             } as React.CSSProperties
                           }
                         />
@@ -316,7 +318,7 @@ function ChartLegendContent({
                 <itemConfig.icon />
               ) : (
                 <div
-                  className="h-2 w-2 shrink-0 rounded-[2px] border border-border"
+                  className="h-3 w-3 shrink-0 rounded-[2px] border-2 border-border"
                   style={{
                     backgroundColor: item.color,
                   }}

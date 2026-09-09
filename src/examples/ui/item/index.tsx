@@ -23,7 +23,7 @@ export default function ItemDemo() {
         </ItemDescription>
       </ItemContent>
       <ItemActions>
-        <Button variant="neutral" size="sm" className="shadow-none!">
+        <Button variant="noShadow" size="sm">
           Action
         </Button>
       </ItemActions>
