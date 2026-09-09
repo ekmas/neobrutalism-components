@@ -50,10 +50,6 @@ const GETTING_STARTED_LINKS = [
     href: "/stars",
     text: "Stars",
   },
-  {
-    href: "/showcase",
-    text: "Showcase",
-  },
 ]
 
 const MAIN_SIDEBAR: SidebarItem[] = [
