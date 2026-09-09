@@ -5,15 +5,20 @@
   "title": "Neobrutalism Rose",
   "cssVars": {
     "light": {
-      "background": "oklch(93.37% 0.0339 12.05)",
+      "background": "hsl(355, 100%, 94%)",
       "secondary-background": "oklch(23.93% 0 0)",
-      "main": "oklch(70.79% 0.1862 16.25)",
+      "main": "hsl(353, 100%, 70%)",
       "ring": "oklch(0% 0 0)",
       "foreground": "oklch(0% 0 0)",
       "main-foreground": "oklch(0% 0 0)",
       "border": "oklch(0% 0 0)",
       "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
+      "shadow": "4px 4px 0px 0px var(--border)",
+      "chart-1": "#FF6678",
+      "chart-2": "#7A83FF",
+      "chart-3": "#FACC00",
+      "chart-4": "#00D696",
+      "chart-5": "#5294FF"
     },
     "theme": {
       "color-main": "var(--main)",

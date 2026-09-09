@@ -5,15 +5,20 @@
   "title": "Neobrutalism Orange",
   "cssVars": {
     "light": {
-      "background": "oklch(95.38% 0.0357 72.89)",
+      "background": "hsl(33, 100%, 92%)",
       "secondary-background": "oklch(23.93% 0 0)",
-      "main": "oklch(72.27% 0.1894 50.19)",
+      "main": "hsl(28, 100%, 51%)",
       "ring": "oklch(0% 0 0)",
       "foreground": "oklch(0% 0 0)",
       "main-foreground": "oklch(0% 0 0)",
       "border": "oklch(0% 0 0)",
       "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
+      "shadow": "4px 4px 0px 0px var(--border)",
+      "chart-1": "#FF7A05",
+      "chart-2": "#0099FF",
+      "chart-3": "#FFBF00",
+      "chart-4": "#00D696",
+      "chart-5": "#7A83FF"
     },
     "theme": {
       "color-main": "var(--main)",

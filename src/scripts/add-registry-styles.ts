@@ -1,14 +1,30 @@
 import fs from "fs"
 import path from "path"
 
-import colors from "@/data/colors"
+import colors, { ColorMode, ColorPalette } from "@/data/colors"
+
+const capitalize = (value: string) =>
+  value.charAt(0).toUpperCase() + value.slice(1)
+
+// Monochromatic palettes keep their original file names (e.g. blue.json),
+// duotone palettes get a "-duotone" suffix (e.g. blue-duotone.json).
+const PALETTES = (Object.keys(colors) as ColorMode[]).flatMap((mode) =>
+  colors[mode].map((color: ColorPalette) => ({
+    ...color,
+    id: mode === "monochromatic" ? color.name : `${color.name}-${mode}`,
+    title:
+      mode === "monochromatic"
+        ? `Neobrutalism ${capitalize(color.name)}`
+        : `Neobrutalism ${capitalize(color.name)} ${capitalize(mode)}`,
+  })),
+)
 
 // First create all styles
-const STYLES = colors.map((color) => ({
-  name: `neobrutalism-${color.name}`,
+const STYLES = PALETTES.map((color) => ({
+  name: `neobrutalism-${color.id}`,
   type: "registry:style",
   $schema: "https://ui.shadcn.com/schema/registry-item.json",
-  title: `Neobrutalism ${color.name.charAt(0).toUpperCase() + color.name.slice(1)}`,
+  title: color.title,
   cssVars: {
     light: {
       background: color.bg,
@@ -20,6 +36,11 @@ const STYLES = colors.map((color) => ({
       border: "oklch(0% 0 0)",
       overlay: "rgba(0, 0, 0, 0.8)",
       shadow: "4px 4px 0px 0px var(--border)",
+      "chart-1": color.chart1,
+      "chart-2": color.chart2,
+      "chart-3": color.chart3,
+      "chart-4": color.chart4,
+      "chart-5": color.chart5,
     },
     theme: {
       "color-main": "var(--main)",

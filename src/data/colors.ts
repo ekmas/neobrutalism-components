@@ -1,10 +1,32 @@
-const colors = [
+export type ColorMode = "monochromatic" | "duotone"
+
+export type ColorPalette = {
+  name: string
+  main: string
+  bg: string
+  chart1: string
+  chart2: string
+  chart3: string
+  chart4: string
+  chart5: string
+}
+
+export const colorModes: { value: ColorMode; label: string }[] = [
+  { value: "monochromatic", label: "Monochromatic" },
+  { value: "duotone", label: "Duotone" },
+]
+
+export const DEFAULT_COLOR_MODE: ColorMode = "monochromatic"
+export const DEFAULT_COLOR_NAME = "blue"
+
+// Palettes are taken from the "Monochromatic color palettes" and
+// "Duotone mode palettes" frames in the Neobrutalism components Figma file.
+const monochromatic: ColorPalette[] = [
   {
     name: "red",
-    main: "oklch(67.28% 0.2147 24.22)",
-    bg: "oklch(93.3% 0.0339 17.77)",
-
-    chart1: "#FF4D50",
+    main: "hsl(359, 100%, 69%)",
+    bg: "hsl(0, 100%, 94%)",
+    chart1: "#FF6164",
     chart2: "#5294FF",
     chart3: "#FACC00",
     chart4: "#05E17A",
@@ -12,9 +34,8 @@ const colors = [
   },
   {
     name: "orange",
-    main: "oklch(72.27% 0.1894 50.19)",
-    bg: "oklch(95.38% 0.0357 72.89)",
-
+    main: "hsl(28, 100%, 51%)",
+    bg: "hsl(33, 100%, 92%)",
     chart1: "#FF7A05",
     chart2: "#0099FF",
     chart3: "#FFBF00",
@@ -23,9 +44,8 @@ const colors = [
   },
   {
     name: "amber",
-    main: "oklch(84.08% 0.1725 84.2)",
-    bg: "oklch(96.22% 0.0569 95.61)",
-
+    main: "hsl(45, 100%, 50%)",
+    bg: "hsl(48, 96%, 89%)",
     chart1: "#FFBF00",
     chart2: "#0099FF",
     chart3: "#FF7A05",
@@ -34,9 +54,8 @@ const colors = [
   },
   {
     name: "yellow",
-    main: "oklch(86.03% 0.176 92.36)",
-    bg: "oklch(96.79% 0.0654 102.26)",
-
+    main: "hsl(49, 100%, 49%)",
+    bg: "hsl(54, 92%, 88%)",
     chart1: "#FACC00",
     chart2: "#7A83FF",
     chart3: "#FF4D50",
@@ -45,9 +64,8 @@ const colors = [
   },
   {
     name: "lime",
-    main: "oklch(83.29% 0.2331 132.51)",
-    bg: "oklch(95.37% 0.0549 125.19)",
-
+    main: "hsl(84, 100%, 45%)",
+    bg: "hsl(84, 71%, 89%)",
     chart1: "#8AE500",
     chart2: "#0099FF",
     chart3: "#FF4D50",
@@ -56,10 +74,9 @@ const colors = [
   },
   {
     name: "green",
-    main: "oklch(79.76% 0.2044 153.08)",
-    bg: "oklch(96.47% 0.0401 157.79)",
-
-    chart1: "#00D696",
+    main: "hsl(152, 96%, 45%)",
+    bg: "hsl(142, 84%, 93%)",
+    chart1: "#05E17A",
     chart2: "#FF7A05",
     chart3: "#0099FF",
     chart4: "#FFBF00",
@@ -67,9 +84,8 @@ const colors = [
   },
   {
     name: "emerald",
-    main: "oklch(77.54% 0.1681 162.78)",
-    bg: "oklch(95.31% 0.0496 169.04)",
-
+    main: "hsl(162, 100%, 42%)",
+    bg: "hsl(156, 84%, 90%)",
     chart1: "#00D696",
     chart2: "#7A83FF",
     chart3: "#FACC00",
@@ -78,9 +94,8 @@ const colors = [
   },
   {
     name: "teal",
-    main: "oklch(78.57% 0.1422 180.36)",
-    bg: "oklch(95.08% 0.0481 184.07)",
-
+    main: "hsl(173, 100%, 42%)",
+    bg: "hsl(170, 82%, 89%)",
     chart1: "#00D6BD",
     chart2: "#0099FF",
     chart3: "#7A83FF",
@@ -89,9 +104,8 @@ const colors = [
   },
   {
     name: "cyan",
-    main: "oklch(76.89% 0.139164 219.13)",
-    bg: "oklch(94.61% 0.043 211.12)",
-
+    main: "hsl(190, 100%, 47%)",
+    bg: "hsl(190, 95%, 90%)",
     chart1: "#00C8F0",
     chart2: "#FF7A05",
     chart3: "#7A83FF",
@@ -100,9 +114,8 @@ const colors = [
   },
   {
     name: "sky",
-    main: "oklch(66.9% 0.18368 248.8066)",
-    bg: "oklch(94.27% 0.0268 242.57)",
-
+    main: "hsl(204, 100%, 50%)",
+    bg: "hsl(207, 89%, 93%)",
     chart1: "#0099FF",
     chart2: "#FF4D50",
     chart3: "#FACC00",
@@ -111,9 +124,8 @@ const colors = [
   },
   {
     name: "blue",
-    main: "oklch(67.47% 0.1726 259.49)",
-    bg: "oklch(93.46% 0.0305 255.11)",
-
+    main: "hsl(217, 100%, 66%)",
+    bg: "hsl(214, 95%, 93%)",
     chart1: "#5294FF",
     chart2: "#FF4D50",
     chart3: "#FACC00",
@@ -122,10 +134,9 @@ const colors = [
   },
   {
     name: "indigo",
-    main: "oklch(66.34% 0.1806 277.2)",
-    bg: "oklch(92.13% 0.0388 282.36)",
-
-    chart1: "#7A83FF",
+    main: "hsl(236, 100%, 76%)",
+    bg: "hsl(236, 100%, 94%)",
+    chart1: "#858DFF",
     chart2: "#FACC00",
     chart3: "#FF4D50",
     chart4: "#00D696",
@@ -133,9 +144,8 @@ const colors = [
   },
   {
     name: "violet",
-    main: "oklch(70.28% 0.1753 295.36)",
-    bg: "oklch(93.88% 0.033 300.19)",
-
+    main: "hsl(258, 100%, 76%)",
+    bg: "hsl(259, 94%, 95%)",
     chart1: "#A985FF",
     chart2: "#00D696",
     chart3: "#FACC00",
@@ -144,20 +154,18 @@ const colors = [
   },
   {
     name: "purple",
-    main: "oklch(71.9% 0.198 310.03)",
-    bg: "oklch(94.11% 0.036556 308.0303)",
-
+    main: "hsl(276, 100%, 74%)",
+    bg: "hsl(270, 100%, 95%)",
     chart1: "#CA7AFF",
-    chart2: "#FACC00",
+    chart2: "#FFBF00",
     chart3: "#00D696",
     chart4: "#FF7A05",
     chart5: "#0099FF",
   },
   {
     name: "fuchsia",
-    main: "oklch(73.43% 0.2332 321.41)",
-    bg: "oklch(94.79% 0.0407 320.6)",
-
+    main: "hsl(291, 100%, 71%)",
+    bg: "hsl(290, 100%, 95%)",
     chart1: "#E96BFF",
     chart2: "#FACC00",
     chart3: "#FF7A05",
@@ -166,9 +174,8 @@ const colors = [
   },
   {
     name: "pink",
-    main: "oklch(71.5% 0.197 354.23)",
-    bg: "oklch(95.16% 0.0242 343.23)",
-
+    main: "hsl(332, 96%, 69%)",
+    bg: "hsl(327, 73%, 95%)",
     chart1: "#FC64AB",
     chart2: "#FACC00",
     chart3: "#FF7A05",
@@ -177,9 +184,8 @@ const colors = [
   },
   {
     name: "rose",
-    main: "oklch(70.79% 0.1862 16.25)",
-    bg: "oklch(93.37% 0.0339 12.05)",
-
+    main: "hsl(353, 100%, 70%)",
+    bg: "hsl(355, 100%, 94%)",
     chart1: "#FF6678",
     chart2: "#7A83FF",
     chart3: "#FACC00",
@@ -187,5 +193,152 @@ const colors = [
     chart5: "#5294FF",
   },
 ]
+
+const duotone: ColorPalette[] = [
+  {
+    name: "red",
+    main: "hsl(359, 100%, 69%)",
+    bg: "hsl(204, 100%, 80%)",
+    chart1: "#FF6164",
+    chart2: "#0099FF",
+    chart3: "#FACC00",
+    chart4: "#05E17A",
+    chart5: "#7A83FF",
+  },
+  {
+    name: "orange",
+    main: "hsl(28, 100%, 51%)",
+    bg: "hsl(204, 100%, 80%)",
+    chart1: "#FF7A05",
+    chart2: "#0099FF",
+    chart3: "#FFBF00",
+    chart4: "#00D696",
+    chart5: "#7A83FF",
+  },
+  {
+    name: "amber",
+    main: "hsl(45, 100%, 50%)",
+    bg: "hsl(28, 100%, 80%)",
+    chart1: "#FFBF00",
+    chart2: "#FF7A05",
+    chart3: "#0099FF",
+    chart4: "#00D696",
+    chart5: "#7A83FF",
+  },
+  {
+    name: "yellow",
+    main: "hsl(49, 100%, 49%)",
+    bg: "hsl(236, 100%, 80%)",
+    chart1: "#FACC00",
+    chart2: "#7A83FF",
+    chart3: "#FF4D50",
+    chart4: "#00D696",
+    chart5: "#0099FF",
+  },
+  {
+    name: "lime",
+    main: "hsl(84, 100%, 45%)",
+    bg: "hsl(204, 100%, 80%)",
+    chart1: "#8AE500",
+    chart2: "#0099FF",
+    chart3: "#FF4D50",
+    chart4: "#FACC00",
+    chart5: "#7A83FF",
+  },
+  {
+    name: "green",
+    main: "hsl(152, 96%, 45%)",
+    bg: "hsl(28, 100%, 80%)",
+    chart1: "#05E17A",
+    chart2: "#FF7A05",
+    chart3: "#0099FF",
+    chart4: "#FFBF00",
+    chart5: "#7A83FF",
+  },
+  {
+    name: "emerald",
+    main: "hsl(162, 100%, 42%)",
+    bg: "hsl(236, 100%, 80%)",
+    chart1: "#00D696",
+    chart2: "#7A83FF",
+    chart3: "#FACC00",
+    chart4: "#FF4D50",
+    chart5: "#0099FF",
+  },
+  {
+    name: "teal",
+    main: "hsl(173, 100%, 42%)",
+    bg: "hsl(204, 100%, 80%)",
+    chart1: "#00D6BD",
+    chart2: "#0099FF",
+    chart3: "#7A83FF",
+    chart4: "#FF4D50",
+    chart5: "#FACC00",
+  },
+  {
+    name: "cyan",
+    main: "hsl(190, 100%, 47%)",
+    bg: "hsl(28, 100%, 80%)",
+    chart1: "#00C8F0",
+    chart2: "#FF7A05",
+    chart3: "#7A83FF",
+    chart4: "#FF4D50",
+    chart5: "#FACC00",
+  },
+  {
+    name: "sky",
+    main: "hsl(204, 100%, 50%)",
+    bg: "hsl(236, 100%, 80%)",
+    chart1: "#0099FF",
+    chart2: "#7A83FF",
+    chart3: "#FACC00",
+    chart4: "#05E17A",
+    chart5: "#FF4D50",
+  },
+  {
+    name: "violet",
+    main: "hsl(258, 100%, 76%)",
+    bg: "hsl(162, 100%, 80%)",
+    chart1: "#A985FF",
+    chart2: "#00D696",
+    chart3: "#FACC00",
+    chart4: "#FF4D50",
+    chart5: "#0099FF",
+  },
+  {
+    name: "fuchsia",
+    main: "hsl(291, 100%, 71%)",
+    bg: "hsl(49, 100%, 80%)",
+    chart1: "#E96BFF",
+    chart2: "#FACC00",
+    chart3: "#FF7A05",
+    chart4: "#FF4D50",
+    chart5: "#7A83FF",
+  },
+  {
+    name: "rose",
+    main: "hsl(353, 100%, 70%)",
+    bg: "hsl(236, 100%, 80%)",
+    chart1: "#FF6678",
+    chart2: "#7A83FF",
+    chart3: "#FACC00",
+    chart4: "#00D696",
+    chart5: "#5294FF",
+  },
+]
+
+const colors: Record<ColorMode, ColorPalette[]> = {
+  monochromatic,
+  duotone,
+}
+
+export function getPalette(mode: ColorMode, name: string) {
+  return colors[mode].find((palette) => palette.name === name)
+}
+
+export const defaultPalette = getPalette(
+  DEFAULT_COLOR_MODE,
+  DEFAULT_COLOR_NAME,
+)!
 
 export default colors

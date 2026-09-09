@@ -4,6 +4,8 @@ import { CheckCircle2Icon } from "lucide-react"
 
 import { useState } from "react"
 
+import { getPalette } from "@/data/colors"
+
 import {
   Accordion,
   AccordionContent,
@@ -26,42 +28,35 @@ import {
 const previewStyling = [
   {
     name: "blue",
-    main: "bg-[#5294FF]",
-    bg: "bg-[#DCEBFE]",
     rounded: "rounded-[5px]!",
-    shadow: "shadow-[4px_4px_0_0_rgba(0,0,0,1)]!",
     boxShadow: "4px 4px 0 0 rgba(0,0,0,1)",
   },
   {
     name: "green",
-    main: "bg-[#05E17A]",
-    bg: "bg-[#DEFCE9]",
     rounded: "rounded-[15px]!",
-    shadow: "shadow-[0_4px_0_0_rgba(0,0,0,1)]!",
     boxShadow: "0 4px 0 0 rgba(0,0,0,1)",
   },
   {
     name: "orange",
-    main: "bg-[#FF7A05]",
-    bg: "bg-[#FFEDD6]",
     rounded: "rounded-[10px]!",
-    shadow: "shadow-[-4px_-4px_0_0_rgba(0,0,0,1)]!",
     boxShadow: "-4px -4px 0 0 rgba(0,0,0,1)",
   },
   {
     name: "violet",
-    main: "bg-[#A985FF]",
-    bg: "bg-[#EEE6FE]",
     rounded: "rounded-none!",
-    shadow: "shadow-[4px_-4px_0_0_rgba(0,0,0,1)]!",
     boxShadow: "4px -4px 0 0 rgba(0,0,0,1)",
   },
-]
+].map((item) => {
+  const palette = getPalette("monochromatic", item.name)!
+  return { ...item, main: palette.main, bg: palette.bg }
+})
 
 export default function StylingCustomizer() {
   const [{ main, bg, rounded, boxShadow }, setStyling] = useState(
     previewStyling[0],
   )
+
+  const mainStyle = { backgroundColor: main }
 
   return (
     <div className="mx-auto max-w-[800px] w-full mt-20 sm:px-5 px-0">
@@ -70,7 +65,8 @@ export default function StylingCustomizer() {
           {previewStyling.map((color) => (
             <Button
               key={color.name}
-              className={`h-full border-2 border-border md:text-xl sm:text-sm text-xs sm:px-4 px-2 ${color.main}`}
+              className="h-full border-2 border-border md:text-xl sm:text-sm text-xs sm:px-4 px-2"
+              style={{ backgroundColor: color.main }}
               onClick={() => setStyling(color)}
             >
               try {color.name}
@@ -78,13 +74,12 @@ export default function StylingCustomizer() {
           ))}
         </div>
         <div
-          className={`${bg} sm:border-x-2 border-x-0 border-y-2 sm:shadow-shadow shadow-none flex flex-col justify-between sm:p-8 p-4 border-border h-[350px] bg-[linear-gradient(to_right,#80808033_1px,transparent_1px),linear-gradient(to_bottom,#80808033_1px,transparent_1px)] bg-[size:30px_30px] ${bg}`}
+          style={{ backgroundColor: bg }}
+          className="sm:border-x-2 border-x-0 border-y-2 sm:shadow-shadow shadow-none flex flex-col justify-between sm:p-8 p-4 border-border h-[350px] bg-[linear-gradient(to_right,#80808033_1px,transparent_1px),linear-gradient(to_bottom,#80808033_1px,transparent_1px)] bg-[size:30px_30px] transition-colors duration-200"
         >
           <Alert
-            style={{
-              boxShadow,
-            }}
-            className={`${main} ${rounded} transition-all duration-200`}
+            style={{ ...mainStyle, boxShadow }}
+            className={`${rounded} transition-all duration-200`}
           >
             <CheckCircle2Icon />
             <AlertTitle>Success! Your changes have been saved</AlertTitle>
@@ -95,13 +90,11 @@ export default function StylingCustomizer() {
 
           <Accordion defaultValue={["item-1"]}>
             <AccordionItem
-              style={{
-                boxShadow,
-              }}
+              style={{ boxShadow }}
               className={`${rounded} transition-all duration-200`}
               value="item-1"
             >
-              <AccordionTrigger className={`${main}`}>
+              <AccordionTrigger style={mainStyle}>
                 Is it accessible?
               </AccordionTrigger>
               <AccordionContent>
@@ -112,23 +105,23 @@ export default function StylingCustomizer() {
 
           <div className="flex items-center justify-between gap-2">
             <Button
-              style={{
-                boxShadow,
-              }}
-              className={`${main} ${rounded} transition-all duration-200 pointer-events-none`}
+              style={{ ...mainStyle, boxShadow }}
+              className={`${rounded} transition-all duration-200 pointer-events-none`}
               size="sm"
             >
               Button
             </Button>
             <Button
               variant="noShadow"
-              className={`${main} ${rounded} transition-all duration-200`}
+              style={mainStyle}
+              className={`${rounded} transition-all duration-200`}
               size="sm"
             >
               Button
             </Button>
             <Badge
-              className={`${main} ${rounded} transition-all hidden md:block duration-200`}
+              style={mainStyle}
+              className={`${rounded} transition-all hidden md:block duration-200`}
             >
               Badge
             </Badge>
@@ -143,12 +136,14 @@ export default function StylingCustomizer() {
                 }}
               >
                 <SelectTrigger
-                  className={`${main} ${rounded} w-[180px] transition-all duration-200`}
+                  style={mainStyle}
+                  className={`${rounded} w-[180px] transition-all duration-200`}
                 >
                   <SelectValue placeholder="Select a fruit" />
                 </SelectTrigger>
                 <SelectContent
-                  className={`${main} ${rounded} transition-all duration-200`}
+                  style={mainStyle}
+                  className={`${rounded} transition-all duration-200`}
                 >
                   <SelectGroup>
                     <SelectLabel>Fruits</SelectLabel>

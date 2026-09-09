@@ -5,15 +5,20 @@
   "title": "Neobrutalism Purple",
   "cssVars": {
     "light": {
-      "background": "oklch(94.11% 0.036556 308.0303)",
+      "background": "hsl(270, 100%, 95%)",
       "secondary-background": "oklch(23.93% 0 0)",
-      "main": "oklch(71.9% 0.198 310.03)",
+      "main": "hsl(276, 100%, 74%)",
       "ring": "oklch(0% 0 0)",
       "foreground": "oklch(0% 0 0)",
       "main-foreground": "oklch(0% 0 0)",
       "border": "oklch(0% 0 0)",
       "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
+      "shadow": "4px 4px 0px 0px var(--border)",
+      "chart-1": "#CA7AFF",
+      "chart-2": "#FFBF00",
+      "chart-3": "#00D696",
+      "chart-4": "#FF7A05",
+      "chart-5": "#0099FF"
     },
     "theme": {
       "color-main": "var(--main)",

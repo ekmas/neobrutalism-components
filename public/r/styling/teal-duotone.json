@@ -1,24 +1,24 @@
 {
-  "name": "neobrutalism-blue",
+  "name": "neobrutalism-teal-duotone",
   "type": "registry:style",
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "title": "Neobrutalism Blue",
+  "title": "Neobrutalism Teal Duotone",
   "cssVars": {
     "light": {
-      "background": "hsl(214, 95%, 93%)",
+      "background": "hsl(204, 100%, 80%)",
       "secondary-background": "oklch(23.93% 0 0)",
-      "main": "hsl(217, 100%, 66%)",
+      "main": "hsl(173, 100%, 42%)",
       "ring": "oklch(0% 0 0)",
       "foreground": "oklch(0% 0 0)",
       "main-foreground": "oklch(0% 0 0)",
       "border": "oklch(0% 0 0)",
       "overlay": "rgba(0, 0, 0, 0.8)",
       "shadow": "4px 4px 0px 0px var(--border)",
-      "chart-1": "#5294FF",
-      "chart-2": "#FF4D50",
-      "chart-3": "#FACC00",
-      "chart-4": "#05E17A",
-      "chart-5": "#7A83FF"
+      "chart-1": "#00D6BD",
+      "chart-2": "#0099FF",
+      "chart-3": "#7A83FF",
+      "chart-4": "#FF4D50",
+      "chart-5": "#FACC00"
     },
     "theme": {
       "color-main": "var(--main)",

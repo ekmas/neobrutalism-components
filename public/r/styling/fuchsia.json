@@ -5,15 +5,20 @@
   "title": "Neobrutalism Fuchsia",
   "cssVars": {
     "light": {
-      "background": "oklch(94.79% 0.0407 320.6)",
+      "background": "hsl(290, 100%, 95%)",
       "secondary-background": "oklch(23.93% 0 0)",
-      "main": "oklch(73.43% 0.2332 321.41)",
+      "main": "hsl(291, 100%, 71%)",
       "ring": "oklch(0% 0 0)",
       "foreground": "oklch(0% 0 0)",
       "main-foreground": "oklch(0% 0 0)",
       "border": "oklch(0% 0 0)",
       "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
+      "shadow": "4px 4px 0px 0px var(--border)",
+      "chart-1": "#E96BFF",
+      "chart-2": "#FACC00",
+      "chart-3": "#FF7A05",
+      "chart-4": "#FF4D50",
+      "chart-5": "#7A83FF"
     },
     "theme": {
       "color-main": "var(--main)",

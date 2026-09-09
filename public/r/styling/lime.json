@@ -5,15 +5,20 @@
   "title": "Neobrutalism Lime",
   "cssVars": {
     "light": {
-      "background": "oklch(95.37% 0.0549 125.19)",
+      "background": "hsl(84, 71%, 89%)",
       "secondary-background": "oklch(23.93% 0 0)",
-      "main": "oklch(83.29% 0.2331 132.51)",
+      "main": "hsl(84, 100%, 45%)",
       "ring": "oklch(0% 0 0)",
       "foreground": "oklch(0% 0 0)",
       "main-foreground": "oklch(0% 0 0)",
       "border": "oklch(0% 0 0)",
       "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
+      "shadow": "4px 4px 0px 0px var(--border)",
+      "chart-1": "#8AE500",
+      "chart-2": "#0099FF",
+      "chart-3": "#FF4D50",
+      "chart-4": "#FACC00",
+      "chart-5": "#7A83FF"
     },
     "theme": {
       "color-main": "var(--main)",

@@ -5,15 +5,20 @@
   "title": "Neobrutalism Cyan",
   "cssVars": {
     "light": {
-      "background": "oklch(94.61% 0.043 211.12)",
+      "background": "hsl(190, 95%, 90%)",
       "secondary-background": "oklch(23.93% 0 0)",
-      "main": "oklch(76.89% 0.139164 219.13)",
+      "main": "hsl(190, 100%, 47%)",
       "ring": "oklch(0% 0 0)",
       "foreground": "oklch(0% 0 0)",
       "main-foreground": "oklch(0% 0 0)",
       "border": "oklch(0% 0 0)",
       "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
+      "shadow": "4px 4px 0px 0px var(--border)",
+      "chart-1": "#00C8F0",
+      "chart-2": "#FF7A05",
+      "chart-3": "#7A83FF",
+      "chart-4": "#FF4D50",
+      "chart-5": "#FACC00"
     },
     "theme": {
       "color-main": "var(--main)",

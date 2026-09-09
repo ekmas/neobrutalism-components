@@ -5,15 +5,20 @@
   "title": "Neobrutalism Red",
   "cssVars": {
     "light": {
-      "background": "oklch(93.3% 0.0339 17.77)",
+      "background": "hsl(0, 100%, 94%)",
       "secondary-background": "oklch(23.93% 0 0)",
-      "main": "oklch(67.28% 0.2147 24.22)",
+      "main": "hsl(359, 100%, 69%)",
       "ring": "oklch(0% 0 0)",
       "foreground": "oklch(0% 0 0)",
       "main-foreground": "oklch(0% 0 0)",
       "border": "oklch(0% 0 0)",
       "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
+      "shadow": "4px 4px 0px 0px var(--border)",
+      "chart-1": "#FF6164",
+      "chart-2": "#5294FF",
+      "chart-3": "#FACC00",
+      "chart-4": "#05E17A",
+      "chart-5": "#7A83FF"
     },
     "theme": {
       "color-main": "var(--main)",

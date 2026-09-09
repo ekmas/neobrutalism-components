@@ -5,15 +5,20 @@
   "title": "Neobrutalism Violet",
   "cssVars": {
     "light": {
-      "background": "oklch(93.88% 0.033 300.19)",
+      "background": "hsl(259, 94%, 95%)",
       "secondary-background": "oklch(23.93% 0 0)",
-      "main": "oklch(70.28% 0.1753 295.36)",
+      "main": "hsl(258, 100%, 76%)",
       "ring": "oklch(0% 0 0)",
       "foreground": "oklch(0% 0 0)",
       "main-foreground": "oklch(0% 0 0)",
       "border": "oklch(0% 0 0)",
       "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
+      "shadow": "4px 4px 0px 0px var(--border)",
+      "chart-1": "#A985FF",
+      "chart-2": "#00D696",
+      "chart-3": "#FACC00",
+      "chart-4": "#FF4D50",
+      "chart-5": "#0099FF"
     },
     "theme": {
       "color-main": "var(--main)",

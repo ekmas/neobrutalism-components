@@ -5,15 +5,20 @@
   "title": "Neobrutalism Teal",
   "cssVars": {
     "light": {
-      "background": "oklch(95.08% 0.0481 184.07)",
+      "background": "hsl(170, 82%, 89%)",
       "secondary-background": "oklch(23.93% 0 0)",
-      "main": "oklch(78.57% 0.1422 180.36)",
+      "main": "hsl(173, 100%, 42%)",
       "ring": "oklch(0% 0 0)",
       "foreground": "oklch(0% 0 0)",
       "main-foreground": "oklch(0% 0 0)",
       "border": "oklch(0% 0 0)",
       "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
+      "shadow": "4px 4px 0px 0px var(--border)",
+      "chart-1": "#00D6BD",
+      "chart-2": "#0099FF",
+      "chart-3": "#7A83FF",
+      "chart-4": "#FF4D50",
+      "chart-5": "#FACC00"
     },
     "theme": {
       "color-main": "var(--main)",

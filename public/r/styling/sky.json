@@ -5,15 +5,20 @@
   "title": "Neobrutalism Sky",
   "cssVars": {
     "light": {
-      "background": "oklch(94.27% 0.0268 242.57)",
+      "background": "hsl(207, 89%, 93%)",
       "secondary-background": "oklch(23.93% 0 0)",
-      "main": "oklch(66.9% 0.18368 248.8066)",
+      "main": "hsl(204, 100%, 50%)",
       "ring": "oklch(0% 0 0)",
       "foreground": "oklch(0% 0 0)",
       "main-foreground": "oklch(0% 0 0)",
       "border": "oklch(0% 0 0)",
       "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
+      "shadow": "4px 4px 0px 0px var(--border)",
+      "chart-1": "#0099FF",
+      "chart-2": "#FF4D50",
+      "chart-3": "#FACC00",
+      "chart-4": "#05E17A",
+      "chart-5": "#7A83FF"
     },
     "theme": {
       "color-main": "var(--main)",

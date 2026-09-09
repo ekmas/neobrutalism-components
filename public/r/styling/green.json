@@ -5,15 +5,20 @@
   "title": "Neobrutalism Green",
   "cssVars": {
     "light": {
-      "background": "oklch(96.47% 0.0401 157.79)",
+      "background": "hsl(142, 84%, 93%)",
       "secondary-background": "oklch(23.93% 0 0)",
-      "main": "oklch(79.76% 0.2044 153.08)",
+      "main": "hsl(152, 96%, 45%)",
       "ring": "oklch(0% 0 0)",
       "foreground": "oklch(0% 0 0)",
       "main-foreground": "oklch(0% 0 0)",
       "border": "oklch(0% 0 0)",
       "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
+      "shadow": "4px 4px 0px 0px var(--border)",
+      "chart-1": "#05E17A",
+      "chart-2": "#FF7A05",
+      "chart-3": "#0099FF",
+      "chart-4": "#FFBF00",
+      "chart-5": "#7A83FF"
     },
     "theme": {
       "color-main": "var(--main)",

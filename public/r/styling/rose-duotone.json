@@ -1,24 +1,24 @@
 {
-  "name": "neobrutalism-blue",
+  "name": "neobrutalism-rose-duotone",
   "type": "registry:style",
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "title": "Neobrutalism Blue",
+  "title": "Neobrutalism Rose Duotone",
   "cssVars": {
     "light": {
-      "background": "hsl(214, 95%, 93%)",
+      "background": "hsl(236, 100%, 80%)",
       "secondary-background": "oklch(23.93% 0 0)",
-      "main": "hsl(217, 100%, 66%)",
+      "main": "hsl(353, 100%, 70%)",
       "ring": "oklch(0% 0 0)",
       "foreground": "oklch(0% 0 0)",
       "main-foreground": "oklch(0% 0 0)",
       "border": "oklch(0% 0 0)",
       "overlay": "rgba(0, 0, 0, 0.8)",
       "shadow": "4px 4px 0px 0px var(--border)",
-      "chart-1": "#5294FF",
-      "chart-2": "#FF4D50",
+      "chart-1": "#FF6678",
+      "chart-2": "#7A83FF",
       "chart-3": "#FACC00",
-      "chart-4": "#05E17A",
-      "chart-5": "#7A83FF"
+      "chart-4": "#00D696",
+      "chart-5": "#5294FF"
     },
     "theme": {
       "color-main": "var(--main)",

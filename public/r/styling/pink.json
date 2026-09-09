@@ -5,15 +5,20 @@
   "title": "Neobrutalism Pink",
   "cssVars": {
     "light": {
-      "background": "oklch(95.16% 0.0242 343.23)",
+      "background": "hsl(327, 73%, 95%)",
       "secondary-background": "oklch(23.93% 0 0)",
-      "main": "oklch(71.5% 0.197 354.23)",
+      "main": "hsl(332, 96%, 69%)",
       "ring": "oklch(0% 0 0)",
       "foreground": "oklch(0% 0 0)",
       "main-foreground": "oklch(0% 0 0)",
       "border": "oklch(0% 0 0)",
       "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
+      "shadow": "4px 4px 0px 0px var(--border)",
+      "chart-1": "#FC64AB",
+      "chart-2": "#FACC00",
+      "chart-3": "#FF7A05",
+      "chart-4": "#FF4D50",
+      "chart-5": "#7A83FF"
     },
     "theme": {
       "color-main": "var(--main)",

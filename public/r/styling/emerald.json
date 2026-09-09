@@ -5,15 +5,20 @@
   "title": "Neobrutalism Emerald",
   "cssVars": {
     "light": {
-      "background": "oklch(95.31% 0.0496 169.04)",
+      "background": "hsl(156, 84%, 90%)",
       "secondary-background": "oklch(23.93% 0 0)",
-      "main": "oklch(77.54% 0.1681 162.78)",
+      "main": "hsl(162, 100%, 42%)",
       "ring": "oklch(0% 0 0)",
       "foreground": "oklch(0% 0 0)",
       "main-foreground": "oklch(0% 0 0)",
       "border": "oklch(0% 0 0)",
       "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
+      "shadow": "4px 4px 0px 0px var(--border)",
+      "chart-1": "#00D696",
+      "chart-2": "#7A83FF",
+      "chart-3": "#FACC00",
+      "chart-4": "#FF4D50",
+      "chart-5": "#0099FF"
     },
     "theme": {
       "color-main": "var(--main)",
