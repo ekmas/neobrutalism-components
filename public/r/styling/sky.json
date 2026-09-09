@@ -1,24 +1,36 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "neobrutalism-sky",
   "type": "registry:style",
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "extends": "none",
   "title": "Neobrutalism Sky",
+  "description": "A collection of neobrutalism-styled components based on shadcn/ui.",
+  "dependencies": [
+    "tw-animate-css",
+    "class-variance-authority",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://neobrutalism.dev/r/button.json"
+  ],
   "cssVars": {
     "light": {
       "background": "hsl(207, 89%, 93%)",
-      "secondary-background": "oklch(23.93% 0 0)",
+      "secondary-background": "oklch(100% 0 0)",
       "main": "hsl(204, 100%, 50%)",
       "ring": "oklch(0% 0 0)",
       "foreground": "oklch(0% 0 0)",
       "main-foreground": "oklch(0% 0 0)",
       "border": "oklch(0% 0 0)",
-      "overlay": "rgba(0, 0, 0, 0.8)",
+      "overlay": "oklch(0% 0 0 / 0.8)",
       "shadow": "4px 4px 0px 0px var(--border)",
       "chart-1": "#0099FF",
       "chart-2": "#FF4D50",
       "chart-3": "#FACC00",
       "chart-4": "#05E17A",
-      "chart-5": "#7A83FF"
+      "chart-5": "#7A83FF",
+      "chart-active-dot": "#000"
     },
     "theme": {
       "color-main": "var(--main)",
@@ -29,6 +41,11 @@
       "color-border": "var(--border)",
       "color-ring": "var(--ring)",
       "color-overlay": "var(--overlay)",
+      "color-chart-1": "var(--chart-1)",
+      "color-chart-2": "var(--chart-2)",
+      "color-chart-3": "var(--chart-3)",
+      "color-chart-4": "var(--chart-4)",
+      "color-chart-5": "var(--chart-5)",
       "spacing-boxShadowX": "4px",
       "spacing-boxShadowY": "4px",
       "spacing-reverseBoxShadowX": "-4px",
@@ -36,17 +53,55 @@
       "radius-base": "5px",
       "font-weight-base": "500",
       "font-weight-heading": "700",
-      "shadow-shadow": "var(--shadow)"
+      "shadow-shadow": "var(--shadow)",
+      "animate-marquee": "marquee 5s linear infinite",
+      "animate-marquee2": "marquee2 5s linear infinite"
     }
   },
-  "extends": "none",
-  "description": "A collection of neobrutalism-styled components based on shadcn/ui.",
-  "dependencies": [
-    "tw-animate-css",
-    "class-variance-authority",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "utils"
-  ]
+  "css": {
+    "@import \"tw-animate-css\"": {},
+    "@layer base": {
+      "body": {
+        "font-weight": "var(--font-weight-base)",
+        "color": "var(--foreground)"
+      },
+      "h1, h2, h3, h4, h5, h6": {
+        "font-weight": "var(--font-weight-heading)"
+      }
+    },
+    "@keyframes marquee": {
+      "0%": {
+        "transform": "translateX(0%)"
+      },
+      "100%": {
+        "transform": "translateX(-100%)"
+      }
+    },
+    "@keyframes marquee2": {
+      "0%": {
+        "transform": "translateX(100%)"
+      },
+      "100%": {
+        "transform": "translateX(0%)"
+      }
+    },
+    "body, .scrollbar": {
+      "--sb-track-color": "#ffffff",
+      "--sb-thumb-color": "#000000"
+    },
+    ".scrollbar::-webkit-scrollbar": {
+      "width": "16px"
+    },
+    ".scrollbar::-webkit-scrollbar-track": {
+      "background": "var(--sb-track-color)"
+    },
+    ".scrollbar::-webkit-scrollbar-thumb": {
+      "background": "var(--sb-thumb-color)"
+    },
+    "@supports not selector(::-webkit-scrollbar)": {
+      ".scrollbar": {
+        "scrollbar-color": "var(--sb-thumb-color) var(--sb-track-color)"
+      }
+    }
+  }
 }
