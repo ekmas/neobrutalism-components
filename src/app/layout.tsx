@@ -11,6 +11,7 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
   display: "swap",
   adjustFontFallback: false,
+  variable: "--font-dm-sans",
 })
 
 export const metadata: Metadata = {
@@ -56,8 +57,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html className="scroll-smooth" lang="en">
-      <body className={`${dmSans.className} isolate`}>
+    <html className={`${dmSans.variable} scroll-smooth`} lang="en">
+      <body className="isolate">
         <Navbar />
         {children}
         <SetStylingPref />

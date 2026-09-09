@@ -2,7 +2,15 @@
 
 import { useLayoutEffect, useState } from "react"
 
-import colors from "@/data/colors"
+import colors, {
+  ColorMode,
+  colorModes,
+  ColorPalette,
+  DEFAULT_COLOR_MODE,
+  defaultPalette,
+  getPalette,
+} from "@/data/colors"
+import fonts from "@/data/fonts"
 
 import { Pre } from "@/components/app/pre"
 import { Button } from "@/components/ui/button"
@@ -14,7 +22,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import {
   Select,
@@ -33,25 +40,77 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 
+import {
+  applyGoogleFont,
+  clearGoogleFont,
+  FONT_STORAGE_KEY,
+  getDefaultFont,
+  getGoogleFont,
+  isDefaultFont,
+  LoadedFont,
+  readStoredFont,
+} from "@/lib/google-fonts"
 import { cn } from "@/lib/utils"
 
-export default function Styling() {
-  const defaultColorPalette = colors[10]
+import PalettePreview from "./palette-preview"
 
-  const [{ bg, main, name, chart1, chart2, chart3, chart4, chart5 }, setColor] =
-    useState(defaultColorPalette)
+export const COLOR_MODE_STORAGE_KEY = "colorMode"
+
+function isColorMode(value: string | null): value is ColorMode {
+  return value !== null && value in colors
+}
+
+function readStoredPalette(): ColorPalette | null {
+  try {
+    const raw = localStorage.getItem("color")
+    return raw ? JSON.parse(raw) : null
+  } catch {
+    return null
+  }
+}
+
+function applyPalette(palette: ColorPalette) {
+  const r = window.document.documentElement
+  r.style.setProperty("--background", palette.bg)
+  r.style.setProperty("--main", palette.main)
+  r.style.setProperty("--chart-1", palette.chart1)
+  r.style.setProperty("--chart-2", palette.chart2)
+  r.style.setProperty("--chart-3", palette.chart3)
+  r.style.setProperty("--chart-4", palette.chart4)
+  r.style.setProperty("--chart-5", palette.chart5)
+}
+
+function capitalize(value: string) {
+  return value.charAt(0).toUpperCase() + value.slice(1)
+}
+
+export default function Styling() {
+  const [mode, setMode] = useState<ColorMode>(DEFAULT_COLOR_MODE)
+  const [palette, setPalette] = useState<ColorPalette>(defaultPalette)
   const [borderRadius, setBorderRadius] = useState(5)
   const [boxShadowLength, setBoxShadowLength] = useState([4, 4])
   const [fontWeight, setFontWeight] = useState([700, 500])
+  const [font, setFont] = useState<LoadedFont>(getDefaultFont)
+
+  const { name, bg, main, chart1, chart2, chart3, chart4, chart5 } = palette
 
   useLayoutEffect(() => {
-    const colorObj = JSON.parse(localStorage.getItem("color") as string)
+    const storedMode = localStorage.getItem(COLOR_MODE_STORAGE_KEY)
+    const storedPalette = readStoredPalette()
     const borderRadius = Number(localStorage.getItem("borderRadius"))
     const boxShadow = localStorage.getItem("boxShadow")?.split(",")
     const fontWeight = localStorage.getItem("fontWeight")?.split(",")
+    const storedFont = readStoredFont()
 
-    if (colorObj) {
-      setColor(colorObj)
+    const mode = isColorMode(storedMode) ? storedMode : DEFAULT_COLOR_MODE
+    setMode(mode)
+
+    if (storedPalette) {
+      // Prefer the current definition of the stored palette so older stored
+      // values pick up palette updates.
+      const resolved = getPalette(mode, storedPalette.name) ?? storedPalette
+      setPalette(resolved)
+      applyPalette(resolved)
     }
 
     if (borderRadius) {
@@ -65,24 +124,45 @@ export default function Styling() {
     if (fontWeight) {
       setFontWeight([+fontWeight[0], +fontWeight[1]])
     }
+
+    if (storedFont) {
+      setFont(storedFont)
+    }
   }, [])
+
+  const selectPalette = (next: ColorPalette) => {
+    setPalette(next)
+    applyPalette(next)
+    localStorage.setItem("color", JSON.stringify(next))
+  }
 
   const updateColor = (value: string | null) => {
     if (!value) return
-    const r = window.document.querySelector(":root") as HTMLElement
-    const color = colors.find((color) => color.name === value)!
+    const next = getPalette(mode, value)
+    if (next) selectPalette(next)
+  }
 
-    setColor(color)
+  const updateMode = (nextMode: ColorMode) => {
+    setMode(nextMode)
+    localStorage.setItem(COLOR_MODE_STORAGE_KEY, nextMode)
+    selectPalette(getPalette(nextMode, name) ?? colors[nextMode][0])
+  }
 
-    localStorage.setItem("color", JSON.stringify(color))
+  const updateFont = (family: string | null) => {
+    if (!family) return
 
-    r.style.setProperty("--background", color.bg)
-    r.style.setProperty("--main", color.main)
-    r.style.setProperty("--chart-1", color.chart1)
-    r.style.setProperty("--chart-2", color.chart2)
-    r.style.setProperty("--chart-3", color.chart3)
-    r.style.setProperty("--chart-4", color.chart4)
-    r.style.setProperty("--chart-5", color.chart5)
+    const resolved = getGoogleFont(family)
+    if (!resolved) return
+
+    setFont(resolved)
+
+    if (isDefaultFont(resolved.family)) {
+      clearGoogleFont()
+      localStorage.removeItem(FONT_STORAGE_KEY)
+    } else {
+      applyGoogleFont(resolved)
+      localStorage.setItem(FONT_STORAGE_KEY, JSON.stringify(resolved))
+    }
   }
 
   const updateBorderRadius = (value: number) => {
@@ -133,7 +213,8 @@ export default function Styling() {
   const resetStyling = () => {
     const r = window.document.querySelector(":root") as HTMLElement
 
-    updateColor(defaultColorPalette.name)
+    applyPalette(defaultPalette)
+    clearGoogleFont()
 
     r.style.setProperty("--border-radius", "5px")
     r.style.setProperty("--box-shadow-x", "4px")
@@ -141,17 +222,23 @@ export default function Styling() {
     r.style.setProperty("--heading-font-weight", "700")
     r.style.setProperty("--base-font-weight", "500")
 
-    setColor(defaultColorPalette)
+    setMode(DEFAULT_COLOR_MODE)
+    setPalette(defaultPalette)
     setBorderRadius(5)
     setBoxShadowLength([4, 4])
     setFontWeight([700, 500])
+    setFont(getDefaultFont())
 
     localStorage.clear()
   }
 
-  const styling = `@import "tailwindcss";
+  const knownFont = fonts.some((item) => item.name === font.family)
+
+  const styling = `@import url("${font.url}");
+@import "tailwindcss";
 @import "tw-animate-css";
 
+/* Neobrutalism ${mode} palette: ${name} */
 :root {
   --background: ${bg};
   --secondary-background: oklch(100% 0 0);
@@ -162,6 +249,7 @@ export default function Styling() {
   --ring: oklch(0% 0 0);
   --overlay: oklch(0% 0 0 / 0.8);
   --shadow: ${boxShadowLength[0]}px ${boxShadowLength[1]}px 0px 0px var(--border);
+  --base-font-family: "${font.family}", sans-serif;
   --chart-1: ${chart1};
   --chart-2: ${chart2};
   --chart-3: ${chart3};
@@ -194,10 +282,11 @@ export default function Styling() {
   --font-weight-base: ${fontWeight[1]};
   --font-weight-heading: ${fontWeight[0]};
 }
-  
+
 @layer base {
   body {
     @apply text-foreground font-base bg-background;
+    font-family: var(--base-font-family);
   }
 
   h1, h2, h3, h4, h5, h6{
@@ -213,15 +302,35 @@ export default function Styling() {
           <SheetHeader>
             <SheetTitle>Customize styling</SheetTitle>
           </SheetHeader>
-          <div className="grid flex-1 auto-rows-min overflow-y-auto gap-4 px-4">
+          <div className="grid flex-1 auto-rows-min overflow-y-auto gap-4 px-4 pb-2">
+            <div className="grid gap-3">
+              <Label>Color Mode</Label>
+              <div className="grid grid-cols-2 gap-2">
+                {colorModes.map((item) => (
+                  <Button
+                    onClick={() => updateMode(item.value)}
+                    className={cn(
+                      "h-8",
+                      mode === item.value
+                        ? "bg-main text-main-foreground"
+                        : "bg-secondary-background text-foreground",
+                    )}
+                    key={item.value}
+                    variant="noShadow"
+                  >
+                    {item.label}
+                  </Button>
+                ))}
+              </div>
+            </div>
             <div className="grid gap-3">
               <Label htmlFor="color">Color</Label>
               <Select
                 value={name}
                 onValueChange={updateColor}
-                items={colors.map((color) => ({
+                items={colors[mode].map((color) => ({
                   value: color.name,
-                  label: color.name,
+                  label: capitalize(color.name),
                 }))}
               >
                 <SelectTrigger
@@ -231,15 +340,47 @@ export default function Styling() {
                   <SelectValue placeholder="Select a color" />
                 </SelectTrigger>
                 <SelectContent className="bg-secondary-background text-foreground">
-                  {colors.map(({ name, main }) => (
-                    <SelectItem key={name} value={name}>
+                  {colors[mode].map((color) => (
+                    <SelectItem key={color.name} value={color.name}>
                       <div className="flex items-center gap-2">
-                        <div
-                          className="size-4 rounded-full border-2 border-border"
-                          style={{ backgroundColor: main }}
-                        />
-                        {name}
+                        <div className="flex overflow-hidden rounded-full border-2 border-border">
+                          <div
+                            className="size-4"
+                            style={{ backgroundColor: color.main }}
+                          />
+                          <div
+                            className="size-4"
+                            style={{ backgroundColor: color.bg }}
+                          />
+                        </div>
+                        {capitalize(color.name)}
                       </div>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <PalettePreview palette={palette} className="mt-1" />
+            </div>
+            <div className="grid gap-3">
+              <Label htmlFor="font">Font</Label>
+              <Select
+                value={knownFont ? font.family : null}
+                onValueChange={updateFont}
+                items={fonts.map((item) => ({
+                  value: item.name,
+                  label: item.name,
+                }))}
+              >
+                <SelectTrigger
+                  id="font"
+                  className="bg-secondary-background text-foreground"
+                >
+                  <SelectValue placeholder={font.family} />
+                </SelectTrigger>
+                <SelectContent className="bg-secondary-background text-foreground">
+                  {fonts.map((item) => (
+                    <SelectItem key={item.name} value={item.name}>
+                      {item.name}
                     </SelectItem>
                   ))}
                 </SelectContent>

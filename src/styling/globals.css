@@ -12,24 +12,26 @@
 
   --heading-font-weight: 700;
   --base-font-weight: 500;
+  /* Any Google font works here. --font-dm-sans is set by next/font on <html>. */
+  --base-font-family: var(--font-dm-sans), sans-serif;
 
-  --background: oklch(93.46% 0.0304 254.32);
+  --background: hsl(214, 95%, 93%);
   --secondary-background: oklch(100% 0 0);
   --foreground: oklch(0% 0 0);
   --main-foreground: oklch(0% 0 0);
 
-  --main: oklch(67.47% 0.1725 259.61);
+  --main: hsl(217, 100%, 66%);
   --border: oklch(0% 0 0);
   --ring: oklch(0% 0 0);
   --overlay: oklch(0% 0 0 / 0.8);
 
   --shadow: var(--box-shadow-x) var(--box-shadow-y) 0px 0px var(--border);
 
-  --chart-1: oklch(67.47% 0.1726 259.49);
-  --chart-2: oklch(67.28% 0.2147 24.22);
-  --chart-3: oklch(86.03% 0.176 92.36);
-  --chart-4: oklch(79.76% 0.2044 153.08);
-  --chart-5: oklch(66.34% 0.1806 277.2);
+  --chart-1: #5294ff;
+  --chart-2: #ff4d50;
+  --chart-3: #facc00;
+  --chart-4: #05e17a;
+  --chart-5: #7a83ff;
   --chart-active-dot: #000;
 }
 
@@ -89,6 +91,7 @@
 @layer base {
   body {
     @apply relative text-foreground font-base;
+    font-family: var(--base-font-family);
   }
 
   h1,

@@ -2,12 +2,15 @@
 
 import { useLayoutEffect } from "react"
 
+import { applyGoogleFont, readStoredFont } from "@/lib/google-fonts"
+
 export default function SetStylingPref() {
   useLayoutEffect(() => {
     const colorObj = JSON.parse(localStorage.getItem("color") as string)
     const borderRadius = localStorage.getItem("borderRadius")
     const boxShadow = localStorage.getItem("boxShadow")?.split(",")
     const fontWeight = localStorage.getItem("fontWeight")?.split(",")
+    const font = readStoredFont()
 
     const r = window.document.querySelector(":root") as HTMLElement
     if (colorObj) {
@@ -32,6 +35,10 @@ export default function SetStylingPref() {
     if (fontWeight) {
       r.style.setProperty("--heading-font-weight", fontWeight[0])
       r.style.setProperty("--base-font-weight", fontWeight[1])
+    }
+
+    if (font) {
+      applyGoogleFont(font)
     }
   }, [])
 
