@@ -36,7 +36,7 @@ export default function Sidebar() {
             {item.isNew && (
               <Badge
                 variant="neutral"
-                className="px-1.5 py-0 text-[10px] font-heading uppercase"
+                className="bg-chart-3 text-main-foreground px-1.5 py-0 text-[10px] font-heading uppercase"
               >
                 New
               </Badge>

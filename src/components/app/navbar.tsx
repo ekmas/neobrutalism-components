@@ -1,6 +1,7 @@
 import Link from "next/link"
 
 import Search from "@/components/app/search"
+import { Badge } from "@/components/ui/badge"
 
 async function getRepoData() {
   const res = await fetch(
@@ -40,17 +41,34 @@ async function Navbar() {
           <div className="items-center text-base font-base xl:gap-10 lg:flex gap-10 hidden">
             <Link href="/docs">Docs</Link>
 
-            <Link href="/docs/accordion">Components</Link>
+            <Link
+              className="flex items-center gap-2"
+              href="/docs/accordion"
+            >
+              Components
+              <Badge
+                variant="neutral"
+                className="bg-chart-3 text-main-foreground px-1.5 py-0 text-[10px] font-heading uppercase"
+              >
+                New
+              </Badge>
+            </Link>
 
-            <Link href="/styling">Styling</Link>
+            <Link className="flex items-center gap-2" href="/styling">
+              Styling
+              <Badge
+                variant="neutral"
+                className="bg-chart-3 text-main-foreground px-1.5 py-0 text-[10px] font-heading uppercase"
+              >
+                New
+              </Badge>
+            </Link>
 
             {/* <Link href="/blocks">Blocks</Link> */}
 
             <Link href="/charts">Charts</Link>
 
             <Link href="/stars">Stars</Link>
-
-            <Link href="/showcase">Showcase</Link>
           </div>
         </div>
 
