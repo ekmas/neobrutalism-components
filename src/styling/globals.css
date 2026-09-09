@@ -66,6 +66,8 @@
 
   --animate-marquee: marquee 5s linear infinite;
   --animate-marquee2: marquee2 5s linear infinite;
+  --animate-orbit: orbit 180s linear infinite;
+  --animate-orbit-reverse: orbit 180s linear infinite reverse;
 
   --spacing-container: 1300px;
 
@@ -86,11 +88,20 @@
       transform: translateX(0%);
     }
   }
+
+  @keyframes orbit {
+    from {
+      rotate: 0deg;
+    }
+    to {
+      rotate: 360deg;
+    }
+  }
 }
 
 @layer base {
   body {
-    @apply relative text-foreground font-base;
+    @apply text-foreground font-base relative;
     font-family: var(--base-font-family);
   }
 
@@ -180,9 +191,30 @@ body::-webkit-scrollbar-thumb,
 
 /* 8-bit pixel utilities (from 8bit.cnlibs.com) */
 @utility px-rounded-md {
-  --px: var(--pixel-size,3px);
-  --px2: calc(var(--pixel-size,3px) * 2);
-  --px-shape: polygon(0 var(--px2), var(--px) var(--px2), var(--px) var(--px), var(--px2) var(--px), var(--px2) 0, calc(100% - var(--px2)) 0, calc(100% - var(--px2)) var(--px), calc(100% - var(--px)) var(--px), calc(100% - var(--px)) var(--px2), 100% var(--px2), 100% calc(100% - var(--px2)), calc(100% - var(--px)) calc(100% - var(--px2)), calc(100% - var(--px)) calc(100% - var(--px)), calc(100% - var(--px2)) calc(100% - var(--px)), calc(100% - var(--px2)) 100%, var(--px2) 100%, var(--px2) calc(100% - var(--px)), var(--px) calc(100% - var(--px)), var(--px) calc(100% - var(--px2)), 0 calc(100% - var(--px2)));
+  --px: var(--pixel-size, 3px);
+  --px2: calc(var(--pixel-size, 3px) * 2);
+  --px-shape: polygon(
+    0 var(--px2),
+    var(--px) var(--px2),
+    var(--px) var(--px),
+    var(--px2) var(--px),
+    var(--px2) 0,
+    calc(100% - var(--px2)) 0,
+    calc(100% - var(--px2)) var(--px),
+    calc(100% - var(--px)) var(--px),
+    calc(100% - var(--px)) var(--px2),
+    100% var(--px2),
+    100% calc(100% - var(--px2)),
+    calc(100% - var(--px)) calc(100% - var(--px2)),
+    calc(100% - var(--px)) calc(100% - var(--px)),
+    calc(100% - var(--px2)) calc(100% - var(--px)),
+    calc(100% - var(--px2)) 100%,
+    var(--px2) 100%,
+    var(--px2) calc(100% - var(--px)),
+    var(--px) calc(100% - var(--px)),
+    var(--px) calc(100% - var(--px2)),
+    0 calc(100% - var(--px2))
+  );
   clip-path: var(--px-shape);
   border-radius: 0;
 }
@@ -192,17 +224,60 @@ body::-webkit-scrollbar-thumb,
   position: relative;
 
   &::before {
-    --px: var(--pixel-size,3px);
-    --px2: calc(var(--pixel-size,3px) * 2);
-    --pw: var(--px-border-width,2px);
+    --px: var(--pixel-size, 3px);
+    --px2: calc(var(--pixel-size, 3px) * 2);
+    --pw: var(--px-border-width, 2px);
     --pxw: calc(var(--px) + var(--pw));
     --px2w: calc(var(--px2) + var(--pw));
-    inset: var(--px-border-offset,0px);
+    inset: var(--px-border-offset, 0px);
     z-index: -1;
     pointer-events: none;
     content: "";
-    background: var(--px-border-color,var(--border));
-    clip-path: polygon(0 var(--px2), var(--px) var(--px2), var(--px) var(--px), var(--px2) var(--px), var(--px2) 0, calc(100% - var(--px2)) 0, calc(100% - var(--px2)) var(--px), calc(100% - var(--px)) var(--px), calc(100% - var(--px)) var(--px2), 100% var(--px2), 100% calc(100% - var(--px2)), calc(100% - var(--px)) calc(100% - var(--px2)), calc(100% - var(--px)) calc(100% - var(--px)), calc(100% - var(--px2)) calc(100% - var(--px)), calc(100% - var(--px2)) 100%, var(--px2) 100%, var(--px2) calc(100% - var(--px)), var(--px) calc(100% - var(--px)), var(--px) calc(100% - var(--px2)), 0 calc(100% - var(--px2)), 0 var(--px2), var(--pw) var(--px2w), var(--pw) calc(100% - var(--px2w)), var(--pxw) calc(100% - var(--px2w)), var(--pxw) calc(100% - var(--pxw)), var(--px2w) calc(100% - var(--pxw)), var(--px2w) calc(100% - var(--pw)), calc(100% - var(--px2w)) calc(100% - var(--pw)), calc(100% - var(--px2w)) calc(100% - var(--pxw)), calc(100% - var(--pxw)) calc(100% - var(--pxw)), calc(100% - var(--pxw)) calc(100% - var(--px2w)), calc(100% - var(--pw)) calc(100% - var(--px2w)), calc(100% - var(--pw)) var(--px2w), calc(100% - var(--pxw)) var(--px2w), calc(100% - var(--pxw)) var(--pxw), calc(100% - var(--px2w)) var(--pxw), calc(100% - var(--px2w)) var(--pw), var(--px2w) var(--pw), var(--px2w) var(--pxw), var(--pxw) var(--pxw), var(--pxw) var(--px2w), var(--pw) var(--px2w));
+    background: var(--px-border-color, var(--border));
+    clip-path: polygon(
+      0 var(--px2),
+      var(--px) var(--px2),
+      var(--px) var(--px),
+      var(--px2) var(--px),
+      var(--px2) 0,
+      calc(100% - var(--px2)) 0,
+      calc(100% - var(--px2)) var(--px),
+      calc(100% - var(--px)) var(--px),
+      calc(100% - var(--px)) var(--px2),
+      100% var(--px2),
+      100% calc(100% - var(--px2)),
+      calc(100% - var(--px)) calc(100% - var(--px2)),
+      calc(100% - var(--px)) calc(100% - var(--px)),
+      calc(100% - var(--px2)) calc(100% - var(--px)),
+      calc(100% - var(--px2)) 100%,
+      var(--px2) 100%,
+      var(--px2) calc(100% - var(--px)),
+      var(--px) calc(100% - var(--px)),
+      var(--px) calc(100% - var(--px2)),
+      0 calc(100% - var(--px2)),
+      0 var(--px2),
+      var(--pw) var(--px2w),
+      var(--pw) calc(100% - var(--px2w)),
+      var(--pxw) calc(100% - var(--px2w)),
+      var(--pxw) calc(100% - var(--pxw)),
+      var(--px2w) calc(100% - var(--pxw)),
+      var(--px2w) calc(100% - var(--pw)),
+      calc(100% - var(--px2w)) calc(100% - var(--pw)),
+      calc(100% - var(--px2w)) calc(100% - var(--pxw)),
+      calc(100% - var(--pxw)) calc(100% - var(--pxw)),
+      calc(100% - var(--pxw)) calc(100% - var(--px2w)),
+      calc(100% - var(--pw)) calc(100% - var(--px2w)),
+      calc(100% - var(--pw)) var(--px2w),
+      calc(100% - var(--pxw)) var(--px2w),
+      calc(100% - var(--pxw)) var(--pxw),
+      calc(100% - var(--px2w)) var(--pxw),
+      calc(100% - var(--px2w)) var(--pw),
+      var(--px2w) var(--pw),
+      var(--px2w) var(--pxw),
+      var(--pxw) var(--pxw),
+      var(--pxw) var(--px2w),
+      var(--pw) var(--px2w)
+    );
     position: absolute;
   }
 }
@@ -212,16 +287,16 @@ body::-webkit-scrollbar-thumb,
   position: relative;
 
   &:focus-visible {
-    background-color: var(--px-ring-color,var(--ring));
+    background-color: var(--px-ring-color, var(--ring));
   }
 
   &::after {
-    inset: var(--px-face-offset,var(--px-ring-width,2px));
+    inset: var(--px-face-offset, var(--px-ring-width, 2px));
     z-index: -2;
     pointer-events: none;
     content: "";
-    background: var(--px-bg,transparent);
-    clip-path: var(--px-shape,none);
+    background: var(--px-bg, transparent);
+    clip-path: var(--px-shape, none);
     position: absolute;
   }
 }
