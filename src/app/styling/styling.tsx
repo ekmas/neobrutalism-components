@@ -52,8 +52,6 @@ import {
 } from "@/lib/google-fonts"
 import { cn } from "@/lib/utils"
 
-import PalettePreview from "./palette-preview"
-
 export const COLOR_MODE_STORAGE_KEY = "colorMode"
 
 function isColorMode(value: string | null): value is ColorMode {
@@ -343,11 +341,12 @@ export default function Styling() {
                   {colors[mode].map((color) => (
                     <SelectItem key={color.name} value={color.name}>
                       <div className="flex items-center gap-2">
-                        <div className="flex overflow-hidden rounded-full border-2 border-border">
+                        <div className="flex overflow-hidden rounded-base border-2 border-border">
                           <div
                             className="size-4"
                             style={{ backgroundColor: color.main }}
                           />
+                          <div className="w-0.5 shrink-0 bg-border" />
                           <div
                             className="size-4"
                             style={{ backgroundColor: color.bg }}
@@ -359,7 +358,6 @@ export default function Styling() {
                   ))}
                 </SelectContent>
               </Select>
-              <PalettePreview palette={palette} className="mt-1" />
             </div>
             <div className="grid gap-3">
               <Label htmlFor="font">Font</Label>
