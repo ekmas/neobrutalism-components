@@ -135,7 +135,7 @@ function SelectLabel({
     <SelectPrimitive.GroupLabel
       data-slot="select-label"
       className={cn(
-        "border-2 border-transparent py-1.5 pr-8 pl-2 text-sm font-base text-foreground/80",
+        "border-2 border-transparent py-1.5 pr-8 pl-2 text-sm font-base text-foreground",
         className,
       )}
       {...props}
