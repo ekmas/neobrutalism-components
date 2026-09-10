@@ -14,7 +14,7 @@ import {
 
 const SHEET_SIDES = ["top", "right", "bottom", "left"] as const
 
-export default function SheetDemo() {
+export default function SheetSideDemo() {
   return (
     <div className="flex gap-2">
       {SHEET_SIDES.map((side) => (

@@ -65,7 +65,7 @@ export default function ComboboxWithCheckbox() {
         {selectedFrameworks.length > 0
           ? selectedFrameworks.map((framework) => framework.label).join(", ")
           : "Select frameworks (multi-select)..."}
-        <ChevronsUpDown className="text-muted-foreground" />
+        <ChevronsUpDown className="text-foreground" />
       </PopoverTrigger>
       <PopoverContent className="w-[300px] p-0 border-0" align="start">
         <Command className="**:data-[slot=command-input-wrapper]:h-11">

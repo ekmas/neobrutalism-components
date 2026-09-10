@@ -5,7 +5,7 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/checkbox
 ---
 
 <ComponentPreview component="checkbox">
-  ```tsx file=<rootDir>/src/examples/ui/checkbox.tsx
+  ```tsx file=<rootDir>/src/examples/ui/checkbox/index.tsx
   ```
 </ComponentPreview>
 
@@ -25,3 +25,66 @@ import { Checkbox } from '@/components/ui/checkbox'
 ```tsx
 <Checkbox />
 ```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="checkbox" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/checkbox/index.tsx
+  ```
+</ComponentPreview>
+
+### Invalid State
+
+Set `aria-invalid` on the checkbox and `data-invalid` on the [Field](/docs/field) wrapper to show the invalid styles.
+
+<ComponentPreview component="checkbox" example="invalid-state">
+  ```tsx file=<rootDir>/src/examples/ui/checkbox/invalid-state.tsx
+  ```
+</ComponentPreview>
+
+### Basic
+
+Pair the checkbox with `Field` and `FieldLabel` for proper layout and labeling.
+
+<ComponentPreview component="checkbox" example="basic">
+  ```tsx file=<rootDir>/src/examples/ui/checkbox/basic.tsx
+  ```
+</ComponentPreview>
+
+### Description
+
+Use `FieldContent` and `FieldDescription` for helper text.
+
+<ComponentPreview component="checkbox" example="description">
+  ```tsx file=<rootDir>/src/examples/ui/checkbox/description.tsx
+  ```
+</ComponentPreview>
+
+### Disabled
+
+Use the `disabled` prop to prevent interaction and add the `data-disabled` attribute to the `<Field>` component for disabled styles.
+
+<ComponentPreview component="checkbox" example="disabled">
+  ```tsx file=<rootDir>/src/examples/ui/checkbox/disabled.tsx
+  ```
+</ComponentPreview>
+
+### Group
+
+Use multiple fields to create a checkbox list.
+
+<ComponentPreview component="checkbox" example="group">
+  ```tsx file=<rootDir>/src/examples/ui/checkbox/group.tsx
+  ```
+</ComponentPreview>
+
+### Table
+
+Use checkboxes inside a [Table](/docs/table) to select rows.
+
+<ComponentPreview component="checkbox" example="table">
+  ```tsx file=<rootDir>/src/examples/ui/checkbox/table.tsx
+  ```
+</ComponentPreview>

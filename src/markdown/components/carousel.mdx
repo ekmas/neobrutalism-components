@@ -5,7 +5,7 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/carousel
 ---
 
 <ComponentPreview component="carousel">
-  ```tsx file=<rootDir>/src/examples/ui/carousel.tsx
+  ```tsx file=<rootDir>/src/examples/ui/carousel/index.tsx
   ```
 </ComponentPreview>
 
@@ -49,4 +49,134 @@ import {
     <CarouselNext />
   </Carousel>
 </div>
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="carousel" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/carousel/index.tsx
+  ```
+</ComponentPreview>
+
+### Sizes
+
+To set the size of the items, you can use the `basis` utility class on the `<CarouselItem />`.
+
+<ComponentPreview component="carousel" example="sizes">
+  ```tsx file=<rootDir>/src/examples/ui/carousel/sizes.tsx
+  ```
+</ComponentPreview>
+
+```tsx
+// 33% of the carousel width.
+<Carousel>
+  <CarouselContent>
+    <CarouselItem className="basis-1/3">...</CarouselItem>
+    <CarouselItem className="basis-1/3">...</CarouselItem>
+    <CarouselItem className="basis-1/3">...</CarouselItem>
+  </CarouselContent>
+</Carousel>
+```
+
+```tsx
+// 50% on small screens and 33% on larger screens.
+<Carousel>
+  <CarouselContent>
+    <CarouselItem className="md:basis-1/2 lg:basis-1/3">...</CarouselItem>
+    <CarouselItem className="md:basis-1/2 lg:basis-1/3">...</CarouselItem>
+    <CarouselItem className="md:basis-1/2 lg:basis-1/3">...</CarouselItem>
+  </CarouselContent>
+</Carousel>
+```
+
+### Spacing
+
+To set the spacing between the items, we use a `pl-[VALUE]` utility on the `<CarouselItem />` and a negative `-ml-[VALUE]` on the `<CarouselContent />`.
+
+<ComponentPreview component="carousel" example="spacing">
+  ```tsx file=<rootDir>/src/examples/ui/carousel/spacing.tsx
+  ```
+</ComponentPreview>
+
+```tsx
+<Carousel>
+  <CarouselContent className="-ml-4">
+    <CarouselItem className="pl-4">...</CarouselItem>
+    <CarouselItem className="pl-4">...</CarouselItem>
+    <CarouselItem className="pl-4">...</CarouselItem>
+  </CarouselContent>
+</Carousel>
+```
+
+```tsx
+<Carousel>
+  <CarouselContent className="-ml-2 md:-ml-4">
+    <CarouselItem className="pl-2 md:pl-4">...</CarouselItem>
+    <CarouselItem className="pl-2 md:pl-4">...</CarouselItem>
+    <CarouselItem className="pl-2 md:pl-4">...</CarouselItem>
+  </CarouselContent>
+</Carousel>
+```
+
+### Orientation
+
+Use the `orientation` prop to set the orientation of the carousel.
+
+<ComponentPreview component="carousel" example="orientation">
+  ```tsx file=<rootDir>/src/examples/ui/carousel/orientation.tsx
+  ```
+</ComponentPreview>
+
+```tsx
+<Carousel orientation="vertical | horizontal">
+  <CarouselContent>
+    <CarouselItem>...</CarouselItem>
+    <CarouselItem>...</CarouselItem>
+    <CarouselItem>...</CarouselItem>
+  </CarouselContent>
+</Carousel>
+```
+
+### API
+
+Use a state and the `setApi` prop to get an instance of the carousel API.
+
+<ComponentPreview component="carousel" example="api">
+  ```tsx file=<rootDir>/src/examples/ui/carousel/api.tsx
+  ```
+</ComponentPreview>
+
+```tsx
+import { type CarouselApi } from "@/components/ui/carousel"
+
+export function Example() {
+  const [api, setApi] = React.useState<CarouselApi>()
+  const [current, setCurrent] = React.useState(0)
+  const [count, setCount] = React.useState(0)
+
+  React.useEffect(() => {
+    if (!api) {
+      return
+    }
+
+    setCount(api.scrollSnapList().length)
+    setCurrent(api.selectedScrollSnap() + 1)
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1)
+    })
+  }, [api])
+
+  return (
+    <Carousel setApi={setApi}>
+      <CarouselContent>
+        <CarouselItem>...</CarouselItem>
+        <CarouselItem>...</CarouselItem>
+        <CarouselItem>...</CarouselItem>
+      </CarouselContent>
+    </Carousel>
+  )
+}
 ```

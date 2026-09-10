@@ -2,7 +2,7 @@ import { AlignCenterIcon, AlignLeftIcon, AlignRightIcon } from "lucide-react"
 
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 
-export default function ToggleGroupSpacing0Demo() {
+export default function ToggleGroupSpacingDemo() {
   return (
     <ToggleGroup spacing={0} defaultValue={["left"]}>
       <ToggleGroupItem value="left" aria-label="Align left">

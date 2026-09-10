@@ -12,14 +12,6 @@ export default function BubbleVariantsDemo() {
       <Bubble variant="muted">
         <BubbleContent>Muted bubbles blend into the background.</BubbleContent>
       </Bubble>
-      <Bubble variant="outline">
-        <BubbleContent>Outline bubbles only draw a border.</BubbleContent>
-      </Bubble>
-      <Bubble variant="ghost">
-        <BubbleContent>
-          Ghost bubbles have no frame and can take the full width.
-        </BubbleContent>
-      </Bubble>
       <Bubble variant="destructive">
         <BubbleContent>Destructive bubbles flag failed actions.</BubbleContent>
       </Bubble>

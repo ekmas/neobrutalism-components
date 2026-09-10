@@ -5,7 +5,7 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/alert-dialog
 ---
 
 <ComponentPreview component="alert-dialog">
-  ```tsx file=<rootDir>/src/examples/ui/alert-dialog.tsx
+  ```tsx file=<rootDir>/src/examples/ui/alert-dialog/index.tsx
   ```
 </ComponentPreview>
 
@@ -51,3 +51,57 @@ import { Button } from '@/components/ui/button'
   </AlertDialogContent>
 </AlertDialog>
 ```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="alert-dialog" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/alert-dialog/index.tsx
+  ```
+</ComponentPreview>
+
+### Basic
+
+A basic alert dialog with a title, description, and cancel and continue buttons.
+
+<ComponentPreview component="alert-dialog" example="basic">
+  ```tsx file=<rootDir>/src/examples/ui/alert-dialog/basic.tsx
+  ```
+</ComponentPreview>
+
+### Small
+
+Use the `size="sm"` prop on `AlertDialogContent` to make the alert dialog smaller.
+
+<ComponentPreview component="alert-dialog" example="small">
+  ```tsx file=<rootDir>/src/examples/ui/alert-dialog/small.tsx
+  ```
+</ComponentPreview>
+
+### Media
+
+Use the `AlertDialogMedia` component to add a media element such as an icon or image to the alert dialog.
+
+<ComponentPreview component="alert-dialog" example="media">
+  ```tsx file=<rootDir>/src/examples/ui/alert-dialog/media.tsx
+  ```
+</ComponentPreview>
+
+### Small with Media
+
+Use the `size="sm"` prop to make the alert dialog smaller and the `AlertDialogMedia` component to add a media element such as an icon or image to the alert dialog.
+
+<ComponentPreview component="alert-dialog" example="small-with-media">
+  ```tsx file=<rootDir>/src/examples/ui/alert-dialog/small-with-media.tsx
+  ```
+</ComponentPreview>
+
+### Destructive
+
+Use the `AlertDialogAction` component for the destructive action. There is no destructive button variant in this style, so pass a `className` to `AlertDialogMedia` to give the icon a warning treatment.
+
+<ComponentPreview component="alert-dialog" example="destructive">
+  ```tsx file=<rootDir>/src/examples/ui/alert-dialog/destructive.tsx
+  ```
+</ComponentPreview>

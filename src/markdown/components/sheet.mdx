@@ -65,13 +65,27 @@ import {
 
 ## Examples
 
+### Default
+
+<ComponentPreview component="sheet" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/sheet/index.tsx
+  ```
+</ComponentPreview>
+
 ### Side
 
-Use the side property to `<SheetContent />` to indicate the edge of the screen where the component will appear. The values can be `top`, `right`, `bottom` or `left`.
-
-<br />
+Use the `side` prop on `SheetContent` to set the edge of the screen where the sheet appears. Values are `top`, `right`, `bottom`, or `left`.
 
 <ComponentPreview component="sheet" example="side">
   ```tsx file=<rootDir>/src/examples/ui/sheet/side.tsx
+  ```
+</ComponentPreview>
+
+### No Close Button
+
+Use `showCloseButton={false}` on `SheetContent` to hide the close button.
+
+<ComponentPreview component="sheet" example="no-close-button">
+  ```tsx file=<rootDir>/src/examples/ui/sheet/no-close-button.tsx
   ```
 </ComponentPreview>

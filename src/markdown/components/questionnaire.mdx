@@ -5,7 +5,7 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/questionnaire
 ---
 
 <ComponentPreview component="questionnaire">
-  ```tsx file=<rootDir>/src/examples/ui/questionnaire.tsx
+  ```tsx file=<rootDir>/src/examples/ui/questionnaire/index.tsx
   ```
 </ComponentPreview>
 
@@ -73,3 +73,39 @@ const items = [
 ```
 
 `Questionnaire` renders a `form`. The `items` prop declares the steps (`name`, optional `choices` and `required`) and drives the progress, navigation and validation. Read the answers from the form's `FormData` in `onSubmit`. Add `multiple` to a `QuestionnaireItem` to allow several choices, and `shortcuts="letters"` or `shortcuts="numbers"` to the root to enable keyboard shortcuts for the choices.
+
+## Examples
+
+### Default
+
+<ComponentPreview component="questionnaire" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/questionnaire/index.tsx
+  ```
+</ComponentPreview>
+
+### Validation
+
+Free-text steps with `QuestionnaireInput`. Mark a step `required`, set the input `type`, and pass your own check to the `invalid` prop on `QuestionnaireItem`. `QuestionnaireError` shows its children as the message and blocks navigation until the answer is valid.
+
+<ComponentPreview component="questionnaire" example="validation">
+  ```tsx file=<rootDir>/src/examples/ui/questionnaire/validation.tsx
+  ```
+</ComponentPreview>
+
+### Controlled
+
+Control the active step with the `item` and `onItemChange` props on `Questionnaire` and drive any UI from it, like a [Progress](/docs/progress) bar.
+
+<ComponentPreview component="questionnaire" example="controlled">
+  ```tsx file=<rootDir>/src/examples/ui/questionnaire/controlled.tsx
+  ```
+</ComponentPreview>
+
+### Single Step
+
+A single question with `shortcuts="numbers"`, a preselected choice via `defaultChecked` and a `disabled` choice. Only `QuestionnaireSubmit` is needed since there is nothing to navigate.
+
+<ComponentPreview component="questionnaire" example="single-step">
+  ```tsx file=<rootDir>/src/examples/ui/questionnaire/single-step.tsx
+  ```
+</ComponentPreview>

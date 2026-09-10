@@ -44,3 +44,85 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
   ```tsx file=<rootDir>/src/examples/ui/avatar/fallback.tsx
   ```
 </ComponentPreview>
+
+### Basic
+
+A basic avatar component with an image and a fallback.
+
+<ComponentPreview component="avatar" example="basic">
+  ```tsx file=<rootDir>/src/examples/ui/avatar/basic.tsx
+  ```
+</ComponentPreview>
+
+### Badge
+
+Use the `AvatarBadge` component to add a badge to the avatar. The badge is positioned at the bottom right of the avatar.
+
+<ComponentPreview component="avatar" example="badge">
+  ```tsx file=<rootDir>/src/examples/ui/avatar/badge.tsx
+  ```
+</ComponentPreview>
+
+Use the `className` prop to add custom styles to the badge such as custom colors, sizes, etc.
+
+```tsx
+<Avatar>
+  <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+  <AvatarFallback>CN</AvatarFallback>
+  <AvatarBadge className="bg-green-600 dark:bg-green-800" />
+</Avatar>
+```
+
+### Badge with Icon
+
+You can also use an icon inside `<AvatarBadge>`.
+
+<ComponentPreview component="avatar" example="badge-with-icon">
+  ```tsx file=<rootDir>/src/examples/ui/avatar/badge-with-icon.tsx
+  ```
+</ComponentPreview>
+
+### Avatar Group
+
+Use the `AvatarGroup` component to add a group of avatars.
+
+<ComponentPreview component="avatar" example="avatar-group">
+  ```tsx file=<rootDir>/src/examples/ui/avatar/avatar-group.tsx
+  ```
+</ComponentPreview>
+
+### Avatar Group Count
+
+Use `<AvatarGroupCount>` to add a count to the group.
+
+<ComponentPreview component="avatar" example="avatar-group-count">
+  ```tsx file=<rootDir>/src/examples/ui/avatar/avatar-group-count.tsx
+  ```
+</ComponentPreview>
+
+### Avatar Group with Icon
+
+You can also use an icon inside `<AvatarGroupCount>`.
+
+<ComponentPreview component="avatar" example="avatar-group-with-icon">
+  ```tsx file=<rootDir>/src/examples/ui/avatar/avatar-group-with-icon.tsx
+  ```
+</ComponentPreview>
+
+### Sizes
+
+Use the `size` prop (`"sm"`, `"default"` or `"lg"`) to change the size of the avatar.
+
+<ComponentPreview component="avatar" example="sizes">
+  ```tsx file=<rootDir>/src/examples/ui/avatar/sizes.tsx
+  ```
+</ComponentPreview>
+
+### Dropdown
+
+You can use the `Avatar` component as a trigger for a [Dropdown Menu](/docs/dropdown-menu).
+
+<ComponentPreview component="avatar" example="dropdown">
+  ```tsx file=<rootDir>/src/examples/ui/avatar/dropdown.tsx
+  ```
+</ComponentPreview>

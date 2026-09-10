@@ -5,7 +5,7 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/card
 ---
 
 <ComponentPreview component="card">
-  ```tsx file=<rootDir>/src/examples/ui/card.tsx
+  ```tsx file=<rootDir>/src/examples/ui/card/index.tsx
   ```
 </ComponentPreview>
 
@@ -83,3 +83,39 @@ import { Label } from "@/components/ui/label"
   </CardFooter>
 </Card>
 ```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="card" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/card/index.tsx
+  ```
+</ComponentPreview>
+
+### Size
+
+Use the `size="sm"` prop to set the size of the card to small. The small size variant uses smaller spacing.
+
+<ComponentPreview component="card" example="size">
+  ```tsx file=<rootDir>/src/examples/ui/card/size.tsx
+  ```
+</ComponentPreview>
+
+### Spacing
+
+In addition to the `size` prop, you can use the `--card-spacing` CSS variable to control the spacing between sections and the inset of card parts.
+
+<ComponentPreview component="card" example="spacing">
+  ```tsx file=<rootDir>/src/examples/ui/card/spacing.tsx
+  ```
+</ComponentPreview>
+
+### Image
+
+Add an image before the card header to create a card with an image. Add `overflow-hidden` and `pt-0` to the `Card` so the image sits flush with the rounded border.
+
+<ComponentPreview component="card" example="image">
+  ```tsx file=<rootDir>/src/examples/ui/card/image.tsx
+  ```
+</ComponentPreview>

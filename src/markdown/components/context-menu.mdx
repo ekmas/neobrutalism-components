@@ -5,7 +5,7 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/context-menu
 ---
 
 <ComponentPreview component="context-menu">
-  ```tsx file=<rootDir>/src/examples/ui/context-menu.tsx
+  ```tsx file=<rootDir>/src/examples/ui/context-menu/index.tsx
   ```
 </ComponentPreview>
 
@@ -85,3 +85,93 @@ import {
   </ContextMenuContent>
 </ContextMenu>
 ```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="context-menu" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/context-menu/index.tsx
+  ```
+</ComponentPreview>
+
+### Basic
+
+A simple context menu with a few actions.
+
+<ComponentPreview component="context-menu" example="basic">
+  ```tsx file=<rootDir>/src/examples/ui/context-menu/basic.tsx
+  ```
+</ComponentPreview>
+
+### Submenu
+
+Use `ContextMenuSub` to nest secondary actions.
+
+<ComponentPreview component="context-menu" example="submenu">
+  ```tsx file=<rootDir>/src/examples/ui/context-menu/submenu.tsx
+  ```
+</ComponentPreview>
+
+### Shortcuts
+
+Add `ContextMenuShortcut` to show keyboard hints.
+
+<ComponentPreview component="context-menu" example="shortcuts">
+  ```tsx file=<rootDir>/src/examples/ui/context-menu/shortcuts.tsx
+  ```
+</ComponentPreview>
+
+### Groups
+
+Group related actions and separate them with dividers.
+
+<ComponentPreview component="context-menu" example="groups">
+  ```tsx file=<rootDir>/src/examples/ui/context-menu/groups.tsx
+  ```
+</ComponentPreview>
+
+### Icons
+
+Combine icons with labels for quick scanning.
+
+<ComponentPreview component="context-menu" example="icons">
+  ```tsx file=<rootDir>/src/examples/ui/context-menu/icons.tsx
+  ```
+</ComponentPreview>
+
+### Checkboxes
+
+Use `ContextMenuCheckboxItem` for toggles.
+
+<ComponentPreview component="context-menu" example="checkboxes">
+  ```tsx file=<rootDir>/src/examples/ui/context-menu/checkboxes.tsx
+  ```
+</ComponentPreview>
+
+### Radio
+
+Use `ContextMenuRadioItem` for exclusive choices.
+
+<ComponentPreview component="context-menu" example="radio">
+  ```tsx file=<rootDir>/src/examples/ui/context-menu/radio.tsx
+  ```
+</ComponentPreview>
+
+### Destructive
+
+Use `variant="destructive"` to style the menu item as destructive.
+
+<ComponentPreview component="context-menu" example="destructive">
+  ```tsx file=<rootDir>/src/examples/ui/context-menu/destructive.tsx
+  ```
+</ComponentPreview>
+
+### Sides
+
+Control menu placement with the `side` and `align` props.
+
+<ComponentPreview component="context-menu" example="sides">
+  ```tsx file=<rootDir>/src/examples/ui/context-menu/sides.tsx
+  ```
+</ComponentPreview>

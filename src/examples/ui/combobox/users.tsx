@@ -72,7 +72,7 @@ export default function UserCombobox() {
         ) : (
           "Select user..."
         )}
-        <ChevronsUpDown className="text-muted-foreground" />
+        <ChevronsUpDown className="text-foreground" />
       </PopoverTrigger>
       <PopoverContent className="w-(--anchor-width) border-0 p-0">
         <Command className="**:data-[slot=command-input-wrapper]:h-11">

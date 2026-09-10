@@ -5,7 +5,7 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/toast
 ---
 
 <ComponentPreview component="toast">
-  ```tsx file=<rootDir>/src/examples/ui/toast.tsx
+  ```tsx file=<rootDir>/src/examples/ui/toast/index.tsx
   ```
 </ComponentPreview>
 
@@ -70,3 +70,41 @@ toast.promise(saveChanges(), {
 ```
 
 This component replaces <a target="_blank" href="https://sonner.emilkowal.ski">sonner</a>. It is built on the Base UI toast primitive, so no extra dependency is needed.
+
+## Examples
+
+Each example below renders its own `<Toaster>` and reads the manager it provides with `useToastManager`, so the previews on this page stay independent of each other. In your app, render `<Toaster />` once in the root layout and call `toast.add` from anywhere.
+
+### Default
+
+<ComponentPreview component="toast" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/toast/index.tsx
+  ```
+</ComponentPreview>
+
+### Types
+
+Set the `type` option to render a status icon. The built-in renderer recognizes `success`, `info`, `warning`, `error`, and `loading`.
+
+<ComponentPreview component="toast" example="types">
+  ```tsx file=<rootDir>/src/examples/ui/toast/types.tsx
+  ```
+</ComponentPreview>
+
+### Action
+
+Pass button props with `actionProps` to render an action.
+
+<ComponentPreview component="toast" example="action">
+  ```tsx file=<rootDir>/src/examples/ui/toast/action.tsx
+  ```
+</ComponentPreview>
+
+### Promise
+
+Use `toast.promise` to update one toast as an asynchronous task moves through loading, success, and error states.
+
+<ComponentPreview component="toast" example="promise">
+  ```tsx file=<rootDir>/src/examples/ui/toast/promise.tsx
+  ```
+</ComponentPreview>

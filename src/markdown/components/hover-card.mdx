@@ -5,7 +5,7 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/hover-card
 ---
 
 <ComponentPreview component="hover-card">
-  ```tsx file=<rootDir>/src/examples/ui/hover-card.tsx
+  ```tsx file=<rootDir>/src/examples/ui/hover-card/index.tsx
   ```
 </ComponentPreview>
 
@@ -35,3 +35,30 @@ import {
   </HoverCardContent>
 </HoverCard>
 ```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="hover-card" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/hover-card/index.tsx
+  ```
+</ComponentPreview>
+
+### Basic
+
+Use `delay` and `closeDelay` on the trigger to control when the card opens and closes. `HoverCardTrigger` renders a link by default.
+
+<ComponentPreview component="hover-card" example="basic">
+  ```tsx file=<rootDir>/src/examples/ui/hover-card/basic.tsx
+  ```
+</ComponentPreview>
+
+### Sides
+
+Use the `side` prop on `HoverCardContent` to control which side of the trigger the card appears on.
+
+<ComponentPreview component="hover-card" example="sides">
+  ```tsx file=<rootDir>/src/examples/ui/hover-card/sides.tsx
+  ```
+</ComponentPreview>

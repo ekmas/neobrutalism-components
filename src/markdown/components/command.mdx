@@ -5,7 +5,7 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/command
 ---
 
 <ComponentPreview component="command">
-  ```tsx file=<rootDir>/src/examples/ui/command.tsx
+  ```tsx file=<rootDir>/src/examples/ui/command/index.tsx
   ```
 </ComponentPreview>
 
@@ -106,3 +106,48 @@ React.useEffect(() => {
   </CommandDialog>
 </>
 ```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="command" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/command/index.tsx
+  ```
+</ComponentPreview>
+
+### Basic
+
+A simple command menu in a dialog. `CommandDialog` already wraps its children in a `Command`, so you only need the input and the list.
+
+<ComponentPreview component="command" example="basic">
+  ```tsx file=<rootDir>/src/examples/ui/command/basic.tsx
+  ```
+</ComponentPreview>
+
+### Shortcuts
+
+Use `CommandShortcut` to show keyboard hints next to an item.
+
+<ComponentPreview component="command" example="shortcuts">
+  ```tsx file=<rootDir>/src/examples/ui/command/shortcuts.tsx
+  ```
+</ComponentPreview>
+
+### Groups
+
+A command menu with groups, icons and separators.
+
+<ComponentPreview component="command" example="groups">
+  ```tsx file=<rootDir>/src/examples/ui/command/groups.tsx
+  ```
+</ComponentPreview>
+
+### Scrollable
+
+Scrollable command menu with multiple items.
+
+<ComponentPreview component="command" example="scrollable">
+  ```tsx file=<rootDir>/src/examples/ui/command/scrollable.tsx
+  ```
+</ComponentPreview>

@@ -5,7 +5,7 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/switch
 ---
 
 <ComponentPreview component="switch">
-  ```tsx file=<rootDir>/src/examples/ui/switch.tsx
+  ```tsx file=<rootDir>/src/examples/ui/switch/index.tsx
   ```
 </ComponentPreview>
 
@@ -29,3 +29,57 @@ import { Switch } from '@/components/ui/switch'
   <Label htmlFor="airplane-mode">Airplane Mode</Label>
 </div>
 ```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="switch" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/switch/index.tsx
+  ```
+</ComponentPreview>
+
+### Description
+
+Use the [Field](/docs/field) components to add a label and a description next to the switch.
+
+<ComponentPreview component="switch" example="description">
+  ```tsx file=<rootDir>/src/examples/ui/switch/description.tsx
+  ```
+</ComponentPreview>
+
+### Choice Card
+
+Card-style selection where `FieldLabel` wraps the entire `Field` for a clickable card pattern.
+
+<ComponentPreview component="switch" example="choice-card">
+  ```tsx file=<rootDir>/src/examples/ui/switch/choice-card.tsx
+  ```
+</ComponentPreview>
+
+### Disabled
+
+Add the `disabled` prop to the `Switch` component to disable the switch. Add the `data-disabled` prop to the `Field` component for styling.
+
+<ComponentPreview component="switch" example="disabled">
+  ```tsx file=<rootDir>/src/examples/ui/switch/disabled.tsx
+  ```
+</ComponentPreview>
+
+### Invalid
+
+Add the `aria-invalid` prop to the `Switch` component to indicate an invalid state. Add the `data-invalid` prop to the `Field` component for styling.
+
+<ComponentPreview component="switch" example="invalid">
+  ```tsx file=<rootDir>/src/examples/ui/switch/invalid.tsx
+  ```
+</ComponentPreview>
+
+### Size
+
+Use the `size` prop to change the size of the switch. Available sizes are `sm` and `default`.
+
+<ComponentPreview component="switch" example="size">
+  ```tsx file=<rootDir>/src/examples/ui/switch/size.tsx
+  ```
+</ComponentPreview>

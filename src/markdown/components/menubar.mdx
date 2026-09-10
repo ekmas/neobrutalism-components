@@ -5,7 +5,7 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/menubar
 ---
 
 <ComponentPreview component="menubar">
-  ```tsx file=<rootDir>/src/examples/ui/menubar.tsx
+  ```tsx file=<rootDir>/src/examples/ui/menubar/index.tsx
   ```
 </ComponentPreview>
 
@@ -123,3 +123,48 @@ import {
   </MenubarMenu>
 </Menubar>
 ```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="menubar" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/menubar/index.tsx
+  ```
+</ComponentPreview>
+
+### Checkbox
+
+Use `MenubarCheckboxItem` for toggleable options.
+
+<ComponentPreview component="menubar" example="checkbox">
+  ```tsx file=<rootDir>/src/examples/ui/menubar/checkbox.tsx
+  ```
+</ComponentPreview>
+
+### Radio
+
+Use `MenubarRadioGroup` and `MenubarRadioItem` for single-select options.
+
+<ComponentPreview component="menubar" example="radio">
+  ```tsx file=<rootDir>/src/examples/ui/menubar/radio.tsx
+  ```
+</ComponentPreview>
+
+### Submenu
+
+Use `MenubarSub`, `MenubarSubTrigger`, and `MenubarSubContent` for nested menus.
+
+<ComponentPreview component="menubar" example="submenu">
+  ```tsx file=<rootDir>/src/examples/ui/menubar/submenu.tsx
+  ```
+</ComponentPreview>
+
+### With Icons
+
+Add icons from `lucide-react` before the item text.
+
+<ComponentPreview component="menubar" example="with-icons">
+  ```tsx file=<rootDir>/src/examples/ui/menubar/with-icons.tsx
+  ```
+</ComponentPreview>

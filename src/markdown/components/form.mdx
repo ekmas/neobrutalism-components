@@ -5,7 +5,7 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/form
 ---
 
 <ComponentPreview component="form">
-  ```tsx file=<rootDir>/src/examples/ui/form.tsx
+  ```tsx file=<rootDir>/src/examples/ui/form/index.tsx
   ```
 </ComponentPreview>
 
@@ -76,3 +76,93 @@ function onSubmit(values: z.infer<typeof formSchema>) {
   </form>
 </Form>
 ```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="form" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/form/index.tsx
+  ```
+</ComponentPreview>
+
+### Basic
+
+A simple form with a text input and a textarea. On submit, the form data is validated against a Zod schema and any errors are displayed next to each field.
+
+<ComponentPreview component="form" example="basic">
+  ```tsx file=<rootDir>/src/examples/ui/form/basic.tsx
+  ```
+</ComponentPreview>
+
+### Input
+
+For input fields, spread the `field` object onto the `<Input />` component. Wrapping it in `<FormControl />` wires up the `id`, `aria-describedby` and `aria-invalid` attributes, and `<FormMessage />` shows the validation error.
+
+<ComponentPreview component="form" example="input">
+  ```tsx file=<rootDir>/src/examples/ui/form/input.tsx
+  ```
+</ComponentPreview>
+
+### Textarea
+
+For textarea fields, spread the `field` object onto the `<Textarea />` component inside `<FormControl />`.
+
+<ComponentPreview component="form" example="textarea">
+  ```tsx file=<rootDir>/src/examples/ui/form/textarea.tsx
+  ```
+</ComponentPreview>
+
+### Select
+
+For select components, use `field.value` and `field.onChange` on the `<Select />` component and wrap the `<SelectTrigger />` in `<FormControl />`. Pass `items` to `<Select />` so `<SelectValue />` renders the label instead of the raw value.
+
+<ComponentPreview component="form" example="select">
+  ```tsx file=<rootDir>/src/examples/ui/form/select.tsx
+  ```
+</ComponentPreview>
+
+### Checkbox
+
+For checkbox arrays, use `field.value` and `onCheckedChange` with array manipulation. Give each `<Checkbox />` its own `<FormItem />` and `<FormControl />` so its label and error state are wired up.
+
+<ComponentPreview component="form" example="checkbox">
+  ```tsx file=<rootDir>/src/examples/ui/form/checkbox.tsx
+  ```
+</ComponentPreview>
+
+### Radio Group
+
+For radio groups, use `field.value` and `onValueChange` on the `<RadioGroup />` component. Each `<RadioGroupItem />` gets its own `<FormItem />` and `<FormControl />`.
+
+<ComponentPreview component="form" example="radio-group">
+  ```tsx file=<rootDir>/src/examples/ui/form/radio-group.tsx
+  ```
+</ComponentPreview>
+
+### Switch
+
+For switches, use `field.value` and `onCheckedChange` on the `<Switch />` component.
+
+<ComponentPreview component="form" example="switch">
+  ```tsx file=<rootDir>/src/examples/ui/form/switch.tsx
+  ```
+</ComponentPreview>
+
+### Complex Forms
+
+Here is an example of a more complex form with multiple fields and validation.
+
+<ComponentPreview component="form" example="complex">
+  ```tsx file=<rootDir>/src/examples/ui/form/complex.tsx
+  ```
+</ComponentPreview>
+
+### Array Fields
+
+React Hook Form provides a `useFieldArray` hook for managing dynamic array fields. This is useful when you need to add or remove fields dynamically.
+
+<ComponentPreview component="form" example="array">
+  ```tsx file=<rootDir>/src/examples/ui/form/array.tsx
+  ```
+</ComponentPreview>

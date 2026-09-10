@@ -5,7 +5,7 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/collapsible
 ---
 
 <ComponentPreview component="collapsible">
-  ```tsx file=<rootDir>/src/examples/ui/collapsible.tsx
+  ```tsx file=<rootDir>/src/examples/ui/collapsible/index.tsx
   ```
 </ComponentPreview>
 
@@ -64,3 +64,30 @@ const [isOpen, setIsOpen] = React.useState(false)
   </CollapsibleContent>
 </Collapsible>
 ```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="collapsible" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/collapsible/index.tsx
+  ```
+</ComponentPreview>
+
+### Basic
+
+A basic collapsible inside a [Card](/docs/card). The trigger is rendered as a `Button` and the chevron rotates using the `data-panel-open` attribute.
+
+<ComponentPreview component="collapsible" example="basic">
+  ```tsx file=<rootDir>/src/examples/ui/collapsible/basic.tsx
+  ```
+</ComponentPreview>
+
+### Settings Panel
+
+Use a trigger button to reveal additional settings.
+
+<ComponentPreview component="collapsible" example="settings-panel">
+  ```tsx file=<rootDir>/src/examples/ui/collapsible/settings-panel.tsx
+  ```
+</ComponentPreview>

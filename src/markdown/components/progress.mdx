@@ -5,7 +5,7 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/progress
 ---
 
 <ComponentPreview component="progress">
-  ```tsx file=<rootDir>/src/examples/ui/progress.tsx
+  ```tsx file=<rootDir>/src/examples/ui/progress/index.tsx
   ```
 </ComponentPreview>
 
@@ -36,3 +36,30 @@ React.useEffect(() => {
 ```tsx
 <Progress value={progress} className="w-[60%]" />
 ```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="progress" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/progress/index.tsx
+  ```
+</ComponentPreview>
+
+### Label
+
+Use `ProgressLabel` and `ProgressValue` to add a label and value display.
+
+<ComponentPreview component="progress" example="label">
+  ```tsx file=<rootDir>/src/examples/ui/progress/label.tsx
+  ```
+</ComponentPreview>
+
+### Controlled
+
+A progress bar that can be controlled by a [Slider](/docs/slider).
+
+<ComponentPreview component="progress" example="controlled">
+  ```tsx file=<rootDir>/src/examples/ui/progress/controlled.tsx
+  ```
+</ComponentPreview>
