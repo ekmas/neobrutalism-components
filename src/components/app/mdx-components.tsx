@@ -23,7 +23,13 @@ import ShadcnCliCommand from "./shadcn-cli-command"
 
 export const sharedComponents = {
   Tabs: ({ className, ...props }: React.ComponentProps<typeof Tabs>) => (
-    <Tabs className={cn("w-full shadow-shadow", className)} {...props} />
+    <Tabs
+      className={cn(
+        "w-full shadow-shadow [p+&]:mt-5 [ul+&]:mt-5 [ol+&]:mt-5",
+        className,
+      )}
+      {...props}
+    />
   ),
   TabsList: ({
     className,
@@ -109,7 +115,10 @@ export const sharedComponents = {
   TableCell,
   TableHead,
   TableHeader,
-  TableRow: ({ className, ...props }: React.ComponentProps<typeof TableRow>) => (
+  TableRow: ({
+    className,
+    ...props
+  }: React.ComponentProps<typeof TableRow>) => (
     <TableRow className={cn("bg-secondary-background", className)} {...props} />
   ),
 }

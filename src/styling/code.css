@@ -79,6 +79,11 @@
   margin-bottom: 20px;
 }
 
+/* space between running text and a code block that follows it */
+:is(p, ul, ol) + figure[data-rehype-pretty-code-figure] {
+  margin-top: 20px;
+}
+
 pre.scrollbar::-webkit-scrollbar {
   width: 7px;
   height: 7px;
