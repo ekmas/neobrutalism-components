@@ -47,18 +47,22 @@ const COUNT = 26
 const SIZE = 90
 
 /**
- * The ring's half-axes are set in pixels as CSS variables on the container
- * (see RING_CLASS), not percentages, so the ring always clears the copy no
- * matter how it is rotated. The shorter axis is longer than half the copy's
- * width, which is what keeps the stars off the heading as they orbit.
+ * The ring's radius is set as CSS variables on the container (see
+ * RING_CLASS), not percentages, so the ring always clears the copy no matter
+ * how it is rotated. On desktop the radius is longer than half the copy's
+ * width, which is what keeps the stars off the heading as they orbit. On
+ * phones the radius comes from the [data-slot=star-ring] rule in globals.css:
+ * it is derived from the viewport height so the ring is as large as fits
+ * below the 70px navbar, never below 300px, with the ring centred in that
+ * visible area.
  */
-const RING_CLASS = "[--rx:300px] [--ry:300px] md:[--rx:760px] md:[--ry:620px]"
+const RING_CLASS = "md:[--rx:760px] md:[--ry:760px]"
 
 /**
- * Desktop ratio of the half-axes, used only to space the stars evenly by
- * arc length instead of bunching them on the flatter sides.
+ * Ratio of the half-axes. The ring is a circle, so the stars are spaced at
+ * equal angles; a value other than 1 would space them by arc length instead.
  */
-const ASPECT = 760 / 620
+const ASPECT = 1
 
 /** Small seeded PRNG so server and client render the same field. */
 function mulberry32(seed: number) {
@@ -80,7 +84,7 @@ type Placement = {
 }
 
 /**
- * Sample `count` angles at equal arc-length steps around the ellipse and
+ * Sample `count` angles at equal arc-length steps around the ring and
  * return each as a point on the container's bounding box.
  */
 function ring(count: number): Placement[] {
@@ -116,7 +120,7 @@ function ring(count: number): Placement[] {
 const PLACEMENTS = ring(COUNT)
 
 /**
- * A ring of stars on an ellipse around the hero copy. The whole ring turns
+ * A ring of stars on a circle around the hero copy. The whole ring turns
  * slowly; each star turns the other way at the same rate so it stays
  * upright. Parts of the ring leave the viewport as it turns, which is fine.
  */
@@ -130,8 +134,9 @@ export default function StarField({ className }: { className?: string }) {
       )}
     >
       <div
+        data-slot="star-ring"
         className={cn(
-          "absolute left-1/2 top-1/2 h-[calc(var(--ry)*2)] w-[calc(var(--rx)*2)] -translate-x-1/2 -translate-y-1/2 motion-safe:animate-orbit",
+          "absolute left-1/2 top-1/2 h-[calc(var(--ry)*2)] w-[calc(var(--rx)*2)] -translate-x-1/2 -translate-y-1/2 max-md:top-[calc(50%+35px)] motion-safe:animate-orbit",
           RING_CLASS,
         )}
       >

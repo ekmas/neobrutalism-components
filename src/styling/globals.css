@@ -300,3 +300,20 @@ body::-webkit-scrollbar-thumb,
     position: absolute;
   }
 }
+
+@layer components {
+  /* Landing hero star ring on phones: as large as fits below the 70px navbar,
+     never smaller than the 300px it started with. The desktop size is set by
+     the md: utilities on the element. */
+  [data-slot="star-ring"] {
+    --rx: max(300px, calc(50vh - 67px));
+    --ry: max(300px, calc(50vh - 67px));
+  }
+
+  @supports (height: 1dvh) {
+    [data-slot="star-ring"] {
+      --rx: max(300px, calc(50dvh - 67px));
+      --ry: max(300px, calc(50dvh - 67px));
+    }
+  }
+}
