@@ -20,17 +20,6 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/chart
 
 Add the chart variables to your styling if you haven't already. Visit the <Link href="/styling">styling page</Link> for more info.
 
-## About
-
-The chart component is built on top of <a target="_blank" href="https://recharts.org/">Recharts</a> v3. If you are upgrading from Recharts v2, the most common changes are:
-
-- `activeIndex` and `activeShape` / `activeBar` are gone. Use the `shape` prop on `Bar` and `Pie` and compare the `index` you receive.
-- `layout` is set on the chart (`BarChart`, `LineChart`...) and no longer on the `Bar` itself.
-- `ChartLegend` does not accept a `className` anymore. Pass it to `ChartLegendContent` instead.
-- Custom `dot` and `label` renderers receive coordinates that can be `undefined`, so guard them before using them.
-
-Read the <a target="_blank" href="https://github.com/recharts/recharts/wiki/3.0-migration-guide">Recharts 3.0 migration guide</a> for the full list.
-
 ## Usage
 
 Visit the <Link href="/charts">charts page</Link> to see all the examples.

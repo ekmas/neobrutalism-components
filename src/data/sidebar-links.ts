@@ -27,10 +27,6 @@ const GETTING_STARTED_LINKS = [
     text: "Installation",
   },
   {
-    href: "/docs/resources",
-    text: "Resources",
-  },
-  {
     href: "/docs/figma",
     text: "Figma",
   },
@@ -65,10 +61,6 @@ const MAIN_SIDEBAR: SidebarItem[] = [
   {
     href: "/docs/installation",
     text: "Installation",
-  },
-  {
-    href: "/docs/resources",
-    text: "Resources",
   },
   {
     href: "/docs/figma",
