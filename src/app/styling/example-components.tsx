@@ -25,9 +25,11 @@ export default function ExampleComponents() {
         <ChatDemo />
         <ItemsDemo />
       </div>
-      <div className="sm:flex hidden flex-col gap-5">
+      <div className="flex flex-col gap-5 max-sm:order-first">
         <ChartBarMultiple />
-        <ScrollAreaDemo />
+        <div className="max-sm:hidden">
+          <ScrollAreaDemo />
+        </div>
       </div>
     </div>
   )
