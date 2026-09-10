@@ -1,6 +1,7 @@
 "use client"
 
 import { AlertDialog as AlertDialogPrimitive } from "@base-ui/react/alert-dialog"
+import { type VariantProps } from "class-variance-authority"
 
 import * as React from "react"
 
@@ -48,15 +49,19 @@ function AlertDialogOverlay({
 
 function AlertDialogContent({
   className,
+  size = "default",
   ...props
-}: React.ComponentProps<typeof AlertDialogPrimitive.Popup>) {
+}: React.ComponentProps<typeof AlertDialogPrimitive.Popup> & {
+  size?: "default" | "sm"
+}) {
   return (
     <AlertDialogPortal>
       <AlertDialogOverlay />
       <AlertDialogPrimitive.Popup
         data-slot="alert-dialog-content"
+        data-size={size}
         className={cn(
-          "bg-background data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-base border-2 border-border p-6 shadow-shadow duration-200 outline-none sm:max-w-lg",
+          "group/alert-dialog-content bg-background data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-base border-2 border-border p-6 shadow-shadow duration-200 outline-none sm:max-w-lg sm:data-[size=sm]:max-w-sm",
           className,
         )}
         {...props}
@@ -72,7 +77,10 @@ function AlertDialogHeader({
   return (
     <div
       data-slot="alert-dialog-header"
-      className={cn("flex flex-col gap-2 text-center sm:text-left", className)}
+      className={cn(
+        "flex flex-col gap-2 text-center sm:text-left group-data-[size=sm]/alert-dialog-content:text-center",
+        className,
+      )}
       {...props}
     />
   )
@@ -86,7 +94,23 @@ function AlertDialogFooter({
     <div
       data-slot="alert-dialog-footer"
       className={cn(
-        "flex flex-col-reverse gap-3 sm:flex-row sm:justify-end",
+        "flex flex-col-reverse gap-3 sm:flex-row sm:justify-end group-data-[size=sm]/alert-dialog-content:grid group-data-[size=sm]/alert-dialog-content:grid-cols-2",
+        className,
+      )}
+      {...props}
+    />
+  )
+}
+
+function AlertDialogMedia({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="alert-dialog-media"
+      className={cn(
+        "mb-2 flex size-12 shrink-0 items-center justify-center self-center rounded-base border-2 border-border bg-main text-main-foreground [&_svg]:size-6 sm:size-10 sm:self-start sm:[&_svg]:size-5 group-data-[size=sm]/alert-dialog-content:self-center",
         className,
       )}
       {...props}
@@ -122,12 +146,15 @@ function AlertDialogDescription({
 
 function AlertDialogAction({
   className,
+  variant = "default",
+  size = "default",
   ...props
-}: React.ComponentProps<typeof AlertDialogPrimitive.Close>) {
+}: React.ComponentProps<typeof AlertDialogPrimitive.Close> &
+  VariantProps<typeof buttonVariants>) {
   return (
     <AlertDialogPrimitive.Close
       data-slot="alert-dialog-action"
-      className={cn(buttonVariants(), className)}
+      className={cn(buttonVariants({ variant, size }), className)}
       {...props}
     />
   )
@@ -135,12 +162,15 @@ function AlertDialogAction({
 
 function AlertDialogCancel({
   className,
+  variant = "neutral",
+  size = "default",
   ...props
-}: React.ComponentProps<typeof AlertDialogPrimitive.Close>) {
+}: React.ComponentProps<typeof AlertDialogPrimitive.Close> &
+  VariantProps<typeof buttonVariants>) {
   return (
     <AlertDialogPrimitive.Close
       data-slot="alert-dialog-cancel"
-      className={cn(buttonVariants({ variant: "neutral" }), className)}
+      className={cn(buttonVariants({ variant, size }), className)}
       {...props}
     />
   )
@@ -154,6 +184,7 @@ export {
   AlertDialogContent,
   AlertDialogHeader,
   AlertDialogFooter,
+  AlertDialogMedia,
   AlertDialogTitle,
   AlertDialogDescription,
   AlertDialogAction,

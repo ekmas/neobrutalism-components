@@ -161,16 +161,20 @@ function ContextMenuContent({
 function ContextMenuItem({
   className,
   inset,
+  variant = "default",
   ...props
 }: React.ComponentProps<typeof ContextMenuPrimitive.Item> & {
   inset?: boolean
+  variant?: "default" | "destructive"
 }) {
   return (
     <ContextMenuPrimitive.Item
       data-slot="context-menu-item"
       data-inset={inset}
+      data-variant={variant}
       className={cn(
         "relative flex cursor-default select-none items-center rounded-base border-2 border-transparent px-2 py-1.5 gap-2 text-sm outline-none hover:bg-main hover:text-main-foreground hover:border-border focus:bg-main focus:text-main-foreground focus:border-border data-highlighted:bg-main data-highlighted:text-main-foreground data-highlighted:border-border data-disabled:pointer-events-none data-disabled:opacity-50 data-inset:pl-8 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "data-[variant=destructive]:text-red-500 data-[variant=destructive]:hover:bg-red-500 data-[variant=destructive]:hover:text-white data-[variant=destructive]:focus:bg-red-500 data-[variant=destructive]:focus:text-white data-[variant=destructive]:data-highlighted:bg-red-500 data-[variant=destructive]:data-highlighted:text-white",
         className,
       )}
       {...props}
