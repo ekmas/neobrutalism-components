@@ -13,7 +13,7 @@ const toggleVariants = cva(
     variants: {
       variant: {
         default: "bg-secondary-background text-foreground",
-        outline: "bg-transparent text-foreground",
+        outline: "bg-secondary-background text-foreground",
       },
       size: {
         default:

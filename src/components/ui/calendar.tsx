@@ -99,12 +99,9 @@ function Calendar({
           "group/day relative size-9 p-0 text-center text-sm select-none",
           defaultClassNames.day,
         ),
-        range_start: cn(
-          "rounded-l-base bg-main/50",
-          defaultClassNames.range_start,
-        ),
-        range_middle: cn("bg-main/50", defaultClassNames.range_middle),
-        range_end: cn("rounded-r-base bg-main/50", defaultClassNames.range_end),
+        range_start: cn(defaultClassNames.range_start),
+        range_middle: cn(defaultClassNames.range_middle),
+        range_end: cn(defaultClassNames.range_end),
         selected: cn(
           props.mode !== "range" && "rounded-base bg-main/50",
           defaultClassNames.selected,
@@ -171,11 +168,9 @@ function CalendarDayButton({
     if (modifiers.focused) ref.current?.focus()
   }, [modifiers.focused])
 
-  const selectedSingle =
-    modifiers.selected &&
-    !modifiers.range_start &&
-    !modifiers.range_end &&
-    !modifiers.range_middle
+  const inRange =
+    modifiers.range_start || modifiers.range_middle || modifiers.range_end
+  const selectedSingle = modifiers.selected && !inRange
 
   return (
     <button
@@ -190,9 +185,12 @@ function CalendarDayButton({
         buttonVariants({ variant: "noShadow" }),
         "size-9 bg-secondary-background p-0 font-base text-foreground",
         modifiers.today && "bg-transparent",
-        modifiers.range_middle && "bg-main/50 text-main-foreground",
-        (selectedSingle || modifiers.range_start || modifiers.range_end) &&
-          "bg-main text-main-foreground",
+        (selectedSingle || inRange) && "bg-main text-main-foreground",
+        // Days of a range share one border per row: a day drops the border
+        // and radius on each side that faces another day of the range, and
+        // pads that side by the border width so the number stays centred.
+        inRange &&
+          "[[data-selected]:not([data-hidden])+td>&]:rounded-l-none [[data-selected]:not([data-hidden])+td>&]:border-l-0 [[data-selected]:not([data-hidden])+td>&]:pl-0.5 [td:has(+[data-selected]:not([data-hidden]))>&]:rounded-r-none [td:has(+[data-selected]:not([data-hidden]))>&]:border-r-0 [td:has(+[data-selected]:not([data-hidden]))>&]:pr-0.5",
         defaultClassNames.day_button,
         className,
       )}
