@@ -18,7 +18,7 @@ import Star39 from "@/components/stars/s39"
 
 import { cn } from "@/lib/utils"
 
-const COLOR = "var(--chart-3)"
+const COLOR = "var(--chart-4)"
 
 const SHAPES = [
   Star9,
