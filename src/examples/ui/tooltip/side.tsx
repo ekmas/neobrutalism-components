@@ -13,7 +13,9 @@ export default function TooltipSideDemo() {
         {(["left", "top", "bottom", "right"] as const).map((side) => (
           <Tooltip key={side}>
             <TooltipTrigger
-              render={<Button variant="neutral" className="w-fit capitalize" />}
+              render={
+                <Button variant="noShadow" className="w-fit capitalize" />
+              }
             >
               {side}
             </TooltipTrigger>

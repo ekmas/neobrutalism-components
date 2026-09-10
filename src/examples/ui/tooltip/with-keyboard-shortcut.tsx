@@ -13,7 +13,7 @@ export default function TooltipWithKeyboardShortcutDemo() {
   return (
     <TooltipProvider>
       <Tooltip>
-        <TooltipTrigger render={<Button variant="neutral" size="icon" />}>
+        <TooltipTrigger render={<Button variant="noShadow" size="icon" />}>
           <SaveIcon />
         </TooltipTrigger>
         <TooltipContent>

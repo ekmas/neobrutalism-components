@@ -11,7 +11,7 @@ export default function TooltipDisabledButtonDemo() {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger render={<span className="inline-block w-fit" />}>
-          <Button variant="neutral" disabled>
+          <Button variant="noShadow" disabled>
             Disabled
           </Button>
         </TooltipTrigger>

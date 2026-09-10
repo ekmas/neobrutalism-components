@@ -1,10 +1,13 @@
 "use client"
 
+import { RotateCwIcon } from "lucide-react"
+
 import * as React from "react"
 
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Bubble, BubbleContent } from "@/components/ui/bubble"
 import { Button } from "@/components/ui/button"
-import { Message, MessageContent } from "@/components/ui/message"
+import { Message, MessageAvatar, MessageContent } from "@/components/ui/message"
 import {
   MessageScroller,
   MessageScrollerButton,
@@ -14,6 +17,14 @@ import {
   MessageScrollerViewport,
   useMessageScroller,
 } from "@/components/ui/message-scroller"
+
+type ChatMessage = { from: "me" | "them"; text: string }
+
+const initialMessages: ChatMessage[] = [
+  { from: "them", text: "Hey, are you around?" },
+  { from: "me", text: "Yes, what is up?" },
+  { from: "them", text: "I need a review on the message scroller." },
+]
 
 const replies = [
   "Sounds good to me.",
@@ -39,35 +50,64 @@ function AddMessageButton({ onAdd }: { onAdd: () => void }) {
 }
 
 export default function MessageScrollerAddMessagesDemo() {
-  const [messages, setMessages] = React.useState<string[]>([
-    "Hey, are you around?",
-    "Yes, what is up?",
-    "I need a review on the message scroller.",
-  ])
+  const [messages, setMessages] = React.useState(initialMessages)
 
   function addMessage() {
-    setMessages((current) => [
-      ...current,
-      replies[current.length % replies.length],
-    ])
+    setMessages((current) => {
+      const last = current[current.length - 1]
+      const added = current.length - initialMessages.length
+
+      return [
+        ...current,
+        {
+          from: last?.from === "me" ? "them" : "me",
+          text: replies[added % replies.length],
+        },
+      ]
+    })
   }
 
   return (
     <MessageScrollerProvider>
       <div className="flex w-full max-w-md flex-col gap-4">
-        <div className="h-[300px] w-full rounded-base border-2 border-border bg-background p-4 shadow-shadow">
-          <MessageScroller>
+        <div className="flex h-[360px] w-full flex-col overflow-hidden rounded-base border-2 border-border bg-secondary-background text-foreground">
+          <div className="flex items-center gap-3 p-4">
+            <div className="flex min-w-0 flex-1 flex-col gap-0.5 text-sm">
+              <span className="truncate font-heading">New Chat</span>
+              <span className="truncate font-base">
+                How can I help you today?
+              </span>
+            </div>
+            <Button
+              variant="neutral"
+              size="icon"
+              className="size-9 shadow-none!"
+              aria-label="Reset chat"
+              onClick={() => setMessages(initialMessages)}
+            >
+              <RotateCwIcon />
+            </Button>
+          </div>
+          <div className="h-0.5 w-full shrink-0 bg-border" />
+          <MessageScroller className="p-4">
             <MessageScrollerViewport>
-              <MessageScrollerContent className="gap-3">
-                {messages.map((text, index) => (
+              <MessageScrollerContent className="gap-4">
+                {messages.map((message, index) => (
                   <MessageScrollerItem
                     key={index}
                     messageId={`message-${index}`}
                   >
-                    <Message align={index % 2 === 0 ? "start" : "end"}>
+                    <Message align={message.from === "me" ? "end" : "start"}>
+                      <MessageAvatar>
+                        <Avatar>
+                          <AvatarFallback>BF</AvatarFallback>
+                        </Avatar>
+                      </MessageAvatar>
                       <MessageContent>
-                        <Bubble variant={index % 2 === 0 ? "muted" : "default"}>
-                          <BubbleContent>{text}</BubbleContent>
+                        <Bubble
+                          variant={message.from === "me" ? "default" : "muted"}
+                        >
+                          <BubbleContent>{message.text}</BubbleContent>
                         </Bubble>
                       </MessageContent>
                     </Message>

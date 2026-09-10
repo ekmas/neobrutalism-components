@@ -54,7 +54,6 @@ export default function CardSpacingDemo() {
             setSpacing(value[0])
           }
         }}
-        variant="outline"
         size="sm"
         className="justify-center"
       >
