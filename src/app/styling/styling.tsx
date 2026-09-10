@@ -12,7 +12,14 @@ import colors, {
 } from "@/data/colors"
 import fonts from "@/data/fonts"
 
+import {
+  DocsTabs,
+  DocsTabsContent,
+  DocsTabsList,
+  DocsTabsTrigger,
+} from "@/components/app/docs-tabs"
 import { Pre } from "@/components/app/pre"
+import ShadcnCliCommand from "@/components/app/shadcn-cli-command"
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -50,6 +57,7 @@ import {
   LoadedFont,
   readStoredFont,
 } from "@/lib/google-fonts"
+import { REGISTRY_URL } from "@/lib/site"
 import { cn } from "@/lib/utils"
 
 export const COLOR_MODE_STORAGE_KEY = "colorMode"
@@ -232,8 +240,11 @@ export default function Styling() {
 
   const knownFont = fonts.some((item) => item.name === font.family)
 
-  const styling = `@import url("${font.url}");
-@import "tailwindcss";
+  // Registry styling item for the selected palette; duotone palettes carry a
+  // "-duotone" suffix (see src/scripts/add-registry-styles.ts).
+  const stylingUrl = `${REGISTRY_URL}/styling/${mode === "monochromatic" ? palette.name : `${palette.name}-${mode}`}.json`
+
+  const styling = `@import "tailwindcss";
 @import "tw-animate-css";
 
 /* Neobrutalism ${mode} palette: ${name} */
@@ -247,7 +258,6 @@ export default function Styling() {
   --ring: oklch(0% 0 0);
   --overlay: oklch(0% 0 0 / 0.8);
   --shadow: ${boxShadowLength[0]}px ${boxShadowLength[1]}px 0px 0px var(--border);
-  --base-font-family: "${font.family}", sans-serif;
   --chart-1: ${chart1};
   --chart-2: ${chart2};
   --chart-3: ${chart3};
@@ -284,12 +294,28 @@ export default function Styling() {
 @layer base {
   body {
     @apply text-foreground font-base bg-background;
-    font-family: var(--base-font-family);
   }
 
   h1, h2, h3, h4, h5, h6{
     @apply font-heading;
   }
+}`
+
+  // The registry item installs the palette with a 5px radius, a 4px shadow
+  // and 500/700 font weights. This is what the Manual CSS sets on top of
+  // that, so a CLI install can be brought in line with the picks.
+  const cliOverrides = `:root {
+  --shadow: ${boxShadowLength[0]}px ${boxShadowLength[1]}px 0px 0px var(--border);
+}
+
+@theme inline {
+  --spacing-boxShadowX: ${boxShadowLength[0]}px;
+  --spacing-boxShadowY: ${boxShadowLength[1]}px;
+  --spacing-reverseBoxShadowX: -${boxShadowLength[0]}px;
+  --spacing-reverseBoxShadowY: -${boxShadowLength[1]}px;
+  --radius-base: ${borderRadius}px;
+  --font-weight-base: ${fontWeight[1]};
+  --font-weight-heading: ${fontWeight[0]};
 }`
 
   return (
@@ -497,19 +523,67 @@ export default function Styling() {
         <DialogTrigger render={<Button variant="neutral" />}>
           Copy
         </DialogTrigger>
-        <DialogContent className="max-w-full">
+        <DialogContent className="max-h-[calc(100dvh-2rem)] overflow-y-auto sm:max-w-2xl">
           <DialogHeader>
-            <DialogTitle>Theming</DialogTitle>
+            <DialogTitle>Install this theme</DialogTitle>
             <DialogDescription>
-              Copy the styling to your globals.css file.
+              Copy the command for your package manager, or paste the CSS into
+              your project.
             </DialogDescription>
           </DialogHeader>
-          <Pre
-            wrapperClassName="w-full max-w-full text-white overflow-x-auto"
-            __rawstring__={styling}
+          <DocsTabs
+            defaultValue="cli"
+            className="min-w-0 shadow-none! [&_[data-slot=pre-wrapper]]:shadow-none [&_[data-slot=tabs]]:shadow-none"
           >
-            {styling}
-          </Pre>
+            <DocsTabsList className="grid w-full grid-cols-2">
+              <DocsTabsTrigger value="cli">Shadcn CLI</DocsTabsTrigger>
+              <DocsTabsTrigger value="manual">Manual</DocsTabsTrigger>
+            </DocsTabsList>
+            <DocsTabsContent value="cli">
+              <div className="flex min-w-0 flex-col gap-4 pt-4 [&_[data-slot=pre-wrapper]]:mb-0">
+                <div className="flex min-w-0 flex-col gap-2">
+                  <div className="mx-0.5 text-sm font-base">
+                    Scaffold a new project already themed:
+                  </div>
+                  <ShadcnCliCommand command="init" url={stylingUrl} multiline />
+                </div>
+                <div className="flex min-w-0 flex-col gap-2">
+                  <div className="mx-0.5 text-sm font-base">
+                    Or add to an existing project:
+                  </div>
+                  <ShadcnCliCommand command="add" url={stylingUrl} multiline />
+                </div>
+                <div className="flex min-w-0 flex-col gap-2">
+                  <div className="mx-0.5 text-sm font-base">
+                    Then update these in your globals.css to match your radius,
+                    shadow and font weights:
+                  </div>
+                  <Pre
+                    wrapperClassName="w-full max-w-full text-white overflow-x-auto"
+                    __rawstring__={cliOverrides}
+                  >
+                    {cliOverrides}
+                  </Pre>
+                </div>
+              </div>
+            </DocsTabsContent>
+            <DocsTabsContent value="manual">
+              <div className="flex min-w-0 flex-col gap-4 pt-4 [&_[data-slot=pre-wrapper]]:mb-0">
+                <div className="flex min-w-0 flex-col gap-2">
+                  <div className="mx-0.5 text-sm font-base">
+                    Paste into your globals.css. This includes your radius,
+                    shadow and font weights:
+                  </div>
+                  <Pre
+                    wrapperClassName="w-full max-w-full text-white overflow-x-auto"
+                    __rawstring__={styling}
+                  >
+                    {styling}
+                  </Pre>
+                </div>
+              </div>
+            </DocsTabsContent>
+          </DocsTabs>
         </DialogContent>
       </Dialog>
     </div>

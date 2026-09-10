@@ -13,54 +13,24 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 import { cn } from "@/lib/utils"
 
 import ComponentPreview from "./component-preview"
+import {
+  DocsTabs,
+  DocsTabsContent,
+  DocsTabsList,
+  DocsTabsTrigger,
+} from "./docs-tabs"
 import { Pre } from "./pre"
 import ShadcnCliCommand from "./shadcn-cli-command"
 
 export const sharedComponents = {
-  Tabs: ({ className, ...props }: React.ComponentProps<typeof Tabs>) => (
-    <Tabs
-      className={cn(
-        "w-full shadow-shadow [p+&]:mt-5 [ul+&]:mt-5 [ol+&]:mt-5",
-        className,
-      )}
-      {...props}
-    />
-  ),
-  TabsList: ({
-    className,
-    ...props
-  }: React.ComponentProps<typeof TabsList>) => (
-    <TabsList
-      className={cn(
-        "w-full overflow-x-hidden rounded-none sm:h-12 h-10 p-0 bg-secondary-background",
-        className,
-      )}
-      {...props}
-    />
-  ),
-  TabsTrigger: ({
-    className,
-    ...props
-  }: React.ComponentProps<typeof TabsTrigger>) => (
-    <TabsTrigger
-      className={cn(
-        "h-full border-0 border-r-2 z-10 border-r-border rounded-none sm:text-base data-active:text-main-foreground text-foreground last:border-r-0",
-        className,
-      )}
-      {...props}
-    />
-  ),
-  TabsContent: ({
-    className,
-    ...props
-  }: React.ComponentProps<typeof TabsContent>) => (
-    <TabsContent className="mt-0 rounded-none" {...props} />
-  ),
+  Tabs: DocsTabs,
+  TabsList: DocsTabsList,
+  TabsTrigger: DocsTabsTrigger,
+  TabsContent: DocsTabsContent,
   Warning: ({
     description,
     className,

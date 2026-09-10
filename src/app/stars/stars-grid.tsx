@@ -15,16 +15,18 @@ import {
 } from "@/components/ui/select"
 import { TooltipProvider } from "@/components/ui/tooltip"
 
+import { REGISTRY_URL } from "@/lib/site"
+
 import CopyBtn from "./copy-btn"
 import ShadcnBtn from "./shadcn-btn"
 
 export default function StarsGrid() {
   const [command, setCommand] = useState(
-    "pnpm dlx shadcn@latest add https://neobrutalism.dev/r/",
+    `pnpm dlx shadcn@latest add ${REGISTRY_URL}/`,
   )
 
   const handleChange = (pkg: string | null) => {
-    const command = "shadcn@latest add https://neobrutalism.dev/r/"
+    const command = `shadcn@latest add ${REGISTRY_URL}/`
 
     if (pkg === "pnpm") {
       setCommand("pnpm dlx " + command)
