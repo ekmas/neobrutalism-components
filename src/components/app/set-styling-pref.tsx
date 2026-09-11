@@ -6,7 +6,7 @@ import { applyGoogleFont, readStoredFont } from "@/lib/google-fonts"
 
 export default function SetStylingPref() {
   useLayoutEffect(() => {
-    const colorObj = JSON.parse(localStorage.getItem("color") as string)
+    const colorObj = JSON.parse(localStorage.getItem("palette") as string)
     const borderRadius = localStorage.getItem("borderRadius")
     const boxShadow = localStorage.getItem("boxShadow")?.split(",")
     const fontWeight = localStorage.getItem("fontWeight")?.split(",")

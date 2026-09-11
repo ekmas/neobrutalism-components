@@ -68,7 +68,7 @@ function isColorMode(value: string | null): value is ColorMode {
 
 function readStoredPalette(): ColorPalette | null {
   try {
-    const raw = localStorage.getItem("color")
+    const raw = localStorage.getItem("palette")
     return raw ? JSON.parse(raw) : null
   } catch {
     return null
@@ -139,7 +139,7 @@ export default function Styling() {
   const selectPalette = (next: ColorPalette) => {
     setPalette(next)
     applyPalette(next)
-    localStorage.setItem("color", JSON.stringify(next))
+    localStorage.setItem("palette", JSON.stringify(next))
   }
 
   const updateColor = (value: string | null) => {
