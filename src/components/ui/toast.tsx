@@ -104,7 +104,13 @@ function ToastDescription({
 
 function ToastAction({
   className,
-  render = <Button variant="neutral" size="sm" className="shadow-none!" />,
+  render = (
+    <Button
+      variant="noShadow"
+      size="sm"
+      className="bg-secondary-background text-foreground"
+    />
+  ),
   ...props
 }: ToastPrimitive.Action.Props) {
   return (
