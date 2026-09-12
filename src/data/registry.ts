@@ -3,7 +3,7 @@ const UI = [
     name: "accordion",
     title: "Accordion",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-accordion"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/accordion.tsx",
@@ -26,7 +26,7 @@ const UI = [
     name: "alert-dialog",
     title: "Alert dialog",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-alert-dialog"],
+    dependencies: ["@base-ui/react"],
     registryDependencies: ["https://neobrutalism.dev/r/nbutton.json"],
     files: [
       {
@@ -39,7 +39,7 @@ const UI = [
     name: "avatar",
     title: "Avatar",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-avatar"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/avatar.tsx",
@@ -62,7 +62,7 @@ const UI = [
     name: "breadcrumb",
     title: "Breadcrumb",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-slot"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/breadcrumb.tsx",
@@ -73,7 +73,7 @@ const UI = [
   {
     name: "nbutton",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-slot"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/button.tsx",
@@ -85,7 +85,7 @@ const UI = [
     name: "button",
     title: "Button",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-slot"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/button.tsx",
@@ -97,7 +97,7 @@ const UI = [
     name: "calendar",
     title: "Calendar",
     type: "registry:ui",
-    dependencies: ["react-day-picker@8.10.1", "date-fns"],
+    dependencies: ["react-day-picker@^9", "date-fns@^4"],
     registryDependencies: ["https://neobrutalism.dev/r/nbutton.json"],
     files: [
       {
@@ -145,7 +145,7 @@ const UI = [
     name: "chart",
     title: "Chart",
     type: "registry:ui",
-    dependencies: ["recharts", "lucide-react"],
+    dependencies: ["recharts@^3", "lucide-react"],
     registryDependencies: ["https://neobrutalism.dev/r/ncard.json"],
     files: [
       {
@@ -158,7 +158,7 @@ const UI = [
     name: "checkbox",
     title: "Checkbox",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-checkbox"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/checkbox.tsx",
@@ -170,7 +170,7 @@ const UI = [
     name: "collapsible",
     title: "Collapsible",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-collapsible"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/collapsible.tsx",
@@ -195,7 +195,7 @@ const UI = [
     name: "context-menu",
     title: "Context menu",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-context-menu"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/context-menu.tsx",
@@ -206,7 +206,7 @@ const UI = [
   {
     name: "ndialog",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-dialog"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/dialog.tsx",
@@ -218,7 +218,7 @@ const UI = [
     name: "dialog",
     title: "Dialog",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-dialog"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/dialog.tsx",
@@ -230,7 +230,7 @@ const UI = [
     name: "drawer",
     title: "Drawer",
     type: "registry:ui",
-    dependencies: ["vaul", "@radix-ui/react-dialog"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/drawer.tsx",
@@ -242,7 +242,7 @@ const UI = [
     name: "dropdown-menu",
     title: "Dropdown menu",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-dropdown-menu"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/dropdown-menu.tsx",
@@ -255,8 +255,7 @@ const UI = [
     title: "Form",
     type: "registry:ui",
     dependencies: [
-      "@radix-ui/react-label",
-      "@radix-ui/react-slot",
+      "@base-ui/react",
       "@hookform/resolvers",
       "zod",
       "react-hook-form",
@@ -276,7 +275,7 @@ const UI = [
     name: "hover-card",
     title: "Hover card",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-hover-card"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/hover-card.tsx",
@@ -332,7 +331,7 @@ const UI = [
   {
     name: "nlabel",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-label"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/label.tsx",
@@ -344,7 +343,7 @@ const UI = [
     name: "label",
     title: "Label",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-label"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/label.tsx",
@@ -368,7 +367,7 @@ const UI = [
     name: "menubar",
     title: "Menubar",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-menubar"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/menubar.tsx",
@@ -380,7 +379,7 @@ const UI = [
     name: "navigation-menu",
     title: "Navigation menu",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-navigation-menu"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/navigation-menu.tsx",
@@ -404,7 +403,7 @@ const UI = [
     name: "popover",
     title: "Popover",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-popover"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/popover.tsx",
@@ -416,7 +415,7 @@ const UI = [
     name: "progress",
     title: "Progress",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-progress"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/progress.tsx",
@@ -428,7 +427,7 @@ const UI = [
     name: "radio-group",
     title: "Radio group",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-radio-group"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/radio-group.tsx",
@@ -440,7 +439,7 @@ const UI = [
     name: "resizable",
     title: "Resizable",
     type: "registry:ui",
-    dependencies: ["react-resizable-panels"],
+    dependencies: ["react-resizable-panels@^4"],
     files: [
       {
         path: "src/components/ui/resizable.tsx",
@@ -452,7 +451,7 @@ const UI = [
     name: "scroll-area",
     title: "Scroll area",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-scroll-area"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/scroll-area.tsx",
@@ -464,7 +463,7 @@ const UI = [
     name: "select",
     title: "Select",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-select"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/select.tsx",
@@ -476,7 +475,7 @@ const UI = [
     name: "sheet",
     title: "Sheet",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-dialog"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/sheet.tsx",
@@ -488,7 +487,7 @@ const UI = [
     name: "nsheet",
     title: "Sheet",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-dialog"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/sheet.tsx",
@@ -544,7 +543,7 @@ const UI = [
     name: "slider",
     title: "Slider",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-slider"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/slider.tsx",
@@ -553,22 +552,10 @@ const UI = [
     ],
   },
   {
-    name: "sonner",
-    title: "Sonner",
-    type: "registry:ui",
-    dependencies: ["sonner", "next-themes"],
-    files: [
-      {
-        path: "src/components/ui/sonner.tsx",
-        type: "registry:ui",
-      },
-    ],
-  },
-  {
     name: "switch",
     title: "Switch",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-switch"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/switch.tsx",
@@ -591,7 +578,7 @@ const UI = [
     name: "tabs",
     title: "Tabs",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-tabs"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/tabs.tsx",
@@ -614,7 +601,7 @@ const UI = [
     name: "tooltip",
     title: "Tooltip",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-tooltip"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/tooltip.tsx",
@@ -626,7 +613,7 @@ const UI = [
     name: "ntooltip",
     title: "Tooltip",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-tooltip"],
+    dependencies: ["@base-ui/react"],
     files: [
       {
         path: "src/components/ui/tooltip.tsx",
@@ -637,6 +624,252 @@ const UI = [
 ]
 
 const STARS = [
+  {
+    name: "attachment",
+    title: "Attachment",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react", "class-variance-authority"],
+    registryDependencies: ["https://neobrutalism.dev/r/nbutton.json"],
+    files: [
+      {
+        path: "src/components/ui/attachment.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "bubble",
+    title: "Bubble",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react", "class-variance-authority"],
+    files: [
+      {
+        path: "src/components/ui/bubble.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "button-group",
+    title: "Button Group",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react", "class-variance-authority"],
+    files: [
+      {
+        path: "src/components/ui/button-group.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "direction",
+    title: "Direction",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react"],
+    files: [
+      {
+        path: "src/components/ui/direction.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "empty",
+    title: "Empty",
+    type: "registry:ui",
+    dependencies: ["class-variance-authority"],
+    files: [
+      {
+        path: "src/components/ui/empty.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "field",
+    title: "Field",
+    type: "registry:ui",
+    dependencies: ["class-variance-authority"],
+    registryDependencies: ["https://neobrutalism.dev/r/nlabel.json"],
+    files: [
+      {
+        path: "src/components/ui/field.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "input-group",
+    title: "Input Group",
+    type: "registry:ui",
+    dependencies: ["class-variance-authority"],
+    registryDependencies: [
+      "https://neobrutalism.dev/r/nbutton.json",
+      "https://neobrutalism.dev/r/ninput.json",
+      "https://neobrutalism.dev/r/ntextarea.json",
+    ],
+    files: [
+      {
+        path: "src/components/ui/input-group.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "item",
+    title: "Item",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react", "class-variance-authority"],
+    files: [
+      {
+        path: "src/components/ui/item.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "kbd",
+    title: "Kbd",
+    type: "registry:ui",
+    files: [
+      {
+        path: "src/components/ui/kbd.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "marker",
+    title: "Marker",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react", "class-variance-authority"],
+    files: [
+      {
+        path: "src/components/ui/marker.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "message",
+    title: "Message",
+    type: "registry:ui",
+    files: [
+      {
+        path: "src/components/ui/message.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "message-scroller",
+    title: "Message Scroller",
+    type: "registry:ui",
+    dependencies: ["lucide-react", "@shadcn/react"],
+    registryDependencies: ["https://neobrutalism.dev/r/nbutton.json"],
+    files: [
+      {
+        path: "src/components/ui/message-scroller.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "native-select",
+    title: "Native Select",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/components/ui/native-select.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "questionnaire",
+    title: "Questionnaire",
+    type: "registry:ui",
+    dependencies: ["lucide-react", "@shadcn/react"],
+    registryDependencies: ["https://neobrutalism.dev/r/nbutton.json"],
+    files: [
+      {
+        path: "src/components/ui/questionnaire.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "spinner",
+    title: "Spinner",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/components/ui/spinner.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "toast",
+    title: "Toast",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react", "lucide-react"],
+    registryDependencies: ["https://neobrutalism.dev/r/nbutton.json"],
+    files: [
+      {
+        path: "src/components/ui/toast.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "toggle",
+    title: "Toggle",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react", "class-variance-authority"],
+    files: [
+      {
+        path: "src/components/ui/toggle.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "toggle-group",
+    title: "Toggle Group",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react", "class-variance-authority"],
+    registryDependencies: ["https://neobrutalism.dev/r/ntoggle.json"],
+    files: [
+      {
+        path: "src/components/ui/toggle-group.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "ntoggle",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react", "class-variance-authority"],
+    files: [
+      {
+        path: "src/components/ui/toggle.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "ntextarea",
+    type: "registry:ui",
+    files: [
+      {
+        path: "src/components/ui/textarea.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
   {
     name: "s1",
     title: "Star 1",

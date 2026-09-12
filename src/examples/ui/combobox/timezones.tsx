@@ -81,23 +81,23 @@ export default function TimezoneCombobox() {
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
-        <Button
-          variant="noShadow"
-          className="h-12 w-full justify-between px-2.5 md:max-w-[200px]"
-        >
-          {selectedTimezoneLabel ? (
-            <div className="flex flex-col items-start gap-0.5">
-              <span className="text-main-foreground text-xs font-normal">
-                {selectedGroup?.label}
-              </span>
-              <span>{selectedTimezoneLabel}</span>
-            </div>
-          ) : (
-            "Select timezone"
-          )}
-          <ChevronDownIcon />
-        </Button>
+      <PopoverTrigger
+        render={
+          <Button
+            variant="noShadow"
+            className="h-12 w-full justify-between px-2.5 md:max-w-[200px]"
+          />
+        }
+      >
+        {selectedTimezoneLabel ? (
+          <div className="flex flex-col items-start gap-0.5">
+            <span className="text-xs font-normal">{selectedGroup?.label}</span>
+            <span>{selectedTimezoneLabel}</span>
+          </div>
+        ) : (
+          "Select timezone"
+        )}
+        <ChevronDownIcon />
       </PopoverTrigger>
       <PopoverContent className="p-0 border-0" align="start">
         <Command className="**:data-[slot=command-input-wrapper]:h-11">
@@ -130,7 +130,7 @@ export default function TimezoneCombobox() {
                 ))}
               </CommandGroup>
             ))}
-            <CommandGroup className="bg-main border-t-2 p-2 border-t-border sticky bottom-0">
+            <CommandGroup className="bg-background border-t-2 p-2 border-t-border sticky bottom-0">
               <CommandItem>
                 <PlusCircleIcon />
                 Create timezone

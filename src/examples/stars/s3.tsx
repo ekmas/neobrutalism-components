@@ -5,7 +5,7 @@ export default function Star3Example() {
     <Star3
       color="var(--main)"
       className="w-full h-full"
-      pathClassName="stroke-black stroke-2 dark:stroke-1"
+      pathClassName="stroke-black stroke-2"
     />
   )
 }

@@ -8,12 +8,11 @@ const root = "https://www.neobrutalism.dev"
 
 const DOCS_PAGES = [
   "/docs",
-  "/docs/resources",
   "/docs/figma",
   "/docs/changelog",
   "/docs/installation",
   "/docs/stars",
-  "/docs/migrating-from-v3",
+  "/docs/migrating-to-base-ui",
   "/templates",
   "/showcase",
   "/stars",

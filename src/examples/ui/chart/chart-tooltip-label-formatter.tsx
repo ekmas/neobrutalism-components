@@ -54,7 +54,7 @@ export default function ChartTooltipLabelFormatter() {
               tickMargin={10}
               axisLine={false}
               tickFormatter={(value) => {
-                return new Date(value).toLocaleDateString("en-US", {
+                return new Date(value as string).toLocaleDateString("en-US", {
                   weekday: "short",
                 })
               }}
@@ -75,11 +75,14 @@ export default function ChartTooltipLabelFormatter() {
               content={
                 <ChartTooltipContent
                   labelFormatter={(value) => {
-                    return new Date(value).toLocaleDateString("en-US", {
-                      day: "numeric",
-                      month: "long",
-                      year: "numeric",
-                    })
+                    return new Date(value as string).toLocaleDateString(
+                      "en-US",
+                      {
+                        day: "numeric",
+                        month: "long",
+                        year: "numeric",
+                      },
+                    )
                   }}
                 />
               }

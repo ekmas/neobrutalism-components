@@ -50,20 +50,22 @@ export default function FrameworkCombobox() {
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
-        <Button
-          variant="noShadow"
-          role="combobox"
-          aria-expanded={open}
-          className="w-full justify-between md:max-w-[200px]"
-        >
-          {value
-            ? frameworks.find((framework) => framework.value === value)?.label
-            : "Select framework..."}
-          <ChevronsUpDown />
-        </Button>
+      <PopoverTrigger
+        render={
+          <Button
+            variant="noShadow"
+            role="combobox"
+            aria-expanded={open}
+            className="w-full justify-between md:max-w-[200px]"
+          />
+        }
+      >
+        {value
+          ? frameworks.find((framework) => framework.value === value)?.label
+          : "Select framework..."}
+        <ChevronsUpDown />
       </PopoverTrigger>
-      <PopoverContent className="w-(--radix-popover-trigger-width) border-0 p-0">
+      <PopoverContent className="w-(--anchor-width) border-0 p-0">
         <Command className="**:data-[slot=command-input-wrapper]:h-11">
           <CommandInput placeholder="Search framework..." />
           <CommandList className="p-1">

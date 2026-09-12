@@ -5,7 +5,7 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/tabs
 ---
 
 <ComponentPreview component="tabs">
-  ```tsx file=<rootDir>/src/examples/ui/tabs.tsx
+  ```tsx file=<rootDir>/src/examples/ui/tabs/index.tsx
   ```
 </ComponentPreview>
 
@@ -93,3 +93,39 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
   </TabsContent>
 </Tabs>
 ```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="tabs" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/tabs/index.tsx
+  ```
+</ComponentPreview>
+
+### Vertical
+
+Use `orientation="vertical"` for vertical tabs.
+
+<ComponentPreview component="tabs" example="vertical">
+  ```tsx file=<rootDir>/src/examples/ui/tabs/vertical.tsx
+  ```
+</ComponentPreview>
+
+### Disabled
+
+Use the `disabled` prop on `TabsTrigger` to disable a tab.
+
+<ComponentPreview component="tabs" example="disabled">
+  ```tsx file=<rootDir>/src/examples/ui/tabs/disabled.tsx
+  ```
+</ComponentPreview>
+
+### Icons
+
+Place an icon before the label inside `TabsTrigger`.
+
+<ComponentPreview component="tabs" example="icons">
+  ```tsx file=<rootDir>/src/examples/ui/tabs/icons.tsx
+  ```
+</ComponentPreview>

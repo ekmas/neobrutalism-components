@@ -5,7 +5,7 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/breadcrumb
 ---
 
 <ComponentPreview component="breadcrumb">
-  ```tsx file=<rootDir>/src/examples/ui/breadcrumb.tsx
+  ```tsx file=<rootDir>/src/examples/ui/breadcrumb/index.tsx
   ```
 </ComponentPreview>
 
@@ -67,3 +67,57 @@ import {
   </BreadcrumbList>
 </Breadcrumb>
 ```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="breadcrumb" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/breadcrumb/index.tsx
+  ```
+</ComponentPreview>
+
+### Basic
+
+A basic breadcrumb with a home link and a components link.
+
+<ComponentPreview component="breadcrumb" example="basic">
+  ```tsx file=<rootDir>/src/examples/ui/breadcrumb/basic.tsx
+  ```
+</ComponentPreview>
+
+### Custom separator
+
+Use a custom component as `children` for `<BreadcrumbSeparator />` to create a custom separator.
+
+<ComponentPreview component="breadcrumb" example="custom-separator">
+  ```tsx file=<rootDir>/src/examples/ui/breadcrumb/custom-separator.tsx
+  ```
+</ComponentPreview>
+
+### Dropdown
+
+You can compose `<BreadcrumbItem />` with a [Dropdown Menu](/docs/dropdown-menu) to create a dropdown in the breadcrumb.
+
+<ComponentPreview component="breadcrumb" example="dropdown">
+  ```tsx file=<rootDir>/src/examples/ui/breadcrumb/dropdown.tsx
+  ```
+</ComponentPreview>
+
+### Collapsed
+
+We provide a `<BreadcrumbEllipsis />` component to show a collapsed state when the breadcrumb is too long.
+
+<ComponentPreview component="breadcrumb" example="collapsed">
+  ```tsx file=<rootDir>/src/examples/ui/breadcrumb/collapsed.tsx
+  ```
+</ComponentPreview>
+
+### Link component
+
+To use a custom link component from your routing library, you can use the `render` prop on `<BreadcrumbLink />`.
+
+<ComponentPreview component="breadcrumb" example="link-component">
+  ```tsx file=<rootDir>/src/examples/ui/breadcrumb/link-component.tsx
+  ```
+</ComponentPreview>

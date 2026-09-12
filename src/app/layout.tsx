@@ -6,13 +6,12 @@ import { DM_Sans } from "next/font/google"
 import Navbar from "@/components/app/navbar"
 import ScrollToTop from "@/components/app/scroll-to-top"
 import SetStylingPref from "@/components/app/set-styling-pref"
-import { ThemeProvider } from "@/components/app/theme-provider"
-import { Toaster } from "@/components/ui/sonner"
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
   display: "swap",
   adjustFontFallback: false,
+  variable: "--font-dm-sans",
 })
 
 export const metadata: Metadata = {
@@ -58,19 +57,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html className="scroll-smooth" suppressHydrationWarning lang="en">
-      <body className={dmSans.className}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="light"
-            disableTransitionOnChange
-          >
-            <Navbar />
-            {children}
-            <SetStylingPref />
-            <ScrollToTop />
-            <Toaster />
-          </ThemeProvider>
+    <html className={`${dmSans.variable} scroll-smooth`} lang="en">
+      <body className="isolate">
+        <Navbar />
+        {children}
+        <SetStylingPref />
+        <ScrollToTop />
       </body>
     </html>
   )

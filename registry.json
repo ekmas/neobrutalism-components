@@ -9,7 +9,7 @@
       "title": "Accordion",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-accordion"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -34,7 +34,7 @@
       "title": "Alert dialog",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-alert-dialog"
+        "@base-ui/react"
       ],
       "registryDependencies": [
         "https://neobrutalism.dev/r/nbutton.json"
@@ -51,7 +51,7 @@
       "title": "Avatar",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-avatar"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -76,7 +76,7 @@
       "title": "Breadcrumb",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-slot"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -89,7 +89,7 @@
       "name": "nbutton",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-slot"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -103,7 +103,7 @@
       "title": "Button",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-slot"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -117,8 +117,8 @@
       "title": "Calendar",
       "type": "registry:ui",
       "dependencies": [
-        "react-day-picker@8.10.1",
-        "date-fns"
+        "react-day-picker@^9",
+        "date-fns@^4"
       ],
       "registryDependencies": [
         "https://neobrutalism.dev/r/nbutton.json"
@@ -174,7 +174,7 @@
       "title": "Chart",
       "type": "registry:ui",
       "dependencies": [
-        "recharts",
+        "recharts@^3",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -192,7 +192,7 @@
       "title": "Checkbox",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-checkbox"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -206,7 +206,7 @@
       "title": "Collapsible",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-collapsible"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -237,7 +237,7 @@
       "title": "Context menu",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-context-menu"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -250,7 +250,7 @@
       "name": "ndialog",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-dialog"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -264,7 +264,7 @@
       "title": "Dialog",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-dialog"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -278,8 +278,7 @@
       "title": "Drawer",
       "type": "registry:ui",
       "dependencies": [
-        "vaul",
-        "@radix-ui/react-dialog"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -293,7 +292,7 @@
       "title": "Dropdown menu",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-dropdown-menu"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -307,8 +306,7 @@
       "title": "Form",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-label",
-        "@radix-ui/react-slot",
+        "@base-ui/react",
         "@hookform/resolvers",
         "zod",
         "react-hook-form"
@@ -329,7 +327,7 @@
       "title": "Hover card",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-hover-card"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -389,7 +387,7 @@
       "name": "nlabel",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-label"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -403,7 +401,7 @@
       "title": "Label",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-label"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -429,7 +427,7 @@
       "title": "Menubar",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-menubar"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -443,7 +441,7 @@
       "title": "Navigation menu",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-navigation-menu"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -471,7 +469,7 @@
       "title": "Popover",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-popover"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -485,7 +483,7 @@
       "title": "Progress",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-progress"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -499,7 +497,7 @@
       "title": "Radio group",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-radio-group"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -513,7 +511,7 @@
       "title": "Resizable",
       "type": "registry:ui",
       "dependencies": [
-        "react-resizable-panels"
+        "react-resizable-panels@^4"
       ],
       "files": [
         {
@@ -527,7 +525,7 @@
       "title": "Scroll area",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-scroll-area"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -541,7 +539,7 @@
       "title": "Select",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-select"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -555,7 +553,7 @@
       "title": "Sheet",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-dialog"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -569,7 +567,7 @@
       "title": "Sheet",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-dialog"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -627,7 +625,7 @@
       "title": "Slider",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-slider"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -637,26 +635,11 @@
       ]
     },
     {
-      "name": "sonner",
-      "title": "Sonner",
-      "type": "registry:ui",
-      "dependencies": [
-        "sonner",
-        "next-themes"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/sonner.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
       "name": "switch",
       "title": "Switch",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-switch"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -681,7 +664,7 @@
       "title": "Tabs",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-tabs"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -706,7 +689,7 @@
       "title": "Tooltip",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-tooltip"
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -720,11 +703,314 @@
       "title": "Tooltip",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-tooltip"
+        "@base-ui/react"
       ],
       "files": [
         {
           "path": "src/components/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "attachment",
+      "title": "Attachment",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism.dev/r/nbutton.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/attachment.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bubble",
+      "title": "Bubble",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/bubble.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "title": "Button Group",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/button-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "direction",
+      "title": "Direction",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/direction.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "title": "Empty",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/empty.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "title": "Field",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism.dev/r/nlabel.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/field.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "title": "Input Group",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism.dev/r/nbutton.json",
+        "https://neobrutalism.dev/r/ninput.json",
+        "https://neobrutalism.dev/r/ntextarea.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/input-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "title": "Item",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/item.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "title": "Kbd",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "src/components/ui/kbd.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "marker",
+      "title": "Marker",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/marker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message",
+      "title": "Message",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "src/components/ui/message.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message-scroller",
+      "title": "Message Scroller",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react",
+        "@shadcn/react"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism.dev/r/nbutton.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/message-scroller.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "native-select",
+      "title": "Native Select",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/native-select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "questionnaire",
+      "title": "Questionnaire",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react",
+        "@shadcn/react"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism.dev/r/nbutton.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/questionnaire.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "title": "Spinner",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "title": "Toast",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism.dev/r/nbutton.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/toast.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "title": "Toggle",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/toggle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "title": "Toggle Group",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism.dev/r/ntoggle.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/toggle-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ntoggle",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/toggle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ntextarea",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "src/components/ui/textarea.tsx",
           "type": "registry:ui"
         }
       ]

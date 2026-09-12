@@ -1,6 +1,6 @@
 "use client"
 
-import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
+import { Checkbox as CheckboxPrimitive } from "@base-ui/react/checkbox"
 import { Check } from "lucide-react"
 
 import * as React from "react"
@@ -15,7 +15,7 @@ function Checkbox({
     <CheckboxPrimitive.Root
       data-slot="checkbox"
       className={cn(
-        "peer size-4 shrink-0 outline-2 outline-border ring-offset-white focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-main data-[state=checked]:text-white",
+        "peer flex size-4 shrink-0 items-center justify-center outline-2 outline-border ring-offset-white focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 data-disabled:cursor-not-allowed data-disabled:opacity-50 data-checked:bg-main data-checked:text-white data-indeterminate:bg-main data-indeterminate:text-white aria-invalid:outline-red-500",
         className,
       )}
       {...props}

@@ -1,33 +1,13 @@
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-}
-:-moz-focusring {
-  outline: auto;
-}
-:-moz-ui-invalid {
-  box-shadow: none;
-}
-progress {
-  vertical-align: baseline;
-}
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-  height: auto;
-}
-[type="search"] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
-}
-::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
-}
+/*
+ * Styles for the @devnomic/marquee component used on the home page.
+ *
+ * The library's own stylesheet ships unlayered copies of generic Tailwind
+ * utilities (.flex-col, .overflow-hidden, ...) which override the real
+ * utilities on every page this file is loaded on. Only the marquee-specific
+ * rules are kept here, scoped to the marquee's own elements. Generic classes
+ * the library applies (flex, flex-row, flex-col, shrink-0, overflow-hidden)
+ * come from Tailwind.
+ */
 
 @keyframes marquee-left {
   from {
@@ -37,9 +17,7 @@ progress {
     transform: translateX(calc(-100% - var(--gap)));
   }
 }
-.animate-marquee-left {
-  animation: marquee-left var(--duration, 100s) linear infinite;
-}
+
 @keyframes marquee-up {
   from {
     transform: translateY(0);
@@ -48,60 +26,31 @@ progress {
     transform: translateY(calc(-100% - var(--gap)));
   }
 }
+
+/* Outer container: `group flex gap-[1rem] overflow-hidden` */
+.group.overflow-hidden.gap-\[1rem\] {
+  gap: var(--gap, 20px);
+}
+
+/* Scrolling rows: `flex justify-around gap-[1rem] [--gap:1rem] shrink-0` */
+.animate-marquee-left,
+.animate-marquee-up {
+  justify-content: space-around;
+  gap: var(--gap, 20px);
+}
+
+.animate-marquee-left {
+  animation: marquee-left var(--duration, 100s) linear infinite;
+}
+
 .animate-marquee-up {
   animation: marquee-up var(--duration, 40s) linear infinite;
 }
-.flex-row {
-  flex-direction: row;
-}
-.flex-col {
-  flex-direction: column;
-}
-.justify-around {
-  justify-content: space-around;
-}
-.gap-\[1rem\] {
-  gap: 20px;
-}
 
-.overflow-hidden {
-  overflow: hidden;
-}
-@keyframes enter {
-  from {
-    opacity: var(--tw-enter-opacity, 1);
-    transform: translate3d(
-        var(--tw-enter-translate-x, 0),
-        var(--tw-enter-translate-y, 0),
-        0
-      )
-      scale3d(
-        var(--tw-enter-scale, 1),
-        var(--tw-enter-scale, 1),
-        var(--tw-enter-scale, 1)
-      )
-      rotate(var(--tw-enter-rotate, 0));
-  }
-}
-@keyframes exit {
-  to {
-    opacity: var(--tw-exit-opacity, 1);
-    transform: translate3d(
-        var(--tw-exit-translate-x, 0),
-        var(--tw-exit-translate-y, 0),
-        0
-      )
-      scale3d(
-        var(--tw-exit-scale, 1),
-        var(--tw-exit-scale, 1),
-        var(--tw-exit-scale, 1)
-      )
-      rotate(var(--tw-exit-rotate, 0));
-  }
-}
 .direction-reverse {
   animation-direction: reverse;
 }
+
 .\[--gap\:1rem\] {
   --gap: 20px;
 }

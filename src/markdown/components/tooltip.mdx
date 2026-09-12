@@ -5,7 +5,7 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/tooltip
 ---
 
 <ComponentPreview component="tooltip">
-  ```tsx file=<rootDir>/src/examples/ui/tooltip.tsx
+  ```tsx file=<rootDir>/src/examples/ui/tooltip/index.tsx
   ```
 </ComponentPreview>
 
@@ -31,12 +31,46 @@ import {
 ```tsx
 <TooltipProvider>
   <Tooltip>
-    <TooltipTrigger asChild>
-      <Button example="noShadow">Hover</Button>
-    </TooltipTrigger>
+    <TooltipTrigger render={<Button variant="noShadow" />}>Hover</TooltipTrigger>
     <TooltipContent>
       <p>Add to library</p>
     </TooltipContent>
   </Tooltip>
 </TooltipProvider>
 ```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="tooltip" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/tooltip/index.tsx
+  ```
+</ComponentPreview>
+
+### Side
+
+Use the `side` prop on `TooltipContent` to change the position of the tooltip.
+
+<ComponentPreview component="tooltip" example="side">
+  ```tsx file=<rootDir>/src/examples/ui/tooltip/side.tsx
+  ```
+</ComponentPreview>
+
+### With Keyboard Shortcut
+
+Render a [Kbd](/docs/kbd) inside `TooltipContent` to show the keyboard shortcut for an action.
+
+<ComponentPreview component="tooltip" example="with-keyboard-shortcut">
+  ```tsx file=<rootDir>/src/examples/ui/tooltip/with-keyboard-shortcut.tsx
+  ```
+</ComponentPreview>
+
+### Disabled Button
+
+Show a tooltip on a disabled button by wrapping it with a span.
+
+<ComponentPreview component="tooltip" example="disabled-button">
+  ```tsx file=<rootDir>/src/examples/ui/tooltip/disabled-button.tsx
+  ```
+</ComponentPreview>

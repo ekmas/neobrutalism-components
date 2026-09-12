@@ -15,9 +15,7 @@ import {
 export default function SheetDemo() {
   return (
     <Sheet>
-      <SheetTrigger asChild>
-        <Button>Open</Button>
-      </SheetTrigger>
+      <SheetTrigger render={<Button />}>Open</SheetTrigger>
       <SheetContent>
         <SheetHeader>
           <SheetTitle>Edit profile</SheetTitle>
@@ -37,9 +35,7 @@ export default function SheetDemo() {
         </div>
         <SheetFooter>
           <Button type="submit">Save changes</Button>
-          <SheetClose asChild>
-            <Button variant="neutral">Close</Button>
-          </SheetClose>
+          <SheetClose render={<Button variant="neutral" />}>Close</SheetClose>
         </SheetFooter>
       </SheetContent>
     </Sheet>

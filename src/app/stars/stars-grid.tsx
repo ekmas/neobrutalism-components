@@ -15,16 +15,18 @@ import {
 } from "@/components/ui/select"
 import { TooltipProvider } from "@/components/ui/tooltip"
 
+import { REGISTRY_URL } from "@/lib/site"
+
 import CopyBtn from "./copy-btn"
 import ShadcnBtn from "./shadcn-btn"
 
 export default function StarsGrid() {
   const [command, setCommand] = useState(
-    "pnpm dlx shadcn@latest add https://neobrutalism.dev/r/",
+    `pnpm dlx shadcn@latest add ${REGISTRY_URL}/`,
   )
 
-  const handleChange = (pkg: string) => {
-    const command = "shadcn@latest add https://neobrutalism.dev/r/"
+  const handleChange = (pkg: string | null) => {
+    const command = `shadcn@latest add ${REGISTRY_URL}/`
 
     if (pkg === "pnpm") {
       setCommand("pnpm dlx " + command)
@@ -40,7 +42,11 @@ export default function StarsGrid() {
   return (
     <>
       <div className="mb-5 flex justify-end">
-        <Select onValueChange={handleChange} defaultValue="pnpm">
+        <Select
+          onValueChange={handleChange}
+          defaultValue="pnpm"
+          items={{ pnpm: "Pnpm", npm: "Npm", yarn: "Yarn", bun: "Bun" }}
+        >
           <SelectTrigger className="w-[150px]">
             <SelectValue placeholder="Pnpm" />
           </SelectTrigger>
@@ -70,7 +76,7 @@ export default function StarsGrid() {
               <h4 className="font-heading">Star {i + 1}</h4>
 
               <div className="flex items-center gap-2">
-                <TooltipProvider delayDuration={0}>
+                <TooltipProvider delay={0}>
                   <ShadcnBtn command={command + `s${i + 1}.json`} />
                   <CopyBtn code={star.code} />
                 </TooltipProvider>

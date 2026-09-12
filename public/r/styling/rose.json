@@ -1,30 +1,36 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "neobrutalism-rose",
   "type": "registry:style",
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "extends": "none",
   "title": "Neobrutalism Rose",
+  "description": "A collection of neobrutalism-styled components based on shadcn/ui.",
+  "dependencies": [
+    "tw-animate-css",
+    "class-variance-authority",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://neobrutalism.dev/r/button.json"
+  ],
   "cssVars": {
-    "dark": {
-      "background": "oklch(25.15% 0.0495 7.54)",
-      "secondary-background": "oklch(100% 0 0)",
-      "main": "oklch(67.58% 0.2135 18.63)",
-      "ring": "oklch(100% 0 0)",
-      "foreground": "oklch(92.49% 0 0)",
-      "main-foreground": "oklch(0% 0 0)",
-      "border": "oklch(0% 0 0)",
-      "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
-    },
     "light": {
-      "background": "oklch(93.37% 0.0339 12.05)",
-      "secondary-background": "oklch(23.93% 0 0)",
-      "main": "oklch(70.79% 0.1862 16.25)",
+      "background": "hsl(355, 100%, 94%)",
+      "secondary-background": "oklch(100% 0 0)",
+      "main": "hsl(353, 100%, 70%)",
       "ring": "oklch(0% 0 0)",
       "foreground": "oklch(0% 0 0)",
       "main-foreground": "oklch(0% 0 0)",
       "border": "oklch(0% 0 0)",
-      "overlay": "rgba(0, 0, 0, 0.8)",
-      "shadow": "4px 4px 0px 0px var(--border)"
+      "overlay": "oklch(0% 0 0 / 0.8)",
+      "shadow": "4px 4px 0px 0px var(--border)",
+      "chart-1": "#FF6678",
+      "chart-2": "#7A83FF",
+      "chart-3": "#FACC00",
+      "chart-4": "#00D696",
+      "chart-5": "#5294FF",
+      "chart-active-dot": "#000"
     },
     "theme": {
       "color-main": "var(--main)",
@@ -35,6 +41,11 @@
       "color-border": "var(--border)",
       "color-ring": "var(--ring)",
       "color-overlay": "var(--overlay)",
+      "color-chart-1": "var(--chart-1)",
+      "color-chart-2": "var(--chart-2)",
+      "color-chart-3": "var(--chart-3)",
+      "color-chart-4": "var(--chart-4)",
+      "color-chart-5": "var(--chart-5)",
       "spacing-boxShadowX": "4px",
       "spacing-boxShadowY": "4px",
       "spacing-reverseBoxShadowX": "-4px",
@@ -42,17 +53,55 @@
       "radius-base": "5px",
       "font-weight-base": "500",
       "font-weight-heading": "700",
-      "shadow-shadow": "var(--shadow)"
+      "shadow-shadow": "var(--shadow)",
+      "animate-marquee": "marquee 5s linear infinite",
+      "animate-marquee2": "marquee2 5s linear infinite"
     }
   },
-  "extends": "none",
-  "description": "A collection of neobrutalism-styled components based on shadcn/ui.",
-  "dependencies": [
-    "tw-animate-css",
-    "class-variance-authority",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "utils"
-  ]
+  "css": {
+    "@import \"tw-animate-css\"": {},
+    "@layer base": {
+      "body": {
+        "font-weight": "var(--font-weight-base)",
+        "color": "var(--foreground)"
+      },
+      "h1, h2, h3, h4, h5, h6": {
+        "font-weight": "var(--font-weight-heading)"
+      }
+    },
+    "@keyframes marquee": {
+      "0%": {
+        "transform": "translateX(0%)"
+      },
+      "100%": {
+        "transform": "translateX(-100%)"
+      }
+    },
+    "@keyframes marquee2": {
+      "0%": {
+        "transform": "translateX(100%)"
+      },
+      "100%": {
+        "transform": "translateX(0%)"
+      }
+    },
+    "body, .scrollbar": {
+      "--sb-track-color": "#ffffff",
+      "--sb-thumb-color": "#000000"
+    },
+    ".scrollbar::-webkit-scrollbar": {
+      "width": "16px"
+    },
+    ".scrollbar::-webkit-scrollbar-track": {
+      "background": "var(--sb-track-color)"
+    },
+    ".scrollbar::-webkit-scrollbar-thumb": {
+      "background": "var(--sb-thumb-color)"
+    },
+    "@supports not selector(::-webkit-scrollbar)": {
+      ".scrollbar": {
+        "scrollbar-color": "var(--sb-thumb-color) var(--sb-track-color)"
+      }
+    }
+  }
 }

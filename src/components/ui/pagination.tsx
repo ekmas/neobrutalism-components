@@ -55,8 +55,9 @@ function PaginationLink({
           variant: "noShadow",
           size,
         }),
+        "bg-background text-foreground",
+        isActive && "bg-main text-main-foreground",
         className,
-        isActive && "bg-black text-white",
       )}
       {...props}
     />

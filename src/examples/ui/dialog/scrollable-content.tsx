@@ -11,9 +11,7 @@ import {
 export default function DialogWithScrollableContent() {
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <Button>Scrollable Content</Button>
-      </DialogTrigger>
+      <DialogTrigger render={<Button />}>Scrollable Content</DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Scrollable Content</DialogTitle>

@@ -1,8 +1,13 @@
 "use client"
 
 import { TrendingUp } from "lucide-react"
-import { Label, Pie, PieChart, Sector } from "recharts"
-import { PieSectorDataItem } from "recharts/types/polar/Pie"
+import {
+  Label,
+  Pie,
+  PieChart,
+  Sector,
+  type PieSectorShapeProps,
+} from "recharts"
 
 import {
   Card,
@@ -55,6 +60,8 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
+const ACTIVE_INDEX = 0
+
 export default function ChartPieDonutActive() {
   return (
     <Card className="flex flex-col bg-secondary-background text-foreground">
@@ -78,13 +85,17 @@ export default function ChartPieDonutActive() {
               nameKey="browser"
               innerRadius={60}
               strokeWidth={5}
-              activeIndex={0}
-              activeShape={({
+              shape={({
+                index,
                 outerRadius = 0,
                 ...props
-              }: PieSectorDataItem) => (
-                <Sector {...props} outerRadius={outerRadius + 10} />
-              )}
+              }: PieSectorShapeProps) =>
+                index === ACTIVE_INDEX ? (
+                  <Sector {...props} outerRadius={outerRadius + 10} />
+                ) : (
+                  <Sector {...props} outerRadius={outerRadius} />
+                )
+              }
             />
           </PieChart>
         </ChartContainer>

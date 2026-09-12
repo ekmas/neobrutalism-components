@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 import Search from "@/components/app/search"
-import { ThemeSwitcher } from "@/components/app/theme-switcher"
+import { Badge } from "@/components/ui/badge"
 
 async function getRepoData() {
   const res = await fetch(
@@ -41,19 +41,34 @@ async function Navbar() {
           <div className="items-center text-base font-base xl:gap-10 lg:flex gap-10 hidden">
             <Link href="/docs">Docs</Link>
 
-            <Link href="/docs/accordion">Components</Link>
+            <Link
+              className="flex items-center gap-2"
+              href="/docs/accordion"
+            >
+              Components
+              <Badge
+                variant="neutral"
+                className="bg-chart-3 text-main-foreground px-1.5 py-0 text-[10px] font-heading uppercase"
+              >
+                New
+              </Badge>
+            </Link>
 
-            <Link href="/styling">Styling</Link>
+            <Link className="flex items-center gap-2" href="/styling">
+              Styling
+              <Badge
+                variant="neutral"
+                className="bg-chart-3 text-main-foreground px-1.5 py-0 text-[10px] font-heading uppercase"
+              >
+                New
+              </Badge>
+            </Link>
 
             {/* <Link href="/blocks">Blocks</Link> */}
 
             <Link href="/charts">Charts</Link>
 
             <Link href="/stars">Stars</Link>
-
-            <Link href="/templates">Templates</Link>
-
-            <Link href="/showcase">Showcase</Link>
           </div>
         </div>
 
@@ -64,7 +79,7 @@ async function Navbar() {
             <a
               target="_blank"
               href="https://github.com/ekmas/neobrutalism-components"
-              className="flex gap-2 items-center justify-center rounded-base border-2 border-border shadow-nav dark:shadow-navDark dark:border-darkBorder px-1.5 h-9 transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none dark:hover:shadow-none"
+              className="flex gap-2 items-center justify-center rounded-base border-2 border-border shadow-nav px-1.5 h-9 transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none"
             >
               <p className="font-semibold sm:inline hidden">{starsCount}</p>
 
@@ -82,7 +97,7 @@ async function Navbar() {
             <a
               target="_blank"
               href="https://twitter.com/samuelbreznjak"
-              className="flex items-center justify-center rounded-base border-2 border-border shadow-nav dark:shadow-navDark dark:border-darkBorder size-9 transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none dark:hover:shadow-none"
+              className="flex items-center justify-center rounded-base border-2 border-border shadow-nav size-9 transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none"
             >
               <svg
                 className="size-5"
@@ -95,8 +110,6 @@ async function Navbar() {
                 />
               </svg>
             </a>
-
-            <ThemeSwitcher />
           </div>
         </div>
       </div>

@@ -20,13 +20,7 @@ const starFiles = fs
 const imports: string[] = []
 const starsArray: string[] = []
 const exampleImports: string[] = []
-const exampleKeys = [
-  "custom-width-height",
-  "dark-mode-stroke",
-  "dark-mode",
-  "default",
-  "with-stroke",
-]
+const exampleKeys = ["custom-width-height", "default", "with-stroke"]
 
 starFiles.forEach((file) => {
   const match = file.match(/s(\d+)\.tsx$/)

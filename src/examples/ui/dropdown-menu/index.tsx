@@ -1,7 +1,7 @@
 import {
   Cloud,
   CreditCard,
-  Github,
+  GitBranch,
   Keyboard,
   LifeBuoy,
   LogOut,
@@ -24,7 +24,6 @@ import {
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuPortal,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuSub,
@@ -36,8 +35,8 @@ import {
 export default function DropdownMenuDemo() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant={"noShadow"}>Open</Button>
+      <DropdownMenuTrigger render={<Button variant={"noShadow"} />}>
+        Open
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
@@ -75,23 +74,21 @@ export default function DropdownMenuDemo() {
               <UserPlus />
               <span>Invite users</span>
             </DropdownMenuSubTrigger>
-            <DropdownMenuPortal>
-              <DropdownMenuSubContent>
-                <DropdownMenuItem>
-                  <Mail />
-                  <span>Email</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <MessageSquare />
-                  <span>Message</span>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                  <PlusCircle />
-                  <span>More...</span>
-                </DropdownMenuItem>
-              </DropdownMenuSubContent>
-            </DropdownMenuPortal>
+            <DropdownMenuSubContent>
+              <DropdownMenuItem>
+                <Mail />
+                <span>Email</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <MessageSquare />
+                <span>Message</span>
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>
+                <PlusCircle />
+                <span>More...</span>
+              </DropdownMenuItem>
+            </DropdownMenuSubContent>
           </DropdownMenuSub>
           <DropdownMenuItem>
             <Plus />
@@ -101,7 +98,7 @@ export default function DropdownMenuDemo() {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <Github />
+          <GitBranch />
           <span>GitHub</span>
         </DropdownMenuItem>
         <DropdownMenuItem>

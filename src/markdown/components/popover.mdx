@@ -5,7 +5,7 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/popover
 ---
 
 <ComponentPreview component="popover">
-  ```tsx file=<rootDir>/src/examples/ui/popover.tsx
+  ```tsx file=<rootDir>/src/examples/ui/popover/index.tsx
   ```
 </ComponentPreview>
 
@@ -31,9 +31,7 @@ import {
 
 ```tsx
 <Popover>
-  <PopoverTrigger asChild>
-    <Button example="noShadow">Open popover</Button>
-  </PopoverTrigger>
+  <PopoverTrigger render={<Button variant="noShadow" />}>Open popover</PopoverTrigger>
   <PopoverContent className="w-80 text-main-foreground">
     <div className="grid gap-4">
       <div className="space-y-2">
@@ -78,3 +76,39 @@ import {
   </PopoverContent>
 </Popover>
 ```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="popover" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/popover/index.tsx
+  ```
+</ComponentPreview>
+
+### Basic
+
+A simple popover with a header, title, and description.
+
+<ComponentPreview component="popover" example="basic">
+  ```tsx file=<rootDir>/src/examples/ui/popover/basic.tsx
+  ```
+</ComponentPreview>
+
+### Align
+
+Use the `align` prop on `PopoverContent` to control the horizontal alignment.
+
+<ComponentPreview component="popover" example="align">
+  ```tsx file=<rootDir>/src/examples/ui/popover/align.tsx
+  ```
+</ComponentPreview>
+
+### With Form
+
+A popover with [Field](/docs/field) form fields inside.
+
+<ComponentPreview component="popover" example="with-form">
+  ```tsx file=<rootDir>/src/examples/ui/popover/with-form.tsx
+  ```
+</ComponentPreview>
