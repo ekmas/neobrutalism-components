@@ -14,15 +14,15 @@ import {
 
 const SHEET_SIDES = ["top", "right", "bottom", "left"] as const
 
-export default function SheetDemo() {
+export default function SheetSideDemo() {
   return (
     <div className="flex gap-2">
       {SHEET_SIDES.map((side) => (
         <Sheet key={side}>
-          <SheetTrigger asChild>
-            <Button variant="noShadow" className="capitalize">
-              {side}
-            </Button>
+          <SheetTrigger
+            render={<Button variant="noShadow" className="capitalize" />}
+          >
+            {side}
           </SheetTrigger>
           <SheetContent side={side}>
             <SheetHeader>
@@ -51,8 +51,8 @@ export default function SheetDemo() {
             </div>
             <SheetFooter>
               <Button type="submit">Save changes</Button>
-              <SheetClose asChild>
-                <Button variant="neutral">Cancel</Button>
+              <SheetClose render={<Button variant="neutral" />}>
+                Cancel
               </SheetClose>
             </SheetFooter>
           </SheetContent>

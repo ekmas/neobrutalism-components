@@ -1,19 +1,19 @@
 "use client"
 
-import * as TooltipPrimitive from "@radix-ui/react-tooltip"
+import { Tooltip as TooltipPrimitive } from "@base-ui/react/tooltip"
 
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
 function TooltipProvider({
-  delayDuration = 0,
+  delay = 0,
   ...props
 }: React.ComponentProps<typeof TooltipPrimitive.Provider>) {
   return (
     <TooltipPrimitive.Provider
       data-slot="tooltip-provider"
-      delayDuration={delayDuration}
+      delay={delay}
       {...props}
     />
   )
@@ -33,19 +33,38 @@ function TooltipTrigger({
 
 function TooltipContent({
   className,
+  side = "top",
   sideOffset = 4,
+  align = "center",
+  alignOffset = 0,
+  children,
   ...props
-}: React.ComponentProps<typeof TooltipPrimitive.Content>) {
+}: React.ComponentProps<typeof TooltipPrimitive.Popup> &
+  Pick<
+    React.ComponentProps<typeof TooltipPrimitive.Positioner>,
+    "align" | "alignOffset" | "side" | "sideOffset"
+  >) {
   return (
-    <TooltipPrimitive.Content
-      data-slot="tooltip-content"
-      sideOffset={sideOffset}
-      className={cn(
-        "z-50 overflow-hidden rounded-base border-2 border-border bg-main px-3 py-1.5 text-sm font-base text-main-foreground animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 origin-(--radix-tooltip-content-transform-origin)",
-        className,
-      )}
-      {...props}
-    />
+    <TooltipPrimitive.Portal>
+      <TooltipPrimitive.Positioner
+        align={align}
+        alignOffset={alignOffset}
+        side={side}
+        sideOffset={sideOffset}
+        className="isolate z-50"
+      >
+        <TooltipPrimitive.Popup
+          data-slot="tooltip-content"
+          className={cn(
+            "z-50 overflow-hidden rounded-base border-2 border-border bg-secondary-background px-3 py-1.5 text-sm font-base text-foreground origin-(--transform-origin) data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[side=inline-end]:slide-in-from-left-2 data-[side=inline-start]:slide-in-from-right-2",
+            className,
+          )}
+          {...props}
+        >
+          {children}
+        </TooltipPrimitive.Popup>
+      </TooltipPrimitive.Positioner>
+    </TooltipPrimitive.Portal>
   )
 }
 

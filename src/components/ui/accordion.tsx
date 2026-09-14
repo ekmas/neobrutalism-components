@@ -1,6 +1,6 @@
 "use client"
 
-import * as AccordionPrimitive from "@radix-ui/react-accordion"
+import { Accordion as AccordionPrimitive } from "@base-ui/react/accordion"
 import { ChevronDown } from "lucide-react"
 
 import * as React from "react"
@@ -39,7 +39,7 @@ function AccordionTrigger({
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          "flex flex-1 items-center justify-between text-left text-base text-main-foreground border-border focus-visible:ring-[3px] bg-main p-4 font-heading transition-all [&[data-state=open]>svg]:rotate-180 data-[state=open]:rounded-b-none data-[state=open]:border-b-2 disabled:pointer-events-none disabled:opacity-50",
+          "flex flex-1 items-center justify-between text-left text-base text-main-foreground border-border focus-visible:ring-[3px] bg-main p-4 font-heading transition-all [&[data-panel-open]>svg]:rotate-180 data-panel-open:rounded-b-none data-panel-open:border-b-2 disabled:pointer-events-none disabled:opacity-50 data-disabled:pointer-events-none data-disabled:opacity-50",
           className,
         )}
         {...props}
@@ -55,18 +55,16 @@ function AccordionContent({
   className,
   children,
   ...props
-}: React.ComponentProps<typeof AccordionPrimitive.Content>) {
+}: React.ComponentProps<typeof AccordionPrimitive.Panel>) {
   return (
-    <AccordionPrimitive.Content
+    <AccordionPrimitive.Panel
       data-slot="accordion-content"
-      className="overflow-hidden rounded-b-base bg-secondary-background text-sm font-base transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+      className="h-(--accordion-panel-height) overflow-hidden rounded-b-base bg-secondary-background text-sm font-base transition-[height] duration-200 ease-out data-starting-style:h-0 data-ending-style:h-0"
       {...props}
     >
       <div className={cn("p-4", className)}>{children}</div>
-    </AccordionPrimitive.Content>
+    </AccordionPrimitive.Panel>
   )
 }
-
-AccordionContent.displayName = AccordionPrimitive.Content.displayName
 
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }

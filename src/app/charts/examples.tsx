@@ -202,8 +202,8 @@ const ChartComponent = ({
     <div>
       {children}
       <Dialog>
-        <DialogTrigger asChild>
-          <Button className="mt-5 w-full">Copy</Button>
+        <DialogTrigger render={<Button className="mt-5 w-full" />}>
+          Copy
         </DialogTrigger>
         <DialogContent className="max-w-full">
           <DialogHeader>

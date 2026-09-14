@@ -10,6 +10,11 @@ const nextConfig = withMDX({
   async redirects() {
     return [
       {
+        source: "/docs/migrating-from-v3",
+        destination: "/docs/migrating-to-base-ui",
+        permanent: true,
+      },
+      {
         source: "/components/:slug*",
         destination: "/docs/:slug*",
         permanent: true,

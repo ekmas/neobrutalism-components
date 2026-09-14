@@ -49,18 +49,20 @@ function ComboboxDemo() {
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
-        <Button
-          variant="noShadow"
-          role="combobox"
-          aria-expanded={open}
-          className="w-[200px] justify-between"
-        >
-          {value
-            ? frameworks.find((framework) => framework.value === value)?.label
-            : "Select framework..."}
-          <ChevronsUpDown className="ml-2 size-4 shrink-0" />
-        </Button>
+      <PopoverTrigger
+        render={
+          <Button
+            variant="noShadow"
+            role="combobox"
+            aria-expanded={open}
+            className="w-[200px] justify-between"
+          />
+        }
+      >
+        {value
+          ? frameworks.find((framework) => framework.value === value)?.label
+          : "Select framework..."}
+        <ChevronsUpDown className="ml-2 size-4 shrink-0" />
       </PopoverTrigger>
       <PopoverContent className="w-[200px] border-0! p-0 font-base">
         <Command>

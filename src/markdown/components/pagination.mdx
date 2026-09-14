@@ -5,7 +5,7 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/pagination
 ---
 
 <ComponentPreview component="pagination">
-  ```tsx file=<rootDir>/src/examples/ui/pagination.tsx
+  ```tsx file=<rootDir>/src/examples/ui/pagination/index.tsx
   ```
 </ComponentPreview>
 
@@ -58,3 +58,30 @@ import {
   </PaginationContent>
 </Pagination>
 ```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="pagination" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/pagination/index.tsx
+  ```
+</ComponentPreview>
+
+### Simple
+
+A simple pagination with only page numbers.
+
+<ComponentPreview component="pagination" example="simple">
+  ```tsx file=<rootDir>/src/examples/ui/pagination/simple.tsx
+  ```
+</ComponentPreview>
+
+### Icons Only
+
+Use just the previous and next buttons without page numbers. This is useful for data tables with a rows per page selector.
+
+<ComponentPreview component="pagination" example="icons-only">
+  ```tsx file=<rootDir>/src/examples/ui/pagination/icons-only.tsx
+  ```
+</ComponentPreview>

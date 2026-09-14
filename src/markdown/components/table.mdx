@@ -5,7 +5,7 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/table
 ---
 
 <ComponentPreview component="table">
-  ```tsx file=<rootDir>/src/examples/ui/table.tsx
+  ```tsx file=<rootDir>/src/examples/ui/table/index.tsx
   ```
 </ComponentPreview>
 
@@ -107,3 +107,30 @@ const invoices = [
   </TableFooter>
 </Table>
 ```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="table" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/table/index.tsx
+  ```
+</ComponentPreview>
+
+### Footer
+
+Use the `<TableFooter />` component to add a footer to the table.
+
+<ComponentPreview component="table" example="footer">
+  ```tsx file=<rootDir>/src/examples/ui/table/footer.tsx
+  ```
+</ComponentPreview>
+
+### Actions
+
+A table showing actions for each row using a [Dropdown Menu](/docs/dropdown-menu) component.
+
+<ComponentPreview component="table" example="actions">
+  ```tsx file=<rootDir>/src/examples/ui/table/actions.tsx
+  ```
+</ComponentPreview>

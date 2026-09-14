@@ -6,16 +6,21 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
+const items = Array.from({ length: 100 }, (_, i) => ({
+  value: `item-${i}`,
+  label: `Item ${i}`,
+}))
+
 export default function SelectDemo() {
   return (
-    <Select>
+    <Select items={items}>
       <SelectTrigger className="w-[180px]">
         <SelectValue placeholder="Large List" />
       </SelectTrigger>
       <SelectContent>
-        {Array.from({ length: 100 }).map((_, i) => (
-          <SelectItem key={i} value={`item-${i}`}>
-            Item {i}
+        {items.map((item) => (
+          <SelectItem key={item.value} value={item.value}>
+            {item.label}
           </SelectItem>
         ))}
       </SelectContent>

@@ -1,16 +1,24 @@
 "use client"
 
 import {
-  ColumnDef,
-  ColumnFiltersState,
-  flexRender,
-  getCoreRowModel,
-  getFilteredRowModel,
-  getPaginationRowModel,
-  getSortedRowModel,
-  SortingState,
-  useReactTable,
-  VisibilityState,
+  columnFilteringFeature,
+  columnVisibilityFeature,
+  createColumnHelper,
+  createFilteredRowModel,
+  createPaginatedRowModel,
+  createSortedRowModel,
+  filterFn_includesString,
+  rowPaginationFeature,
+  rowSelectionFeature,
+  rowSortingFeature,
+  sortFn_alphanumeric,
+  sortFn_text,
+  tableFeatures,
+  useTable,
+  type ColumnFiltersState,
+  type ColumnVisibilityState,
+  type RowSelectionState,
+  type SortingState,
 } from "@tanstack/react-table"
 import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react"
 
@@ -77,14 +85,31 @@ export type Payment = {
   email: string
 }
 
-export const columns: ColumnDef<Payment>[] = [
-  {
+// TanStack Table v9 is modular: only the features listed here are bundled.
+const features = tableFeatures({
+  columnFilteringFeature,
+  columnVisibilityFeature,
+  rowPaginationFeature,
+  rowSelectionFeature,
+  rowSortingFeature,
+  filteredRowModel: createFilteredRowModel(),
+  paginatedRowModel: createPaginatedRowModel(),
+  sortedRowModel: createSortedRowModel(),
+  filterFns: { includesString: filterFn_includesString },
+  sortFns: { alphanumeric: sortFn_alphanumeric, text: sortFn_text },
+})
+
+const columnHelper = createColumnHelper<typeof features, Payment>()
+
+export const columns = columnHelper.columns([
+  columnHelper.display({
     id: "select",
     header: ({ table }) => (
       <Checkbox
-        checked={
-          table.getIsAllPageRowsSelected() ||
-          (table.getIsSomePageRowsSelected() && "indeterminate")
+        className="data-checked:bg-secondary-background data-indeterminate:bg-secondary-background"
+        checked={table.getIsAllPageRowsSelected()}
+        indeterminate={
+          table.getIsSomePageRowsSelected() && !table.getIsAllPageRowsSelected()
         }
         onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
         aria-label="Select all"
@@ -92,6 +117,7 @@ export const columns: ColumnDef<Payment>[] = [
     ),
     cell: ({ row }) => (
       <Checkbox
+        className="data-checked:bg-secondary-background data-indeterminate:bg-secondary-background"
         checked={row.getIsSelected()}
         onCheckedChange={(value) => row.toggleSelected(!!value)}
         aria-label="Select row"
@@ -99,20 +125,19 @@ export const columns: ColumnDef<Payment>[] = [
     ),
     enableSorting: false,
     enableHiding: false,
-  },
-  {
-    accessorKey: "status",
+  }),
+  columnHelper.accessor("status", {
     header: "Status",
     cell: ({ row }) => (
       <div className="capitalize">{row.getValue("status")}</div>
     ),
-  },
-  {
-    accessorKey: "email",
+  }),
+  columnHelper.accessor("email", {
     header: ({ column }) => {
       return (
         <Button
           variant="noShadow"
+          className="bg-secondary-background text-foreground"
           size="sm"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -122,9 +147,8 @@ export const columns: ColumnDef<Payment>[] = [
       )
     },
     cell: ({ row }) => <div className="lowercase">{row.getValue("email")}</div>,
-  },
-  {
-    accessorKey: "amount",
+  }),
+  columnHelper.accessor("amount", {
     header: () => <div className="text-right">Amount</div>,
     cell: ({ row }) => {
       const amount = parseFloat(row.getValue("amount"))
@@ -137,8 +161,8 @@ export const columns: ColumnDef<Payment>[] = [
 
       return <div className="text-right font-base">{formatted}</div>
     },
-  },
-  {
+  }),
+  columnHelper.display({
     id: "actions",
     enableHiding: false,
     cell: ({ row }) => {
@@ -146,11 +170,16 @@ export const columns: ColumnDef<Payment>[] = [
 
       return (
         <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="noShadow" className="size-8 p-0">
-              <span className="sr-only">Open menu</span>
-              <MoreHorizontal />
-            </Button>
+          <DropdownMenuTrigger
+            render={
+              <Button
+                variant="noShadow"
+                className="size-8 bg-secondary-background p-0 text-foreground"
+              />
+            }
+          >
+            <span className="sr-only">Open menu</span>
+            <MoreHorizontal />
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
@@ -166,8 +195,8 @@ export const columns: ColumnDef<Payment>[] = [
         </DropdownMenu>
       )
     },
-  },
-]
+  }),
+])
 
 export default function DataTableDemo() {
   const [sorting, setSorting] = React.useState<SortingState>([])
@@ -175,18 +204,15 @@ export default function DataTableDemo() {
     [],
   )
   const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({})
-  const [rowSelection, setRowSelection] = React.useState({})
+    React.useState<ColumnVisibilityState>({})
+  const [rowSelection, setRowSelection] = React.useState<RowSelectionState>({})
 
-  const table = useReactTable({
+  const table = useTable({
+    features,
     data,
     columns,
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
-    getCoreRowModel: getCoreRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
-    getSortedRowModel: getSortedRowModel(),
-    getFilteredRowModel: getFilteredRowModel(),
     onColumnVisibilityChange: setColumnVisibility,
     onRowSelectionChange: setRowSelection,
     state: {
@@ -198,7 +224,7 @@ export default function DataTableDemo() {
   })
 
   return (
-    <div className="w-full font-base text-main-foreground">
+    <div className="w-full font-base text-foreground">
       <div className="flex items-center py-4">
         <Input
           placeholder="Filter emails..."
@@ -209,10 +235,15 @@ export default function DataTableDemo() {
           className="max-w-sm"
         />
         <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="noShadow" className="ml-auto">
-              Columns <ChevronDown />
-            </Button>
+          <DropdownMenuTrigger
+            render={
+              <Button
+                variant="noShadow"
+                className="ml-auto bg-secondary-background text-foreground"
+              />
+            }
+          >
+            Columns <ChevronDown />
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             {table
@@ -240,18 +271,15 @@ export default function DataTableDemo() {
           <TableHeader className="font-heading">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow
-                className="bg-secondary-background text-foreground"
+                className="bg-background text-foreground"
                 key={headerGroup.id}
               >
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead className="text-foreground" key={header.id}>
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext(),
-                          )}
+                      {header.isPlaceholder ? null : (
+                        <table.FlexRender header={header} />
+                      )}
                     </TableHead>
                   )
                 })}
@@ -262,16 +290,13 @@ export default function DataTableDemo() {
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow
-                  className="bg-secondary-background text-foreground data-[state=selected]:bg-main data-[state=selected]:text-main-foreground"
+                  className="bg-background text-foreground data-[state=selected]:bg-main data-[state=selected]:text-main-foreground"
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell className="px-4 py-2" key={cell.id}>
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext(),
-                      )}
+                      <table.FlexRender cell={cell} />
                     </TableCell>
                   ))}
                 </TableRow>
@@ -297,6 +322,7 @@ export default function DataTableDemo() {
         <div className="space-x-2">
           <Button
             variant="noShadow"
+            className="bg-secondary-background text-foreground"
             size="sm"
             onClick={() => table.previousPage()}
             disabled={!table.getCanPreviousPage()}
@@ -305,6 +331,7 @@ export default function DataTableDemo() {
           </Button>
           <Button
             variant="noShadow"
+            className="bg-secondary-background text-foreground"
             size="sm"
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}

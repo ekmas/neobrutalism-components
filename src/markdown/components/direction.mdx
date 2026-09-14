@@ -1,0 +1,48 @@
+---
+title: Direction
+description: Provides the reading direction (LTR or RTL) to Base UI components.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/direction
+---
+
+<ComponentPreview component="direction">
+  ```tsx file=<rootDir>/src/examples/ui/direction.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+<Installation component="direction">
+  ```tsx file=<rootDir>/src/components/ui/direction.tsx
+  ```
+</Installation>
+
+## Usage
+
+Base UI popups (Popover, Tooltip, Menu, Select, ...) do not read the `dir` attribute of the document. Instead, they take the reading direction from `DirectionProvider`, which is what makes `side="inline-start"` / `side="inline-end"` positioning, keyboard navigation and RTL specific animations flip correctly. Wrap your app (or the part of it that is right-to-left) in the provider and set the `dir` attribute on the same element so the DOM matches.
+
+```ts
+import { DirectionProvider, useDirection } from '@/components/ui/direction'
+```
+
+```tsx
+<DirectionProvider direction="rtl">
+  <div dir="rtl">
+    <Popover>
+      <PopoverTrigger render={<Button />}>Open</PopoverTrigger>
+      <PopoverContent side="inline-end">...</PopoverContent>
+    </Popover>
+  </div>
+</DirectionProvider>
+```
+
+Use the `useDirection` hook to read the current direction in your own components:
+
+```tsx
+function Arrow() {
+  const direction = useDirection()
+
+  return direction === "rtl" ? <ArrowLeftIcon /> : <ArrowRightIcon />
+}
+```
+
+See the <a target="_blank" href="https://base-ui.com/react/utils/direction-provider">Base UI documentation</a> for more details.

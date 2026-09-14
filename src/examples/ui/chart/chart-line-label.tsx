@@ -49,7 +49,7 @@ export default function ChartLineLabel() {
       </CardHeader>
       <CardContent>
         <ChartContainer
-          className="[&_.recharts-layer_path]:stroke-black [&_.recharts-layer_path]:dark:stroke-white"
+          className="[&_.recharts-layer_path]:stroke-black"
           config={chartConfig}
         >
           <LineChart

@@ -20,29 +20,31 @@ export default function CollapsibleDemo() {
       onOpenChange={setIsOpen}
       className="w-full space-y-2"
     >
-      <div className="rounded-base flex items-center justify-between space-x-4 border-2 border-border text-main-foreground bg-main px-4 py-2">
+      <div className="rounded-base flex items-center justify-between space-x-4 border-2 border-border text-foreground bg-secondary-background px-4 py-2">
         <h4 className="text-sm font-heading">
           @peduarte starred 3 repositories
         </h4>
-        <CollapsibleTrigger asChild>
-          <Button
-            variant="noShadow"
-            size="sm"
-            className="w-9 bg-secondary-background text-foreground p-0"
-          >
-            <ChevronsUpDown className="size-4" />
-            <span className="sr-only">Toggle</span>
-          </Button>
+        <CollapsibleTrigger
+          render={
+            <Button
+              variant="noShadow"
+              size="sm"
+              className="w-9 bg-secondary-background text-foreground p-0"
+            />
+          }
+        >
+          <ChevronsUpDown className="size-4" />
+          <span className="sr-only">Toggle</span>
         </CollapsibleTrigger>
       </div>
-      <div className="rounded-base border-2 border-border bg-main px-4 py-3 font-mono font-base text-main-foreground text-sm">
+      <div className="rounded-base border-2 border-border bg-secondary-background px-4 py-3 font-mono font-base text-foreground text-sm">
         @radix-ui/primitives
       </div>
-      <CollapsibleContent className="space-y-2 text-main-foreground font-base">
-        <div className="rounded-base border-2 border-border bg-main px-4 py-3 font-mono text-sm">
+      <CollapsibleContent className="space-y-2 text-foreground font-base">
+        <div className="rounded-base border-2 border-border bg-secondary-background px-4 py-3 font-mono text-sm">
           @radix-ui/colors
         </div>
-        <div className="rounded-base border-2 border-border bg-main px-4 py-3 font-mono text-sm">
+        <div className="rounded-base border-2 border-border bg-secondary-background px-4 py-3 font-mono text-sm">
           @stitches/react
         </div>
       </CollapsibleContent>

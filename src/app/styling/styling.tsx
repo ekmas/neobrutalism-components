@@ -2,9 +2,24 @@
 
 import { useLayoutEffect, useState } from "react"
 
-import colors from "@/data/colors"
+import colors, {
+  ColorMode,
+  colorModes,
+  ColorPalette,
+  DEFAULT_COLOR_MODE,
+  defaultPalette,
+  getPalette,
+} from "@/data/colors"
+import fonts from "@/data/fonts"
 
+import {
+  DocsTabs,
+  DocsTabsContent,
+  DocsTabsList,
+  DocsTabsTrigger,
+} from "@/components/app/docs-tabs"
 import { Pre } from "@/components/app/pre"
+import ShadcnCliCommand from "@/components/app/shadcn-cli-command"
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -14,7 +29,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import {
   Select,
@@ -33,43 +47,76 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 
+import {
+  applyGoogleFont,
+  clearGoogleFont,
+  FONT_STORAGE_KEY,
+  getDefaultFont,
+  getGoogleFont,
+  isDefaultFont,
+  LoadedFont,
+  readStoredFont,
+} from "@/lib/google-fonts"
+import { REGISTRY_URL } from "@/lib/site"
 import { cn } from "@/lib/utils"
 
-export default function Styling() {
-  const defaultColorPalette = colors[10]
+export const COLOR_MODE_STORAGE_KEY = "colorMode"
 
-  const [
-    {
-      bg,
-      darkBg,
-      darkMain,
-      main,
-      name,
-      chart1,
-      chart2,
-      chart3,
-      chart4,
-      chart5,
-      darkChart1,
-      darkChart2,
-      darkChart3,
-      darkChart4,
-      darkChart5,
-    },
-    setColor,
-  ] = useState(defaultColorPalette)
+function isColorMode(value: string | null): value is ColorMode {
+  return value !== null && value in colors
+}
+
+function readStoredPalette(): ColorPalette | null {
+  try {
+    const raw = localStorage.getItem("palette")
+    return raw ? JSON.parse(raw) : null
+  } catch {
+    return null
+  }
+}
+
+function applyPalette(palette: ColorPalette) {
+  const r = window.document.documentElement
+  r.style.setProperty("--background", palette.bg)
+  r.style.setProperty("--main", palette.main)
+  r.style.setProperty("--chart-1", palette.chart1)
+  r.style.setProperty("--chart-2", palette.chart2)
+  r.style.setProperty("--chart-3", palette.chart3)
+  r.style.setProperty("--chart-4", palette.chart4)
+  r.style.setProperty("--chart-5", palette.chart5)
+}
+
+function capitalize(value: string) {
+  return value.charAt(0).toUpperCase() + value.slice(1)
+}
+
+export default function Styling() {
+  const [mode, setMode] = useState<ColorMode>(DEFAULT_COLOR_MODE)
+  const [palette, setPalette] = useState<ColorPalette>(defaultPalette)
   const [borderRadius, setBorderRadius] = useState(5)
   const [boxShadowLength, setBoxShadowLength] = useState([4, 4])
   const [fontWeight, setFontWeight] = useState([700, 500])
+  const [font, setFont] = useState<LoadedFont>(getDefaultFont)
+
+  const { name, bg, main, chart1, chart2, chart3, chart4, chart5 } = palette
 
   useLayoutEffect(() => {
-    const colorObj = JSON.parse(localStorage.getItem("color") as string)
+    const storedMode = localStorage.getItem(COLOR_MODE_STORAGE_KEY)
+    const storedPalette = readStoredPalette()
     const borderRadius = Number(localStorage.getItem("borderRadius"))
     const boxShadow = localStorage.getItem("boxShadow")?.split(",")
     const fontWeight = localStorage.getItem("fontWeight")?.split(",")
+    const storedFont = readStoredFont()
 
-    if (colorObj) {
-      setColor(colorObj)
+    const mode = isColorMode(storedMode) ? storedMode : DEFAULT_COLOR_MODE
+    setMode(mode)
+
+    if (storedPalette) {
+      // Prefer the current definition of the stored palette so older stored
+      // values pick up palette updates.
+      const resolved = getPalette(mode, storedPalette.name) ?? storedPalette
+      setPalette(resolved)
+      applyPalette(resolved)
     }
 
     if (borderRadius) {
@@ -83,40 +130,45 @@ export default function Styling() {
     if (fontWeight) {
       setFontWeight([+fontWeight[0], +fontWeight[1]])
     }
+
+    if (storedFont) {
+      setFont(storedFont)
+    }
   }, [])
 
-  const updateColor = (value: string) => {
-    const r = window.document.querySelector(":root") as HTMLElement
-    const color = colors.find((color) => color.name === value)!
+  const selectPalette = (next: ColorPalette) => {
+    setPalette(next)
+    applyPalette(next)
+    localStorage.setItem("palette", JSON.stringify(next))
+  }
 
-    setColor(color)
+  const updateColor = (value: string | null) => {
+    if (!value) return
+    const next = getPalette(mode, value)
+    if (next) selectPalette(next)
+  }
 
-    localStorage.setItem("color", JSON.stringify(color))
+  const updateMode = (nextMode: ColorMode) => {
+    setMode(nextMode)
+    localStorage.setItem(COLOR_MODE_STORAGE_KEY, nextMode)
+    selectPalette(getPalette(nextMode, name) ?? colors[nextMode][0])
+  }
 
-    const isDarkMode = document.documentElement.classList.contains("dark")
+  const updateFont = (family: string | null) => {
+    if (!family) return
 
-    if (isDarkMode) {
-      r.style.setProperty("--background", color.darkBg)
-      r.style.setProperty("--main", color.darkMain)
-      r.style.setProperty("--chart-1", color.darkChart1)
-      r.style.setProperty("--chart-2", color.darkChart2)
-      r.style.setProperty("--chart-3", color.darkChart3)
-      r.style.setProperty("--chart-4", color.darkChart4)
-      r.style.setProperty("--chart-5", color.darkChart5)
+    const resolved = getGoogleFont(family)
+    if (!resolved) return
+
+    setFont(resolved)
+
+    if (isDefaultFont(resolved.family)) {
+      clearGoogleFont()
+      localStorage.removeItem(FONT_STORAGE_KEY)
     } else {
-      r.style.setProperty("--background", color.bg)
-      r.style.setProperty("--main", color.main)
-      r.style.setProperty("--chart-1", color.chart1)
-      r.style.setProperty("--chart-2", color.chart2)
-      r.style.setProperty("--chart-3", color.chart3)
-      r.style.setProperty("--chart-4", color.chart4)
-      r.style.setProperty("--chart-5", color.chart5)
+      applyGoogleFont(resolved)
+      localStorage.setItem(FONT_STORAGE_KEY, JSON.stringify(resolved))
     }
-
-    r.style.setProperty("--dark-background", color.darkBg)
-    r.style.setProperty("--dark-main", color.darkMain)
-    r.style.setProperty("--light-background", color.bg)
-    r.style.setProperty("--light-main", color.main)
   }
 
   const updateBorderRadius = (value: number) => {
@@ -167,7 +219,8 @@ export default function Styling() {
   const resetStyling = () => {
     const r = window.document.querySelector(":root") as HTMLElement
 
-    updateColor(defaultColorPalette.name)
+    applyPalette(defaultPalette)
+    clearGoogleFont()
 
     r.style.setProperty("--border-radius", "5px")
     r.style.setProperty("--box-shadow-x", "4px")
@@ -175,19 +228,26 @@ export default function Styling() {
     r.style.setProperty("--heading-font-weight", "700")
     r.style.setProperty("--base-font-weight", "500")
 
-    setColor(defaultColorPalette)
+    setMode(DEFAULT_COLOR_MODE)
+    setPalette(defaultPalette)
     setBorderRadius(5)
     setBoxShadowLength([4, 4])
     setFontWeight([700, 500])
+    setFont(getDefaultFont())
 
     localStorage.clear()
   }
 
+  const knownFont = fonts.some((item) => item.name === font.family)
+
+  // Registry styling item for the selected palette; duotone palettes carry a
+  // "-duotone" suffix (see src/scripts/add-registry-styles.ts).
+  const stylingUrl = `${REGISTRY_URL}/styling/${mode === "monochromatic" ? palette.name : `${palette.name}-${mode}`}.json`
+
   const styling = `@import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
+/* Neobrutalism ${mode} palette: ${name} */
 :root {
   --background: ${bg};
   --secondary-background: oklch(100% 0 0);
@@ -204,23 +264,6 @@ export default function Styling() {
   --chart-4: ${chart4};
   --chart-5: ${chart5};
   --chart-active-dot: #000;
-}
-
-.dark {
-  --background: ${darkBg};
-  --secondary-background: oklch(23.93% 0 0);
-  --foreground: oklch(92.49% 0 0);
-  --main-foreground: oklch(0% 0 0);
-  --main: ${darkMain};
-  --border: oklch(0% 0 0);
-  --ring: oklch(100% 0 0);
-  --shadow: ${boxShadowLength[0]}px ${boxShadowLength[1]}px 0px 0px var(--border);
-  --chart-1: ${darkChart1};
-  --chart-2: ${darkChart2};
-  --chart-3: ${darkChart3};
-  --chart-4: ${darkChart4};
-  --chart-5: ${darkChart5};
-  --chart-active-dot: #fff;
 }
 
 @theme inline {
@@ -247,7 +290,7 @@ export default function Styling() {
   --font-weight-base: ${fontWeight[1]};
   --font-weight-heading: ${fontWeight[0]};
 }
-  
+
 @layer base {
   body {
     @apply text-foreground font-base bg-background;
@@ -258,20 +301,62 @@ export default function Styling() {
   }
 }`
 
+  // The registry item installs the palette with a 5px radius, a 4px shadow
+  // and 500/700 font weights. This is what the Manual CSS sets on top of
+  // that, so a CLI install can be brought in line with the picks.
+  const cliOverrides = `:root {
+  --shadow: ${boxShadowLength[0]}px ${boxShadowLength[1]}px 0px 0px var(--border);
+}
+
+@theme inline {
+  --spacing-boxShadowX: ${boxShadowLength[0]}px;
+  --spacing-boxShadowY: ${boxShadowLength[1]}px;
+  --spacing-reverseBoxShadowX: -${boxShadowLength[0]}px;
+  --spacing-reverseBoxShadowY: -${boxShadowLength[1]}px;
+  --radius-base: ${borderRadius}px;
+  --font-weight-base: ${fontWeight[1]};
+  --font-weight-heading: ${fontWeight[0]};
+}`
+
   return (
     <div className="flex items-center justify-center gap-4">
       <Sheet>
-        <SheetTrigger asChild>
-          <Button>Customize</Button>
-        </SheetTrigger>
+        <SheetTrigger render={<Button />}>Customize</SheetTrigger>
         <SheetContent>
           <SheetHeader>
             <SheetTitle>Customize styling</SheetTitle>
           </SheetHeader>
-          <div className="grid flex-1 auto-rows-min overflow-y-auto gap-4 px-4">
+          <div className="grid flex-1 auto-rows-min overflow-y-auto gap-4 px-4 pb-2">
+            <div className="grid gap-3">
+              <Label>Color Mode</Label>
+              <div className="grid grid-cols-2 gap-2">
+                {colorModes.map((item) => (
+                  <Button
+                    onClick={() => updateMode(item.value)}
+                    className={cn(
+                      "h-8",
+                      mode === item.value
+                        ? "bg-main text-main-foreground"
+                        : "bg-secondary-background text-foreground",
+                    )}
+                    key={item.value}
+                    variant="noShadow"
+                  >
+                    {item.label}
+                  </Button>
+                ))}
+              </div>
+            </div>
             <div className="grid gap-3">
               <Label htmlFor="color">Color</Label>
-              <Select value={name} onValueChange={updateColor}>
+              <Select
+                value={name}
+                onValueChange={updateColor}
+                items={colors[mode].map((color) => ({
+                  value: color.name,
+                  label: capitalize(color.name),
+                }))}
+              >
                 <SelectTrigger
                   id="color"
                   className="bg-secondary-background text-foreground"
@@ -279,15 +364,47 @@ export default function Styling() {
                   <SelectValue placeholder="Select a color" />
                 </SelectTrigger>
                 <SelectContent className="bg-secondary-background text-foreground">
-                  {colors.map(({ name, main }) => (
-                    <SelectItem key={name} value={name}>
+                  {colors[mode].map((color) => (
+                    <SelectItem key={color.name} value={color.name}>
                       <div className="flex items-center gap-2">
-                        <div
-                          className="size-4 rounded-full border-2 border-border"
-                          style={{ backgroundColor: main }}
-                        />
-                        {name}
+                        <div className="flex overflow-hidden rounded-base border-2 border-border">
+                          <div
+                            className="size-4"
+                            style={{ backgroundColor: color.main }}
+                          />
+                          <div className="w-0.5 shrink-0 bg-border" />
+                          <div
+                            className="size-4"
+                            style={{ backgroundColor: color.bg }}
+                          />
+                        </div>
+                        {capitalize(color.name)}
                       </div>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="grid gap-3">
+              <Label htmlFor="font">Font</Label>
+              <Select
+                value={knownFont ? font.family : null}
+                onValueChange={updateFont}
+                items={fonts.map((item) => ({
+                  value: item.name,
+                  label: item.name,
+                }))}
+              >
+                <SelectTrigger
+                  id="font"
+                  className="bg-secondary-background text-foreground"
+                >
+                  <SelectValue placeholder={font.family} />
+                </SelectTrigger>
+                <SelectContent className="bg-secondary-background text-foreground">
+                  {fonts.map((item) => (
+                    <SelectItem key={item.name} value={item.name}>
+                      {item.name}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -395,9 +512,7 @@ export default function Styling() {
             </div>
           </div>
           <SheetFooter>
-            <SheetClose asChild>
-              <Button>Save changes</Button>
-            </SheetClose>
+            <SheetClose render={<Button />}>Save changes</SheetClose>
             <Button variant="neutral" onClick={resetStyling}>
               Reset
             </Button>
@@ -405,22 +520,70 @@ export default function Styling() {
         </SheetContent>
       </Sheet>
       <Dialog>
-        <DialogTrigger asChild>
-          <Button variant="neutral">Copy</Button>
+        <DialogTrigger render={<Button variant="neutral" />}>
+          Copy
         </DialogTrigger>
-        <DialogContent className="max-w-full">
+        <DialogContent className="max-h-[calc(100dvh-2rem)] overflow-y-auto sm:max-w-2xl">
           <DialogHeader>
-            <DialogTitle>Theming</DialogTitle>
+            <DialogTitle>Install this theme</DialogTitle>
             <DialogDescription>
-              Copy the styling to your globals.css file.
+              Copy the command for your package manager, or paste the CSS into
+              your project.
             </DialogDescription>
           </DialogHeader>
-          <Pre
-            wrapperClassName="w-full max-w-full text-white overflow-x-auto"
-            __rawstring__={styling}
+          <DocsTabs
+            defaultValue="cli"
+            className="min-w-0 shadow-none! [&_[data-slot=pre-wrapper]]:shadow-none [&_[data-slot=tabs]]:shadow-none"
           >
-            {styling}
-          </Pre>
+            <DocsTabsList className="grid w-full grid-cols-2">
+              <DocsTabsTrigger value="cli">Shadcn CLI</DocsTabsTrigger>
+              <DocsTabsTrigger value="manual">Manual</DocsTabsTrigger>
+            </DocsTabsList>
+            <DocsTabsContent value="cli">
+              <div className="flex min-w-0 flex-col gap-4 pt-4 [&_[data-slot=pre-wrapper]]:mb-0">
+                <div className="flex min-w-0 flex-col gap-2">
+                  <div className="mx-0.5 text-sm font-base">
+                    Scaffold a new project already themed:
+                  </div>
+                  <ShadcnCliCommand command="init" url={stylingUrl} multiline />
+                </div>
+                <div className="flex min-w-0 flex-col gap-2">
+                  <div className="mx-0.5 text-sm font-base">
+                    Or add to an existing project:
+                  </div>
+                  <ShadcnCliCommand command="add" url={stylingUrl} multiline />
+                </div>
+                <div className="flex min-w-0 flex-col gap-2">
+                  <div className="mx-0.5 text-sm font-base">
+                    Then update these in your globals.css to match your radius,
+                    shadow and font weights:
+                  </div>
+                  <Pre
+                    wrapperClassName="w-full max-w-full text-white overflow-x-auto"
+                    __rawstring__={cliOverrides}
+                  >
+                    {cliOverrides}
+                  </Pre>
+                </div>
+              </div>
+            </DocsTabsContent>
+            <DocsTabsContent value="manual">
+              <div className="flex min-w-0 flex-col gap-4 pt-4 [&_[data-slot=pre-wrapper]]:mb-0">
+                <div className="flex min-w-0 flex-col gap-2">
+                  <div className="mx-0.5 text-sm font-base">
+                    Paste into your globals.css. This includes your radius,
+                    shadow and font weights:
+                  </div>
+                  <Pre
+                    wrapperClassName="w-full max-w-full text-white overflow-x-auto"
+                    __rawstring__={styling}
+                  >
+                    {styling}
+                  </Pre>
+                </div>
+              </div>
+            </DocsTabsContent>
+          </DocsTabs>
         </DialogContent>
       </Dialog>
     </div>

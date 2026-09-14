@@ -1,0 +1,110 @@
+---
+title: Toast
+description: A succinct message that is displayed temporarily.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/toast
+---
+
+<ComponentPreview component="toast">
+  ```tsx file=<rootDir>/src/examples/ui/toast/index.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+The component depends on the <Link href="/docs/button">Button</Link> component. Add it first.
+
+<Installation component="toast">
+  ```tsx file=<rootDir>/src/components/ui/toast.tsx
+  ```
+</Installation>
+
+## Usage
+
+Render `<Toaster />` once in your root layout.
+
+```tsx
+import { Toaster } from '@/components/ui/toast'
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>
+        {children}
+        <Toaster />
+      </body>
+    </html>
+  )
+}
+```
+
+Then call `toast.add` from anywhere, even outside React components.
+
+```ts
+import { toast } from '@/components/ui/toast'
+```
+
+```tsx
+toast.add({
+  title: 'Event created',
+  description: 'Sunday, December 3 at 9:00 AM',
+})
+```
+
+Set `type` to `success`, `info`, `warning`, `error` or `loading` to show an icon, pass `actionProps` to render an action button, or use `toast.promise` to track an async task.
+
+```tsx
+toast.add({
+  type: 'success',
+  title: 'Changes saved',
+  actionProps: {
+    children: 'Undo',
+    onClick: () => undo(),
+  },
+})
+
+toast.promise(saveChanges(), {
+  loading: { title: 'Saving...' },
+  success: { title: 'Saved' },
+  error: { title: 'Could not save' },
+})
+```
+
+This component replaces <a target="_blank" href="https://sonner.emilkowal.ski">sonner</a>. It is built on the Base UI toast primitive, so no extra dependency is needed.
+
+## Examples
+
+Each example below renders its own `<Toaster>` and reads the manager it provides with `useToastManager`, so the previews on this page stay independent of each other. In your app, render `<Toaster />` once in the root layout and call `toast.add` from anywhere.
+
+### Default
+
+<ComponentPreview component="toast" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/toast/index.tsx
+  ```
+</ComponentPreview>
+
+### Types
+
+Set the `type` option to render a status icon. The built-in renderer recognizes `success`, `info`, `warning`, `error`, and `loading`.
+
+<ComponentPreview component="toast" example="types">
+  ```tsx file=<rootDir>/src/examples/ui/toast/types.tsx
+  ```
+</ComponentPreview>
+
+### Action
+
+Pass button props with `actionProps` to render an action.
+
+<ComponentPreview component="toast" example="action">
+  ```tsx file=<rootDir>/src/examples/ui/toast/action.tsx
+  ```
+</ComponentPreview>
+
+### Promise
+
+Use `toast.promise` to update one toast as an asynchronous task moves through loading, success, and error states.
+
+<ComponentPreview component="toast" example="promise">
+  ```tsx file=<rootDir>/src/examples/ui/toast/promise.tsx
+  ```
+</ComponentPreview>

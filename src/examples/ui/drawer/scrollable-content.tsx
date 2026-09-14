@@ -12,10 +12,8 @@ import {
 
 export default function DrawerWithScrollableContent() {
   return (
-    <Drawer direction="right">
-      <DrawerTrigger asChild>
-        <Button>Scrollable Content</Button>
-      </DrawerTrigger>
+    <Drawer swipeDirection="right">
+      <DrawerTrigger render={<Button />}>Scrollable Content</DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
           <DrawerTitle>Move Goal</DrawerTitle>
@@ -39,8 +37,8 @@ export default function DrawerWithScrollableContent() {
         </div>
         <DrawerFooter>
           <Button>Submit</Button>
-          <DrawerClose asChild>
-            <Button variant="neutral">Cancel</Button>
+          <DrawerClose render={<Button variant="neutral" />}>
+            Cancel
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>

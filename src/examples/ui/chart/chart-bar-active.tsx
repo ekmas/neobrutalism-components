@@ -1,7 +1,14 @@
 "use client"
 
 import { TrendingUp } from "lucide-react"
-import { Bar, BarChart, CartesianGrid, Rectangle, XAxis } from "recharts"
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Rectangle,
+  XAxis,
+  type BarShapeProps,
+} from "recharts"
 
 import {
   Card,
@@ -54,6 +61,8 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
+const ACTIVE_INDEX = 2
+
 export default function ChartBarActive() {
   return (
     <Card className="bg-secondary-background text-foreground">
@@ -82,17 +91,18 @@ export default function ChartBarActive() {
               dataKey="visitors"
               strokeWidth={2}
               radius={8}
-              activeIndex={2}
-              activeBar={({ ...props }) => {
-                return (
+              shape={({ index, ...props }: BarShapeProps) =>
+                index === ACTIVE_INDEX ? (
                   <Rectangle
                     {...props}
                     fillOpacity={0.8}
                     stroke={props.payload.fill}
                     className="!stroke-4"
                   />
+                ) : (
+                  <Rectangle {...props} />
                 )
-              }}
+              }
             />
           </BarChart>
         </ChartContainer>

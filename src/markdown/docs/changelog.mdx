@@ -3,6 +3,17 @@ title: Changelog
 description: List of all important updates and announcements.
 ---
 
+## September 2026
+
+- Added 18 new components: <Link href="/docs/attachment">Attachment</Link>, <Link href="/docs/bubble">Bubble</Link>, <Link href="/docs/button-group">Button Group</Link>, <Link href="/docs/direction">Direction</Link>, <Link href="/docs/empty">Empty</Link>, <Link href="/docs/field">Field</Link>, <Link href="/docs/input-group">Input Group</Link>, <Link href="/docs/item">Item</Link>, <Link href="/docs/kbd">Kbd</Link>, <Link href="/docs/marker">Marker</Link>, <Link href="/docs/message">Message</Link>, <Link href="/docs/message-scroller">Message Scroller</Link>, <Link href="/docs/native-select">Native Select</Link>, <Link href="/docs/questionnaire">Questionnaire</Link>, <Link href="/docs/spinner">Spinner</Link>, <Link href="/docs/toast">Toast</Link>, <Link href="/docs/toggle">Toggle</Link> and <Link href="/docs/toggle-group">Toggle Group</Link>.
+- All components are now built on <a target="_blank" href="https://base-ui.com/">Base UI</a> instead of Radix UI. Read the <Link href="/docs/migrating-to-base-ui">migration guide</Link>.
+- The `asChild` prop is replaced by Base UI's `render` prop.
+- The drawer component now uses Base UI's drawer instead of vaul.
+- Removed dark mode.
+- Removed the sonner (toast) component. All components and palettes are light only.
+- Components use Base UI data attributes (`data-open`, `data-checked`, `data-active`...) instead of `data-state`.
+- Updated lucide-react to 1.x (brand icons like Github were removed), the calendar to react-day-picker v9 and date-fns v4, the chart to recharts v3, the data table to TanStack Table v9 and the resizable component to react-resizable-panels v4. Every other dependency is on its latest version. See the <Link href="/docs/migrating-to-base-ui#6-update-the-dependencies">migration guide</Link>.
+
 ## April 2025
 
 - The CLI now initializes projects with Tailwind v4. You can find v3 components <a target="_blank" href="https://v3.neobrutalism.dev/">here</a>.

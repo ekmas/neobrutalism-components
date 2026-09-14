@@ -3,8 +3,6 @@
 
 @plugin "@tailwindcss/typography";
 
-@custom-variant dark (&:is(.dark *));
-
 :root {
   --border-radius: 5px;
   --box-shadow-x: 4px;
@@ -14,39 +12,27 @@
 
   --heading-font-weight: 700;
   --base-font-weight: 500;
+  /* Any Google font works here. --font-dm-sans is set by next/font on <html>. */
+  --base-font-family: var(--font-dm-sans), sans-serif;
 
-  --background: oklch(93.46% 0.0304 254.32);
+  --background: hsl(214, 95%, 93%);
   --secondary-background: oklch(100% 0 0);
   --foreground: oklch(0% 0 0);
   --main-foreground: oklch(0% 0 0);
 
-  --main: oklch(67.47% 0.1725 259.61);
+  --main: hsl(217, 100%, 66%);
   --border: oklch(0% 0 0);
   --ring: oklch(0% 0 0);
   --overlay: oklch(0% 0 0 / 0.8);
 
   --shadow: var(--box-shadow-x) var(--box-shadow-y) 0px 0px var(--border);
 
-  --chart-1: oklch(67.47% 0.1726 259.49);
-  --chart-2: oklch(67.28% 0.2147 24.22);
-  --chart-3: oklch(86.03% 0.176 92.36);
-  --chart-4: oklch(79.76% 0.2044 153.08);
-  --chart-5: oklch(66.34% 0.1806 277.2);
+  --chart-1: #5294ff;
+  --chart-2: #ff4d50;
+  --chart-3: #facc00;
+  --chart-4: #05e17a;
+  --chart-5: #7a83ff;
   --chart-active-dot: #000;
-}
-
-.dark {
-  --background: oklch(29.12% 0.0633 270.86);
-  --secondary-background: oklch(23.93% 0 0);
-  --foreground: oklch(92.49% 0 0);
-  --main-foreground: oklch(0% 0 0);
-
-  --border: oklch(0% 0 0);
-  --ring: oklch(100% 0 0);
-
-  --shadow: var(--box-shadow-x) var(--box-shadow-y) 0px 0px var(--border);
-
-  --chart-active-dot: #fff;
 }
 
 @theme inline {
@@ -74,13 +60,14 @@
 
   --shadow-shadow: var(--shadow);
   --shadow-nav: 4px 4px 0px 0px var(--border);
-  --shadow-darkNav: 4px 4px 0px 0px var(--dark-border);
 
   --font-weight-base: var(--base-font-weight);
   --font-weight-heading: var(--heading-font-weight);
 
   --animate-marquee: marquee 5s linear infinite;
   --animate-marquee2: marquee2 5s linear infinite;
+  --animate-orbit: orbit 180s linear infinite;
+  --animate-orbit-reverse: orbit 180s linear infinite reverse;
 
   --spacing-container: 1300px;
 
@@ -101,11 +88,21 @@
       transform: translateX(0%);
     }
   }
+
+  @keyframes orbit {
+    from {
+      rotate: 0deg;
+    }
+    to {
+      rotate: 360deg;
+    }
+  }
 }
 
 @layer base {
   body {
-    @apply text-foreground font-base;
+    @apply text-foreground font-base relative;
+    font-family: var(--base-font-family);
   }
 
   h1,
@@ -122,12 +119,6 @@ body,
 .scrollbar {
   --sb-track-color: #ffffff;
   --sb-thumb-color: #000000;
-}
-
-html.dark body,
-html.dark .scrollbar {
-  --sb-track-color: #1f1f1f;
-  --sb-thumb-color: #e6e6e6;
 }
 
 .scrollbar::-webkit-scrollbar {
@@ -154,10 +145,6 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb,
 .scrollbar::-webkit-scrollbar-thumb {
   background: var(--sb-thumb-color);
-}
-
-html.dark body::-webkit-scrollbar-thumb {
-  border-left: 4px solid #000;
 }
 
 .code::-webkit-scrollbar-track {
@@ -199,5 +186,134 @@ html.dark body::-webkit-scrollbar-thumb {
 
   .command-scrollbar {
     scrollbar-color: #000 transparent;
+  }
+}
+
+/* 8-bit pixel utilities (from 8bit.cnlibs.com) */
+@utility px-rounded-md {
+  --px: var(--pixel-size, 3px);
+  --px2: calc(var(--pixel-size, 3px) * 2);
+  --px-shape: polygon(
+    0 var(--px2),
+    var(--px) var(--px2),
+    var(--px) var(--px),
+    var(--px2) var(--px),
+    var(--px2) 0,
+    calc(100% - var(--px2)) 0,
+    calc(100% - var(--px2)) var(--px),
+    calc(100% - var(--px)) var(--px),
+    calc(100% - var(--px)) var(--px2),
+    100% var(--px2),
+    100% calc(100% - var(--px2)),
+    calc(100% - var(--px)) calc(100% - var(--px2)),
+    calc(100% - var(--px)) calc(100% - var(--px)),
+    calc(100% - var(--px2)) calc(100% - var(--px)),
+    calc(100% - var(--px2)) 100%,
+    var(--px2) 100%,
+    var(--px2) calc(100% - var(--px)),
+    var(--px) calc(100% - var(--px)),
+    var(--px) calc(100% - var(--px2)),
+    0 calc(100% - var(--px2))
+  );
+  clip-path: var(--px-shape);
+  border-radius: 0;
+}
+
+@utility px-border-md {
+  isolation: isolate;
+  position: relative;
+
+  &::before {
+    --px: var(--pixel-size, 3px);
+    --px2: calc(var(--pixel-size, 3px) * 2);
+    --pw: var(--px-border-width, 2px);
+    --pxw: calc(var(--px) + var(--pw));
+    --px2w: calc(var(--px2) + var(--pw));
+    inset: var(--px-border-offset, 0px);
+    z-index: -1;
+    pointer-events: none;
+    content: "";
+    background: var(--px-border-color, var(--border));
+    clip-path: polygon(
+      0 var(--px2),
+      var(--px) var(--px2),
+      var(--px) var(--px),
+      var(--px2) var(--px),
+      var(--px2) 0,
+      calc(100% - var(--px2)) 0,
+      calc(100% - var(--px2)) var(--px),
+      calc(100% - var(--px)) var(--px),
+      calc(100% - var(--px)) var(--px2),
+      100% var(--px2),
+      100% calc(100% - var(--px2)),
+      calc(100% - var(--px)) calc(100% - var(--px2)),
+      calc(100% - var(--px)) calc(100% - var(--px)),
+      calc(100% - var(--px2)) calc(100% - var(--px)),
+      calc(100% - var(--px2)) 100%,
+      var(--px2) 100%,
+      var(--px2) calc(100% - var(--px)),
+      var(--px) calc(100% - var(--px)),
+      var(--px) calc(100% - var(--px2)),
+      0 calc(100% - var(--px2)),
+      0 var(--px2),
+      var(--pw) var(--px2w),
+      var(--pw) calc(100% - var(--px2w)),
+      var(--pxw) calc(100% - var(--px2w)),
+      var(--pxw) calc(100% - var(--pxw)),
+      var(--px2w) calc(100% - var(--pxw)),
+      var(--px2w) calc(100% - var(--pw)),
+      calc(100% - var(--px2w)) calc(100% - var(--pw)),
+      calc(100% - var(--px2w)) calc(100% - var(--pxw)),
+      calc(100% - var(--pxw)) calc(100% - var(--pxw)),
+      calc(100% - var(--pxw)) calc(100% - var(--px2w)),
+      calc(100% - var(--pw)) calc(100% - var(--px2w)),
+      calc(100% - var(--pw)) var(--px2w),
+      calc(100% - var(--pxw)) var(--px2w),
+      calc(100% - var(--pxw)) var(--pxw),
+      calc(100% - var(--px2w)) var(--pxw),
+      calc(100% - var(--px2w)) var(--pw),
+      var(--px2w) var(--pw),
+      var(--px2w) var(--pxw),
+      var(--pxw) var(--pxw),
+      var(--pxw) var(--px2w),
+      var(--pw) var(--px2w)
+    );
+    position: absolute;
+  }
+}
+
+@utility px-ring {
+  isolation: isolate;
+  position: relative;
+
+  &:focus-visible {
+    background-color: var(--px-ring-color, var(--ring));
+  }
+
+  &::after {
+    inset: var(--px-face-offset, var(--px-ring-width, 2px));
+    z-index: -2;
+    pointer-events: none;
+    content: "";
+    background: var(--px-bg, transparent);
+    clip-path: var(--px-shape, none);
+    position: absolute;
+  }
+}
+
+@layer components {
+  /* Landing hero star ring on phones: as large as fits below the 70px navbar,
+     never smaller than the 300px it started with. The desktop size is set by
+     the md: utilities on the element. */
+  [data-slot="star-ring"] {
+    --rx: max(300px, calc(50vh - 67px));
+    --ry: max(300px, calc(50vh - 67px));
+  }
+
+  @supports (height: 1dvh) {
+    [data-slot="star-ring"] {
+      --rx: max(300px, calc(50dvh - 67px));
+      --ry: max(300px, calc(50dvh - 67px));
+    }
   }
 }

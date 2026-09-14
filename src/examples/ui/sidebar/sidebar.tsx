@@ -207,27 +207,30 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarMenu>
           <SidebarMenuItem>
             <DropdownMenu>
-              <DropdownMenuTrigger className="focus-visible:ring-0" asChild>
-                <SidebarMenuButton
-                  size="lg"
-                  className="data-[state=open]:bg-main data-[state=open]:text-main-foreground data-[state=open]:outline-border data-[state=open]:outline-2"
-                >
-                  <div className="flex aspect-square size-8 items-center justify-center rounded-base">
-                    <activeTeam.logo className="size-4" />
-                  </div>
-                  <div className="grid flex-1 text-left text-sm leading-tight">
-                    <span className="truncate font-heading">
-                      {activeTeam.name}
-                    </span>
-                    <span className="truncate font-base text-xs">
-                      {activeTeam.plan}
-                    </span>
-                  </div>
-                  <ChevronsUpDown className="ml-auto" />
-                </SidebarMenuButton>
+              <DropdownMenuTrigger
+                className="focus-visible:ring-0"
+                render={
+                  <SidebarMenuButton
+                    size="lg"
+                    className="data-popup-open:bg-main data-popup-open:text-main-foreground data-popup-open:outline-border data-popup-open:outline-2"
+                  />
+                }
+              >
+                <div className="flex aspect-square size-8 items-center justify-center rounded-base">
+                  <activeTeam.logo className="size-4" />
+                </div>
+                <div className="grid flex-1 text-left text-sm leading-tight">
+                  <span className="truncate font-heading">
+                    {activeTeam.name}
+                  </span>
+                  <span className="truncate font-base text-xs">
+                    {activeTeam.plan}
+                  </span>
+                </div>
+                <ChevronsUpDown className="ml-auto" />
               </DropdownMenuTrigger>
               <DropdownMenuContent
-                className="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-base"
+                className="w-(--anchor-width) min-w-56 rounded-base"
                 align="start"
                 side={isMobile ? "bottom" : "right"}
                 sideOffset={4}
@@ -267,35 +270,33 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             {data.navMain.map((item) => (
               <Collapsible
                 key={item.title}
-                asChild
                 defaultOpen={item.isActive}
                 className="group/collapsible"
+                render={<SidebarMenuItem />}
               >
-                <SidebarMenuItem>
-                  <CollapsibleTrigger asChild>
+                <CollapsibleTrigger
+                  render={
                     <SidebarMenuButton
-                      className="data-[state=open]:bg-main data-[state=open]:outline-border data-[state=open]:text-main-foreground"
+                      className="data-panel-open:bg-main data-panel-open:outline-border data-panel-open:text-main-foreground"
                       tooltip={item.title}
-                    >
-                      {item.icon && <item.icon />}
-                      <span>{item.title}</span>
-                      <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
-                    </SidebarMenuButton>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    <SidebarMenuSub>
-                      {item.items?.map((subItem) => (
-                        <SidebarMenuSubItem key={subItem.title}>
-                          <SidebarMenuSubButton asChild>
-                            <a href={subItem.url}>
-                              <span>{subItem.title}</span>
-                            </a>
-                          </SidebarMenuSubButton>
-                        </SidebarMenuSubItem>
-                      ))}
-                    </SidebarMenuSub>
-                  </CollapsibleContent>
-                </SidebarMenuItem>
+                    />
+                  }
+                >
+                  {item.icon && <item.icon />}
+                  <span>{item.title}</span>
+                  <ChevronRight className="ml-auto transition-transform duration-200 group-data-open/collapsible:rotate-90" />
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  <SidebarMenuSub>
+                    {item.items?.map((subItem) => (
+                      <SidebarMenuSubItem key={subItem.title}>
+                        <SidebarMenuSubButton render={<a href={subItem.url} />}>
+                          <span>{subItem.title}</span>
+                        </SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                    ))}
+                  </SidebarMenuSub>
+                </CollapsibleContent>
               </Collapsible>
             ))}
           </SidebarMenu>
@@ -305,18 +306,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenu>
             {data.projects.map((item) => (
               <SidebarMenuItem key={item.name}>
-                <SidebarMenuButton asChild>
-                  <a href={item.url}>
-                    <item.icon />
-                    <span>{item.name}</span>
-                  </a>
+                <SidebarMenuButton render={<a href={item.url} />}>
+                  <item.icon />
+                  <span>{item.name}</span>
                 </SidebarMenuButton>
                 <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <SidebarMenuAction>
-                      <MoreHorizontal className="group-hover/menu-item:text-main-foreground" />
-                      <span className="sr-only">More</span>
-                    </SidebarMenuAction>
+                  <DropdownMenuTrigger render={<SidebarMenuAction />}>
+                    <MoreHorizontal className="group-hover/menu-item:text-main-foreground" />
+                    <span className="sr-only">More</span>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent
                     className="w-48"
@@ -353,29 +350,31 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarMenu>
           <SidebarMenuItem>
             <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <SidebarMenuButton
-                  className="group-data-[state=collapsed]:hover:outline-0 group-data-[state=collapsed]:hover:bg-transparent overflow-visible"
-                  size="lg"
-                >
-                  <Avatar className="h-8 w-8">
-                    <AvatarImage
-                      src="https://github.com/shadcn.png?size=40"
-                      alt="CN"
-                    />
-                    <AvatarFallback>CN</AvatarFallback>
-                  </Avatar>
-                  <div className="grid flex-1 text-left text-sm leading-tight">
-                    <span className="truncate font-heading">
-                      {data.user.name}
-                    </span>
-                    <span className="truncate text-xs">{data.user.email}</span>
-                  </div>
-                  <ChevronsUpDown className="ml-auto size-4" />
-                </SidebarMenuButton>
+              <DropdownMenuTrigger
+                render={
+                  <SidebarMenuButton
+                    className="group-data-[state=collapsed]:hover:outline-0 group-data-[state=collapsed]:hover:bg-transparent overflow-visible"
+                    size="lg"
+                  />
+                }
+              >
+                <Avatar className="h-8 w-8">
+                  <AvatarImage
+                    src="https://github.com/shadcn.png?size=40"
+                    alt="CN"
+                  />
+                  <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+                <div className="grid flex-1 text-left text-sm leading-tight">
+                  <span className="truncate font-heading">
+                    {data.user.name}
+                  </span>
+                  <span className="truncate text-xs">{data.user.email}</span>
+                </div>
+                <ChevronsUpDown className="ml-auto size-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent
-                className="w-[--radix-dropdown-menu-trigger-width] min-w-56"
+                className="w-(--anchor-width) min-w-56"
                 side={isMobile ? "bottom" : "right"}
                 align="end"
                 sideOffset={4}

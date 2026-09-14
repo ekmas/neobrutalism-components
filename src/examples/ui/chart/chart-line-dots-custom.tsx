@@ -49,7 +49,7 @@ export default function ChartLineDotsCustom() {
       </CardHeader>
       <CardContent>
         <ChartContainer
-          className="[&_.recharts-layer_path]:stroke-black [&_.recharts-layer_path]:dark:stroke-white"
+          className="[&_.recharts-layer_path]:stroke-black"
           config={chartConfig}
         >
           <LineChart
@@ -78,6 +78,10 @@ export default function ChartLineDotsCustom() {
               stroke="var(--color-desktop)"
               strokeWidth={2}
               dot={({ cx, cy, payload }) => {
+                if (cx == null || cy == null) {
+                  return null
+                }
+
                 const r = 24
                 return (
                   <GitCommitVertical

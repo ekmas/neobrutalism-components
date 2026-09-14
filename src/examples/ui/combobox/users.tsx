@@ -49,30 +49,32 @@ export default function UserCombobox() {
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
-        <Button
-          variant="noShadow"
-          role="combobox"
-          aria-expanded={open}
-          className="w-full justify-between px-2 md:max-w-[200px]"
-        >
-          {selectedUser ? (
-            <div className="flex items-center gap-2">
-              <Avatar className="size-5">
-                <AvatarImage
-                  src={`https://github.com/${selectedUser.username}.png`}
-                />
-                <AvatarFallback>{selectedUser.username[0]}</AvatarFallback>
-              </Avatar>
-              {selectedUser.username}
-            </div>
-          ) : (
-            "Select user..."
-          )}
-          <ChevronsUpDown className="text-muted-foreground" />
-        </Button>
+      <PopoverTrigger
+        render={
+          <Button
+            variant="noShadow"
+            role="combobox"
+            aria-expanded={open}
+            className="w-full justify-between px-2 md:max-w-[200px]"
+          />
+        }
+      >
+        {selectedUser ? (
+          <div className="flex items-center gap-2">
+            <Avatar className="size-5">
+              <AvatarImage
+                src={`https://github.com/${selectedUser.username}.png`}
+              />
+              <AvatarFallback>{selectedUser.username[0]}</AvatarFallback>
+            </Avatar>
+            {selectedUser.username}
+          </div>
+        ) : (
+          "Select user..."
+        )}
+        <ChevronsUpDown className="text-foreground" />
       </PopoverTrigger>
-      <PopoverContent className="w-(--radix-popover-trigger-width) border-0 p-0">
+      <PopoverContent className="w-(--anchor-width) border-0 p-0">
         <Command className="**:data-[slot=command-input-wrapper]:h-11">
           <CommandInput placeholder="Search user..." />
           <CommandList className="p-1">

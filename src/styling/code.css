@@ -6,14 +6,6 @@
   display: none;
 }
 
-.dark [data-theme="light"] {
-  display: none;
-}
-
-.dark [data-theme="dark"] {
-  display: block;
-}
-
 [data-rehype-pretty-code-fragment] {
   position: relative;
 }
@@ -67,10 +59,6 @@
   padding: 0.25rem;
 }
 
-.dark [data-rehype-pretty-code-fragment] .word--highlighted {
-  background-color: rgb(24, 24, 27);
-}
-
 [data-rehype-pretty-code-title] {
   color: var(--foreground); /* text-foreground */
   margin-top: 0.5rem; /* mt-2 */
@@ -89,6 +77,11 @@
 
 [data-slot="pre-wrapper"] {
   margin-bottom: 20px;
+}
+
+/* space between running text and a code block that follows it */
+:is(p, ul, ol) + figure[data-rehype-pretty-code-figure] {
+  margin-top: 20px;
 }
 
 pre.scrollbar::-webkit-scrollbar {

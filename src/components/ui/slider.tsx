@@ -1,6 +1,6 @@
 "use client"
 
-import * as SliderPrimitive from "@radix-ui/react-slider"
+import { Slider as SliderPrimitive } from "@base-ui/react/slider"
 
 import * as React from "react"
 
@@ -31,28 +31,34 @@ function Slider({
       value={value}
       min={min}
       max={max}
+      thumbAlignment="edge"
       className={cn(
-        "relative flex w-full touch-none select-none items-center data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col",
+        "data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full",
         className,
       )}
       {...props}
     >
-      <SliderPrimitive.Track
-        data-slot="slider-track"
-        className="relative w-full grow overflow-hidden rounded-base bg-secondary-background border-2 border-border data-[orientation=horizontal]:h-3 data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-3"
+      <SliderPrimitive.Control
+        data-slot="slider-control"
+        className="relative flex w-full touch-none select-none items-center data-disabled:opacity-50 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col"
       >
-        <SliderPrimitive.Range
-          data-slot="slider-range"
-          className="absolute bg-main data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full"
-        />
-      </SliderPrimitive.Track>
-      {Array.from({ length: _values.length }, (_, index) => (
-        <SliderPrimitive.Thumb
-          data-slot="slider-thumb"
-          key={index}
-          className="block h-5 w-5 rounded-full border-2 border-border bg-white ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
-        />
-      ))}
+        <SliderPrimitive.Track
+          data-slot="slider-track"
+          className="relative grow overflow-hidden rounded-base bg-secondary-background border-2 border-border select-none data-[orientation=horizontal]:h-3 data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-3"
+        >
+          <SliderPrimitive.Indicator
+            data-slot="slider-range"
+            className="bg-main select-none data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full"
+          />
+        </SliderPrimitive.Track>
+        {Array.from({ length: _values.length }, (_, index) => (
+          <SliderPrimitive.Thumb
+            data-slot="slider-thumb"
+            key={index}
+            className="block size-5 shrink-0 rounded-full border-2 border-border bg-white ring-offset-white transition-colors select-none has-focus-visible:outline-none has-focus-visible:ring-2 has-focus-visible:ring-ring has-focus-visible:ring-offset-2 data-disabled:pointer-events-none data-disabled:opacity-50"
+          />
+        ))}
+      </SliderPrimitive.Control>
     </SliderPrimitive.Root>
   )
 }

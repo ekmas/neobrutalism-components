@@ -13,9 +13,7 @@ import {
 export default function DialogWithStickyFooter() {
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <Button>Sticky Footer</Button>
-      </DialogTrigger>
+      <DialogTrigger render={<Button />}>Sticky Footer</DialogTrigger>
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
           <DialogTitle>Scrollable Content</DialogTitle>
@@ -38,9 +36,7 @@ export default function DialogWithStickyFooter() {
           ))}
         </div>
         <DialogFooter>
-          <DialogClose asChild>
-            <Button>Close</Button>
-          </DialogClose>
+          <DialogClose render={<Button />}>Close</DialogClose>
         </DialogFooter>
       </DialogContent>
     </Dialog>

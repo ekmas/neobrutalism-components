@@ -163,7 +163,15 @@ export default function ChartAreaInteractive() {
             Showing total visitors for the last 3 months
           </CardDescription>
         </div>
-        <Select value={timeRange} onValueChange={setTimeRange}>
+        <Select
+          value={timeRange}
+          onValueChange={(value) => value && setTimeRange(value)}
+          items={{
+            "90d": "Last 3 months",
+            "30d": "Last 30 days",
+            "7d": "Last 7 days",
+          }}
+        >
           <SelectTrigger
             className="w-[160px] sm:ml-auto"
             aria-label="Select a value"
@@ -203,10 +211,13 @@ export default function ChartAreaInteractive() {
               content={
                 <ChartTooltipContent
                   labelFormatter={(value) => {
-                    return new Date(value).toLocaleDateString("en-US", {
-                      month: "short",
-                      day: "numeric",
-                    })
+                    return new Date(value as string).toLocaleDateString(
+                      "en-US",
+                      {
+                        month: "short",
+                        day: "numeric",
+                      },
+                    )
                   }}
                   indicator="dot"
                 />

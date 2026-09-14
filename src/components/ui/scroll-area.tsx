@@ -1,6 +1,6 @@
 "use client"
 
-import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area"
+import { ScrollArea as ScrollAreaPrimitive } from "@base-ui/react/scroll-area"
 
 import * as React from "react"
 
@@ -17,7 +17,10 @@ function ScrollArea({
       className={cn("relative overflow-hidden", className)}
       {...props}
     >
-      <ScrollAreaPrimitive.Viewport className="h-full w-full font-base">
+      <ScrollAreaPrimitive.Viewport
+        data-slot="scroll-area-viewport"
+        className="h-full w-full font-base outline-none"
+      >
         {children}
       </ScrollAreaPrimitive.Viewport>
       <ScrollBar />
@@ -30,9 +33,9 @@ function ScrollBar({
   className,
   orientation = "vertical",
   ...props
-}: React.ComponentProps<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>) {
+}: React.ComponentProps<typeof ScrollAreaPrimitive.Scrollbar>) {
   return (
-    <ScrollAreaPrimitive.ScrollAreaScrollbar
+    <ScrollAreaPrimitive.Scrollbar
       data-slot="scroll-area-scrollbar"
       orientation={orientation}
       className={cn(
@@ -45,8 +48,11 @@ function ScrollBar({
       )}
       {...props}
     >
-      <ScrollAreaPrimitive.ScrollAreaThumb className="relative flex-1 rounded-full bg-border" />
-    </ScrollAreaPrimitive.ScrollAreaScrollbar>
+      <ScrollAreaPrimitive.Thumb
+        data-slot="scroll-area-thumb"
+        className="relative flex-1 rounded-full bg-border"
+      />
+    </ScrollAreaPrimitive.Scrollbar>
   )
 }
 

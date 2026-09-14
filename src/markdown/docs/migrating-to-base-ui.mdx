@@ -1,0 +1,370 @@
+---
+title: Migrating to Base UI
+description: Learn how to migrate your components from Radix UI to Base UI.
+---
+
+## What's new?
+
+- All components are now built on <a target="_blank" href="https://base-ui.com/">Base UI</a> (`@base-ui/react`) instead of Radix UI, following <a target="_blank" href="https://ui.shadcn.com/docs/changelog/2026-07-base-ui-default">shadcn/ui making Base UI its default library</a>.
+- The `asChild` prop is gone. Every component that supported it now accepts Base UI's `render` prop.
+- The drawer component now uses Base UI's drawer instead of `vaul`.
+- Popup components (dropdown menu, popover, tooltip, select...) accept `side`, `sideOffset`, `align` and `alignOffset` directly on their content component.
+- State is exposed through Base UI's data attributes (`data-open`, `data-checked`, `data-active`...) instead of Radix's `data-state`.
+
+Visit <Link href="/docs/changelog">changelog</Link> to see all the changes.
+
+## Old docs
+
+If you want to see the old docs, they are hosted on <a target="_blank" href="https://old.neobrutalism.dev">old.neobrutalism.dev</a>.
+
+<Warning className="mt-8 mb-4" description="Radix UI and Base UI can live side by side, so you can migrate one component at a time. Only the components that you re-install from this site change." />
+
+## 1. Install Base UI
+
+```bash
+pnpm add @base-ui/react
+```
+
+If you are starting a new project, initialize shadcn with Base UI as the component library:
+
+<br />
+
+```bash
+pnpm dlx shadcn@latest init -b base
+```
+
+## 2. Set up portals
+
+Base UI renders popups (dialogs, menus, tooltips...) through portals. To keep them above the rest of your page, add `isolate` to the element that wraps your application and make `body` a positioned element, as recommended in the <a target="_blank" href="https://base-ui.com/react/overview/quick-start">Base UI quick start</a>:
+
+<br />
+
+```tsx
+<body className="relative isolate">{children}</body>
+```
+
+## 3. Re-install the components
+
+Install the components you use like you would usually do, either with the shadcn CLI command from each component page or by copying the component manually. The new files replace the old ones.
+
+## 4. Remove the old packages
+
+Once no component imports Radix anymore, remove the Radix packages together with `vaul` (replaced by Base UI's drawer), `sonner` (the toast component is gone) and `next-themes` (dark mode is gone):
+
+<br />
+
+```bash
+pnpm remove @radix-ui/react-accordion @radix-ui/react-alert-dialog @radix-ui/react-avatar @radix-ui/react-checkbox @radix-ui/react-collapsible @radix-ui/react-context-menu @radix-ui/react-dialog @radix-ui/react-dropdown-menu @radix-ui/react-hover-card @radix-ui/react-label @radix-ui/react-menubar @radix-ui/react-navigation-menu @radix-ui/react-popover @radix-ui/react-progress @radix-ui/react-radio-group @radix-ui/react-scroll-area @radix-ui/react-select @radix-ui/react-slider @radix-ui/react-slot @radix-ui/react-switch @radix-ui/react-tabs @radix-ui/react-toast @radix-ui/react-tooltip vaul sonner next-themes
+```
+
+## 5. Update your code
+
+### asChild becomes render
+
+Instead of wrapping your element with `asChild`, pass the element to the `render` prop. The children stay on the Base UI component.
+
+<br />
+
+```tsx
+// Before
+<DialogTrigger asChild>
+  <Button variant="neutral">Open</Button>
+</DialogTrigger>
+
+// After
+<DialogTrigger render={<Button variant="neutral" />}>Open</DialogTrigger>
+```
+
+This applies to every trigger and close component, `Badge`, `BreadcrumbLink`, `Collapsible`, `NavigationMenuLink` and the sidebar components (`SidebarMenuButton`, `SidebarMenuSubButton`, `SidebarMenuAction`, `SidebarGroupLabel`, `SidebarGroupAction`).
+
+<br />
+
+```tsx
+// Before
+<SidebarMenuButton asChild>
+  <a href="/home">Home</a>
+</SidebarMenuButton>
+
+// After
+<SidebarMenuButton render={<a href="/home" />}>Home</SidebarMenuButton>
+```
+
+### Button as a link
+
+`Button` is now built on Base UI's button, which always sets `role="button"`. Do not render it as a link with `render={<a />}`. Use the `buttonVariants` helper on a regular anchor or Next.js link instead:
+
+<br />
+
+```tsx
+import Link from "next/link"
+
+import { buttonVariants } from "@/components/ui/button"
+
+;<Link href="/docs" className={buttonVariants({ variant: "neutral" })}>
+  Docs
+</Link>
+```
+
+### Accordion
+
+`type="single"` and `collapsible` are gone. Items are always collapsible, one item is open at a time by default and the `multiple` prop allows several open items. `value` and `defaultValue` are now arrays.
+
+<br />
+
+```tsx
+// Before
+<Accordion type="single" collapsible defaultValue="item-1">
+
+// After
+<Accordion defaultValue={["item-1"]}>
+<Accordion multiple defaultValue={["item-1", "item-2"]}>
+```
+
+### Select
+
+`SelectValue` renders the raw value unless the select knows the labels, so pass an `items` prop to `Select` (an object or an array of `{ value, label }`). `position="popper"` is removed. Use `alignItemWithTrigger` on `SelectContent` if you want the native-like behavior where the selected item overlaps the trigger.
+
+<br />
+
+```tsx
+const fruits = {
+  apple: "Apple",
+  banana: "Banana",
+}
+
+;<Select items={fruits}>
+  <SelectTrigger>
+    <SelectValue placeholder="Select a fruit" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="apple">Apple</SelectItem>
+    <SelectItem value="banana">Banana</SelectItem>
+  </SelectContent>
+</Select>
+```
+
+### Drawer
+
+The drawer is built on Base UI's drawer. `direction` is now `swipeDirection`, `shouldScaleBackground` is removed, and you get `snapPoints` and `showSwipeHandle` props.
+
+<br />
+
+```tsx
+// Before
+<Drawer direction="right">
+
+// After
+<Drawer swipeDirection="right">
+```
+
+### Other prop changes
+
+<Table className="mt-8">
+  <TableHeader>
+    <TableRow>
+      <TableHead>Component</TableHead>
+      <TableHead>Before</TableHead>
+      <TableHead>After</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>TooltipProvider</TableCell>
+      <TableCell>delayDuration</TableCell>
+      <TableCell>delay</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Checkbox</TableCell>
+      <TableCell>checked="indeterminate"</TableCell>
+      <TableCell>indeterminate</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Slider</TableCell>
+      <TableCell>onValueChange(value: number[])</TableCell>
+      <TableCell>onValueChange(value: number | number[])</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>NavigationMenu</TableCell>
+      <TableCell>viewport prop</TableCell>
+      <TableCell>removed, the viewport is always rendered</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>NavigationMenuLink</TableCell>
+      <TableCell>{"<Link legacyBehavior passHref>"}</TableCell>
+      <TableCell>{'render={<Link href="..." />}'}</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>DialogContent, SheetContent</TableCell>
+      <TableCell>-</TableCell>
+      <TableCell>showCloseButton prop</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+All change handlers (`onOpenChange`, `onValueChange`, `onCheckedChange`) now receive an `eventDetails` object as the second argument.
+
+### Data attributes
+
+If you styled components with Radix's `data-state` attribute, switch to Base UI's attributes.
+
+<br />
+
+<Table className="mt-8">
+  <TableHeader>
+    <TableRow>
+      <TableHead>Before</TableHead>
+      <TableHead>After</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>data-[state=open] (content)</TableCell>
+      <TableCell>data-open</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>data-[state=closed] (content)</TableCell>
+      <TableCell>data-closed</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>data-[state=open] (trigger)</TableCell>
+      <TableCell>data-popup-open</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>data-[state=open] (accordion / collapsible trigger)</TableCell>
+      <TableCell>data-panel-open</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>data-[state=checked] / data-[state=unchecked]</TableCell>
+      <TableCell>data-checked / data-unchecked</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>data-[state=active] (tabs)</TableCell>
+      <TableCell>data-active</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>data-[active=true] (sidebar)</TableCell>
+      <TableCell>data-active</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>data-[highlighted]</TableCell>
+      <TableCell>data-highlighted</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>data-[disabled]</TableCell>
+      <TableCell>data-disabled</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>data-[motion=from-start] (navigation menu)</TableCell>
+      <TableCell>data-[activation-direction=left]</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>--radix-*-trigger-width</TableCell>
+      <TableCell>--anchor-width</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>--radix-*-content-transform-origin</TableCell>
+      <TableCell>--transform-origin</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+Base UI also adds `data-starting-style` and `data-ending-style` for CSS transitions. Read the <a target="_blank" href="https://base-ui.com/react/handbook/animation">Base UI animation guide</a> to learn more.
+
+## 6. Update the dependencies
+
+The components were built against the versions below. Some of the packages got a major version bump, so update them if you use the related components:
+
+<br />
+
+```bash
+pnpm add lucide-react@latest react-day-picker@^9 date-fns@^4 recharts@^3 @tanstack/react-table@^9 react-resizable-panels@^4
+```
+
+The rest of the packages only got minor updates and need no code changes, but it is a good idea to bring them up to date as well:
+
+<br />
+
+```bash
+pnpm add tailwindcss@latest @tailwindcss/postcss@latest tw-animate-css@latest tailwind-merge@latest class-variance-authority@latest cmdk@latest input-otp@latest embla-carousel-react@latest react-hook-form@latest zod@^3
+```
+
+<Table className="mt-8">
+  <TableHeader>
+    <TableRow>
+      <TableHead>Component</TableHead>
+      <TableHead>Package</TableHead>
+      <TableHead>Version</TableHead>
+      <TableHead>What changed</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>All components</TableCell>
+      <TableCell>lucide-react</TableCell>
+      <TableCell>0.477 to 1.x</TableCell>
+      <TableCell>Brand icons (Github, Twitter, Facebook...) were removed in 1.0. Replace them with another icon or your own SVG.</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Calendar, Date Picker</TableCell>
+      <TableCell>react-day-picker</TableCell>
+      <TableCell>8 to 9</TableCell>
+      <TableCell>initialFocus is now autoFocus. Custom classNames keys use the v9 names.</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Calendar, Date Picker</TableCell>
+      <TableCell>date-fns</TableCell>
+      <TableCell>3 to 4</TableCell>
+      <TableCell>No code changes for the components. Check the date-fns changelog if you use it elsewhere.</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Chart</TableCell>
+      <TableCell>recharts</TableCell>
+      <TableCell>2 to 3</TableCell>
+      <TableCell>activeIndex / activeShape are replaced by the shape prop. layout moves from Bar to the chart. ChartLegend has no className, use ChartLegendContent.</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Data Table</TableCell>
+      <TableCell>@tanstack/react-table</TableCell>
+      <TableCell>8 to 9</TableCell>
+      <TableCell>useReactTable is now useTable with a tableFeatures object. Columns are built with createColumnHelper and rendered with table.FlexRender.</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Resizable</TableCell>
+      <TableCell>react-resizable-panels</TableCell>
+      <TableCell>2 to 4</TableCell>
+      <TableCell>The direction prop is now orientation.</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Command</TableCell>
+      <TableCell>cmdk</TableCell>
+      <TableCell>1.0 to 1.1</TableCell>
+      <TableCell>No code changes.</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Input OTP</TableCell>
+      <TableCell>input-otp</TableCell>
+      <TableCell>1.2 to 1.5</TableCell>
+      <TableCell>No code changes.</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Carousel</TableCell>
+      <TableCell>embla-carousel-react</TableCell>
+      <TableCell>8.0 to 8.6</TableCell>
+      <TableCell>No code changes.</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Form</TableCell>
+      <TableCell>react-hook-form, zod</TableCell>
+      <TableCell>7.51 to 7.87, 3.22 to 3.25</TableCell>
+      <TableCell>No code changes.</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Styling</TableCell>
+      <TableCell>tailwindcss, @tailwindcss/postcss, tw-animate-css, tailwind-merge, class-variance-authority</TableCell>
+      <TableCell>4.0 to 4.3, 1.2 to 1.4, 3.0 to 3.6, 0.7.0 to 0.7.1</TableCell>
+      <TableCell>No code changes.</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+Re-install these components from their pages to get the updated versions. Each component page has a short note about the upgrade.

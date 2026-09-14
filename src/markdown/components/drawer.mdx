@@ -34,9 +34,7 @@ import {
 
 ```tsx
 <Drawer>
-  <DrawerTrigger asChild>
-    <Button>Open</Button>
-  </DrawerTrigger>
+  <DrawerTrigger render={<Button />}>Open</DrawerTrigger>
   <DrawerContent>
     <div className="mx-auto w-[300px]">
       <DrawerHeader>
@@ -44,12 +42,10 @@ import {
         <DrawerDescription>This action cannot be undone.</DrawerDescription>
       </DrawerHeader>
       <DrawerFooter className="grid grid-cols-2">
-        <Button example="noShadow">Submit</Button>
-        <DrawerClose asChild>
-          <Button className="bg-secondary-background text-foreground" example="noShadow">
+        <Button variant="noShadow">Submit</Button>
+        <DrawerClose render={<Button className="bg-secondary-background text-foreground" variant="noShadow" />}>
             Cancel
-          </Button>
-        </DrawerClose>
+          </DrawerClose>
       </DrawerFooter>
     </div>
   </DrawerContent>
@@ -67,7 +63,65 @@ import {
 
 ### With Scrollable Content
 
+To make a region of the drawer scrollable, make the scroll container a flex item. Avoid `h-full`, which does not resolve inside a content-sized drawer.
+
 <ComponentPreview component="drawer" example="scrollable-content">
   ```tsx file=<rootDir>/src/examples/ui/drawer/scrollable-content.tsx
+  ```
+</ComponentPreview>
+
+### Position
+
+Use the `swipeDirection` prop to set the side of the drawer. Available options are `up`, `right`, `down`, and `left`.
+
+<ComponentPreview component="drawer" example="position">
+  ```tsx file=<rootDir>/src/examples/ui/drawer/position.tsx
+  ```
+</ComponentPreview>
+
+### Swipe Handle
+
+Use `showSwipeHandle` on `Drawer` to render a swipe handle.
+
+<ComponentPreview component="drawer" example="swipe-handle">
+  ```tsx file=<rootDir>/src/examples/ui/drawer/swipe-handle.tsx
+  ```
+</ComponentPreview>
+
+### Nested
+
+Open drawers from inside another drawer. Parent drawers stay mounted and stack behind the frontmost drawer.
+
+<ComponentPreview component="drawer" example="nested">
+  ```tsx file=<rootDir>/src/examples/ui/drawer/nested.tsx
+  ```
+</ComponentPreview>
+
+### Non Modal
+
+Set `modal={false}` to allow interaction with the rest of the page while the drawer is open. Combine with `disablePointerDismissal` to prevent the drawer from closing on outside presses. Use `modal="trap-focus"` to keep focus inside the drawer while leaving scroll and pointer interaction unrestricted.
+
+<ComponentPreview component="drawer" example="non-modal">
+  ```tsx file=<rootDir>/src/examples/ui/drawer/non-modal.tsx
+  ```
+</ComponentPreview>
+
+### Snap Points
+
+Use `snapPoints` to snap a drawer to preset heights. Numbers between `0` and `1` represent fractions of the viewport. Numbers greater than `1` are treated as pixel values. String values support `px` and `rem` units. Snap points apply to vertical drawers.
+
+Track the active snap point with the controlled `snapPoint` and `onSnapPointChange` props. At the full snap point, the drawer gets a `data-expanded` attribute you can style with the `data-expanded:` variant.
+
+<ComponentPreview component="drawer" example="snap-points">
+  ```tsx file=<rootDir>/src/examples/ui/drawer/snap-points.tsx
+  ```
+</ComponentPreview>
+
+### Responsive
+
+You can combine the [Dialog](/docs/dialog) and `Drawer` components to create a responsive dialog. This renders a `Dialog` component on desktop and a `Drawer` on mobile.
+
+<ComponentPreview component="drawer" example="responsive">
+  ```tsx file=<rootDir>/src/examples/ui/drawer/responsive.tsx
   ```
 </ComponentPreview>

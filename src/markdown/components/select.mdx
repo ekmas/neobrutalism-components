@@ -31,7 +31,12 @@ import {
 ```
 
 ```tsx
-<Select>
+const fruits = [
+  { value: "apple", label: "Apple" },
+  { value: "banana", label: "Banana" },
+]
+
+<Select items={fruits}>
   <SelectTrigger className="w-[180px]">
     <SelectValue placeholder="Select a fruit" />
   </SelectTrigger>

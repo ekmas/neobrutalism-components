@@ -42,8 +42,6 @@ import Star38 from "@/examples/stars/s38";
 import Star39 from "@/examples/stars/s39";
 import Star40 from "@/examples/stars/s40";
 import CustomWidthHeight from "@/examples/stars/docs/custom-width-height";
-import DarkModeStroke from "@/examples/stars/docs/dark-mode-stroke";
-import DarkMode from "@/examples/stars/docs/dark-mode";
 import Default from "@/examples/stars/docs/default";
 import WithStroke from "@/examples/stars/docs/with-stroke";
 
@@ -1633,8 +1631,6 @@ export default function Star40({
 
 export const STARS_EXAMPLES = {
   "custom-width-height": CustomWidthHeight,
-  "dark-mode-stroke": DarkModeStroke,
-  "dark-mode": DarkMode,
   "default": Default,
   "with-stroke": WithStroke
 };

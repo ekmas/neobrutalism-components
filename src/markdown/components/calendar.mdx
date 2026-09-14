@@ -17,6 +17,12 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/calendar
   ```
 </Installation>
 
+## About
+
+The calendar is built on top of <a target="_blank" href="https://daypicker.dev/">React DayPicker</a> v9. Check out its docs for all the available props like `captionLayout`, `numberOfMonths`, `disabled` and `locale`.
+
+If you are upgrading from React DayPicker v8, replace the `initialFocus` prop with `autoFocus` and rename any custom `classNames` keys to their v9 names (`day_selected` is now `selected`, `nav_button` is now `button_previous` / `button_next` and so on).
+
 ## Usage
 
 ```ts

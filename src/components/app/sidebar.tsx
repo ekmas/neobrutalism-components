@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation"
 
 import { MAIN_SIDEBAR } from "@/data/sidebar-links"
 
+import { Badge } from "@/components/ui/badge"
+
 import { cn } from "@/lib/utils"
 
 export default function Sidebar() {
@@ -25,12 +27,20 @@ export default function Sidebar() {
             key={id}
             href={`${item.href}`}
             className={cn(
-              "block border-b-4 border-r-4 border-border p-4 pl-7 text-lg font-base text-foreground/90 hover:bg-main/70 hover:text-main-foreground",
+              "flex items-center justify-between gap-2 border-b-4 border-r-4 border-border px-4 py-2.5 pl-7 text-lg font-base text-foreground/90 hover:bg-main/70 hover:text-main-foreground",
               item.href === pathname &&
                 "bg-main text-main-foreground hover:bg-main",
             )}
           >
             {item.text}
+            {item.isNew && (
+              <Badge
+                variant="neutral"
+                className="bg-chart-3 text-main-foreground px-1.5 py-0 text-[10px] font-heading uppercase"
+              >
+                New
+              </Badge>
+            )}
           </Link>
         )
       })}

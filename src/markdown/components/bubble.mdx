@@ -1,0 +1,61 @@
+---
+title: Bubble
+description: A chat bubble for displaying a message in a conversation.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/bubble
+---
+
+<ComponentPreview component="bubble">
+  ```tsx file=<rootDir>/src/examples/ui/bubble/index.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+<Installation component="bubble">
+  ```tsx file=<rootDir>/src/components/ui/bubble.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import { Bubble, BubbleContent } from '@/components/ui/bubble'
+```
+
+```tsx
+<Bubble>
+  <BubbleContent>Hello there!</BubbleContent>
+</Bubble>
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="bubble" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/bubble/index.tsx
+  ```
+</ComponentPreview>
+
+### Variants
+
+<ComponentPreview component="bubble" example="variants">
+  ```tsx file=<rootDir>/src/examples/ui/bubble/variants.tsx
+  ```
+</ComponentPreview>
+
+### With Reactions
+
+<ComponentPreview component="bubble" example="with-reactions">
+  ```tsx file=<rootDir>/src/examples/ui/bubble/with-reactions.tsx
+  ```
+</ComponentPreview>
+
+### As Button
+
+Use the `render` prop to render the bubble content as a different element, for example a `button` or a link.
+
+<ComponentPreview component="bubble" example="as-button">
+  ```tsx file=<rootDir>/src/examples/ui/bubble/as-button.tsx
+  ```
+</ComponentPreview>

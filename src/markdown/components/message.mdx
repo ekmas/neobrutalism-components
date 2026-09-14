@@ -1,0 +1,79 @@
+---
+title: Message
+description: A message in a conversation, with an avatar, content, header and footer.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/message
+---
+
+<ComponentPreview component="message">
+  ```tsx file=<rootDir>/src/examples/ui/message/index.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+<Installation component="message">
+  ```tsx file=<rootDir>/src/components/ui/message.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import {
+  Message,
+  MessageAvatar,
+  MessageContent,
+  MessageHeader,
+  MessageFooter,
+  MessageGroup,
+} from '@/components/ui/message'
+```
+
+```tsx
+<Message>
+  <MessageAvatar>
+    <Avatar>
+      <AvatarFallback>CN</AvatarFallback>
+    </Avatar>
+  </MessageAvatar>
+  <MessageContent>
+    <Bubble>
+      <BubbleContent>Hello there!</BubbleContent>
+    </Bubble>
+  </MessageContent>
+</Message>
+```
+
+The message content is usually a <Link href="/docs/bubble">Bubble</Link>. Use `align="end"` to place the message on the right side of the conversation.
+
+## Examples
+
+### Default
+
+<ComponentPreview component="message" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/message/index.tsx
+  ```
+</ComponentPreview>
+
+### Group
+
+Use `MessageGroup` to group consecutive messages from the same sender.
+
+<ComponentPreview component="message" example="group">
+  ```tsx file=<rootDir>/src/examples/ui/message/group.tsx
+  ```
+</ComponentPreview>
+
+### Header and Footer
+
+<ComponentPreview component="message" example="header-footer">
+  ```tsx file=<rootDir>/src/examples/ui/message/header-footer.tsx
+  ```
+</ComponentPreview>
+
+### With Actions
+
+<ComponentPreview component="message" example="with-actions">
+  ```tsx file=<rootDir>/src/examples/ui/message/with-actions.tsx
+  ```
+</ComponentPreview>

@@ -5,7 +5,7 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/textarea
 ---
 
 <ComponentPreview component="textarea">
-  ```tsx file=<rootDir>/src/examples/ui/textarea.tsx
+  ```tsx file=<rootDir>/src/examples/ui/textarea/index.tsx
   ```
 </ComponentPreview>
 
@@ -25,3 +25,48 @@ import { Textarea } from '@/components/ui/textarea'
 ```tsx
 <Textarea />
 ```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="textarea" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/textarea/index.tsx
+  ```
+</ComponentPreview>
+
+### Field
+
+Use [Field](/docs/field), `FieldLabel`, and `FieldDescription` to create a textarea with a label and description.
+
+<ComponentPreview component="textarea" example="field">
+  ```tsx file=<rootDir>/src/examples/ui/textarea/field.tsx
+  ```
+</ComponentPreview>
+
+### Disabled
+
+Use the `disabled` prop to disable the textarea. To style the disabled state, add the `data-disabled` attribute to the `Field` component.
+
+<ComponentPreview component="textarea" example="disabled">
+  ```tsx file=<rootDir>/src/examples/ui/textarea/disabled.tsx
+  ```
+</ComponentPreview>
+
+### Invalid
+
+Use the `aria-invalid` prop to mark the textarea as invalid. To style the invalid state, add the `data-invalid` attribute to the `Field` component.
+
+<ComponentPreview component="textarea" example="invalid">
+  ```tsx file=<rootDir>/src/examples/ui/textarea/invalid.tsx
+  ```
+</ComponentPreview>
+
+### Button
+
+Pair with [Button](/docs/button) to create a textarea with a submit button.
+
+<ComponentPreview component="textarea" example="button">
+  ```tsx file=<rootDir>/src/examples/ui/textarea/button.tsx
+  ```
+</ComponentPreview>

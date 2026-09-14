@@ -18,8 +18,8 @@ export default function DropdownMenuRadioGroupDemo() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="noShadow">Radio Group</Button>
+      <DropdownMenuTrigger render={<Button variant="noShadow" />}>
+        Radio Group
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start" className="w-56">
         <DropdownMenuLabel inset>Panel Position</DropdownMenuLabel>

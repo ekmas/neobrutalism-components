@@ -24,11 +24,11 @@ export default function ShadcnBtn({ command }: { command: string }) {
 
   return (
     <Tooltip>
-      <TooltipTrigger asChild>
-        <Button onClick={handleCopy} variant="noShadow">
-          Copy
-          {copied ? <Check className="size-[18px]" /> : <ShadcnIcon />}
-        </Button>
+      <TooltipTrigger
+        render={<Button onClick={handleCopy} variant="noShadow" />}
+      >
+        Copy
+        {copied ? <Check className="size-[18px]" /> : <ShadcnIcon />}
       </TooltipTrigger>
       <TooltipContent>
         <p>Copy Shadcn CLI command</p>

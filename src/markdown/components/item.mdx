@@ -1,0 +1,80 @@
+---
+title: Item
+description: A versatile component that you can use to display any content.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/item
+---
+
+<ComponentPreview component="item">
+  ```tsx file=<rootDir>/src/examples/ui/item/index.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+<Installation component="item">
+  ```tsx file=<rootDir>/src/components/ui/item.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import {
+  Item,
+  ItemActions,
+  ItemContent,
+  ItemDescription,
+  ItemMedia,
+  ItemTitle,
+} from '@/components/ui/item'
+```
+
+```tsx
+<Item>
+  <ItemMedia variant="icon">
+    <InboxIcon />
+  </ItemMedia>
+  <ItemContent>
+    <ItemTitle>Item</ItemTitle>
+    <ItemDescription>Item description</ItemDescription>
+  </ItemContent>
+  <ItemActions>
+    <Button variant="neutral" size="sm">
+      Action
+    </Button>
+  </ItemActions>
+</Item>
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="item" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/item/index.tsx
+  ```
+</ComponentPreview>
+
+
+### With Image
+
+<ComponentPreview component="item" example="with-image">
+  ```tsx file=<rootDir>/src/examples/ui/item/with-image.tsx
+  ```
+</ComponentPreview>
+
+### As Link
+
+Use the `render` prop to render the item as a link.
+
+<ComponentPreview component="item" example="as-link">
+  ```tsx file=<rootDir>/src/examples/ui/item/as-link.tsx
+  ```
+</ComponentPreview>
+
+### Group
+
+<ComponentPreview component="item" example="group">
+  ```tsx file=<rootDir>/src/examples/ui/item/group.tsx
+  ```
+</ComponentPreview>

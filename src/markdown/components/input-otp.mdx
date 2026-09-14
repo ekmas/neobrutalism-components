@@ -5,7 +5,7 @@ shadcnDocsLink: https://ui.shadcn.com/docs/components/input-otp
 ---
 
 <ComponentPreview component="input-otp">
-  ```tsx file=<rootDir>/src/examples/ui/input-otp.tsx
+  ```tsx file=<rootDir>/src/examples/ui/input-otp/index.tsx
   ```
 </ComponentPreview>
 
@@ -42,3 +42,83 @@ import {
   </InputOTPGroup>
 </InputOTP>
 ```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="input-otp" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/input-otp/index.tsx
+  ```
+</ComponentPreview>
+
+### Pattern
+
+Use the `pattern` prop to define a custom pattern for the OTP input.
+
+```tsx
+import { REGEXP_ONLY_DIGITS_AND_CHARS } from "input-otp"
+
+<InputOTP maxLength={6} pattern={REGEXP_ONLY_DIGITS_AND_CHARS}>
+  ...
+</InputOTP>
+```
+
+<ComponentPreview component="input-otp" example="pattern">
+  ```tsx file=<rootDir>/src/examples/ui/input-otp/pattern.tsx
+  ```
+</ComponentPreview>
+
+### Separator
+
+Use the `<InputOTPSeparator />` component to add a separator between input groups.
+
+<ComponentPreview component="input-otp" example="separator">
+  ```tsx file=<rootDir>/src/examples/ui/input-otp/separator.tsx
+  ```
+</ComponentPreview>
+
+### Disabled
+
+Use the `disabled` prop to disable the input.
+
+<ComponentPreview component="input-otp" example="disabled">
+  ```tsx file=<rootDir>/src/examples/ui/input-otp/disabled.tsx
+  ```
+</ComponentPreview>
+
+### Controlled
+
+Use the `value` and `onChange` props to control the input value.
+
+<ComponentPreview component="input-otp" example="controlled">
+  ```tsx file=<rootDir>/src/examples/ui/input-otp/controlled.tsx
+  ```
+</ComponentPreview>
+
+### Invalid
+
+Use `aria-invalid` on the slots to show an error state.
+
+<ComponentPreview component="input-otp" example="invalid">
+  ```tsx file=<rootDir>/src/examples/ui/input-otp/invalid.tsx
+  ```
+</ComponentPreview>
+
+### Four Digits
+
+A common pattern for PIN codes. This uses the `pattern={REGEXP_ONLY_DIGITS}` prop.
+
+<ComponentPreview component="input-otp" example="four-digits">
+  ```tsx file=<rootDir>/src/examples/ui/input-otp/four-digits.tsx
+  ```
+</ComponentPreview>
+
+### Alphanumeric
+
+Use `REGEXP_ONLY_DIGITS_AND_CHARS` to accept both letters and numbers.
+
+<ComponentPreview component="input-otp" example="alphanumeric">
+  ```tsx file=<rootDir>/src/examples/ui/input-otp/alphanumeric.tsx
+  ```
+</ComponentPreview>

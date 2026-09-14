@@ -62,24 +62,21 @@ export default function NavigationMenuDemo() {
           <NavigationMenuContent>
             <ul className="grid w-[500px] gap-3 p-2 lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
-                <NavigationMenuLink asChild>
-                  <a
-                    className="flex h-full w-full select-none flex-col justify-end rounded-base p-6 no-underline outline-hidden"
-                    href="https://ui.shadcn.com"
-                  >
-                    <div className="mb-2 mt-4 text-lg font-heading">
-                      shadcn/ui
-                    </div>
-                    <p className="text-sm font-base leading-tight">
-                      Beautifully designed components that you can copy and
-                      paste into your apps. Accessible. Customizable. Open
-                      Source.
-                    </p>
-                  </a>
+                <NavigationMenuLink
+                  className="flex h-full w-full select-none flex-col justify-end rounded-base border-2 border-transparent p-6 no-underline outline-hidden hover:border-border"
+                  href="https://ui.shadcn.com"
+                >
+                  <div className="mb-2 mt-4 text-lg font-heading">
+                    shadcn/ui
+                  </div>
+                  <p className="text-sm font-base leading-tight">
+                    Beautifully designed components that you can copy and paste
+                    into your apps. Accessible. Customizable. Open Source.
+                  </p>
                 </NavigationMenuLink>
               </li>
               <ListItem href="https://ui.shadcn.com/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
+                Re-usable components built using Base UI and Tailwind CSS.
               </ListItem>
               <ListItem
                 href="https://ui.shadcn.com/docs/installation"
@@ -113,11 +110,12 @@ export default function NavigationMenuDemo() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="https://ui.shadcn.com/docs" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Documentation
-            </NavigationMenuLink>
-          </Link>
+          <NavigationMenuLink
+            render={<Link href="https://ui.shadcn.com/docs" />}
+            className={navigationMenuTriggerStyle()}
+          >
+            Documentation
+          </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
@@ -129,24 +127,21 @@ function ListItem({
   title,
   children,
   ...props
-}: React.ComponentProps<"a">) {
+}: React.ComponentProps<typeof NavigationMenuLink>) {
   return (
     <li>
-      <NavigationMenuLink asChild>
-        <a
-          className={cn(
-            "hover:bg-accent block text-main-foreground select-none space-y-1 rounded-base border-2 border-transparent p-3 leading-none no-underline outline-hidden transition-colors hover:border-border",
-            className,
-          )}
-          {...props}
-        >
-          <div className="text-base font-heading leading-none">{title}</div>
-          <p className="font-base line-clamp-2 text-sm leading-snug">
-            {children}
-          </p>
-        </a>
+      <NavigationMenuLink
+        className={cn(
+          "block text-foreground select-none space-y-1 rounded-base border-2 border-transparent p-3 leading-none no-underline outline-hidden transition-colors hover:bg-main hover:text-main-foreground hover:border-border",
+          className,
+        )}
+        {...props}
+      >
+        <div className="text-base font-heading leading-none">{title}</div>
+        <p className="font-base line-clamp-2 text-sm leading-snug">
+          {children}
+        </p>
       </NavigationMenuLink>
     </li>
   )
 }
-ListItem.displayName = "ListItem"

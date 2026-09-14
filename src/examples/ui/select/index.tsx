@@ -8,20 +8,28 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
+const fruits = [
+  { value: "apple", label: "Apple" },
+  { value: "banana", label: "Banana" },
+  { value: "blueberry", label: "Blueberry" },
+  { value: "grapes", label: "Grapes" },
+  { value: "pineapple", label: "Pineapple" },
+]
+
 export default function SelectDemo() {
   return (
-    <Select>
+    <Select items={fruits}>
       <SelectTrigger className="w-[180px]">
         <SelectValue placeholder="Select a fruit" />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
           <SelectLabel>Fruits</SelectLabel>
-          <SelectItem value="apple">Apple</SelectItem>
-          <SelectItem value="banana">Banana</SelectItem>
-          <SelectItem value="blueberry">Blueberry</SelectItem>
-          <SelectItem value="grapes">Grapes</SelectItem>
-          <SelectItem value="pineapple">Pineapple</SelectItem>
+          {fruits.map((fruit) => (
+            <SelectItem key={fruit.value} value={fruit.value}>
+              {fruit.label}
+            </SelectItem>
+          ))}
         </SelectGroup>
       </SelectContent>
     </Select>

@@ -1,0 +1,89 @@
+---
+title: Field
+description: Combine labels, controls, and help text to compose accessible form fields and grouped inputs.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/field
+---
+
+<ComponentPreview component="field">
+  ```tsx file=<rootDir>/src/examples/ui/field/index.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+The component depends on the <Link href="/docs/label">Label</Link> component. Add it first.
+
+<Installation component="field">
+  ```tsx file=<rootDir>/src/components/ui/field.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import {
+  Field,
+  FieldContent,
+  FieldDescription,
+  FieldError,
+  FieldGroup,
+  FieldLabel,
+  FieldLegend,
+  FieldSeparator,
+  FieldSet,
+  FieldTitle,
+} from '@/components/ui/field'
+```
+
+```tsx
+<FieldSet>
+  <FieldLegend>Profile</FieldLegend>
+  <FieldDescription>Update your public profile.</FieldDescription>
+  <FieldGroup>
+    <Field>
+      <FieldLabel htmlFor="name">Name</FieldLabel>
+      <Input id="name" />
+      <FieldDescription>Displayed on your profile.</FieldDescription>
+      <FieldError errors={[{ message: 'Name is required.' }]} />
+    </Field>
+  </FieldGroup>
+</FieldSet>
+```
+
+`Field` accepts an `orientation` of `vertical` (default), `horizontal` or `responsive`. Set `data-invalid` on a `Field` to put it in the error state and `data-disabled` to dim it.
+
+## Examples
+
+### Default
+
+<ComponentPreview component="field" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/field/index.tsx
+  ```
+</ComponentPreview>
+
+### Horizontal
+
+Use `orientation="horizontal"` to place a control next to its label. Wrap the label and description in `FieldContent` when you have both.
+
+<ComponentPreview component="field" example="horizontal">
+  ```tsx file=<rootDir>/src/examples/ui/field/horizontal.tsx
+  ```
+</ComponentPreview>
+
+### Choice Card
+
+Wrap a `Field` in a `FieldLabel` to turn the whole field into a clickable card. The card is highlighted when the control inside it is checked.
+
+<ComponentPreview component="field" example="choice-card">
+  ```tsx file=<rootDir>/src/examples/ui/field/choice-card.tsx
+  ```
+</ComponentPreview>
+
+### With Error
+
+`FieldError` renders a single message or a list when the `errors` array contains more than one unique message. It works with `react-hook-form`'s `fieldState.error`.
+
+<ComponentPreview component="field" example="with-error">
+  ```tsx file=<rootDir>/src/examples/ui/field/with-error.tsx
+  ```
+</ComponentPreview>

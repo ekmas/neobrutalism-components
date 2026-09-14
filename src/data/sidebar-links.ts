@@ -2,17 +2,21 @@ import { transformToSlug } from "@/lib/utils"
 
 import COMPONENTS from "./components"
 
+type SidebarLink = { href: string; text: string; isNew?: boolean }
+type SidebarItem = string | SidebarLink
+
 const COMPONENTS_LINKS = COMPONENTS.map((component) => {
   return {
     href: `/docs/${transformToSlug(component.name)}`,
     text: component.name,
+    isNew: component.isNew,
   }
 })
 
 const GETTING_STARTED_LINKS = [
   {
-    href: "/docs/migrating-from-v3",
-    text: "Migrating from V3",
+    href: "/docs/migrating-to-base-ui",
+    text: "Migrating to Base UI",
   },
   {
     href: "/docs",
@@ -21,10 +25,6 @@ const GETTING_STARTED_LINKS = [
   {
     href: "/docs/installation",
     text: "Installation",
-  },
-  {
-    href: "/docs/resources",
-    text: "Resources",
   },
   {
     href: "/docs/figma",
@@ -46,21 +46,13 @@ const GETTING_STARTED_LINKS = [
     href: "/stars",
     text: "Stars",
   },
-  {
-    href: "/templates",
-    text: "Templates",
-  },
-  {
-    href: "/showcase",
-    text: "Showcase",
-  },
 ]
 
-const MAIN_SIDEBAR = [
+const MAIN_SIDEBAR: SidebarItem[] = [
   "Getting started",
   {
-    href: "/docs/migrating-from-v3",
-    text: "Migrating from V3",
+    href: "/docs/migrating-to-base-ui",
+    text: "Migrating to Base UI",
   },
   {
     href: "/docs",
@@ -69,10 +61,6 @@ const MAIN_SIDEBAR = [
   {
     href: "/docs/installation",
     text: "Installation",
-  },
-  {
-    href: "/docs/resources",
-    text: "Resources",
   },
   {
     href: "/docs/figma",

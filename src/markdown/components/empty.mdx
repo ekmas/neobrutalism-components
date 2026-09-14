@@ -1,0 +1,61 @@
+---
+title: Empty
+description: Use the Empty component to display an empty state.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/empty
+---
+
+<ComponentPreview component="empty">
+  ```tsx file=<rootDir>/src/examples/ui/empty/index.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+<Installation component="empty">
+  ```tsx file=<rootDir>/src/components/ui/empty.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import {
+  Empty,
+  EmptyContent,
+  EmptyDescription,
+  EmptyHeader,
+  EmptyMedia,
+  EmptyTitle,
+} from '@/components/ui/empty'
+```
+
+```tsx
+<Empty>
+  <EmptyHeader>
+    <EmptyMedia variant="icon">
+      <FolderIcon />
+    </EmptyMedia>
+    <EmptyTitle>No data</EmptyTitle>
+    <EmptyDescription>No data found</EmptyDescription>
+  </EmptyHeader>
+  <EmptyContent>
+    <Button>Create project</Button>
+  </EmptyContent>
+</Empty>
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="empty" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/empty/index.tsx
+  ```
+</ComponentPreview>
+
+### With Input
+
+<ComponentPreview component="empty" example="with-input">
+  ```tsx file=<rootDir>/src/examples/ui/empty/with-input.tsx
+  ```
+</ComponentPreview>

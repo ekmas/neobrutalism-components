@@ -24,15 +24,15 @@ export default function CopyBtn({ code }: { code: string }) {
 
   return (
     <Tooltip>
-      <TooltipTrigger asChild>
-        <Button onClick={handleCopy} variant="noShadow">
-          Copy
-          {copied ? (
-            <Check className="size-[18px]" />
-          ) : (
-            <Copy className="size-[18px]" />
-          )}
-        </Button>
+      <TooltipTrigger
+        render={<Button onClick={handleCopy} variant="noShadow" />}
+      >
+        Copy
+        {copied ? (
+          <Check className="size-[18px]" />
+        ) : (
+          <Copy className="size-[18px]" />
+        )}
       </TooltipTrigger>
       <TooltipContent>
         <p>Copy to clipboard</p>

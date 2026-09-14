@@ -1,0 +1,58 @@
+---
+title: Native Select
+description: A native select element for choosing a single option from a list.
+shadcnDocsLink: https://ui.shadcn.com/docs/components/native-select
+---
+
+<ComponentPreview component="native-select">
+  ```tsx file=<rootDir>/src/examples/ui/native-select/index.tsx
+  ```
+</ComponentPreview>
+
+## Installation
+
+<Installation component="native-select">
+  ```tsx file=<rootDir>/src/components/ui/native-select.tsx
+  ```
+</Installation>
+
+## Usage
+
+```ts
+import {
+  NativeSelect,
+  NativeSelectOptGroup,
+  NativeSelectOption,
+} from '@/components/ui/native-select'
+```
+
+```tsx
+<NativeSelect>
+  <NativeSelectOption value="">Select an option</NativeSelectOption>
+  <NativeSelectOption value="apple">Apple</NativeSelectOption>
+  <NativeSelectOption value="banana">Banana</NativeSelectOption>
+</NativeSelect>
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview component="native-select" example="default">
+  ```tsx file=<rootDir>/src/examples/ui/native-select/index.tsx
+  ```
+</ComponentPreview>
+
+### With Optgroup
+
+<ComponentPreview component="native-select" example="with-optgroup">
+  ```tsx file=<rootDir>/src/examples/ui/native-select/with-optgroup.tsx
+  ```
+</ComponentPreview>
+
+### Disabled
+
+<ComponentPreview component="native-select" example="disabled">
+  ```tsx file=<rootDir>/src/examples/ui/native-select/disabled.tsx
+  ```
+</ComponentPreview>

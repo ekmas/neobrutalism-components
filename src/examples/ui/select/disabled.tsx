@@ -6,9 +6,17 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
+const fruits = {
+  apple: "Apple",
+  banana: "Banana",
+  blueberry: "Blueberry",
+  grapes: "Grapes",
+  pineapple: "Pineapple",
+}
+
 export default function SelectDemo() {
   return (
-    <Select disabled>
+    <Select disabled items={fruits}>
       <SelectTrigger className="w-[180px]">
         <SelectValue placeholder="Disabled" />
       </SelectTrigger>
