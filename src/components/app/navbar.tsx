@@ -3,29 +3,34 @@ import Link from "next/link"
 import Search from "@/components/app/search"
 import { Badge } from "@/components/ui/badge"
 
-async function getRepoData() {
-  const res = await fetch(
-    "https://api.github.com/repos/ekmas/neobrutalism-components",
-    {
-      cache: "force-cache",
-      headers: {
-        "X-GitHub-Api-Version": "2022-11-28",
-        Authorization: `Bearer ${process.env.GH_API_KEY}`,
+async function getStarsCount() {
+  const token = process.env.GH_API_KEY
+
+  try {
+    const res = await fetch(
+      "https://api.github.com/repos/ekmas/neobrutalism-components",
+      {
+        cache: "force-cache",
+        headers: {
+          "X-GitHub-Api-Version": "2022-11-28",
+          ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        },
       },
-    },
-  )
+    )
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data")
+    if (!res.ok) return null
+
+    const repo = await res.json()
+    return typeof repo.stargazers_count === "number"
+      ? (repo.stargazers_count / 1000).toFixed(1) + "k"
+      : null
+  } catch {
+    return null
   }
-
-  return res.json()
 }
 
 async function Navbar() {
-  const repo = await getRepoData()
-
-  const starsCount = (repo.stargazers_count / 1000).toFixed(1) + "k"
+  const starsCount = await getStarsCount()
 
   return (
     <nav className="fixed left-0 top-0 z-20 mx-auto flex h-[70px] w-full items-center border-b-4 border-border bg-secondary-background px-5">
@@ -41,10 +46,7 @@ async function Navbar() {
           <div className="items-center text-base font-base xl:gap-10 lg:flex gap-10 hidden">
             <Link href="/docs">Docs</Link>
 
-            <Link
-              className="flex items-center gap-2"
-              href="/docs/accordion"
-            >
+            <Link className="flex items-center gap-2" href="/docs/accordion">
               Components
               <Badge
                 variant="neutral"
@@ -79,9 +81,12 @@ async function Navbar() {
             <a
               target="_blank"
               href="https://github.com/ekmas/neobrutalism-components"
+              aria-label="GitHub repository"
               className="flex gap-2 items-center justify-center rounded-base border-2 border-border shadow-nav px-1.5 h-9 transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none"
             >
-              <p className="font-semibold sm:inline hidden">{starsCount}</p>
+              {starsCount && (
+                <p className="font-semibold sm:inline hidden">{starsCount}</p>
+              )}
 
               <svg
                 className="size-5"
