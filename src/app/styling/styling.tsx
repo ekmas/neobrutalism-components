@@ -235,7 +235,16 @@ export default function Styling() {
     setFontWeight([700, 500])
     setFont(getDefaultFont())
 
-    localStorage.clear()
+    for (const key of [
+      "palette",
+      COLOR_MODE_STORAGE_KEY,
+      "borderRadius",
+      "boxShadow",
+      "fontWeight",
+      FONT_STORAGE_KEY,
+    ]) {
+      localStorage.removeItem(key)
+    }
   }
 
   const knownFont = fonts.some((item) => item.name === font.family)
