@@ -28,7 +28,7 @@ async function Navbar() {
   const starsCount = (repo.stargazers_count / 1000).toFixed(1) + "k"
 
   return (
-    <nav className="fixed left-0 top-0 z-20 mx-auto flex h-[70px] w-full items-center border-b-4 border-border bg-secondary-background px-5">
+    <nav className="fixed left-0 z-20 mx-auto flex h-[70px] w-full items-center border-b-4 border-border bg-secondary-background px-5" style={{ top: "var(--banner-h)" }}>
       <div className="mx-auto flex w-[1300px] text-foreground max-w-full items-center justify-between">
         <div className="flex items-center xl:gap-10 gap-10">
           <Link
@@ -38,14 +38,23 @@ async function Navbar() {
             N
           </Link>
 
-          <div className="items-center text-base font-base xl:gap-10 lg:flex gap-10 hidden">
+          <div className="[@media(min-width:500px)]:flex items-center text-base font-base gap-8 hidden">
             <Link href="/docs">Docs</Link>
 
-            <Link
-              className="flex items-center gap-2"
-              href="/docs/accordion"
-            >
-              Components
+            <div className="items-center lg:flex gap-8 hidden">
+              <Link href="/docs/accordion">Components</Link>
+
+              <Link href="/styling">Styling</Link>
+
+              {/* <Link href="/blocks">Blocks</Link> */}
+
+              <Link href="/charts">Charts</Link>
+
+              <Link href="/stars">Stars</Link>
+            </div>
+
+            <Link className="flex items-center gap-2" href="/hire-me">
+              Hire Me
               <Badge
                 variant="neutral"
                 className="bg-chart-3 text-main-foreground px-1.5 py-0 text-[10px] font-heading uppercase"
@@ -53,22 +62,6 @@ async function Navbar() {
                 New
               </Badge>
             </Link>
-
-            <Link className="flex items-center gap-2" href="/styling">
-              Styling
-              <Badge
-                variant="neutral"
-                className="bg-chart-3 text-main-foreground px-1.5 py-0 text-[10px] font-heading uppercase"
-              >
-                New
-              </Badge>
-            </Link>
-
-            {/* <Link href="/blocks">Blocks</Link> */}
-
-            <Link href="/charts">Charts</Link>
-
-            <Link href="/stars">Stars</Link>
           </div>
         </div>
 

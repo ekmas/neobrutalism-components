@@ -3,6 +3,7 @@ import "@/styling/globals.css"
 import type { Metadata } from "next"
 import { DM_Sans } from "next/font/google"
 
+import HireMeBanner from "@/components/app/hire-me-banner"
 import Navbar from "@/components/app/navbar"
 import ScrollToTop from "@/components/app/scroll-to-top"
 import SetStylingPref from "@/components/app/set-styling-pref"
@@ -59,6 +60,7 @@ export default function RootLayout({
   return (
     <html className={`${dmSans.variable} scroll-smooth`} lang="en">
       <body className="isolate">
+        <HireMeBanner />
         <Navbar />
         {children}
         <SetStylingPref />

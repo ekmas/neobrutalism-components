@@ -2,7 +2,7 @@ import { transformToSlug } from "@/lib/utils"
 
 import COMPONENTS from "./components"
 
-type SidebarLink = { href: string; text: string; isNew?: boolean }
+type SidebarLink = { href: string; text: string; isNew?: boolean; noPagination?: boolean }
 type SidebarItem = string | SidebarLink
 
 const COMPONENTS_LINKS = COMPONENTS.map((component) => {
@@ -45,6 +45,11 @@ const GETTING_STARTED_LINKS = [
   {
     href: "/stars",
     text: "Stars",
+  },
+  {
+    href: "/hire-me",
+    text: "Hire Me",
+    noPagination: true,
   },
 ]
 

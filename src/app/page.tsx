@@ -10,8 +10,9 @@ import { Button } from "@/components/ui/button"
 
 export default function Home() {
   return (
-    <main className="relative flex h-[100dvh] w-full flex-col items-center justify-center overflow-hidden bg-background px-5 font-base text-foreground [@media(max-height:640px)]:pt-[70px] bg-[linear-gradient(to_right,#80808033_1px,transparent_1px),linear-gradient(to_bottom,#80808033_1px,transparent_1px)] bg-[size:70px_70px]">
-      <StarField className="[@media(max-height:640px)]:top-[70px]" />
+    <main className="relative flex h-[100dvh] w-full flex-col items-center justify-center overflow-hidden bg-background px-5 font-base text-foreground [@media(max-height:640px)]:pt-[110px] bg-[linear-gradient(to_right,#80808033_1px,transparent_1px),linear-gradient(to_bottom,#80808033_1px,transparent_1px)] bg-[size:70px_70px]">
+      <StarField className="[@media(max-height:640px)]:top-[110px]" />
+
 
       <div className="relative flex w-full max-w-[820px] flex-col items-center text-center">
         <h1 className="font-heading text-3xl leading-tight sm:text-[40px] md:text-5xl xl:text-6xl">

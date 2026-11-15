@@ -2,6 +2,10 @@
 
 <img src="public/preview.png" alt="preview">
 
+## *For hire
+
+> The developer of this library is available for hire - open to full-time, part-time, and freelance work. <a href="https://samuelbreznjak.com">Get in touch</a>
+
 ## Introduction
 
 Neobrutalism components are a collection of neobrutalism-styled components based on shadcn/ui. 

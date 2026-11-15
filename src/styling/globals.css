@@ -4,6 +4,8 @@
 @plugin "@tailwindcss/typography";
 
 :root {
+  --banner-h: 2.5rem;
+
   --border-radius: 5px;
   --box-shadow-x: 4px;
   --box-shadow-y: 4px;
