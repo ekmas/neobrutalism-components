@@ -12,7 +12,6 @@ export default function HireMeBanner() {
 
   useEffect(() => {
     if (localStorage.getItem("hire-me-banner-dismissed") === "true") {
-      document.documentElement.style.setProperty("--banner-h", "0px")
       setDismissed(true)
     }
   }, [])
@@ -26,7 +25,7 @@ export default function HireMeBanner() {
   if (dismissed) return null
 
   return (
-    <div className="fixed left-0 top-0 z-30 flex h-10 w-full items-center justify-center border-b-4 border-border bg-chart-3 px-4 text-main-foreground">
+    <div data-hire-me-banner className="fixed left-0 top-0 z-30 flex h-10 w-full items-center justify-center border-b-4 border-border bg-chart-3 px-4 text-main-foreground">
       <p className="text-sm text-center">
         <span className="[@media(min-width:500px)]:hidden">Available for hire.</span>
         <span className="hidden [@media(min-width:500px)]:inline">The developer of this library is available for hire.</span>

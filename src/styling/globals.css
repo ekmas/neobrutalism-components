@@ -3,6 +3,10 @@
 
 @plugin "@tailwindcss/typography";
 
+html.banner-dismissed [data-hire-me-banner] {
+  display: none;
+}
+
 :root {
   --banner-h: 2.5rem;
 
