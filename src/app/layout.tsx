@@ -60,6 +60,7 @@ export default function RootLayout({
   return (
     <html className={`${dmSans.variable} scroll-smooth`} lang="en">
       <head>
+        <link rel="describedby" href="/llms.txt" />
         <script dangerouslySetInnerHTML={{ __html: `if(localStorage.getItem('hire-me-banner-dismissed')==='true'){document.documentElement.classList.add('banner-dismissed');document.documentElement.style.setProperty('--banner-h','0px')}` }} />
       </head>
       <body className="isolate">

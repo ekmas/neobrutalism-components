@@ -1,0 +1,90 @@
+# Neobrutalism components
+
+> A collection of neobrutalism-styled components based on shadcn/ui and Base UI.
+
+Start with Installation to apply a palette and its CSS variables. Each component page includes its own setup instructions. The shadcn registry serves component source and dependencies as JSON.
+
+## Getting started
+
+- [Introduction](https://www.neobrutalism.dev/docs): Overview of the component library.
+- [Installation](https://www.neobrutalism.dev/docs/installation): Set up a theme and add components with the shadcn CLI or manually.
+- [Styling](https://www.neobrutalism.dev/styling): Choose a palette and customize fonts, borders, and shadows.
+- [Migrating to Base UI](https://www.neobrutalism.dev/docs/migrating-to-base-ui): Update components that use Radix UI.
+
+## Registry examples
+
+- [Button registry item](https://www.neobrutalism.dev/r/button.json): React source and dependencies for installing Button.
+- [Blue palette](https://www.neobrutalism.dev/r/styling/blue.json): Theme tokens for initializing a project or styling an existing one.
+
+## Component reference
+
+- [Accordion](https://www.neobrutalism.dev/docs/accordion): A vertically stacked set of interactive headings that each reveal a section of content.
+- [Alert Dialog](https://www.neobrutalism.dev/docs/alert-dialog): A modal dialog that interrupts the user with important content and expects a response.
+- [Alert](https://www.neobrutalism.dev/docs/alert): Displays a callout for user attention.
+- [Attachment](https://www.neobrutalism.dev/docs/attachment): Displays a file attachment with media, title, description and actions.
+- [Avatar](https://www.neobrutalism.dev/docs/avatar): An image element with a fallback for representing the user.
+- [Badge](https://www.neobrutalism.dev/docs/badge): Displays a badge or a component that looks like a badge.
+- [Breadcrumb](https://www.neobrutalism.dev/docs/breadcrumb): Displays the current page location within a hierarchical structure.
+- [Bubble](https://www.neobrutalism.dev/docs/bubble): A chat bubble for displaying a message in a conversation.
+- [Button Group](https://www.neobrutalism.dev/docs/button-group): A container that groups related buttons together with consistent styling.
+- [Button](https://www.neobrutalism.dev/docs/button): Displays a button or a component that looks like a button.
+- [Calendar](https://www.neobrutalism.dev/docs/calendar): A date field component that allows users to enter and edit date.
+- [Card](https://www.neobrutalism.dev/docs/card): Displays a card with header, content, and footer.
+- [Carousel](https://www.neobrutalism.dev/docs/carousel): A carousel with motion and swipe built using Embla.
+- [Chart](https://www.neobrutalism.dev/docs/chart): Beautiful charts. Built using Recharts. Copy and paste into your apps.
+- [Checkbox](https://www.neobrutalism.dev/docs/checkbox): A control that allows the user to toggle between checked and not checked.
+- [Collapsible](https://www.neobrutalism.dev/docs/collapsible): An interactive component that expands/collapses a panel.
+- [Combobox](https://www.neobrutalism.dev/docs/combobox): Autocomplete input and command palette with a list of suggestions.
+- [Command](https://www.neobrutalism.dev/docs/command): Fast, composable, unstyled command menu for React.
+- [Context Menu](https://www.neobrutalism.dev/docs/context-menu): Displays a menu to the user — such as a set of actions or functions.
+- [Data Table](https://www.neobrutalism.dev/docs/data-table): Powerful table and datagrids built using TanStack Table.
+- [Date Picker](https://www.neobrutalism.dev/docs/date-picker): A date picker component with calendar popup.
+- [Dialog](https://www.neobrutalism.dev/docs/dialog): A window overlaid on either the primary window or another dialog window.
+- [Direction](https://www.neobrutalism.dev/docs/direction): Provides the reading direction (LTR or RTL) to Base UI components.
+- [Drawer](https://www.neobrutalism.dev/docs/drawer): A drawer component that slides out from the edge of the screen.
+- [Dropdown Menu](https://www.neobrutalism.dev/docs/dropdown-menu): Displays a menu to the user — such as a set of actions or functions.
+- [Empty](https://www.neobrutalism.dev/docs/empty): Use the Empty component to display an empty state.
+- [Field](https://www.neobrutalism.dev/docs/field): Combine labels, controls, and help text to compose accessible form fields and grouped inputs.
+- [Form](https://www.neobrutalism.dev/docs/form): Building forms with React Hook Form and Zod.
+- [Hover Card](https://www.neobrutalism.dev/docs/hover-card): For sighted users to preview content available behind a link.
+- [Image Card](https://www.neobrutalism.dev/docs/image-card): A card component optimized for displaying images with captions.
+- [Input Group](https://www.neobrutalism.dev/docs/input-group): Display additional information or actions to an input or textarea.
+- [Input OTP](https://www.neobrutalism.dev/docs/input-otp): Accessible one-time password input for authentication.
+- [Input](https://www.neobrutalism.dev/docs/input): Displays a form input field or a component that looks like an input field.
+- [Item](https://www.neobrutalism.dev/docs/item): A versatile component that you can use to display any content.
+- [Kbd](https://www.neobrutalism.dev/docs/kbd): Used to display textual user input from keyboard.
+- [Label](https://www.neobrutalism.dev/docs/label): Renders an accessible label associated with controls.
+- [Marker](https://www.neobrutalism.dev/docs/marker): A small inline status or step marker for a conversation timeline.
+- [Marquee](https://www.neobrutalism.dev/docs/marquee): A scrolling text component that animates horizontally.
+- [Menubar](https://www.neobrutalism.dev/docs/menubar): A horizontal navigation bar with clickable menu items.
+- [Message Scroller](https://www.neobrutalism.dev/docs/message-scroller): A scroll container for chat messages with auto scroll and a scroll-to-end button.
+- [Message](https://www.neobrutalism.dev/docs/message): A message in a conversation, with an avatar, content, header and footer.
+- [Native Select](https://www.neobrutalism.dev/docs/native-select): A native select element for choosing a single option from a list.
+- [Navigation Menu](https://www.neobrutalism.dev/docs/navigation-menu): A collection of links for site navigation.
+- [Pagination](https://www.neobrutalism.dev/docs/pagination): Displays page numbers and controls for navigating paginated data.
+- [Popover](https://www.neobrutalism.dev/docs/popover): Displays floating content in relation to a target element.
+- [Progress](https://www.neobrutalism.dev/docs/progress): Displays an indicator showing the completion progress of a task.
+- [Questionnaire](https://www.neobrutalism.dev/docs/questionnaire): A multi-step form for asking questions with single choice, multiple choice and free-form answers.
+- [Radio Group](https://www.neobrutalism.dev/docs/radio-group): A set of checkable buttons where only one can be checked at a time.
+- [Resizable](https://www.neobrutalism.dev/docs/resizable): Accessible resizable panel groups with keyboard support.
+- [Scroll Area](https://www.neobrutalism.dev/docs/scroll-area): Augments native scroll functionality for custom, cross-browser styling.
+- [Select](https://www.neobrutalism.dev/docs/select): Displays a list of options for the user to pick from.
+- [Sheet](https://www.neobrutalism.dev/docs/sheet): Extends the Dialog component to display content that complements the main content of the screen.
+- [Sidebar](https://www.neobrutalism.dev/docs/sidebar): A composable, themeable and customizable sidebar component.
+- [Skeleton](https://www.neobrutalism.dev/docs/skeleton): Use to show a placeholder while content is loading.
+- [Slider](https://www.neobrutalism.dev/docs/slider): An input where the user selects a value from within a given range.
+- [Spinner](https://www.neobrutalism.dev/docs/spinner): An indicator that can be used to show a loading state.
+- [Switch](https://www.neobrutalism.dev/docs/switch): A toggle switch alternative to a checkbox.
+- [Table](https://www.neobrutalism.dev/docs/table): A responsive table component with sorting and filtering.
+- [Tabs](https://www.neobrutalism.dev/docs/tabs): A set of layered sections of content that display one panel at a time.
+- [Textarea](https://www.neobrutalism.dev/docs/textarea): Displays a form textarea or a component that looks like a textarea.
+- [Toast](https://www.neobrutalism.dev/docs/toast): A succinct message that is displayed temporarily.
+- [Toggle Group](https://www.neobrutalism.dev/docs/toggle-group): A set of two-state buttons that can be toggled on or off.
+- [Toggle](https://www.neobrutalism.dev/docs/toggle): A two-state button that can be either on or off.
+- [Tooltip](https://www.neobrutalism.dev/docs/tooltip): A popup that displays information related to an element when it receives keyboard focus or mouse hover.
+
+## Optional
+
+- [Charts](https://www.neobrutalism.dev/charts): Chart examples.
+- [Templates](https://www.neobrutalism.dev/templates): Starting points for full sites.
+- [Showcase](https://www.neobrutalism.dev/showcase): Sites built with the components.
