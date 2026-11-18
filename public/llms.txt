@@ -1,0 +1,83 @@
+# Neobrutalism components
+
+> A collection of neobrutalism-styled components based on shadcn/ui and Base UI.
+
+## Getting started
+
+- [Introduction](https://www.neobrutalism.dev/docs): Overview of the component library.
+- [Installation](https://www.neobrutalism.dev/docs/installation): Set up a theme and add components with the shadcn CLI or manually.
+- [Styling](https://www.neobrutalism.dev/styling): Choose a palette and customize fonts, borders, and shadows.
+- [Migrating to Base UI](https://www.neobrutalism.dev/docs/migrating-to-base-ui): Update components that use Radix UI.
+
+## Component reference
+
+- [Accordion](https://www.neobrutalism.dev/docs/accordion)
+- [Alert Dialog](https://www.neobrutalism.dev/docs/alert-dialog)
+- [Alert](https://www.neobrutalism.dev/docs/alert)
+- [Attachment](https://www.neobrutalism.dev/docs/attachment)
+- [Avatar](https://www.neobrutalism.dev/docs/avatar)
+- [Badge](https://www.neobrutalism.dev/docs/badge)
+- [Breadcrumb](https://www.neobrutalism.dev/docs/breadcrumb)
+- [Bubble](https://www.neobrutalism.dev/docs/bubble)
+- [Button Group](https://www.neobrutalism.dev/docs/button-group)
+- [Button](https://www.neobrutalism.dev/docs/button)
+- [Calendar](https://www.neobrutalism.dev/docs/calendar)
+- [Card](https://www.neobrutalism.dev/docs/card)
+- [Carousel](https://www.neobrutalism.dev/docs/carousel)
+- [Chart](https://www.neobrutalism.dev/docs/chart)
+- [Checkbox](https://www.neobrutalism.dev/docs/checkbox)
+- [Collapsible](https://www.neobrutalism.dev/docs/collapsible)
+- [Combobox](https://www.neobrutalism.dev/docs/combobox)
+- [Command](https://www.neobrutalism.dev/docs/command)
+- [Context Menu](https://www.neobrutalism.dev/docs/context-menu)
+- [Data Table](https://www.neobrutalism.dev/docs/data-table)
+- [Date Picker](https://www.neobrutalism.dev/docs/date-picker)
+- [Dialog](https://www.neobrutalism.dev/docs/dialog)
+- [Direction](https://www.neobrutalism.dev/docs/direction)
+- [Drawer](https://www.neobrutalism.dev/docs/drawer)
+- [Dropdown Menu](https://www.neobrutalism.dev/docs/dropdown-menu)
+- [Empty](https://www.neobrutalism.dev/docs/empty)
+- [Field](https://www.neobrutalism.dev/docs/field)
+- [Form](https://www.neobrutalism.dev/docs/form)
+- [Hover Card](https://www.neobrutalism.dev/docs/hover-card)
+- [Image Card](https://www.neobrutalism.dev/docs/image-card)
+- [Input Group](https://www.neobrutalism.dev/docs/input-group)
+- [Input OTP](https://www.neobrutalism.dev/docs/input-otp)
+- [Input](https://www.neobrutalism.dev/docs/input)
+- [Item](https://www.neobrutalism.dev/docs/item)
+- [Kbd](https://www.neobrutalism.dev/docs/kbd)
+- [Label](https://www.neobrutalism.dev/docs/label)
+- [Marker](https://www.neobrutalism.dev/docs/marker)
+- [Marquee](https://www.neobrutalism.dev/docs/marquee)
+- [Menubar](https://www.neobrutalism.dev/docs/menubar)
+- [Message Scroller](https://www.neobrutalism.dev/docs/message-scroller)
+- [Message](https://www.neobrutalism.dev/docs/message)
+- [Native Select](https://www.neobrutalism.dev/docs/native-select)
+- [Navigation Menu](https://www.neobrutalism.dev/docs/navigation-menu)
+- [Pagination](https://www.neobrutalism.dev/docs/pagination)
+- [Popover](https://www.neobrutalism.dev/docs/popover)
+- [Progress](https://www.neobrutalism.dev/docs/progress)
+- [Questionnaire](https://www.neobrutalism.dev/docs/questionnaire)
+- [Radio Group](https://www.neobrutalism.dev/docs/radio-group)
+- [Resizable](https://www.neobrutalism.dev/docs/resizable)
+- [Scroll Area](https://www.neobrutalism.dev/docs/scroll-area)
+- [Select](https://www.neobrutalism.dev/docs/select)
+- [Sheet](https://www.neobrutalism.dev/docs/sheet)
+- [Sidebar](https://www.neobrutalism.dev/docs/sidebar)
+- [Skeleton](https://www.neobrutalism.dev/docs/skeleton)
+- [Slider](https://www.neobrutalism.dev/docs/slider)
+- [Spinner](https://www.neobrutalism.dev/docs/spinner)
+- [Switch](https://www.neobrutalism.dev/docs/switch)
+- [Table](https://www.neobrutalism.dev/docs/table)
+- [Tabs](https://www.neobrutalism.dev/docs/tabs)
+- [Textarea](https://www.neobrutalism.dev/docs/textarea)
+- [Toast](https://www.neobrutalism.dev/docs/toast)
+- [Toggle Group](https://www.neobrutalism.dev/docs/toggle-group)
+- [Toggle](https://www.neobrutalism.dev/docs/toggle)
+- [Tooltip](https://www.neobrutalism.dev/docs/tooltip)
+
+## Optional
+
+- [Charts](https://www.neobrutalism.dev/charts): Chart examples.
+- [Templates](https://www.neobrutalism.dev/templates): Starting points for full sites.
+- [Showcase](https://www.neobrutalism.dev/showcase): Sites built with the components.
