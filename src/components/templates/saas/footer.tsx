@@ -42,7 +42,7 @@ export default function Footer() {
         </div>
 
         <p className="mt-14 text-center text-sm font-base">
-          © {new Date().getFullYear()} Planly Inc. All rights reserved.
+          © 2026 Planly Inc. All rights reserved.
         </p>
       </div>
     </footer>
