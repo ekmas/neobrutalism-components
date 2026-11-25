@@ -18,6 +18,7 @@ import { Sheet, SheetTrigger } from "@/components/ui/sheet"
 // Registry item that installs each template page.
 const TEMPLATE_ITEMS: Record<string, string> = {
   "/templates/saas": "/r/saas-landing.json",
+  "/templates/dashboard": "/r/dashboard.json",
 }
 
 // Floating dock on template pages: a link back to the templates list, the
@@ -63,8 +64,8 @@ export default function TemplateToolbar() {
             />
           }
         >
-          <Paintbrush />
           Customize
+          <Paintbrush />
         </SheetTrigger>
         <StylingSheetContent styling={styling} />
       </Sheet>
@@ -73,8 +74,8 @@ export default function TemplateToolbar() {
           <DialogTrigger
             render={<Button variant="noShadow" className="px-3 sm:px-4" />}
           >
-            <Download />
             Install
+            <Download />
           </DialogTrigger>
           <TemplateInstallContent item={templateItem} styling={styling} />
         </Dialog>

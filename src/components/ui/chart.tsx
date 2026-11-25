@@ -73,11 +73,15 @@ function ChartContainer({
         {...props}
       >
         <ChartStyle id={chartId} config={config} />
-        <RechartsPrimitive.ResponsiveContainer
-          initialDimension={initialDimension}
-        >
-          {children}
-        </RechartsPrimitive.ResponsiveContainer>
+        {/* Recharts calls Math.random() while rendering, which Next.js Cache
+            Components only allows inside a Suspense boundary. */}
+        <React.Suspense fallback={null}>
+          <RechartsPrimitive.ResponsiveContainer
+            initialDimension={initialDimension}
+          >
+            {children}
+          </RechartsPrimitive.ResponsiveContainer>
+        </React.Suspense>
       </div>
     </ChartContext.Provider>
   )
