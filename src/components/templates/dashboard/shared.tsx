@@ -14,10 +14,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { ChartContainer, type ChartConfig } from "@/components/ui/chart"
+import type { ChartConfig } from "@/components/ui/chart"
 
 import { cn } from "@/lib/utils"
 
+import { ANIMATION, Chart } from "./charts"
 import { STATUS_COLORS, type Status } from "./data"
 
 const SPARK_CONFIG = { value: { label: "Value" } } satisfies ChartConfig
@@ -79,7 +80,7 @@ export function StatCard({
         <div className="flex items-end justify-between gap-4">
           <p className="font-heading text-3xl tabular-nums">{value}</p>
           {trend && (
-            <ChartContainer
+            <Chart
               aria-hidden
               config={SPARK_CONFIG}
               className="pointer-events-none aspect-auto h-10 w-20 shrink-0"
@@ -94,10 +95,10 @@ export function StatCard({
                   dataKey="value"
                   type="linear"
                   fill={color}
-                  isAnimationActive={false}
+                  {...ANIMATION}
                 />
               </AreaChart>
-            </ChartContainer>
+            </Chart>
           )}
         </div>
       </CardContent>
