@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "saas-stats",
+  "type": "registry:component",
+  "title": "SaaS - Stats",
+  "files": [
+    {
+      "path": "src/components/templates/saas/stats.tsx",
+      "content": "import { cn } from \"@/lib/utils\"\n\nconst STATS = [\n  {\n    value: \"2,000+\",\n    label: \"teams shipping with Planly\",\n  },\n  {\n    value: \"14M\",\n    label: \"issues closed last year\",\n  },\n  {\n    value: \"99.99%\",\n    label: \"uptime over 12 months\",\n  },\n  {\n    value: \"4.9/5\",\n    label: \"average review rating\",\n  },\n]\n\nexport default function Stats() {\n  return (\n    <section className=\"border-b-4 border-border bg-chart-3 text-foreground\">\n      <dl className=\"mx-auto grid w-full max-w-6xl grid-cols-1 sm:grid-cols-2 md:grid-cols-4\">\n        {STATS.map((stat, i) => (\n          <div\n            key={stat.label}\n            className={cn(\n              \"flex flex-col-reverse justify-end gap-1 border-border px-5 py-10 text-center\",\n              // 1 column below sm, 2×2 from sm, one row from md.\n              i < 3 && \"border-b-4 md:border-b-0\",\n              i === 2 && \"sm:border-b-0\",\n              i % 2 === 1 && \"sm:border-l-4\",\n              (i === 0 || i === 2) && \"md:border-l-4\",\n              i === STATS.length - 1 && \"md:border-r-4\",\n            )}\n          >\n            <dt className=\"text-sm font-base\">{stat.label}</dt>\n            <dd className=\"font-heading text-4xl sm:text-5xl md:text-4xl lg:text-5xl\">\n              {stat.value}\n            </dd>\n          </div>\n        ))}\n      </dl>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/templates/saas/stats.tsx"
+    }
+  ]
+}

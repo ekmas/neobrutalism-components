@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "saas-email-capture",
+  "type": "registry:component",
+  "title": "SaaS - Email capture",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://neobrutalism.dev/r/nbutton.json",
+    "https://neobrutalism.dev/r/ninput.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/templates/saas/email-capture.tsx",
+      "content": "\"use client\"\n\nimport { Check } from \"lucide-react\"\n\nimport { useId, useState } from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { cn } from \"@/lib/utils\"\n\nexport default function EmailCapture({\n  cta = \"Get started\",\n  variant = \"default\",\n  className,\n}: {\n  cta?: string\n  variant?: \"default\" | \"neutral\"\n  className?: string\n}) {\n  const id = useId()\n  const [submitted, setSubmitted] = useState(false)\n\n  if (submitted) {\n    return (\n      <p\n        role=\"status\"\n        className={cn(\n          \"flex h-11 w-fit items-center gap-2 rounded-base border-2 border-border bg-chart-4 px-4 text-sm font-heading text-foreground shadow-shadow\",\n          className,\n        )}\n      >\n        <Check className=\"size-4\" /> You&apos;re on the list. Check your inbox.\n      </p>\n    )\n  }\n\n  return (\n    <form\n      onSubmit={(e) => {\n        e.preventDefault()\n        setSubmitted(true)\n      }}\n      className={cn(\"flex w-full max-w-md flex-col gap-3 sm:flex-row\", className)}\n    >\n      <label htmlFor={id} className=\"sr-only\">\n        Work email\n      </label>\n      <Input\n        id={id}\n        type=\"email\"\n        required\n        placeholder=\"Work email\"\n        className=\"h-11\"\n      />\n      <Button type=\"submit\" size=\"lg\" variant={variant} className=\"shrink-0\">\n        {cta}\n      </Button>\n    </form>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/templates/saas/email-capture.tsx"
+    }
+  ]
+}

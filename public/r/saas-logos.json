@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "saas-logos",
+  "type": "registry:component",
+  "title": "SaaS - Logo marquee",
+  "registryDependencies": [
+    "https://neobrutalism.dev/r/saas-shared.json",
+    "https://neobrutalism.dev/r/s5.json",
+    "https://neobrutalism.dev/r/s6.json",
+    "https://neobrutalism.dev/r/s19.json",
+    "https://neobrutalism.dev/r/s22.json",
+    "https://neobrutalism.dev/r/s24.json",
+    "https://neobrutalism.dev/r/s25.json",
+    "https://neobrutalism.dev/r/s27.json",
+    "https://neobrutalism.dev/r/s28.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/templates/saas/logos.tsx",
+      "content": "import Star5 from \"@/components/stars/s5\"\nimport Star6 from \"@/components/stars/s6\"\nimport Star19 from \"@/components/stars/s19\"\nimport Star22 from \"@/components/stars/s22\"\nimport Star24 from \"@/components/stars/s24\"\nimport Star25 from \"@/components/stars/s25\"\nimport Star27 from \"@/components/stars/s27\"\nimport Star28 from \"@/components/stars/s28\"\n\nimport { cn } from \"@/lib/utils\"\n\nimport DecorStar from \"./decor-star\"\n\nconst LOGOS = [\n  { name: \"Acme\", icon: Star25, color: \"var(--chart-1)\" },\n  { name: \"Globex\", icon: Star5, color: \"var(--chart-3)\" },\n  { name: \"Initech\", icon: Star6, color: \"var(--chart-2)\" },\n  { name: \"Umbrella\", icon: Star22, color: \"var(--chart-4)\" },\n  { name: \"Hooli\", icon: Star19, color: \"var(--chart-1)\" },\n  { name: \"Soylent\", icon: Star27, color: \"var(--chart-3)\" },\n  { name: \"Cyberdyne\", icon: Star24, color: \"var(--chart-2)\" },\n  { name: \"Pied Piper\", icon: Star28, color: \"var(--chart-4)\" },\n]\n\nfunction Track({ className, hidden }: { className: string; hidden?: boolean }) {\n  return (\n    <div\n      aria-hidden={hidden}\n      className={cn(\n        \"flex shrink-0 items-center motion-reduce:animate-none\",\n        className,\n      )}\n      style={{ animationDuration: \"35s\" }}\n    >\n      {LOGOS.map(({ name, icon, color }) => (\n        <div\n          key={name}\n          className=\"mx-8 flex shrink-0 items-center gap-6 whitespace-nowrap font-heading text-3xl\"\n        >\n          <DecorStar star={icon} color={color} className=\"size-9\" />\n          {name}\n        </div>\n      ))}\n    </div>\n  )\n}\n\nexport default function Logos() {\n  return (\n    <section className=\"border-b-4 border-border bg-secondary-background py-8\">\n      <div className=\"relative flex overflow-hidden\">\n        <Track className=\"animate-marquee\" />\n        <Track className=\"absolute left-0 top-0 animate-marquee2\" hidden />\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/templates/saas/logos.tsx"
+    }
+  ]
+}

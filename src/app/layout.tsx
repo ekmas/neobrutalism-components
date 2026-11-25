@@ -3,11 +3,6 @@ import "@/styling/globals.css"
 import type { Metadata } from "next"
 import { DM_Sans } from "next/font/google"
 
-import HireMeBanner from "@/components/app/hire-me-banner"
-import Navbar from "@/components/app/navbar"
-import ScrollToTop from "@/components/app/scroll-to-top"
-import SetStylingPref from "@/components/app/set-styling-pref"
-
 const dmSans = DM_Sans({
   subsets: ["latin"],
   display: "swap",
@@ -62,13 +57,7 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: `if(localStorage.getItem('hire-me-banner-dismissed')==='true'){document.documentElement.classList.add('banner-dismissed');document.documentElement.style.setProperty('--banner-h','0px')}` }} />
       </head>
-      <body className="isolate">
-        <HireMeBanner />
-        <Navbar />
-        {children}
-        <SetStylingPref />
-        <ScrollToTop />
-      </body>
+      <body className="isolate">{children}</body>
     </html>
   )
 }

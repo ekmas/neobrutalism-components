@@ -1494,6 +1494,310 @@
           "target": "components/stars/s40.tsx"
         }
       ]
+    },
+    {
+      "name": "saas-shared",
+      "title": "SaaS - Shared decor and section heading",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://neobrutalism.dev/r/s14.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/saas/decor-star.tsx",
+          "type": "registry:component",
+          "target": "components/templates/saas/decor-star.tsx"
+        },
+        {
+          "path": "src/components/templates/saas/section-heading.tsx",
+          "type": "registry:component",
+          "target": "components/templates/saas/section-heading.tsx"
+        }
+      ]
+    },
+    {
+      "name": "saas-navbar",
+      "title": "SaaS - Navbar",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism.dev/r/nbutton.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/saas/navbar.tsx",
+          "type": "registry:component",
+          "target": "components/templates/saas/navbar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "saas-email-capture",
+      "title": "SaaS - Email capture",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism.dev/r/nbutton.json",
+        "https://neobrutalism.dev/r/ninput.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/saas/email-capture.tsx",
+          "type": "registry:component",
+          "target": "components/templates/saas/email-capture.tsx"
+        }
+      ]
+    },
+    {
+      "name": "saas-hero",
+      "title": "SaaS - Hero",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism.dev/r/nbutton.json",
+        "https://neobrutalism.dev/r/saas-shared.json",
+        "https://neobrutalism.dev/r/s14.json",
+        "https://neobrutalism.dev/r/s26.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/saas/hero.tsx",
+          "type": "registry:component",
+          "target": "components/templates/saas/hero.tsx"
+        }
+      ]
+    },
+    {
+      "name": "saas-logos",
+      "title": "SaaS - Logo marquee",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://neobrutalism.dev/r/saas-shared.json",
+        "https://neobrutalism.dev/r/s5.json",
+        "https://neobrutalism.dev/r/s6.json",
+        "https://neobrutalism.dev/r/s19.json",
+        "https://neobrutalism.dev/r/s22.json",
+        "https://neobrutalism.dev/r/s24.json",
+        "https://neobrutalism.dev/r/s25.json",
+        "https://neobrutalism.dev/r/s27.json",
+        "https://neobrutalism.dev/r/s28.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/saas/logos.tsx",
+          "type": "registry:component",
+          "target": "components/templates/saas/logos.tsx"
+        }
+      ]
+    },
+    {
+      "name": "saas-features",
+      "title": "SaaS - Bento features",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism.dev/r/avatar.json",
+        "https://neobrutalism.dev/r/kbd.json",
+        "https://neobrutalism.dev/r/saas-shared.json",
+        "https://neobrutalism.dev/r/s19.json",
+        "https://neobrutalism.dev/r/s25.json",
+        "https://neobrutalism.dev/r/s35.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/saas/features.tsx",
+          "type": "registry:component",
+          "target": "components/templates/saas/features.tsx"
+        }
+      ]
+    },
+    {
+      "name": "saas-product-tabs",
+      "title": "SaaS - Product tabs",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism.dev/r/switch.json",
+        "https://neobrutalism.dev/r/tabs.json",
+        "https://neobrutalism.dev/r/saas-shared.json",
+        "https://neobrutalism.dev/r/s11.json",
+        "https://neobrutalism.dev/r/s24.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/saas/product-tabs.tsx",
+          "type": "registry:component",
+          "target": "components/templates/saas/product-tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "saas-how-it-works",
+      "title": "SaaS - How it works",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism.dev/r/saas-shared.json",
+        "https://neobrutalism.dev/r/s4.json",
+        "https://neobrutalism.dev/r/s29.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/saas/how-it-works.tsx",
+          "type": "registry:component",
+          "target": "components/templates/saas/how-it-works.tsx"
+        }
+      ]
+    },
+    {
+      "name": "saas-stats",
+      "title": "SaaS - Stats",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/templates/saas/stats.tsx",
+          "type": "registry:component",
+          "target": "components/templates/saas/stats.tsx"
+        }
+      ]
+    },
+    {
+      "name": "saas-pricing",
+      "title": "SaaS - Pricing",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism.dev/r/badge.json",
+        "https://neobrutalism.dev/r/nbutton.json",
+        "https://neobrutalism.dev/r/ncard.json",
+        "https://neobrutalism.dev/r/switch.json",
+        "https://neobrutalism.dev/r/saas-shared.json",
+        "https://neobrutalism.dev/r/s6.json",
+        "https://neobrutalism.dev/r/s15.json",
+        "https://neobrutalism.dev/r/s16.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/saas/pricing.tsx",
+          "type": "registry:component",
+          "target": "components/templates/saas/pricing.tsx"
+        }
+      ]
+    },
+    {
+      "name": "saas-testimonials",
+      "title": "SaaS - Testimonial marquee",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://neobrutalism.dev/r/avatar.json",
+        "https://neobrutalism.dev/r/saas-shared.json",
+        "https://neobrutalism.dev/r/s4.json",
+        "https://neobrutalism.dev/r/s22.json",
+        "https://neobrutalism.dev/r/s30.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/saas/testimonials.tsx",
+          "type": "registry:component",
+          "target": "components/templates/saas/testimonials.tsx"
+        }
+      ]
+    },
+    {
+      "name": "saas-faq",
+      "title": "SaaS - FAQ",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism.dev/r/accordion.json",
+        "https://neobrutalism.dev/r/nbutton.json",
+        "https://neobrutalism.dev/r/saas-shared.json",
+        "https://neobrutalism.dev/r/s22.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/saas/faq.tsx",
+          "type": "registry:component",
+          "target": "components/templates/saas/faq.tsx"
+        }
+      ]
+    },
+    {
+      "name": "saas-cta",
+      "title": "SaaS - CTA",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism.dev/r/saas-email-capture.json",
+        "https://neobrutalism.dev/r/s15.json",
+        "https://neobrutalism.dev/r/s22.json",
+        "https://neobrutalism.dev/r/s26.json",
+        "https://neobrutalism.dev/r/s30.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/saas/cta.tsx",
+          "type": "registry:component",
+          "target": "components/templates/saas/cta.tsx"
+        }
+      ]
+    },
+    {
+      "name": "saas-footer",
+      "title": "SaaS - Footer",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/templates/saas/footer.tsx",
+          "type": "registry:component",
+          "target": "components/templates/saas/footer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "saas-landing",
+      "title": "SaaS Landing Page",
+      "type": "registry:block",
+      "description": "A complete neobrutalism SaaS landing page: navbar, hero, logo marquee, bento features, product tabs, how it works, stats, pricing, testimonials, FAQ, CTA and footer.",
+      "registryDependencies": [
+        "https://neobrutalism.dev/r/saas-navbar.json",
+        "https://neobrutalism.dev/r/saas-hero.json",
+        "https://neobrutalism.dev/r/saas-logos.json",
+        "https://neobrutalism.dev/r/saas-features.json",
+        "https://neobrutalism.dev/r/saas-product-tabs.json",
+        "https://neobrutalism.dev/r/saas-how-it-works.json",
+        "https://neobrutalism.dev/r/saas-stats.json",
+        "https://neobrutalism.dev/r/saas-pricing.json",
+        "https://neobrutalism.dev/r/saas-testimonials.json",
+        "https://neobrutalism.dev/r/saas-faq.json",
+        "https://neobrutalism.dev/r/saas-cta.json",
+        "https://neobrutalism.dev/r/saas-footer.json"
+      ],
+      "files": [
+        {
+          "path": "src/app/templates/saas/page.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
+        }
+      ]
     }
   ]
 }

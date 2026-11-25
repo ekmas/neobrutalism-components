@@ -51,6 +51,16 @@ async function Navbar() {
               <Link href="/charts">Charts</Link>
 
               <Link href="/stars">Stars</Link>
+
+              <Link className="flex items-center gap-2" href="/templates">
+                Templates
+                <Badge
+                  variant="neutral"
+                  className="bg-chart-3 text-main-foreground px-1.5 py-0 text-[10px] font-heading uppercase"
+                >
+                  New
+                </Badge>
+              </Link>
             </div>
 
             <Link className="flex items-center gap-2" href="/hire-me">

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "saas-footer",
+  "type": "registry:component",
+  "title": "SaaS - Footer",
+  "files": [
+    {
+      "path": "src/components/templates/saas/footer.tsx",
+      "content": "const LINKS = {\n  Product: [\"Features\", \"Pricing\", \"Changelog\", \"Roadmap\", \"Integrations\"],\n  Company: [\"About\", \"Blog\", \"Careers\", \"Customers\"],\n  Resources: [\"Docs\", \"API reference\", \"Guides\", \"Status\"],\n  Legal: [\"Privacy\", \"Terms\", \"Security\", \"DPA\"],\n}\n\nexport default function Footer() {\n  return (\n    <footer className=\"bg-secondary-background px-5 py-16\">\n      <div className=\"mx-auto w-full max-w-6xl\">\n        <div className=\"grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4 lg:grid-cols-6\">\n          <div className=\"col-span-2 sm:col-span-4 lg:col-span-2\">\n            <a href=\"#\" className=\"flex items-center gap-3 font-heading text-xl\">\n              <span className=\"flex size-8 items-center justify-center rounded-base border-2 border-border bg-main text-main-foreground\">\n                P\n              </span>\n              Planly\n            </a>\n            <p className=\"mt-4 max-w-xs text-sm font-base\">\n              The fast, focused project tracker for teams that ship.\n            </p>\n          </div>\n\n          {Object.entries(LINKS).map(([category, links]) => (\n            <div key={category}>\n              <p className=\"font-heading text-lg\">{category}</p>\n              <ul className=\"mt-3 space-y-1\">\n                {links.map((link) => (\n                  <li key={link}>\n                    <a\n                      href=\"#\"\n                      className=\"inline-block py-1.5 text-sm font-base decoration-2 underline-offset-4 hover:underline\"\n                    >\n                      {link}\n                    </a>\n                  </li>\n                ))}\n              </ul>\n            </div>\n          ))}\n        </div>\n\n        <p className=\"mt-14 text-center text-sm font-base\">\n          © {new Date().getFullYear()} Planly Inc. All rights reserved.\n        </p>\n      </div>\n    </footer>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/templates/saas/footer.tsx"
+    }
+  ]
+}
