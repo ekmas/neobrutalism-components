@@ -28,6 +28,14 @@ const TEMPLATES = [
     image: "/previews/saas.webp",
     registryItem: "/r/saas-landing.json",
   },
+  {
+    name: "Dashboard",
+    description:
+      "A store analytics dashboard with a collapsible sidebar and six pages: overview, revenue, marketing, orders, customers and inventory. Date ranges, charts, heatmaps and searchable tables, all built with neobrutalism components.",
+    href: "/templates/dashboard",
+    image: "/previews/dashboard.webp",
+    registryItem: "/r/dashboard.json",
+  },
 ]
 
 export default function TemplatesPage() {

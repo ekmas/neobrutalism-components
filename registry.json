@@ -1798,6 +1798,108 @@
           "target": "app/page.tsx"
         }
       ]
+    },
+    {
+      "name": "dashboard",
+      "title": "Dashboard",
+      "type": "registry:block",
+      "description": "A neobrutalism store analytics dashboard with a sidebar and six pages of charts and tables, plus profile and billing.",
+      "dependencies": [
+        "lucide-react",
+        "recharts@^3"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism.dev/r/avatar.json",
+        "https://neobrutalism.dev/r/badge.json",
+        "https://neobrutalism.dev/r/chart.json",
+        "https://neobrutalism.dev/r/dropdown-menu.json",
+        "https://neobrutalism.dev/r/nbutton.json",
+        "https://neobrutalism.dev/r/ncard.json",
+        "https://neobrutalism.dev/r/ninput.json",
+        "https://neobrutalism.dev/r/nlabel.json",
+        "https://neobrutalism.dev/r/progress.json",
+        "https://neobrutalism.dev/r/select.json",
+        "https://neobrutalism.dev/r/sidebar.json",
+        "https://neobrutalism.dev/r/switch.json",
+        "https://neobrutalism.dev/r/table.json"
+      ],
+      "files": [
+        {
+          "path": "src/app/templates/dashboard/page.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
+        },
+        {
+          "path": "src/components/templates/dashboard/dashboard.tsx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/dashboard.tsx"
+        },
+        {
+          "path": "src/components/templates/dashboard/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/app-sidebar.tsx"
+        },
+        {
+          "path": "src/components/templates/dashboard/overview.tsx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/overview.tsx"
+        },
+        {
+          "path": "src/components/templates/dashboard/revenue.tsx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/revenue.tsx"
+        },
+        {
+          "path": "src/components/templates/dashboard/marketing.tsx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/marketing.tsx"
+        },
+        {
+          "path": "src/components/templates/dashboard/orders.tsx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/orders.tsx"
+        },
+        {
+          "path": "src/components/templates/dashboard/customers.tsx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/customers.tsx"
+        },
+        {
+          "path": "src/components/templates/dashboard/inventory.tsx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/inventory.tsx"
+        },
+        {
+          "path": "src/components/templates/dashboard/profile.tsx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/profile.tsx"
+        },
+        {
+          "path": "src/components/templates/dashboard/billing.tsx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/billing.tsx"
+        },
+        {
+          "path": "src/components/templates/dashboard/order-table.tsx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/order-table.tsx"
+        },
+        {
+          "path": "src/components/templates/dashboard/charts.tsx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/charts.tsx"
+        },
+        {
+          "path": "src/components/templates/dashboard/shared.tsx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/shared.tsx"
+        },
+        {
+          "path": "src/components/templates/dashboard/data.ts",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/data.ts"
+        }
+      ]
     }
   ]
 }
