@@ -16,6 +16,8 @@ import {
   YAxis,
 } from "recharts"
 
+import { useLayoutEffect, useRef, useState, type ComponentProps } from "react"
+
 import {
   ChartContainer,
   ChartLegend,
@@ -49,6 +51,34 @@ const AXIS = {
 const MARGIN = { top: 8, right: 8, left: 0 }
 const BAR_CURSOR = { fill: "#80808033" }
 const ACTIVE_DOT = { fill: "var(--chart-active-dot)" }
+
+// Recharts skips these for people who prefer reduced motion.
+export const ANIMATION = { animationBegin: 0, animationDuration: 700 }
+
+// Measures its box before drawing, so a chart starts at its final size and
+// animates in instead of jumping there from a placeholder size.
+export function Chart({
+  config,
+  children,
+  ...props
+}: ComponentProps<typeof ChartContainer>) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [size, setSize] = useState<{ width: number; height: number }>()
+
+  useLayoutEffect(() => {
+    if (!ref.current) return
+    const { width, height } = ref.current.getBoundingClientRect()
+    setSize({ width, height })
+  }, [])
+
+  if (!size) return <div ref={ref} {...props} />
+
+  return (
+    <ChartContainer config={config} initialDimension={size} {...props}>
+      {children}
+    </ChartContainer>
+  )
+}
 
 const chartClass = (className?: string) =>
   cn("aspect-auto h-72 w-full", className)
@@ -84,7 +114,7 @@ export function StackedArea({
   className,
 }: SeriesProps) {
   return (
-    <ChartContainer config={config} className={chartClass(className)}>
+    <Chart config={config} className={chartClass(className)}>
       <AreaChart data={data} margin={MARGIN}>
         <CartesianGrid vertical={false} />
         <XAxis dataKey="label" minTickGap={32} {...AXIS} />
@@ -101,14 +131,14 @@ export function StackedArea({
             dataKey={key}
             type="linear"
             stackId="a"
-            isAnimationActive={false}
+            {...ANIMATION}
             fill={`var(--color-${key})`}
             stroke={`var(--color-${key})`}
             activeDot={ACTIVE_DOT}
           />
         ))}
       </AreaChart>
-    </ChartContainer>
+    </Chart>
   )
 }
 
@@ -126,10 +156,7 @@ export function Comparison({
   className,
 }: Omit<SeriesProps, "config">) {
   return (
-    <ChartContainer
-      config={COMPARISON_CONFIG}
-      className={chartClass(className)}
-    >
+    <Chart config={COMPARISON_CONFIG} className={chartClass(className)}>
       <ComposedChart data={data} margin={MARGIN}>
         <CartesianGrid vertical={false} />
         <XAxis dataKey="label" minTickGap={32} {...AXIS} />
@@ -145,7 +172,7 @@ export function Comparison({
         <Area
           dataKey="current"
           type="linear"
-          isAnimationActive={false}
+          {...ANIMATION}
           fill="var(--color-current)"
           stroke="var(--color-current)"
           activeDot={ACTIVE_DOT}
@@ -155,7 +182,7 @@ export function Comparison({
           type="linear"
           stroke="var(--color-previous)"
           strokeDasharray="6 4"
-          isAnimationActive={false}
+          {...ANIMATION}
           dot={{
             r: 4,
             fill: "var(--color-previous)",
@@ -164,7 +191,7 @@ export function Comparison({
           }}
         />
       </ComposedChart>
-    </ChartContainer>
+    </Chart>
   )
 }
 
@@ -187,7 +214,7 @@ export function Trend({
 }) {
   const config = { value: { label, color } } satisfies ChartConfig
   return (
-    <ChartContainer config={config} className={chartClass(className)}>
+    <Chart config={config} className={chartClass(className)}>
       <LineChart data={data} margin={MARGIN}>
         <CartesianGrid vertical={false} />
         <XAxis dataKey="label" minTickGap={32} {...AXIS} />
@@ -210,12 +237,12 @@ export function Trend({
           dataKey="value"
           type="linear"
           stroke="var(--color-value)"
-          isAnimationActive={false}
+          {...ANIMATION}
           dot={{ r: 5, fill: "var(--color-value)", stroke: "var(--border)" }}
           activeDot={{ ...ACTIVE_DOT, r: 6 }}
         />
       </LineChart>
-    </ChartContainer>
+    </Chart>
   )
 }
 
@@ -230,7 +257,7 @@ export function Columns({
 }: SeriesProps & { stacked?: boolean; allLabels?: boolean }) {
   const keys = Object.keys(config)
   const chart = (
-    <ChartContainer
+    <Chart
       config={config}
       className={chartClass(className)}
       style={allLabels ? { minWidth: data.length * 84 } : undefined}
@@ -259,13 +286,13 @@ export function Columns({
             dataKey={key}
             stackId={stacked ? "a" : undefined}
             fill={`var(--color-${key})`}
-            isAnimationActive={false}
+            {...ANIMATION}
             maxBarSize={48}
             radius={!stacked || i === keys.length - 1 ? [4, 4, 0, 0] : 0}
           />
         ))}
       </BarChart>
-    </ChartContainer>
+    </Chart>
   )
 
   // Every label is kept, so narrow screens scroll instead.
@@ -288,7 +315,7 @@ export function RankedBars({
 }) {
   const config = { value: { label, color } } satisfies ChartConfig
   return (
-    <ChartContainer config={config} className={chartClass(className)}>
+    <Chart config={config} className={chartClass(className)}>
       <BarChart data={data} layout="vertical" margin={{ right: 64, left: 0 }}>
         <XAxis type="number" hide domain={[0, "dataMax"]} />
         <YAxis
@@ -307,7 +334,7 @@ export function RankedBars({
         <Bar
           dataKey="value"
           fill="var(--color-value)"
-          isAnimationActive={false}
+          {...ANIMATION}
           radius={[0, 4, 4, 0]}
           maxBarSize={28}
         >
@@ -321,7 +348,7 @@ export function RankedBars({
           />
         </Bar>
       </BarChart>
-    </ChartContainer>
+    </Chart>
   )
 }
 
@@ -349,10 +376,7 @@ export function Donut({
           </span>
           <span className="text-xs">{caption}</span>
         </div>
-        <ChartContainer
-          config={config}
-          className="relative aspect-auto size-full"
-        >
+        <Chart config={config} className="relative aspect-auto size-full">
           <PieChart>
             <ChartTooltip
               content={
@@ -366,12 +390,12 @@ export function Donut({
               data={data.map((item) => ({ ...item, fill: item.color }))}
               dataKey="value"
               nameKey="key"
-              isAnimationActive={false}
+              {...ANIMATION}
               innerRadius={62}
               outerRadius={98}
             />
           </PieChart>
-        </ChartContainer>
+        </Chart>
       </div>
       <ul className="mt-5 space-y-2 text-sm">
         {data.map((item) => (

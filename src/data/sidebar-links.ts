@@ -13,7 +13,8 @@ const COMPONENTS_LINKS = COMPONENTS.map((component) => {
   }
 })
 
-const GETTING_STARTED_LINKS = [
+// Getting started pages in the docs sidebar.
+const DOCS_LINKS: SidebarLink[] = [
   {
     href: "/docs/migrating-to-base-ui",
     text: "Migrating to Base UI",
@@ -33,6 +34,14 @@ const GETTING_STARTED_LINKS = [
   {
     href: "/docs/changelog",
     text: "Changelog",
+  },
+]
+
+// Pages outside the docs, listed only in search.
+const SITE_LINKS: SidebarLink[] = [
+  {
+    href: "/templates",
+    text: "Templates",
   },
   {
     href: "/styling",
@@ -53,28 +62,11 @@ const GETTING_STARTED_LINKS = [
   },
 ]
 
+const GETTING_STARTED_LINKS = [...DOCS_LINKS, ...SITE_LINKS]
+
 const MAIN_SIDEBAR: SidebarItem[] = [
   "Getting started",
-  {
-    href: "/docs/migrating-to-base-ui",
-    text: "Migrating to Base UI",
-  },
-  {
-    href: "/docs",
-    text: "Introduction",
-  },
-  {
-    href: "/docs/installation",
-    text: "Installation",
-  },
-  {
-    href: "/docs/figma",
-    text: "Figma",
-  },
-  {
-    href: "/docs/changelog",
-    text: "Changelog",
-  },
+  ...DOCS_LINKS,
   "Components",
   ...COMPONENTS_LINKS,
   "Stars",
