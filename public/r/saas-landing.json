@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "saas-landing",
+  "type": "registry:block",
+  "title": "SaaS Landing Page",
+  "description": "A complete neobrutalism SaaS landing page: navbar, hero, logo marquee, bento features, product tabs, how it works, stats, pricing, testimonials, FAQ, CTA and footer.",
+  "registryDependencies": [
+    "https://neobrutalism.dev/r/saas-navbar.json",
+    "https://neobrutalism.dev/r/saas-hero.json",
+    "https://neobrutalism.dev/r/saas-logos.json",
+    "https://neobrutalism.dev/r/saas-features.json",
+    "https://neobrutalism.dev/r/saas-product-tabs.json",
+    "https://neobrutalism.dev/r/saas-how-it-works.json",
+    "https://neobrutalism.dev/r/saas-stats.json",
+    "https://neobrutalism.dev/r/saas-pricing.json",
+    "https://neobrutalism.dev/r/saas-testimonials.json",
+    "https://neobrutalism.dev/r/saas-faq.json",
+    "https://neobrutalism.dev/r/saas-cta.json",
+    "https://neobrutalism.dev/r/saas-footer.json"
+  ],
+  "files": [
+    {
+      "path": "src/app/templates/saas/page.tsx",
+      "content": "import { Metadata } from \"next\"\n\nimport CTA from \"@/components/templates/saas/cta\"\nimport FAQ from \"@/components/templates/saas/faq\"\nimport Features from \"@/components/templates/saas/features\"\nimport Footer from \"@/components/templates/saas/footer\"\nimport Hero from \"@/components/templates/saas/hero\"\nimport HowItWorks from \"@/components/templates/saas/how-it-works\"\nimport Logos from \"@/components/templates/saas/logos\"\nimport Navbar from \"@/components/templates/saas/navbar\"\nimport Pricing from \"@/components/templates/saas/pricing\"\nimport ProductTabs from \"@/components/templates/saas/product-tabs\"\nimport Stats from \"@/components/templates/saas/stats\"\nimport Testimonials from \"@/components/templates/saas/testimonials\"\n\nexport const metadata: Metadata = {\n  title: \"Planly - Plan less. Ship more.\",\n  description:\n    \"The fast, focused project tracker for teams that ship. Issues, roadmaps and AI triage in one workspace.\",\n}\n\nexport default function Page() {\n  return (\n    <div className=\"min-h-screen bg-background font-base text-foreground\">\n      <Navbar />\n      <main>\n        <Hero />\n        <Logos />\n        <Features />\n        <ProductTabs />\n        <HowItWorks />\n        <Stats />\n        <Pricing />\n        <Testimonials />\n        <FAQ />\n        <CTA />\n      </main>\n      <Footer />\n    </div>\n  )\n}\n",
+      "type": "registry:page",
+      "target": "app/page.tsx"
+    }
+  ]
+}

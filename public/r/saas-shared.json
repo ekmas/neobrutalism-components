@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "saas-shared",
+  "type": "registry:component",
+  "title": "SaaS - Shared decor and section heading",
+  "registryDependencies": [
+    "https://neobrutalism.dev/r/s14.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/templates/saas/decor-star.tsx",
+      "content": "import type { ComponentType, SVGProps } from \"react\"\n\nimport Star14 from \"@/components/stars/s14\"\n\nimport { cn } from \"@/lib/utils\"\n\ntype StarComponent = ComponentType<\n  SVGProps<SVGSVGElement> & {\n    color?: string\n    stroke?: string\n    strokeWidth?: number\n    pathClassName?: string\n  }\n>\n\n// Faint 56px grid used as the background of every white section.\nexport const GRID_BACKGROUND =\n  \"bg-[linear-gradient(to_right,#80808033_1px,transparent_1px),linear-gradient(to_bottom,#80808033_1px,transparent_1px)] bg-size-[56px_56px]\"\n\n// Non-scaling stroke keeps every star outline at 2px, matching card borders.\n// Avoid chart-1 for decoration: it reads as the interactive main colour.\nexport default function DecorStar({\n  star: Star,\n  color = \"var(--chart-3)\",\n  spin = false,\n  strokeWidth = 2,\n  className,\n  style,\n}: {\n  star: StarComponent\n  color?: string\n  spin?: boolean\n  strokeWidth?: number\n  className?: string\n  style?: React.CSSProperties\n}) {\n  return (\n    <Star\n      aria-hidden\n      color={color}\n      stroke=\"var(--border)\"\n      strokeWidth={strokeWidth}\n      pathClassName=\"[vector-effect:non-scaling-stroke]\"\n      className={cn(\n        \"pointer-events-none shrink-0 overflow-visible\",\n        spin && \"animate-[spin_40s_linear_infinite] motion-reduce:animate-none\",\n        className,\n      )}\n      style={style}\n    />\n  )\n}\n\n// A pair of big background stars for a section. The section needs\n// `relative isolate overflow-hidden`: isolate makes it a stacking context, so\n// the -z-10 stars paint above its background but below all of its content.\nexport function SectionStars({\n  stars,\n}: {\n  stars: { star: StarComponent; color: string; className: string }[]\n}) {\n  return stars.map(({ star, color, className }, i) => (\n    <DecorStar\n      key={i}\n      star={star}\n      color={color}\n      className={cn(\"absolute -z-10\", className)}\n    />\n  ))\n}\n\nexport function StarSticker({\n  star = Star14,\n  color = \"var(--chart-3)\",\n  children,\n  className,\n}: {\n  star?: StarComponent\n  color?: string\n  children: React.ReactNode\n  className?: string\n}) {\n  return (\n    <div\n      className={cn(\n        \"group absolute z-10 flex size-24 rotate-6 items-center justify-center text-center font-heading leading-tight text-foreground\",\n        className,\n      )}\n    >\n      <DecorStar\n        star={star}\n        color={color}\n        className=\"absolute inset-0 size-full transition-transform duration-700 ease-out group-hover:rotate-45 motion-reduce:transition-none\"\n      />\n      <span className=\"relative\">{children}</span>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/templates/saas/decor-star.tsx"
+    },
+    {
+      "path": "src/components/templates/saas/section-heading.tsx",
+      "content": "import { cn } from \"@/lib/utils\"\n\n// Stroke is painted under the fill, so only half of it shows as an outline.\nexport function Eyebrow({\n  children,\n  className,\n}: {\n  children: React.ReactNode\n  className?: string\n}) {\n  return (\n    <p\n      className={cn(\n        \"text-lg font-heading uppercase tracking-[0.12em] text-chart-3 [paint-order:stroke_fill] [-webkit-text-stroke:2.5px_var(--border)]\",\n        className,\n      )}\n    >\n      {children}\n    </p>\n  )\n}\n\nexport default function SectionHeading({\n  eyebrow,\n  title,\n  description,\n  align = \"center\",\n  className,\n}: {\n  eyebrow: string\n  title: React.ReactNode\n  description?: React.ReactNode\n  align?: \"center\" | \"left\"\n  className?: string\n}) {\n  return (\n    <div\n      className={cn(\n        \"mb-14 flex max-w-2xl flex-col gap-4\",\n        align === \"center\" ? \"mx-auto items-center text-center\" : \"items-start\",\n        className,\n      )}\n    >\n      <Eyebrow>{eyebrow}</Eyebrow>\n      <h2 className=\"text-balance font-heading text-4xl leading-tight sm:text-5xl\">\n        {title}\n      </h2>\n      {description && <p className=\"text-lg font-base\">{description}</p>}\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/templates/saas/section-heading.tsx"
+    }
+  ]
+}

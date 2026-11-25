@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "saas-navbar",
+  "type": "registry:component",
+  "title": "SaaS - Navbar",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://neobrutalism.dev/r/nbutton.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/templates/saas/navbar.tsx",
+      "content": "\"use client\"\n\nimport { Menu, X } from \"lucide-react\"\n\nimport { useState } from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\n\nconst LINKS = [\n  { label: \"Features\", href: \"#features\" },\n  { label: \"Product\", href: \"#product\" },\n  { label: \"Pricing\", href: \"#pricing\" },\n  { label: \"FAQ\", href: \"#faq\" },\n]\n\nexport default function Navbar() {\n  const [open, setOpen] = useState(false)\n\n  return (\n    <header className=\"sticky top-0 z-40 border-b-4 border-border bg-secondary-background\">\n      <div className=\"mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5\">\n        <a href=\"#\" className=\"flex items-center gap-3 font-heading text-xl\">\n          <span className=\"flex size-8 items-center justify-center rounded-base border-2 border-border bg-main text-main-foreground\">\n            P\n          </span>\n          Planly\n        </a>\n\n        <nav className=\"hidden items-center gap-8 text-sm font-base md:flex\">\n          {LINKS.map((link) => (\n            <a\n              key={link.href}\n              href={link.href}\n              className=\"decoration-2 underline-offset-4 hover:underline\"\n            >\n              {link.label}\n            </a>\n          ))}\n        </nav>\n\n        <div className=\"hidden items-center gap-3 md:flex\">\n          <Button variant=\"neutral\" size=\"sm\">\n            Sign in\n          </Button>\n          <Button size=\"sm\">Start free trial</Button>\n        </div>\n\n        <Button\n          variant=\"neutral\"\n          size=\"icon-sm\"\n          className=\"md:hidden\"\n          aria-label={open ? \"Close menu\" : \"Open menu\"}\n          aria-expanded={open}\n          onClick={() => setOpen((o) => !o)}\n        >\n          {open ? <X /> : <Menu />}\n        </Button>\n      </div>\n\n      {open && (\n        <div className=\"border-t-4 border-border md:hidden\">\n          <nav className=\"mx-auto flex w-full max-w-6xl flex-col gap-1 px-5 py-4\">\n            {LINKS.map((link) => (\n              <a\n                key={link.href}\n                href={link.href}\n                onClick={() => setOpen(false)}\n                className=\"rounded-base px-3 py-2 font-base hover:bg-background\"\n              >\n                {link.label}\n              </a>\n            ))}\n            <div className=\"mt-3 grid grid-cols-2 gap-3\">\n              <Button variant=\"neutral\">Sign in</Button>\n              <Button>Start free trial</Button>\n            </div>\n          </nav>\n        </div>\n      )}\n    </header>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/templates/saas/navbar.tsx"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "saas-faq",
+  "type": "registry:component",
+  "title": "SaaS - FAQ",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://neobrutalism.dev/r/accordion.json",
+    "https://neobrutalism.dev/r/nbutton.json",
+    "https://neobrutalism.dev/r/saas-shared.json",
+    "https://neobrutalism.dev/r/s22.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/templates/saas/faq.tsx",
+      "content": "import { MessageCircle } from \"lucide-react\"\n\nimport Star22 from \"@/components/stars/s22\"\nimport {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/components/ui/accordion\"\nimport { Button } from \"@/components/ui/button\"\n\nimport { cn } from \"@/lib/utils\"\n\nimport DecorStar, { GRID_BACKGROUND } from \"./decor-star\"\nimport SectionHeading from \"./section-heading\"\n\nconst FAQS = [\n  {\n    question: \"How long does it take to switch from Jira or GitHub Issues?\",\n    answer:\n      \"Most teams are fully moved in an afternoon. The importer brings over issues, comments, labels, assignees and history, and you can run both tools side by side while you switch.\",\n  },\n  {\n    question: \"Is there really a free plan?\",\n    answer:\n      \"Yes. Starter is free forever for up to 10 members with unlimited issues. You only pay when you need AI triage, roadmaps or more seats.\",\n  },\n  {\n    question: \"What do the AI agents have access to?\",\n    answer:\n      \"Agents only read the workspaces you enable them for, and every action they take is logged and reversible. Your data is never used to train shared models.\",\n  },\n  {\n    question: \"Can I change plans or cancel at any time?\",\n    answer:\n      \"You can upgrade, downgrade or cancel whenever you like. Changes are prorated to the day and you can export all of your data at any point.\",\n  },\n  {\n    question: \"Do you offer discounts for startups and non-profits?\",\n    answer:\n      \"Startups under two years old get 50% off Pro for the first year, and registered non-profits get Pro for free. Reach out to our team to apply.\",\n  },\n]\n\nexport default function FAQ() {\n  return (\n    <section\n      id=\"faq\"\n      className={cn(\n        \"scroll-mt-16 border-b-4 border-border bg-secondary-background px-5 py-24\",\n        GRID_BACKGROUND,\n      )}\n    >\n      {/* Below lg the left column dissolves into the grid so the contact card\n          can move below the accordion. */}\n      <div className=\"mx-auto grid w-full max-w-6xl gap-8 lg:grid-cols-[1fr_1.5fr] lg:gap-12\">\n        <div className=\"contents lg:flex lg:flex-col\">\n          <SectionHeading\n            eyebrow=\"FAQ\"\n            title=\"Questions? Answers.\"\n            description={\n              <>\n                Everything you need to know about Planly. Can&apos;t find what\n                you&apos;re looking for?\n              </>\n            }\n            align=\"left\"\n            className=\"mb-4 lg:mb-8\"\n          />\n          <div className=\"relative order-last overflow-hidden lg:order-0 rounded-base border-2 border-border bg-background p-6 shadow-shadow\">\n            <DecorStar\n              star={Star22}\n              color=\"var(--chart-2)\"\n              className=\"absolute -bottom-10 -right-10 size-32 rotate-12\"\n            />\n            <MessageCircle className=\"size-6\" />\n            <p className=\"mt-3 font-heading text-lg\">Talk to a human</p>\n            <p className=\"mt-1 text-sm font-base\">\n              Our team replies in under 2 hours on weekdays.\n            </p>\n            <Button variant=\"neutral\" className=\"mt-5\">\n              Chat with us\n            </Button>\n          </div>\n        </div>\n\n        <Accordion className=\"space-y-4\">\n          {FAQS.map((faq) => (\n            <AccordionItem key={faq.question} value={faq.question}>\n              <AccordionTrigger>{faq.question}</AccordionTrigger>\n              <AccordionContent className=\"text-base\">\n                {faq.answer}\n              </AccordionContent>\n            </AccordionItem>\n          ))}\n        </Accordion>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/templates/saas/faq.tsx"
+    }
+  ]
+}
